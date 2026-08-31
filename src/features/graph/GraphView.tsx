@@ -118,6 +118,16 @@ export function GraphView() {
     return { nodes, edges: data.edges.filter((edge) => visible.has(edge.from) && visible.has(edge.to) && edgeAllowed(edge)) };
   }, [data, focusId, hops, kind, relation, pinned, path, preferences.lowPerformance]);
 
+  // A label the reader cannot see is a node they cannot learn anything from,
+  // so the view always names what it can: everything when the slice is small,
+  // the best-connected nodes when it is not.
+  const labelled = useMemo(() => {
+    if (view.nodes.length <= 45) return new Set(view.nodes.map((node) => node.id));
+    return new Set(
+      [...view.nodes].sort((a, b) => b.degree - a.degree).slice(0, 30).map((node) => node.id),
+    );
+  }, [view.nodes]);
+
   const viewKey = useMemo(() => view.nodes.map((node) => node.id).join('|'), [view.nodes]);
   const positionFor = useCallback((node: GraphNode): Point => nodePositions[node.id] ?? { x: node.x, y: node.y }, [nodePositions]);
 
@@ -424,7 +434,7 @@ export function GraphView() {
             {view.nodes.map((node) => (
               <g
                 key={node.id}
-                className={`graph-node graph-node--${node.kind} ${node.id === focusId ? 'is-focused' : ''} ${pinned.includes(node.id) ? 'is-pinned' : ''}`}
+                className={`graph-node graph-node--${node.kind} ${node.id === focusId ? 'is-focused' : ''} ${pinned.includes(node.id) ? 'is-pinned' : ''} ${labelled.has(node.id) ? 'is-labelled' : ''}`}
                 role="button"
                 tabIndex={0}
                 aria-label={`${node.label}, ${KIND_LABELS[node.kind]}, ${node.degree} connections, ${node.origin} origin, ${node.evidence} evidence`}

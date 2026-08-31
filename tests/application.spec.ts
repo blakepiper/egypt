@@ -203,6 +203,13 @@ test.describe('graph, atlas, and chronology', () => {
     expect(isolated).toBe(0);
   });
 
+  test('the default overview names important nodes', async ({ page }) => {
+    await page.goto('graph/');
+    await expect(page.locator('.graph-node').first()).toBeVisible();
+    const visibleLabels = await page.locator('.graph-node text').evaluateAll((labels) => labels.filter((label) => getComputedStyle(label).opacity !== '0').length);
+    expect(visibleLabels).toBeGreaterThanOrEqual(30);
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();

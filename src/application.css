@@ -637,8 +637,8 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-node:active { cursor: grabbing; }
 .graph-node__hit { fill: transparent; stroke: none; }
 .graph-node__dot { fill: var(--archive-color-surface-raised); stroke: var(--archive-color-line); stroke-width: 1.5; }
-.graph-node text { font-size: 9px; fill: var(--archive-color-ink); font-family: var(--archive-font-ui); pointer-events: none; opacity: 0; }
-.graph-node.is-focused text, .graph-node.is-pinned text, .graph-node:hover text { opacity: 1; }
+.graph-node text { font-size: 9px; fill: var(--archive-color-ink); font-family: var(--archive-font-ui); pointer-events: none; opacity: 0; paint-order: stroke; stroke: var(--archive-color-surface); stroke-width: 2.5px; }
+.graph-node.is-labelled text, .graph-node.is-focused text, .graph-node.is-pinned text, .graph-node:hover text { opacity: 1; }
 .graph-node--article .graph-node__dot { fill: var(--archive-color-primary-soft); }
 .graph-node--deity .graph-node__dot { fill: var(--archive-color-secondary-soft); }
 .graph-node--place .graph-node__dot { fill: var(--archive-color-success); }
