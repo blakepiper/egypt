@@ -2,7 +2,8 @@
 // field guide. They share one layout so the archive reads consistently.
 
 import { Link } from '../../app/state';
-import { allPages, contentManifest, navigationSections } from '../../generated';
+import { allPages, allPaths, contentManifest, navigationSections } from '../../generated';
+import { OriginBadge } from '../../design-system';
 import { Card, CardGrid, EmptyState, PageHeader, Section } from '../../design-system/components';
 import type { SectionId } from '../../types/content';
 import { PreferencesPanel } from '../settings/Preferences';
@@ -75,6 +76,15 @@ export function LearnView() {
       />
       <RelearningPlan />
       <ConceptChecks />
+      <Section title="Learning paths" description="Choose a question and follow a deliberate sequence. The graph view keeps every step available as a text route.">
+        <CardGrid>
+          {allPaths.map((path) => (
+            <Card key={path.id} to={`/graph/?path=${path.id}`} eyebrow={<OriginBadge origin={path.origin} />} title={path.title} footer={`${path.steps.length} steps`}>
+              {path.blurb}
+            </Card>
+          ))}
+        </CardGrid>
+      </Section>
       {section?.groups.filter((group) => group.pages.length > 0).map((group) => (
         <Section key={group.label} title={group.label}>
           <CardGrid>
@@ -97,7 +107,10 @@ export function ArchiveView() {
       <Section title="Start with the catalog">
         <CardGrid>
           <Card to="/archive/sources/" eyebrow="Reference" title="Source catalog">
-            {contentManifest.counts.sources} intellectual-source groups with stable C IDs, filterable by status and by the pages that cite them.
+            {contentManifest.counts.courseSources} course-source groups with stable C IDs, alongside the supplemental research registry.
+          </Card>
+          <Card to="/archive/sources/?catalog=research" eyebrow="Research registry" title="Supplemental research">
+            {contentManifest.counts.researchSources} opened research records with stable R IDs, access notes, limitations, and reuse conditions. <OriginBadge origin="supplemental" />
           </Card>
         </CardGrid>
       </Section>

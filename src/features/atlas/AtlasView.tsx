@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
 import { allPlaces, allEntities, allPages } from '../../generated';
 import { FilterBar, PageHeader, Section } from '../../design-system/components';
+import { OriginBadge } from '../../design-system';
 
 const REGIONS = [
   { id: 'delta', label: 'Delta' },
@@ -17,6 +18,34 @@ const REGIONS = [
   { id: 'nubia', label: 'Nubia' },
   { id: 'desert', label: 'Desert margin' },
 ];
+
+type LabelPlacement = { x: number; y: number; anchor: 'start' | 'end' };
+
+// Keep labels in a separate, hand-tuned register. The markers are intentionally
+// close in the Delta and around Thebes; drawing a short leader makes the map
+// readable without changing the underlying place coordinates.
+const LABEL_PLACEMENTS: Record<string, LabelPlacement> = {
+  mediterranean: { x: 54, y: 4, anchor: 'start' },
+  delta: { x: 43, y: 13, anchor: 'end' },
+  mendes: { x: 61, y: 9, anchor: 'start' },
+  busiris: { x: 54, y: 14, anchor: 'start' },
+  heliopolis: { x: 57, y: 19, anchor: 'start' },
+  memphis: { x: 44, y: 20, anchor: 'end' },
+  fayum: { x: 34, y: 26, anchor: 'end' },
+  hermopolis: { x: 46, y: 39, anchor: 'end' },
+  amarna: { x: 57, y: 36, anchor: 'start' },
+  abydos: { x: 43, y: 53, anchor: 'end' },
+  dendera: { x: 42, y: 59, anchor: 'end' },
+  thebes: { x: 56, y: 62, anchor: 'start' },
+  'deir-el-medina': { x: 43, y: 66, anchor: 'end' },
+  esna: { x: 44, y: 70, anchor: 'end' },
+  edfu: { x: 44, y: 75, anchor: 'end' },
+  'kom-ombo': { x: 56, y: 80, anchor: 'start' },
+  elephantine: { x: 44, y: 87, anchor: 'end' },
+  nubia: { x: 54, y: 96, anchor: 'start' },
+  deshret: { x: 17, y: 50, anchor: 'end' },
+  west: { x: 16, y: 67, anchor: 'end' },
+};
 
 export function AtlasView() {
   const { search, navigate } = useApp();
@@ -72,7 +101,16 @@ export function AtlasView() {
                     if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); navigate(`/atlas/?place=${place.id}`); }
                   }}
                 />
-                <text x={place.x + (place.x < 50 ? -3 : 3)} y={place.y + 0.8} textAnchor={place.x < 50 ? 'end' : 'start'}>{place.label}</text>
+                {(() => {
+                  const label = LABEL_PLACEMENTS[place.id] ?? { x: place.x + (place.x < 50 ? -3 : 3), y: place.y + 0.8, anchor: place.x < 50 ? 'end' as const : 'start' as const };
+                  const leaderX = label.anchor === 'end' ? label.x + 1 : label.x - 1;
+                  return (
+                    <>
+                      {Math.abs(leaderX - place.x) > 3 && <line className="atlas__leader" x1={place.x} y1={place.y} x2={leaderX} y2={label.y - 0.7} />}
+                      <text x={label.x} y={label.y} textAnchor={label.anchor}>{place.label}</text>
+                    </>
+                  );
+                })()}
               </g>
             ))}
           </svg>
@@ -81,7 +119,7 @@ export function AtlasView() {
         <div className="atlas__panel">
           {selected ? (
             <aside className="detail-panel" aria-live="polite">
-              <h2>{selected.label}</h2>
+              <h2>{selected.label} <OriginBadge origin={selected.origin ?? 'course'} /></h2>
               {selected.aliases.length > 0 && <p className="muted">Also {selected.aliases.join(', ')}</p>}
               <p>{selected.summary}</p>
               <dl className="detail-panel__facts">
@@ -112,7 +150,7 @@ export function AtlasView() {
           {places.map((place) => (
             <li key={place.id} id={place.id}>
               <button type="button" className="entity-list__button" onClick={() => navigate(`/atlas/?place=${place.id}`)}>
-                <strong>{place.label}</strong>
+                <strong>{place.label}</strong> <OriginBadge origin={place.origin ?? 'course'} />
               </button>
               {place.aliases.length > 0 && <span className="muted"> — also {place.aliases.join(', ')}</span>}
               <p>{place.summary}</p>

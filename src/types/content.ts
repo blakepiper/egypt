@@ -1,7 +1,12 @@
 // Shared content model. Imported by the build scripts in `scripts/` and by the
 // application in `src/`. Types only: nothing here emits runtime code.
 
-export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'speculative';
+export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'mixed' | 'speculative';
+
+/** Where a published item came from, kept separate from the strength of its evidence. */
+export type ContentOrigin = 'course' | 'supplemental' | 'mixed';
+
+export type SourceOrigin = 'course' | 'supplemental';
 
 export type InlineNode =
   | { t: 'text'; v: string }
@@ -30,7 +35,7 @@ export type BlockNode =
   | { t: 'hr' }
   | { t: 'media'; id: string };
 
-export type CalloutKind = 'evidence' | 'uncertainty' | 'contested' | 'note' | 'reconstruction';
+export type CalloutKind = 'evidence' | 'uncertainty' | 'contested' | 'note' | 'reconstruction' | 'research';
 
 export interface HeadingRef {
   id: string;
@@ -48,6 +53,8 @@ export interface ContentReview {
 export interface PageFrontmatter {
   type: string;
   tags: string[];
+  origin: ContentOrigin;
+  evidence?: EvidenceKind;
   course?: string;
   updated?: string;
   summary?: string;
@@ -74,6 +81,7 @@ export interface PageSummary {
   type: string;
   section: SectionId;
   tags: string[];
+  origin: ContentOrigin;
   summary: string;
   aliases: string[];
   periods: string[];
@@ -160,7 +168,12 @@ export type EdgeType =
   | 'restores'
   | 'contrasts_with'
   | 'contested_by'
-  | 'depicted_in';
+  | 'depicted_in'
+  | 'transmitted_through'
+  | 'adapted_by'
+  | 'reinterpreted_by'
+  | 'manifested_in'
+  | 'encountered_at';
 
 export interface GraphNode {
   id: string;
@@ -172,6 +185,7 @@ export interface GraphNode {
   periods: string[];
   places: string[];
   evidence: EvidenceKind;
+  origin: ContentOrigin;
   degree: number;
   x: number;
   y: number;
@@ -200,6 +214,7 @@ export interface Entity {
   id: string;
   kind: NodeKind;
   label: string;
+  origin?: ContentOrigin;
   aliases: string[];
   summary: string;
   slug?: string;
@@ -239,13 +254,27 @@ export interface Place {
   slug?: string;
   sourceIds?: string[];
   modernName?: string;
+  origin?: ContentOrigin;
+  locationSourceUrls?: string[];
+  /** Public atlas records only; private and unidentified stops are never serialized. */
+  visibility?: 'public' | 'unlisted' | 'private' | 'unidentified';
+  routeOrder?: number;
 }
 
 export interface SourceEntry {
   id: string;
+  origin: SourceOrigin;
   title: string;
+  sourceClass: string;
   status: string;
   use: string;
+  url?: string;
+  accessDate?: string;
+  limitations?: string;
+  reuse?: string;
+  /** Internal-only locator. Build output must omit this field. */
+  localLocator?: string;
+  catalogSlug: 'source-catalog' | 'research-catalog';
   files: { label: string; path: string }[];
   citedBy: string[];
 }
@@ -283,6 +312,10 @@ export interface MediaRecord {
   };
   poster?: string;
   note?: string;
+  containsHumanRemains?: boolean;
+  dignityReview?: 'reviewed' | 'pending' | 'not-applicable';
+  contentWarning?: string;
+  educationalRationale?: string;
   review?: ContentReview;
 }
 
@@ -316,10 +349,11 @@ export interface SearchDoc {
   entities: string[];
   tags: string[];
   evidence: EvidenceKind;
+  origin: ContentOrigin;
   headings: HeadingRef[];
 }
 
-export type SearchFieldId = 0 | 1 | 2 | 3 | 4 | 5;
+export type SearchFieldId = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface SearchIndex {
   generated: string;
@@ -332,20 +366,25 @@ export interface SearchIndex {
 
 export interface JourneyScene {
   id: string;
+  day?: number;
   title: string;
   kicker: string;
   body: string;
   evidence: EvidenceKind;
+  stopType?: 'transfer' | 'archaeological-site' | 'living-community' | 'sailing' | 'museum' | 'market' | 'arrival';
   corpus?: string;
   place?: string;
   period?: string;
   sourceIds: string[];
+  sourcePages?: string[];
+  reflection?: string;
   mediaId?: string;
   detail?: string[];
 }
 
 export interface Journey {
   id: string;
+  origin: ContentOrigin;
   title: string;
   subtitle: string;
   question: string;
@@ -357,14 +396,21 @@ export interface Journey {
   reconstruction: string;
   scenes: JourneyScene[];
   accessibleSummary: string;
+  includedScope?: string;
+  optionalExtensions?: string;
   review?: ContentReview;
 }
 
 export interface KnowledgePath {
   id: string;
+  origin: ContentOrigin;
   title: string;
   blurb: string;
-  steps: { slug: string; why: string }[];
+  purpose?: string;
+  orderReason?: string;
+  steps: { slug: string; why: string; reflection?: string }[];
+  leavesOut?: string;
+  review?: ContentReview;
 }
 
 export interface ObjectRegion {
@@ -384,6 +430,7 @@ export interface ObjectRegion {
 export interface ObjectStudy {
   id: string;
   title: string;
+  origin?: ContentOrigin;
   subtitle: string;
   slug: string;
   period: string;

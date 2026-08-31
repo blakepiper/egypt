@@ -3,19 +3,20 @@
 // behaviour, one narrow-layout treatment, and one set of accessible names.
 
 import {
-  useEffect, useId, useRef, useState, type ReactNode,
+  useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode,
 } from 'react';
-import { Button, EvidenceBadge, Icon, type EvidenceKind } from './index';
+import { Button, EvidenceBadge, Icon, OriginBadge, type EvidenceKind } from './index';
 import { Link } from '../app/state';
-import { allMedia, allSources } from '../generated';
+import { loadSourceRecords } from '../app/contentLoaders';
+import { allMedia } from '../generated';
 import { BASE } from '../app/routes';
-import type { Backlink, CalloutKind, HeadingRef, MediaRecord, RelatedPage, EdgeType } from '../types/content';
+import type { Backlink, CalloutKind, ContentOrigin, HeadingRef, MediaRecord, RelatedPage, EdgeType, SourceEntry } from '../types/content';
 
 /* ------------------------------------------------------------------ layout */
 
 export function PageHeader({
   eyebrow, title, lead, meta, actions,
-}: { eyebrow: string; title: string; lead?: ReactNode; meta?: ReactNode; actions?: ReactNode }) {
+}: { eyebrow: ReactNode; title: string; lead?: ReactNode; meta?: ReactNode; actions?: ReactNode }) {
   return (
     <header className="page-header">
       <span className="kicker">{eyebrow}</span>
@@ -57,7 +58,7 @@ export function CardGrid({ children }: { children: ReactNode }) {
 
 export function Card({
   to, eyebrow, title, children, badge, footer,
-}: { to?: string; eyebrow?: string; title: string; children?: ReactNode; badge?: ReactNode; footer?: ReactNode }) {
+}: { to?: string; eyebrow?: ReactNode; title: string; children?: ReactNode; badge?: ReactNode; footer?: ReactNode }) {
   const body = (
     <>
       {eyebrow && <span className="kicker">{eyebrow}</span>}
@@ -109,6 +110,11 @@ const RELATION_LABELS: Record<EdgeType, string> = {
   contrasts_with: 'Contrasts with',
   contested_by: 'Contested by',
   depicted_in: 'Depicted in',
+  transmitted_through: 'Transmitted through',
+  adapted_by: 'Adapted by',
+  reinterpreted_by: 'Reinterpreted by',
+  manifested_in: 'Manifested in',
+  encountered_at: 'Encountered at',
 };
 
 export function relationLabel(type: EdgeType): string {
@@ -155,22 +161,43 @@ export function RelatedPages({ items }: { items: RelatedPage[] }) {
   );
 }
 
-export function SourceList({ ids }: { ids: string[] }) {
+function useSourceRecords(): SourceEntry[] | null {
+  const [records, setRecords] = useState<SourceEntry[] | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    loadSourceRecords().then((value) => { if (!cancelled) setRecords(value); });
+    return () => { cancelled = true; };
+  }, []);
+  return records;
+}
+
+export function SourceList({ ids, idPrefix }: { ids: string[]; idPrefix?: string }) {
+  const sourceRecords = useSourceRecords();
   if (!ids.length) return null;
-  const entries = ids.map((id) => allSources.find((source) => source.id === id)).filter(Boolean);
+  if (!sourceRecords) {
+    return <ul className="source-list" aria-label="Sources cited"><li><span className="source-list__id">{ids.join(', ')}</span><div>Loading source records…</div></li></ul>;
+  }
+  const entries = ids.map((id) => ({ id, source: sourceRecords.find((source) => source.id === id) }));
   return (
     <ul className="source-list">
-      {entries.map((source) => (
-        <li key={source!.id} id={source!.id.toLowerCase()}>
-          <Link to={`/archive/sources/#${source!.id.toLowerCase()}`} className="source-list__id">{source!.id}</Link>
+      {entries.map(({ id, source }) => (
+        <li key={id} id={idPrefix ? `${idPrefix}-${id.toLowerCase()}` : undefined}>
+          {source ? <Link to={sourceHref(source.origin, id)} className="source-list__id">{id}</Link> : <span className="source-list__id">{id}</span>}
           <div>
-            <strong>{source!.title}</strong>
-            {source!.status && <span className="source-list__status">{source!.status}</span>}
+            {source ? <>
+              <strong>{source.title}</strong>
+              <span className="source-list__badges"><OriginBadge origin={source.origin} />{source.sourceClass && <span className="source-list__class">{source.sourceClass}</span>}</span>
+              {source.status && <span className="source-list__status">{source.status}</span>}
+            </> : <strong>Source record unavailable</strong>}
           </div>
         </li>
       ))}
     </ul>
   );
+}
+
+function sourceHref(origin: 'course' | 'supplemental', id: string): string {
+  return `/archive/sources/${origin === 'supplemental' ? '?catalog=research' : ''}#${id.toLowerCase()}`;
 }
 
 /**
@@ -181,9 +208,56 @@ export function SourceList({ ids }: { ids: string[] }) {
 export function TermDefinition({ term, definition }: { term: string; definition: string }) {
   const [open, setOpen] = useState(false);
   const id = useId();
+  const rootRef = useRef<HTMLSpanElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const bodyRef = useRef<HTMLSpanElement>(null);
+  const [popupStyle, setPopupStyle] = useState<React.CSSProperties>();
+
+  useLayoutEffect(() => {
+    if (!open) { setPopupStyle(undefined); return; }
+    const place = () => {
+      const trigger = triggerRef.current?.getBoundingClientRect();
+      if (!trigger) return;
+      const width = Math.min(384, window.innerWidth - 32);
+      const height = bodyRef.current?.getBoundingClientRect().height ?? 80;
+      const left = Math.min(Math.max(16, trigger.left), Math.max(16, window.innerWidth - width - 16));
+      const below = trigger.bottom + 8;
+      const top = below + height <= window.innerHeight - 16 ? below : Math.max(16, trigger.top - height - 8);
+      setPopupStyle({
+        '--term-popup-left': `${left}px`,
+        '--term-popup-top': `${top}px`,
+        '--term-popup-width': `${width}px`,
+      } as React.CSSProperties);
+    };
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
+    return () => {
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('pointerdown', closeOnOutsideClick);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('pointerdown', closeOnOutsideClick);
+    };
+  }, [open]);
+
   return (
-    <span className="term-definition">
+    <span ref={rootRef} className={`term-definition ${open ? 'is-open' : ''}`}>
       <button
+        ref={triggerRef}
         type="button"
         className="term-definition__trigger"
         aria-expanded={open}
@@ -192,7 +266,7 @@ export function TermDefinition({ term, definition }: { term: string; definition:
       >
         {term}
       </button>
-      <span id={id} className="term-definition__body" hidden={!open}>
+      <span ref={bodyRef} id={id} className="term-definition__body" style={popupStyle} role="note" hidden={!open}>
         {definition}. <Link to="/wiki/glossary/">Glossary</Link>
       </span>
     </span>
@@ -200,17 +274,25 @@ export function TermDefinition({ term, definition }: { term: string; definition:
 }
 
 export function Citation({ id }: { id: string }) {
-  const source = allSources.find((entry) => entry.id === id);
+  const source = useSourceRecords()?.find((entry) => entry.id === id);
   if (!source) return <span>{id}</span>;
-  return <Link className="citation" to={`/archive/sources/#${id.toLowerCase()}`} title={source.title}>{id}</Link>;
+  return <Link className="citation" to={sourceHref(source.origin, id)} title={source.title}>{id}</Link>;
 }
 
 /* ------------------------------------------------------- evidence and rights */
 
 export function EvidenceCallout({ kind, label, children }: { kind: CalloutKind; label: string; children: ReactNode }) {
+  const defaultLabels: Record<CalloutKind, string> = {
+    evidence: 'Evidence',
+    uncertainty: 'Uncertainty',
+    contested: 'Contested interpretation',
+    note: 'Note',
+    reconstruction: 'Reconstruction',
+    research: 'Supplemental research',
+  };
   return (
     <aside className={`archive-callout archive-callout--${kind}`}>
-      <span className="archive-callout__label">{label}</span>
+      <span className="archive-callout__label">{label || defaultLabels[kind]}</span>
       {children}
     </aside>
   );
@@ -241,7 +323,7 @@ export function RightsCredit({ media }: { media: MediaRecord }) {
       {media.objectId && <span> · {media.objectId}</span>}
       <span> · {media.license}</span>
       {media.source.startsWith('http')
-        ? <> · <a href={media.source} target="_blank" rel="noreferrer noopener">Source record</a></>
+        ? <> · <a href={media.source} target="_blank" rel="noreferrer noopener">Source record<span className="sr-only"> (opens in a new tab)</span></a></>
         : <> · {media.source}</>}
     </p>
   );
@@ -509,10 +591,11 @@ export function VideoPlayer({ id }: { id: string }) {
   );
 }
 
-export function EvidenceRow({ evidence, meta }: { evidence: EvidenceKind; meta?: ReactNode }) {
+export function EvidenceRow({ evidence, origin, meta }: { evidence: EvidenceKind; origin?: ContentOrigin; meta?: ReactNode }) {
   return (
     <div className="evidence-row">
       <EvidenceBadge kind={evidence} />
+      {origin && <OriginBadge origin={origin} />}
       {meta}
     </div>
   );

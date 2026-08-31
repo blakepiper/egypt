@@ -6,8 +6,8 @@ import type { SearchIndex } from '../../types/content';
 import { loadSearchIndex, search, type SearchFilters, type SearchHit } from './searchClient';
 import { Link, useApp } from '../../app/state';
 import { Dialog, EmptyState, FilterBar } from '../../design-system/components';
-import { EvidenceBadge, Icon } from '../../design-system';
-import { allPages, allPeriods, allPlaces } from '../../generated';
+import { EvidenceBadge, Icon, OriginBadge } from '../../design-system';
+import { allPeriods, allPlaces } from '../../generated';
 import { sectionLabel } from '../../app/sections';
 
 function useIndex(active: boolean): { index: SearchIndex | null; error: boolean } {
@@ -44,12 +44,28 @@ export function SearchPanel({
 
   const sections = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const page of allPages) counts.set(page.section, (counts.get(page.section) ?? 0) + 1);
+    for (const doc of index?.docs ?? []) counts.set(doc.section, (counts.get(doc.section) ?? 0) + 1);
     return [...counts].map(([id, count]) => ({ id, label: sectionLabel(id as never), count }));
-  }, []);
+  }, [index]);
+
+  const types = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const doc of index?.docs ?? []) counts.set(doc.type, (counts.get(doc.type) ?? 0) + 1);
+    return [...counts]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([id, count]) => ({ id, label: id.replace(/-/g, ' '), count }));
+  }, [index]);
+
+  const tags = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const doc of index?.docs ?? []) for (const tag of doc.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    return [...counts]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([id, count]) => ({ id, label: id.replace(/-/g, ' '), count }));
+  }, [index]);
 
   const onKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'ArrowDown') { event.preventDefault(); setActiveIndex((current) => Math.min(current + 1, hits.length - 1)); }
+    if (event.key === 'ArrowDown') { event.preventDefault(); setActiveIndex((current) => hits.length ? Math.min(current + 1, hits.length - 1) : 0); }
     else if (event.key === 'ArrowUp') { event.preventDefault(); setActiveIndex((current) => Math.max(current - 1, 0)); }
     else if (event.key === 'Enter' && hits[activeIndex]) {
       event.preventDefault();
@@ -77,18 +93,30 @@ export function SearchPanel({
         />
       </label>
       <p id="search-help" className="search-help">
-        {index ? `${index.docs.length} pages, ${index.terms.toLocaleString()} indexed terms. Use the arrow keys and Enter.` : 'Loading the index…'}
-      </p>
+       {index ? `${index.docs.length} indexed items, ${index.terms.toLocaleString()} searchable terms. Use the arrow keys and Enter. Source IDs such as R001 are searchable.` : 'Loading the index…'}
+     </p>
 
-      {showFilters && (
-        <div className="search-filters">
-          <FilterBar label="Section" options={sections} value={filters.section ?? null} onChange={(value) => setFilters((f) => ({ ...f, section: value }))} />
+     {showFilters && (
+       <div className="search-filters">
+         <FilterBar label="Section" options={sections} value={filters.section ?? null} onChange={(value) => setFilters((f) => ({ ...f, section: value }))} />
+          <FilterBar label="Type" options={types} value={filters.type ?? null} onChange={(value) => setFilters((f) => ({ ...f, type: value }))} />
+          <FilterBar
+            label="Origin"
+            options={[
+              { id: 'course', label: 'Course archive' },
+              { id: 'supplemental', label: 'Supplemental research' },
+              { id: 'mixed', label: 'Course + research' },
+            ]}
+            value={filters.origin ?? null}
+            onChange={(value) => setFilters((f) => ({ ...f, origin: value as SearchFilters['origin'] }))}
+          />
           <FilterBar
             label="Evidence"
             options={[
               { id: 'primary', label: 'Primary source' },
               { id: 'scholarship', label: 'Scholarship' },
               { id: 'archive', label: 'Archive synthesis' },
+              { id: 'mixed', label: 'Mixed evidence' },
               { id: 'speculative', label: 'Contested' },
             ]}
             value={filters.evidence ?? null}
@@ -100,27 +128,30 @@ export function SearchPanel({
             value={filters.period ?? null}
             onChange={(value) => setFilters((f) => ({ ...f, period: value }))}
           />
-          <FilterBar
-            label="Place"
-            options={allPlaces.slice(0, 10).map((place) => ({ id: place.id, label: place.label }))}
-            value={filters.place ?? null}
-            onChange={(value) => setFilters((f) => ({ ...f, place: value }))}
-          />
-        </div>
+         <FilterBar
+           label="Place"
+           options={allPlaces.map((place) => ({ id: place.id, label: place.label }))}
+           value={filters.place ?? null}
+           onChange={(value) => setFilters((f) => ({ ...f, place: value }))}
+         />
+          <FilterBar label="Tag" options={tags} value={filters.tag ?? null} onChange={(value) => setFilters((f) => ({ ...f, tag: value }))} />
+       </div>
       )}
 
-      <div className="search-results" id="search-results" role="listbox" aria-label="Search results">
+        <p className="sr-only" aria-live="polite">{query.trim() ? `${hits.length} result${hits.length === 1 ? '' : 's'}` : 'Enter a term to search the archive.'}</p>
         {error && <EmptyState title="The search index could not load">Try reloading the page. Every article is still reachable from the encyclopedia index.</EmptyState>}
         {!error && query.trim() && !hits.length && index && (
           <EmptyState title={`No page matches “${query}”`}>
             Try a broader term, a deity name, or a source ID such as C03.
           </EmptyState>
         )}
+      <div className="search-results" id="search-results" role="listbox" aria-label="Search results">
         {hits.map((hit, index_) => (
           <Link
             key={hit.doc.slug}
             to={hit.doc.route}
             className={`search-result ${index_ === activeIndex ? 'is-active' : ''}`}
+           id={`search-option-${hit.doc.slug}`}
             role="option"
             aria-selected={index_ === activeIndex}
             onNavigate={onNavigate}
@@ -129,6 +160,7 @@ export function SearchPanel({
             <div className="search-result__head">
               <strong>{hit.doc.title}</strong>
               <EvidenceBadge kind={hit.doc.evidence} />
+              <OriginBadge origin={hit.doc.origin} />
             </div>
             <p className="search-result__excerpt">{hit.excerpt}</p>
             <div className="search-result__meta">

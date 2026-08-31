@@ -189,7 +189,28 @@ a:hover { text-decoration-thickness: 2px; }
 .evidence-badge--primary { color: var(--archive-color-sacred); }
 .evidence-badge--archive { color: var(--archive-color-primary); }
 .evidence-badge--scholarship { color: var(--archive-color-success); }
+.evidence-badge--mixed { color: var(--archive-color-gold); }
 .evidence-badge--speculative { color: var(--archive-color-danger); }
+
+.origin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.4rem;
+  border: 1px dashed var(--archive-color-line);
+  background: var(--archive-color-surface-raised);
+  color: var(--archive-color-ink);
+  font-family: var(--archive-font-ui);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.origin-badge::before { content: '□'; }
+.origin-badge--course::before { content: 'C'; }
+.origin-badge--supplemental::before { content: 'R'; }
+.origin-badge--mixed::before { content: 'C+R'; }
 
 .archive-callout {
   padding: var(--archive-space-3);
@@ -218,6 +239,10 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  :root:not([data-motion='allow']) { scroll-behavior: auto; }
+  :root:not([data-motion='allow']) *, :root:not([data-motion='allow']) *::before, :root:not([data-motion='allow']) *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

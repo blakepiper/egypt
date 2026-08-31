@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
 import { allObjects, allPages, decoderGroups } from '../../generated';
 import { Card, CardGrid, DeepZoomViewer, EmptyState, FilterBar, PageHeader, Section, SourceList } from '../../design-system/components';
+import { OriginBadge } from '../../design-system';
 
 const OBJECT_SLUGS = ['book-of-the-dead-plate-30', 'pyramid-texts', 'coffin-texts', 'book-of-the-dead', 'ptahhotep-and-ethical-life', 'visual-decoder'];
 
@@ -19,7 +20,7 @@ export function ObjectsView() {
       <Section title="Studies">
         <CardGrid>
           {allObjects.map((object) => (
-            <Card key={object.id} to={`/objects/${object.id}/`} eyebrow={object.period} title={object.title}>{object.subtitle}</Card>
+            <Card key={object.id} to={`/objects/${object.id}/`} eyebrow={<><span>{object.period}</span> <OriginBadge origin={object.origin ?? 'course'} /></>} title={object.title}>{object.subtitle}</Card>
           ))}
           <Card to="/objects/decoder/" eyebrow="Tool" title="Visual decoder">
             Signs, crowns, priestly cues, and funerary scene cues, with identification confidence kept visible.
@@ -58,7 +59,7 @@ export function ObjectStudyView({ id }: { id: string }) {
   return (
     <div className="page object-study">
       <PageHeader
-        eyebrow={`Object study · ${object.period}`}
+        eyebrow={<><span>Object study · {object.period}</span> <OriginBadge origin={object.origin ?? 'course'} /></>}
         title={object.title}
         lead={object.subtitle}
         actions={article && <Link className="archive-button" to={article.route}>Read the article</Link>}

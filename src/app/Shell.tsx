@@ -6,6 +6,7 @@
 import { useEffect, type ReactNode } from 'react';
 import { Button, Icon } from '../design-system';
 import { Link, useApp } from './state';
+import type { Route } from './routes';
 import { contentManifest } from '../generated';
 
 const NAV = [
@@ -18,6 +19,18 @@ const NAV = [
   { to: '/learn/', label: 'Learn', icon: 'book' as const },
   { to: '/archive/', label: 'Archive', icon: 'archive' as const },
 ];
+
+function navIsCurrent(to: string, route: Route): boolean {
+  if (to === '/wiki/') return route.name === 'wiki-index' || route.name === 'article';
+  if (to === '/atlas/') return route.name === 'atlas';
+  if (to === '/chronology/') return route.name === 'chronology';
+  if (to === '/graph/') return route.name === 'graph';
+  if (to === '/journeys/') return route.name === 'journeys' || route.name === 'journey';
+  if (to === '/objects/') return route.name === 'objects' || route.name === 'object';
+  if (to === '/learn/') return route.name === 'learn';
+  if (to === '/archive/') return route.name === 'archive' || route.name === 'sources';
+  return false;
+}
 
 export function Shell({ children }: { children: ReactNode }) {
   const { route, preferences, update, setSearchOpen, prefersReducedMotion, navigate, closeTab, resetTabs } = useApp();
@@ -58,7 +71,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <ul>
             {NAV.map((item) => (
               <li key={item.to}>
-                <Link to={item.to} className={route.name !== 'home' && item.to.startsWith(`/${route.name}`) ? 'is-current' : ''}>
+                <Link to={item.to} className={navIsCurrent(item.to, route) ? 'is-current' : ''} aria-current={navIsCurrent(item.to, route) ? 'page' : undefined}>
                   <Icon name={item.icon} size={15} />
                   <span>{item.label}</span>
                 </Link>

@@ -159,16 +159,26 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   return <button {...props} ref={ref} type={type} className={`archive-button archive-button--${variant} ${iconOnly ? 'archive-button--icon' : ''} ${className}`} />;
 });
 
-export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'speculative';
+export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'mixed' | 'speculative';
 
 export function EvidenceBadge({ kind }: { kind: EvidenceKind }) {
   const labels: Record<EvidenceKind, string> = {
     primary: 'Primary source',
     archive: 'Archive synthesis',
     scholarship: 'Scholarship',
+    mixed: 'Mixed evidence',
     speculative: 'Artistic / contested',
   };
   return <span className={`evidence-badge evidence-badge--${kind}`}>{labels[kind]}</span>;
+}
+
+export function OriginBadge({ origin }: { origin: 'course' | 'supplemental' | 'mixed' }) {
+  const labels = {
+    course: 'Course archive',
+    supplemental: 'Supplemental research',
+    mixed: 'Course + research',
+  } as const;
+  return <span className={`origin-badge origin-badge--${origin}`}>{labels[origin]}</span>;
 }
 
 export function Callout({ label, children }: { label: string; children: ReactNode }) {

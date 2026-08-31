@@ -43,7 +43,7 @@ function splitPath(path: string): [string, string] {
 export function toAppPath(pathname: string): string {
   const base = BASE.replace(/\/$/, '');
   let path = pathname;
-  if (base && path.startsWith(base)) path = path.slice(base.length);
+  if (base && (path === base || path.startsWith(`${base}/`))) path = path.slice(base.length);
   if (!path.startsWith('/')) path = `/${path}`;
   if (!path.endsWith('/')) path = `${path}/`;
   return path.replace(/\/{2,}/g, '/');

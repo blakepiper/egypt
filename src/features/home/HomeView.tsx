@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Link, useApp } from '../../app/state';
 import { allJourneys, allPages, allPaths, contentManifest } from '../../generated';
 import { Card, CardGrid, Section } from '../../design-system/components';
+import { OriginBadge } from '../../design-system';
 import { HUB_GROUPS } from '../../app/sections';
 
 export function HomeView() {
@@ -37,9 +38,9 @@ export function HomeView() {
         </Section>
       )}
 
-      <Section title="Five ideas that hold the archive together" description="Each links to the article that develops it.">
+      <Section title="Five ideas that hold the archive together" description="Each links to the article that develops it. The archive now moves from method and state formation to vulnerability, reception, and a living river.">
         <CardGrid>
-          {['creation-traditions', 'how-egyptian-religion-works', 'heka-and-operative-ritual', 'temples-priests-and-offerings', 'personhood-and-the-afterlife']
+          {['studying-religion-through-egypt', 'predynastic-egypt-and-state-formation', 'ritual-uncertainty-and-continuity', 'legacy-of-ancient-egypt', 'nile-travel-dahabiyas-and-changing-river']
             .map((slug) => allPages.find((page) => page.slug === slug))
             .filter(Boolean)
             .map((page) => (
@@ -54,7 +55,7 @@ export function HomeView() {
         <CardGrid>
           {allJourneys.map((journey) => (
             <Card key={journey.id} to={`/journeys/${journey.id}/`} eyebrow="Journey" title={journey.title}>
-              {journey.question}
+              <OriginBadge origin={journey.origin} /> {journey.question}
             </Card>
           ))}
         </CardGrid>
@@ -65,6 +66,7 @@ export function HomeView() {
           {allPaths.map((path) => (
             <li key={path.id}>
               <Link to={`/graph/?path=${path.id}`}><strong>{path.title}</strong></Link>
+              <OriginBadge origin={path.origin} />
               <p>{path.blurb}</p>
             </li>
           ))}

@@ -4,9 +4,9 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
-import { allJourneys, allPages } from '../../generated';
+import { allJourneys, allPages, allPlaces } from '../../generated';
 import { INTERACTIVE_VIEWS } from '../../app/views';
-import { Button } from '../../design-system';
+import { Button, OriginBadge } from '../../design-system';
 import {
   Card, CardGrid, EmptyState, EvidenceRow, PageHeader, ReconstructionBoundary, Section, SourceList,
 } from '../../design-system/components';
@@ -21,7 +21,7 @@ export function JourneysView() {
       />
       <CardGrid>
         {allJourneys.map((journey) => (
-          <Card key={journey.id} to={`/journeys/${journey.id}/`} eyebrow={journey.period} title={journey.title} footer={<span>{journey.scenes.length} steps</span>}>
+          <Card key={journey.id} to={`/journeys/${journey.id}/`} eyebrow={journey.period} title={journey.title} footer={<><OriginBadge origin={journey.origin} /> <span>{journey.scenes.length} steps</span></>}>
             {journey.question}
           </Card>
         ))}
@@ -60,6 +60,14 @@ export function JourneyView({ id }: { id: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [journey, step]);
 
+  const moveToStep = (index: number, focus = false) => {
+    const next = Math.max(0, Math.min(journey?.scenes.length ? journey.scenes.length - 1 : 0, index));
+    setStep(next);
+    if (focus && journey) {
+      window.requestAnimationFrame(() => document.getElementById(`journey-tab-${journey.scenes[next].id}`)?.focus());
+    }
+  };
+
   if (!journey) {
     return <div className="page"><EmptyState title="That journey is not in the archive"><Link to="/journeys/">See all journeys</Link></EmptyState></div>;
   }
@@ -76,16 +84,34 @@ export function JourneyView({ id }: { id: string }) {
         meta={<><span>{journey.place}</span><span>{journey.period}</span><span>{journey.scenes.length} steps</span><span>{completed} seen</span></>}
       />
 
+      <div className="journey__provenance"><OriginBadge origin={journey.origin} /><span>{journey.origin === 'supplemental' ? 'A contemporary, research-led route with itinerary boundaries.' : 'A course-derived historical sequence.'}</span></div>
+      {journey.includedScope && <p className="journey__scope"><strong>Included route:</strong> {journey.includedScope}</p>}
+      {journey.optionalExtensions && <aside className="archive-callout archive-callout--uncertainty"><span className="archive-callout__label">Separate optional extensions</span><p>{journey.optionalExtensions}</p></aside>}
+
       <div className="journey__frame">
         <nav className="journey__steps" aria-label="Journey steps">
-          <ol>
+          <ol role="tablist" aria-label="Journey stages">
             {journey.scenes.map((entry, index) => (
-              <li key={entry.id}>
+              <li key={entry.id} role="presentation">
                 <button
+                  id={`journey-tab-${entry.id}`}
                   type="button"
+                  role="tab"
                   className={index === step ? 'is-current' : ''}
+                  aria-selected={index === step}
                   aria-current={index === step ? 'step' : undefined}
-                  onClick={() => setStep(index)}
+                  aria-controls="journey-panel"
+                  aria-setsize={journey.scenes.length}
+                  aria-posinset={index + 1}
+                  tabIndex={index === step ? 0 : -1}
+                  aria-label={`Stage ${index + 1} of ${journey.scenes.length}, day ${entry.day ?? index + 1}, ${entry.stopType?.replace(/-/g, ' ') ?? 'journey stop'}: ${entry.title}`}
+                  onClick={() => moveToStep(index)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { event.preventDefault(); moveToStep(index + 1, true); }
+                    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { event.preventDefault(); moveToStep(index - 1, true); }
+                    if (event.key === 'Home') { event.preventDefault(); moveToStep(0, true); }
+                    if (event.key === 'End') { event.preventDefault(); moveToStep(journey.scenes.length - 1, true); }
+                  }}
                 >
                   <span className="journey__step-number">{index + 1}</span>
                   <span>{entry.title}</span>
@@ -95,18 +121,27 @@ export function JourneyView({ id }: { id: string }) {
           </ol>
         </nav>
 
-        <div className={`journey__scene ${prefersReducedMotion ? 'is-static' : ''}`} key={scene.id} aria-live="polite">
+        <div className="journey__status" role="status" aria-live="polite">Stage {step + 1} of {journey.scenes.length}: {scene.title}. Day {scene.day ?? step + 1}; {scene.stopType?.replace(/-/g, ' ') ?? 'journey stop'}{scene.place ? `; ${scene.place}` : ''}. {scene.sourcePages?.length ?? 0} linked reading {scene.sourcePages?.length === 1 ? 'page' : 'pages'}.</div>
+        <div className={`journey__scene ${prefersReducedMotion ? 'is-static' : ''}`} key={scene.id} id="journey-panel" role="tabpanel" aria-labelledby={`journey-tab-${scene.id}`} tabIndex={-1}>
           <span className="kicker">{scene.kicker}</span>
           <h2>{scene.title}</h2>
           <EvidenceRow
             evidence={scene.evidence}
-            meta={<>{scene.corpus && <span>{scene.corpus}</span>}{scene.place && <span>{scene.place}</span>}</>}
+            origin={journey.origin}
+            meta={<>{scene.day && <span>Day {scene.day}</span>}{scene.stopType && <span>{scene.stopType.replace(/-/g, ' ')}</span>}{scene.corpus && <span>{scene.corpus}</span>}{scene.place && <span>{scene.place}</span>}</>}
           />
           <p className="journey__body">{scene.body}</p>
           {scene.detail && scene.detail.length > 0 && (
             <ul className="journey__detail">{scene.detail.map((line, index) => <li key={index}>{line}</li>)}</ul>
           )}
           {scene.sourceIds.length > 0 && <SourceList ids={scene.sourceIds} />}
+          {scene.sourcePages && scene.sourcePages.length > 0 && (
+            <div className="journey__context">
+              <strong>Read alongside this stage</strong>
+              <ul className="inline-list">{scene.sourcePages.map((slug) => { const page = allPages.find((entry) => entry.slug === slug); return page ? <li key={slug}><Link to={page.route}>{page.title}</Link></li> : null; })}</ul>
+            </div>
+          )}
+          {scene.reflection && <p className="journey__reflection"><strong>Pause and reflect:</strong> {scene.reflection}</p>}
 
           <div className="journey__controls">
             <Button onClick={() => setStep((current) => Math.max(0, current - 1))} disabled={step === 0}>Previous</Button>
@@ -124,14 +159,20 @@ export function JourneyView({ id }: { id: string }) {
         sources={journey.sourceIds}
       />
 
+      <JourneyRouteMap journey={journey} />
+
       <Section title="The whole journey as text" description={journey.accessibleSummary}>
         <ol className="journey__transcript">
           {journey.scenes.map((entry) => (
             <li key={entry.id}>
               <h3>{entry.title}</h3>
               <p className="muted">{entry.kicker}{entry.corpus ? ` · ${entry.corpus}` : ''}</p>
+              <p className="muted">Stage {journey.scenes.indexOf(entry) + 1} · Day {entry.day ?? journey.scenes.indexOf(entry) + 1} · {entry.stopType?.replace(/-/g, ' ') ?? 'journey stop'}{entry.place ? ` · ${entry.place}` : ''}</p>
               <p>{entry.body}</p>
               {entry.detail && <ul>{entry.detail.map((line, index) => <li key={index}>{line}</li>)}</ul>}
+              {entry.sourceIds.length > 0 && <SourceList ids={entry.sourceIds} />}
+              {entry.sourcePages && entry.sourcePages.length > 0 && <ul className="inline-list">{entry.sourcePages.map((slug) => { const page = allPages.find((item) => item.slug === slug); return page ? <li key={slug}><Link to={page.route}>{page.title}</Link></li> : null; })}</ul>}
+              {entry.reflection && <p><strong>Pause and reflect:</strong> {entry.reflection}</p>}
             </li>
           ))}
         </ol>
@@ -146,5 +187,37 @@ export function JourneyView({ id }: { id: string }) {
         </ul>
       </Section>
     </div>
+  );
+}
+
+/** A public-location route sketch. Unnamed or private scenes intentionally do not become markers. */
+function JourneyRouteMap({ journey }: { journey: (typeof allJourneys)[number] }) {
+  const stops = journey.scenes.map((scene, index) => {
+    if (!scene.place) return null;
+    const place = allPlaces.find((entry) => (entry.visibility ?? 'public') === 'public' && (entry.id === scene.place || entry.label.toLowerCase() === scene.place?.toLowerCase()));
+    return place ? { scene, place, index } : null;
+  }).filter(Boolean) as { scene: (typeof journey.scenes)[number]; place: (typeof allPlaces)[number]; index: number }[];
+  if (stops.length < 2) return null;
+  const points = stops.map(({ place }) => `${place.x},${place.y}`).join(' ');
+  return (
+    <Section title="Public route sketch" description="The line follows the ordered public locations recorded for this journey. Scenes without a verified public place remain in the transcript and are not pinned.">
+      <div className="journey-route">
+        <svg className="journey-route__map" viewBox="0 0 100 104" role="img" aria-labelledby="journey-route-title journey-route-description">
+          <title id="journey-route-title">Public locations along {journey.title}</title>
+          <desc id="journey-route-description">A southbound schematic route through {stops.map(({ place }) => place.label).join(', ')}.</desc>
+          <path className="journey-route__river" d="M50 2 C 46 24, 54 40, 48 56 C 44 70, 54 82, 50 100" />
+          <polyline className="journey-route__line" points={points} />
+          {stops.map(({ scene, place, index }) => (
+            <g key={`${scene.id}-${place.id}`} className="journey-route__stop">
+              <circle cx={place.x} cy={place.y} r="2" />
+              <text x={place.x + (place.x < 50 ? 3 : -3)} y={place.y - 2} textAnchor={place.x < 50 ? 'start' : 'end'}>{index + 1}. {place.label}</text>
+            </g>
+          ))}
+        </svg>
+        <ol className="journey-route__list">
+          {stops.map(({ scene, place, index }) => <li key={`${scene.id}-${place.id}`}><strong>Stage {index + 1}: {place.label}</strong><span>{scene.title}</span></li>)}
+        </ol>
+      </div>
+    </Section>
   );
 }

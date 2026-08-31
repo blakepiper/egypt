@@ -6,6 +6,7 @@ import { useMemo, useState } from 'react';
 import type { GraphSlice } from '../../types/content';
 import { Link, useApp } from '../../app/state';
 import { relationLabel } from '../../design-system/components';
+import { OriginBadge } from '../../design-system';
 
 const NODE_KIND_LABELS: Record<string, string> = {
   article: 'Article', concept: 'Concept', deity: 'Deity', place: 'Place', period: 'Period',
@@ -39,7 +40,7 @@ export function NeighborhoodGraph({ slice, originId }: { slice: GraphSlice; orig
   return (
     <div className="neighborhood">
       {view && (
-        <svg className="neighborhood__canvas" viewBox="-170 -170 340 340" role="img" aria-label={`Diagram of ${relationships.length} connections. The same connections are listed below.`}>
+        <svg className="neighborhood__canvas" viewBox="-170 -170 340 340" role="group" aria-label={`Diagram of ${relationships.length} connections. The same connections are listed below.`}>
           {slice.edges.map((edge, index) => {
             const from = view.placed.get(edge.from);
             const to = view.placed.get(edge.to);
@@ -52,7 +53,19 @@ export function NeighborhoodGraph({ slice, originId }: { slice: GraphSlice; orig
             if (!point) return null;
             const isOrigin = node.id === originId;
             return (
-              <g key={node.id} className={`neighborhood__node neighborhood__node--${node.kind} ${isOrigin ? 'is-origin' : ''} ${focused === node.id ? 'is-focused' : ''}`}>
+              <g
+                key={node.id}
+                className={`neighborhood__node neighborhood__node--${node.kind} ${isOrigin ? 'is-origin' : ''} ${focused === node.id ? 'is-focused' : ''}`}
+                role="button"
+                tabIndex={0}
+                aria-label={`${node.label}, ${NODE_KIND_LABELS[node.kind] ?? node.kind}, ${node.origin} origin, ${node.evidence} evidence`}
+                aria-pressed={focused === node.id}
+                onClick={() => setFocused(isOrigin || focused === node.id ? null : node.id)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setFocused(isOrigin || focused === node.id ? null : node.id); }
+                }}
+              >
+                <title>{node.label}</title>
                 <circle cx={point.x} cy={point.y} r={isOrigin ? 9 : 5.5} />
                 {(isOrigin || focused === node.id) && (
                   <text x={point.x} y={point.y - 14} textAnchor="middle">{node.label}</text>
@@ -77,6 +90,7 @@ export function NeighborhoodGraph({ slice, originId }: { slice: GraphSlice; orig
               ? <Link to={other!.route}>{other!.label}</Link>
               : <span>{other!.label}</span>}
             <span className="neighborhood__kind">{NODE_KIND_LABELS[other!.kind] ?? other!.kind}</span>
+            <OriginBadge origin={other!.origin} />
             {edge.note && <p className="neighborhood__note">{edge.note}</p>}
           </li>
         ))}

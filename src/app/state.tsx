@@ -4,7 +4,7 @@
 // no longer understands.
 
 import {
-  createContext, useCallback, useContext, useEffect, useMemo, useRef, useState,
+  createContext, useCallback, useContext, useEffect, useMemo, useState,
   type ReactNode,
 } from 'react';
 import { BASE, href, parseRoute, toAppPath, type Route } from './routes';
@@ -80,12 +80,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [preferences, setPreferences] = useState<Preferences>(load);
   const [searchOpen, setSearchOpen] = useState(false);
   const [systemReducedMotion, setSystemReducedMotion] = useState(false);
-  const skipScroll = useRef(false);
 
   useEffect(() => {
-    const onPopState = () => setLocation(currentLocation());
+    const onLocationChange = () => setLocation(currentLocation());
+    const onPopState = () => onLocationChange();
+    const onHashChange = () => onLocationChange();
     window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
+    window.addEventListener('hashchange', onHashChange);
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+      window.removeEventListener('hashchange', onHashChange);
+    };
   }, []);
 
   useEffect(() => {
@@ -100,11 +105,35 @@ export function AppProvider({ children }: { children: ReactNode }) {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(preferences)); } catch { /* storage may be unavailable */ }
   }, [preferences]);
 
+  // Fragments are a cross-feature contract: article headings and source
+  // records should behave the same after a direct load, client navigation, or
+  // browser back/forward. A short retry window accommodates lazy article data.
+  const prefersReducedMotion = preferences.reducedMotion === 'reduce'
+    || (preferences.reducedMotion === 'system' && systemReducedMotion);
+  useEffect(() => {
+    if (!location.hash) return;
+    let attempts = 0;
+    let timer: number | undefined;
+    let targetId = location.hash;
+    try { targetId = decodeURIComponent(location.hash); } catch { /* keep the encoded target */ }
+    const focusFragment = () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+        (target as HTMLElement).focus({ preventScroll: true });
+        return;
+      }
+      attempts += 1;
+      if (attempts < 24) timer = window.setTimeout(focusFragment, 50);
+    };
+    timer = window.setTimeout(focusFragment, 0);
+    return () => { if (timer !== undefined) window.clearTimeout(timer); };
+  }, [location.path, location.hash, prefersReducedMotion]);
+
   const navigate = useCallback((path: string, options?: { replace?: boolean }) => {
     const url = href(path);
     if (options?.replace) window.history.replaceState(null, '', url);
     else window.history.pushState(null, '', url);
-    skipScroll.current = Boolean(path.includes('#'));
     setLocation(currentLocation());
   }, []);
 
@@ -159,10 +188,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
     closeTab,
     resetTabs,
     setProgress,
-    prefersReducedMotion: preferences.reducedMotion === 'reduce' || (preferences.reducedMotion === 'system' && systemReducedMotion),
+    prefersReducedMotion,
     searchOpen,
     setSearchOpen,
-  }), [route, search, location.hash, navigate, preferences, update, reset, toggleBookmark, openTab, closeTab, resetTabs, setProgress, systemReducedMotion, searchOpen]);
+  }), [route, search, location.hash, navigate, preferences, update, reset, toggleBookmark, openTab, closeTab, resetTabs, setProgress, prefersReducedMotion, searchOpen]);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
@@ -199,6 +228,7 @@ export function Link({
       }}
     >
       {children}
+      {external && <span className="sr-only"> (opens in a new tab)</span>}
     </a>
   );
 }

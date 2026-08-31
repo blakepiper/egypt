@@ -125,6 +125,17 @@ test.describe('search', () => {
     await page.getByRole('group', { name: 'Evidence' }).getByRole('button', { name: 'Scholarship' }).click();
     await expect(page.getByRole('option').first()).toBeVisible();
   });
+
+  test('research provenance is searchable and can be filtered by origin', async ({ page }) => {
+    await page.goto('search/');
+    const input = page.getByRole('searchbox').first();
+    await input.fill('R082');
+    await expect(page.getByRole('option').first()).toContainText(/Living Nile|camel|community/i);
+    await page.getByRole('group', { name: 'Origin' }).getByRole('button', { name: 'Supplemental research' }).click();
+    await expect(page.getByRole('option').first()).toBeVisible();
+    await page.getByRole('group', { name: 'Origin' }).getByRole('button', { name: 'Course archive' }).click();
+    await expect(page.getByRole('option')).toHaveCount(0);
+  });
 });
 
 test.describe('graph, atlas, and chronology', () => {
@@ -136,6 +147,41 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(page).toHaveURL(/node=/);
     await expect(page.getByRole('heading', { name: 'Why these are connected' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Every visible node as a list' })).toBeVisible();
+    const relationships = page.locator('details.graph-list--edges');
+    await expect(relationships).toContainText('Every visible relationship as a list');
+    await relationships.locator('summary').click();
+    await expect(relationships.locator('ul')).toBeVisible();
+    await expect(relationships.locator('li')).not.toHaveCount(0);
+  });
+
+  test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
+    await page.goto('graph/');
+    await expect(page.locator('.graph-node').first()).toBeVisible();
+    const canvas = page.locator('.graph-canvas');
+    const camera = canvas.locator(':scope > g');
+    await page.getByRole('button', { name: 'Zoom in' }).click();
+    await expect(camera).toHaveAttribute('transform', /scale\(1\.25\)/);
+
+    const node = page.locator('.graph-node').first();
+    const dot = node.locator('.graph-node__dot');
+    await dot.scrollIntoViewIfNeeded();
+    const dotBox = await dot.boundingBox();
+    if (!dotBox) throw new Error('The first graph node has no hit area');
+    const beforeNode = await dot.getAttribute('cx');
+    await page.mouse.move(dotBox.x + dotBox.width / 2, dotBox.y + dotBox.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(dotBox.x + dotBox.width / 2 + 32, dotBox.y + dotBox.height / 2 + 18, { steps: 4 });
+    await page.mouse.up();
+    await expect(dot).not.toHaveAttribute('cx', beforeNode ?? '');
+
+    const canvasBox = await canvas.boundingBox();
+    if (!canvasBox) throw new Error('The graph canvas has no hit area');
+    const beforePan = await camera.getAttribute('transform');
+    await page.mouse.move(canvasBox.x + 12, canvasBox.y + 12);
+    await page.mouse.down();
+    await page.mouse.move(canvasBox.x + 30, canvasBox.y + 26, { steps: 3 });
+    await page.mouse.up();
+    await expect(camera).not.toHaveAttribute('transform', beforePan ?? '');
   });
 
   test('the atlas selects a place from the list and the map stays in sync', async ({ page }) => {
@@ -162,6 +208,32 @@ test.describe('journeys and objects', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'The open court' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'How this was reconstructed' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'The whole journey as text' })).toBeVisible();
+  });
+
+  test('J01 exposes all twelve stages, public route stops, and scene reading', async ({ page }) => {
+    await page.goto('journeys/esna-to-aswan-dahabiya/');
+    await expect(page.getByRole('heading', { level: 1, name: 'Sailing south: Esna to Aswan' })).toBeVisible();
+    await expect(page.locator('.journey__steps button')).toHaveCount(12);
+    await expect(page.getByText(/private promotional itinerary/i).first()).toBeVisible();
+    await expect(page.getByText('Read alongside this stage', { exact: true })).toBeVisible();
+    await expect(page.locator('.journey-route__list li')).toHaveCount(8);
+    await expect(page.locator('.journey-route')).not.toContainText('El Hegz');
+    await expect(page.locator('.journey__transcript')).toContainText('El Hegz');
+    await page.locator('.journey__steps button').nth(11).click();
+    await expect(page.getByRole('heading', { level: 2, name: 'Aswan checkout' })).toBeVisible();
+    await expect(page.getByText(/not included in this journey/i)).toBeVisible();
+  });
+
+  test('J01 stages expose tab semantics and keyboard progression', async ({ page }) => {
+    await page.goto('journeys/esna-to-aswan-dahabiya/');
+    const tabs = page.getByRole('tab');
+    await expect(tabs).toHaveCount(12);
+    await expect(tabs.nth(0)).toHaveAttribute('aria-selected', 'true');
+    await tabs.nth(0).press('ArrowRight');
+    await expect(tabs.nth(1)).toBeFocused();
+    await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
+    await expect(page.locator('[role="tabpanel"]')).toHaveAttribute('aria-labelledby', 'journey-tab-esna');
+    await expect(page.getByRole('status')).toContainText('Stage 2 of 12');
   });
 
   test('the object study separates what is visible from how it is read', async ({ page }) => {
@@ -243,6 +315,15 @@ test.describe('learn', () => {
     await page.getByRole('button', { name: /Reveal \d+ prompts/ }).first().click();
     await expect(page.getByText(/Interpretive caution/).first()).toBeVisible();
   });
+
+  test('the expanded learning paths are discoverable with their deliberate sequence', async ({ page }) => {
+    await page.goto('learn/');
+    for (const title of [
+      'What religion does', 'How an early state formed', 'Ritual, continuity, and uncertainty',
+      'Permanence, suffering, and impermanence', 'The afterlives of Egypt', 'Vulnerable bodies and practical care',
+      'Material and more-than-human religion', 'Prepare for the Esna-to-Aswan journey',
+    ]) await expect(page.getByRole('heading', { level: 3, name: title })).toBeVisible();
+  });
 });
 
 test.describe('preferences', () => {
@@ -265,7 +346,7 @@ test.describe('preferences', () => {
 });
 
 test.describe('accessibility and layout', () => {
-  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'learn/', 'archive/sources/', 'about/'];
+  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'learn/', 'archive/sources/', 'archive/sources/?catalog=research', 'about/'];
 
   for (const route of routes) {
     test(`${route} has no automated accessibility violations`, async ({ page }) => {
@@ -291,7 +372,7 @@ test.describe('accessibility and layout', () => {
   });
 
   test('no route overflows the document horizontally', async ({ page }) => {
-    for (const route of ['./', 'wiki/chronology/', 'atlas/', 'graph/', 'archive/sources/']) {
+    for (const route of ['./', 'wiki/chronology/', 'atlas/', 'graph/', 'journeys/esna-to-aswan-dahabiya/', 'archive/sources/']) {
       await page.goto(route);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       expect(overflow, `${route} overflows`).toBeLessThanOrEqual(1);
@@ -310,11 +391,19 @@ test.describe('accessibility and layout', () => {
     await expect(page.locator('html')).toHaveAttribute('data-motion', 'reduce');
     await expect(page.locator('.journey__scene')).toHaveClass(/is-static/);
   });
+
+  test('the research source route keeps the private itinerary non-disclosive', async ({ page }) => {
+    await page.goto('archive/sources/?catalog=research#r069');
+    const itinerary = page.locator('#r069');
+    await expect(itinerary).toBeVisible();
+    await expect(itinerary.locator('a[href*="raw"], a[href*="\.pdf"]')).toHaveCount(0);
+    await expect(page.locator('body')).not.toContainText('/Users/');
+  });
 });
 
 test.describe('deployment', () => {
   test('every generated route reloads directly', async ({ page }) => {
-    for (const route of ['wiki/set/', 'journeys/nile-year/', 'objects/plate-30/', 'archive/sources/', 'browse/', 'specimen/']) {
+    for (const route of ['wiki/set/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'objects/plate-30/', 'archive/sources/', 'browse/', 'specimen/']) {
       const response = await page.goto(route);
       expect(response?.status(), route).toBe(200);
       await expect(page.locator('#main-content')).not.toBeEmpty();

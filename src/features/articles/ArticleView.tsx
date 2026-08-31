@@ -23,7 +23,7 @@ export function loadArticle(slug: string): Promise<ArticlePayload> | null {
 }
 
 export function ArticleView({ slug }: { slug: string }) {
-  const { hash, openTab, preferences, toggleBookmark } = useApp();
+  const { openTab, preferences, toggleBookmark } = useApp();
   const [article, setArticle] = useState<ArticlePayload | null>(null);
   const [error, setError] = useState(false);
   const [activeHeading, setActiveHeading] = useState<string | null>(null);
@@ -44,15 +44,6 @@ export function ArticleView({ slug }: { slug: string }) {
     document.title = `${article.title} — The Living Archive`;
     openTab({ slug: article.slug, title: article.title });
   }, [article, openTab]);
-
-  // Move focus and scroll to a section when the URL carries a fragment.
-  useEffect(() => {
-    if (!article || !hash) return;
-    const target = document.getElementById(hash);
-    if (!target) return;
-    target.scrollIntoView({ behavior: preferences.reducedMotion === 'reduce' ? 'auto' : 'smooth', block: 'start' });
-    (target as HTMLElement).focus({ preventScroll: true });
-  }, [article, hash, preferences.reducedMotion]);
 
   // Reading position indicator, driven by which heading is currently on screen.
   useEffect(() => {
@@ -116,6 +107,7 @@ export function ArticleView({ slug }: { slug: string }) {
         {article.meta.summary && <p className="article__summary">{article.meta.summary}</p>}
         <EvidenceRow
           evidence={article.meta.evidence}
+          origin={article.meta.origin}
           meta={
             <>
               <span className="article__type">{article.meta.type.replace(/-/g, ' ')}</span>
@@ -136,7 +128,7 @@ export function ArticleView({ slug }: { slug: string }) {
           <Button onClick={() => { void navigator.clipboard?.writeText(window.location.href); }}>Copy link</Button>
           {repository && (
             <a className="archive-button archive-button--quiet" href={`${repository}/blob/main/${article.sourcePath}`} target="_blank" rel="noreferrer noopener">
-              View Markdown source
+              View Markdown source<span className="sr-only"> (opens in a new tab)</span>
             </a>
           )}
         </div>

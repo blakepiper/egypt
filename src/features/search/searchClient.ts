@@ -2,7 +2,7 @@
 // is fetched the first time search opens, so an ordinary article route never
 // pays for it.
 
-import type { SearchDoc, SearchIndex } from '../../types/content';
+import type { ContentOrigin, SearchDoc, SearchIndex } from '../../types/content';
 
 export interface SearchHit {
   doc: SearchDoc;
@@ -18,6 +18,7 @@ export interface SearchFilters {
   place?: string | null;
   evidence?: string | null;
   tag?: string | null;
+  origin?: ContentOrigin | null;
 }
 
 let cached: SearchIndex | null = null;
@@ -25,10 +26,15 @@ let pending: Promise<SearchIndex> | null = null;
 
 export function loadSearchIndex(): Promise<SearchIndex> {
   if (cached) return Promise.resolve(cached);
-  pending ??= import('../../generated/search-index.json').then((module) => {
-    cached = module.default as unknown as SearchIndex;
-    return cached;
-  });
+  const base = typeof document === 'undefined'
+    ? '/'
+    : document.querySelector('meta[name="archive-base"]')?.getAttribute('content') ?? '/';
+  pending ??= fetch(base + 'generated/search-index.json')
+    .then((response) => {
+      if (!response.ok) throw new Error('Search index request failed');
+      return response.json() as Promise<SearchIndex>;
+    })
+    .then((value) => { cached = value; return value; });
   return pending;
 }
 
@@ -67,6 +73,13 @@ const WEIGHTS: Record<number, number> = {
 export function search(index: SearchIndex, query: string, filters: SearchFilters = {}, limit = 40): SearchHit[] {
   const tokens = tokenize(query);
   if (!tokens.length) return [];
+  const explicitlySeekingCatalog = tokens.some((token) => (
+    /^[cr]\d+$/i.test(token)
+    || ['source', 'sources', 'catalog', 'course', 'supplemental', 'research'].includes(token)
+  ));
+  const catalogIntent = tokens.includes('source') || tokens.includes('sources') || tokens.includes('catalog');
+  const wantsCourseCatalog = catalogIntent && tokens.includes('course');
+  const wantsResearchCatalog = catalogIntent && (tokens.includes('research') || tokens.includes('supplemental'));
   const scores = new Map<number, { score: number; headings: Set<number>; matchedTokens: Set<string> }>();
 
   for (const token of tokens) {
@@ -102,12 +115,16 @@ export function search(index: SearchIndex, query: string, filters: SearchFilters
     if (filters.period && !doc.periods.includes(filters.period)) continue;
     if (filters.place && !doc.places.includes(filters.place)) continue;
     if (filters.tag && !doc.tags.includes(filters.tag)) continue;
+    if (filters.origin && doc.origin !== filters.origin) continue;
     // Require every query token to appear somewhere in the page.
     const coverage = entry.matchedTokens.size / tokens.length;
     if (coverage < 1 && tokens.length > 1) entry.score *= coverage * 0.6;
+    let catalogAdjustment = !explicitlySeekingCatalog && doc.type === 'source-catalog' ? 0.28 : 1;
+    if (wantsCourseCatalog && doc.slug === 'source-catalog') catalogAdjustment = 6;
+    if (wantsResearchCatalog && doc.slug === 'research-catalog') catalogAdjustment = 6;
     hits.push({
       doc,
-      score: entry.score,
+      score: entry.score * catalogAdjustment,
       matchedHeadings: [...entry.headings].map((i) => doc.headings[i]?.text).filter(Boolean) as string[],
       excerpt: excerptFor(index, doc, tokens),
     });

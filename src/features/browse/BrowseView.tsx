@@ -2,18 +2,22 @@
 // place, deity, source group, and media. These lists are the accessible
 // counterpart to search and to the graph.
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
-import { allEntities, allMedia, allPages, allPeriods, allPlaces, allSources } from '../../generated';
+import { allEntities, allMedia, allPages, allPeriods, allPlaces, contentManifest } from '../../generated';
+import { loadSourceRecords } from '../../app/contentLoaders';
 import { FilterBar, PageHeader, Section, EmptyState } from '../../design-system/components';
+import { OriginBadge } from '../../design-system';
 import { HUB_GROUPS, sectionLabel } from '../../app/sections';
+import type { ContentOrigin, SourceEntry } from '../../types/content';
 
-type Mode = 'alphabetical' | 'hub' | 'type' | 'deity' | 'place' | 'period' | 'source' | 'media';
+type Mode = 'alphabetical' | 'hub' | 'type' | 'origin' | 'deity' | 'place' | 'period' | 'source' | 'media';
 
 const MODES: { id: Mode; label: string }[] = [
   { id: 'alphabetical', label: 'A–Z' },
   { id: 'hub', label: 'By hub' },
   { id: 'type', label: 'By type' },
+  { id: 'origin', label: 'By origin' },
   { id: 'deity', label: 'Deities' },
   { id: 'place', label: 'Places' },
   { id: 'period', label: 'Periods' },
@@ -24,11 +28,20 @@ const MODES: { id: Mode; label: string }[] = [
 export function BrowseView() {
   const { search } = useApp();
   const tagFilter = search.get('tag');
+  const queryOrigin = search.get('origin') as ContentOrigin | null;
   const [mode, setMode] = useState<Mode>(tagFilter ? 'alphabetical' : 'alphabetical');
+  const [originFilter, setOriginFilter] = useState<ContentOrigin | null>(queryOrigin);
+  const [allSources, setAllSources] = useState<SourceEntry[] | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadSourceRecords().then((value) => { if (!cancelled) setAllSources(value); });
+    return () => { cancelled = true; };
+  }, []);
 
   const pages = useMemo(
-    () => (tagFilter ? allPages.filter((page) => page.tags.includes(tagFilter)) : allPages),
-    [tagFilter],
+    () => allPages.filter((page) => (!tagFilter || page.tags.includes(tagFilter)) && (!originFilter || page.origin === originFilter)),
+    [tagFilter, originFilter],
   );
 
   const letters = useMemo(() => {
@@ -51,9 +64,19 @@ export function BrowseView() {
       <PageHeader
         eyebrow="Browse"
         title="Every way into the archive"
-        lead={`${allPages.length} pages, ${allEntities.length} catalogued entities, ${allPlaces.length} places, ${allSources.length} source groups.`}
+        lead={`${allPages.length} pages, ${allEntities.length} catalogued entities, ${allPlaces.length} places, ${contentManifest.counts.sources} source groups.`}
       />
       <FilterBar label="View" options={MODES} value={mode} onChange={(value) => setMode((value as Mode) ?? 'alphabetical')} allLabel="A–Z" />
+      <FilterBar
+        label="Origin"
+        options={[
+          { id: 'course', label: 'Course archive' },
+          { id: 'supplemental', label: 'Supplemental research' },
+          { id: 'mixed', label: 'Course + research' },
+        ]}
+        value={originFilter}
+        onChange={(value) => setOriginFilter(value as ContentOrigin | null)}
+      />
 
       {tagFilter && (
         <p className="browse__filter-note">
@@ -71,7 +94,7 @@ export function BrowseView() {
                 {group.map((page) => (
                   <li key={page.slug}>
                     <Link to={page.route}>{page.title}</Link>
-                    <span>{sectionLabel(page.section)}</span>
+                    <span><OriginBadge origin={page.origin} /> {sectionLabel(page.section)}</span>
                   </li>
                 ))}
               </ul>
@@ -106,6 +129,22 @@ export function BrowseView() {
               </ul>
             </div>
           ))}
+        </Section>
+      )}
+
+      {mode === 'origin' && (
+        <Section title="By origin" description="Origin describes how an item entered the archive. Evidence strength is shown separately on each page.">
+          {(['course', 'supplemental', 'mixed'] as ContentOrigin[]).map((origin) => {
+            const group = allPages.filter((page) => page.origin === origin);
+            return (
+              <div key={origin} className="index-block">
+                <h3><OriginBadge origin={origin} /></h3>
+                <ul className="index-list">
+                  {group.map((page) => <li key={page.slug}><Link to={page.route}>{page.title}</Link><span>{page.words.toLocaleString()} words</span></li>)}
+                </ul>
+              </div>
+            );
+          })}
         </Section>
       )}
 
@@ -155,19 +194,22 @@ export function BrowseView() {
         </Section>
       )}
 
-      {mode === 'source' && (
-        <Section title="Source groups">
-          <ul className="entity-list">
-            {allSources.map((source) => (
-              <li key={source.id}>
-                <strong>{source.id} — {source.title}</strong>
-                <p>{source.status}</p>
-                <Link to={`/archive/sources/#${source.id.toLowerCase()}`}>Full record</Link>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      )}
+     {mode === 'source' && (
+       <Section title="Source groups">
+          {!allSources
+            ? <p role="status" aria-live="polite">Loading source groups…</p>
+            : <ul className="entity-list">
+              {allSources.map((source) => (
+                <li key={source.id}>
+                  <strong>{source.id} — {source.title}</strong>
+                  <span className="source-list__badges"><OriginBadge origin={source.origin} /> {source.sourceClass}</span>
+                  <p>{source.status}</p>
+                  <Link to={`/archive/sources/${source.origin === 'supplemental' ? '?catalog=research' : ''}#${source.id.toLowerCase()}`}>Full record</Link>
+                </li>
+              ))}
+            </ul>}
+       </Section>
+     )}
 
       {mode === 'media' && (
         <Section title="Media" description="Only cleared assets appear in a production build.">
