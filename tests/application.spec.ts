@@ -270,6 +270,37 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(node).toHaveCSS('transition-property', 'none');
   });
 
+  test('the graph explains how two nodes are connected', async ({ page }) => {
+    await page.goto('graph/?from=entity%3Amaat&to=place%3Akom-ombo');
+    const steps = page.locator('.graph-path li');
+    await expect(steps).not.toHaveCount(0);
+    await expect(steps).toHaveCount(3);
+    await expect(steps.first()).toContainText('maintains');
+    await expect(steps.first()).toContainText('Offering ritual is presented');
+    await expect(page.locator('.graph-edge.is-path')).toHaveCount(3);
+    await expect(page.locator('.graph-node.is-path')).toHaveCount(4);
+    await expect(page.locator('.graph-node.is-dimmed')).not.toHaveCount(0);
+  });
+
+  test('the graph explains why an unreachable pair has no path', async ({ page }) => {
+    await page.goto('graph/?from=entity%3Asobek&to=entity%3Aakh');
+    await expect(page.locator('.graph-path li')).toHaveCount(0);
+    await expect(page.locator('.graph-path-status')).toContainText('Sobek has no curated relations yet');
+  });
+
+  test('the two node pickers create a shareable path', async ({ page }) => {
+    await page.goto('graph/');
+    const sourcePicker = page.locator('.graph-controls__find').first();
+    await sourcePicker.getByRole('searchbox').fill('Maat');
+    await sourcePicker.getByRole('button', { name: /^Maat Concept/ }).click();
+    await expect(page).toHaveURL(/from=entity%3Amaat/);
+    const targetPicker = page.locator('.graph-controls__find--target');
+    await targetPicker.getByRole('searchbox').fill('Kom Ombo');
+    await targetPicker.getByRole('button', { name: /Kom Ombo.*Place/ }).click();
+    await expect(page).toHaveURL(/from=entity%3Amaat.*to=place%3Akom-ombo/);
+    await expect(page.locator('.graph-path li')).toHaveCount(3);
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();

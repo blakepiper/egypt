@@ -667,6 +667,8 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-node.is-focused .graph-node__dot { stroke-width: 3; stroke: var(--archive-color-primary); }
 .graph-canvas.has-hover .graph-node.is-dimmed { opacity: 0.22; }
 .graph-canvas.has-hover .graph-edge.is-dimmed { opacity: 0.12; }
+.graph-canvas.has-hover .graph-node.is-path .graph-node__dot { stroke: var(--archive-color-secondary); stroke-width: 3; }
+.graph-canvas.has-hover .graph-edge.is-path line { stroke: var(--archive-color-secondary); stroke-width: 2.5; }
 html[data-motion='reduce'] .graph-node, html[data-motion='reduce'] .graph-edge { transition: none; }
 
 .graph-detail { padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-raised); }
@@ -686,6 +688,7 @@ html[data-motion='reduce'] .graph-node, html[data-motion='reduce'] .graph-edge {
 
 .graph-path { margin: 0; padding-left: 1.3em; display: grid; gap: var(--archive-space-2); }
 .graph-path p { margin: var(--archive-space-1) 0 0; color: var(--archive-color-ink-muted); }
+.graph-path-status { margin: 0; padding: var(--archive-space-3) var(--archive-space-4); border-left: 0.35rem solid var(--archive-color-warning); background: var(--archive-color-surface-raised); color: var(--archive-color-ink-muted); }
 
 .neighborhood { display: grid; gap: var(--archive-space-3); }
 @media (min-width: 800px) { .neighborhood { grid-template-columns: 18rem minmax(0, 1fr); align-items: start; } }
