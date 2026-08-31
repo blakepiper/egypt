@@ -5,7 +5,7 @@
 
 import type {
   BlockNode, EdgeType, Entity, GraphData, GraphEdge, GraphNode, GraphSlice, Journey,
-  PageSummary, Period, Place, RelatedPage,
+  NodeKind, PageSummary, Period, Place, RelatedPage,
   SourceEntry,
 } from '../../src/types/content.js';
 import type { BuildProblem } from './build-content.js';
@@ -19,6 +19,14 @@ export const EDGE_TYPES: EdgeType[] = [
 ];
 
 const EDGE_SET = new Set<string>(EDGE_TYPES);
+
+export const NODE_KINDS: NodeKind[] = [
+  'article', 'concept', 'deity', 'place', 'period', 'practice',
+  'text', 'object', 'role', 'source', 'journey',
+];
+
+/** Edges the build derives from the pages. Everything else was written by hand. */
+const DERIVED_TYPES = new Set<EdgeType>(['links_to', 'draws_from']);
 
 interface ParsedLike {
   page: { slug: string; frontmatter: { relations?: { target: string; type: EdgeType; note?: string }[] } };
@@ -246,6 +254,8 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
     to.degree += 1;
   }
 
+  reportGaps(nodes, edges, problems);
+
   layout([...nodes.values()], edges);
 
   const data: GraphData = {
@@ -278,6 +288,65 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       };
     },
   };
+}
+
+/**
+ * Warns about entities the graph cannot show. A missing relation is a gap in
+ * the writing, so these stay warnings and the archive still ships while the
+ * gap is filled.
+ */
+function reportGaps(nodes: Map<string, GraphNode>, edges: GraphEdge[], problems: BuildProblem[]): void {
+  const curatedDegree = new Map<string, number>();
+  const joined = new Set<string>();
+  for (const edge of edges) {
+    joined.add(`${edge.from}\u0000${edge.to}`);
+    joined.add(`${edge.to}\u0000${edge.from}`);
+    if (DERIVED_TYPES.has(edge.type)) continue;
+    curatedDegree.set(edge.from, (curatedDegree.get(edge.from) ?? 0) + 1);
+    curatedDegree.set(edge.to, (curatedDegree.get(edge.to) ?? 0) + 1);
+  }
+
+  const all = [...nodes.values()];
+  const compare = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const articleByLabel = new Map(all.filter((node) => node.kind === 'article').map((node) => [compare(node.label), node]));
+  // Point the warning at the file where the relation would be written. Deities
+  // come out of the field guide table, but a curated entity record overrides
+  // that table, so the record is where their relations belong.
+  const origin = (id: string) => {
+    if (id.startsWith('journey:')) return 'content/journeys';
+    if (id.startsWith('place:')) return 'content/places.json';
+    if (id.startsWith('period:')) return 'content/periods.json';
+    return 'content/entities';
+  };
+
+  for (const node of all) {
+    if (node.kind === 'article' || node.kind === 'source') continue;
+    if (!curatedDegree.get(node.id)) {
+      problems.push({
+        file: origin(node.id),
+        message: `${node.kind} "${node.label}" has no curated relation, so no path through the graph reaches it`,
+        severity: 'warning',
+      });
+    }
+    const article = articleByLabel.get(compare(node.label));
+    if (article && !joined.has(`${node.id}\u0000${article.id}`)) {
+      problems.push({
+        file: origin(node.id),
+        message: `${node.kind} "${node.label}" duplicates an article of the same name, and no relation joins them`,
+        severity: 'warning',
+      });
+    }
+  }
+
+  for (const kind of NODE_KINDS) {
+    if (!all.some((node) => node.kind === kind)) {
+      problems.push({
+        file: 'src/types/content.ts',
+        message: `node kind "${kind}" is declared but no node uses it`,
+        severity: 'warning',
+      });
+    }
+  }
 }
 
 function rank(edge: GraphEdge): number {

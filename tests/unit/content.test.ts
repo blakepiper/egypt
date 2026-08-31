@@ -324,6 +324,16 @@ describe('the knowledge graph', () => {
     expect(rebuilt.nodes.map((node: { x: number }) => node.x)).toEqual(a.nodes.map((node: { x: number }) => node.x));
   });
 
+  it('reports entities no relation reaches, without failing the build', () => {
+    const gaps = result.problems.filter((problem) => problem.message.includes('has no curated relation'));
+    expect(gaps.length).toBeGreaterThan(0);
+    for (const gap of gaps) expect(gap.severity).toBe('warning');
+    // Sobek is the case that prompted the check: an entity and an article of
+    // the same name that the graph keeps as two unconnected nodes.
+    expect(result.problems.some((problem) => problem.message.includes('duplicates an article of the same name'))).toBe(true);
+    expect(result.problems.filter((problem) => problem.severity === 'error')).toHaveLength(0);
+  });
+
   it('only uses relation types from the published vocabulary', () => {
     const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8'));
     const allowed = new Set(graph.edgeTypes);

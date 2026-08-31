@@ -1,6 +1,7 @@
 # Knowledge graph upgrade — implementation spec
 
-Status: ready to execute
+Status: ready to execute. **Phase 1.1 and Phase 6 are already done** (2026-08-31)
+and are marked DONE below. Start at Phase 1.2.
 Author: investigation session, 2026-08-31
 Target files: `src/features/graph/`, `scripts/content/build-graph.ts`, `src/types/content.ts`, `src/application.css`, `tests/`
 
@@ -281,7 +282,15 @@ first and ship it.
 
 **File: `src/features/graph/GraphView.tsx`**
 
-1.1 **Fix node clicking.** Remove the `onClick` handler from the node `<g>`
+1.1 **Fix node clicking. — DONE.** Shipped, with two regression tests in
+`tests/application.spec.ts` ("a node in the diagram can be selected with the
+mouse" and "dragging a node moves it without selecting it"). Both were confirmed
+to fail against the old code before the fix landed. Note for anyone writing
+similar tests: the desktop project runs at 1280x720 and the first node sits
+below the fold, so call `scrollIntoViewIfNeeded()` before `boundingBox()` or the
+click lands outside the window. What was done:
+
+Remove the `onClick` handler from the node `<g>`
 entirely — it cannot fire while the SVG holds pointer capture. Instead, select
 inside `endGesture`, which runs on the element that holds capture:
 
@@ -582,7 +591,17 @@ test('the graph explains how two nodes are connected', async ({ page }) => {
 
 ---
 
-### Phase 6 — Report the data gaps *(build-time only)*
+### Phase 6 — Report the data gaps *(build-time only)* — DONE
+
+Shipped as `reportGaps()` in `scripts/content/build-graph.ts`, covered by the
+unit test "reports entities no relation reaches, without failing the build".
+`npm run content:check` now prints 25 warnings and still exits 0. Warnings are
+attributed to the file where the relation would be written (`content/entities`,
+`content/journeys`, `content/places.json`, `content/periods.json`), not to a
+single hardcoded path. Four journeys turned up alongside the 19 deities: they
+carry only `draws_from` edges, which the build derives rather than curates.
+
+Original specification follows.
 
 The archive's stated principle is that the build refuses to ship broken content.
 Extend that to the graph.

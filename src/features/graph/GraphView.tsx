@@ -54,7 +54,6 @@ export function GraphView() {
   const [nodePositions, setNodePositions] = useState<Record<string, Point>>({});
   const svgRef = useRef<SVGSVGElement>(null);
   const gestureRef = useRef<GraphGesture | null>(null);
-  const suppressClickRef = useRef(false);
 
   const focusId = search.get('node');
   const pathId = search.get('path');
@@ -233,7 +232,6 @@ export function GraphView() {
 
   const beginPan = (event: React.PointerEvent<SVGSVGElement>) => {
     if (event.button !== 0) return;
-    suppressClickRef.current = false;
     gestureRef.current = {
       type: 'pan', pointerId: event.pointerId, startX: event.clientX, startY: event.clientY,
       lastPoint: screenToViewBox(event.clientX, event.clientY), moved: false,
@@ -244,7 +242,6 @@ export function GraphView() {
   const beginNodeDrag = (event: React.PointerEvent<SVGGElement>, nodeId: string) => {
     if (event.button !== 0) return;
     event.stopPropagation();
-    suppressClickRef.current = false;
     gestureRef.current = {
       type: 'node', nodeId, pointerId: event.pointerId, startX: event.clientX, startY: event.clientY,
       lastPoint: screenToViewBox(event.clientX, event.clientY), moved: false,
@@ -268,11 +265,15 @@ export function GraphView() {
     }
   };
 
+  // Selecting happens here rather than in a click handler on the node. The
+  // drag gesture captures the pointer on the svg, and a captured pointer
+  // retargets its click to the capturing element, so a handler on the node
+  // group never runs. A node gesture that never moved is the click.
   const endGesture = (event: React.PointerEvent<SVGSVGElement>) => {
     const gesture = gestureRef.current;
     if (!gesture || gesture.pointerId !== event.pointerId) return;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-    suppressClickRef.current = gesture.moved;
+    if (gesture.type === 'node' && !gesture.moved && gesture.nodeId) setFocus(gesture.nodeId);
     gestureRef.current = null;
   };
 
@@ -436,10 +437,6 @@ export function GraphView() {
                 aria-label={`${node.label}, ${KIND_LABELS[node.kind]}, ${node.degree} connections, ${node.origin} origin, ${node.evidence} evidence`}
                 aria-pressed={node.id === focusId}
                 onPointerDown={(event) => beginNodeDrag(event, node.id)}
-                onClick={() => {
-                  if (suppressClickRef.current) { suppressClickRef.current = false; return; }
-                  setFocus(node.id);
-                }}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setFocus(node.id); }
                 }}

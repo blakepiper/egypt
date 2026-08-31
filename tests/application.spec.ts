@@ -154,6 +154,37 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(relationships.locator('li')).not.toHaveCount(0);
   });
 
+  // The drag gesture captures the pointer on the svg, which retargets the click
+  // away from the node. Selection has to survive that, and only a real mouse
+  // click proves it: the keyboard and the search box take other routes in.
+  test('a node in the diagram can be selected with the mouse', async ({ page }) => {
+    await page.goto('graph/');
+    const dot = page.locator('.graph-node__dot').first();
+    await expect(dot).toBeVisible();
+    await dot.scrollIntoViewIfNeeded();
+    const box = await dot.boundingBox();
+    if (!box) throw new Error('The first graph node has no hit area');
+    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    await expect(page).toHaveURL(/node=/);
+    await expect(page.getByRole('heading', { name: 'Why these are connected' })).toBeVisible();
+  });
+
+  test('dragging a node moves it without selecting it', async ({ page }) => {
+    await page.goto('graph/');
+    const dot = page.locator('.graph-node__dot').first();
+    await expect(dot).toBeVisible();
+    await dot.scrollIntoViewIfNeeded();
+    const box = await dot.boundingBox();
+    if (!box) throw new Error('The first graph node has no hit area');
+    const before = await dot.getAttribute('cx');
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(box.x + 44, box.y + 28, { steps: 5 });
+    await page.mouse.up();
+    await expect(dot).not.toHaveAttribute('cx', before ?? '');
+    await expect(page).not.toHaveURL(/node=/);
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();
