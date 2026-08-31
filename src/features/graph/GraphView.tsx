@@ -47,6 +47,8 @@ export function GraphView() {
   const [query, setQuery] = useState('');
   const [kind, setKind] = useState<NodeKind | null>(null);
   const [relation, setRelation] = useState<EdgeType | null>(null);
+  const layerParam = search.get('layer') === 'all' ? 'all' : 'curated';
+  const [layer, setLayer] = useState<'curated' | 'all'>(layerParam);
   const [hops, setHops] = useState<1 | 2>(1);
   const [pinned, setPinned] = useState<string[]>([]);
   const [trail, setTrail] = useState<string[]>([]);
@@ -57,6 +59,8 @@ export function GraphView() {
 
   const focusId = search.get('node');
   const pathId = search.get('path');
+
+  useEffect(() => { setLayer(layerParam); }, [layerParam]);
 
   useEffect(() => {
     let cancelled = false;
@@ -75,28 +79,44 @@ export function GraphView() {
     if (id) setTrail((current) => (current[current.length - 1] === id ? current : [...current, id].slice(-8)));
   }, [navigate, search]);
 
+  const setLayerFromControl = useCallback((value: string) => {
+    const next = value === 'all' ? 'all' : 'curated';
+    const params = new URLSearchParams(search);
+    if (next === 'all') params.set('layer', 'all'); else params.delete('layer');
+    setLayer(next);
+    navigate(`/graph/${params.toString() ? `?${params}` : ''}`);
+  }, [navigate, search]);
+
   const path = pathId ? allPaths.find((entry) => entry.id === pathId) ?? null : null;
 
   // The visible slice: the focused node plus one or two hops, filtered.
   const view = useMemo(() => {
     if (!data) return { nodes: [] as GraphNode[], edges: [] as GraphEdge[] };
     const matchesFilters = (node: GraphNode) => (!kind || node.kind === kind);
-    const edgeAllowed = (edge: GraphEdge) => (!relation || edge.type === relation);
+    const edgeAllowed = (edge: GraphEdge) => (layer === 'all' || !DOCUMENT_RELATIONS.has(edge.type)) && (!relation || edge.type === relation);
+    const nodeAllowed = (node: GraphNode) => matchesFilters(node)
+      && (layer === 'all' || node.semanticDegree > 0 || node.id === focusId)
+      && (!node.control || node.id === focusId);
 
     if (path) {
       const ids = new Set(path.steps.map((step) => `page:${step.slug}`));
+      const visible = new Set(data.nodes.filter((node) => ids.has(node.id) && nodeAllowed(node)).map((node) => node.id));
       return {
-        nodes: data.nodes.filter((node) => ids.has(node.id)),
-        edges: data.edges.filter((edge) => ids.has(edge.from) && ids.has(edge.to) && edgeAllowed(edge)),
+        nodes: data.nodes.filter((node) => visible.has(node.id)),
+        edges: data.edges.filter((edge) => visible.has(edge.from) && visible.has(edge.to) && edgeAllowed(edge)),
       };
     }
 
     if (!focusId) {
-      // Overview: the most connected reviewed nodes, so the first paint is legible.
-      const ranked = [...data.nodes].filter(matchesFilters).sort((a, b) => b.degree - a.degree).slice(0, preferences.lowPerformance ? 40 : 90);
+      // The curated layer is one connected component and small enough to show
+      // in full; the document layer keeps the compact degree-ranked overview.
+      const candidates = data.nodes.filter(nodeAllowed);
+      const ranked = layer === 'curated'
+        ? candidates
+        : [...candidates].sort((a, b) => b.semanticDegree - a.semanticDegree || b.degree - a.degree).slice(0, preferences.lowPerformance ? 40 : 90);
       const ids = new Set([...ranked.map((node) => node.id), ...pinned]);
       return {
-        nodes: data.nodes.filter((node) => ids.has(node.id)),
+        nodes: data.nodes.filter((node) => ids.has(node.id) && nodeAllowed(node)),
         edges: data.edges.filter((edge) => ids.has(edge.from) && ids.has(edge.to) && edgeAllowed(edge)),
       };
     }
@@ -113,10 +133,10 @@ export function GraphView() {
       next.forEach((id) => ids.add(id));
       frontier = next;
     }
-    const nodes = data.nodes.filter((node) => ids.has(node.id) && (node.id === focusId || matchesFilters(node)));
+    const nodes = data.nodes.filter((node) => ids.has(node.id) && nodeAllowed(node));
     const visible = new Set(nodes.map((node) => node.id));
     return { nodes, edges: data.edges.filter((edge) => visible.has(edge.from) && visible.has(edge.to) && edgeAllowed(edge)) };
-  }, [data, focusId, hops, kind, relation, pinned, path, preferences.lowPerformance]);
+  }, [data, focusId, hops, kind, layer, relation, pinned, path, preferences.lowPerformance]);
 
   // A label the reader cannot see is a node they cannot learn anything from,
   // so the view always names what it can: everything when the slice is small,
@@ -308,7 +328,7 @@ export function GraphView() {
         lead={path ? path.blurb : `${data.nodes.length} nodes and ${data.edges.length} relationships. Wiki links form the document layer; reviewed entities and curated relations form the semantic layer. Curated edges explain themselves.`}
         actions={
           <>
-            <Button onClick={() => { setFocus(null); setPinned([]); setTrail([]); setKind(null); setRelation(null); navigate('/graph/'); }}>Reset</Button>
+            <Button onClick={() => { setFocus(null); setPinned([]); setTrail([]); setKind(null); setRelation(null); setLayer('curated'); navigate('/graph/'); }}>Reset</Button>
             {focused && <Button onClick={() => setPinned((current) => current.includes(focused.id) ? current.filter((id) => id !== focused.id) : [...current, focused.id])}>
               {pinned.includes(focused.id) ? 'Unpin' : 'Pin'} {focused.label}
             </Button>}
@@ -361,6 +381,12 @@ export function GraphView() {
             onChange={(value) => setRelation(value as EdgeType | null)}
           />
           <Segmented
+            label="Layer"
+            options={[{ id: 'curated', label: 'Curated relations' }, { id: 'all', label: 'Everything, including wiki links' }]}
+            value={layer}
+            onChange={setLayerFromControl}
+          />
+          <Segmented
             label="Expansion"
             options={[{ id: '1', label: 'One hop' }, { id: '2', label: 'Two hops' }]}
             value={String(hops)}
@@ -370,7 +396,8 @@ export function GraphView() {
         <div className="graph-controls__status">
           <p role="status" aria-live="polite">
             Showing <strong>{view.nodes.length}</strong> of {data.nodes.length} nodes and <strong>{view.edges.length}</strong> of {data.edges.length} relationships.
-            {!focusId && !path && !filtersActive && ' These are the most connected nodes; choose one to follow its neighbourhood.'}
+            {!focusId && !path && !filtersActive && layer === 'curated' && ' These are the reviewed relations; choose one to follow its neighbourhood.'}
+            {!focusId && !path && !filtersActive && layer === 'all' && ' These are the most connected nodes; choose one to follow its neighbourhood.'}
           </p>
           {filtersActive && <Button variant="quiet" onClick={() => { setKind(null); setRelation(null); setHops(1); }}>Clear filters</Button>}
         </div>

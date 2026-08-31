@@ -324,6 +324,23 @@ describe('the knowledge graph', () => {
     expect(rebuilt.nodes.map((node: { x: number }) => node.x)).toEqual(a.nodes.map((node: { x: number }) => node.x));
   });
 
+  it('records curated degree and archive control pages', () => {
+    const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8')) as {
+      nodes: { id: string; semanticDegree?: number; control?: boolean }[];
+      edges: { from: string; to: string; type: string }[];
+    };
+    const curated = new Set(['links_to', 'draws_from']);
+    const degrees = new Map<string, number>();
+    for (const edge of graph.edges) {
+      if (curated.has(edge.type)) continue;
+      degrees.set(edge.from, (degrees.get(edge.from) ?? 0) + 1);
+      degrees.set(edge.to, (degrees.get(edge.to) ?? 0) + 1);
+    }
+    for (const node of graph.nodes) expect(node.semanticDegree).toBe(degrees.get(node.id) ?? 0);
+    expect(graph.nodes.find((node) => node.id === 'page:coverage-map')?.control).toBe(true);
+    expect(graph.nodes.find((node) => node.id === 'page:source-catalog')?.control).toBe(true);
+  });
+
   it('reports entities no relation reaches, without failing the build', () => {
     const gaps = result.problems.filter((problem) => problem.message.includes('has no curated relation'));
     expect(gaps.length).toBeGreaterThan(0);

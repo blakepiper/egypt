@@ -187,6 +187,10 @@ export interface GraphNode {
   evidence: EvidenceKind;
   origin: ContentOrigin;
   degree: number;
+  /** True for archive index and catalogue pages, which link to everything and carry no argument. */
+  control?: boolean;
+  /** Incident edges that were written by hand rather than derived from links. */
+  semanticDegree: number;
   x: number;
   y: number;
 }

@@ -28,6 +28,13 @@ export const NODE_KINDS: NodeKind[] = [
 /** Edges the build derives from the pages. Everything else was written by hand. */
 const DERIVED_TYPES = new Set<EdgeType>(['links_to', 'draws_from']);
 
+/** Archive index and catalogue pages that link to everything without carrying an argument. */
+export const CONTROL_SLUGS = new Set([
+  'index', 'log', 'coverage-map', 'reading-audit', 'source-catalog', 'course-reading-guide',
+  'course-materials-deep-notes', 'four-week-relearning-plan', 'exam-recovery-guide',
+  'student-work-reconstruction', 'web-research-supplement', 'course-reconstruction',
+]);
+
 interface ParsedLike {
   page: { slug: string; frontmatter: { relations?: { target: string; type: EdgeType; note?: string }[] } };
   blocks: BlockNode[];
@@ -61,8 +68,8 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   const edges: GraphEdge[] = [];
   const pageBySlug = new Map(pages.map((p) => [p.slug, p]));
 
-  const addNode = (node: Omit<GraphNode, 'degree' | 'x' | 'y'>) => {
-    if (!nodes.has(node.id)) nodes.set(node.id, { ...node, degree: 0, x: 0, y: 0 });
+  const addNode = (node: Omit<GraphNode, 'degree' | 'semanticDegree' | 'x' | 'y'>) => {
+    if (!nodes.has(node.id)) nodes.set(node.id, { ...node, degree: 0, semanticDegree: 0, x: 0, y: 0 });
     return nodes.get(node.id)!;
   };
 
@@ -78,6 +85,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       places: page.places,
       evidence: page.evidence,
       origin: page.origin,
+      ...(CONTROL_SLUGS.has(page.slug) ? { control: true } : {}),
     });
   }
   for (const entity of entities) {
@@ -217,12 +225,11 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
     const seen = new Set<string>();
     const list: RelatedPage[] = [];
     // Archive control pages link to everything; they are not "related reading".
-    const CONTROL = new Set(['index', 'log', 'coverage-map', 'reading-audit', 'source-catalog', 'course-reading-guide', 'course-materials-deep-notes', 'four-week-relearning-plan', 'exam-recovery-guide', 'student-work-reconstruction', 'web-research-supplement', 'course-reconstruction']);
     const consider = (edge: GraphEdge, otherId: string) => {
       const other = nodes.get(otherId);
       if (!other || other.kind === 'source' || !other.slug || other.slug === page.slug) return;
       if (seen.has(other.slug)) return;
-      if (edge.type === 'links_to' && CONTROL.has(other.slug) && !CONTROL.has(page.slug)) return;
+      if (edge.type === 'links_to' && CONTROL_SLUGS.has(other.slug) && !CONTROL_SLUGS.has(page.slug)) return;
       const target = pageBySlug.get(other.slug);
       if (!target) return;
       seen.add(other.slug);
@@ -252,6 +259,10 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
     if (!from || !to) continue;
     from.degree += 1;
     to.degree += 1;
+    if (!DERIVED_TYPES.has(edge.type)) {
+      from.semanticDegree += 1;
+      to.semanticDegree += 1;
+    }
   }
 
   reportGaps(nodes, edges, problems);
@@ -296,14 +307,10 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
  * gap is filled.
  */
 function reportGaps(nodes: Map<string, GraphNode>, edges: GraphEdge[], problems: BuildProblem[]): void {
-  const curatedDegree = new Map<string, number>();
   const joined = new Set<string>();
   for (const edge of edges) {
     joined.add(`${edge.from}\u0000${edge.to}`);
     joined.add(`${edge.to}\u0000${edge.from}`);
-    if (DERIVED_TYPES.has(edge.type)) continue;
-    curatedDegree.set(edge.from, (curatedDegree.get(edge.from) ?? 0) + 1);
-    curatedDegree.set(edge.to, (curatedDegree.get(edge.to) ?? 0) + 1);
   }
 
   const all = [...nodes.values()];
@@ -321,7 +328,7 @@ function reportGaps(nodes: Map<string, GraphNode>, edges: GraphEdge[], problems:
 
   for (const node of all) {
     if (node.kind === 'article' || node.kind === 'source') continue;
-    if (!curatedDegree.get(node.id)) {
+    if (node.semanticDegree === 0) {
       problems.push({
         file: origin(node.id),
         message: `${node.kind} "${node.label}" has no curated relation, so no path through the graph reaches it`,

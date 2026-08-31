@@ -210,6 +210,31 @@ test.describe('graph, atlas, and chronology', () => {
     expect(visibleLabels).toBeGreaterThanOrEqual(30);
   });
 
+  test('the default graph opens on curated scholarship', async ({ page }) => {
+    await page.goto('graph/');
+    await expect(page.locator('.graph-node').first()).toBeVisible();
+    await expect(page.getByRole('group', { name: 'Layer' })).toBeVisible();
+    const kinds = await page.locator('.graph-node').evaluateAll((nodes) => Array.from(new Set(
+      nodes.flatMap((node) => Array.from(node.classList).filter((name) => name.startsWith('graph-node--')).map((name) => name.slice('graph-node--'.length))),
+    )));
+    expect(kinds.filter((kind) => !['article', 'source'].includes(kind)).length).toBeGreaterThanOrEqual(4);
+    await expect(page.getByRole('button', { name: 'Coverage map', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Source catalog', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Supplemental research catalog', exact: true })).toHaveCount(0);
+    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 170 of 346 nodes and 360 of 2295 relationships');
+  });
+
+  test('the document layer is optional and shareable', async ({ page }) => {
+    await page.goto('graph/');
+    await expect(page.locator('.graph-node').first()).toBeVisible();
+    const curatedEdges = await page.locator('.graph-edge').count();
+    await page.getByRole('group', { name: 'Layer' }).getByRole('button', { name: 'Everything, including wiki links' }).click();
+    await expect(page).toHaveURL(/layer=all/);
+    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 90 of 346 nodes and');
+    const allEdges = await page.locator('.graph-edge').count();
+    expect(allEdges).toBeGreaterThan(curatedEdges);
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();
