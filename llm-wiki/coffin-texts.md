@@ -10,6 +10,10 @@ relations:
   - target: book-of-the-dead
     type: precedes
     note: "Material continues into the later corpus rather than stopping."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Coffin Texts

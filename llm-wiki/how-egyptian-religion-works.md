@@ -12,6 +12,10 @@ relations:
   - target: temples-priests-and-offerings
     type: appears_in
     note: "Images, names, and ritual presence are worked out in temple practice."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # How Egyptian religion works

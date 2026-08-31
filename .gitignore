@@ -5,6 +5,7 @@ llm-wiki.md
 design-inspiration/
 .DS_Store
 node_modules/
+.cache/
 dist/
 test-results/
 playwright-report/

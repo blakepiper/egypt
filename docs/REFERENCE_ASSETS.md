@@ -4,7 +4,7 @@ The files in `design-inspiration/` were supplied as visual research. Their prese
 
 The implemented specimen does not load or copy any of these files at runtime. It translates broad visual observations into original CSS geometry and semantic tokens.
 
-One user-directed exception is the app mark in `public/stela-app-icon.png`: it is a newly generated, simplified pixel-art transformation based on the supplied Stela of Ankh-af-na-khonsu reference. It does not ship the source photograph, but public deployment should still verify the underlying object record, source-image rights, and the acceptability of a derivative identity mark.
+The earlier pixel-stela app mark was removed from the deployed application because its source-image rights had not been established. The replacement in `public/media/archive-app-icon.svg` is original, code-native project artwork and does not derive from the reference files below.
 
 | File | Visual subject | Apparent provenance clue | Production status |
 | --- | --- | --- | --- |

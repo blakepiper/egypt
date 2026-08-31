@@ -6,7 +6,7 @@ import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from './build-content.js';
 import { collectRoutes } from './build-routes.js';
-import type { MediaRecord } from '../../src/types/content.js';
+import type { Journey, MediaRecord, ObjectStudy } from '../../src/types/content.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const WIKI = join(ROOT, 'llm-wiki');
@@ -65,6 +65,9 @@ function main(): void {
       const matches = source.match(rule.pattern);
       if (matches) failures.push(`${file}: ${rule.message} (${[...new Set(matches)].slice(0, 3).join(', ')})`);
     }
+    for (const field of ['factual', 'humanizer', 'media_rights']) {
+      if (!new RegExp(`^  ${field}: reviewed$`, 'm').test(source)) failures.push(`${file}: review.${field} is not recorded`);
+    }
   }
 
   // 5. Media rights.
@@ -75,6 +78,17 @@ function main(): void {
     if (!record.caption) failures.push(`media ${record.id}: no caption`);
     if (!record.license) failures.push(`media ${record.id}: no license`);
     if (record.status === 'cleared' && !record.file) failures.push(`media ${record.id}: cleared but has no file`);
+  }
+
+  const reviewedJson = [
+    ...readdirSync(join(ROOT, 'content/journeys')).filter((file) => file.endsWith('.json')).map((file) => join(ROOT, 'content/journeys', file)),
+    ...readdirSync(join(ROOT, 'content/objects')).filter((file) => file.endsWith('.json')).map((file) => join(ROOT, 'content/objects', file)),
+  ];
+  for (const path of reviewedJson) {
+    const item = JSON.parse(readFileSync(path, 'utf8')) as Journey | ObjectStudy;
+    if (item.review?.factual !== 'reviewed') failures.push(`${path}: factual review is not recorded`);
+    if (item.review?.humanizer !== 'reviewed') failures.push(`${path}: humanizer review is not recorded`);
+    if (item.review?.media_rights !== 'reviewed') failures.push(`${path}: media-rights review is not recorded`);
   }
 
   for (const note of notes) console.log(`warn   ${note}`);

@@ -12,6 +12,10 @@ relations:
   - target: coffin-texts
     type: appears_in
     note: "Coffin Text spells name integrity, mobility, and provisioning directly."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Personhood and the afterlife

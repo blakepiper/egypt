@@ -3,6 +3,10 @@ type: course-map
 tags: [course, syllabus, nau, rel-395]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Course reconstruction
@@ -57,7 +61,7 @@ The full syllabus sequence is preserved in [[course-reading-guide]]. The distinc
 
 ## What can and cannot be reconstructed
 
-The syllabus, readings, prompts, student answers, drafts, slides, and final papers recover the course's structure and many lecture emphases. The completed exams are especially valuable because they preserve explanations that were probably discussed in class: images as effective presences, the king's relation to the Duat, divine-bark oracles, the “shingles” model of funerary texts, and distinctions among aspects of personhood.
+The syllabus, readings, prompts, student answers, drafts, slides, and final papers recover the course's structure and many lecture emphases. The completed exams preserve explanations that were probably discussed in class: images as effective presences, the king's relation to the Duat, divine-bark oracles, the “shingles” model of funerary texts, and distinctions among aspects of personhood.
 
 What is missing is the professor's spoken framing, correction of student answers, classroom discussion, and the full assigned Goelet volume. A completed exam answer is evidence of what the student understood, not automatic proof of what the instructor endorsed or what scholarship now accepts. Pages in this wiki therefore cross-check student material against Pinch, Teeter, primary translations, and source quality. The precise reading depth for each archive group is disclosed in [[reading-audit]].
 

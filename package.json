@@ -7,14 +7,17 @@
     "dev": "npm run content:build && vite",
     "content:build": "tsx scripts/content/build-content.ts",
     "content:check": "tsx scripts/content/check-content.ts",
+    "media:build": "tsx scripts/media/build-media.ts",
     "media:check": "tsx scripts/media/check-rights.ts",
+    "review:check": "tsx scripts/content/check-copy-review.ts",
     "build": "npm run content:build && npm run typecheck && vite build && tsx scripts/content/build-routes.ts",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
+    "test:visual": "playwright test tests/visual.spec.ts",
     "check:contrast": "node scripts/check-contrast.mjs",
-    "check": "npm run content:check && npm run media:check && npm run typecheck && npm run check:contrast && npm run test:unit && npm run build && npm run test:e2e"
+    "check": "npm run content:check && npm run media:check && npm run review:check && npm run typecheck && npm run check:contrast && npm run test:unit && npm run build && npm run test:e2e"
   },
   "dependencies": {
     "react": "18.3.1",
@@ -30,6 +33,7 @@
     "@vitejs/plugin-react": "4.3.4",
     "js-yaml": "^5.4.1",
     "marked": "^18.0.11",
+    "sharp": "^0.35.4",
     "tsx": "^4.23.13",
     "typescript": "5.7.2",
     "vite": "6.4.3",

@@ -14,6 +14,10 @@ relations:
   - target: sacred-geography
     type: associated_with
     note: "His domain is the desert margin: a position in the order rather than simple evil."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Set

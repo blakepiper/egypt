@@ -246,7 +246,7 @@ export function Specimen() {
     <div className="site-frame">
       <header className="site-header">
         <button className="brand" onClick={() => setView('explore')} aria-label="The Living Archive, home">
-          <span className="brand__mark" aria-hidden="true"><img src={`${import.meta.env.BASE_URL}stela-app-icon.png`} alt="" /></span>
+          <span className="brand__mark" aria-hidden="true"><img src={`${import.meta.env.BASE_URL}media/archive-app-icon.svg`} alt="" /></span>
           <span><strong>The Living Archive</strong><small>Religion of Ancient Egypt</small></span>
         </button>
         <div className="site-header__actions">

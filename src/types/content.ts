@@ -38,6 +38,13 @@ export interface HeadingRef {
   text: string;
 }
 
+export interface ContentReview {
+  factual?: 'reviewed' | 'pending';
+  humanizer?: 'reviewed' | 'pending';
+  media_rights?: 'reviewed' | 'pending';
+  editorial?: 'reviewed' | 'pending-human';
+}
+
 export interface PageFrontmatter {
   type: string;
   tags: string[];
@@ -50,7 +57,7 @@ export interface PageFrontmatter {
   entities?: string[];
   media?: string[];
   relations?: CuratedRelation[];
-  review?: { factual?: string; humanizer?: string; media_rights?: string };
+  review?: ContentReview;
 }
 
 export interface CuratedRelation {
@@ -259,11 +266,24 @@ export interface MediaRecord {
   alt: string;
   transcript: string | null;
   status: 'cleared' | 'research-only' | 'requested';
+  /** Authoritative image endpoint used by the local processing script. */
+  masterUrl?: string;
   file?: string;
   width?: number;
   height?: number;
+  variants?: { width: number; avif: string; webp: string; fallback: string }[];
+  placeholder?: string;
+  focalPoint?: { x: number; y: number };
+  deepZoomSource?: boolean;
+  deepZoom?: {
+    tileSize: number;
+    width: number;
+    height: number;
+    levels: { level: number; width: number; height: number; cols: number; rows: number; path: string }[];
+  };
   poster?: string;
   note?: string;
+  review?: ContentReview;
 }
 
 export interface NavSection {
@@ -337,6 +357,7 @@ export interface Journey {
   reconstruction: string;
   scenes: JourneyScene[];
   accessibleSummary: string;
+  review?: ContentReview;
 }
 
 export interface KnowledgePath {
@@ -356,6 +377,8 @@ export interface ObjectRegion {
   visible: string;
   reading: string;
   confidence: string;
+  /** False when the region is discussed from adjacent material, not shown here. */
+  imageRegion?: boolean;
 }
 
 export interface ObjectStudy {
@@ -372,6 +395,7 @@ export interface ObjectStudy {
   sequence: string[];
   lessons: { title: string; body: string }[];
   correction?: string;
+  review?: ContentReview;
 }
 
 /** Interactive views derived from the wiki's own tables and sections. */

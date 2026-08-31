@@ -14,6 +14,10 @@ relations:
   - target: contested-interpretations
     type: contested_by
     note: "Naydler reads the spells as records of living initiatory experience."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Pyramid Texts

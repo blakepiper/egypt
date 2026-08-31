@@ -14,11 +14,17 @@ relations:
     type: part_of
   - target: amduat-and-book-of-gates
     type: part_of
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Funerary text tradition
 
 The course's best metaphor is a roof of overlapping shingles. Pyramid Texts, Coffin Texts, Underworld Books, and Books of the Dead inherit, reposition, and innovate; one does not simply replace the last.
+
+!media[sethnakht-funerary-papyrus]
 
 | Corpus | Main period of early prominence | Typical medium/location | Principal user | Recurring emphases |
 |---|---|---|---|---|

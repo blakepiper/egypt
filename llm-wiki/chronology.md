@@ -12,6 +12,10 @@ relations:
   - target: amarna-and-late-transformations
     type: changes_during
     note: "The Amarna episode and the Greco-Roman afterlife are the sharpest changes in this table."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Chronology

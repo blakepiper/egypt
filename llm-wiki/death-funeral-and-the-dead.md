@@ -13,6 +13,10 @@ relations:
   - target: funerary-text-tradition
     type: draws_from
     note: "The texts placed with the dead are surveyed there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Death, funeral, and the dead

@@ -15,12 +15,15 @@ Checks, in the order the CI workflow runs them:
 
 ```sh
 npm run content:check   # content lint: pages, links, anchors, routes, sources, media, dates
+npm run media:build     # rebuild responsive images and Plate 30 deep-zoom tiles
 npm run media:check     # media rights gate
+npm run review:check    # factual/humanizer review hash gate
 npm run typecheck
 npm run check:contrast
 npm run test:unit       # content pipeline, search ranking, graph, budgets
 npm run build           # content -> types -> Vite -> static route entry points
-npm run test:e2e        # reading, search, graph, accessibility, responsive, deployment
+npm run test:e2e        # interaction, accessibility, performance, visual, deployment
+npm run test:visual     # the daylight and Duat screenshot baselines only
 npm run check           # all of the above
 ```
 
@@ -47,9 +50,12 @@ content/                      reviewed data that is not prose
   periods.json, places.json   chronology and atlas registries
   media-manifest.json         every asset, with its rights status
   frontmatter-review.json     reviewed structured fields applied to wiki pages
+  prose-review.json           factual, humanizer, and media review of wiki prose
+  copy-review.json            review state tied to exact application-copy bytes
 scripts/
   content/                    the compiler, linter, graph, search, and route builders
-  media/check-rights.ts       rights gate for the media manifest
+  media/build-media.ts        responsive image and deep-zoom processor
+  media/check-rights.ts       rights and deployed-file gate for the media manifest
 src/
   types/content.ts            the shared content model
   app/                        routing, state, shell, section labels
@@ -85,6 +91,8 @@ The build fails on a broken wiki link, a duplicate heading ID, an unknown source
 - Structured frontmatter is applied from `content/frontmatter-review.json` with `node scripts/content/tools/apply-frontmatter.mjs`. It is idempotent.
 - Curated relationships use the published edge vocabulary and carry a note explaining the connection. An ordinary wiki link never implies a typed relationship.
 - Media is addressed by manifest ID. Only `cleared` records enter a production build; anything else renders a visible placeholder rather than a broken image.
+- Cleared raster masters are cached outside version control. `npm run media:build` recreates the committed AVIF, WebP, JPEG, placeholder, and deep-zoom derivatives from their institutional source URLs.
+- User-facing source changes invalidate `content/copy-review.json`; run the factual comparison and humanizer review again before updating its hash.
 
 ## What is deliberately not here
 

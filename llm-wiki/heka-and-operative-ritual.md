@@ -15,6 +15,10 @@ relations:
   - target: contested-interpretations
     type: contested_by
     note: "Modern readings that separate magic from religion are argued with there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Heka and operative ritual

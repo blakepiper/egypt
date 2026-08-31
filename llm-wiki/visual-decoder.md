@@ -8,9 +8,15 @@ relations:
   - target: deity-field-guide
     type: draws_from
     note: "The deity table supplies most of the identifications."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Visual decoder
+
+!media[nauny-judgment]
 
 ## Read a scene in this order
 
@@ -78,4 +84,3 @@ The archive's Plate 19, 29, 30, and `Unified.jpg` show why adjacent images matte
 ## Sources in this archive
 
 [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].
-

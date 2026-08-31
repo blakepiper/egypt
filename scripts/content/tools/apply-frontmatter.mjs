@@ -21,9 +21,11 @@ for (const [slug, fields] of Object.entries(spec)) {
 
   const lines = [];
   let skipping = false;
+  const managed = new Set(Object.keys(fields));
   for (const line of text.slice(4, end).split('\n')) {
     if (!line.trim()) continue;
-    if (/^(aliases|periods|places|entities|relations):/.test(line)) { skipping = true; continue; }
+    const topLevel = line.match(/^([a-z_]+):/);
+    if (topLevel && managed.has(topLevel[1])) { skipping = true; continue; }
     if (skipping && (line.startsWith('  ') || line.startsWith('- '))) continue;
     skipping = false;
     lines.push(line);
@@ -40,6 +42,12 @@ for (const [slug, fields] of Object.entries(spec)) {
       lines.push(`  - target: ${relation.target}`);
       lines.push(`    type: ${relation.type}`);
       if (relation.note) lines.push(`    note: "${relation.note.replace(/"/g, '\\"')}"`);
+    }
+  }
+  if (fields.review) {
+    lines.push('review:');
+    for (const key of ['factual', 'humanizer', 'media_rights']) {
+      if (fields.review[key]) lines.push(`  ${key}: ${fields.review[key]}`);
     }
   }
   writeFileSync(path, `---\n${lines.join('\n')}\n---\n\n${body}`);

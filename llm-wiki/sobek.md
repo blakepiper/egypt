@@ -11,11 +11,17 @@ relations:
   - target: sacred-geography
     type: practiced_at
     note: "His cult concentrates where the water spreads out."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Sobek
 
 Sobek concentrates the ambivalence of the Nile crocodile: dangerous predator, master of water, sexual and vegetative potency, royal force, and protective god.
+
+!media[falcon-headed-crocodile]
 
 ## Identity and iconography
 

@@ -8,6 +8,10 @@ relations:
   - target: visual-decoder
     type: part_of
     note: "Iconography listed here is decoded sign by sign there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Deity field guide

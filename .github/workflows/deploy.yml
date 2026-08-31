@@ -29,6 +29,8 @@ jobs:
         run: npm run content:check
       - name: Media rights
         run: npm run media:check
+      - name: Factual and humanizer review
+        run: npm run review:check
       - name: TypeScript
         run: npm run typecheck
       - name: Contrast

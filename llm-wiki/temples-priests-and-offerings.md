@@ -13,11 +13,17 @@ relations:
   - target: heka-and-operative-ritual
     type: draws_from
     note: "Ritual efficacy depends on the power described there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Temples, priests, and offerings
 
 An Egyptian temple was a divine household, a model of the created cosmos, a royal institution, and a major economic organization. It was not primarily a congregational building. Access narrowed as space became darker, higher, and more restricted toward the sanctuary.
+
+!media[temple-dendur]
 
 ## Reading the building
 

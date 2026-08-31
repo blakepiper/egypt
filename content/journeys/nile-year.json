@@ -10,6 +10,7 @@
   "evidenceBoundary": "Akhet, Peret, and Shemu are an Egyptian administrative and agricultural scheme. Flood height and timing varied year to year, a bad flood meant famine, and the civil calendar drifted against the actual river. Modern dams have ended the annual inundation entirely, so no living observation can stand in for it.",
   "reconstruction": "Season names and their agricultural content come from the archive's geography and chronology material. Labour details are the general pattern described there, not a record of any one village's year.",
   "accessibleSummary": "Three seasons in order, each with its approximate months, river state, agricultural work, and religious associations, given as text.",
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
   "scenes": [
     { "id": "akhet", "title": "Akhet — inundation", "kicker": "Roughly July to October", "evidence": "scholarship", "sourceIds": ["C02", "C03"],
       "body": "Floodwater covered the fields and left silt behind. Fields could not be worked, so labour moved to repair, transport, construction, and institutional service. Hapi, the personified inundation, is shown heavy-bodied with aquatic plants, binding the Two Lands together.",

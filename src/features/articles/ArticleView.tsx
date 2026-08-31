@@ -2,7 +2,7 @@
 // on demand, so an ordinary article route never downloads the search index, the
 // full graph, or another page's body.
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ArticlePayload } from '../../types/content';
 import { Blocks } from './Blocks';
 import { Link, useApp } from '../../app/state';
@@ -39,7 +39,7 @@ export function ArticleView({ slug }: { slug: string }) {
     return () => { cancelled = true; };
   }, [slug]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!article) return;
     document.title = `${article.title} — The Living Archive`;
     openTab({ slug: article.slug, title: article.title });

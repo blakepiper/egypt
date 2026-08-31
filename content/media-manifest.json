@@ -1,23 +1,466 @@
 [
   {
-    "id": "stela-app-icon",
-    "kind": "image",
-    "file": "stela-app-icon.png",
-    "source": "Generated for this project",
-    "creator": "Project-generated pixel artwork",
+    "id": "archive-app-icon",
+    "kind": "diagram",
+    "file": "archive-app-icon.svg",
+    "source": "Original vector artwork in this repository",
+    "creator": "The Living Archive project",
     "institution": null,
     "objectId": null,
-    "license": "Project-owned, generated artwork",
+    "license": "Project-owned original artwork",
     "attribution": "The Living Archive",
     "dateAccessed": "2026-08-30",
     "period": [],
     "place": [],
-    "caption": "A pixel-art stela used as the application identity mark.",
-    "alt": "A small pixel drawing of a rounded stela with three registers of marks.",
+    "caption": "The Living Archive application mark.",
+    "alt": "A square archive card with a sun disk above three lines.",
     "transcript": null,
-    "status": "research-only",
-    "width": 512,
-    "height": 512,
-    "note": "Provisional. Its underlying reference and derivative-use status are unreviewed, so it is excluded from content routes and is used only as the browser icon. See docs/REFERENCE_ASSETS.md."
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "width": 64,
+    "height": 64,
+    "note": "Code-native project artwork with no external reference asset."
+  },
+  {
+    "id": "temple-dendur",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/547802",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/DP240337.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "68.154",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "The Temple of Dendur, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "roman"
+    ],
+    "place": [
+      "nubia"
+    ],
+    "caption": "The Temple of Dendur, completed by 10 CE, with its gateway in the foreground. The temple now stands inside The Met.",
+    "alt": "A sandstone temple and separate gateway displayed in a tall museum gallery beside a reflecting pool.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.58,
+      "y": 0.54
+    },
+    "file": "temple-dendur-1280.jpg",
+    "width": 1280,
+    "height": 1710,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "temple-dendur-480.avif",
+        "webp": "temple-dendur-480.webp",
+        "fallback": "temple-dendur-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "temple-dendur-960.avif",
+        "webp": "temple-dendur-960.webp",
+        "fallback": "temple-dendur-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "temple-dendur-1280.avif",
+        "webp": "temple-dendur-1280.webp",
+        "fallback": "temple-dendur-1280.jpg"
+      }
+    ],
+    "placeholder": "temple-dendur-placeholder.webp"
+  },
+  {
+    "id": "nauny-judgment",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/548344",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/DT11633.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "30.3.31",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Book of the Dead for the Chantress of Amun, Nauny, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "third-intermediate",
+      "corpus-book-of-the-dead"
+    ],
+    "place": [
+      "thebes"
+    ],
+    "caption": "Nauny's heart is weighed before Osiris in a Book of the Dead made around 1050 BCE.",
+    "alt": "Painted papyrus scene. Nauny stands at left beside a balance; jackal-headed Anubis kneels at its center, and Osiris sits at right.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.57,
+      "y": 0.58
+    },
+    "file": "nauny-judgment-1280.jpg",
+    "width": 1280,
+    "height": 950,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "nauny-judgment-480.avif",
+        "webp": "nauny-judgment-480.webp",
+        "fallback": "nauny-judgment-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "nauny-judgment-960.avif",
+        "webp": "nauny-judgment-960.webp",
+        "fallback": "nauny-judgment-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "nauny-judgment-1280.avif",
+        "webp": "nauny-judgment-1280.webp",
+        "fallback": "nauny-judgment-1280.jpg"
+      }
+    ],
+    "placeholder": "nauny-judgment-placeholder.webp"
+  },
+  {
+    "id": "isis-osiris-horus-triad",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/549349",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/23.6.11_001.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "23.6.11",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Isis, Osiris and Horus triad, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "late-period",
+      "ptolemaic"
+    ],
+    "place": [],
+    "caption": "A small metal triad of Horus, Osiris, and Isis, dated between 664 and 30 BCE.",
+    "alt": "Three standing metal figures on one base: smaller Horus at left, mummiform Osiris in the center, and Isis at right.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.5,
+      "y": 0.48
+    },
+    "file": "isis-osiris-horus-triad-1280.jpg",
+    "width": 1280,
+    "height": 1783,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "isis-osiris-horus-triad-480.avif",
+        "webp": "isis-osiris-horus-triad-480.webp",
+        "fallback": "isis-osiris-horus-triad-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "isis-osiris-horus-triad-960.avif",
+        "webp": "isis-osiris-horus-triad-960.webp",
+        "fallback": "isis-osiris-horus-triad-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "isis-osiris-horus-triad-1280.avif",
+        "webp": "isis-osiris-horus-triad-1280.webp",
+        "fallback": "isis-osiris-horus-triad-1280.jpg"
+      }
+    ],
+    "placeholder": "isis-osiris-horus-triad-placeholder.webp"
+  },
+  {
+    "id": "falcon-headed-crocodile",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/555607",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/LC-30_8_307_EGDP023589.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "30.8.307",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Falcon-headed crocodile, possibly Soknopaios, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "ptolemaic",
+      "roman"
+    ],
+    "place": [
+      "fayum"
+    ],
+    "caption": "A falcon-headed crocodile, possibly Soknopaios, made around the first century BCE or CE.",
+    "alt": "A tiny mottled-stone crocodile with a raised falcon head, mounted on a blue glass base.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.55,
+      "y": 0.6
+    },
+    "file": "falcon-headed-crocodile-1280.jpg",
+    "width": 1280,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "falcon-headed-crocodile-480.avif",
+        "webp": "falcon-headed-crocodile-480.webp",
+        "fallback": "falcon-headed-crocodile-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "falcon-headed-crocodile-960.avif",
+        "webp": "falcon-headed-crocodile-960.webp",
+        "fallback": "falcon-headed-crocodile-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "falcon-headed-crocodile-1280.avif",
+        "webp": "falcon-headed-crocodile-1280.webp",
+        "fallback": "falcon-headed-crocodile-1280.jpg"
+      }
+    ],
+    "placeholder": "falcon-headed-crocodile-placeholder.webp"
+  },
+  {
+    "id": "nectanebo-offers-to-osiris",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/544888",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/12.182.4c_EGDP011900.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "12.182.4c",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Nectanebo II Offers to Osiris Hemag, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "late-period"
+    ],
+    "place": [
+      "delta"
+    ],
+    "caption": "Nectanebo II offers incense and a collar to Osiris Hemag on an unfinished temple relief from 360 to 343 BCE.",
+    "alt": "Dark stone relief with two repeated scenes of a king standing before Osiris; cracks cross the carved block.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "file": "nectanebo-offers-to-osiris-1280.jpg",
+    "width": 1280,
+    "height": 853,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "nectanebo-offers-to-osiris-480.avif",
+        "webp": "nectanebo-offers-to-osiris-480.webp",
+        "fallback": "nectanebo-offers-to-osiris-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "nectanebo-offers-to-osiris-960.avif",
+        "webp": "nectanebo-offers-to-osiris-960.webp",
+        "fallback": "nectanebo-offers-to-osiris-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "nectanebo-offers-to-osiris-1280.avif",
+        "webp": "nectanebo-offers-to-osiris-1280.webp",
+        "fallback": "nectanebo-offers-to-osiris-1280.jpg"
+      }
+    ],
+    "placeholder": "nectanebo-offers-to-osiris-placeholder.webp"
+  },
+  {
+    "id": "sethnakht-funerary-papyrus",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/544773",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/35.9.19a-e_EGDP010220.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "35.9.19a-e",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Funerary Papyrus of the Steward Sethnakht, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "new-kingdom",
+      "corpus-book-of-the-dead"
+    ],
+    "place": [],
+    "caption": "The funerary papyrus of Sethnakht, made around 1300 to 1200 BCE, reads from right to left across a long sequence of vignettes and text.",
+    "alt": "A very long, narrow papyrus with rows of small painted deities and dense columns of hieroglyphs; several sections are missing.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "file": "sethnakht-funerary-papyrus-1280.jpg",
+    "width": 1280,
+    "height": 115,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "sethnakht-funerary-papyrus-480.avif",
+        "webp": "sethnakht-funerary-papyrus-480.webp",
+        "fallback": "sethnakht-funerary-papyrus-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "sethnakht-funerary-papyrus-960.avif",
+        "webp": "sethnakht-funerary-papyrus-960.webp",
+        "fallback": "sethnakht-funerary-papyrus-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "sethnakht-funerary-papyrus-1280.avif",
+        "webp": "sethnakht-funerary-papyrus-1280.webp",
+        "fallback": "sethnakht-funerary-papyrus-1280.jpg"
+      }
+    ],
+    "placeholder": "sethnakht-funerary-papyrus-placeholder.webp"
+  },
+  {
+    "id": "book-of-dead-chapters-100-129",
+    "kind": "image",
+    "source": "https://www.metmuseum.org/art/collection/search/553673",
+    "masterUrl": "https://images.metmuseum.org/CRDImages/eg/original/DP244339.jpg",
+    "creator": null,
+    "institution": "The Metropolitan Museum of Art",
+    "objectId": "24.2.18",
+    "license": "CC0 1.0 (The Met Open Access)",
+    "attribution": "Book of the Dead Papyrus with Chapters 100 and 129, The Metropolitan Museum of Art, Open Access",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "late-period",
+      "ptolemaic",
+      "corpus-book-of-the-dead"
+    ],
+    "place": [],
+    "caption": "Book of the Dead spells 100 and 129, each paired with a painted vignette, dated between 664 and 30 BCE.",
+    "alt": "A horizontal papyrus in two registers. Boats, standing deities, and Osiris appear among columns of black hieroglyphs.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "focalPoint": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "file": "book-of-dead-chapters-100-129-1280.jpg",
+    "width": 1280,
+    "height": 435,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "book-of-dead-chapters-100-129-480.avif",
+        "webp": "book-of-dead-chapters-100-129-480.webp",
+        "fallback": "book-of-dead-chapters-100-129-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "book-of-dead-chapters-100-129-960.avif",
+        "webp": "book-of-dead-chapters-100-129-960.webp",
+        "fallback": "book-of-dead-chapters-100-129-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "book-of-dead-chapters-100-129-1280.avif",
+        "webp": "book-of-dead-chapters-100-129-1280.webp",
+        "fallback": "book-of-dead-chapters-100-129-1280.jpg"
+      }
+    ],
+    "placeholder": "book-of-dead-chapters-100-129-placeholder.webp"
+  },
+  {
+    "id": "ani-plate-30",
+    "kind": "image",
+    "source": "https://www.britishmuseum.org/collection/object/Y_EA10470-30",
+    "masterUrl": "https://media.britishmuseum.org/media/Repository/Documents/2014_10/11_18/67ea5f7e_a7a4_4de9_ba69_a3c1012f07fc/large_00686262_001.jpg",
+    "creator": null,
+    "institution": "The British Museum",
+    "objectId": "EA10470,30",
+    "license": "CC BY-NC-SA 4.0",
+    "attribution": "© The Trustees of the British Museum. Shared under CC BY-NC-SA 4.0.",
+    "dateAccessed": "2026-08-30",
+    "period": [
+      "new-kingdom",
+      "corpus-book-of-the-dead"
+    ],
+    "place": [
+      "thebes"
+    ],
+    "caption": "Frame 30 of the Book of the Dead of Ani: the opening of Spell 125 and its full-color vignette, 19th Dynasty.",
+    "alt": "Framed papyrus. Fourteen columns of hieroglyphs fill the left side; at right, Osiris and Isis stand beneath a decorated canopy beside the Four Sons of Horus.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "deepZoomSource": true,
+    "focalPoint": {
+      "x": 0.72,
+      "y": 0.52
+    },
+    "note": "The processed derivatives retain the same CC BY-NC-SA 4.0 license and required British Museum credit.",
+    "file": "ani-plate-30-1280.jpg",
+    "width": 1280,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "ani-plate-30-480.avif",
+        "webp": "ani-plate-30-480.webp",
+        "fallback": "ani-plate-30-480.jpg"
+      },
+      {
+        "width": 960,
+        "avif": "ani-plate-30-960.avif",
+        "webp": "ani-plate-30-960.webp",
+        "fallback": "ani-plate-30-960.jpg"
+      },
+      {
+        "width": 1280,
+        "avif": "ani-plate-30-1280.avif",
+        "webp": "ani-plate-30-1280.webp",
+        "fallback": "ani-plate-30-1280.jpg"
+      }
+    ],
+    "placeholder": "ani-plate-30-placeholder.webp",
+    "deepZoom": {
+      "tileSize": 512,
+      "width": 1300,
+      "height": 975,
+      "levels": [
+        {
+          "level": 0,
+          "width": 325,
+          "height": 244,
+          "cols": 1,
+          "rows": 1,
+          "path": "ani-plate-30/tiles/0"
+        },
+        {
+          "level": 1,
+          "width": 650,
+          "height": 488,
+          "cols": 2,
+          "rows": 1,
+          "path": "ani-plate-30/tiles/1"
+        },
+        {
+          "level": 2,
+          "width": 1300,
+          "height": 975,
+          "cols": 3,
+          "rows": 2,
+          "path": "ani-plate-30/tiles/2"
+        }
+      ]
+    }
   }
 ]

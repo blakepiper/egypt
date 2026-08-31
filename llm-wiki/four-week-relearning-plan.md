@@ -3,6 +3,10 @@ type: study-plan
 tags: [study-plan, travel-prep, review]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Four-week relearning plan

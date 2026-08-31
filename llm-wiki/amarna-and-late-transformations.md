@@ -14,6 +14,10 @@ relations:
   - target: temples-priests-and-offerings
     type: threatens
     note: "Closing Amun's institutions redirected the economy of cult."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Amarna and late transformations

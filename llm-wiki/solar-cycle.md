@@ -12,6 +12,10 @@ relations:
   - target: osiris-isis-horus-and-set
     type: associated_with
     note: "Re and Osiris meet at the deepest hour of the night."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Solar cycle

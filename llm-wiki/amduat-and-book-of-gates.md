@@ -11,6 +11,10 @@ relations:
   - target: solar-cycle
     type: depicted_in
     note: "These compositions map the night crossing."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Amduat and Book of Gates

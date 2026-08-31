@@ -3,6 +3,10 @@ type: reading-notes
 tags: [course-readings, primary-texts, close-reading, rel-395]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Course-materials deep notes

@@ -14,6 +14,10 @@ relations:
   - target: death-funeral-and-the-dead
     type: associated_with
     note: "Relationships with the dead run through the same household practice."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Festivals, oracles, and personal piety

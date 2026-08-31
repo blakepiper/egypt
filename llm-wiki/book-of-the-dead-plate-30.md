@@ -11,9 +11,15 @@ relations:
   - target: visual-decoder
     type: draws_from
     note: "The scene is read with the same identification method."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Book of the Dead Plate 30
+
+!media[ani-plate-30]
 
 The student's report identifies Plate 30 as the opening of Chapter 125: entry into the Hall of the Two Truths and praise of Osiris. Its immediate issue is **vindication through authenticated knowledge**.
 

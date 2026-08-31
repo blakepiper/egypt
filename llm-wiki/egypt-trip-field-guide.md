@@ -9,11 +9,17 @@ relations:
   - target: visual-decoder
     type: draws_from
     note: "What to look at, and how to read it."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Egypt trip field guide
 
 This is an interpretive guide, not a live logistics guide. Opening hours, ticket rules, closures, and access can change; verify them near the visit.
+
+!media[temple-dendur]
 
 ## A method at every monument
 
@@ -84,4 +90,3 @@ Avoid flash where prohibited and do not touch reliefs. A context photo is usuall
 ## Sources in this archive
 
 Primarily [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], maps and entries in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and the course sequence in [[source-catalog#C01 — REL 395 syllabus|C01]].
-

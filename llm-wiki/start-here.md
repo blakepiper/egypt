@@ -15,11 +15,17 @@ relations:
   - target: contested-interpretations
     type: contested_by
     note: "The archive mixes evidence of very different weight; this page sends the reader there before conclusions are drawn."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Start here
 
 Ancient Egyptian religion was not a single creed. It was a three-thousand-year system for keeping a fragile created world alive. Its recurring problem was not “How do I assent to the correct doctrine?” but “How do gods and humans maintain life, order, presence, and continuity against disintegration?” The course vocabulary for that opposition is [[maat-isfet-and-kingship|maat and isfet]].
+
+!media[nauny-judgment]
 
 For the syllabus in sequence, use [[course-reading-guide]]. For packet-by-packet close notes, use [[course-materials-deep-notes]]. To recover exactly what you wrote in 2017—with corrections kept visible—use [[student-work-reconstruction]].
 

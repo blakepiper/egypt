@@ -9,6 +9,10 @@ relations:
   - target: maat-isfet-and-kingship
     type: maintains
     note: "Practical conduct as the human share of maat."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Ptahhotep and ethical life

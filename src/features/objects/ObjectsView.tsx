@@ -1,11 +1,10 @@
-// Objects and texts: close-reading layouts. The Plate 30 study is built so it
-// works before any photograph has been cleared — the annotations describe a
-// schematic of the scene, and the rights status is stated in the same view.
+// Objects and texts: close-reading layouts. The Plate 30 study keeps the image,
+// annotations, evidence limits, and rights record in the same view.
 
 import { useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
 import { allObjects, allPages, decoderGroups } from '../../generated';
-import { Card, CardGrid, EmptyState, FilterBar, MediaFigure, PageHeader, Section, SourceList } from '../../design-system/components';
+import { Card, CardGrid, DeepZoomViewer, EmptyState, FilterBar, PageHeader, Section, SourceList } from '../../design-system/components';
 
 const OBJECT_SLUGS = ['book-of-the-dead-plate-30', 'pyramid-texts', 'coffin-texts', 'book-of-the-dead', 'ptahhotep-and-ethical-life', 'visual-decoder'];
 
@@ -72,7 +71,9 @@ export function ObjectStudyView({ id }: { id: string }) {
 
       <div className="object-study__layout">
         <div className="object-study__viewer">
-          {object.mediaId ? <MediaFigure id={object.mediaId} /> : (
+          {object.mediaId ? (
+            <DeepZoomViewer id={object.mediaId} regions={object.regions} activeRegion={activeRegion} onRegionChange={setActiveRegion} />
+          ) : (
             <svg className="object-study__schematic" viewBox="0 0 100 100" role="group" aria-label={`Schematic layout of ${object.title}. Each labelled area is also listed below.`}>
               <rect x="0" y="0" width="100" height="100" className="object-study__ground" />
               <line x1="0" y1="12" x2="100" y2="12" className="object-study__register" />
@@ -97,10 +98,10 @@ export function ObjectStudyView({ id }: { id: string }) {
               ))}
             </svg>
           )}
-          <p className="object-study__caption">
+          {!object.mediaId && <p className="object-study__caption">
             Schematic, not a reproduction. Positions show the arrangement described in the source packet so the reading
             order can be followed. Nothing here is traced from the original.
-          </p>
+          </p>}
         </div>
 
         <aside className="detail-panel">

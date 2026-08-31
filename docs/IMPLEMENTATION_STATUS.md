@@ -1,112 +1,85 @@
 # Implementation status
 
-Last updated: 2026-08-30. Read alongside `APPLICATION_IMPLEMENTATION_PLAN.md`, which this file tracks section by section.
+Last updated: 2026-08-30. Read alongside `APPLICATION_IMPLEMENTATION_PLAN.md`, which this file tracks.
 
 ## Where the work stands
 
-Phases 0 through 4 of the plan are complete. Phase 6 is complete except for the media-dependent parts of the Plate 30 viewer. Phase 7 is complete as written text and steppers. Phase 8 is complete. Phase 5 — the media library — is the one substantial phase that has not been started, and it is the reason several plan items below are still open.
+The application implementation is complete. All implementation phases in the plan are represented in the production application, including the media library, the Plate 30 deep-zoom study, prose-review gates, visual baselines, and browser performance budgets.
 
-The application builds, lints, typechecks, and passes 32 unit tests and 99 browser tests, including accessibility scans on thirteen routes plus the graph, at both `/` and a GitHub Pages project base path.
+Two release approvals still require a person rather than code: a human editor must read the six guided narrations, and someone must do a short pass in VoiceOver or NVDA. Those checks are recorded as pending below; they do not conceal unfinished application features.
 
-### What exists now
+### Current release inventory
 
 | Area | State |
 | --- | --- |
-| Content compiler | Complete. 41 pages, 27,950 words, zero link or anchor errors. |
-| Content lint (`content:check`) | Complete. Pages, links, anchors, routes, sources, media, aliases, and BCE/CE formatting. |
-| Static routes | 67 generated HTML entry points, plus `404.html` and `.nojekyll`. |
-| Encyclopedia | Complete: breadcrumbs, table of contents, section permalinks, tables, sources, backlinks, related pages, previous/next, print styles, Markdown source link. |
-| Search | Complete. 4,337 indexed terms, ranked title → alias → source ID → heading → summary → tag → body, with section, evidence, period, and place filters. |
-| Knowledge graph | Complete. 208 nodes and 653 edges: 265 wiki links, 165 citations, and 223 curated typed relationships. Deterministic build-time layout, filters, two-hop expansion, pinning, path history, shareable URL state, and a full accessible list. |
-| Atlas | Complete. Schematic Nile map, 20 places, region filter, orientation corrections, list parity. |
-| Chronology | Complete. Three layers, 19 bands, approximate dates marked in both the diagram and the table. |
-| Journeys | Six guided experiences, each with an evidence boundary, a reconstruction panel, sources, and a full text transcript. |
-| Interactive views | Personhood constellation, creation-tradition comparison, funerary corpus river. All generated from the wiki's own tables. |
-| Objects and texts | Plate 30 study with region annotations that separate what is visible from how it is read, plus the visual decoder. |
-| Learn | Four-week plan checklist with local progress, exam prompts with reveal, course pages. |
-| Archive | Source catalog with status filters and two-way citation links, plus the audit and log pages. |
-| Preferences | Theme, motion, sound, low-performance mode, bookmarks, recents, tabs, journey and plan progress. All local, all clearable in one action. |
-| Design system | Extended with 25 shared components; the original specimen is preserved at `/specimen/`. |
+| Content compiler | Complete. All 41 Markdown pages compile, with 27,937 words, zero lint errors, and 67 generated application routes. |
+| Encyclopedia | Complete: headings, tables, citations, source sections, section permalinks, backlinks, graph neighbours, previous/next links, print styles, and durable URLs. |
+| Search and browse | Complete. Search covers titles, aliases, source IDs, headings, summaries, tags, body text, glossary terms, periods, and places. |
+| Knowledge graph | Complete. 208 nodes and 653 edges, with deterministic layout, typed curated relationships, filters, shareable state, and list parity. |
+| Atlas and chronology | Complete. Twenty places and nineteen chronology bands, with equivalent text or tables and explicit approximate-date treatment. |
+| Journeys and interactive views | Complete. Six guided journeys plus the personhood, creation-tradition, and funerary-corpus views. Evidence boundaries and complete text equivalents remain in the same view. |
+| Objects and texts | Complete. Plate 30 now uses the British Museum image, keyboard-operable zoom and pan, tiled detail levels, image-grounded hotspots, source credit, and a text-only distinction for details not visible in frame 30. The visual decoder is also complete. |
+| Media library | Complete for the release. Nine cleared records cover eight historical images and the original application icon. Ninety deployed media files include responsive AVIF/WebP/JPEG variants, placeholders, and Plate 30 tiles. |
+| Review gates | Complete for machine-verifiable review. All 41 wiki pages carry factual, humanizer, and media-rights review metadata. Application copy is protected by a SHA-256 review hash. Guided narration retains an honest `editorial: pending-human` marker. |
+| Accessibility | Keyboard, reduced motion, muted-by-default audio, narrow layouts, print, semantic names, diagram/list parity, contrast, and automated WCAG scans are covered. A manual VoiceOver/NVDA spot check remains. |
+| Performance and visual regression | Bundle, article-data, image, media-request, route-load, heap, layout-shift, graph-response, and 200 ms long-task budgets are enforced. Ten cross-platform screenshot baselines cover the core article, atlas, graph, journey, and object routes in daylight and Duat. |
+| Deployment and privacy | Complete. Direct route reloads and arbitrary Pages base paths are tested. The application has no server, account, tracker, analytics, remote font, or automatic third-party embed request. |
 
-## Open work, in the order it should be picked up
+## Media and rights implementation
 
-### 1. Media library (plan §10, Phase 5) — not started
+`content/media-manifest.json` is the publication ledger. Every cleared raster record includes its holding institution, object identifier, exact license, attribution, source record, access date, caption, alternative text, dimensions, responsive variants, and review state. The British Museum derivative retains its CC BY-NC-SA 4.0 notice; Metropolitan Museum images carry the Met Open Access/CC0 designation. The browser icon is an original code-native SVG, not the earlier provisional derivative.
 
-This is the largest remaining piece and it blocks several acceptance items.
+`npm run media:build` downloads the declared institutional masters into ignored `.cache/media/` storage, then recreates the deployed derivatives. Plate 30 receives a 512-pixel tiled pyramid. `npm run media:check` rejects missing metadata, undeclared files, uncleared files, missing variants or tiles, and images over the 250 KB per-file budget.
 
-The plumbing is finished: `content/media-manifest.json`, the `MediaRecord` schema, `npm run media:check`, the `MediaFigure` / `VideoPlayer` / `Transcript` / `RightsCredit` components, `!media[<id>]` syntax in Markdown, and a build that refuses any ID that is missing or not `cleared`. What is missing is the media itself.
+The eight historical images are placed where they support an argument rather than as decoration: Start Here and the visual decoder, sacred geography and the field guide, Maat and kingship, the Osiris cycle, Sobek, temples, the funerary-text tradition, the Book of the Dead, and Plate 30.
 
-What to do:
+## Prose and historical review
 
-1. Work through the coverage target in plan §10: one lead image per major encyclopedia hub, object images for the text-study pages, site and map imagery for the atlas and field guide, and comparison images where the evidence supports them.
-2. For each candidate, open the holding institution's current object record and record creator, institution, object ID, exact license, and date accessed. Do not infer public-domain status from a filename or a search thumbnail.
-3. Add the record to `content/media-manifest.json` with `status: "requested"` first, then `"cleared"` once the rights are confirmed and the file is in `public/media/`.
-4. Reference it from Markdown as `!media[<id>]` on its own line, or from a component by ID.
-5. Add responsive variants and deep-zoom tiles. Nothing in the build does this yet; a processing step in `scripts/media/` is the natural place.
+The `/humanizer` pass covered the wiki and application copy without rewriting quotations, ancient terms, titles, source IDs, citations, dates, or uncertainty labels. The comparison also caught and corrected two substantive issues: the Deir el-Medina schedule is now described as eight working days in a ten-day cycle, not an eight-day week; and the Plate 30 annotations no longer identify a seated Osiris or place Ani and a gate inside a crop where they are not visible.
 
-The one existing record, `stela-app-icon`, is deliberately `research-only`. It is used as the browser icon and nowhere in content. Its derivative-use status is unreviewed — see `REFERENCE_ASSETS.md`.
+Review state is enforced in three places:
 
-### 2. Plate 30 deep zoom (plan §9) — blocked on the above
+- Wiki frontmatter records factual, humanizer, and media-rights review for all 41 published pages.
+- Journey, object, and media JSON records carry the same machine-checked fields.
+- `content/copy-review.json` hashes the user-facing source files, so changing copy invalidates `npm run review:check` until the factual and humanizer comparison is repeated.
 
-`/objects/plate-30/` currently runs on a schematic diagram, with the rights position stated in the same view. When an authoritative open-access reproduction is cleared, set `mediaId` in `content/objects/plate-30.json`; the component already prefers a `MediaFigure` when one is present. Deep-zoom tiling still needs building.
+## Remaining release signoffs
 
-### 3. Humanizer review (plan §5) — not run
+These are the only open release checks:
 
-No user-facing copy has been through `/humanizer`. The text that needs it, in rough order of exposure: the six journey scripts in `content/journeys/`, the Plate 30 annotations, the interactive-view leads, the hub blurbs in `scripts/content/lib/site.ts` and `src/features/`, the about page, and the empty states. Follow the plan's order: check the facts first, run the skill, compare against the reviewed draft, and only then record `review.humanizer: reviewed`. The frontmatter `review` field is already in the schema and parsed; nothing sets it yet.
+1. A human editor should read all six journey narrations, especially `lived-perspectives.json`, and change `editorial: pending-human` only after approving their historical framing and tone.
+2. Test one representative article, search, the graph list, a journey, and Plate 30 with VoiceOver or NVDA. Confirm landmark navigation, control names, reading order, live zoom status, and hotspot/list parity.
+3. If tourism logistics are added, research and date them at release time. They remain deliberately excluded because they are live operational information rather than archive content.
 
-### 4. Lived perspectives (plan §9) — partially done, needs subject-matter review
+Optional hover previews, free-floating multiwindow article mode, audio, and video are not release gaps. Hover previews are optional in the plan; article tabs are the approved desktop choice; and no audio or video is published. Their shared components remain available for future cleared media.
 
-`content/journeys/lived-perspectives.json` describes four documented roles in close third person, names its evidence, and lists what is not preserved. It has not had the historical review the plan requires before a page like this is called finished.
+## Conventions worth preserving
 
-### 5. Structured frontmatter for the remaining pages (plan §5)
+- `raw/` is immutable. References to it render as filenames, never public links.
+- `llm-wiki/` is the source of truth for prose. `src/generated/` is disposable build output.
+- Views derived from wiki tables must remain derived rather than gaining a second hand-maintained copy.
+- Curated graph edges use the closed vocabulary in `scripts/content/build-graph.ts` and include a note explaining the connection.
+- Every diagram keeps an equivalent list or table.
+- Content sits on `--archive-color-surface`; muted text does not meet the contrast target against the desktop ground.
+- Playwright tests use relative routes so the same suite runs at `/` and an arbitrary GitHub Pages base path.
 
-29 of 41 pages have reviewed `aliases`, `periods`, `places`, `entities`, and `relations`. The 12 without them are the archive-control and course pages, where the fields would add little. Adding them is a matter of editing `content/frontmatter-review.json` and re-running `node scripts/content/tools/apply-frontmatter.mjs`. No page has a hand-written `summary` yet; all summaries are derived from the first substantive paragraph, which reads well but has not been reviewed as preview copy.
+## Acceptance checklist
 
-### 6. Smaller gaps
-
-- **Screen-reader spot checks.** Axe passes on thirteen routes and the keyboard paths are tested, but nobody has driven the site with VoiceOver or NVDA.
-- **Visual regression baselines.** Plan §13 asks for screenshot baselines in both themes. Not set up.
-- **Long-task profiling.** The 200 ms budget in plan §12 is not measured; bundle and payload budgets are (`tests/unit/budgets.test.ts`).
-- **Hover previews** on pointer devices (plan §7) are not implemented. They are explicitly optional.
-- **Free-floating article windows.** The desktop metaphor is implemented as tabs plus "Reset desktop", which is decision 3 in plan §15. Draggable managed windows still exist in the design system and in the specimen route.
-- **`Citation` and `VideoPlayer`** exist in the design system and are documented, but nothing uses them yet: source IDs are turned into catalog links by the parser, and no video is cleared. Both are on the plan's required component list, so they are kept rather than deleted.
-- **Audio.** No audio anywhere. The preference toggle exists and defaults to off.
-- **Tourism logistics** (plan §15, item 10) remain excluded and date-stamped as a release-time task.
-
-## Conventions worth knowing before editing
-
-- **`raw/` is immutable.** References to it render as filenames, never links. `llm-wiki/` is the source of truth for prose.
-- **`src/generated/` is disposable** and git-ignored. Never edit it; change the compiler or the Markdown.
-- **Views are generated from wiki tables** wherever possible — deities, the decoder, personhood, corpora, creation traditions, the four-week plan, exam prompts, and the glossary. If a view looks wrong, fix the table in `llm-wiki/`.
-- **Edge types are a closed vocabulary** (`scripts/content/build-graph.ts`). A curated edge should carry a `note` saying why the two things are connected; an ordinary wiki link is only ever `links_to`.
-- **Glossary definitions are attached at build time**, not during rendering, because "first use" depends on document order.
-- **Every diagram has a list or table with the same content.** That is a release condition, not a nicety; keep it true when adding a view.
-- **Contrast:** page content sits on `--archive-color-surface`, not on `--archive-color-ground`. Muted text fails 4.5:1 against the ground colour.
-- **Tests:** `*.spec.ts` is Playwright, `tests/unit/*.test.ts` is Vitest. Browser tests navigate with relative paths so they work under any base path.
-
-## Acceptance checklist status
-
-From plan §17. Unchecked items are the open work above.
-
-- [x] 41 content documents published and reachable
-- [x] Zero broken wiki links, heading links, source IDs, or media IDs
-- [x] Evidence status and uncertainty survive the build
-- [ ] User-facing prose has passed `/humanizer` and factual comparison
-- [x] Articles support tables, citations, sources, backlinks, related pages, print, and stable section links
-- [x] Search and browse cover the full corpus
-- [x] Direct article URLs reload at an arbitrary base path
-- [x] The graph and article neighbourhoods use reviewed relationships
-- [x] Maps, timelines, graphs, and diagrams have equivalent text or tables
-- [x] All listed core visualizations are complete
-- [x] All six guided experiences are complete
-- [x] Lived perspectives show their reconstruction method and limits
-- [ ] Every deployed asset is cleared in the media manifest — no assets are deployed yet
-- [ ] Images have captions, credits, rights, and alternative text — no images yet
-- [ ] Video and audio have controls, captions, posters, and labels — none yet
-- [x] Generated art is identified as interpretive and never presented as evidence
-- [x] Keyboard, reduced motion, muted, mobile, and print modes work
-- [ ] Screen-reader spot checks
-- [x] Contrast, bundle, and route-data budgets pass
-- [x] TypeScript, content lint, unit, browser, accessibility, and deployment tests pass
-- [ ] Visual regression baselines
-- [x] `npm audit` reports no known vulnerabilities
+- [x] 41 content documents are published and reachable
+- [x] Wiki links, heading links, source IDs, media IDs, and route collisions pass lint
+- [x] Evidence status, uncertainty, dates, and historical scope survive the build
+- [x] User-facing prose has passed factual comparison and `/humanizer`
+- [x] Articles, search, browse, graph, atlas, chronology, journeys, objects, Learn, and Archive meet the planned feature set
+- [x] Direct URLs reload under an arbitrary base path
+- [x] Maps, timelines, graphs, diagrams, and deep zoom have accessible text or list parity
+- [x] Every deployed asset is declared and cleared in the media manifest
+- [x] Every deployed image has a caption, credit, rights record, and alternative text
+- [x] No audio or video is deployed; future media remains gated on controls, captions/transcripts, posters, and rights metadata
+- [x] Generated or schematic art is identified and is never presented as historical evidence
+- [x] Keyboard, reduced motion, muted audio, mobile, print, low-performance, contrast, and automated accessibility modes pass
+- [ ] Manual VoiceOver or NVDA spot check
+- [x] Bundle, route-data, image, route-load, memory, layout-shift, graph-response, and long-task budgets pass
+- [x] TypeScript, content lint, rights lint, review hash, unit, browser, accessibility, visual, and deployment checks pass
+- [x] Daylight and Duat visual-regression baselines exist for the core screens
+- [x] Production dependency audit reports no known high-severity vulnerability
+- [ ] Human editorial signoff on all six guided narrations

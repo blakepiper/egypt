@@ -80,6 +80,20 @@ test.describe('reading', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/not in the archive|no page at that address/i);
     await expect(page.getByRole('link', { name: /search the archive|browse the index/i }).first()).toBeVisible();
   });
+
+  test('illustrated articles request only local responsive derivatives', async ({ page, baseURL }) => {
+    const images: string[] = [];
+    page.on('request', (request) => {
+      if (request.resourceType() === 'image') images.push(request.url());
+    });
+    await page.goto('wiki/sobek/');
+    const image = page.getByRole('img', { name: /tiny mottled-stone crocodile/i });
+    await expect(image).toBeVisible();
+    await expect(image).toHaveAttribute('width', '1280');
+    await expect(image).toHaveAttribute('height', '960');
+    await expect.poll(() => images.some((url) => /falcon-headed-crocodile-(480|960|1280)\.(avif|webp|jpg)$/.test(url))).toBe(true);
+    expect(images.every((url) => new URL(url).origin === new URL(baseURL!).origin)).toBe(true);
+  });
 });
 
 test.describe('search', () => {
@@ -154,7 +168,29 @@ test.describe('journeys and objects', () => {
     await page.goto('objects/plate-30/');
     await page.getByRole('button', { name: 'The gate' }).first().click();
     await expect(page.getByRole('heading', { name: 'What is visible' })).toBeVisible();
+    await expect(page.getByText('No gate appears in frame 30.')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Confidence' })).toBeVisible();
+  });
+
+  test('the Plate 30 viewer zooms, resets by keyboard, and loads local tiles', async ({ page }) => {
+    const tileRequests: string[] = [];
+    page.on('request', (request) => {
+      if (request.url().includes('/media/ani-plate-30/tiles/')) tileRequests.push(request.url());
+    });
+    await page.goto('objects/plate-30/');
+    const viewer = page.getByRole('group', { name: /Framed papyrus.*arrow keys/i });
+    await expect(viewer).toBeVisible();
+    await expect(viewer.getByRole('button', { name: 'Osiris under the canopy' })).toBeVisible();
+    await expect(viewer.getByRole('button', { name: 'The gate', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'The gate', exact: true })).toHaveCount(1);
+    await page.getByRole('button', { name: 'Zoom in' }).click();
+    await expect(page.getByRole('status').filter({ hasText: '150%' })).toBeVisible();
+    await viewer.focus();
+    await page.keyboard.press('ArrowRight');
+    await page.keyboard.press('Home');
+    await expect(page.getByRole('status').filter({ hasText: '100%' })).toBeVisible();
+    await expect(page.getByText(/Trustees of the British Museum/).first()).toBeVisible();
+    expect(tileRequests.length).toBeGreaterThan(0);
   });
 
   test('the decoder filters its groups', async ({ page }) => {
@@ -229,7 +265,7 @@ test.describe('preferences', () => {
 });
 
 test.describe('accessibility and layout', () => {
-  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/decoder/', 'learn/', 'archive/sources/', 'about/'];
+  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'learn/', 'archive/sources/', 'about/'];
 
   for (const route of routes) {
     test(`${route} has no automated accessibility violations`, async ({ page }) => {

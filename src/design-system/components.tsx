@@ -261,17 +261,120 @@ export function MediaFigure({ id, sizes = '(min-width: 900px) 640px, 100vw' }: {
       </figure>
     );
   }
+  const variants = media.variants ?? [];
+  const srcSet = (format: 'avif' | 'webp' | 'fallback') => variants.map((variant) => `${BASE}media/${variant[format]} ${variant.width}w`).join(', ');
   return (
     <figure className="media-figure">
-      <img
-        src={`${BASE}media/${media.file}`}
-        alt={media.alt}
-        width={media.width}
-        height={media.height}
-        loading="lazy"
-        decoding="async"
-        sizes={sizes}
-      />
+      <picture>
+        {variants.length > 0 && <source type="image/avif" srcSet={srcSet('avif')} sizes={sizes} />}
+        {variants.length > 0 && <source type="image/webp" srcSet={srcSet('webp')} sizes={sizes} />}
+        <img
+          src={`${BASE}media/${media.file}`}
+          srcSet={variants.length > 0 ? srcSet('fallback') : undefined}
+          alt={media.alt}
+          width={media.width}
+          height={media.height}
+          loading="lazy"
+          decoding="async"
+          sizes={sizes}
+          style={media.focalPoint ? { objectPosition: `${media.focalPoint.x * 100}% ${media.focalPoint.y * 100}%` } : undefined}
+        />
+      </picture>
+      <figcaption>
+        <span className="media-figure__caption">{media.caption}</span>
+        <RightsCredit media={media} />
+      </figcaption>
+    </figure>
+  );
+}
+
+export function DeepZoomViewer({
+  id, regions, activeRegion, onRegionChange,
+}: {
+  id: string;
+  regions: { id: string; x: number; y: number; w: number; h: number; label: string; imageRegion?: boolean }[];
+  activeRegion: string | null;
+  onRegionChange: (id: string | null) => void;
+}) {
+  const media = allMedia.find((record) => record.id === id);
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  if (!media?.deepZoom) return <MediaFigure id={id} />;
+
+  const reset = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
+  const setClampedZoom = (value: number) => {
+    const next = Math.min(3, Math.max(1, value));
+    setZoom(next);
+    if (next === 1) setPan({ x: 0, y: 0 });
+  };
+  const levelIndex = Math.min(media.deepZoom.levels.length - 1, Math.ceil(Math.log2(zoom)) + 1);
+  const level = media.deepZoom.levels[levelIndex];
+  const visibleRegions = [...regions].filter((region) => region.imageRegion !== false).sort((a, b) => (b.w * b.h) - (a.w * a.h));
+
+  return (
+    <figure className="deep-zoom">
+      <div className="deep-zoom__controls" role="group" aria-label="Image zoom controls">
+        <Button variant="quiet" onClick={() => setClampedZoom(zoom - 0.5)} disabled={zoom === 1} aria-label="Zoom out">−</Button>
+        <label><span className="sr-only">Zoom level</span><input type="range" min="1" max="3" step="0.25" value={zoom} onChange={(event) => setClampedZoom(Number(event.target.value))} /></label>
+        <Button variant="quiet" onClick={() => setClampedZoom(zoom + 0.5)} disabled={zoom === 3} aria-label="Zoom in">+</Button>
+        <Button variant="quiet" onClick={reset}>Reset</Button>
+        <output aria-live="polite">{Math.round(zoom * 100)}%</output>
+      </div>
+      <div
+        className="deep-zoom__viewport"
+        role="group"
+        aria-label={`${media.alt} Use the zoom controls or arrow keys to inspect the image.`}
+        tabIndex={0}
+        onKeyDown={(event) => {
+          const movements: Record<string, { x: number; y: number }> = {
+            ArrowLeft: { x: 6, y: 0 }, ArrowRight: { x: -6, y: 0 }, ArrowUp: { x: 0, y: 6 }, ArrowDown: { x: 0, y: -6 },
+          };
+          if (event.key === 'Home') { event.preventDefault(); reset(); return; }
+          const movement = movements[event.key];
+          if (!movement || zoom === 1) return;
+          event.preventDefault();
+          setPan((current) => ({
+            x: Math.max(-35, Math.min(35, current.x + movement.x)),
+            y: Math.max(-35, Math.min(35, current.y + movement.y)),
+          }));
+        }}
+      >
+        <div
+          className="deep-zoom__canvas"
+          style={{
+            aspectRatio: `${level.width} / ${level.height}`,
+            transform: `translate(${pan.x}%, ${pan.y}%) scale(${zoom})`,
+          }}
+        >
+          {Array.from({ length: level.rows }, (_, row) => Array.from({ length: level.cols }, (_, col) => (
+            <img
+              key={`${col}-${row}`}
+              src={`${BASE}media/${level.path}/${col}-${row}.webp`}
+              alt=""
+              draggable={false}
+              loading="lazy"
+              style={{
+                left: `${(col * media.deepZoom!.tileSize / level.width) * 100}%`,
+                top: `${(row * media.deepZoom!.tileSize / level.height) * 100}%`,
+                width: `${(Math.min(media.deepZoom!.tileSize, level.width - col * media.deepZoom!.tileSize) / level.width) * 100}%`,
+                height: `${(Math.min(media.deepZoom!.tileSize, level.height - row * media.deepZoom!.tileSize) / level.height) * 100}%`,
+              }}
+            />
+          )))}
+          {visibleRegions.map((region) => (
+            <button
+              key={region.id}
+              type="button"
+              className={`deep-zoom__hotspot ${activeRegion === region.id ? 'is-active' : ''}`}
+              style={{ left: `${region.x}%`, top: `${region.y}%`, width: `${region.w}%`, height: `${region.h}%` }}
+              aria-pressed={activeRegion === region.id}
+              onClick={() => onRegionChange(activeRegion === region.id ? null : region.id)}
+            >
+              <span>{region.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
       <figcaption>
         <span className="media-figure__caption">{media.caption}</span>
         <RightsCredit media={media} />
