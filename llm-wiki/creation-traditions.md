@@ -35,7 +35,7 @@ Egyptian cosmogonies share a problem more than a single plot: how do awareness, 
 
 Atum emerges on or as the primeval mound and generates Shu (air) and Tefnut (moisture), often through masturbation, spitting, or sneezing. Shu and Tefnut produce Geb (earth) and Nut (sky); their children are Osiris, Isis, Set, and Nephthys. This genealogy makes cosmic structure and the drama of kingship one continuous family history.
 
-The course's *Creations of Ra* packet includes accounts in which the self-generated creator is identified with Khepri and Re. The creator works through heart/will and authoritative utterance, brings Shu and Tefnut from himself, and creates humans from the tears of the returning Eye. Wordplay between “people” and “tears” matters: Egyptian cosmogony often reasons through sound and image rather than abstract definition.
+The *Creations of Ra* collection includes accounts in which the self-generated creator is identified with Khepri and Re. The creator works through heart and will and authoritative utterance, brings Shu and Tefnut from himself, and creates humans from the tears of the returning Eye. Wordplay between “people” and “tears” matters: Egyptian cosmogony often reasons through sound and image rather than abstract definition.
 
 ## Memphis — Ptah's heart and tongue
 
@@ -47,7 +47,7 @@ This tradition is a concentrated statement of the same logic behind [[heka-and-o
 
 The Hermopolitan **Ogdoad** are four male-female pairs expressing precreation conditions such as water, darkness, limitlessness, and hiddenness. Traditions differ over whether they generate an egg, a lotus, or conditions from which the sun appears.
 
-The course's **Khonsu Cosmogony** is a deliberately synthetic Ptolemaic temple composition. It makes Thebes prior while incorporating Hermopolitan, Memphite, and Heliopolitan ideas. Amun-Re, Ptah, the Ogdoad, Hathor, Khonsu, Thoth, and Osiris are coordinated through place, genealogy, wordplay, and identification. The composition shows late temple theologians building a local totality from inherited systems.
+The **Khonsu Cosmogony** is a deliberately synthetic Ptolemaic temple composition. It makes Thebes prior while incorporating Hermopolitan, Memphite, and Heliopolitan ideas. Amun-Re, Ptah, the Ogdoad, Hathor, Khonsu, Thoth, and Osiris are coordinated through place, genealogy, wordplay, and identification. The composition shows late temple theologians building a local totality from inherited systems.
 
 ## Elephantine/Esna — Khnum the fashioner
 
@@ -55,7 +55,7 @@ Khnum, ram-headed lord of the cataract region, fashions gods and humans on a pot
 
 ## Neith, the Cow Mother, and self-generation
 
-The course packet from Esna identifies an ultimate mother with Neith, while noting possible Hathor or Isis associations in other contexts. She exists in the abyss, emerges from herself, assumes animal forms, creates light with her eyes, establishes dry land by speech, and creates gods by naming them. The gendered formula “father of fathers, mother of mothers” expresses a creator prior to sexual differentiation.
+The Esna text identifies an ultimate mother with Neith, while noting possible Hathor or Isis associations in other contexts. She exists in the abyss, emerges from herself, assumes animal forms, creates light with her eyes, establishes dry land by speech, and creates gods by naming them. The gendered formula “father of fathers, mother of mothers” expresses a creator prior to sexual differentiation.
 
 ## Lotus/water-lily creation
 
@@ -71,4 +71,4 @@ Temple sanctuaries evoke the first mound: an elevated, dark, restricted place fr
 
 ## Sources in this archive
 
-[[source-catalog#C12 — Cosmogony primary-source packet|C12]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C07 — Blue water-lily research project|C07]].
+[[source-catalog#C12 — Cosmogony primary-source packet|C12]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C07 — Blue water-lily research|C07]].

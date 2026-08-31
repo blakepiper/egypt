@@ -56,9 +56,8 @@ At the same time:
 - Plutarch interpreted Isis and Osiris within Greek philosophical and narrative frameworks;
 - Egyptian images and ideas entered Hermetic, Gnostic, Roman, and eventually Christian settings without a single line of inheritance.
 
-The course's PDM/PGM packet demonstrates practical hybridity: recipes use Seth/Typhon, Isis, Osiris, Anubis, voces magicae, animal substances, written figures, burial at thresholds, and coercive aims such as separation, attraction, dream revelation, and protection.
+The PDM/PGM packet demonstrates practical hybridity: recipes use Seth/Typhon, Isis, Osiris, Anubis, voces magicae, animal substances, written figures, burial at thresholds, and coercive aims such as separation, attraction, dream revelation, and protection.
 
 ## Sources in this archive
 
 [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C11 — PDM and PGM magical texts|C11]], and [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]].
-

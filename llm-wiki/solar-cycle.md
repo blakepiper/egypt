@@ -57,5 +57,4 @@ It is tempting to narrate “the Egyptians believed the sun died at night and wa
 
 ## Sources in this archive
 
-[[source-catalog#C14 — Amduat and Book of Gates course selections|C14]], [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C04 — Course exams and study prompts|C04]].
-
+[[source-catalog#C14 — Amduat and Book of Gates selections|C14]], [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

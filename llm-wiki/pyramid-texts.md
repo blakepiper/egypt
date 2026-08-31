@@ -49,11 +49,10 @@ The mainstream reading treats the inscriptions as mortuary ritual and postmortem
 
 Jeremy Naydler argues that some texts record living royal mystical experience: a voluntary death, spirit-world journey, and return used especially in a Sed-festival renewal. Empty sarcophagi and first-person speech become evidence for a living king's ritual ordeal.
 
-The course explicitly tested the contrast between standard funerary interpretation and Naydler's literal-living reading. The hypothesis usefully asks whether texts encode lived altered states and whether their architecture guided performance. It remains contested because funerary setting, deceased royal ownership, and ritual speech do not require a living shamanic initiation. “Shamanic” is also a cross-cultural category that can import expectations not demonstrated in Egyptian evidence.
+The contrast between standard funerary interpretation and Naydler's literal-living reading raises a useful question: might these texts encode lived altered states or guide performance? The proposal remains contested because funerary setting, deceased royal ownership, and ritual speech do not require a living shamanic initiation. “Shamanic” is also a cross-cultural category that can import expectations not demonstrated in Egyptian evidence.
 
 Best practice: keep two separate claims. The texts certainly came from and enabled ritual performance; it is not established that the king underwent Naydler's specific living death-and-rebirth ceremony inside the pyramid.
 
 ## Sources in this archive
 
-[[source-catalog#C23 — Pyramid Text selections|C23]], [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
-
+[[source-catalog#C23 — Pyramid Text selections|C23]], [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].

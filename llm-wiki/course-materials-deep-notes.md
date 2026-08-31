@@ -1,6 +1,6 @@
 ---
 type: reading-notes
-tags: [course-readings, primary-texts, close-reading, rel-395]
+tags: [source-notes, primary-texts, close-reading, ancient-egypt]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 review:
@@ -9,17 +9,17 @@ review:
   media_rights: reviewed
 ---
 
-# Course-materials deep notes
+# Source notes
 
-These notes preserve the distinctive content of every surviving assigned packet. They supplement the thematic pages by keeping each reading's genre, sequence, and argumentative contribution visible.
+These notes preserve the distinctive content of every surviving source packet. They supplement the thematic pages by keeping each reading's genre, sequence, and argumentative contribution visible.
 
-## Pinch chapter 1 notes: the course's method
+## Pinch chapter 1 notes: source criticism
 
-The instructor handout built the course around source criticism. Egyptian myth survives unevenly and is often embedded in hymns, ritual, magic, royal ideology, or funerary writing rather than collected as narrative scripture. Myth can explain origins, charter institutions, or operate ritually. Local cults generate multiple valid divine perspectives; national theology connects rather than necessarily abolishes them.
+The handout builds its method around source criticism. Egyptian myth survives unevenly and is often embedded in hymns, ritual, magic, royal ideology, or funerary writing rather than collected as narrative scripture. Myth can explain origins, charter institutions, or operate ritually. Local cults generate multiple valid divine perspectives; national theology connects rather than necessarily abolishes them.
 
 The notes tie ecology to symbolic geography: Kemet/Black Land is Nile fertility, Deshret/Red Land the desert beyond it, with the west strongly associated with burial and sunset. Maat and isfet express maintained order and its disruption. Hieroglyphic images are potentially effective, which helps explain substitution, mutilation of dangerous signs, and the importance of names.
 
-The handout's periodization moves from royal Pyramid Texts to wider Coffin Texts and later Book of the Dead material. That can be a useful memory aid, but it should not be read as a clean replacement or a simple democratic march. Old compositions survive, new media and patrons emerge, and access remains unequal. This is the course's “roof shingles” model developed in [[funerary-text-tradition]].
+The handout's periodization moves from royal Pyramid Texts to wider Coffin Texts and later Book of the Dead material. That can be a useful memory aid, but it should not be read as a clean replacement or a simple democratic march. Old compositions survive, new media and patrons emerge, and access remains unequal. This is the “roof shingles” model developed in [[funerary-text-tradition]].
 
 ## Creation packets
 
@@ -103,7 +103,7 @@ Naydler argues that modern Egyptology too quickly reduced the Pyramid Texts to b
 
 His reading of Unas maps text placement: south/west movement toward death, then east/north movement toward rebirth and emergence. He uses Sed-festival architecture and the Cannibal Hymn to reconstruct ecstatic incorporation of divine power.
 
-The course value is the argument, not compulsory assent. Texts can be performative and buildings can stage transformation while still being made for burial. Naydler's thesis exceeds the surviving direct evidence when it turns those possibilities into a complete initiatory scenario.
+The useful point is the argument, not compulsory assent. Texts can be performative and buildings can stage transformation while still being made for burial. Naydler's thesis exceeds the surviving direct evidence when it turns those possibilities into a complete initiatory scenario.
 
 ## Coffin Text selection
 
@@ -123,7 +123,7 @@ The **Book of Gates** marks transitions with guarded gates and great serpents. R
 
 ## Book of the Dead Plate 30 packet
 
-The instructions required identification of the selected plate, summary of text and imagery, relation to surrounding plates, interpretation, and research support. The supplied images make Plate 30 part of a roll, not a self-contained poster. Blake's report correctly centers it on entrance and authorization before judgment. The ODT's appended water-lily prose is accidental contamination and belongs to the research-paper history.
+The supplied images make Plate 30 part of a roll, not a self-contained poster. The scene centers on entrance and authorization before judgment. The ODT's appended water-lily prose is accidental contamination and belongs with the water-lily research notes.
 
 ## PDM/PGM and Plutarch: late transformations
 
@@ -133,4 +133,4 @@ Plutarch gives a continuous story: Osiris's and other gods' intercalary birthday
 
 ## Sources in this archive
 
-[[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]]–[[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], [[source-catalog#C23 — Pyramid Text selections|C23]], and [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]].
+[[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]]–[[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], [[source-catalog#C23 — Pyramid Text selections|C23]], and [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]].

@@ -47,7 +47,7 @@
     "y": 8,
     "region": "delta",
     "bank": "east",
-    "summary": "Cult center of Banebdjedet, a ram deity referenced in the student's reading of Book of the Dead Plate 30.",
+    "summary": "Cult center of Banebdjedet, the ram deity named in the Book of the Dead Plate 30 material.",
     "deities": [
       "banebdjedet"
     ],
@@ -277,7 +277,7 @@
     "y": 68,
     "region": "upper",
     "bank": "west",
-    "summary": "Khnum's late temple, with learned cosmogony and the Neith and Cow-Mother material used in the course packet.",
+    "summary": "Khnum's late temple, with learned cosmogony and the Neith and Cow-Mother material preserved at Esna.",
     "deities": [
       "khnum",
       "neith"

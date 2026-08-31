@@ -26,7 +26,7 @@ The modern title “Book of the Dead” refers to a changing repertoire of compo
 
 Copies could be written on papyrus, placed within mummy wrappings or coffin, painted on tomb or coffin surfaces, or distributed across shrouds, amulets, heart scarabs, shabtis, and other objects. Red **rubrics** distinguish titles or instructions. **Vignettes** do not merely summarize text; they can carry and activate ritual knowledge. Late copies may preserve images while abbreviating or omitting much text.
 
-The course used the Papyrus of Ani, whose owner is the scribe Ani and whose wife Tutu is identified as a temple singer by her sistrum.
+The Papyrus of Ani belongs to the scribe Ani. His wife Tutu is identified as a temple singer by her sistrum.
 
 ## Major problem clusters
 
@@ -59,6 +59,6 @@ The deceased is called “Osiris [name]” and also seeks Re's bark, daylight, K
 
 ## Sources in this archive
 
-The assigned Goelet/Faulkner volume is absent, so reconstruction relies on [[source-catalog#C04 — Course exams and study prompts|C04]], [[source-catalog#C06 — Book of the Dead Plate 30 project|C06]], [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]], and contextual discussion in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
+The Goelet/Faulkner volume is absent from the source collection, so this discussion relies on [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C06 — Book of the Dead Plate 30 research|C06]], [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]], and contextual discussion in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
 
 Current corpus and object checks are in [[web-research-supplement#Funerary corpora overlap rather than replace one another]] and [[web-research-supplement#Hunefer and the judgment scene]].

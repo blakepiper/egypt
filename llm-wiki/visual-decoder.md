@@ -55,7 +55,7 @@ review:
 - **Cow horns + disk:** Hathor, Isis, or another goddess; use context.
 - **Tall double plumes:** often Amun, Min, or related forms; use pose and crown base.
 
-The completed final exam calls a `wereret` crown the double crown; terminology varies, and its answer may conflate crown names. Use museum labels rather than that answer alone.
+Some sources call a `wereret` crown the double crown, but terminology varies and crown names can be conflated. Use museum labels alongside the image itself.
 
 ## Priest cues
 
@@ -83,4 +83,4 @@ The archive's Plate 19, 29, 30, and `Unified.jpg` show why adjacent images matte
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].

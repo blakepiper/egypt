@@ -6,7 +6,7 @@ import { allPages, contentManifest, navigationSections } from '../../generated';
 import { Card, CardGrid, EmptyState, PageHeader, Section } from '../../design-system/components';
 import type { SectionId } from '../../types/content';
 import { PreferencesPanel } from '../settings/Preferences';
-import { ExamRecovery, RelearningPlan } from '../learn/StudyPlan';
+import { ConceptChecks, RelearningPlan } from '../learn/StudyPlan';
 
 function SectionHub({ id, eyebrow, lead }: { id: SectionId; eyebrow: string; lead: string }) {
   const section = navigationSections.find((entry) => entry.id === id);
@@ -33,7 +33,7 @@ export function WikiIndexView() {
       <PageHeader
         eyebrow="Encyclopedia"
         title="Every article in the archive"
-        lead={`${contentManifest.counts.pages} pages and about ${Math.round(contentManifest.counts.words / 1000)},000 words, grouped the way the course grouped them.`}
+        lead={`${contentManifest.counts.pages} pages and about ${Math.round(contentManifest.counts.words / 1000)},000 words, arranged by subject and connected through the graph.`}
       />
       {navigationSections.find((section) => section.id === 'encyclopedia')?.groups.map((group) => (
         <Section key={group.label} title={group.label}>
@@ -71,10 +71,10 @@ export function LearnView() {
       <PageHeader
         eyebrow="Learn"
         title="Learn"
-        lead="The course as it ran in 2017, the readings in sequence, and a four-week route back through the material. Progress is stored in this browser only."
+        lead="Short reading routes, a four-week plan, and concept checks for building a connected understanding of ancient Egyptian religion. Progress is stored in this browser only."
       />
       <RelearningPlan />
-      <ExamRecovery />
+      <ConceptChecks />
       {section?.groups.filter((group) => group.pages.length > 0).map((group) => (
         <Section key={group.label} title={group.label}>
           <CardGrid>
@@ -92,7 +92,7 @@ export function ArchiveView() {
       <PageHeader
         eyebrow="Archive"
         title="Provenance and maintenance"
-        lead="Where each claim came from, what was read in full, what remains sampled, and what the student wrote in 2017 with its corrections kept visible."
+        lead="Where each claim came from, how deeply the sources were read, and which interpretations remain provisional."
       />
       <Section title="Start with the catalog">
         <CardGrid>
@@ -122,10 +122,9 @@ export function AboutView() {
       <PageHeader eyebrow="About" title="What this is, and what it does with your data" />
       <div className="prose">
         <p>
-          The Living Archive reconstructs REL 395, Religion of Ancient Egypt, taught by Jason BeDuhn at Northern Arizona
-          University in Spring 2017. The written source of truth is a set of {contentManifest.counts.pages} Markdown
-          documents. Everything the application shows is compiled from those documents and from a small set of reviewed
-          data files at build time.
+          The Living Archive is a sourced guide to ancient Egyptian religion. Its written source of truth is a set of{' '}
+          {contentManifest.counts.pages} Markdown documents. Everything the application shows is compiled from those
+          documents and from a small set of reviewed data files at build time.
         </p>
         <h2>Privacy</h2>
         <p>
@@ -137,13 +136,13 @@ export function AboutView() {
         <ul>
           <li><strong>Primary source</strong> — a modern translation or reproduction of an ancient text or image.</li>
           <li><strong>Scholarship</strong> — a modern scholarly account, named in the source catalog.</li>
-          <li><strong>Course synthesis</strong> — material reconstructed from the 2017 course record, including student work. It is not scholarly consensus.</li>
+          <li><strong>Archive synthesis</strong> — an interpretation assembled from the source collection, including archival notes. It is not scholarly consensus.</li>
           <li><strong>Artistic or contested</strong> — a reconstruction, or a claim the archive records without endorsing.</li>
         </ul>
         <h2>What this archive will not do</h2>
         <p>
-          It will not present a single timeless Egyptian mind, will not treat student work as authority, and will not use
-          generated imagery as evidence. Reconstructions state their period, place, social position, evidence, and
+          It will not present a single timeless Egyptian mind, treat research notes as authority, or use generated
+          imagery as evidence. Reconstructions state their period, place, social position, evidence, and
           limits in the same view as the reconstruction itself.
         </p>
         <p>

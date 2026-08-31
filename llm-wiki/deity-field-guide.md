@@ -1,6 +1,6 @@
 ---
 type: reference
-tags: [gods, iconography, travel, exam-review]
+tags: [gods, iconography, travel, visual-reference]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 aliases: [Gods and goddesses, Deity guide]
@@ -31,7 +31,7 @@ Use iconography as an entry point, not an exhaustive identity. Crowns and heads 
 | **Geb** | reclining man, sometimes goose | earth; partner of Nut; parent generation of Osiris cycle | Heliopolitan theology |
 | **Hapi** | corpulent male with pendulous breasts, aquatic plants | personified inundation and abundance; binds Two Lands | Nile scenes |
 | **Hathor** | cow, cow-horn-and-disk crown, or woman | motherhood, sexuality, music, intoxication, joy, sky, west, welcome of dead | Dendera; Thebes |
-| **Heka** | anthropomorphic; upraised-arms sign may be relevant in course iconography | effective power enabling divine and human ritual; linked with Sia and Hu | cosmic and ritual contexts |
+| **Heka** | anthropomorphic; upraised-arms sign may be relevant in Egyptian iconography | effective power enabling divine and human ritual; linked with Sia and Hu | cosmic and ritual contexts |
 | **Horus** | falcon or falcon-headed king | sky, living kingship, heir of Osiris, opponent/partner of Set | Edfu; royal monuments |
 | **Horus the Child / Harpokrates** | nude child, sidelock, finger to mouth | vulnerable divine child, healing, rebirth; masters dangerous animals on cippi | healing objects; late temples |
 | **Isis** | throne-sign crown; later cow horns and disk; winged mourner | throne, mourning, magic, protection, motherhood; conceives and protects Horus | widespread; Philae in late period |
@@ -75,5 +75,4 @@ Use iconography as an entry point, not an exhaustive identity. Crowns and heads 
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].
-
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].

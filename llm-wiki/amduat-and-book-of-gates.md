@@ -31,11 +31,11 @@ These New Kingdom royal Underworld Books map the sun's nightly renewal in twelve
 - Re joins with Osiris at the deepest regenerative phase.
 - The renewed sun becomes Khepri and emerges at dawn.
 
-The course selections themselves are primarily image plates with very little extractable prose. All twelve pages of each packet were inspected visually rather than treated as “empty” because OCR found little text. The accompanying Budge volumes supply translations and diagram descriptions, but their language and interpretations are more than a century old.
+The surviving selections are primarily image plates with very little extractable prose. The accompanying Budge volumes supply translations and diagram descriptions, but their language and interpretations are more than a century old.
 
 ## Amduat
 
-“The Book of What Is in the Duat” presents an encyclopedic hidden geography. The inspected course packet repeatedly places the solar bark in a middle register between populations above and below: gods, blessed dead, corpses, mounds, caves, waters, fire, serpents, and restrained enemies. Each hour records names and functions. Knowledge reproduces divine order and lets the king participate. The middle night is especially associated with the deep union of solar ba and Osirian body; later hours bind and cut Apep, reverse death's inertia, and prepare dawn. In the final hour beings pass through a great serpent in a visual grammar of renewal.
+“The Book of What Is in the Duat” presents an encyclopedic hidden geography. The surviving images repeatedly place the solar bark in a middle register between populations above and below: gods, blessed dead, corpses, mounds, caves, waters, fire, serpents, and restrained enemies. Each hour records names and functions. Knowledge reproduces divine order and lets the king participate. The middle night is especially associated with the deep union of solar ba and Osirian body; later hours bind and cut Apep, reverse death's inertia, and prepare dawn. In the final hour beings pass through a great serpent in a visual grammar of renewal.
 
 ## Book of Gates
 
@@ -45,7 +45,7 @@ The inspected packet makes its structure visually unmistakable: great serpents a
 
 Underworld Books were initially royal tomb compositions centered on Re's cosmic night and later spread to other contexts. The [[book-of-the-dead]] is a selectable collection oriented around an individual deceased's needs and can include judgment, transformations, offerings, and passage without giving one continuous twelve-hour itinerary.
 
-## Course memory points
+## What to notice
 
 - twelve divisions because night has twelve hours;
 - the deceased/king is located in or travels through the underworld;
@@ -55,4 +55,4 @@ Underworld Books were initially royal tomb compositions centered on Re's cosmic 
 
 ## Sources in this archive
 
-[[source-catalog#C14 — Amduat and Book of Gates course selections|C14]], [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]], and [[source-catalog#C04 — Course exams and study prompts|C04]].
+[[source-catalog#C14 — Amduat and Book of Gates selections|C14]], [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

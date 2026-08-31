@@ -28,7 +28,7 @@ export function collectRoutes(): RouteEntry[] {
   const objects = readJson<ObjectStudy[]>('objects.json');
 
   const routes: RouteEntry[] = [
-    { path: '/', title: 'The Living Archive', description: 'An archive of ancient Egyptian religion reconstructed from a 2017 university course, with its sources and uncertainties kept visible.' },
+    { path: '/', title: 'The Living Archive', description: 'A sourced guide to ancient Egyptian religion, with evidence and uncertainty kept visible.' },
     { path: '/wiki/', title: 'Encyclopedia', description: `All ${manifest.counts.pages} articles in the archive, grouped by hub.` },
     { path: '/atlas/', title: 'Atlas', description: 'Sacred geography along the Nile: cult centres, the Red Land, and the west.' },
     { path: '/chronology/', title: 'Chronology', description: 'Periods, overlapping funerary corpora, institutions, and what survives from each stretch of time.' },
@@ -36,8 +36,8 @@ export function collectRoutes(): RouteEntry[] {
     { path: '/journeys/', title: 'Journeys', description: 'Guided sequences that state their period, place, evidence, and limits.' },
     { path: '/objects/', title: 'Objects and texts', description: 'Close reading of images and manuscripts, and the visual decoder.' },
     { path: '/objects/decoder/', title: 'Visual decoder', description: 'Signs, crowns, priestly cues, and funerary scene cues, with identification confidence visible.' },
-    { path: '/learn/', title: 'Learn', description: 'The course as it ran, its reading sequence, and a four-week route back through it.' },
-    { path: '/archive/', title: 'Archive', description: 'Sources, audits, student work, and the maintenance record.' },
+    { path: '/learn/', title: 'Learn', description: 'Reading routes, concept checks, and a four-week plan for ancient Egyptian religion.' },
+    { path: '/archive/', title: 'Archive', description: 'Sources, audits, research notes, and the maintenance record.' },
     { path: '/archive/sources/', title: 'Source catalog', description: `${manifest.counts.sources} intellectual-source groups with stable C IDs.` },
     { path: '/field-guide/', title: 'Field guide', description: 'What to notice at sites and museums.' },
     { path: '/search/', title: 'Search', description: 'Search titles, headings, body text, tags, periods, places, and source IDs.' },

@@ -62,7 +62,7 @@ export const SECTION_LABELS: Record<SectionId, string> = {
 
 /** Hub groupings for the encyclopedia index and article previous/next links. */
 export const HUBS: { label: string; blurb: string; slugs: string[] }[] = [
-  { label: 'Begin here', blurb: 'Orientation and the course argument in one sitting.',
+  { label: 'Begin here', blurb: 'Orientation and the recurring pattern in one sitting.',
     slugs: ['start-here', 'how-egyptian-religion-works', 'chronology', 'sacred-geography'] },
   { label: 'Foundations', blurb: 'The ideas the rest of the archive depends on.',
     slugs: ['maat-isfet-and-kingship', 'heka-and-operative-ritual', 'personhood-and-the-afterlife'] },

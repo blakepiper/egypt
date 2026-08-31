@@ -9,19 +9,17 @@ import { EmptyState, FilterBar, PageHeader } from '../../design-system/component
 
 function statusKind(status: string): string {
   const value = status.toLowerCase();
-  if (value.includes('student')) return 'student';
   if (value.includes('primary')) return 'primary';
   if (value.includes('scholar')) return 'scholarship';
   if (value.includes('speculative') || value.includes('fringe')) return 'speculative';
-  if (value.includes('course')) return 'course';
+  if (value.includes('archive') || value.includes('instructional') || value.includes('assessment') || value.includes('annotated') || value.includes('contextual') || value.includes('collection record') || value.includes('research process') || value.includes('report and presentation') || value.includes('generic academic') || value.includes('student')) return 'archive';
   return 'other';
 }
 
 const STATUS_FILTERS = [
   { id: 'scholarship', label: 'Scholarship' },
   { id: 'primary', label: 'Primary translation' },
-  { id: 'student', label: 'Student work' },
-  { id: 'course', label: 'Course record' },
+  { id: 'archive', label: 'Archive notes' },
   { id: 'speculative', label: 'Speculative' },
   { id: 'other', label: 'Other' },
 ];
@@ -43,7 +41,7 @@ export function SourcesView() {
       <PageHeader
         eyebrow="Archive"
         title="Source catalog"
-        lead={`${allSources.length} intellectual-source groups behind the archive. “Student” means a course artefact, not independent authority. “Primary translation” means a modern translation of an ancient source.`}
+        lead={`${allSources.length} intellectual-source groups behind the archive. Archival notes are separated from independent scholarship. “Primary translation” means a modern translation of an ancient source.`}
       />
       <label className="search-field search-field--compact">
         <span className="sr-only">Filter sources</span>

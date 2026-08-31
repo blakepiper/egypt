@@ -56,7 +56,7 @@ Recurring principles are **axis**, **register**, **threshold**, **ecological con
 
 ## Design principles
 
-1. **Evidence travels with experience.** Primary source, course synthesis, scholarship, and contested/artistic reconstruction are persistent interface states.
+1. **Evidence travels with experience.** Primary source, archive synthesis, scholarship, and contested or artistic reconstruction are persistent interface states.
 2. **The Nile organizes; it does not decorate.** Water structures journeys, geography, seasons, movement, and relationships.
 3. **A threshold reveals one layer at a time.** Guided experiences disclose context progressively and explicitly stop at the edge of recoverable evidence.
 4. **Period and place resist timeless Egypt.** Every production article or reconstruction must expose chronology and location near its title.
@@ -122,7 +122,7 @@ Next application components should follow the same model:
 - **Map:** Nile-oriented by default, explicit Upper/south and Lower/north labels, accessible place list equivalent.
 - **Concept graph:** keyboard-reachable nodes, textual relationship list, focus isolation, and a no-motion layout.
 - **Media viewer:** object/image metadata, rights statement, date, place, material, current collection, and zoom alternative.
-- **Annotation:** visually distinguishes ancient text, modern translation, course comment, and present-day editorial note.
+- **Annotation:** visually distinguishes ancient text, modern translation, archive note, and present-day editorial note.
 - **Citation:** stable source ID, page when recoverable, evidence kind, OCR/pagination uncertainty.
 - **Dialog/drawer:** native focus behavior, Escape dismissal, descriptive title, and no motion dependency.
 
@@ -144,7 +144,7 @@ Procession may be expressed as discrete movement from threshold to threshold. Ex
 
 - Never present “the consciousness of an Ancient Egyptian” as directly recoverable.
 - Frame a lived-experience passage as a bounded perspective: named period, place, social position, evidence base, and missing voices.
-- Distinguish what a source depicts, what scholarship infers, what the course synthesized, and what the application imagines.
+- Distinguish what a source depicts, what scholarship infers, what the archive synthesizes, and what the application imagines.
 - Do not make pharaoh and elite tomb evidence stand in for all lives. Include agricultural workers, artisans, women, children, household practice, regional institutions, and access limitations where sources allow.
 - Avoid simple binaries such as desert = evil, animal cult = animal worship, or an invariant three-thousand-year pantheon.
 

@@ -1,6 +1,6 @@
 ---
-type: course-guide
-tags: [syllabus, readings, schedule, relearning]
+type: reading-guide
+tags: [reading-route, ancient-egypt, religion, learning-path]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 review:
@@ -9,44 +9,33 @@ review:
   media_rights: reviewed
 ---
 
-# Course reading guide
+# Reading route
 
-This is the closest recoverable map of what the class actually read. It follows the dated syllabus rather than inferring importance from file size.
+This route moves from the basic grammar of Egyptian religion to the texts, places, and practices that make it concrete. Read the linked pages in order when you want a full foundation, or choose one subject and follow its connections through the graph.
 
-| Date | Assigned material | Relearn it here |
-|---|---|---|
-| Jan 18 | introduction to course | [[course-reconstruction]], [[how-egyptian-religion-works]] |
-| Jan 23 | Pinch chapter 1: history and sources | [[chronology]], [[sacred-geography]], [[course-materials-deep-notes#Pinch chapter 1 notes: the course's method]] |
-| Jan 25 | Pinch chapter 2, pp. 57–75; Creations of Re; Khonsu Cosmogony; Memphite Theology | [[creation-traditions]], [[course-materials-deep-notes#Creation packets]] |
-| Jan 30 | Pinch chapter 2, pp. 76–94; Osiris-cycle readings | [[osiris-isis-horus-and-set]], [[course-materials-deep-notes#Osirian readings]] |
-| Feb 1 | selected Pinch deity entries | [[deity-field-guide]], [[set]], [[sobek]] |
-| Feb 6–15 | student deity reports | [[set]], [[student-work-reconstruction#Set project: how the argument changed]] |
-| Feb 20 | Exam 1 | [[exam-recovery-guide#Exam 1 — history, myth, and gods]] |
-| Feb 22 | Teeter chapter 1; Hornung; Ptahhotep | [[how-egyptian-religion-works]], [[personhood-and-the-afterlife]], [[ptahhotep-and-ethical-life]] |
-| Feb 27 | Teeter chapters 2–3 | [[temples-priests-and-offerings]] |
-| Mar 1 | Teeter chapter 4 | [[festivals-oracles-and-personal-piety]] |
-| Mar 6 | Teeter chapters 5–6 | [[festivals-oracles-and-personal-piety]], [[heka-and-operative-ritual]] |
-| Mar 8 | Teeter chapter 9 | [[heka-and-operative-ritual]] |
-| Mar 20 | Teeter chapters 7–8 | [[death-funeral-and-the-dead]], [[personhood-and-the-afterlife]] |
-| Mar 22 | Pyramid Texts; Naydler selection | [[pyramid-texts]], [[course-materials-deep-notes#Naydler's alternative reading]] |
-| Mar 27 | Coffin Texts | [[coffin-texts]] |
-| Mar 29 | Amduat and Book of Gates | [[amduat-and-book-of-gates]] |
-| Apr 3 | Goelet/Faulkner pp. 139–154 | [[book-of-the-dead]], [[exam-recovery-guide#Exam 3 — Book of the Dead and late reception]]; the assigned book is missing |
-| Apr 5–19 | Book of the Dead plates and reports | [[book-of-the-dead-plate-30]], [[student-work-reconstruction#Book of the Dead Plate 30 project]] |
-| Apr 24–26 | Greco-Roman religion, readings listed “TBA” | [[amarna-and-late-transformations]], [[course-materials-deep-notes#PDM/PGM and Plutarch: late transformations]] |
-| May 1 | research paper | [[blue-water-lily-research]], [[student-work-reconstruction#Blue water-lily project: complete argument and its limits]] |
-| May 10 | Exam 3/final | [[exam-recovery-guide#Exam 3 — Book of the Dead and late reception]] |
+| Focus | Read | What to notice |
+| --- | --- | --- |
+| Foundations | [[how-egyptian-religion-works]], [[chronology]], [[sacred-geography]] | Local traditions, changing evidence, and the relationship among Kemet, Deshret, the Nile, the west, and the Duat. |
+| Creation | [[creation-traditions]], [[solar-cycle]] | Self-generation, speech, perception, bodily creation, and the repeated renewal of the sun. |
+| Gods and kingship | [[osiris-isis-horus-and-set]], [[deity-field-guide]], [[set]], [[sobek]] | Gods can be local, combined, opposed, or reassigned without fitting one fixed pantheon. |
+| Ritual and society | [[maat-isfet-and-kingship]], [[heka-and-operative-ritual]], [[temples-priests-and-offerings]], [[festivals-oracles-and-personal-piety]], [[ptahhotep-and-ethical-life]] | Order is maintained through roles, speech, offerings, images, purity, festivals, and practical ethics. |
+| Personhood and death | [[death-funeral-and-the-dead]], [[personhood-and-the-afterlife]] | The body, heart, name, shadow, ka, ba, and akh work together rather than forming one detachable soul. |
+| Funerary literature | [[funerary-text-tradition]], [[pyramid-texts]], [[coffin-texts]], [[amduat-and-book-of-gates]], [[book-of-the-dead]], [[book-of-the-dead-plate-30]] | Later corpora inherit, adapt, and extend earlier spells and images. They do not form a simple replacement sequence. |
+| Historical change | [[amarna-and-late-transformations]] | Atenism, multilingual magic, Plutarch, and later reception each belong to a particular setting. |
+| Research and limits | [[blue-water-lily-research]], [[contested-interpretations]], [[web-research-supplement]] | Separate what an image or text shows from what a modern argument proposes. |
 
-## How the two textbooks function
+## How the reference books help
 
-Pinch supplies the chronological, mythological, and deity-reference spine. Her chapter 2 deliberately arranges fragmentary traditions into a readable sequence; she warns that this sequence is not preserved in any one Egyptian document. Use it as a synthetic map and return to the dated primary packets for evidence.
+Pinch supplies a chronological, mythological, and deity reference. Her readable sequence is a synthesis of fragmentary traditions, not a single Egyptian document. Teeter supplies a practical account of priests, temples, festivals, divine communication, death, relations with the dead, magic, and Amarna. Her central point is that durability came through flexible ritual, material access, and social adaptation rather than a binding creed.
 
-Teeter supplies practice and institutions. Her chapters move from thought and images through priests, temple service, festivals, divine communication, death, relations with the dead, magic, and Amarna. Her afterword stresses durability through flexible ritual, material accessibility, social modulation, and joy rather than a binding creed.
+## One source gap
 
-## The missing required book
+The Goelet and Faulkner edition of the *Book of the Dead* is not in the source collection, so pages 139 to 154 cannot be checked word for word. The Plate 30 discussion is based on the surviving images, the accompanying report, and related source material. That limit is recorded in [[source-catalog]] rather than filled with a guess.
 
-The syllabus requires the Goelet/Faulkner edition of the Book of the Dead, but it is absent from `raw`. Pages 139–154 cannot be reconstructed verbatim. Their course function can be triangulated from the Plate 30 assignment, Blake's report, supplied plate images, and Exam 3. The wiki labels this as an archive gap rather than pretending the book was read.
+## A simple reading habit
+
+After each page, name the period, place, source type, and social setting. Then ask what the evidence shows, what it suggests, and what it cannot establish. That habit keeps a vivid image or elegant interpretation from standing in for an entire society.
 
 ## Sources in this archive
 
-[[source-catalog#C01 — REL 395 syllabus|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C04 — Course exams and study prompts|C04]].
+[[source-catalog#C01 — REL 395 source record|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

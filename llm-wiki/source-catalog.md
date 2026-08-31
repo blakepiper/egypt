@@ -11,47 +11,47 @@ review:
 
 # Source catalog
 
-This catalog groups 72 physical files into 36 intellectual-source groups. “Student” means a course artifact and not independent authority. “Primary translation” means a modern translation of an ancient source. Scanned files were OCRed for analysis; OCR text is not part of the permanent wiki and should be checked against page images before quoting. [[reading-audit]] states exactly which groups were read in full, compared version-by-version, or sampled by contents and relevant sections.
+This catalog groups 72 physical files into 36 intellectual-source groups. Archival notes are separated from independent authority. “Primary translation” means a modern translation of an ancient source. Scanned files were OCRed for analysis; OCR text is not part of the permanent wiki and should be checked against page images before quoting. [[reading-audit]] states exactly which groups were read in full, compared version by version, or sampled by contents and relevant sections.
 
-## C01 — REL 395 syllabus
+## C01 — REL 395 source record
 
-**Status:** course administration / authoritative for course structure.  
-**Use:** identifies REL 395, instructor, learning outcomes, required books, assessment, and calendar. The user's “REL 491” conflicts with this primary course record.
+**Status:** collection record / authoritative for the source collection's structure.
+**Use:** records the source collection's identity, structure, and books. It is used for provenance rather than as a reading guide.
 
-- [REL 395 Syllabus 2017.docx](<../raw/REL 395 Syllabus 2017.docx>)
+- [Source record](<../raw/REL 395 Syllabus 2017.docx>)
 
 ## C02 — Pinch, Handbook of Egyptian Mythology
 
 **Status:** scholarly reference, Geraldine Pinch, 2002.  
-**Use:** course spine for history/sources, myth theory, time cycles, deities, cult centers, and primary-source orientation. The file contains the full 275-page book. Its complete contents and the syllabus-assigned sections were reviewed; other entries were sampled by course topic.
+**Use:** main reference for history and sources, myth theory, time cycles, deities, cult centers, and primary-source orientation. The file contains the full 275-page book. Its complete contents and selected sections were reviewed; other entries were sampled by topic.
 
 - [Handbook of Egyptian Mythology.pdf](<../raw/(Handbooks of world mythology) Geraldine Pinch-Handbook of Egyptian mythology-ABC-CLIO (2002).pdf>)
 
 ## C03 — Teeter, Religion and Ritual in Ancient Egypt
 
 **Status:** scholarly monograph, Emily Teeter, 2011.  
-**Use:** strongest archive source for priests, temples, festivals, personal piety, divine communication, death, ancestors, magic, and Amarna. Its complete contents, introduction/afterword, every chapter boundary, and syllabus-targeted sections were reviewed. Some broad characterizations of an “Egyptian mind” should be read as interpretive generalizations.
+**Use:** strongest archive source for priests, temples, festivals, personal piety, divine communication, death, ancestors, magic, and Amarna. Its complete contents, introduction, afterword, every chapter boundary, and selected sections were reviewed. Some broad characterizations of an “Egyptian mind” should be read as interpretive generalizations.
 
 - [Religion and Ritual in Ancient Egypt.pdf](<../raw/Emily Teeter-Religion and Ritual in Ancient Egypt-Cambridge University Press (2011).pdf>)
 
-## C04 — Course exams and study prompts
+## C04 — Assessment prompts and study notes
 
-**Status:** course prompts plus student answers.  
-**Use:** unusually rich reconstruction of lecture emphases and vocabulary across all three units. All versions were read and compared. Blank versions show intended questions; completed versions show Blake's 2017 understanding, including blanks and a few conflations. The two completed Exam 1 saves differ: the fuller folder version adds answers and corrects an earlier wrong Wadjet match. No grading comments survive.
+**Status:** assessment prompts plus annotated responses.
+**Use:** an unusually rich record of vocabulary and interpretive questions across the archive. All versions were read and compared. The responses preserve useful definitions alongside omissions and a few conflations. No editorial comments survive.
 
-- [Exam 1 completed DOC](<../raw/Exam 1/Blake Piper REL 395 EXAM 1.doc>)
-- [Exam 1 completed PDF](<../raw/Exam 1/Blake Piper REL 395 EXAM 1.pdf>)
-- [Exam 1 blank DOCX](<../raw/Exam 1/REL 395 EXAM 1.docx>)
-- [Exam 1 Drive export DOC](<../raw/Blake Piper REL 395 EXAM 1.doc>)
-- [Exam 2 completed DOC](<../raw/Exam 2/Piper_Blake REL 395 Exam 2.doc>)
-- [Exam 2 blank DOCX](<../raw/Exam 2/REL 395 Exam 2.docx>)
-- [Exam 3 completed DOCX](<../raw/Exam 3/Piper_Blake_REL395Final.docx>)
-- [Exam 3 blank DOCX](<../raw/Exam 3/REL 395 Exam 3.docx>)
+- [Completed response, DOC](<../raw/Exam 1/Blake Piper REL 395 EXAM 1.doc>)
+- [Completed response, PDF](<../raw/Exam 1/Blake Piper REL 395 EXAM 1.pdf>)
+- [Blank prompt, DOCX](<../raw/Exam 1/REL 395 EXAM 1.docx>)
+- [Completed response, source export](<../raw/Blake Piper REL 395 EXAM 1.doc>)
+- [Completed response, second format](<../raw/Exam 2/Piper_Blake REL 395 Exam 2.doc>)
+- [Blank prompt, second format](<../raw/Exam 2/REL 395 Exam 2.docx>)
+- [Completed response, final format](<../raw/Exam 3/Piper_Blake_REL395Final.docx>)
+- [Blank prompt, final format](<../raw/Exam 3/REL 395 Exam 3.docx>)
 
-## C05 — Set report project
+## C05 — Set research project
 
-**Status:** student research process and presentation.  
-**Use:** successive drafts show the argument developing from “villain” toward historical ambivalence, reconciliation with Horus, solar defense, and uncertainty about cult history. Every version was compared. Deity Report_ Set.docx is the most polished prose version; PiperBlakeSetSummary.docx is a compact handout. The two presentations preserve iconography and oral structure but some slide fields are incomplete.
+**Status:** research process and presentation.
+**Use:** successive drafts show the argument developing from “villain” toward historical ambivalence, reconciliation with Horus, solar defense, and uncertainty about cult history. Every version was compared. Deity Report_ Set.docx is the most polished prose version; the summary handout is more compact. The two presentations preserve iconography and oral structure but some slide fields are incomplete.
 
 - [Rough DeityReportSet.docx](<../raw/Set/Rough DeityReportSet.docx>)
 - [Set rough 2.docx](<../raw/Set/Set rough 2.docx>)
@@ -61,18 +61,18 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 - [Deity Report_ Set.docx](<../raw/Deity Report_ Set.docx>)
 - [REL395 - Set Deity Report.pptx](<../raw/REL395 - Set Deity Report.pptx>)
 
-## C06 — Book of the Dead Plate 30 project
+## C06 — Book of the Dead Plate 30 research
 
-**Status:** student report and presentation.  
+**Status:** report and presentation.
 **Use:** close reading of Chapter 125's entrance scene: Ani's Osirian identification, Anubis's testimony, named ritual geography, gate knowledge, and vindication. The PowerPoint has image-only slides plus concise synthesis; the DOCX is the full report.
 
 - [REL395 - Book of the Dead Plate 30.docx](<../raw/REL395 - Book of the Dead Plate 30.docx>)
 - [REL 395 - Book of the Dead Plate 30.pptx](<../raw/REL 395 - Book of the Dead Plate 30.pptx>)
 
-## C07 — Blue water-lily research project
+## C07 — Blue water-lily research
 
-**Status:** student research process.  
-**Use:** proposal, bibliography, outline, multiple drafts, and final paper arguing for psychoactive sacramental use of Nymphaea caerulea. All versions were compared for unique content. Revision history is messy: filenames retain “TrashFinal,” one ODT is truncated, and the two Drive DOCX finals differ in length. The most complete Drive final explicitly ends with evidentiary uncertainty and future tests. Claims are evaluated in [[blue-water-lily-research]] and preserved in [[student-work-reconstruction]].
+**Status:** research process.
+**Use:** proposal, bibliography, outline, multiple drafts, and final paper arguing for psychoactive sacramental use of Nymphaea caerulea. All versions were compared for unique content. The collection includes an incomplete ODT and two final DOCX exports of different length. The most complete version explicitly ends with evidentiary uncertainty and future tests. Claims are evaluated in [[blue-water-lily-research]] and preserved in [[student-work-reconstruction]].
 
 - [April 26 REL395-TrashFinal.odt](<../raw/Research Paper/April 26 REL395-TrashFinal.odt>)
 - [REL395-TrashFinal 604am 41217.docx](<../raw/Research Paper/REL395-TrashFinal 604am 41217.docx>)
@@ -83,10 +83,10 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 - [REL395 - Annotated Bibliography.docx](<../raw/REL395 - Annotated Bibliography.docx>)
 - [REL395 Nymphaea caerulea Outline.docx](<../raw/REL395 Nymphaea caerulea Outline.docx>)
 
-## C08 — Pinch chapter 1 instructor notes
+## C08 — Pinch chapter 1 contextual notes
 
-**Status:** course handout/notes, likely instructor-produced.  
-**Use:** closest surviving substitute for lost lecture notes. Defines myth types, local/henotheistic plurality, Kemet/Red Land, maat/isfet, effective hieroglyphs, periodization, and the simplified shift in afterlife geography.
+**Status:** contextual handout and notes.
+**Use:** closest surviving substitute for missing explanatory notes. Defines myth types, local and henotheistic plurality, Kemet and the Red Land, maat and isfet, effective hieroglyphs, periodization, and the simplified shift in afterlife geography.
 
 - [Pinch ch.1.docx](<../raw/Pinch ch.1.docx>)
 
@@ -128,7 +128,7 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 
 - [Coffin Texts.pdf](<../raw/Coffin Texts.pdf>)
 
-## C14 — Amduat and Book of Gates course selections
+## C14 — Amduat and Book of Gates selections
 
 **Status:** primary image/text selections.  
 **Use:** 12-page visual packets for the solar night journey, gates, hazards, and divine populations. They contain little OCR-readable prose and function mainly as plates; C15 supplies extended dated translations.
@@ -139,7 +139,7 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 ## C15 — Budge, Book of Am-Tuat and Book of Gates
 
 **Status:** early scholarly editions/translations, E. A. Wallis Budge, c. 1905–1906.  
-**Use:** complete hour/gate descriptions and diagrams consulted by the Set project. The full contents and representative first/middle/Apep/judgment/final divisions were sampled. Historically important but linguistically and interpretively dated; confirm fine claims with modern editions.
+**Use:** complete hour/gate descriptions and diagrams consulted for the Set research. The full contents and representative first/middle/Apep/judgment/final divisions were sampled. Historically important but linguistically and interpretively dated; confirm fine claims with modern editions.
 
 - [book_am_tuat.pdf](<../raw/Set/book_am_tuat.pdf>)
 - [book_gates.pdf](<../raw/Set/book_gates.pdf>)
@@ -155,8 +155,8 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 
 ## C17 — Book of the Dead Plate 30 source packet
 
-**Status:** assignment instructions, source images, and compiled visual handout.  
-**Use:** Plate 19/29/30 comparisons and a stitched roll segment. Plate 30.pdf is mostly slide/image content. The ODT guidelines file unexpectedly contains the assignment followed by an embedded early blue-water-lily draft; the DOCX contains only the shorter assignment instructions. That contamination is a file-history fact, not part of the Plate 30 assignment.
+**Status:** guidelines, source images, and compiled visual handout.
+**Use:** Plate 19/29/30 comparisons and a stitched roll segment. Plate 30.pdf is mostly slide/image content. The ODT guidelines file unexpectedly contains the guidelines followed by an embedded early blue-water-lily draft; the DOCX contains only the shorter version. That contamination is a file-history fact, not part of the Plate 30 material.
 
 - [plate 19.jpg](<../raw/Book of the Dead Report/plate 19.jpg>)
 - [Plate 29.JPG](<../raw/Book of the Dead Report/Plate 29.JPG>)
@@ -176,7 +176,7 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 ## C19 — Te Velde, Seth, God of Confusion
 
 **Status:** influential scholarly monograph, H. te Velde, 1967.  
-**Use:** Set's name/animal, Horus relationship, Osiris murder, Apep defense, and foreignness. The 190-page scan required full OCR; its contents, framing, chapter conclusions, and all passages supporting the student report were reviewed. Valuable but older; some structuralist/psychological formulations and zoological history need newer scholarship for updating.
+**Use:** Set's name/animal, Horus relationship, Osiris murder, Apep defense, and foreignness. The 190-page scan required full OCR; its contents, framing, chapter conclusions, and all passages supporting the Set research were reviewed. Valuable but older; some structuralist/psychological formulations and zoological history need newer scholarship for updating.
 
 - [Seth, God of Confusion.pdf](<../raw/Set/[H._Te_Velde]_Seth,_God_of_Confusion_A_Study_of_H(BookZZ.org).pdf>)
 
@@ -289,18 +289,18 @@ This catalog groups 72 physical files into 36 intellectual-source groups. “Stu
 ## C35 — Water-lily project images
 
 **Status:** modern reproductions/crops of a New Kingdom tomb scene.  
-**Use:** show mourners/ritualists with floral bouquets interpreted by the project as lily, mandrake, and poppy. The first is cropped and watermarked; the second preserves a much broader scene. Identification and pharmacological inference require independent iconographic support.
+**Use:** show mourners and ritualists with floral bouquets interpreted in the research as lily, mandrake, and poppy. The first is cropped and watermarked; the second preserves a much broader scene. Identification and pharmacological inference require independent iconographic support.
 
 - [Mandrake Poppy Lily.jpg](<../raw/Research Paper/Mandrake Poppy Lily.jpg>)
 - [better mandrake poppy lily.jpg](<../raw/Research Paper/better mandrake poppy lily.jpg>)
 
-## C36 — Deity report outline assignment
+## C36 — Deity report outline guide
 
-**Status:** generic academic assignment guide.  
-**Use:** explains how to structure a deity-report introduction, argument, evidence, references, and grading expectations. It contextualizes the Set drafts but contains no independent evidence about Egyptian religion.
+**Status:** generic academic outline guide.
+**Use:** explains how to structure a deity-report introduction, argument, evidence, and references. It contextualizes the Set drafts but contains no independent evidence about Egyptian religion.
 
-- [Introduction Outline Assignment rev RJG 01 24 2017.pdf](<../raw/Set/Introduction Outline Assignment rev RJG 01 24 2017.pdf>)
+- [Outline guide](<../raw/Set/Introduction Outline Assignment rev RJG 01 24 2017.pdf>)
 
 ## File-count audit
 
-Groups C01–C36 account for all 72 substantive files now consolidated in `../raw/`. Sixty-three came from the original course folder and nine from the Drive export. The .DS_Store file is operating-system metadata and intentionally excluded from the intellectual-source count.
+Groups C01–C36 account for all 72 substantive files now consolidated in `../raw/`. Sixty-three came from the original source folder and nine from the Drive export. The .DS_Store file is operating-system metadata and intentionally excluded from the intellectual-source count.

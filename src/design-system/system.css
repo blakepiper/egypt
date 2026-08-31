@@ -187,7 +187,7 @@ a:hover { text-decoration-thickness: 2px; }
 @keyframes archive-ripple { 0%, 100% { opacity: 0.28; transform: scale(0.92); } 50% { opacity: 0.7; transform: scale(1.06); } }
 .evidence-badge::before { width: 0.45rem; height: 0.45rem; background: currentColor; content: ''; }
 .evidence-badge--primary { color: var(--archive-color-sacred); }
-.evidence-badge--course { color: var(--archive-color-primary); }
+.evidence-badge--archive { color: var(--archive-color-primary); }
 .evidence-badge--scholarship { color: var(--archive-color-success); }
 .evidence-badge--speculative { color: var(--archive-color-danger); }
 

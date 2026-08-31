@@ -48,7 +48,7 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 
 **Nun** is the undifferentiated primeval water that precedes creation and remains around or beneath the ordered world. It holds both threat and potential.
 
-**Duat** is the hidden realm through which the sun travels and in which the dead and gods operate. The student's Exam 2 answer memorably described it not as a sealed-off “hell,” but as the latent realm from which manifested life emerges and to which it returns. In the [[amduat-and-book-of-gates]], Duat is divided into hours and guarded regions. In other sources it can overlap with sky, earth, water, tomb, and the west. Avoid forcing these images into a single modern map.
+**Duat** is the hidden realm through which the sun travels and in which the dead and gods operate. It is not a sealed-off “hell,” but a latent realm from which manifested life emerges and to which it returns. In the [[amduat-and-book-of-gates]], Duat is divided into hours and guarded regions. In other sources it can overlap with sky, earth, water, tomb, and the west. Avoid forcing these images into a single modern map.
 
 ## Cult centers to remember
 
@@ -62,7 +62,7 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 | Dendera | Hathor; later temple and Osiris chapels |
 | Edfu | Horus; ritual defeat of Sethian enemies |
 | Kom Ombo | Sobek and Haroeris; paired temple axes in the Ptolemaic complex |
-| Esna | Khnum and late learned cosmogony; Neith/Cow-Mother material in the course packet |
+| Esna | Khnum and late learned cosmogony; Neith and Cow-Mother material preserved at the site |
 | Elephantine / First Cataract | Khnum, Satet, Anuket; Nile source region in Egyptian imagination |
 | Fayum / Crocodilopolis / Hawara | Sobek; Amenemhat III; crocodile cults |
 | Amarna / Akhetaten | Akhenaten's new capital and Aten theology |
@@ -72,4 +72,4 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]], and the maps in C02/C03.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and the maps in C02/C03.

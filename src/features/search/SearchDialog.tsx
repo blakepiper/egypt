@@ -88,7 +88,7 @@ export function SearchPanel({
             options={[
               { id: 'primary', label: 'Primary source' },
               { id: 'scholarship', label: 'Scholarship' },
-              { id: 'course', label: 'Course synthesis' },
+              { id: 'archive', label: 'Archive synthesis' },
               { id: 'speculative', label: 'Contested' },
             ]}
             value={filters.evidence ?? null}

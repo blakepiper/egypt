@@ -145,7 +145,7 @@ export function ObjectStudyView({ id }: { id: string }) {
 
       {object.correction && (
         <aside className="archive-callout archive-callout--contested">
-          <span className="archive-callout__label">Correction to the student report</span>
+          <span className="archive-callout__label">A distinction worth keeping</span>
           <p>{object.correction}</p>
         </aside>
       )}

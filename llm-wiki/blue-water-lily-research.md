@@ -16,7 +16,7 @@ review:
 
 # Blue water-lily research
 
-The student's final project argues that *Nymphaea caerulea* was not only a solar and rebirth symbol but a psychoactive sacrament. The archive is unusually rich here: proposal, annotated bibliography, outline, several drafts, final paper, two images, botanical/archaeological studies, pharmacological papers, and broad entheogenic comparisons.
+The central question is whether *Nymphaea caerulea* was not only a solar and rebirth symbol but also a psychoactive sacrament. The archive is unusually rich here: research notes, two images, botanical and archaeological studies, pharmacological papers, and broad entheogenic comparisons.
 
 ## What is well supported
 
@@ -36,7 +36,7 @@ The flower rises from water and opens with daylight, making it an apt sign of cr
 
 Nymphaea species contain biologically active compounds. The archive's short JRSM article discusses apomorphine-like pharmacology and aphrodisiac associations; broader botanical sources report alkaloids/glycosides. Ancient Egyptians also possessed beer and wine and combined plant materials in medicine and ritual.
 
-### Direct residue evidence published after the course
+### Direct residue evidence from later research
 
 A 2024 *Scientific Reports* study analyzed residue in a second-century BCE Bes-shaped vessel and reported blue water lily together with *Peganum harmala*, *Cleome*, fermented fruit, honey/royal-jelly-like ingredients, and human fluids. This is the strongest evidence now in the wiki for intentional ritual use in a bioactive mixture. It is one Ptolemaic vessel, centuries later than New Kingdom banquet scenes, and cannot establish a universal sacrament, a standard dose, or the meaning of every flower image. Full scope and links are in [[web-research-supplement#Blue water lily: a real update, with strict limits]].
 
@@ -54,7 +54,7 @@ These observations justify asking about sensory or pharmacological use. They do 
 1. **No unambiguous preparation text in this archive** says to steep or ingest *N. caerulea* for visionary ritual.
 2. **Iconography is underdetermined.** Holding a flower to the nose can mean fragrance, vitality, elite display, eroticism, offering, or rebirth without depicting intoxication.
 3. **Co-occurrence is not a recipe.** A bouquet containing lily, mandrake, and a possible poppy does not demonstrate that all were consumed together.
-4. **Compound attribution is unstable.** The final paper centers apomorphine, but older and popular literature often conflates apomorphine, aporphine, and nuciferine; chemical presence and bioavailable dose require direct analysis.
+4. **Compound attribution is unstable.** Some sources center apomorphine, but older and popular literature often conflates apomorphine, aporphine, and nuciferine; chemical presence and bioavailable dose require direct analysis.
 5. **Modern effects cannot simply be projected backward.** A pharmacologically active extract does not prove an ancient ritual practice.
 6. **Comparative leaps are large.** Homer's Lotus-Eaters, medieval European witchcraft, New World water-lily use, Gnostic sacraments, and Egyptian tomb art do not form a chain without historical links.
 
@@ -76,10 +76,10 @@ The evidence does not establish: that it was regularly ingested across Egyptian 
 
 `Mandrake Poppy Lily.jpg` is a cropped, watermarked detail. `better mandrake poppy lily.jpg` is a wider tomb scene showing mourners, ritualists, and bouquets. The wider context weakens any reading that treats the floral cluster as a standalone pharmacological diagram.
 
-## The student's complete argument
+## The complete argument
 
-The drafts move from a proposal about psychoactive possibility to a final claim that the lily was a sedative, aphrodisiac, hallucinogenic sacrament. They invoke apomorphine, Homer's Lotus-Eaters, Nefertem, Pyramid Text Utterance 249, Book of the Dead Chapter 81, a Theban tomb scene identified as TT181, and possible smelling or steeping routes. Crucially, the final paper admits that it found no direct Egyptian preparation or ingestion instruction and proposes vessel/mummy chemistry as the next test. [[student-work-reconstruction#Blue water-lily project: complete argument and its limits]] preserves the full chain without endorsing each inference.
+The evidence chain considers apomorphine, Homer's Lotus-Eaters, Nefertem, Pyramid Text Utterance 249, Book of the Dead Chapter 81, a Theban tomb scene identified as TT181, and possible smelling or steeping routes. It finds no direct Egyptian preparation or ingestion instruction and points toward vessel and mummy chemistry as the next test. [[student-work-reconstruction#Blue water lily and the evidence ladder]] preserves the chain without endorsing each inference.
 
 ## Sources in this archive
 
-[[source-catalog#C07 — Blue water-lily research project|C07]], [[source-catalog#C25 — Early Dynastic water-lily motif|C25]], [[source-catalog#C26 — Water lilies and lotuses in ancient Egypt|C26]], [[source-catalog#C27 — Nymphaea cults and pharmacology|C27]], [[source-catalog#C28 — Mandrake alkaloids|C28]], broader comparative groups C29–C33 in [[source-catalog]], and current sources in [[web-research-supplement]].
+[[source-catalog#C07 — Blue water-lily research|C07]], [[source-catalog#C25 — Early Dynastic water-lily motif|C25]], [[source-catalog#C26 — Water lilies and lotuses in ancient Egypt|C26]], [[source-catalog#C27 — Nymphaea cults and pharmacology|C27]], [[source-catalog#C28 — Mandrake alkaloids|C28]], broader comparative groups C29–C33 in [[source-catalog]], and current sources in [[web-research-supplement]].

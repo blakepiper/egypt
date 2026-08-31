@@ -38,7 +38,7 @@ The first public release is complete when it meets all of these conditions:
 - `raw/` remains immutable unless the user explicitly requests a change.
 - Factual edits follow `llm-wiki/AGENTS.md`, including its evidence labels and source-catalog rules.
 - Generated application data is disposable. A clean build must recreate it from the wiki and media manifest.
-- Student work and course synthesis must never be presented as scholarly consensus.
+- Research notes and archive synthesis must never be presented as scholarly consensus.
 
 ### Hosting
 
@@ -68,8 +68,8 @@ The first public release is complete when it meets all of these conditions:
 | Knowledge graph | Full relationship explorer | `/graph/` |
 | Journeys | Guided artistic and educational experiences | `/journeys/` and `/journeys/<slug>/` |
 | Objects and texts | Visual and manuscript exploration | `/objects/` and `/objects/<slug>/` |
-| Learn | Course sequence, relearning plan, study guides | `/learn/` |
-| Archive | Sources, audits, student-work reconstruction, maintenance history | `/archive/` |
+| Learn | Subject routes, learning plan, concept checks | `/learn/` |
+| Archive | Sources, audits, research notes, maintenance history | `/archive/` |
 | Field guide | Site and museum preparation | `/field-guide/` |
 
 ### Route strategy
@@ -219,13 +219,13 @@ Every content document gets a route. The "Application treatment" column records 
 | `visual-decoder.md` | Encyclopedia, Objects, and Field guide | Interactive visual identification tool |
 | `glossary.md` | Encyclopedia | Searchable definitions and automatic first-use term links |
 | `egypt-trip-field-guide.md` | Field guide | Site cards, offline-friendly checklist, linked visual decoder |
-| `course-reconstruction.md` | Learn | Course structure and surviving-material map |
-| `course-reading-guide.md` | Learn | Reading sequence with completion stored locally |
-| `course-materials-deep-notes.md` | Learn and Archive | Dense reading view, packet filters, source links |
+| `course-reconstruction.md` | Learn | Archive structure and surviving-material map |
+| `course-reading-guide.md` | Learn | Subject route with completion stored locally |
+| `course-materials-deep-notes.md` | Learn and Archive | Dense source-note view, packet filters, source links |
 | `four-week-relearning-plan.md` | Learn | Four-week checklist with local progress and reset |
-| `exam-recovery-guide.md` | Learn | Study prompts, revealable notes, linked concepts |
-| `student-work-reconstruction.md` | Archive | Version-aware student-work reconstruction with corrections visible |
-| `web-research-supplement.md` | Archive | Modern checks separated from the 2017 course record |
+| `exam-recovery-guide.md` | Learn | Concept checks, revealable notes, linked ideas |
+| `student-work-reconstruction.md` | Archive | Research notes with corrections and evidence limits visible |
+| `web-research-supplement.md` | Archive | Modern checks separated from the source record |
 | `source-catalog.md` | Archive | Filterable source catalog, stable C IDs, file and page relationships |
 | `reading-audit.md` | Archive | Reading-depth and incorporation status table |
 | `coverage-map.md` | Archive | Source-to-page coverage matrix and maintenance status |
@@ -375,7 +375,7 @@ Each experience gets a short written brief before coding. The brief identifies i
 | Creation traditions | `creation-traditions`, `how-egyptian-religion-works` | Compare local traditions without forcing one winner; reveal shared and different elements | Labels source and cult center. Static comparison table |
 | Funerary corpus river | `funerary-text-tradition`, `pyramid-texts`, `coffin-texts`, `book-of-the-dead` | Overlapping streams by period, audience, medium, and theme | Explicitly rejects a simple replacement model. Accessible chronological table |
 | Twelve guarded hours | `amduat-and-book-of-gates`, `solar-cycle` | Threshold navigation, gates, beings, Re, Osiris, Apep, and rebirth | Corpus-specific labels and uncertainty. No claim that the Duat is one fixed map |
-| Plate 30 close reading | `book-of-the-dead-plate-30`, `visual-decoder` | Deep zoom, toggled annotations, scene-order guide, source panel | Annotations distinguish what is visible from student and scholarly interpretation |
+| Plate 30 close reading | `book-of-the-dead-plate-30`, `visual-decoder` | Deep zoom, toggled annotations, scene-order guide, source panel | Annotations distinguish what is visible from scholarly interpretation |
 | Sacred atlas | `sacred-geography`, deity pages, field guide | Nile-first map, cult centers, east/west, Upper/south and Lower/north | A linked place list duplicates the map and corrects common orientation errors |
 | Chronology layers | `chronology`, historical transformation pages | Period bands, corpus bands, institutions, evidence survival | Approximate dates are visually and textually marked |
 | Lived perspectives | practice pages plus new reviewed synthesis | Short evidence-based views of agricultural labor, artisans, household practice, priestly service, and royal ritual | No universal inner monologue. Each perspective names period, place, source base, and missing evidence |
@@ -800,7 +800,7 @@ Exit gate:
 
 Work:
 
-- add local progress to the reading guide, relearning plan, and exam guide
+- add local progress to the reading route, learning plan, and concept checks
 - finish source-catalog filters and coverage views
 - create field-guide checklists and print layouts
 - connect objects, sites, deities, and visual-decoder entries
@@ -808,7 +808,7 @@ Work:
 
 Exit gate:
 
-- course, archive, and field-guide workflows are complete
+- learning, archive, and field-guide workflows are complete
 - progress data can be reset and does not leave the browser
 
 ### Phase 9: harden and release

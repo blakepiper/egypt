@@ -35,7 +35,7 @@ Naydler argues that Pyramid Texts record living royal initiation and an altered-
 
 ## Psychoactive plants and Egyptian religion
 
-The final paper and several sources argue that blue water lily, mandrake, poppy, cannabis, fungi, or other plants induced ritual altered states. Strength: botanicals have active compounds; plants appear in religious contexts; the question has testable residue/chemical dimensions. Gap: iconographic presence and modern pharmacology do not prove ancient preparation, dose, or purpose. Some broad papers generalize recklessly from global analogies. A 2024 residue study now establishes blue water lily in one complex Ptolemaic ritual mixture, but not a universal pharaonic sacrament. Status: at least one specific late use is materially supported; the larger system proposed in the student paper remains unproved. See [[blue-water-lily-research]] and [[web-research-supplement#Blue water lily: a real update, with strict limits]].
+Several sources argue that blue water lily, mandrake, poppy, cannabis, fungi, or other plants induced ritual altered states. Botanicals have active compounds, plants appear in religious contexts, and the question has testable residue and chemical dimensions. Yet iconographic presence and modern pharmacology do not prove ancient preparation, dose, or purpose. Some broad papers generalize recklessly from global analogies. A 2024 residue study establishes blue water lily in one complex Ptolemaic ritual mixture, but not a universal pharaonic sacrament. One specific late use is materially supported; the larger system proposed in the research remains unproved. See [[blue-water-lily-research]] and [[web-research-supplement#Blue water lily: a real update, with strict limits]].
 
 The “entheomycological crowns” paper interprets divine/royal crowns as mushroom imagery. Formal resemblance without textual, botanical, residue, or contextual support is weak. Status: highly speculative.
 
@@ -60,7 +60,7 @@ E. A. Wallis Budge's *Book of Am-Tuat* and *Book of Gates* are genuine pioneerin
 - State what would falsify or strengthen it.
 - Check chronology and transmission.
 - Compare simpler explanations.
-- Never let a source's presence in a course folder imply instructor endorsement.
+- Never treat a source's presence in the collection as proof that its claims were endorsed.
 
 ## Sources in this archive
 

@@ -7,7 +7,7 @@
   "sourceIds": ["C06", "C17", "C04"],
   "mediaId": "ani-plate-30",
   "imageStatus": "This viewer uses the British Museum's current record for frame EA10470,30 under its CC BY-NC-SA 4.0 license. The credit and source record stay with the image.",
-  "evidenceNote": "The scene description, the sequence of the text, and the gate names all come from the student's 2017 report and its source packet. Translation and segmentation vary by edition, so the names below are one edition's reading, not a fixed text.",
+  "evidenceNote": "The scene description, the sequence of the text, and the gate names come from the source packet and its accompanying report. Translation and segmentation vary by edition, so the names below are one edition's reading, not a fixed text.",
   "regions": [
     { "id": "osiris", "x": 69, "y": 24, "w": 14, "h": 54, "label": "Osiris under the canopy",
       "visible": "A mummiform figure beneath a canopy at the right, holding crook and flail.",
@@ -28,7 +28,7 @@
     { "id": "ani", "x": 6, "y": 24, "w": 18, "h": 56, "label": "Ani approaching", "imageRegion": false,
       "visible": "In the full report's comparison plates, Ani and Tutu approach and make offerings.",
       "reading": "The approach is a speech act as much as a movement. Ani praises Osiris, claims primordial knowledge, and is testified for by Anubis.",
-      "confidence": "Drawn from adjacent plates in the student's composite, not from the cropped standalone image." }
+      "confidence": "Drawn from adjacent plates in the composite sequence, not from the cropped standalone image." }
   ],
   "sequence": [
     "Ani is titled “the Osiris, scribe Ani,” receiving the status of the transfigured dead.",
@@ -44,6 +44,6 @@
     { "title": "Vindication is sponsored", "body": "Anubis's testimony, Ani's speech, Osirian identification, offerings, image, and secret names all cooperate. No single element does the work." },
     { "title": "Corpora overlap", "body": "Osirian identification recalls the Pyramid and Coffin Texts; gate passwords recall the Book of Gates; judgment develops across Chapter 125. The shingles model appears in one plate." }
   ],
-  "correction": "The 2017 report calls the illustration a “short mythological retelling.” In standard usage a vignette is the illustration attached to a spell, while a short empowering myth is a historiola. The course exam blurs the two terms in one answer. This archive keeps them distinct.",
+  "correction": "A vignette is the illustration attached to a spell, while a short empowering myth is a historiola. The two terms describe different things, and this study keeps them distinct.",
   "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" }
 }

@@ -22,7 +22,7 @@ review:
 
 # Funerary text tradition
 
-The course's best metaphor is a roof of overlapping shingles. Pyramid Texts, Coffin Texts, Underworld Books, and Books of the Dead inherit, reposition, and innovate; one does not simply replace the last.
+The best metaphor is a roof of overlapping shingles. Pyramid Texts, Coffin Texts, Underworld Books, and Books of the Dead inherit, reposition, and innovate; one does not simply replace the last.
 
 !media[sethnakht-funerary-papyrus]
 
@@ -59,4 +59,4 @@ The archive preserves sky ascent, a western/earthlike field, and a subterranean 
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Course exams and study prompts|C04]], and catalog groups [[source-catalog#C23 — Pyramid Text selections|C23]] through [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and catalog groups [[source-catalog#C23 — Pyramid Text selections|C23]] through [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].

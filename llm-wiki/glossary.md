@@ -1,6 +1,6 @@
 ---
 type: reference
-tags: [glossary, vocabulary, exam-review]
+tags: [glossary, vocabulary, reference]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 aliases: [Definitions, Terms]
@@ -47,7 +47,7 @@ review:
 | **operative myth** | story whose ritual recitation is intended to effect reality |
 | **phyle** | rotating service group of priests or workers |
 | **pylon** | monumental twin-towered gateway of a temple |
-| **rekhet** | woman serving as a medium or spirit specialist in the course vocabulary |
+| **rekhet** | woman serving as a medium or spirit specialist in the reference material |
 | **ren** | name as a constitutive element of identity |
 | **Rosetau/Rosetjau** | Memphite necropolis/transition region generalized into otherworld geography |
 | **rubric** | instruction or heading distinguished in red ink in funerary manuscripts |
@@ -65,4 +65,4 @@ See [[personhood-and-the-afterlife]], [[heka-and-operative-ritual]], [[temples-p
 
 ## Sources in this archive
 
-[[source-catalog#C04 — Course exams and study prompts|C04]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].
+[[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].

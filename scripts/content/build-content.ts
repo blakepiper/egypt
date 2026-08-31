@@ -113,8 +113,8 @@ function evidenceFor(page: RawPage): EvidenceKind {
   const tags = page.frontmatter.tags;
   if (type === 'object-study' || type === 'text-study') return 'primary';
   if (tags.includes('contested') || tags.includes('speculative') || page.slug === 'contested-interpretations') return 'speculative';
-  if (['audit', 'source-catalog', 'course-map', 'course-guide', 'reading-notes', 'study-guide', 'study-plan', 'archive-synthesis'].includes(type)) return 'course';
-  if (page.frontmatter.course && ['index', 'overview'].includes(type)) return 'course';
+  if (['audit', 'source-catalog', 'course-map', 'course-guide', 'archive-guide', 'reading-guide', 'reading-notes', 'study-guide', 'study-plan', 'archive-synthesis'].includes(type)) return 'archive';
+  if (page.frontmatter.course && ['index', 'overview'].includes(type)) return 'archive';
   return 'scholarship';
 }
 
@@ -317,7 +317,7 @@ function buildVisualizations(parsedBySlug: Map<string, { blocks: BlockNode[] }>)
     .find((block): block is Extract<BlockNode, { t: 'list' }> => block.t === 'list')?.items
     .map((item) => item.map((block) => (block.t === 'paragraph' ? flatten(block.c) : '')).join(' ').trim()) ?? [];
 
-  // The four-week plan and the exam guide are turned into checklists the reader
+  // The four-week plan and concept checks are turned into interactive study tools
   // can tick off locally. The text is the wiki's; only the structure is added.
   const planPage = parsedBySlug.get('four-week-relearning-plan');
   const weeks: { id: string; title: string; steps: { id: string; text: string; slugs: string[] }[]; checkpoint: string }[] = [];
@@ -343,14 +343,14 @@ function buildVisualizations(parsedBySlug: Map<string, { blocks: BlockNode[] }>)
     }
   }
 
-  const examPage = parsedBySlug.get('exam-recovery-guide');
-  const exams: { id: string; title: string; lead: string; prompts: string[]; caution: string }[] = [];
-  if (examPage) {
-    let current: (typeof exams)[number] | null = null;
-    for (const block of examPage.blocks) {
+  const checkPage = parsedBySlug.get('exam-recovery-guide');
+  const checks: { id: string; title: string; lead: string; prompts: string[]; caution: string }[] = [];
+  if (checkPage) {
+    let current: (typeof checks)[number] | null = null;
+    for (const block of checkPage.blocks) {
       if (block.t === 'heading' && block.level === 2) {
-        current = /^exam\s/i.test(block.text) ? { id: block.id, title: block.text, lead: '', prompts: [], caution: '' } : null;
-        if (current) exams.push(current);
+        current = block.text === 'Sources in this archive' ? null : { id: block.id, title: block.text, lead: '', prompts: [], caution: '' };
+        if (current) checks.push(current);
         continue;
       }
       if (!current) continue;
@@ -359,13 +359,13 @@ function buildVisualizations(parsedBySlug: Map<string, { blocks: BlockNode[] }>)
       }
       if (block.t === 'paragraph') {
         const text = flatten(block.c).trim();
-        if (/^possible corrections/i.test(text)) current.caution = text;
+        if (/^interpretive caution:/i.test(text)) current.caution = text.replace(/^interpretive caution:\s*/i, '');
         else if (!current.lead) current.lead = text;
       }
     }
   }
 
-  return { personhood, corpora, creation, grammar, weeks, exams };
+  return { personhood, corpora, creation, grammar, weeks, checks };
 }
 
 export function build(): BuildResult {
@@ -682,7 +682,7 @@ function buildNavigation(
 
   return [
     { id: 'encyclopedia', label: SECTION_LABELS.encyclopedia, route: route('wiki'),
-      blurb: 'Every article in the archive, grouped the way the course grouped them.',
+      blurb: 'Every article in the archive, arranged by subject and linked through the graph.',
       groups: HUBS.map((hub) => ({ label: hub.label, pages: hub.slugs.flatMap(entry) })) },
     { id: 'atlas', label: SECTION_LABELS.atlas, route: route('atlas'),
       blurb: 'Sacred geography, cult centres, and the orientation errors worth correcting first.',
@@ -700,10 +700,10 @@ function buildNavigation(
       blurb: 'Close reading of texts and images.',
       groups: [{ label: 'Studies', pages: Object.keys(FEATURE_PAGES).filter((slug) => FEATURE_PAGES[slug] === 'objects').flatMap(entry) }] },
     { id: 'learn', label: SECTION_LABELS.learn, route: route('learn'),
-      blurb: 'The course as it ran, and a route back through it.',
-      groups: [{ label: 'Course', pages: bySection('learn') }] },
+      blurb: 'Reading routes, concept checks, and a four-week plan for building context.',
+      groups: [{ label: 'Learning tools', pages: bySection('learn') }] },
     { id: 'archive', label: SECTION_LABELS.archive, route: route('archive'),
-      blurb: 'Sources, audits, student work, and the maintenance record.',
+      blurb: 'Sources, audits, research notes, and the maintenance record.',
       groups: [{ label: 'Provenance and control', pages: bySection('archive') }] },
     { id: 'field-guide', label: SECTION_LABELS['field-guide'], route: route('field-guide'),
       blurb: 'What to notice at sites and museums.',

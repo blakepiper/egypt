@@ -74,8 +74,8 @@ This grammar naturalizes dynastic succession, but the myths also preserve anxiet
 
 ## Set is not Apep
 
-Set is kin within the ordered divine world, capable of office and reconciliation even when disruptive. Apep is the recurrent enemy of solar succession. Conflating them destroys one of the course's most important nuances. See [[set]] and [[solar-cycle]].
+Set is kin within the ordered divine world, capable of office and reconciliation even when disruptive. Apep is the recurrent enemy of solar succession. Conflating them erases an important distinction. See [[set]] and [[solar-cycle]].
 
 ## Sources in this archive
 
-[[source-catalog#C16 — Osiris–Isis–Horus–Set primary texts|C16]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C05 — Set report project|C05]].
+[[source-catalog#C16 — Osiris–Isis–Horus–Set primary texts|C16]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C05 — Set research project|C05]].

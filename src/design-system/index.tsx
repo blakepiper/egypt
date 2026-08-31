@@ -159,12 +159,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   return <button {...props} ref={ref} type={type} className={`archive-button archive-button--${variant} ${iconOnly ? 'archive-button--icon' : ''} ${className}`} />;
 });
 
-export type EvidenceKind = 'primary' | 'course' | 'scholarship' | 'speculative';
+export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'speculative';
 
 export function EvidenceBadge({ kind }: { kind: EvidenceKind }) {
   const labels: Record<EvidenceKind, string> = {
     primary: 'Primary source',
-    course: 'Course synthesis',
+    archive: 'Archive synthesis',
     scholarship: 'Scholarship',
     speculative: 'Artistic / contested',
   };

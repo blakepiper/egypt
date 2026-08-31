@@ -20,7 +20,7 @@ review:
 
 The Coffin Texts are a diverse First Intermediate Period and Middle Kingdom corpus written mainly on elite coffins, with material inherited from royal traditions and innovations adapted to nonroyal deceased owners.
 
-## Recurring concerns in the course selection
+## Recurring concerns in these texts
 
 ### Bodily integrity
 
@@ -32,7 +32,7 @@ Food and drink remain existential needs. Spells prevent starvation and degrading
 
 ### Mobility and transformation
 
-The deceased must not be trapped in coffin, tomb, or one form. Boats, paths, doors, winds, limbs, ba movement, and transformations grant agency. The course answer “Khepri in my body” connects the scarab's becoming with internal capacity for movement and change.
+The deceased must not be trapped in coffin, tomb, or one form. Boats, paths, doors, winds, limbs, ba movement, and transformations grant agency. The image of “Khepri in my body” connects the scarab's becoming with internal capacity for movement and change.
 
 ### Egyptian otherworld
 
@@ -48,9 +48,8 @@ The use of royal-derived formulas by nonroyal elites supports broader afterlife 
 
 ## Relation to later texts
 
-Substantial Book of the Dead material derives from Coffin Text traditions, though the final exam wisely avoids a precise percentage. The corpora overlap in spells for heart, breath, movement, transformation, enemies, food, and divine identity.
+Substantial Book of the Dead material derives from Coffin Text traditions. The corpora overlap in spells for heart, breath, movement, transformation, enemies, food, and divine identity.
 
 ## Sources in this archive
 
-[[source-catalog#C13 — Coffin Text selections|C13]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
-
+[[source-catalog#C13 — Coffin Text selections|C13]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].

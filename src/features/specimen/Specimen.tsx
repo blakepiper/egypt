@@ -20,7 +20,7 @@ const topics: Topic[] = [
   {
     id: 'continuity', label: 'Renewable continuity', eyebrow: 'Core synthesis', x: 50, y: 48,
     summary: 'Creation, kingship, temple cult, heka, and afterlife share a grammar of threatened order restored through repeated right action.',
-    evidence: 'course', source: 'start-here.md · C01 / C02 / C03 / C04',
+    evidence: 'archive', source: 'start-here.md · C01 / C02 / C03 / C04',
   },
   {
     id: 'creation', label: 'Creation', eyebrow: 'Cosmology', x: 19, y: 20,
@@ -30,7 +30,7 @@ const topics: Topic[] = [
   {
     id: 'maat', label: 'Maat & isfet', eyebrow: 'Order', x: 78, y: 19,
     summary: 'Maat joined truth, justice, proper relation, and cosmic order. Its opposite was not eliminated once; disorder remained a recurring possibility.',
-    evidence: 'course', source: 'maat-isfet-and-kingship.md · C02 / C03',
+    evidence: 'archive', source: 'maat-isfet-and-kingship.md · C02 / C03',
   },
   {
     id: 'temple', label: 'Temple practice', eyebrow: 'Institution', x: 16, y: 76,
@@ -45,7 +45,7 @@ const topics: Topic[] = [
   {
     id: 'afterlife', label: 'Personhood', eyebrow: 'Death & renewal', x: 51, y: 88,
     summary: 'Survival required body, heart, name, shadow, ka, ba, and akh to retain integrity, mobility, memory, provisioning, and vindication.',
-    evidence: 'course', source: 'personhood-and-the-afterlife.md · C02 / C03',
+    evidence: 'archive', source: 'personhood-and-the-afterlife.md · C02 / C03',
   },
 ];
 
@@ -132,7 +132,7 @@ function TopicReading({ topic }: { topic: Topic }) {
       <div className="topic-reading__head"><div><span className="kicker">Selected thread</span><h2>{topic.label}</h2></div><EvidenceBadge kind={topic.evidence} /></div>
       <p>{topic.summary}</p>
       <div className="source-row"><span>Archive trail</span><code>{topic.source}</code></div>
-      <Callout label="Interpretive boundary">This specimen condenses the course archive. The full application should keep period, place, evidence type, and uncertainty visible beside every immersive reconstruction.</Callout>
+      <Callout label="Interpretive boundary">This specimen condenses the source archive. The full application should keep period, place, evidence type, and uncertainty visible beside every immersive reconstruction.</Callout>
     </article>
   );
 }
@@ -183,7 +183,7 @@ function Journeys() {
   const stages = [
     { hour: 'Threshold 01', title: 'The cultivated edge', text: 'Begin with Kemet and Deshret—not a simple good/evil pair, but a productive order defined beside dangerous and useful margins.', evidence: 'scholarship' as EvidenceKind },
     { hour: 'Threshold 02', title: 'At the temple margin', text: 'Ordinary worshippers might approach hearing-ear chapels, rear walls, processions, and intercessory statues without entering the sanctuary.', evidence: 'scholarship' as EvidenceKind },
-    { hour: 'Threshold 03', title: 'A god in procession', text: 'A veiled portable shrine moved through streets and river routes, expanding divine presence while people watched, feasted, petitioned, and listened.', evidence: 'course' as EvidenceKind },
+    { hour: 'Threshold 03', title: 'A god in procession', text: 'A veiled portable shrine moved through streets and river routes, expanding divine presence while people watched, feasted, petitioned, and listened.', evidence: 'archive' as EvidenceKind },
     { hour: 'Threshold 04', title: 'What cannot be recovered', text: 'No interface can reproduce a universal Ancient Egyptian interior life. Here the experience stops and marks the surviving evidence’s edge.', evidence: 'speculative' as EvidenceKind },
   ];
   return (
@@ -209,7 +209,7 @@ function SystemSpecimen() {
       <header className="system-intro"><span className="kicker">The Living Archive</span><h1>Digital field instrument,<br/><em>not themed spectacle.</em></h1><p>Classic Macintosh clarity translated through papyrus, mineral pigment, axial thresholds, register lines, and Nile movement.</p></header>
       <section className="spec-section"><span className="section-number">01</span><div><h2>Color has material roles</h2><p>Warm surfaces carry scholarship. Nile and faience signal navigation. Ochre marks temporal movement; Egyptian blue is reserved for sacred or cosmological emphasis.</p><div className="swatch-grid">{colors.map(([name, token]) => <div className="swatch" key={token}><i style={{ background: `var(--archive-color-${token})` }}/><span>{name}</span><code>--{token}</code></div>)}</div></div></section>
       <section className="spec-section"><span className="section-number">02</span><div><h2>Three textual voices</h2><div className="type-specimens"><p className="type-display">Renewable continuity</p><p className="type-reading">Long-form scholarship uses a generous reading face and measure. The interface should remain quiet enough for complicated, qualified arguments.</p><p className="type-data">C03 · NEW KINGDOM · c. 1550–1069 BCE</p></div></div></section>
-      <section className="spec-section"><span className="section-number">03</span><div><h2>Evidence is interface</h2><p>Source status travels with content; it is never hidden in an afterthought.</p><div className="badge-row"><EvidenceBadge kind="primary"/><EvidenceBadge kind="course"/><EvidenceBadge kind="scholarship"/><EvidenceBadge kind="speculative"/></div></div></section>
+      <section className="spec-section"><span className="section-number">03</span><div><h2>Evidence is interface</h2><p>Source status travels with content; it is never hidden in an afterthought.</p><div className="badge-row"><EvidenceBadge kind="primary"/><EvidenceBadge kind="archive"/><EvidenceBadge kind="scholarship"/><EvidenceBadge kind="speculative"/></div></div></section>
       <section className="spec-section"><span className="section-number">04</span><div><h2>Controls retain the Floop skeleton</h2><p>Borders define action, hard shadows show elevation, and mechanical presses make state legible. Soft shadows, neon, faux-hieroglyph fonts, and decorative symbols are excluded.</p><div className="button-row"><Button variant="primary">Follow thread</Button><Button>Open source</Button><Button variant="quiet">Quiet action</Button></div></div></section>
       <section className="spec-section"><span className="section-number">05</span><div><h2>Motion carries meaning</h2><p>Each primitive belongs to a historical or ecological idea and becomes still when reduced motion is requested.</p><div className="motion-grid">
         <div className="motion-card motion-card--flow"><i className="archive-motion-flow"/><strong>Flow</strong><small>River · route · continuity</small></div>
@@ -246,7 +246,7 @@ export function Specimen() {
     <div className="site-frame">
       <header className="site-header">
         <button className="brand" onClick={() => setView('explore')} aria-label="The Living Archive, home">
-          <span className="brand__mark" aria-hidden="true"><img src={`${import.meta.env.BASE_URL}media/archive-app-icon.svg`} alt="" /></span>
+          <span className="brand__mark" aria-hidden="true"><img src={`${import.meta.env.BASE_URL}media/archive-app-icon.png`} alt="" /></span>
           <span><strong>The Living Archive</strong><small>Religion of Ancient Egypt</small></span>
         </button>
         <div className="site-header__actions">
@@ -271,7 +271,7 @@ export function Specimen() {
         <aside className="context-rail" aria-label="Context and evidence">
           {openWindows.nile && <NileCycle onClose={() => setOpenWindows((current) => ({ ...current, nile: false }))} />}
           {openWindows.evidence && <Window title="Evidence key" flat status="Always visible" managed onClose={() => setOpenWindows((current) => ({ ...current, evidence: false }))}>
-            <div className="evidence-list"><EvidenceBadge kind="primary"/><p>Ancient text, image, or object.</p><EvidenceBadge kind="course"/><p>Reconstruction from course materials.</p><EvidenceBadge kind="scholarship"/><p>Modern scholarly interpretation.</p><EvidenceBadge kind="speculative"/><p>Contested or artistic reconstruction.</p></div>
+            <div className="evidence-list"><EvidenceBadge kind="primary"/><p>Ancient text, image, or object.</p><EvidenceBadge kind="archive"/><p>Reconstruction from the source collection.</p><EvidenceBadge kind="scholarship"/><p>Modern scholarly interpretation.</p><EvidenceBadge kind="speculative"/><p>Contested or artistic reconstruction.</p></div>
           </Window>}
         </aside>
       </div>

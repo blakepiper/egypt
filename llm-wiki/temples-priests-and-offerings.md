@@ -59,7 +59,7 @@ Temple reliefs show the king officiating because he was theoretically Egypt's so
 
 ## Priesthood
 
-Important course terms:
+Important terms:
 
 - **hem-netjer**, “god's servant”: high-ranking cultic title;
 - **wab**, “pure one”: common service priest;
@@ -88,4 +88,4 @@ Temples owned land, received taxes and donations, ran workshops and estates, sto
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Course exams and study prompts|C04]]. Current object/context verification: [[web-research-supplement#Temples and divine manifestation]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]]. Current object/context verification: [[web-research-supplement#Temples and divine manifestation]].

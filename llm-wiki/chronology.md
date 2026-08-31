@@ -22,7 +22,7 @@ review:
 
 Dates before 664 BCE are approximate. Dynasties are a later organizing scheme, traditionally associated with Manetho, and boundaries can be arbitrary. The value of chronology here is to track changes in institutions and surviving evidence.
 
-| Period | Approximate dates | Religious importance in this course |
+| Period | Approximate dates | Religious importance |
 |---|---:|---|
 | Predynastic / Protodynastic | c. 5500–3100 BCE | Regional iconographies and cults develop; Upper and Lower Egypt move toward a unified state. |
 | Early Dynastic, Dynasties 1–2 | c. 3100–2686 BCE | Kingship and state cult consolidate; early monumental and mortuary patterns take shape. |
@@ -43,7 +43,7 @@ Egyptian religious change was additive and recursive. Old language and imagery c
 
 ## The funerary sequence
 
-The instructor's chapter-one notes give a useful, deliberately simplified trajectory:
+The chapter-one notes give a useful, deliberately simplified trajectory:
 
 - Old Kingdom: royal ascent toward sky and stars;
 - Middle Kingdom: a western destination and an Egyptian-like otherworld become more prominent;
@@ -53,5 +53,4 @@ This is a shift of emphasis, not three mutually exclusive doctrines. Solar, stel
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]].
-
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]].

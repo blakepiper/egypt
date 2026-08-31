@@ -50,7 +50,7 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="shell">
       <header className="shell__bar">
         <Link className="shell__mark" to="/">
-          <span className="shell__mark-glyph" aria-hidden="true" />
+          <img className="shell__mark-glyph" src={`${import.meta.env.BASE_URL}media/archive-app-icon.png`} alt="" aria-hidden="true" />
           <span>The Living Archive</span>
         </Link>
 
@@ -107,8 +107,8 @@ export function Shell({ children }: { children: ReactNode }) {
           <strong>The Living Archive</strong>
           <p>
             {contentManifest.counts.pages} pages, {contentManifest.counts.sources} source groups,{' '}
-            {contentManifest.counts.edges} graph relationships. Reconstructed from REL 395, Religion of Ancient Egypt,
-            Northern Arizona University, Spring 2017.
+            {contentManifest.counts.edges} graph relationships. Built from ancient texts, modern scholarship, and a
+            reviewed source collection.
           </p>
         </div>
         <nav aria-label="Footer">

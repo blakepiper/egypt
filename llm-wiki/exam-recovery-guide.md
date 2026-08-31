@@ -1,6 +1,6 @@
 ---
 type: study-guide
-tags: [exams, retrieval-practice, course-recovery]
+tags: [concept-checks, retrieval-practice, ancient-egypt]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 review:
@@ -9,75 +9,66 @@ review:
   media_rights: reviewed
 ---
 
-# Exam recovery guide
+# Concept checks
 
-The blank exams preserve intended coverage; completed versions preserve the student's answers, including omissions and possible mistakes. Use the questions for retrieval practice and the topic pages for corrected synthesis.
+Use these prompts to test whether the ideas connect. Try to answer before revealing the prompts in the Learn view, then return to the linked articles for the evidence and the qualifications behind each answer.
 
-For the complete answer-level reconstruction—including every defined term, the two distinct Exam 1 saves, unanswered items, and corrections—use [[student-work-reconstruction#Exam 1: myth, geography, history, and deities]], [[student-work-reconstruction#Exam 2: institutions, personhood, ritual, and early funerary texts]], and [[student-work-reconstruction#Exam 3: the Book of the Dead and late traditions]].
+## Creation and the gods
 
-## Exam 1 — history, myth, and gods
+Explain the ideas in your own words, not as a list of names.
 
-Be able to explain, not merely list:
+- How can several creation accounts coexist without one becoming the single official version?
+- What are operative, charter, and etiological myths, and how do they differ in use?
+- How do maat and isfet shape kingship and the relationship between order and disruption?
+- What do Kemet, Deshret, Upper Egypt, and Lower Egypt describe?
+- How can iconography, triads, cult centers, and historical patronage help identify a deity?
+- What do Re's tears and Khepri's name suggest about creation and becoming?
+- How do the stories of Osiris, Isis, Horus, and Set express succession without forming one fixed canonical story?
+- What changed when Aten became central under Amenhotep IV, later called Akhenaten?
 
-- chronology: Pyramid → Coffin → Book of the Dead;
-- local cult plurality and why creation accounts coexist;
-- operative, charter, and etiological myth;
-- maat/isfet and kingship;
-- Black Land/Red Land, Upper/Lower Egypt;
-- iconography, triads, cult centers, and historical patronage;
-- Re's tears as human creation; Khepri as becoming;
-- Osiris–Horus–Set injuries and succession;
-- Aten under Amenhotep IV/Akhenaten;
-- gods of Nile, moon, childbirth, war, writing, and protection.
+Interpretive caution: A deity's function varies by place, period, and context. Avoid reducing any god to one domain or one English label.
 
-Possible corrections/uncertainties in the completed answer: some unanswered deity items; `wereret` crown confusion appears later; broad “god shifted from warfare to sexuality” needs source confirmation rather than guessing.
+## Ritual and institutions
 
-## Exam 2 — institutions, magic, death, and funerary corpora
+Connect ritual action to the institutions and relationships that supported it.
 
-Master the paired concepts:
+- How do heka and a historiola make speech, image, and precedent effective?
+- What were priestly titles, purity rules, phyles, and the king's role as chief officiant?
+- What happened when a cult statue was awakened, purified, clothed, fed, and returned to its shrine?
+- How did festival processions and bark oracles bring a normally restricted god closer to the public?
+- What did the Sed festival and Khoiak rites renew?
+- Why could a name or image be treated as an effective presence?
+- How did dreams, letters to the dead, and votive offerings connect individuals with divine or ancestral power?
+- What is the difference between a tomb chapel and a burial chamber?
 
-- heka/historiola; heart/ka/ba/akh/shadow;
-- priestly titles, purity, phyles, and royal proxy;
-- cult statue activation and daily feeding;
-- festival processions and bark oracles;
-- Sed and Khoiak renewal;
-- why names and images are effective;
-- tomb chapel vs burial chamber;
-- mummification, canopic organs, Opening of the Mouth;
-- dreams and letters as contact with gods/dead;
-- Naydler versus funerary reading of Pyramid Texts;
-- body, food, movement, and reversal in Coffin Texts;
-- twelve-hour Amduat/Book of Gates journey.
+Interpretive caution: The ideomotor effect may offer a modern explanation for unconscious movement during an oracle, but it does not tell us how participants understood divine agency.
 
-Do not treat the completed answer's ideomotor explanation of bark oracles as the ancient explanation; it is a modern mechanism proposed by the student.
+## Personhood and funerary texts
 
-## Exam 3 — Book of the Dead and late reception
+Use the texts to explain why continued life required more than an abstract soul.
 
-Practice:
+- What roles do the body, heart, name, shadow, ka, ba, and akh each play?
+- Why do mummification, canopic treatment, and the Opening of the Mouth matter?
+- What do the Pyramid Texts and Coffin Texts reveal about food, breath, movement, bodily integrity, and divine identity?
+- How do the Amduat and Book of Gates organize the sun's passage through the Duat?
+- Why do gates, names, guardians, provision, punishment, Osiris, and Apep matter in the night journey?
+- How do shabtis address labor in the Field of Offerings?
 
-- New Kingdom origins and long use into Roman times;
-- papyrus placement and red rubrics;
-- vignettes versus historiolae;
-- ba, akh, heart, Sons of Horus, shabtis, transformations;
-- Chapter 125, Hall of Two Truths, negative confession, heart weighing;
-- named gates and secret knowledge;
-- Ani and Tutu; sistrum as temple singer cue;
-- Field of Reeds, bread/beer, mobility, rebirth;
-- solar and Osirian praise;
-- Egyptian influence/reception in Hermetic, magical, Gnostic, and later traditions.
+Interpretive caution: Naydler's living-initiation reading of the Pyramid Texts is a modern minority interpretation. The funerary setting is secure, while the larger initiatory reconstruction remains unproved.
 
-Possible correction: the student defines vignette as a short mythic retelling; standard usage is an illustration, while a short empowering myth is a historiola. The answer that Taweret's final presence symbolizes rebirth is a thoughtful interpretation, not a securely documented single meaning.
+## The Book of the Dead and later traditions
 
-## Best self-test
+Follow the sequence from manuscript, to image, to judgment, to later interpretation.
 
-Pick one random prompt from each exam and answer in this form:
+- Why is the Book of the Dead better understood as a repertoire than as one fixed book?
+- What are rubrics, vignettes, and historiolae?
+- How do heart spells, transformations, named gates, shabtis, solar praise, Osirian identification, and the Field of Reeds support the dead?
+- What happens in the Hall of Two Truths when Anubis handles the balance, Thoth records, Ammit waits, and Osiris presides?
+- Why do papyrus placement, red instructions, and surrounding images matter?
+- How should Egyptian influence on Greek, Demotic, Hermetic, Gnostic, and Christian traditions be described without collapsing different periods and processes?
 
-1. one-sentence identification;
-2. date/place/source context;
-3. function in the Egyptian system;
-4. one connection to another unit;
-5. one uncertainty or evidentiary limit.
+Interpretive caution: A vignette is an illustration attached to a spell. A short empowering myth is a historiola. Taweret may suggest renewal in some scenes, but that interpretation should not be presented as a fixed caption.
 
 ## Sources in this archive
 
-[[source-catalog#C04 — Course exams and study prompts|C04]].
+[[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].

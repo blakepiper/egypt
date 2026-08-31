@@ -204,7 +204,7 @@ test.describe('interactive views', () => {
   test('the personhood constellation selects an aspect and duplicates it as a table', async ({ page }) => {
     await page.goto('views/personhood/');
     await page.getByRole('button', { name: 'ka', exact: true }).click();
-    await expect(page.getByRole('heading', { level: 3, name: 'Working meaning in this course' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Working meaning' })).toBeVisible();
     await expect(page.getByRole('rowheader', { name: /ka/ }).first()).toBeVisible();
   });
 
@@ -228,7 +228,7 @@ test.describe('interactive views', () => {
 test.describe('learn', () => {
   test('the four-week plan keeps progress and can reset it', async ({ page }) => {
     await page.goto('learn/');
-    await expect(page.getByRole('heading', { level: 2, name: 'Four-week relearning plan' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2, name: 'Four-week learning plan' })).toBeVisible();
     await page.getByRole('checkbox').first().check();
     await expect(page.getByRole('status').first()).toContainText('1 of 28');
     await page.reload();
@@ -237,11 +237,11 @@ test.describe('learn', () => {
     await expect(page.getByRole('status').first()).toContainText('0 of 28');
   });
 
-  test('exam prompts stay hidden until they are revealed', async ({ page }) => {
+  test('concept prompts stay hidden until they are revealed', async ({ page }) => {
     await page.goto('learn/');
-    await expect(page.getByText(/Where the 2017 answer needed correcting/)).toHaveCount(0);
+    await expect(page.getByText(/Interpretive caution/)).toHaveCount(0);
     await page.getByRole('button', { name: /Reveal \d+ prompts/ }).first().click();
-    await expect(page.getByText(/Where the 2017 answer needed correcting/).first()).toBeVisible();
+    await expect(page.getByText(/Interpretive caution/).first()).toBeVisible();
   });
 });
 

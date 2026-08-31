@@ -89,4 +89,4 @@ Avoid flash where prohibited and do not touch reliefs. A context photo is usuall
 
 ## Sources in this archive
 
-Primarily [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], maps and entries in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and the course sequence in [[source-catalog#C01 — REL 395 syllabus|C01]].
+Primarily [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], maps and entries in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and the reading route in [[course-reading-guide]].

@@ -14,7 +14,7 @@ export function HomeView() {
   return (
     <div className="page home">
       <section className="home__hero">
-        <span className="kicker">Religion of Ancient Egypt · REL 395, Spring 2017</span>
+        <span className="kicker">Religion of Ancient Egypt · A sourced guide</span>
         <h1>A three-thousand-year argument about keeping the world alive</h1>
         <p>
           Egyptian religion was not one creed held still for thirty centuries. It was a working system for maintaining

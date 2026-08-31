@@ -31,7 +31,7 @@ Sobek appears as a crocodile or crocodile-headed man. Crowns can combine plumes,
 
 The Pyramid Texts already identify the king with Sobek emerging from floodwater and greening vegetation. Coffin Texts call him lord of water and use his aggressive vitality in the deceased's transformation. Crocodile danger becomes divine protection when aligned with king or worshipper.
 
-The course exam preserves a memorable myth: Sobek makes a fish trap or net to recover Horus's severed hands from the Nile. The story joins technological invention, bodily restoration, river knowledge, and the Horus–Set conflict.
+One surviving account gives Sobek a memorable role: he makes a fish trap or net to recover Horus's severed hands from the Nile. The story joins technological invention, bodily restoration, river knowledge, and the Horus–Set conflict.
 
 ## The Fayum and Amenemhat III
 
@@ -45,4 +45,4 @@ The Ptolemaic temple at Kom Ombo has paired cult axes for crocodile Sobek and fa
 
 ## Sources in this archive
 
-[[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C21 — Temple of Kom Ombo image|C21]].
+[[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C21 — Temple of Kom Ombo image|C21]].

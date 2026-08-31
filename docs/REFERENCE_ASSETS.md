@@ -4,7 +4,7 @@ The files in `design-inspiration/` were supplied as visual research. Their prese
 
 The implemented specimen does not load or copy any of these files at runtime. It translates broad visual observations into original CSS geometry and semantic tokens.
 
-The earlier pixel-stela app mark was removed from the deployed application because its source-image rights had not been established. The replacement in `public/media/archive-app-icon.svg` is original, code-native project artwork and does not derive from the reference files below.
+The deployed application mark is the project-created pixel-art stele in `public/media/archive-app-icon.png`. Its manifest record identifies it as generated artwork with no external source image. The original code-native mark remains in `public/media/archive-app-icon.svg` as a cleared fallback; neither asset derives from the reference files below.
 
 | File | Visual subject | Apparent provenance clue | Production status |
 | --- | --- | --- | --- |

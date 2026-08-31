@@ -15,14 +15,14 @@ Every substantive raw file is listed in [[source-catalog]]. This map records whe
 
 | Group | Main wiki integration |
 |---|---|
-| C01 syllabus | [[course-reconstruction]], [[course-reading-guide]], [[four-week-relearning-plan]], [[index]] |
+| C01 source record | [[course-reconstruction]], [[course-reading-guide]], [[four-week-relearning-plan]], [[index]] |
 | C02 Pinch | [[chronology]], [[sacred-geography]], [[how-egyptian-religion-works]], [[creation-traditions]], [[deity-field-guide]], [[funerary-text-tradition]] |
 | C03 Teeter | [[temples-priests-and-offerings]], [[festivals-oracles-and-personal-piety]], [[death-funeral-and-the-dead]], [[heka-and-operative-ritual]], [[amarna-and-late-transformations]], [[egypt-trip-field-guide]] |
-| C04 exams | [[exam-recovery-guide]], [[student-work-reconstruction]], [[glossary]], all major course-synthesis pages |
-| C05 Set project | [[set]], [[student-work-reconstruction]], [[osiris-isis-horus-and-set]], [[maat-isfet-and-kingship]] |
-| C06 Plate 30 project | [[book-of-the-dead-plate-30]], [[student-work-reconstruction]], [[book-of-the-dead]] |
-| C07 student water-lily project | [[blue-water-lily-research]], [[student-work-reconstruction]], [[contested-interpretations]] |
-| C08 Pinch instructor notes | [[course-materials-deep-notes]], [[how-egyptian-religion-works]], [[chronology]], [[maat-isfet-and-kingship]] |
+| C04 assessment prompts | [[exam-recovery-guide]], [[student-work-reconstruction]], [[glossary]], all major synthesis pages |
+| C05 Set research | [[set]], [[student-work-reconstruction]], [[osiris-isis-horus-and-set]], [[maat-isfet-and-kingship]] |
+| C06 Plate 30 research | [[book-of-the-dead-plate-30]], [[student-work-reconstruction]], [[book-of-the-dead]] |
+| C07 water-lily research | [[blue-water-lily-research]], [[student-work-reconstruction]], [[contested-interpretations]] |
+| C08 Pinch contextual notes | [[course-materials-deep-notes]], [[how-egyptian-religion-works]], [[chronology]], [[maat-isfet-and-kingship]] |
 | C09 Hornung | [[course-materials-deep-notes]], [[personhood-and-the-afterlife]], [[visual-decoder]] |
 | C10 Ptahhotep | [[course-materials-deep-notes]], [[ptahhotep-and-ethical-life]], [[maat-isfet-and-kingship]] |
 | C11 PDM/PGM | [[course-materials-deep-notes]], [[heka-and-operative-ritual]], [[amarna-and-late-transformations]], [[set]] |
@@ -50,16 +50,16 @@ Every substantive raw file is listed in [[source-catalog]]. This map records whe
 | C33 plant symbolism | [[blue-water-lily-research]] |
 | C34 nuclear-physics paper | [[contested-interpretations]] |
 | C35 water-lily images | [[blue-water-lily-research]] |
-| C36 report guide | [[course-reconstruction]], [[source-catalog#C05 — Set report project]] |
+| C36 report guide | [[course-reconstruction]], [[source-catalog#C05 — Set research project]] |
 
 ## Coverage limitations
 
-- The assigned Goelet/Faulkner Book of the Dead volume is not in the folder; its course use is reconstructed from exams, Plate 30 work, and Pinch.
+- The Goelet/Faulkner Book of the Dead volume is not in the source collection; its relevant contents are reconstructed from surviving prompts, Plate 30 material, and Pinch.
 - Some slide PDFs and image packets contain little or no machine-readable prose. Their visible content was inspected, and related text versions were used where available.
 - OCR was necessary for 19 scan-only PDFs. It enabled topic analysis but is not reliable enough for unverified verbatim quotation.
 - No classroom lecture notes, grading feedback, or recordings survive.
 - The wiki does not import current tourism logistics; [[egypt-trip-field-guide]] is interpretive and should be paired with current official access information.
-- “Covered” means that each source's substantive contribution has a destination, not that a copyrighted book has been reproduced. Exact reading depth is recorded in [[reading-audit]].
+- “Mapped” means that each source's substantive contribution has a destination, not that a copyrighted book has been reproduced. Exact reading depth is recorded in [[reading-audit]].
 
 ## Maintenance test
 

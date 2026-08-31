@@ -93,7 +93,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   for (const journey of journeys) {
     addNode({
       id: `journey:${journey.id}`, kind: 'journey', label: journey.title, summary: journey.subtitle,
-      route: route('journeys', journey.id), periods: [], places: [], evidence: 'course',
+      route: route('journeys', journey.id), periods: [], places: [], evidence: 'archive',
     });
   }
 
@@ -128,7 +128,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
     // Citation layer: a page that cites a source draws from it.
     for (const id of p.sourceIds) {
       const nodeId = `source:${id}`;
-      addNode({ id: nodeId, kind: 'source', label: id, summary: `Source group ${id} in the archive catalog.`, route: `${route('archive', 'sources')}#${id.toLowerCase()}`, periods: [], places: [], evidence: 'course' });
+      addNode({ id: nodeId, kind: 'source', label: id, summary: `Source group ${id} in the archive catalog.`, route: `${route('archive', 'sources')}#${id.toLowerCase()}`, periods: [], places: [], evidence: 'archive' });
       addEdge(from, nodeId, 'draws_from', `llm-wiki/${p.page.slug}.md`);
     }
   }

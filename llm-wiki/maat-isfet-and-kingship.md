@@ -29,7 +29,7 @@ This is not a simple moral dualism between two equally ultimate powers. Maat is 
 
 ## Maat must be done and spoken
 
-Hornung's assigned chapter supplies an essential correction to the idea that maat is passive conformity. Maat is described as the foundation of ordered existence and as nourishment or air for gods and humans, yet it does not maintain itself. People must **do maat** and **speak maat**. Its proper shape is measure: uncontrolled excess, even in the name of zeal, can become destructive. Temple offering, fair judgment, accurate speech, art, social care, and the repair of the injured Eye of Horus are different scales of the same active work.
+Hornung's chapter supplies an essential correction to the idea that maat is passive conformity. Maat is described as the foundation of ordered existence and as nourishment or air for gods and humans, yet it does not maintain itself. People must **do maat** and **speak maat**. Its proper shape is measure: uncontrolled excess, even in the name of zeal, can become destructive. Temple offering, fair judgment, accurate speech, art, social care, and the repair of the injured Eye of Horus are different scales of the same active work.
 
 Presenting the small figure of Maat to a god is therefore not merely saying “the king obeys.” It gives the deity the order the deity first made possible, completing a reciprocal circuit.
 
@@ -50,7 +50,7 @@ Temple scenes of the king “presenting maat” condense the reciprocal system. 
 
 ## Social ethics
 
-The [[ptahhotep-and-ethical-life|Teaching of Ptahhotep]] imagines a hierarchical society in which position creates obligations. Officials must listen, restrain aggression, avoid abusing the poor, transmit accurate messages, judge by measure, and use power without arrogance. The student's Exam 2 synthesis stresses role fulfillment: elites owe justice and beneficence; workers owe honest labor. That formulation reflects the course, but it also represents an elite prescriptive text. It tells us the order authors wanted, not whether the system was equitable or consistently lived.
+The [[ptahhotep-and-ethical-life|Teaching of Ptahhotep]] imagines a hierarchical society in which position creates obligations. Officials must listen, restrain aggression, avoid abusing the poor, transmit accurate messages, judge by measure, and use power without arrogance. The text presents role fulfillment as a social duty: elites owe justice and beneficence, while workers owe honest labor. That is an elite prescriptive ideal, not proof that Egyptian hierarchy was equitable or consistently lived.
 
 Maat joins cosmic maintenance to everyday conduct. The heart later weighed against Maat's feather is the same heart that listens, plans, remembers, and reveals character. Ethics, bodily identity, and afterlife judgment meet in one organ.
 
@@ -64,4 +64,4 @@ Scenes of kings smiting foreigners, spearing hippopotami, or destroying bound en
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], [[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C10 — Teaching of Ptahhotep|C10]], and [[source-catalog#C05 — Set report project|C05]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C10 — Teaching of Ptahhotep|C10]], and [[source-catalog#C05 — Set research project|C05]].

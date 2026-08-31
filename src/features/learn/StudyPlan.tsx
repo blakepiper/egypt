@@ -1,6 +1,5 @@
-// Learn: the four-week plan as a checklist, and the exam guide as revealable
-// prompts. Both are generated from the wiki pages, and both store progress in
-// this browser only.
+// Learn: the four-week plan as a checklist and topic-based concept checks.
+// Both are generated from the wiki pages and store progress in this browser only.
 
 import { useMemo, useState } from 'react';
 import { Link, useApp } from '../../app/state';
@@ -29,7 +28,7 @@ export function RelearningPlan() {
 
   return (
     <Section
-      title="Four-week relearning plan"
+      title="Four-week learning plan"
       description={<>A route back through the material, generated from <Link to={page?.route ?? '/learn/'}>the plan page</Link>. Progress is kept in this browser and nowhere else.</>}
     >
       <p className="progress-line" role="status">
@@ -72,40 +71,39 @@ export function RelearningPlan() {
   );
 }
 
-export function ExamRecovery() {
-  const { exams } = visualizationData;
+export function ConceptChecks() {
+  const { checks } = visualizationData;
   const [revealed, setRevealed] = useState<string[]>([]);
-  const page = allPages.find((entry) => entry.slug === 'exam-recovery-guide');
 
-  if (!exams.length) return null;
+  if (!checks.length) return null;
 
   return (
     <Section
-      title="Exam recovery prompts"
-      description={<>Try to answer before revealing. Taken from <Link to={page?.route ?? '/learn/'}>the exam recovery guide</Link>, which also records where the 2017 answers were wrong.</>}
+      title="Concept checks"
+      description={<>Try to answer before revealing. These prompts revisit the ideas that connect the archive's major subjects.</>}
     >
-      <div className="exam-list">
-        {exams.map((exam) => {
-          const open = revealed.includes(exam.id);
+      <div className="check-list">
+        {checks.map((check) => {
+          const open = revealed.includes(check.id);
           return (
-            <article key={exam.id} className="exam-block">
-              <h3>{exam.title}</h3>
-              {exam.lead && <p className="muted">{exam.lead}</p>}
+            <article key={check.id} className="check-block">
+              <h3>{check.title}</h3>
+              {check.lead && <p className="muted">{check.lead}</p>}
               <Button
                 aria-expanded={open}
-                onClick={() => setRevealed((current) => (open ? current.filter((id) => id !== exam.id) : [...current, exam.id]))}
+                onClick={() => setRevealed((current) => (open ? current.filter((id) => id !== check.id) : [...current, check.id]))}
               >
-                {open ? 'Hide the prompts' : `Reveal ${exam.prompts.length} prompts`}
+                {open ? 'Hide the prompts' : `Reveal ${check.prompts.length} prompts`}
               </Button>
               {open && (
                 <>
-                  <ul className="exam-block__prompts">
-                    {exam.prompts.map((prompt, index) => <li key={index}>{prompt}</li>)}
+                  <ul className="check-block__prompts">
+                    {check.prompts.map((prompt, index) => <li key={index}>{prompt}</li>)}
                   </ul>
-                  {exam.caution && (
+                  {check.caution && (
                     <aside className="archive-callout archive-callout--contested">
-                      <span className="archive-callout__label">Where the 2017 answer needed correcting</span>
-                      <p>{exam.caution}</p>
+                      <span className="archive-callout__label">Interpretive caution</span>
+                      <p>{check.caution}</p>
                     </aside>
                   )}
                 </>

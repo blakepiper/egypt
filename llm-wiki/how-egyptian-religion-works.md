@@ -24,7 +24,7 @@ review:
 
 Most surviving evidence comes from durable and elite contexts: stone temples and tombs, royal inscriptions, costly papyri, and objects selected for burial. Mud-brick homes, oral practice, doubt, routine, and the poorest Egyptians are less visible. A temple wall shows an ideal repeated forever, not a documentary snapshot. A funerary spell says what the deceased wanted to accomplish, not necessarily what everyone believed in the same way.
 
-The course therefore asks two questions at once: what pattern does the evidence imply, and what does the evidence prevent us from knowing?
+The archive therefore asks two questions at once: what pattern does the evidence imply, and what does the evidence prevent us from knowing?
 
 ## Local plurality and theological combination
 
@@ -34,7 +34,7 @@ Gods were not modern characters with one body, one biography, and one job. A nam
 
 ## Myth was fragmented and active
 
-Pinch and the course notes distinguish:
+Pinch and the accompanying notes distinguish:
 
 - **etiological myth:** explains an origin;
 - **charter myth:** validates an institution or social order through an origin;
@@ -63,7 +63,7 @@ The king's authority, temple landholding, taxation, craft production, festivals,
 When you meet a scene or text, ask:
 
 1. What date, place, audience, and medium produced it?
-2. Is it primary evidence, modern scholarship, course synthesis, or speculation?
+2. Is it primary evidence, modern scholarship, archive synthesis, or speculation?
 3. What danger, need, or relationship is being managed?
 4. What work do name, image, speech, material, and gesture perform?
 5. Which god's local perspective organizes the scene?
@@ -72,5 +72,4 @@ When you meet a scene or text, ask:
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]], and [[source-catalog#C09 — Hornung, Idea into Image selection|C09]].
-
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C09 — Hornung, Idea into Image selection|C09]].

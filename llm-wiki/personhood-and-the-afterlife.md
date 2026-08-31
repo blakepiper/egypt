@@ -22,7 +22,7 @@ review:
 
 Calling all of these elements “souls” obscures their differences. Egyptian persons were constituted through a body, social identity, vital capacities, images, names, and relationships that could separate and reunite.
 
-| Term | Working meaning in this course | Common image or issue |
+| Term | Working meaning | Common image or issue |
 |---|---|---|
 | **khat / body** | material body that must remain recognizable and protected | mummy; bodily integrity |
 | **ib / ab (heart)** | thought, memory, intention, character, and testimony | weighed against Maat; may betray or vindicate |
@@ -32,7 +32,7 @@ Calling all of these elements “souls” obscures their differences. Egyptian p
 | **ba** | mobile manifestation capable of moving between tomb and world | human-headed bird |
 | **akh** | an effective, transfigured, capable spirit in the divine/dead realm | successful mode of postmortem agency |
 
-Translations vary across scholarship, and no short English gloss exhausts a term. The completed Exam 2 calls the ka a “remote agency or double,” the ba a mobile soul, the shadow a vulnerable presence, and the akh the active, able spirit in the Duat. Use those as memory aids, not rigid definitions.
+Translations vary across scholarship, and no short English gloss exhausts a term. The ka can be understood as a remote agency or double, the ba as a mobile manifestation, the shadow as a vulnerable presence, and the akh as an active, able spirit in the Duat. Use these as working descriptions, not rigid definitions.
 
 ## The afterlife problem set
 
@@ -47,7 +47,7 @@ The funerary archive repeatedly solves concrete problems:
 - **judgment:** obtain vindication before Osiris and prevent the heart from testifying destructively;
 - **isolation:** maintain relationships with family, cult personnel, gods, and the living.
 
-The earthy line noted on Exam 2—“I eat with my mouth, I defecate with my anus”—asserts a properly reconstituted and functioning body. Egyptian immortality is not escape from embodiment; it is effective, renewed embodiment.
+The earthy line “I eat with my mouth, I defecate with my anus” asserts a properly reconstituted and functioning body. Egyptian immortality is not escape from embodiment; it is effective, renewed embodiment.
 
 ## Ka, ba, and akh as a sequence of access
 
@@ -63,4 +63,4 @@ The dead could become helpful **akh spirits** or dangerous agents blamed for ill
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C13 — Coffin Text selections|C13]], and [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C13 — Coffin Text selections|C13]], and [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].

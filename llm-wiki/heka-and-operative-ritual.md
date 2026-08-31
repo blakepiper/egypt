@@ -23,7 +23,7 @@ review:
 
 # Heka and operative ritual
 
-**Heka** is both a cosmic power and a deity. In one course formulation Heka joins Sia (perception) and Hu (authoritative utterance): reality is perceived, formulated, and made effective. “Magic” is a useful translation only if it does not imply fraud, superstition, or a marginal alternative to religion.
+**Heka** is both a cosmic power and a deity. Heka joins Sia (perception) and Hu (authoritative utterance): reality is perceived, formulated, and made effective. “Magic” is a useful translation only if it does not imply fraud, superstition, or a marginal alternative to religion.
 
 ## Why the modern public/private definition fails
 
@@ -48,7 +48,7 @@ Teeter's examples combine practical remedies with myth. A burn spell identifies 
 
 State execration and personal spells could immobilize, confuse, or destroy enemies. Reversal—head where feet belong, speech made useless, the familiar world inverted—renders the opponent part of isfet. Surviving destructive spells are fewer in earlier periods and more visible in Greco-Roman magical corpora.
 
-The assigned PDM/PGM packet makes late practice concrete. Its recipes join spoken names, drawn figures, animal/plant/mineral substances, timing, burial or placement, and commands for separation, attraction, compulsion, dream, or revelation. Seth appears as Typhon and through donkey associations or as the brother-killer, alongside Isis, Osiris, Anubis, Greek names, and strings of ritual syllables. This is not evidence of an unchanged “secret Egyptian magic” stretching back to the Pyramid Texts. It is a late multilingual ritual environment that retools old gods for new operations.
+The PDM/PGM packet makes late practice concrete. Its recipes join spoken names, drawn figures, animal/plant/mineral substances, timing, burial or placement, and commands for separation, attraction, compulsion, dream, or revelation. Seth appears as Typhon and through donkey associations or as the brother-killer, alongside Isis, Osiris, Anubis, Greek names, and strings of ritual syllables. This is not evidence of an unchanged “secret Egyptian magic” stretching back to the Pyramid Texts. It is a late multilingual ritual environment that retools old gods for new operations.
 
 ## Images do not equal hallucinations
 
@@ -56,4 +56,4 @@ Some research papers in the archive argue that composite beings or religious ima
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], [[source-catalog#C11 — PDM and PGM magical texts|C11]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C11 — PDM and PGM magical texts|C11]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].

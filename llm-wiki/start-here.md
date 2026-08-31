@@ -3,7 +3,7 @@ type: overview
 tags: [overview, study-guide, ancient-egypt, religion]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
-aliases: [The course argument]
+aliases: [Renewable continuity]
 entities: [renewable-continuity, maat, isfet, ka, ba, akh]
 relations:
   - target: creation-traditions
@@ -23,11 +23,11 @@ review:
 
 # Start here
 
-Ancient Egyptian religion was not a single creed. It was a three-thousand-year system for keeping a fragile created world alive. Its recurring problem was not “How do I assent to the correct doctrine?” but “How do gods and humans maintain life, order, presence, and continuity against disintegration?” The course vocabulary for that opposition is [[maat-isfet-and-kingship|maat and isfet]].
+Ancient Egyptian religion was not a single creed. It was a three-thousand-year system for keeping a fragile created world alive. Its recurring problem was not “How do I assent to the correct doctrine?” but “How do gods and humans maintain life, order, presence, and continuity against disintegration?” The terms used here are [[maat-isfet-and-kingship|maat and isfet]].
 
 !media[nauny-judgment]
 
-For the syllabus in sequence, use [[course-reading-guide]]. For packet-by-packet close notes, use [[course-materials-deep-notes]]. To recover exactly what you wrote in 2017—with corrections kept visible—use [[student-work-reconstruction]].
+For a guided reading route, use [[course-reading-guide]]. For close notes on the source material, use [[course-materials-deep-notes]].
 
 Five ideas make the archive cohere.
 
@@ -51,7 +51,7 @@ In theory the king offered in every temple; in practice priests served as his de
 
 Survival required more than an immortal “soul.” Body, heart, name, shadow, ka, ba, and akh had different roles. The dead needed breath, food, mobility, memory, bodily integrity, knowledge, protection, and moral or ritual vindication. Funerary texts supplied speech and images that helped accomplish these needs. Their history is cumulative: royal [[pyramid-texts]], more broadly used [[coffin-texts]], royal [[amduat-and-book-of-gates|Underworld Books]], and the individualized [[book-of-the-dead]] overlap like shingles rather than replacing one another cleanly.
 
-## One course-long synthesis
+## The recurring pattern
 
 Creation, kingship, temple cult, magic, and afterlife all use the same grammar:
 
@@ -64,8 +64,8 @@ Re crosses the Duat every night. Osiris is reconstituted but rules among the dea
 
 ## A caution learned from the archive
 
-The folder mixes ancient translations, mainstream scholarship, student work, and highly speculative modern claims. They are not evidentially equal. Use [[contested-interpretations]] before treating the shamanic, entheogenic, or “nuclear physics” materials as historical conclusions.
+The folder mixes ancient translations, mainstream scholarship, research notes, and highly speculative modern claims. They are not evidentially equal. Use [[contested-interpretations]] before treating the shamanic, entheogenic, or “nuclear physics” materials as historical conclusions.
 
 ## Sources in this archive
 
-[[source-catalog#C01 — REL 395 syllabus|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C04 — Course exams and study prompts|C04]].
+[[source-catalog#C01 — REL 395 source record|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

@@ -43,7 +43,7 @@ They also require a superior to let a petitioner “empty the heart”: hearing 
 
 ## Hierarchy and its limits
 
-The text does not challenge social hierarchy; it teaches each rank to act properly within it. The completed exam emphasizes that officials owe justice while lower-status people owe diligent work. But Ptahhotep's warnings against humiliating a poor opponent and abusing position show that hierarchy itself requires restraint to remain maat rather than predation.
+The text does not challenge social hierarchy; it teaches each rank to act properly within it. Officials owe justice while lower-status people owe diligent work. But Ptahhotep's warnings against humiliating a poor opponent and abusing position show that hierarchy itself requires restraint to remain maat rather than predation.
 
 This is prescriptive elite literature. It gives access to a moral imagination, not a census of actual behavior or the voices of all classes.
 
@@ -59,4 +59,4 @@ The text's concerns—heart, truth, reputation, memory, speech, children, and a 
 
 ## Sources in this archive
 
-[[source-catalog#C10 — Teaching of Ptahhotep|C10]] and [[source-catalog#C04 — Course exams and study prompts|C04]].
+[[source-catalog#C10 — Teaching of Ptahhotep|C10]] and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

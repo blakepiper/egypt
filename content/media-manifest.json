@@ -22,6 +22,28 @@
     "note": "Code-native project artwork with no external reference asset."
   },
   {
+    "id": "archive-app-icon-pixel-stela",
+    "kind": "diagram",
+    "file": "archive-app-icon.png",
+    "source": "Generated for this project with the OpenAI image generation tool; no external source image was used.",
+    "creator": "The Living Archive project",
+    "institution": null,
+    "objectId": null,
+    "license": "Project-created original artwork",
+    "attribution": "The Living Archive",
+    "dateAccessed": "2026-08-30",
+    "period": [],
+    "place": [],
+    "caption": "Pixel-art emblem inspired by the Stele of Revealing, created for The Living Archive application.",
+    "alt": "A pixel-art Egyptian stele with a winged sun disk, a seated figure, and small glyph-like marks on a transparent background.",
+    "transcript": null,
+    "status": "cleared",
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed" },
+    "width": 256,
+    "height": 256,
+    "note": "New project artwork generated from a textual art direction brief; it is not traced from the reference-assets folder."
+  },
+  {
     "id": "temple-dendur",
     "kind": "image",
     "source": "https://www.metmuseum.org/art/collection/search/547802",

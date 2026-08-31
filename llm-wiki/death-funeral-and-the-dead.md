@@ -42,7 +42,7 @@ Mummification reenacts the care of Osiris. Anubis and embalming priests protect 
 
 Evidence shows transport from home, crossing or procession to the necropolis, professional mourning, dragging the coffin, a tekenu bundle, Muu dancers, purification, offerings, and rites at the tomb. The **Opening of the Mouth**, performed prominently by a sem priest, reactivates senses and consumption.
 
-The student's Exam 2 identifies Anubis embracing the coffin as the dramatic moment marking passage from living to dead. Teeter illustrates this scene in Ramose's tomb. Treat it as a powerful visual transition rather than a universally fixed single instant in every funeral.
+Anubis embracing the coffin marks a dramatic passage from living to dead. Teeter illustrates this scene in Ramose's tomb. Treat it as a powerful visual transition rather than a universally fixed single instant in every funeral.
 
 Breaking red pots near the close could destroy hostile force and terminate ritual relations. Red connected desert, danger, and Sethian disorder, but meanings again depend on context.
 
@@ -67,5 +67,4 @@ This reciprocity complicates any division between ancestor veneration and “rel
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Course exams and study prompts|C04]], and the funerary corpora cataloged as [[source-catalog#C13 — Coffin Text selections|C13]] through [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].
-
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and the funerary corpora cataloged as [[source-catalog#C13 — Coffin Text selections|C13]] through [[source-catalog#C17 — Book of the Dead Plate 30 source packet|C17]].

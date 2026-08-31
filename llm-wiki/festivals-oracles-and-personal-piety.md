@@ -38,15 +38,15 @@ Amun crossed from Karnak to the west bank, visiting royal mortuary temples and l
 
 ### Khoiak / Osiris festivals
 
-Rites of Osiris's death, mourning, fabrication, burial, and regeneration unfolded over days. “Corn mummies” and planted Osiris figures made germination a bodily sign of renewal. The completed Exam 2 describes dramatic conflict and a Sethian cake destroyed/eaten; treat its compressed battle narrative as course synthesis, because festivals varied by place and period.
+Rites of Osiris's death, mourning, fabrication, burial, and regeneration unfolded over days. “Corn mummies” and planted Osiris figures made germination a bodily sign of renewal. Some descriptions include a Sethian cake that is destroyed or eaten, but festivals varied by place and period, so no single battle narrative should stand for every rite.
 
 ### Sed festival
 
-The royal jubilee renewed kingship and bodily fitness. Course material remembers offerings to regional gods, a tomb-like ritual, and a ceremonial run. Actual representations span different periods and need not describe one invariant script.
+The royal jubilee renewed kingship and bodily fitness. Sources describe offerings to regional gods, a tomb-like ritual, and a ceremonial run. Actual representations span different periods and need not describe one invariant script.
 
 ## Oracles
 
-Questions could be submitted to a god's portable bark. Forward, backward, dipping, or route selection was interpreted as an answer; written ostraca preserve decisions about property, guilt, office, and personal affairs. The student's answer invokes the ideomotor effect as a modern psychological explanation. That may explain unconscious carrier movement, but it does not replace the historical question of how participants understood divine agency.
+Questions could be submitted to a god's portable bark. Forward, backward, dipping, or route selection was interpreted as an answer; written ostraca preserve decisions about property, guilt, office, and personal affairs. The ideomotor effect may offer a modern explanation for unconscious carrier movement, but it does not replace the historical question of how participants understood divine agency.
 
 ## Prayer and access at temple edges
 
@@ -66,5 +66,4 @@ Animals could be divine manifestations, sacred individuals, votive offerings, or
 
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Course exams and study prompts|C04]].
-
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].

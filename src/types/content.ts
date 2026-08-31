@@ -1,7 +1,7 @@
 // Shared content model. Imported by the build scripts in `scripts/` and by the
 // application in `src/`. Types only: nothing here emits runtime code.
 
-export type EvidenceKind = 'primary' | 'course' | 'scholarship' | 'speculative';
+export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'speculative';
 
 export type InlineNode =
   | { t: 'text'; v: string }
@@ -408,5 +408,5 @@ export interface VisualizationData {
   creation: { id: string; place: string; creator: string; body: string[] }[];
   grammar: string[];
   weeks: { id: string; title: string; steps: { id: string; text: string; slugs: string[] }[]; checkpoint: string }[];
-  exams: { id: string; title: string; lead: string; prompts: string[]; caution: string }[];
+  checks: { id: string; title: string; lead: string; prompts: string[]; caution: string }[];
 }

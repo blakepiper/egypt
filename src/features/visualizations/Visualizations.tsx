@@ -60,7 +60,7 @@ export function PersonhoodView() {
           {active ? (
             <>
               <h2>{active.term}</h2>
-              <h3>Working meaning in this course</h3><p>{active.meaning}</p>
+              <h3>Working meaning</h3><p>{active.meaning}</p>
               <h3>Common image or issue</h3><p>{active.image}</p>
               {entity && <><h3>In the graph</h3><p>{entity.summary}</p></>}
             </>
@@ -68,9 +68,9 @@ export function PersonhoodView() {
             <>
               <h2>Select an aspect</h2>
               <p>
-                Translations vary across scholarship and no short English gloss exhausts a term. The exam answers in the
-                archive call the ka a remote agency or double and the akh the active spirit in the Duat. Those are memory
-                aids, not definitions.
+                Translations vary across scholarship and no short English gloss exhausts a term. The ka can be understood
+                as a remote agency or double and the akh as an active spirit in the Duat. These are working descriptions,
+                not definitions.
               </p>
             </>
           )}

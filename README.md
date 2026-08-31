@@ -1,6 +1,10 @@
 # The Living Archive
 
-A static application for the reconstructed archive of REL 395, *Religion of Ancient Egypt* (Northern Arizona University, Spring 2017). It publishes all 41 Markdown documents in `llm-wiki/` as a linked encyclopedia with search, a typed knowledge graph, a sacred atlas, a layered chronology, guided journeys, object studies, and a course-recovery section.
+<p align="center">
+  <img src="public/media/archive-app-icon.png" alt="The Living Archive logo" width="128" />
+</p>
+
+A static application for learning about ancient Egyptian religion. It publishes all 41 Markdown documents in `llm-wiki/` as a linked encyclopedia with search, a typed knowledge graph, a sacred atlas, a layered chronology, guided journeys, object studies, and concept checks.
 
 Everything is compiled at build time. There is no server, database, account, paid API, remote font, analytics, or tracker. Reader preferences stay in `localStorage`.
 
@@ -81,7 +85,7 @@ docs/                         plan, design system, status, and rights records
 | `entities.json`, `periods.json`, `places.json`, `sources.json` | the registries behind the atlas, chronology, graph, and catalog |
 | `visualizations.json`, `decoder.json`, `glossary.json` | interactive views derived from the wiki's own tables |
 
-Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, the four-week plan checklist, the exam prompts, and the glossary. A view therefore cannot drift away from the article behind it.
+Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, the four-week plan checklist, the concept checks, and the glossary. A view therefore cannot drift away from the article behind it.
 
 The build fails on a broken wiki link, a duplicate heading ID, an unknown source ID, an unknown media ID, raw HTML, an unknown callout or relation type, an orphan page, or a route collision.
 

@@ -38,11 +38,11 @@ Animals classed as Sethian vary by ritual context—donkey, hippopotamus, crocod
 
 ## Places and historical change
 
-Major associations in the student's report include Ombos/Naqada and Sepermeru, a “gateway to the desert.” Set enjoyed royal prestige in the Ramesside period: the names Seti (“man of Set”) and Sethnakht preserve it. The Hyksos identified their favored storm god with Set at Avaris, strengthening his foreign associations without making him immediately taboo.
+Major associations include Ombos/Naqada and Sepermeru, a “gateway to the desert.” Set enjoyed royal prestige in the Ramesside period: the names Seti (“man of Set”) and Sethnakht preserve it. The Hyksos identified their favored storm god with Set at Avaris, strengthening his foreign associations without making him immediately taboo.
 
 A late Nineteenth Dynasty stela from Deir el-Medina depicts an official worshipping Set, and a Ramesside amulet gives Set the double crown. These objects are compact proof that murder in myth did not eliminate positive cult or royal legitimacy. See [[web-research-supplement#Set remains double-sided]].
 
-Set's cult and images were attacked in many first-millennium contexts, particularly as foreign domination and Osirian/Horian temple programs reframed him. The student's report plausibly connects demonization to political memory, but its smooth chronology should be treated as a synthesis, not an uncontested single-cause explanation. Local veneration and positive roles persisted unevenly.
+Set's cult and images were attacked in many first-millennium contexts, particularly as foreign domination and Osirian and Horian temple programs reframed him. Demonization can be connected to political memory, but a smooth chronology would be a synthesis, not an uncontested single-cause explanation. Local veneration and positive roles persisted unevenly.
 
 ## Main texts in the archive
 
@@ -52,9 +52,9 @@ Set's cult and images were attacked in many first-millennium contexts, particula
 - Pyramid/Coffin Texts and Underworld Books: conflict, bodily injury, reconciliation, and solar defense.
 - Demotic and Greek magical texts: late divine names and powers in new ritual combinations.
 
-## The student's report: what to keep and qualify
+## What to keep and qualify
 
-Keep its central insight: Set's destructive acts can generate or defend a larger order, and his demonization changes historically. Qualify three claims: that he was simply “the villain of the Ennead” at all times, that foreign invasion alone explains his decline, and that “He with Two Faces” has one recoverable esoteric meaning. The drafts themselves increasingly recognize uncertainty.
+Set's destructive acts can generate or defend a larger order, and his demonization changes historically. Three claims need qualification: that he was simply “the villain of the Ennead” at all times, that foreign invasion alone explains his decline, and that “He with Two Faces” has one recoverable esoteric meaning.
 
 ## On a trip
 
@@ -64,4 +64,4 @@ Keep its central insight: Set's destructive acts can generate or defend a larger
 
 ## Sources in this archive
 
-[[source-catalog#C05 — Set report project|C05]], [[source-catalog#C19 — Te Velde, Seth, God of Confusion|C19]], [[source-catalog#C16 — Osiris–Isis–Horus–Set primary texts|C16]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], and [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]].
+[[source-catalog#C05 — Set research project|C05]], [[source-catalog#C19 — Te Velde, Seth, God of Confusion|C19]], [[source-catalog#C16 — Osiris–Isis–Horus–Set primary texts|C16]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], and [[source-catalog#C15 — Budge, Book of Am-Tuat and Book of Gates|C15]].
