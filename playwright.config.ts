@@ -11,7 +11,7 @@ export default defineConfig({
   fullyParallel: true,
   reporter: 'list',
   // Visual baselines are intentionally cross-platform; the comparison allows
-  // small system-font rasterization differences between local macOS and CI.
+  // small system-font rasterization differences between local environments.
   snapshotPathTemplate: '{testDir}/{testFileName}-snapshots/{arg}{ext}',
   use: { baseURL: `http://127.0.0.1:4173${base}`, trace: 'retain-on-failure' },
   webServer: { command: 'npm run preview -- --host 127.0.0.1', port: 4173, reuseExistingServer: true, timeout: 60_000 },

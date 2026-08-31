@@ -820,7 +820,7 @@ Work:
 - finish screen-reader, keyboard, touch, zoom, reduced-motion, and low-performance testing
 - meet bundle and media budgets
 - test direct links under the real GitHub Pages base path
-- configure the GitHub Pages build and deployment workflow
+- document the manual GitHub Pages build and deployment path
 - publish a release candidate for review
 - fix release-blocking findings and deploy the approved build
 

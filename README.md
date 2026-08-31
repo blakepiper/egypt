@@ -15,7 +15,7 @@ npm install
 npm run dev          # builds generated content, then starts Vite
 ```
 
-Checks, in the order the CI workflow runs them:
+Local checks:
 
 ```sh
 npm run content:check   # content lint: pages, links, anchors, routes, sources, media, dates
@@ -39,7 +39,7 @@ The build emits one real HTML entry point per route, so a direct reload works on
 BASE_PATH=/your-repository/ REPOSITORY_URL=https://github.com/you/your-repository npm run build
 ```
 
-`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. `.github/workflows/deploy.yml` runs the full check suite at the Pages base path and publishes `dist/`.
+`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. Build and publish `dist/` manually when deploying.
 
 ## Structure
 
