@@ -14,7 +14,7 @@ import type {
 export interface LinkResolver {
   /** Resolve a wiki slug to a route, or null when the target does not exist. */
   route(slug: string): string | null;
-  /** True when a source ID such as C14 exists in the source catalog. */
+  /** True when a source ID such as C14 or R001 exists in a source registry. */
   hasSource(id: string): boolean;
   sourceRoute(id: string): string;
 }
@@ -30,8 +30,8 @@ export interface ParseResult {
   text: string;
 }
 
-const CALLOUT_KINDS: CalloutKind[] = ['evidence', 'uncertainty', 'contested', 'note', 'reconstruction'];
-const SOURCE_ID = /\bC\d{2}\b/g;
+const CALLOUT_KINDS: CalloutKind[] = ['evidence', 'uncertainty', 'contested', 'note', 'reconstruction', 'research'];
+const SOURCE_ID = /\b(?:C\d+|R\d+)\b/g;
 
 export function slugifyHeading(text: string): string {
   return text
@@ -123,6 +123,18 @@ export function parseMarkdown(source: string, resolver: LinkResolver, pageSlug: 
     return out;
   };
 
+  const recordSourceId = (id: string): void => {
+    if (!/^C\d{2}$/.test(id) && !/^R\d{3,}$/.test(id)) {
+      result.problems.push(`invalid source ID "${id}"`);
+      return;
+    }
+    if (!resolver.hasSource(id)) {
+      result.problems.push(`unknown source ID "${id}"`);
+      return;
+    }
+    if (!result.sourceIds.includes(id)) result.sourceIds.push(id);
+  };
+
   const externalLink = (href: string, children: InlineNode[]): InlineNode => {
     const clean = href.replace(/^<|>$/g, '');
     if (clean.startsWith('../raw/') || clean.startsWith('raw/')) {
@@ -151,6 +163,12 @@ export function parseMarkdown(source: string, resolver: LinkResolver, pageSlug: 
       const route = resolver.route(slug);
       if (!route) result.problems.push(`unresolved wiki link [[${match[1]}]]`);
       else result.links.push({ slug, hash, context });
+      // Source records are commonly cited as a heading link, for example
+      // `[[source-catalog#C14 — ...|C14]]`. That is still provenance, even
+      // though the visible ID is nested inside an internal link rather than
+      // exposed as bare paragraph text.
+      const sourceReference = (label ?? match[1]).match(/\b(?:C\d{2}|R\d{3,})\b/);
+      if (sourceReference) recordSourceId(sourceReference[0]);
       out.push({
         t: 'link',
         kind: 'internal',
@@ -166,7 +184,7 @@ export function parseMarkdown(source: string, resolver: LinkResolver, pageSlug: 
     return out;
   };
 
-  /** Turn bare source IDs (C14) into catalog links. */
+  /** Turn bare source IDs (C14, R001) into catalog links and reject unknown IDs. */
   const plain = (raw: string): InlineNode[] => {
     const out: InlineNode[] = [];
     let cursor = 0;
@@ -174,9 +192,10 @@ export function parseMarkdown(source: string, resolver: LinkResolver, pageSlug: 
     let match: RegExpExecArray | null;
     while ((match = SOURCE_ID.exec(raw))) {
       const id = match[0];
-      if (!resolver.hasSource(id)) continue;
+      if (!/^C\d{2}$/.test(id) && !/^R\d{3,}$/.test(id)) { recordSourceId(id); continue; }
+      if (!resolver.hasSource(id)) { recordSourceId(id); continue; }
       if (match.index > cursor) out.push({ t: 'text', v: raw.slice(cursor, match.index) });
-      if (!result.sourceIds.includes(id)) result.sourceIds.push(id);
+      recordSourceId(id);
       out.push({
         t: 'link',
         kind: 'source',
@@ -318,6 +337,7 @@ function defaultCalloutLabel(kind: CalloutKind): string {
     case 'uncertainty': return 'What remains uncertain';
     case 'contested': return 'Contested claim';
     case 'reconstruction': return 'How this was reconstructed';
+    case 'research': return 'Supplemental research';
     default: return 'Note';
   }
 }

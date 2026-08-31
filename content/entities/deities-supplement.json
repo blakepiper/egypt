@@ -6,5 +6,9 @@
   { "id": "anuket", "kind": "deity", "label": "Anuket", "aliases": ["Anuket", "Anukis"],
     "summary": "The third member of the Elephantine triad, associated with the cataract waters at the imagined source of the inundation.",
     "evidence": "scholarship", "slug": "deity-field-guide", "sourceIds": ["C02"],
-    "relations": [ { "target": "elephantine", "type": "practiced_at" }, { "target": "khnum", "type": "associated_with", "note": "Elephantine triad: Khnum, Satet, and Anuket." } ] }
+    "relations": [ { "target": "elephantine", "type": "practiced_at" }, { "target": "khnum", "type": "associated_with", "note": "Elephantine triad: Khnum, Satet, and Anuket." } ] },
+  { "id": "harwer", "kind": "deity", "label": "Harwer", "origin": "supplemental", "aliases": ["Harwer", "Haroeris", "Horus the Elder"],
+    "summary": "A form of Horus known as Haroeris or Horus the Elder, paired with Sobek in the Ptolemaic temple program at Kom Ombo. This local pairing should not be generalized to every Horus cult.",
+    "evidence": "scholarship", "slug": "deity-field-guide", "sourceIds": ["R076", "C20"],
+    "relations": [ { "target": "kom-ombo", "type": "practiced_at" }, { "target": "sobek", "type": "associated_with", "note": "Kom Ombo's paired local cult program joins Harwer with Sobek." } ] }
 ]

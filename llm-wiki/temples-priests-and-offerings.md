@@ -3,6 +3,8 @@ type: topic
 tags: [temples, priests, offerings, ritual, economy]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Temple cult, Priesthood]
 places: [thebes, memphis, edfu]
 entities: [daily-temple-service, purity, hem-netjer, wab, lector-priest, temple-singer, king, maat]
@@ -17,6 +19,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Temples, priests, and offerings
@@ -57,6 +60,10 @@ Offerings did not vanish. After divine use, their material “reversion” suppo
 
 Temple reliefs show the king officiating because he was theoretically Egypt's sole mediator and sacrificer. In practice priests performed daily service as royal deputies. Endless offering scenes eternally enact that delegation and reciprocity; they are not proof that the king physically served every sanctuary.
 
+## Labor behind sacred service
+
+The daily rite depended on people who grew or acquired food, quarried and shaped stone, made linen and metalwork, copied records, cleaned rooms, carried water, and kept estates working. Administrative evidence gives access to those systems, but it does not make every worker's voice visible. [[households-work-and-unequal-access]], [[writing-knowledge-and-administration]], and [[monuments-labor-and-building-eternity]] follow the labor behind the ideal scene. R014 and R015 are useful checks on the assumption that ritual knowledge floated free of training and resources.
+
 ## Priesthood
 
 Important terms:
@@ -86,6 +93,18 @@ Temples owned land, received taxes and donations, ran workshops and estates, sto
 - Gods give “life, stability, dominion” in exchange for maat and material cult.
 - Roman emperors on late temple walls wear pharaonic crowns because the ritual office persisted through foreign rule.
 
+## Late temples are historical arguments
+
+Esna, Edfu, Gebel el-Silsila, and Kom Ombo are not timeless containers of an older religion. Their inscriptions, repairs, and visitor histories belong to particular political and priestly settings. The Esna temple record and its conservation project, R070 and R071, show why a current site account should distinguish ancient evidence from modern restoration. The same discipline applies to the records for Edfu and Kom Ombo in R073, R076, and R081. Read [[esna-khnum-temple-and-layered-town]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]].
+
+## Visitors are part of the evidence problem
+
+A traveler sees a managed route through a monument, not the ancient ritual audience in its entirety. Labels, barriers, lighting, conservation choices, and prior scholarship shape what becomes legible. [[egyptology-museums-and-colonialism]] and [[visual-decoder]] make those mediations visible, while [[egypt-trip-field-guide]] offers questions that do not turn a visit into proof of a single Egyptian worldview. R020, R023, R043, and R045 support this layered approach.
+
+## Supplemental research
+
+The R-series records listed below add research on economy, training, material religion, museums, conservation, and the southern temples.
+
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]]. Current object/context verification: [[web-research-supplement#Temples and divine manifestation]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[research-catalog#R014 — Economy|R014]], [[research-catalog#R015 — Education and Apprenticeship|R015]], [[research-catalog#R020 — How Religious Were the Ancient Egyptians?|R020]], [[research-catalog#R023 — Material Religion|R023]], [[research-catalog#R043 — Decolonising ancient Egypt?|R043]], [[research-catalog#R045 — Egypt and Sudan collection|R045]], [[research-catalog#R070 — The Temple of Esna|R070]], [[research-catalog#R071 — Revitalisation of Historic Esna|R071]], [[research-catalog#R073 — Tell Edfu Project|R073]], [[research-catalog#R076 — Kom Ombo Temple|R076]], and [[research-catalog#R081 — The Edfu Temple restoration project reveals colored inscriptions on the roof of the temple|R081]]. Current object/context verification: [[web-research-supplement#Temples and divine manifestation]].

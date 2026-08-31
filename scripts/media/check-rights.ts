@@ -43,6 +43,11 @@ function main(): void {
       else if (!existsSync(join(PUBLIC_MEDIA, record.file))) failures.push(`${record.id}: file public/media/${record.file} does not exist`);
       if (record.kind === 'video' && !record.transcript) failures.push(`${record.id}: video cleared without a transcript`);
       if (record.kind === 'audio' && !record.transcript) failures.push(`${record.id}: audio cleared without a transcript`);
+      if (record.containsHumanRemains) {
+        if (!record.dignityReview || record.dignityReview !== 'reviewed') failures.push(`${record.id}: human-remains dignity review is not recorded`);
+        if (!record.contentWarning) failures.push(`${record.id}: human-remains content warning is missing`);
+        if (!record.educationalRationale) failures.push(`${record.id}: human-remains educational rationale is missing`);
+      }
       if (record.kind === 'video' && !record.poster) failures.push(`${record.id}: video cleared without a poster image`);
       if (record.review?.factual !== 'reviewed') failures.push(`${record.id}: factual caption/alt review is not recorded`);
       if (record.review?.humanizer !== 'reviewed') failures.push(`${record.id}: humanizer review is not recorded`);

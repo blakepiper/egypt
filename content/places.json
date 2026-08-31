@@ -247,7 +247,8 @@
       "C02",
       "C03",
       "C22"
-    ]
+    ],
+    "routeOrder": 1
   },
   {
     "id": "deir-el-medina",
@@ -268,6 +269,7 @@
   },
   {
     "id": "esna",
+    "origin": "mixed",
     "label": "Esna",
     "aliases": [
       "Iunyt",
@@ -284,11 +286,48 @@
     ],
     "slug": "creation-traditions",
     "sourceIds": [
-      "C12"
+      "C12",
+      "R070",
+      "R071"
+    ],
+    "modernName": "Esna",
+    "visibility": "public",
+    "locationSourceUrls": [
+      "https://uni-tuebingen.de/en/faculties/faculty-of-humanities/departments/ancient-studies-and-art-history/institute-for-ancient-near-eastern-studies/research/egyptology/research-projects/the-temple-of-esna/",
+      "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/revitalisation-of-historic-esna"
+    ],
+    "routeOrder": 2
+  },
+  {
+    "id": "el-kab",
+    "origin": "supplemental",
+    "label": "El Kab and ancient Nekheb",
+    "aliases": [
+      "Nekheb",
+      "Elkab"
+    ],
+    "x": 49,
+    "y": 71,
+    "region": "upper",
+    "bank": "east",
+    "summary": "A public archaeological site associated with ancient Nekheb and the goddess Nekhbet. Walls, temples, and New Kingdom tombs belong to different evidence layers, not to one unchanged settlement.",
+    "deities": [
+      "nekhbet"
+    ],
+    "slug": "el-kab-nekheb-city-and-provincial-memory",
+    "sourceIds": [
+      "R072"
+    ],
+    "modernName": "El Kab",
+    "visibility": "public",
+    "routeOrder": 4,
+    "locationSourceUrls": [
+      "https://egymonuments.gov.eg/en/archaeological-sites/elkab/"
     ]
   },
   {
     "id": "edfu",
+    "origin": "mixed",
     "label": "Edfu",
     "aliases": [
       "Behdet"
@@ -304,11 +343,48 @@
     ],
     "slug": "sacred-geography",
     "sourceIds": [
-      "C02"
+      "C02",
+      "R073",
+      "R081"
+    ],
+    "modernName": "Edfu",
+    "visibility": "public",
+    "locationSourceUrls": [
+      "https://isac.uchicago.edu/research/projects/tell-edfu/latest-news",
+      "https://egymonuments.gov.eg/en/news/the-edfu-temple-restoration-project-reveals-colored-inscriptions-on-the-roof-of-the-temple-for-the-first-time/"
+    ],
+    "routeOrder": 5
+  },
+  {
+    "id": "gebel-el-silsila",
+    "origin": "supplemental",
+    "label": "Gebel el-Silsila",
+    "aliases": [
+      "Gebel al-Silsila",
+      "El Selsela"
+    ],
+    "x": 50,
+    "y": 76,
+    "region": "upper",
+    "bank": "both",
+    "summary": "A public quarry and sacred landscape where sandstone extraction, inscriptions, shrines, and transport can be studied together. The visible remains do not recover every worker or the full labor organization.",
+    "deities": [],
+    "slug": "gebel-el-silsila-quarrying-sacred-landscape",
+    "sourceIds": [
+      "R074",
+      "R075"
+    ],
+    "modernName": "Gebel el-Silsila",
+    "visibility": "public",
+    "routeOrder": 7,
+    "locationSourceUrls": [
+      "https://egymonuments.gov.eg/en/archaeological-sites/gebel-el-silsila",
+      "https://www.gebelelsilsilaarchaeologicalproject.com/"
     ]
   },
   {
     "id": "kom-ombo",
+    "origin": "mixed",
     "label": "Kom Ombo",
     "aliases": [
       "Nubt"
@@ -320,12 +396,73 @@
     "summary": "A double temple with paired axes for Sobek and Haroeris, built mainly in the Ptolemaic period.",
     "deities": [
       "sobek",
-      "horus"
+      "horus",
+      "harwer"
     ],
     "slug": "sobek",
     "sourceIds": [
       "C20",
-      "C21"
+      "C21",
+      "R076",
+      "R077"
+    ],
+    "modernName": "Kom Ombo",
+    "visibility": "public",
+    "locationSourceUrls": [
+      "https://egymonuments.gov.eg/en/monuments/kom-ombo-temple",
+      "https://egymonuments.gov.eg/en/museums/crocodile-museum/"
+    ],
+    "routeOrder": 8
+  },
+  {
+    "id": "daraw",
+    "origin": "supplemental",
+    "label": "Daraw",
+    "aliases": [
+      "Darāw",
+      "Darau"
+    ],
+    "x": 51,
+    "y": 83,
+    "region": "upper",
+    "bank": "east",
+    "summary": "A public town record in Aswan Governorate used here as the market and camel-trade stop in the planned route. The itinerary supplies the activity, not a general account of the town or its residents.",
+    "deities": [],
+    "slug": "living-nile-communities-work-food-and-hospitality",
+    "sourceIds": [
+      "R069"
+    ],
+    "modernName": "Daraw",
+    "visibility": "public",
+    "routeOrder": 9,
+    "locationSourceUrls": [
+      "https://www.animals-angels.de/fileadmin/user_upload/03_Publikationen/Dokumentationen/Welfare_of_Dromedary_Camels_traded_at_Livestock_Markets__Animals__Angels_2025.pdf"
+    ]
+  },
+  {
+    "id": "aswan",
+    "origin": "supplemental",
+    "label": "Aswan",
+    "aliases": [
+      "Siena",
+      "First Cataract"
+    ],
+    "x": 51,
+    "y": 91,
+    "region": "nubia",
+    "bank": "both",
+    "summary": "A public city at the southern end of the included J01 cruise. Its modern urban setting and the wider cataract region should not be collapsed into one ancient landscape.",
+    "deities": [],
+    "slug": "egypt-trip-field-guide",
+    "sourceIds": [
+      "R069",
+      "R078"
+    ],
+    "modernName": "Aswan",
+    "visibility": "public",
+    "routeOrder": 13,
+    "locationSourceUrls": [
+      "https://whc.unesco.org/en/activities/173"
     ]
   },
   {
@@ -350,7 +487,8 @@
     "slug": "sacred-geography",
     "sourceIds": [
       "C02"
-    ]
+    ],
+    "routeOrder": 12
   },
   {
     "id": "nubia",

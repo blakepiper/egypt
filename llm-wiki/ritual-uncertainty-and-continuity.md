@@ -1,10 +1,11 @@
 ---
 type: concept
-tags: [ritual, uncertainty, continuity, efficacy, divination, healing, lived-religion]
+tags: [ritual, uncertainty, continuity, efficacy, divination, healing, lived-religion, clinical-caution]
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31
-aliases: [Ritual and uncertainty, Egyptian ritual failure]
+aliases: [Ritual and uncertainty, Egyptian ritual failure, Egyptian religion and OCD caution]
+summary: "How Egyptian ritual organized repeated action, authority, material care, and requests under conditions of uncertainty, without reducing ritual to anxiety or diagnosis."
 periods: [old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
 places: [thebes, deir-el-medina, memphis, west]
 entities: [heka, daily-temple-service, oracle-consultation, letters-to-the-dead, dream-incubation, purity]
@@ -86,6 +87,8 @@ This distinction keeps two claims apart:
 2. A particular attempt could fail to produce the desired outcome.
 
 Both can be true. The first is evidence for a model of efficacy. The second is evidence of lived uncertainty only when the source actually records the failure or its consequences. A later repetition of the rite can show persistence, but it cannot prove that the earlier attempt was experienced as a success.
+
+**Ritual failure** is therefore a useful modern description of a gap between a claimed or intended effect and an outcome, not a single Egyptian category. In a temple, a damaged image, absent offering, impurity, or political interruption could call for correction. In a household, a request could be repeated or redirected. A letter to the dead can show a request and its language, but it cannot reveal whether the writer privately doubted the dead person's agency. Renewed petitions may signal persistence, convention, dependence, or renewed trouble. Without a report of response, we should not choose among them. The evidence supports histories of procedures, expectations, and repair more securely than histories of inner conviction [R022](https://www.cambridge.org/core/books/abs/ritual-and-religion-in-the-making-of-humanity/ritual-form/8397B1D58ABC7860766EFDD91D542A5F).
 
 This is also why not every rupture ends in restoration. A damaged object can be repaired, a name can be rewritten, and a festival can recur. A person can still die, a petition can remain unanswered, a political loss can endure, and a household can lack the resources to continue a funerary obligation. [[personhood-and-the-afterlife]] and [[death-funeral-and-the-dead]] keep those material and human limits in view.
 

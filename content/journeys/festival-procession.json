@@ -10,7 +10,7 @@
   "evidenceBoundary": "Reliefs show musicians, soldiers, boats, offerings, and crowds. They do not show the rites performed inside the shrine, and those remain difficult to reconstruct. Festivals varied by place and period; this route is Theban and should not be generalised to all of Egypt.",
   "reconstruction": "The two festivals below are named in the archive with their routes and functions. Crowd experience is described from what the reliefs depict and what the wiki states about access, not from imagination.",
   "accessibleSummary": "A route list with five stops from Karnak to Luxor and across to the west bank, each naming who could be present and what they could see.",
-  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" },
   "scenes": [
     { "id": "departure", "title": "Leaving the sanctuary", "kicker": "Karnak", "evidence": "scholarship", "place": "thebes", "sourceIds": ["C03"],
       "body": "The portable bark carrying the shrine is lifted onto priests' shoulders. The image stays veiled. What the public sees is a covered shrine in motion, which is enough: presence has left the restricted space and entered shared space.",

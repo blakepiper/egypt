@@ -3,6 +3,8 @@ type: concept
 tags: [maat, isfet, kingship, ethics, social-order]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Order and disorder, Maat and isfet]
 entities: [maat, isfet, king, judgment]
 relations:
@@ -19,6 +21,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Maat, isfet, and kingship
@@ -48,6 +51,10 @@ The king stood at the institutional center of maat. He was expected to:
 
 Temple scenes of the king “presenting maat” condense the reciprocal system. The gods establish life and kingship; the king returns the order they require, often through offerings made materially by priests. Although each temple shows the king acting, [[temples-priests-and-offerings|priests served as his proxies]].
 
+## Maat and state formation
+
+Royal language makes administration sound like cosmic maintenance, but a state is also built through settlement, labor, extraction, record keeping, and the negotiation of local power. Research on early Egypt treats ritual time and political organization as connected without reducing religion to a mask for economics. [[predynastic-egypt-and-state-formation]], [[egypt-and-mesopotamia-compared]], and [[writing-knowledge-and-administration]] make the criteria visible. R005, R006, R007, R008, R009, and R010 support a process-based account rather than a single triumphal origin story.
+
 ## Social ethics
 
 The [[ptahhotep-and-ethical-life|Teaching of Ptahhotep]] imagines a hierarchical society in which position creates obligations. Officials must listen, restrain aggression, avoid abusing the poor, transmit accurate messages, judge by measure, and use power without arrogance. The text presents role fulfillment as a social duty: elites owe justice and beneficence, while workers owe honest labor. That is an elite prescriptive ideal, not proof that Egyptian hierarchy was equitable or consistently lived.
@@ -62,6 +69,18 @@ Scenes of kings smiting foreigners, spearing hippopotami, or destroying bound en
 
 [[set|Set]] shows why maat/isfet is more subtle than “good gods versus an evil god.” He embodies separation, storm, foreign terrain, aggression, and conflict; murders Osiris and challenges Horus; yet also stands on Re's bark against Apep. In some traditions Horus and Set are reconciled or joined as complementary powers of kingship. Egyptian order does not merely erase force; it must place force correctly.
 
+## Ideology and unequal lives
+
+An image of a king presenting maat does not tell us that every person received justice. Temple estates, agricultural work, craft labor, household obligations, gendered roles, and access to literacy distributed religious resources unevenly. The point is not to discard maat as propaganda. It is to ask who could act on its terms and who appears only as an object of administration. [[households-work-and-unequal-access]] and [[monuments-labor-and-building-eternity]] develop that question through work, writing, and built space. R014, R015, and R060 are useful checks on an elite-centered reading.
+
+## Repair can fail
+
+Maat offers a language for repair, but the sources do not promise that every loss is restored or that suffering has a clear cause. Egyptian texts and images can name pain, illness, conflict, and divine distance without resolving them into a successful ending. [[suffering-misfortune-and-divine-justice]] keeps those unresolved cases in view, while [[illness-healing-and-protection]] asks how people acted when ritual, remedy, and protection did not guarantee an outcome. R046, R047, and R058 support this more cautious account.
+
+## Supplemental research
+
+The R-series records listed below add research on state formation, economy, violence, pain, and social difference to the course synthesis.
+
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C10 — Teaching of Ptahhotep|C10]], and [[source-catalog#C05 — Set research project|C05]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[source-catalog#C10 — Teaching of Ptahhotep|C10]], [[source-catalog#C05 — Set research project|C05]], [[research-catalog#R005 — Urban Life and Form in Ancient Egypt|R005]], [[research-catalog#R008 — Monarchies and the Organization of Power: Ancient Egypt and Babylonia Compared|R008]], [[research-catalog#R014 — Economy|R014]], [[research-catalog#R046 — Theodicy|R046]], [[research-catalog#R047 — Exploring Pain in Ancient Egypt|R047]], [[research-catalog#R058 — Emotions|R058]], [[research-catalog#R061 — Hunting and Warfare: The Ritualisation of Military Violence in Ancient Egypt|R061]], and [[research-catalog#R062 — Violence|R062]].

@@ -2,7 +2,7 @@
 // parsing, linking, search ranking, or graph layout fails here first.
 
 import { describe, expect, it, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from '../../scripts/content/build-content';
@@ -17,13 +17,39 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
 let result: BuildResult;
 
+const EXPANDED_ARTICLES = [
+  'studying-religion-through-egypt', 'predynastic-egypt-and-state-formation', 'egypt-and-mesopotamia-compared',
+  'ritual-uncertainty-and-continuity', 'permanence-renewal-and-impermanence', 'egypt-and-early-buddhism',
+  'households-work-and-unequal-access', 'writing-knowledge-and-administration', 'egypt-and-its-neighbors',
+  'legacy-of-ancient-egypt', 'egyptian-religion-in-greek-and-roman-worlds', 'egypt-after-the-pharaohs',
+  'egyptology-museums-and-colonialism', 'egyptomania-and-popular-culture', 'egypt-africa-and-modern-identity',
+  'suffering-misfortune-and-divine-justice', 'illness-healing-and-protection', 'animals-gods-and-nonhuman-agency',
+  'monuments-labor-and-building-eternity', 'egypt-in-biblical-and-christian-memory', 'nile-travel-dahabiyas-and-changing-river',
+  'esna-khnum-temple-and-layered-town', 'el-kab-nekheb-city-and-provincial-memory', 'edfu-temple-town-and-sacred-history',
+  'gebel-el-silsila-quarrying-sacred-landscape', 'kom-ombo-sobek-harwer-and-crocodiles',
+  'living-nile-communities-work-food-and-hospitality', 'nubia-kush-displacement-and-living-identity',
+];
+
 beforeAll(() => {
   result = build();
 });
 
 describe('the content compiler', () => {
-  it('ingests all 41 content documents', () => {
-    expect(result.pages).toHaveLength(41);
+  it('ingests every content document in the manifest', () => {
+    expect(result.pages).toHaveLength(result.manifest.counts.pages);
+    const files = readdirSync(join(ROOT, 'llm-wiki')).filter((file) => file.endsWith('.md') && file !== 'AGENTS.md');
+    expect(result.pages).toHaveLength(files.length);
+  });
+
+  it('publishes every planned article as a substantial supplemental page', () => {
+    const pages = new Map(result.pages.map((page) => [page.slug, page]));
+    for (const slug of EXPANDED_ARTICLES) {
+      const page = pages.get(slug);
+      expect(page, slug).toBeDefined();
+      expect(page?.origin, slug).toBe('supplemental');
+      expect(page?.words, slug).toBeGreaterThan(500);
+      expect(page?.hasSources, slug).toBe(true);
+    }
   });
 
   it('reports no errors against the current wiki', () => {
@@ -52,8 +78,8 @@ describe('the content compiler', () => {
 describe('markdown parsing', () => {
   const resolver = {
     route: (slug: string) => (slug === 'set' ? '/wiki/set/' : null),
-    hasSource: (id: string) => id === 'C19',
-    sourceRoute: (id: string) => `/archive/sources/#${id.toLowerCase()}`,
+    hasSource: (id: string) => id === 'C19' || id === 'R001',
+    sourceRoute: (id: string) => `${id.startsWith('R') ? '/archive/sources/?catalog=research' : '/archive/sources/'}#${id.toLowerCase()}`,
   };
 
   it('resolves wiki links, aliases, and heading fragments', () => {
@@ -73,8 +99,15 @@ describe('markdown parsing', () => {
   });
 
   it('turns bare source IDs into catalog links only when the ID exists', () => {
-    const parsed = parseMarkdown('Te Velde C19 argues this. C99 does not exist.', resolver, 'test');
-    expect(parsed.sourceIds).toEqual(['C19']);
+    const parsed = parseMarkdown('Te Velde C19 and R001 support this. C99 does not exist.', resolver, 'test');
+    expect(parsed.sourceIds).toEqual(['C19', 'R001']);
+    expect(JSON.stringify(parsed.blocks)).toContain('/archive/sources/?catalog=research#r001');
+  });
+
+  it('accepts research callouts and gives empty labels a useful default', () => {
+    const parsed = parseMarkdown('> [!research]\n> R001 records a bounded case.', resolver, 'test');
+    expect(parsed.blocks[0]).toMatchObject({ t: 'callout', kind: 'research', label: 'Supplemental research' });
+    expect(parsed.problems).toEqual([]);
   });
 
   it('rejects raw HTML', () => {
@@ -122,6 +155,13 @@ describe('search ranking', () => {
     expect(hits.map((hit) => hit.doc.slug)).toContain('set');
   });
 
+  it('finds supplemental pages by a research source and keeps origin filters strict', () => {
+    const hits = search(index, 'R082', {}, 20);
+    expect(hits.map((hit) => hit.doc.slug)).toContain('living-nile-communities-work-food-and-hospitality');
+    expect(search(index, 'R082', { origin: 'course' }, 20)).toEqual([]);
+    expect(search(index, 'R082', { origin: 'supplemental' }, 20).every((hit) => hit.doc.origin === 'supplemental')).toBe(true);
+  });
+
   it('finds a concept that appears in body text rather than a title', () => {
     const hits = search(index, 'apep', {}, 10).map((hit) => hit.doc.slug);
     expect(hits).toContain('solar-cycle');
@@ -143,6 +183,64 @@ describe('search ranking', () => {
     const hits = search(index, 'cult centers', {}, 10);
     expect(hits.map((hit) => hit.doc.slug)).toContain('sacred-geography');
   });
+
+  it('returns a useful destination for every planned search intent', () => {
+    const scenarios: [string, string[]][] = [
+      ['who was first Egypt or Sumer', ['egypt-and-mesopotamia-compared']],
+      ['first civilization', ['egypt-and-mesopotamia-compared']],
+      ['Predynastic state formation', ['predynastic-egypt-and-state-formation']],
+      ['why so much ritual', ['ritual-uncertainty-and-continuity']],
+      ['Egyptian religion OCD', ['ritual-uncertainty-and-continuity']],
+      ['ritual and anxiety', ['ritual-uncertainty-and-continuity']],
+      ['permanence versus impermanence', ['egypt-and-early-buddhism', 'permanence-renewal-and-impermanence']],
+      ['Egypt and Buddhism', ['egypt-and-early-buddhism']],
+      ['did Buddha reject ritual', ['egypt-and-early-buddhism']],
+      ['dukkha and Egyptian suffering', ['suffering-misfortune-and-divine-justice', 'egypt-and-early-buddhism']],
+      ['what happened when ritual failed', ['ritual-uncertainty-and-continuity']],
+      ['did Egyptians believe rituals always worked', ['ritual-uncertainty-and-continuity']],
+      ['Egyptian fate dreams and oracles', ['festivals-oracles-and-personal-piety', 'ritual-uncertainty-and-continuity']],
+      ['Egyptian medicine magic healing', ['illness-healing-and-protection']],
+      ['childbirth protection ancient Egypt', ['illness-healing-and-protection']],
+      ['sacred animals animal mummies', ['animals-gods-and-nonhuman-agency']],
+      ['did Egyptians worship animals', ['animals-gods-and-nonhuman-agency']],
+      ['how were pyramids built', ['monuments-labor-and-building-eternity']],
+      ['slaves built the pyramids', ['monuments-labor-and-building-eternity']],
+      ['aliens built the pyramids', ['monuments-labor-and-building-eternity']],
+      ['ordinary people religion', ['studying-religion-through-egypt', 'households-work-and-unequal-access']],
+      ['women work and literacy', ['households-work-and-unequal-access']],
+      ['gender sexuality religion ancient Egypt', ['households-work-and-unequal-access']],
+      ['music scent dance Egyptian religion', ['studying-religion-through-egypt']],
+      ['Egypt Nubia Levant', ['egypt-and-its-neighbors']],
+      ['Egyptian war empire smiting enemies', ['egypt-and-its-neighbors']],
+      ['Coptic Egypt', ['egypt-after-the-pharaohs']],
+      ['Islamic writers ancient Egypt', ['legacy-of-ancient-egypt']],
+      ['Exodus historical evidence Egypt', ['egypt-in-biblical-and-christian-memory']],
+      ['Moses and Akhenaten', ['amarna-and-late-transformations']],
+      ['Egypt in the Bible', ['egypt-in-biblical-and-christian-memory']],
+      ['Egypt influenced Western culture', ['legacy-of-ancient-egypt']],
+      ['Egyptomania Art Deco', ['egyptomania-and-popular-culture']],
+      ['museums colonialism provenance', ['egyptology-museums-and-colonialism']],
+      ['Egypt Africa Afrocentrism', ['egypt-africa-and-modern-identity']],
+      ['modern Kemetic religion', ['egypt-africa-and-modern-identity']],
+      ['should museums display mummies', ['egyptology-museums-and-colonialism']],
+      ['course sources only', ['source-catalog']],
+      ['supplemental research only', ['research-catalog']],
+      ['dahabiya Nile journey', ['nile-travel-dahabiyas-and-changing-river', 'journey-esna-to-aswan-dahabiya']],
+      ['Esna Khnum temple and market', ['esna-khnum-temple-and-layered-town']],
+      ['El Kab Nekhbet tombs', ['el-kab-nekheb-city-and-provincial-memory']],
+      ['Edfu temple and Tell Edfu', ['edfu-temple-town-and-sacred-history']],
+      ['Gebel el-Silsila quarry Horemheb', ['gebel-el-silsila-quarrying-sacred-landscape']],
+      ['Kom Ombo Sobek crocodile museum', ['kom-ombo-sobek-harwer-and-crocodiles']],
+      ['Bisaw fishing and bread', ['living-nile-communities-work-food-and-hospitality']],
+      ['Daraw camel market', ['living-nile-communities-work-food-and-hospitality']],
+      ['Nubian displacement High Dam', ['nubia-kush-displacement-and-living-identity']],
+      ['Esna to Aswan cruise stops', ['journey-esna-to-aswan-dahabiya']],
+    ];
+    for (const [query, expected] of scenarios) {
+      const slugs = search(index, query, {}, 5).map((hit) => hit.doc.slug);
+      expect(slugs.some((slug) => expected.includes(slug)), query).toBe(true);
+    }
+  });
 });
 
 describe('search index construction', () => {
@@ -152,7 +250,7 @@ describe('search index construction', () => {
         slug: 'x', title: 'Maat', route: '/wiki/x/', type: 'concept', section: 'encyclopedia',
         tags: ['order'], summary: 'Right order.', aliases: ['right order'], periods: [], places: [], entities: [],
         updated: null, course: null, words: 3, readingMinutes: 1, headingCount: 1, hasSources: false,
-        sourceIds: ['C02'], evidence: 'scholarship',
+        sourceIds: ['C02'], evidence: 'scholarship', origin: 'course',
       },
       toc: [{ id: 'h', level: 2, text: 'Judgment' }],
       text: 'The heart is weighed.',
@@ -160,6 +258,59 @@ describe('search index construction', () => {
     expect(index.postings.maat[0][1] & 1).toBe(1);
     expect(index.postings.judgment[0][1] & 4).toBe(4);
     expect(index.postings.c02[0][1] & 64).toBe(64);
+  });
+});
+
+describe('expanded registries', () => {
+  it('keeps the course and research catalogs complete and distinct', () => {
+    const sources = JSON.parse(readFileSync(join(ROOT, 'src/generated/sources.json'), 'utf8')) as Array<Record<string, unknown>>;
+    expect(sources.filter((source) => String(source.id).startsWith('C'))).toHaveLength(36);
+    const researchSources = sources.filter((source) => String(source.id).startsWith('R'));
+    expect(researchSources.length).toBeGreaterThanOrEqual(81);
+    expect(researchSources.map((source) => source.id)).toEqual(expect.arrayContaining(['R085', 'R086', 'R090', 'R096', 'R101', 'R103']));
+    expect(researchSources.map((source) => Number(String(source.id).slice(1))).sort((a, b) => a - b))
+      .toEqual(Array.from({ length: researchSources.length }, (_, index) => index + 1));
+    const r069 = sources.find((source) => source.id === 'R069');
+    expect(r069).toBeDefined();
+    expect(r069).not.toHaveProperty('localLocator');
+    expect(JSON.stringify(r069)).not.toMatch(/raw|\.pdf/i);
+    expect(r069).not.toHaveProperty('url');
+  });
+
+  it('publishes all eight supplemental learning paths with reflections', () => {
+    const paths = JSON.parse(readFileSync(join(ROOT, 'src/generated/paths.json'), 'utf8')) as Array<{
+      id: string; origin: string; steps: { reflection?: string }[]; purpose?: string; orderReason?: string; leavesOut?: string;
+      review?: { factual?: string; humanizer?: string; editorial?: string };
+    }>;
+    const required = ['what-religion-does', 'early-state-formation', 'ritual-continuity', 'permanence-and-impermanence', 'afterlives-of-egypt', 'vulnerable-bodies', 'material-more-than-human', 'prepare-esna-to-aswan'];
+    expect(paths.filter((path) => required.includes(path.id))).toHaveLength(8);
+    for (const id of required) {
+      const path = paths.find((entry) => entry.id === id)!;
+      expect(path.origin).toBe('supplemental');
+      expect(path.purpose).toBeTruthy();
+      expect(path.orderReason).toBeTruthy();
+      expect(path.leavesOut).toBeTruthy();
+      expect(path.steps.length).toBeGreaterThan(4);
+      expect(path.steps.every((step) => step.reflection)).toBe(true);
+    }
+    expect(paths.every((path) => path.review?.factual === 'reviewed' && path.review?.humanizer === 'reviewed' && path.review?.editorial === 'reviewed')).toBe(true);
+  });
+
+  it('publishes J01 as twelve ordered, linked, privacy-safe stages', () => {
+    const journeys = JSON.parse(readFileSync(join(ROOT, 'src/generated/journeys.json'), 'utf8')) as Array<{
+      id: string; origin: string; scenes: { day?: number; sourcePages?: string[]; reflection?: string; place?: string; }[];
+      includedScope?: string; optionalExtensions?: string; accessibleSummary: string;
+    }>;
+    const j01 = journeys.find((journey) => journey.id === 'esna-to-aswan-dahabiya');
+    expect(j01).toBeDefined();
+    expect(j01?.origin).toBe('supplemental');
+    expect(j01?.scenes).toHaveLength(12);
+    expect(j01?.scenes.every((scene) => scene.day && scene.sourcePages?.length && scene.reflection)).toBe(true);
+    expect(j01?.includedScope).toBeTruthy();
+    expect(j01?.optionalExtensions).toMatch(/not included/i);
+    expect(j01?.accessibleSummary).toMatch(/stage 12/i);
+    expect(JSON.stringify(j01)).not.toMatch(/exact coordinates|full address/i);
+    expect(j01?.scenes.some((scene) => /el-hegz|bisaw|nubian-town|private-household/i.test(scene.place ?? ''))).toBe(false);
   });
 });
 
@@ -177,6 +328,14 @@ describe('the knowledge graph', () => {
     const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8'));
     const allowed = new Set(graph.edgeTypes);
     for (const edge of graph.edges) expect(allowed.has(edge.type)).toBe(true);
+  });
+
+  it('includes the approved reception, embodiment, and journey relation vocabulary', () => {
+    const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8')) as { edgeTypes: string[]; edges: { type: string }[] };
+    for (const type of ['transmitted_through', 'adapted_by', 'reinterpreted_by', 'manifested_in', 'encountered_at']) {
+      expect(graph.edgeTypes).toContain(type);
+      expect(graph.edges.some((edge) => edge.type === type)).toBe(true);
+    }
   });
 
   it('gives every core article a useful neighbourhood', () => {
@@ -204,6 +363,12 @@ describe('media rights', () => {
 });
 
 describe('glossary annotation', () => {
+  it('derives terms from every glossary table, not only the first one', () => {
+    const glossary = JSON.parse(readFileSync(join(ROOT, 'src/generated/glossary.json'), 'utf8')) as { term: string }[];
+    expect(glossary.length).toBeGreaterThan(120);
+    expect(glossary.map((entry) => entry.term)).toContain('religion');
+    expect(glossary.map((entry) => entry.term)).toContain('dignity review');
+  });
   it('marks the first use of a term and leaves later uses alone', () => {
     const glossary = [{ term: 'ka', definition: 'vital potency' }];
     const blocks = [

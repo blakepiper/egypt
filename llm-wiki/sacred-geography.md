@@ -3,6 +3,8 @@ type: concept
 tags: [geography, nile, duat, cult-centers]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Kemet and Deshret, Black Land and Red Land]
 places: [delta, heliopolis, memphis, thebes, abydos, edfu, kom-ombo, elephantine, deshret, west]
 entities: [nun, duat, kemet-deshret]
@@ -20,6 +22,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Sacred geography
@@ -70,6 +73,22 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 | Busiris | Osiris cult center |
 | Deir el-Medina | artisans, personal piety, household religion, letters and oracles |
 
+## The river is a route and a changing system
+
+The Nile is both a religious image and a material environment. Boats, fields, canals, cataracts, quarries, markets, and temple estates depended on water and labor. A modern view from the deck can make the river seem continuous, but channels, shorelines, settlements, dams, and access have changed. The quarry studies in R066 and R068, the Esna records in R070 and R071, and the Nubian rescue history in R078 all warn against treating the present river as a transparent window onto antiquity. [[nile-travel-dahabiyas-and-changing-river]] follows that distinction.
+
+## Nubia is not an Egyptian margin
+
+Egyptian sources often describe southern regions through the interests of the Egyptian state. Nubia and Kush had their own political histories, communities, languages, material traditions, and relations with Egypt. The relocation of monuments during the twentieth-century dam projects also affected living communities, not only archaeological sites. R078, R079, and R080 support a reading in which Nubia is an historical subject rather than scenery. [[nubia-kush-displacement-and-living-identity]] and [[egypt-africa-and-modern-identity]] carry that argument into modern identity and reception.
+
+## A travel route is not an ancient map
+
+J01 connects public archaeological places with a contemporary itinerary. Its route order comes from the private itinerary record, while historical interpretation comes from the research catalog and the site pages. The map should show only verified public places. Household visits, farm encounters, and an unnamed community remain textual subjects with privacy protections, not pins or proof of an unchanged culture. Read [[egypt-trip-field-guide]] with [[living-nile-communities-work-food-and-hospitality]], [[esna-khnum-temple-and-layered-town]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]].
+
+## Supplemental research
+
+The R-series records listed below add material, site, conservation, and Nubian context. Public site records are not substitutes for community accounts.
+
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and the maps in C02/C03.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[research-catalog#R066 — Building Stones|R066]], [[research-catalog#R068 — Quarrying and Mining (Stone)|R068]], [[research-catalog#R070 — The Temple of Esna|R070]], [[research-catalog#R071 — Revitalisation of Historic Esna|R071]], [[research-catalog#R078 — The Rescue of Nubian Monuments and Sites|R078]], [[research-catalog#R079 — Social Research Center Ethnographic Survey of Nubia Photograph Collection|R079]], and [[research-catalog#R080 — Nubian Architectural and Environmental Features Before and After Displacement: The Model of the Village Tumas wa Afya|R080]].

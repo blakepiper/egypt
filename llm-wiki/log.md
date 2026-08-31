@@ -2,11 +2,14 @@
 type: log
 tags: [maintenance, provenance]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: archive
 updated: 2026-08-30
 review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Wiki log
@@ -34,3 +37,7 @@ Checked UCL funerary-corpus guidance, British Museum object records, Metropolita
 ## [2026-08-30] lint | Archive rebuild
 
 Verified 72 catalog links against 72 substantive raw files, all internal page and heading links, index membership, content-page frontmatter, and orphan status. The rebuilt wiki contains 41 maintained Markdown pages (excluding its schema) and roughly 31,500 words. No raw source was changed.
+
+## [2026-08-31] release | Expanded research wiki
+
+Published 70 reviewed pages, including distinct N01–N28 articles; added 103 opened supplemental research records to the 36 course groups; and rebuilt the generated manifest, search index, graph, routes, atlas, glossary, paths, and journey data. The release contains 97 static route artifacts, 16 learning paths, seven journeys, 24 public place records, 183 glossary terms, 346 graph nodes, 2,295 graph edges, and 10 cleared media records. J01 has twelve transcript stages and maps only verified public stops. R069 remains catalog-only, its checksum is verified, and no raw source changed. Content, rights, review, type, contrast, unit, build, artifact, browser, and visual checks were run before the release commit.

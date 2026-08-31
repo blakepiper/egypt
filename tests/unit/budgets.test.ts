@@ -44,9 +44,11 @@ describe.runIf(built)('bundle budgets', () => {
 
   it('keeps the search index and the graph out of the entry chunk', () => {
     const entry = entryFiles('.js').map((file) => readFileSync(file, 'utf8')).join('');
-    // The two largest data files must stay in their own lazily loaded chunks.
+    // The two largest data files must stay outside the entry bundle. The search
+    // index is a public static JSON resource; the graph remains a lazy chunk
+    // because it is used by the interactive explorer and article neighborhoods.
     expect(entry.includes('"postings"')).toBe(false);
-    expect(readdirSync(ASSETS).some((file) => file.startsWith('search-index-'))).toBe(true);
+    expect(existsSync(join(ROOT, 'public/generated/search-index.json'))).toBe(true);
     expect(readdirSync(ASSETS).some((file) => file.startsWith('graph-'))).toBe(true);
   });
 

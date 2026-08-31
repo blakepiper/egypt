@@ -10,7 +10,7 @@
   "evidenceBoundary": "These are close third-person descriptions of documented roles, not recovered inner lives. There is no way to reach an ancient person's private thoughts, and the archive warns against a single timeless Egyptian mind. Each perspective names what survives and what does not. Nothing here is a quotation from an ancient speaker.",
   "reconstruction": "Each perspective is built from a documented role, a documented place, and practices attested in the archive. Connective description is limited to what the evidence supports. Where a scene would need invention to continue, it stops.",
   "accessibleSummary": "Four role descriptions in text, each with period, place, evidence base, and an explicit list of what the sources do not preserve.",
-  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" },
   "scenes": [
     { "id": "artisan", "title": "A tomb artisan at Deir el-Medina", "kicker": "Role — documented in detail", "evidence": "scholarship", "place": "deir-el-medina", "period": "new-kingdom", "sourceIds": ["C03"],
       "body": "He spends eight days of a ten-day work cycle cutting and painting a royal tomb, and sleeps at the work site between shifts. His household keeps images of protective deities. When a tool goes missing he can put the question to the god's bark on a festival day and get a decision the village will accept.",

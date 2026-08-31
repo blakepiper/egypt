@@ -1,85 +1,80 @@
-# Implementation status
+# Expanded wiki implementation status
 
-Last updated: 2026-08-30. Read alongside `APPLICATION_IMPLEMENTATION_PLAN.md`, which this file tracks.
+Updated: 2026-08-31
 
-## Where the work stands
+This is the release record for the expanded Egypt wiki. Prose lives in `llm-wiki/`; reviewed structured data lives in `content/`; generated application data is disposable.
 
-The application implementation is complete. All implementation phases in the plan are represented in the production application, including the media library, the Plate 30 deep-zoom study, prose-review gates, visual baselines, and browser performance budgets.
+## Delivered inventory
 
-Two release approvals still require a person rather than code: a human editor must read the six guided narrations, and someone must do a short pass in VoiceOver or NVDA. Those checks are recorded as pending below; they do not conceal unfinished application features.
+- 70 reviewed publishable pages, including all 28 distinct N01–N28 articles.
+- 139 source records: 36 course groups covering 72 immutable `raw/` files, plus 103 opened supplemental research records (R001–R103).
+- 97 static route entry points, with direct reload support, `404.html`, `.nojekyll`, and a no-JavaScript transcript fallback for J01.
+- 16 learning paths: the original eight course paths and eight expanded paths, including the cruise-preparation path.
+- Seven journeys, including J01, “Sailing south: Esna to Aswan,” with 12 ordered stages, scene reading, reflections, sources, article links, and a complete transcript.
+- 24 public place records; J01's route sketch displays only its eight verified public stops. Private households and the unidentified Nubian community are not records or pins.
+- 183 glossary terms, 346 graph nodes, 2,295 typed graph edges, and 10 cleared media records.
 
-### Current release inventory
+## N01–N28 articles
 
-| Area | State |
-| --- | --- |
-| Content compiler | Complete. All 41 Markdown pages compile, with 27,937 words, zero lint errors, and 67 generated application routes. |
-| Encyclopedia | Complete: headings, tables, citations, source sections, section permalinks, backlinks, graph neighbours, previous/next links, print styles, and durable URLs. |
-| Search and browse | Complete. Search covers titles, aliases, source IDs, headings, summaries, tags, body text, glossary terms, periods, and places. |
-| Knowledge graph | Complete. 208 nodes and 653 edges, with deterministic layout, typed curated relationships, filters, shareable state, and list parity. |
-| Atlas and chronology | Complete. Twenty places and nineteen chronology bands, with equivalent text or tables and explicit approximate-date treatment. |
-| Journeys and interactive views | Complete. Six guided journeys plus the personhood, creation-tradition, and funerary-corpus views. Evidence boundaries and complete text equivalents remain in the same view. |
-| Objects and texts | Complete. Plate 30 now uses the British Museum image, keyboard-operable zoom and pan, tiled detail levels, image-grounded hotspots, source credit, and a text-only distinction for details not visible in frame 30. The visual decoder is also complete. |
-| Media library | Complete for the release. Ten cleared records cover eight historical images, the original application icon, and the restored pixel-stela application mark. Ninety-one deployed media files include responsive AVIF/WebP/JPEG variants, placeholders, the two application marks, and Plate 30 tiles. |
-| Review gates | Complete for machine-verifiable review. All 41 wiki pages carry factual, humanizer, and media-rights review metadata. Application copy is protected by a SHA-256 review hash. Guided narration retains an honest `editorial: pending-human` marker. |
-| Accessibility | Keyboard, reduced motion, muted-by-default audio, narrow layouts, print, semantic names, diagram/list parity, contrast, and automated WCAG scans are covered. A manual VoiceOver/NVDA spot check remains. |
-| Performance and visual regression | Bundle, article-data, image, media-request, route-load, heap, layout-shift, graph-response, and 200 ms long-task budgets are enforced. Ten cross-platform screenshot baselines cover the core article, atlas, graph, journey, and object routes in daylight and Duat. |
-| Deployment and privacy | Complete. Direct route reloads and arbitrary Pages base paths are tested. The application has no server, account, tracker, analytics, remote font, or automatic third-party embed request. |
+The planned articles are separate pages with normative slugs and contextual links:
 
-## Media and rights implementation
+1. `studying-religion-through-egypt`
+2. `predynastic-egypt-and-state-formation`
+3. `egypt-and-mesopotamia-compared`
+4. `ritual-uncertainty-and-continuity`
+5. `permanence-renewal-and-impermanence`
+6. `egypt-and-early-buddhism`
+7. `households-work-and-unequal-access`
+8. `writing-knowledge-and-administration`
+9. `egypt-and-its-neighbors`
+10. `legacy-of-ancient-egypt`
+11. `egyptian-religion-in-greek-and-roman-worlds`
+12. `egypt-after-the-pharaohs`
+13. `egyptology-museums-and-colonialism`
+14. `egyptomania-and-popular-culture`
+15. `egypt-africa-and-modern-identity`
+16. `suffering-misfortune-and-divine-justice`
+17. `illness-healing-and-protection`
+18. `animals-gods-and-nonhuman-agency`
+19. `monuments-labor-and-building-eternity`
+20. `egypt-in-biblical-and-christian-memory`
+21. `nile-travel-dahabiyas-and-changing-river`
+22. `esna-khnum-temple-and-layered-town`
+23. `el-kab-nekheb-city-and-provincial-memory`
+24. `edfu-temple-town-and-sacred-history`
+25. `gebel-el-silsila-quarrying-sacred-landscape`
+26. `kom-ombo-sobek-harwer-and-crocodiles`
+27. `living-nile-communities-work-food-and-hospitality`
+28. `nubia-kush-displacement-and-living-identity`
 
-`content/media-manifest.json` is the publication ledger. Every cleared raster record includes its holding institution, object identifier, exact license, attribution, source record, access date, caption, alternative text, dimensions, responsive variants, and review state. The British Museum derivative retains its CC BY-NC-SA 4.0 notice; Metropolitan Museum images carry the Met Open Access/CC0 designation. The browser icon is a project-created pixel-art PNG with an explicit generation and provenance note; the original code-native SVG remains a cleared fallback.
+The existing entry pages were revised to connect chronology, state formation, ritual and uncertainty, suffering and healing, material and nonhuman agency, reception, colonial collecting, and the Esna–Aswan reading route. The index, browse hubs, glossary, source ledgers, graph, search ranking, and route navigation were expanded with them.
 
-`npm run media:build` downloads the declared institutional masters into ignored `.cache/media/` storage, then recreates the deployed derivatives. Plate 30 receives a 512-pixel tiled pyramid. `npm run media:check` rejects missing metadata, undeclared files, uncleared files, missing variants or tiles, and images over the 250 KB per-file budget.
+## Provenance and safeguards
 
-The eight historical images are placed where they support an argument rather than as decoration: Start Here and the visual decoder, sacred geography and the field guide, Maat and kingship, the Osiris cycle, Sobek, temples, the funerary-text tradition, the Book of the Dead, and Plate 30.
+Page, journey, path, entity, place, object, source, search, and graph records carry typed origin metadata independently of evidentiary strength. Course material remains distinguishable from supplemental research. Source routes expose purpose, access, limitations, and reuse conditions; R069 is catalog-only, with its recorded SHA-256 verified and no public URL, filesystem locator, or download link.
 
-## Prose and historical review
+The content checker rejects broken links, unknown source and media IDs, invalid review states, orphan pages, route collisions, private-source leaks, private or unverified place pins, incomplete J01 stages, and missing article link requirements. The editorial review includes the humanizer pass, factual comparison, uncertainty language, historical-period qualifications, clinical safeguards, community-consent boundaries, and separate human-remains dignity review.
 
-The `/humanizer` pass covered the wiki and application copy without rewriting quotations, ancient terms, titles, source IDs, citations, dates, or uncertainty labels. The comparison also caught and corrected two substantive issues: the Deir el-Medina schedule is now described as eight working days in a ten-day cycle, not an eight-day week; and the Plate 30 annotations no longer identify a seated Osiris or place Ani and a gate inside a crop where they are not visible.
+## Product and accessibility work
 
-Review state is enforced in three places:
+The application now has provenance-aware browse and source catalogs, source-origin filters, expanded search intent and type/tag filters, related-content panels, route-aware navigation, article and source fragment focus, typed reception and encounter graph relationships, and data-driven counts. The graph canvas emphasizes direct links around a selected node while a keyboard-operable disclosure retains the complete filtered relationship list. J01 has keyboard-operable roving tabs, live stage status, reduced-motion behavior, responsive route/list parity, and a static transcript. Visualizations retain textual lists, tables, or descriptions.
 
-- Wiki frontmatter records factual, humanizer, and media-rights review for all 41 published pages.
-- Journey, object, and media JSON records carry the same machine-checked fields.
-- `content/copy-review.json` hashes the user-facing source files, so changing copy invalidates `npm run review:check` until the factual and humanizer comparison is repeated.
+The expanded interface was checked in daylight and Duat themes, desktop and mobile viewports, direct route reloads, arbitrary base paths, print styles, reduced motion, keyboard navigation, image requests, bundle budgets, and automated WCAG scans. Long source titles and identifiers wrap within narrow layouts.
 
-## Remaining release signoffs
+## Release checks
 
-These are the only open release checks:
+The following checks passed on the final source state:
 
-1. A human editor should read all six journey narrations, especially `lived-perspectives.json`, and change `editorial: pending-human` only after approving their historical framing and tone.
-2. Test one representative article, search, the graph list, a journey, and Plate 30 with VoiceOver or NVDA. Confirm landmark navigation, control names, reading order, live zoom status, and hotspot/list parity.
-3. If tourism logistics are added, research and date them at release time. They remain deliberately excluded because they are live operational information rather than archive content.
+- `npm run content:check` — 70 pages, 97 routes, 10 media records; 0 errors and 0 warnings.
+- `npm run review:check` — reviewed-copy hash current.
+- `npm run media:check` — all 10 media records cleared and deployed derivatives valid.
+- `npm run typecheck` — TypeScript application and Node checks passed.
+- `npm run test:unit` — 41 tests passed.
+- `npm run build` — content build, Vite build, 97 route artifacts, `404.html`, and `.nojekyll` passed.
+- `npx playwright test tests/application.spec.ts` — 112 tests passed across desktop and mobile.
+- `npm run check:contrast` — contrast audit passed.
+- `npm run check` — complete release check passed.
+- `npm run test:visual` — daylight, Duat, and mobile visual baselines passed after manual inspection.
+- `git diff --check` — no whitespace errors.
 
-Optional hover previews, free-floating multiwindow article mode, audio, and video are not release gaps. Hover previews are optional in the plan; article tabs are the approved desktop choice; and no audio or video is published. Their shared components remain available for future cleared media.
-
-## Conventions worth preserving
-
-- `raw/` is immutable. References to it render as filenames, never public links.
-- `llm-wiki/` is the source of truth for prose. `src/generated/` is disposable build output.
-- Views derived from wiki tables must remain derived rather than gaining a second hand-maintained copy.
-- Curated graph edges use the closed vocabulary in `scripts/content/build-graph.ts` and include a note explaining the connection.
-- Every diagram keeps an equivalent list or table.
-- Content sits on `--archive-color-surface`; muted text does not meet the contrast target against the desktop ground.
-- Playwright tests use relative routes so the same suite runs at `/` and an arbitrary GitHub Pages base path.
-
-## Acceptance checklist
-
-- [x] 41 content documents are published and reachable
-- [x] Wiki links, heading links, source IDs, media IDs, and route collisions pass lint
-- [x] Evidence status, uncertainty, dates, and historical scope survive the build
-- [x] User-facing prose has passed factual comparison and `/humanizer`
-- [x] Articles, search, browse, graph, atlas, chronology, journeys, objects, Learn, and Archive meet the planned feature set
-- [x] Direct URLs reload under an arbitrary base path
-- [x] Maps, timelines, graphs, diagrams, and deep zoom have accessible text or list parity
-- [x] Every deployed asset is declared and cleared in the media manifest
-- [x] Every deployed image has a caption, credit, rights record, and alternative text
-- [x] No audio or video is deployed; future media remains gated on controls, captions/transcripts, posters, and rights metadata
-- [x] Generated or schematic art is identified and is never presented as historical evidence
-- [x] Keyboard, reduced motion, muted audio, mobile, print, low-performance, contrast, and automated accessibility modes pass
-- [ ] Manual VoiceOver or NVDA spot check
-- [x] Bundle, route-data, image, route-load, memory, layout-shift, graph-response, and long-task budgets pass
-- [x] TypeScript, content lint, rights lint, review hash, unit, browser, accessibility, visual, and deployment checks pass
-- [x] Daylight and Duat visual-regression baselines exist for the core screens
-- [x] Production dependency audit reports no known high-severity vulnerability
-- [ ] Human editorial signoff on all six guided narrations
+`raw/` was not modified. No CI workflow was added or restored. Pre-existing worktree changes were retained and extended only where the requested product overlapped them. The repository remains on `main`; local commits were created without pushing.

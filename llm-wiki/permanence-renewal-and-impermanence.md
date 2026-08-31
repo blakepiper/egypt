@@ -5,6 +5,7 @@ origin: supplemental
 evidence: scholarship
 updated: 2026-08-31
 aliases: [Renewable continuity, Egyptian continuity and change]
+summary: "A history of Egyptian continuity as maintenance, repetition, regeneration, repair, selection, and change rather than a timeless fixation on permanence."
 periods: [old-kingdom, middle-kingdom, new-kingdom, amarna, third-intermediate, late-period, ptolemaic, roman]
 places: [memphis, thebes, west, dendera, esna, edfu, kom-ombo]
 entities: [maat, isfet, renewable-continuity, duat, daily-temple-service, pyramid-texts-corpus, coffin-texts-corpus]

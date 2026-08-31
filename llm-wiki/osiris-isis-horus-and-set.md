@@ -2,6 +2,8 @@
 type: topic
 tags: [osiris, isis, horus, set, myth, kingship]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: scholarship
 updated: 2026-08-30
 aliases: [The Osiris myth, Osirian family]
 places: [abydos, busiris, edfu]
@@ -20,6 +22,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Osiris, Isis, Horus, and Set

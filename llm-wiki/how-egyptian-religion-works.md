@@ -3,6 +3,8 @@ type: concept
 tags: [method, myth, images, local-cults, worldview]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Plurality and local theology]
 entities: [syncretism, heka]
 relations:
@@ -16,6 +18,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # How Egyptian religion works
@@ -58,6 +61,16 @@ Thus the sky can be Nut's body, a cow, a roof, water, or a place of sailing. The
 
 The king's authority, temple landholding, taxation, craft production, festivals, medicine, burial economy, law, and family memory all had religious dimensions. Yet “theocracy” should not erase practical motives or conflicts. Temples were divine households and major economic institutions; priesthood could be devotion, profession, inherited privilege, and access to resources at once.
 
+## Religion is a category we use carefully
+
+“Religion” can gather practices that ancient people did not separate into public and private, sacred and secular, or belief and technique. Modern definitions help us compare cases, but they can also hide the particular work of a spell, offering, image, household object, or administrative act. R020 and R021 give different routes into that problem. [[studying-religion-through-egypt]] makes the method explicit, and [[egypt-and-mesopotamia-compared]] shows why comparison needs a defined question rather than a search for identical institutions.
+
+The same caution applies to psychology. R024 through R027 concern modern behavioral research, clinical categories, and debates about ritual interpretation. They do not diagnose ancient Egyptians, explain Egyptian culture as a disorder, or turn ritual into anxiety management. [[ritual-uncertainty-and-continuity]], [[illness-healing-and-protection]], and [[contested-interpretations]] keep those questions separate.
+
+## Follow practice beyond the sanctuary
+
+The surviving temple and tomb record is unusually visible, but religion also happened through households, work, bodies, landscapes, and materials. [[households-work-and-unequal-access]] asks who had time, money, literacy, or institutional access. [[writing-knowledge-and-administration]] follows the people and techniques that made records and ritual texts possible. [[animals-gods-and-nonhuman-agency]] asks how animal bodies and images participated without treating every animal image, cult animal, and votive mummy as the same thing. R014, R015, R022, R023, and R049 support this move from doctrine to practice.
+
 ## A practical reading checklist
 
 When you meet a scene or text, ask:
@@ -70,6 +83,10 @@ When you meet a scene or text, ask:
 6. Is the text describing, prescribing, praising, or magically enacting?
 7. What is missing because of preservation and elite bias?
 
+## Supplemental research
+
+The R-series records listed below add method, ritual, material, and domestic context to the course archive. They do not replace the limits of the surviving evidence.
+
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C09 — Hornung, Idea into Image selection|C09]].
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Idea into Image selection|C09]], [[research-catalog#R020 — How Religious Were the Ancient Egyptians?|R020]], [[research-catalog#R021 — The Concept of Religion|R021]], [[research-catalog#R022 — The Ritual Form|R022]], [[research-catalog#R023 — Material Religion|R023]], and [[research-catalog#R049 — Domestic Religious Practices|R049]].

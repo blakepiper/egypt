@@ -10,7 +10,7 @@
   "evidenceBoundary": "Egyptian sources do not agree on one night journey. Each scene below names the corpus it comes from. Where the archive's material is a set of image plates rather than translated prose, that is stated.",
   "reconstruction": "The forms of the sun and the structure of the crossing come from the wiki's solar-cycle article and the Underworld Books packets. Budge's translations are more than a century old and are used only where nothing newer is in the archive.",
   "accessibleSummary": "A stepper of six stages with the same content as the animation, listing corpus, actors, and what changes at each stage.",
-  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" },
   "scenes": [
     { "id": "khepri", "title": "Khepri at dawn", "kicker": "Form of the sun", "evidence": "scholarship", "corpus": "Solar hymns and iconography", "sourceIds": ["C02"],
       "body": "The morning sun is Khepri, the scarab: becoming, transformation, movement that has just started. Naming the sun three times across a day is a claim about process rather than about three separate gods.",

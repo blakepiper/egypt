@@ -2,11 +2,14 @@
 type: reading-notes
 tags: [source-notes, primary-texts, close-reading, ancient-egypt]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: archive
 updated: 2026-08-30
 review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Source notes

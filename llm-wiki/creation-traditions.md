@@ -2,6 +2,8 @@
 type: topic
 tags: [creation, cosmogony, gods, myth]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: scholarship
 updated: 2026-08-30
 aliases: [Cosmogonies, Creation accounts]
 places: [heliopolis, memphis, hermopolis, esna, elephantine]
@@ -17,6 +19,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Creation traditions

@@ -3,6 +3,8 @@ type: concept
 tags: [chronology, history, continuity-change]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Periods, Dynasties]
 periods: [old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
 relations:
@@ -16,6 +18,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Chronology
@@ -41,6 +44,22 @@ Dates before 664 BCE are approximate. Dynasties are a later organizing scheme, t
 
 Egyptian religious change was additive and recursive. Old language and imagery could be revived centuries later. A corpus might change audience or medium without disappearing. A local deity might become nationally prominent through royal patronage and later recede. Political conquest did not automatically erase temple traditions; Ptolemaic and Roman rulers could present themselves in pharaonic form.
 
+## State formation is a process, not a single date
+
+The Predynastic record contains regional communities, changing settlement patterns, craft production, mortuary display, and signs of growing coordination. These developments do not point to one uncomplicated “birth of civilization.” Studies of early Egypt place political integration alongside negotiation, extraction, violence, ritual time, and local difference. [[predynastic-egypt-and-state-formation]] develops that argument, while [[egypt-and-mesopotamia-compared]] compares specific criteria rather than declaring one society the winner. R001, R002, R004, R005, R006, R007, R008, and R009 support this process-based view.
+
+## Several clocks run at once
+
+Dynastic labels are only one clock. Archaeological phases, language change, writing practices, regional cults, institutional careers, and later archaism can cut across them. A form revived in the Late Period is not evidence that no change occurred in between. R003, R010, R011, R012, R013, and R063 make the problem visible. [[writing-knowledge-and-administration]], [[maat-isfet-and-kingship]], and [[funerary-text-tradition]] each use a different clock.
+
+## After the pharaohs is not an ending
+
+Ptolemaic and Roman temple inscriptions belong to their own political and priestly settings. Later Coptic, Islamic, European, African, diasporic, and popular-cultural uses belong to still later histories. They may preserve, translate, contest, or reinvent Egyptian forms. [[egyptian-religion-in-greek-and-roman-worlds]], [[egypt-after-the-pharaohs]], and [[legacy-of-ancient-egypt]] keep those layers distinct. R035, R040, R041, R052, and R053 are useful for tracing reception without treating it as uninterrupted survival.
+
+## Reading the Nile route in time
+
+J01 is a present-day itinerary with historical stops, not a passage through a preserved ancient world. [[nile-travel-dahabiyas-and-changing-river]] gives the environmental and transport frame. The site pages [[esna-khnum-temple-and-layered-town]], [[el-kab-nekheb-city-and-provincial-memory]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]] identify the periods and later layers that a traveler encounters.
+
 ## The funerary sequence
 
 The chapter-one notes give a useful, deliberately simplified trajectory:
@@ -51,6 +70,10 @@ The chapter-one notes give a useful, deliberately simplified trajectory:
 
 This is a shift of emphasis, not three mutually exclusive doctrines. Solar, stellar, terrestrial, and underworld destinations overlap. See [[funerary-text-tradition]].
 
+## Supplemental research
+
+The R-series records listed below add chronological, archaeological, comparative, and reception research to the course archive. Early dates remain approximate where the catalog says so.
+
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]].
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[research-catalog#R001 — UCLA Encyclopedia of Egyptology|R001]], [[research-catalog#R003 — Chronology|R003]], [[research-catalog#R005 — Urban Life and Form in Ancient Egypt|R005]], [[research-catalog#R008 — Monarchies and the Organization of Power: Ancient Egypt and Babylonia Compared|R008]], and [[research-catalog#R063 — Archaism|R063]].

@@ -1,5 +1,6 @@
 {
   "id": "plate-30",
+  "origin": "course",
   "title": "Book of the Dead, Plate 30",
   "subtitle": "The opening of Chapter 125 and the threshold of the Hall of the Two Truths",
   "slug": "book-of-the-dead-plate-30",
@@ -45,5 +46,5 @@
     { "title": "Corpora overlap", "body": "Osirian identification recalls the Pyramid and Coffin Texts; gate passwords recall the Book of Gates; judgment develops across Chapter 125. The shingles model appears in one plate." }
   ],
   "correction": "A vignette is the illustration attached to a spell, while a short empowering myth is a historiola. The two terms describe different things, and this study keeps them distinct.",
-  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" }
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
 }

@@ -12,7 +12,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const DIST = join(ROOT, 'dist');
 const GENERATED = join(ROOT, 'src/generated');
 
-interface RouteEntry { path: string; title: string; description: string }
+interface RouteEntry { path: string; title: string; description: string; fallback?: string }
 
 function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -20,6 +20,35 @@ function escapeHtml(value: string): string {
 
 function readJson<T>(name: string): T {
   return JSON.parse(readFileSync(join(GENERATED, name), 'utf8')) as T;
+}
+
+function relativeUrl(fromPath: string, targetPath: string): string {
+  const target = targetPath.match(/^([^?#]*)(.*)$/);
+  const pathname = target?.[1] ?? targetPath;
+  const suffix = target?.[2] ?? '';
+  const depth = fromPath.replace(/^\/|\/$/g, '').split('/').filter(Boolean).length;
+  return `${'../'.repeat(depth)}${pathname.replace(/^\//, '')}${suffix}`;
+}
+
+function journeyFallback(journey: Journey, manifest: ContentManifest): string {
+  const pageBySlug = new Map(manifest.pages.map((page) => [page.slug, page]));
+  const sourceLinks = (ids: string[]) => ids.map((id) => `<a href="${relativeUrl(`/journeys/${journey.id}/`, `/archive/sources/?catalog=${id.startsWith('R') ? 'research' : 'course'}#${id.toLowerCase()}`)}">${escapeHtml(id)}</a>`).join(', ');
+  const pageLinks = (slugs: string[]) => slugs.map((slug) => {
+    const page = pageBySlug.get(slug);
+    return page ? `<li><a href="${relativeUrl(`/journeys/${journey.id}/`, page.route)}">${escapeHtml(page.title)}</a></li>` : '';
+  }).join('');
+  const stages = journey.scenes.map((scene, index) => {
+    const detail = scene.detail?.length
+      ? `<ul>${scene.detail.map((line) => `<li>${escapeHtml(line)}</li>`).join('')}</ul>`
+      : '';
+    const sources = scene.sourceIds.length ? `<p><strong>Sources:</strong> ${sourceLinks(scene.sourceIds)}</p>` : '';
+    const reading = scene.sourcePages?.length
+      ? `<p><strong>Read alongside this stage:</strong></p><ul>${pageLinks(scene.sourcePages)}</ul>`
+      : '';
+    const reflection = scene.reflection ? `<p><strong>Pause and reflect:</strong> ${escapeHtml(scene.reflection)}</p>` : '';
+    return `<li><h3>${escapeHtml(scene.title)}</h3><p class="muted">${escapeHtml(scene.kicker)} · Stage ${index + 1} · Day ${scene.day ?? index + 1}${scene.place ? ` · ${escapeHtml(scene.place)}` : ''}</p><p>${escapeHtml(scene.body)}</p>${detail}${sources}${reading}${reflection}</li>`;
+  }).join('');
+  return `<article class="no-script-fallback" aria-labelledby="no-script-journey-title"><p class="kicker">Text-only route</p><h1 id="no-script-journey-title">${escapeHtml(journey.title)}</h1><p>${escapeHtml(journey.question)}</p><p class="muted">${escapeHtml(journey.place)} · ${escapeHtml(journey.period)}</p>${journey.includedScope ? `<h2>Included route</h2><p>${escapeHtml(journey.includedScope)}</p>` : ''}${journey.optionalExtensions ? `<h2>Separate optional extensions</h2><p>${escapeHtml(journey.optionalExtensions)}</p>` : ''}<h2>The whole journey as text</h2><p>${escapeHtml(journey.accessibleSummary)}</p><ol>${stages}</ol><p><a href="${relativeUrl(`/journeys/${journey.id}/`, '/journeys/')}">See all journeys</a></p></article>`;
 }
 
 export function collectRoutes(): RouteEntry[] {
@@ -38,10 +67,10 @@ export function collectRoutes(): RouteEntry[] {
     { path: '/objects/decoder/', title: 'Visual decoder', description: 'Signs, crowns, priestly cues, and funerary scene cues, with identification confidence visible.' },
     { path: '/learn/', title: 'Learn', description: 'Reading routes, concept checks, and a four-week plan for ancient Egyptian religion.' },
     { path: '/archive/', title: 'Archive', description: 'Sources, audits, research notes, and the maintenance record.' },
-    { path: '/archive/sources/', title: 'Source catalog', description: `${manifest.counts.sources} intellectual-source groups with stable C IDs.` },
+    { path: '/archive/sources/', title: 'Source catalog', description: `${manifest.counts.sources} intellectual-source groups with stable C and R IDs, access notes, and limitations.` },
     { path: '/field-guide/', title: 'Field guide', description: 'What to notice at sites and museums.' },
     { path: '/search/', title: 'Search', description: 'Search titles, headings, body text, tags, periods, places, and source IDs.' },
-    { path: '/browse/', title: 'Browse', description: 'Alphabetical, hub, type, deity, place, period, source, and media indexes.' },
+    { path: '/browse/', title: 'Browse', description: 'Alphabetical, hub, type, origin, deity, place, period, source, and media indexes.' },
     { path: '/specimen/', title: 'Design system specimen', description: 'The original interactive design-system reference, kept for comparison.' },
     { path: '/about/', title: 'About and privacy', description: 'What this archive is, how evidence is labelled, and what stays in your browser.' },
   ];
@@ -54,7 +83,7 @@ export function collectRoutes(): RouteEntry[] {
     });
   }
   for (const journey of journeys) {
-    routes.push({ path: `/journeys/${journey.id}/`, title: journey.title, description: journey.question });
+    routes.push({ path: `/journeys/${journey.id}/`, title: journey.title, description: journey.question, fallback: journeyFallback(journey, manifest) });
   }
   for (const view of [
     { id: 'personhood', title: 'Personhood constellation', description: 'Body, heart, name, shadow, ka, ba, and akh, with what each aspect was for.' },
@@ -71,7 +100,10 @@ export function collectRoutes(): RouteEntry[] {
 
 function render(shell: string, entry: RouteEntry): string {
   const title = entry.path === '/' ? 'The Living Archive' : `${entry.title} — The Living Archive`;
-  return shell
+  const withFallback = entry.fallback
+    ? shell.replace('<div id="root"></div>', `<div id="root"><noscript>${entry.fallback}</noscript></div>`)
+    : shell;
+  return withFallback
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/(<meta\s+name="description"\s+content=")[^"]*(")/, `$1${escapeHtml(entry.description)}$2`);
 }
@@ -83,6 +115,10 @@ export function buildRoutes(): number {
   }
   const shell = readFileSync(shellPath, 'utf8');
   const routes = collectRoutes();
+
+  const manifestPath = join(GENERATED, 'content-manifest.json');
+  const manifest = readJson<ContentManifest>('content-manifest.json');
+  writeFileSync(manifestPath, `${JSON.stringify({ ...manifest, counts: { ...manifest.counts, routes: routes.length } }, null, 2)}\n`);
 
   for (const entry of routes) {
     const html = render(shell, entry);

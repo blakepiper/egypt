@@ -2,6 +2,8 @@
 type: research-synthesis
 tags: [nymphaea-caerulea, water-lily, botany, psychoactive, contested]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: speculative
 updated: 2026-08-30
 aliases: [Nymphaea, Lotus]
 relations:
@@ -12,6 +14,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Blue water-lily research

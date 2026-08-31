@@ -3,6 +3,8 @@ type: topic
 tags: [festivals, oracles, personal-piety, dreams, votives]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Personal piety, Processions and oracles]
 periods: [new-kingdom, evidence-personal-piety]
 places: [thebes, deir-el-medina]
@@ -18,6 +20,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Festivals, oracles, and personal piety
@@ -52,6 +55,10 @@ Questions could be submitted to a god's portable bark. Forward, backward, dippin
 
 Ordinary worshippers could use exterior shrines, “hearing ear” chapels, rear walls, gateways, and intercessory statues. Ear stelae materialized a god's ability to hear. A person's statue inside a temple maintained proximity and received secondary offerings even when the donor was absent or dead.
 
+## Festival access was uneven
+
+Processions widened contact with a god, but they did not erase status, gender, work schedules, distance, or the boundary around the sanctuary. Household evidence and personal-piety studies show people using whatever access the setting allowed, from a stela or votive to a visit, a dream, or an appeal through an intermediary. [[households-work-and-unequal-access]] and [[suffering-misfortune-and-divine-justice]] ask what a public festival could and could not repair. R016, R049, R058, and R060 support a reading that keeps ordinary participants in view without pretending that their experiences were uniform.
+
 ## Votives and household protectors
 
 People dedicated stelae, animal mummies, figurines, body-part models, jewelry, and food. Female figurines and vulva-shaped objects have been connected to fertility and sexuality, but object meaning depends on archaeological context. Bes and Taweret protected homes, childbirth, sexuality, sleep, and infants through apotropaic force.
@@ -64,6 +71,16 @@ Dreams could bring gods or the dead into contact. **Incubation** means sleeping 
 
 Animals could be divine manifestations, sacred individuals, votive offerings, or species associated with a god. “The Egyptians worshipped animals” is too crude. A particular Apis bull, crocodile, ibis, or cat could provide access to a divine power within regulated temple practice, while millions of mummified animals also supported pilgrimage economies.
 
+## Ritual experience is not a diagnosis
+
+Festival intensity, repetition, music, incubation, and bodily response can be described without assigning a modern disorder to ancient participants. R024 through R027 concern modern behavioral research and interpretive problems. They do not show that Egyptian ritual was anxiety management, and they do not support diagnosing an ancient person or Egyptian culture with obsessive-compulsive disorder. [[ritual-uncertainty-and-continuity]], [[illness-healing-and-protection]], and [[contested-interpretations]] keep the historical and clinical questions apart.
+
+Animal practice also needs more than one category. A divine image, a living cult animal, a species associated with a god, and a votive mummy are different relationships between people, animals, institutions, and gods. [[animals-gods-and-nonhuman-agency]], [[deity-field-guide]], and [[sobek]] develop the distinction. R050 is useful precisely because it treats animal cults as varied ritual practices rather than one Egyptian habit.
+
+## Supplemental research
+
+The R-series records listed below add research on personal practice, domestic religion, emotion, gender, clinical comparison, and animal cults.
+
 ## Sources in this archive
 
-[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].
+[[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C22 — Sauneron, The Priests of Ancient Egypt|C22]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[research-catalog#R016 — Personal Piety (modern theories related to)|R016]], [[research-catalog#R024 — Effects of Predictable Behavioral Patterns on Anxiety Dynamics|R024]], [[research-catalog#R025 — Obsessive-Compulsive Disorder statistics and definition|R025]], [[research-catalog#R026 — Obsessive-compulsive disorder in Bali: the cultural shaping of a neuropsychiatric disorder|R026]], [[research-catalog#R027 — Ritual and Rationality: Some Problems of Interpretation in European Archaeology|R027]], [[research-catalog#R049 — Domestic Religious Practices|R049]], [[research-catalog#R050 — Rituals Related to Animal Cults|R050]], [[research-catalog#R058 — Emotions|R058]], and [[research-catalog#R060 — Sex and Gender|R060]].

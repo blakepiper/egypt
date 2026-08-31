@@ -3,6 +3,8 @@ type: research-method
 tags: [source-criticism, contested, pseudoscience, interpretation]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Fringe readings, Disputed claims]
 relations:
   - target: pyramid-texts
@@ -15,6 +17,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Contested interpretations
@@ -41,6 +44,18 @@ The “entheomycological crowns” paper interprets divine/royal crowns as mushr
 
 The Gnostic sacred-plants article builds long cultural links among plants, mystery religion, Gnosticism, and altered states. It can generate questions but repeatedly acknowledges speculation. Status: comparative speculation, not an Egyptian historical source.
 
+## Psychology without diagnosis
+
+Modern research on anxiety and repetitive behavior can sharpen a question about ritual, but it cannot supply a diagnosis for an ancient person or for “Egyptian culture.” R024 through R027 concern modern clinical cases and the interpretation of ritual in archaeology. They do not show that Egyptian ritual was obsessive-compulsive, nor that repetition was only anxiety management. [[heka-and-operative-ritual]], [[ritual-uncertainty-and-continuity]], and [[illness-healing-and-protection]] preserve the historical categories.
+
+## Biblical memory and historical evidence
+
+Biblical narratives about Egypt are important for reception, identity, and later memory. They are not Egyptian archaeological evidence. The Moses-Akhenaten theory remains a modern comparison without established historical proof. [[egypt-in-biblical-and-christian-memory]], [[amarna-and-late-transformations]], and [[legacy-of-ancient-egypt]] keep the source layers apart. R051, R052, and R053 support that boundary.
+
+## Similarity is not transmission
+
+Egypt, Mesopotamia, and early Buddhism can be compared when the question and evidence are specified. A shared image, social problem, or ritual form does not establish contact or borrowing. [[egypt-and-mesopotamia-compared]], [[egypt-and-early-buddhism]], and [[permanence-renewal-and-impermanence]] model comparison without turning resemblance into a genealogy. R007, R008, R021, R028, R029, R030, R031, R032, R033, R034, and R065 provide distinct source types for that work.
+
 ## Sobek and the Book of Abraham
 
 Barney accurately reviews evidence for Sobek's Middle Kingdom prominence and Amenemhat III's Fayum associations, then uses it to defend Joseph Smith's facsimile explanation. The first does not entail the second: the papyrus's Egyptological context and the claimed Abrahamic narrative require independent demonstration. Status: useful Sobek digest inside confessional apologetics. See [[sobek]].
@@ -62,6 +77,22 @@ E. A. Wallis Budge's *Book of Am-Tuat* and *Book of Gates* are genuine pioneerin
 - Compare simpler explanations.
 - Never treat a source's presence in the collection as proof that its claims were endorsed.
 
+## Colonial and contemporary afterlives
+
+Museum labels, excavation histories, antiquities markets, Egyptomania, Islamic and Christian memories, and contemporary Kemetic communities each produce a different afterlife of Egypt. A collection record is not a neutral account of acquisition, and a modern religious community is not evidence of uninterrupted ancient practice. [[egyptology-museums-and-colonialism]], [[egyptomania-and-popular-culture]], [[egypt-africa-and-modern-identity]], and [[egypt-after-the-pharaohs]] make those distinctions explicit. R035 through R045, R052, R054, and R055 support a reception history.
+
+## Living communities and authenticity
+
+Tourism language about “authentic” encounters can turn a contemporary household, market, farm, fishing community, or Nubian town into scenery. The J01 itinerary supports the order of planned activities, not the identities, consent, views, or continuity of the people encountered. [[living-nile-communities-work-food-and-hospitality]], [[nubia-kush-displacement-and-living-identity]], and [[egypt-trip-field-guide]] keep the route readable without presenting living communities as ancient survivals. R069, R078, R079, and R080 establish the limits of the available record.
+
+## Human remains and animal remains
+
+Copyright review and dignity review are different tasks. Human remains require respectful framing, contextual information, and restraint even when an image is legally reusable. Animal remains also need context: a votive mummy, a sacred individual, a divine manifestation, and an animal associated with a god are not interchangeable. [[death-funeral-and-the-dead]], [[visual-decoder]], [[animals-gods-and-nonhuman-agency]], and [[sobek]] apply these rules. R050, R056, and R057 provide the relevant guidance.
+
+## Supplemental research
+
+The R-series records listed below document the modern comparisons, reception histories, ethical guidance, and private-itinerary boundary discussed here.
+
 ## Sources in this archive
 
-[[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C34 — Book of the Dead and Nuclear Physics|C34]], and research groups C27–C33 in [[source-catalog]].
+[[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C34 — Book of the Dead and Nuclear Physics|C34]], research groups C27–C33 in [[source-catalog]], and [[research-catalog]]. The relevant R-series records are R007, R008, R021, R024 through R027, R028 through R034, R035 through R045, R050, R051 through R057, R069, and R078 through R080.

@@ -3,6 +3,8 @@ type: reference
 tags: [gods, iconography, travel, visual-reference]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Gods and goddesses, Deity guide]
 relations:
   - target: visual-decoder
@@ -12,6 +14,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Deity field guide
@@ -64,6 +67,18 @@ Use iconography as an entry point, not an exhaustive identity. Crowns and heads 
 | **Wadjet** | cobra | Lower Egypt, royal uraeus, protective Eye | Delta / royal crowns |
 | **Wepwawet** | upright jackal standard | “opener of ways,” royal/funerary processions, Sed festival | Asyut/Lycopolis; Abydos |
 
+## Identification is contextual
+
+The table is a field aid, not a fixed Egyptian pantheon. A shared crown, animal form, epithet, or gesture can support several readings. Start with the name, place, date, companions, medium, and action. [[visual-decoder]] describes that sequence, while [[how-egyptian-religion-works]] explains why combination and local emphasis are ordinary features of the evidence. R020, R021, and R023 support a method that treats an image as a situated relationship rather than a label detached from its setting.
+
+## Animal relations are not interchangeable
+
+An animal-headed deity, an animal as a divine manifestation, a living cult animal, a species associated with a god, and a votive mummy are different cases. They involve different evidence and different relationships among people, animals, institutions, and divine power. [[animals-gods-and-nonhuman-agency]], [[illness-healing-and-protection]], and [[sobek]] develop the distinction. R048 and R050 are especially useful for avoiding the claim that Egyptians simply “worshipped animals.”
+
+## Route cases
+
+The southern route gives the guide several tests. At Esna, read Khnum and the late temple inscriptions with [[esna-khnum-temple-and-layered-town]]. At El Kab, look for Nekhbet and provincial memory in [[el-kab-nekheb-city-and-provincial-memory]]. At Edfu, Horus is inseparable from the temple's local ritual history, not only from a universal myth. At Kom Ombo, Sobek and Haroeris share a complex without becoming one god. See [[edfu-temple-town-and-sacred-history]] and [[kom-ombo-sobek-harwer-and-crocodiles]]. R070, R072, R073, R076, R077, and R081 provide site-specific checks.
+
 ## Fast triads and groups
 
 - Theban triad: Amun–Mut–Khonsu.
@@ -73,6 +88,10 @@ Use iconography as an entry point, not an exhaustive identity. Crowns and heads 
 - Two Ladies: Nekhbet (Upper Egypt) and Wadjet (Lower Egypt).
 - Four Sons of Horus: Imsety, Hapi, Duamutef, Qebehsenuef.
 
+## Supplemental research
+
+The R-series records listed below add material, healing, animal-cult, and southern-site context to this field guide.
+
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]].
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[research-catalog#R020 — How Religious Were the Ancient Egyptians?|R020]], [[research-catalog#R021 — The Concept of Religion|R021]], [[research-catalog#R023 — Material Religion|R023]], [[research-catalog#R048 — Healing Statues in Late Period Egypt|R048]], [[research-catalog#R050 — Rituals Related to Animal Cults|R050]], [[research-catalog#R070 — The Temple of Esna|R070]], [[research-catalog#R072 — Elkab|R072]], [[research-catalog#R073 — Tell Edfu Project|R073]], [[research-catalog#R076 — Kom Ombo Temple|R076]], [[research-catalog#R077 — Crocodile Museum|R077]], and [[research-catalog#R081 — The Edfu Temple restoration project reveals colored inscriptions on the roof of the temple|R081]].

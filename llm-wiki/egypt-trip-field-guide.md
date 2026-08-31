@@ -3,8 +3,10 @@ type: travel-guide
 tags: [travel, sites, museums, field-guide]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Site guide, Museum guide]
-places: [thebes, abydos, edfu, kom-ombo, elephantine, memphis, dendera]
+places: [thebes, abydos, edfu, kom-ombo, elephantine, memphis, dendera, esna, el-kab, gebel-el-silsila, daraw, aswan]
 relations:
   - target: visual-decoder
     type: draws_from
@@ -13,6 +15,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Egypt trip field guide
@@ -30,6 +33,18 @@ This is an interpretive guide, not a live logistics guide. Opening hours, ticket
 5. Read divine identities through crown, head, posture, companions, and labels.
 6. Ask what threat or need the scene manages.
 7. Notice deliberate erasure, reuse, or repair as religious history.
+
+## J01: Sailing south: Esna to Aswan
+
+The structured J01 journey is a reading companion for the planned five-day, four-night cruise from Luxor to Aswan, scheduled in the itinerary record for 11–15 January 2027. Its twelve stages keep transfers, public archaeological sites, sailing time, and contemporary community encounters in their proper order. The complete transcript remains usable without the route visualization. [[nile-travel-dahabiyas-and-changing-river]] supplies the river context, and [[chronology]] supplies the historical sequence.
+
+The itinerary record supports planned dates, route order, transfers, included stops, promised activities, and the separation of optional Luxor and Aswan tours from the included cruise. It is not evidence for ancient history, archaeology, authenticity, safety, environmental continuity, or the identities and views of private residents. Read R069 with that boundary. The route's public site pages are [[esna-khnum-temple-and-layered-town]], [[el-kab-nekheb-city-and-provincial-memory]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]].
+
+## Living communities are present-day communities
+
+El Hegz, Bisaw, Daraw, and the Nubian-community visit must not be presented as encounters with unchanged antiquity. The itinerary mentions household, farming, fishing, market, camel-trade, and community activities, but it does not identify private hosts or provide community-wide evidence. Do not publish names, infer identities, pin homes, or imply consent for photography or publication. Ask about consent and reciprocity through the responsible guide, treat bargaining as a social exchange rather than a staged performance, and describe contemporary work, food, language, displacement, and tourism only when a source supports the claim. [[living-nile-communities-work-food-and-hospitality]] and [[nubia-kush-displacement-and-living-identity]] keep those limits visible. R069, R078, R079, and R080 support the source boundary; none licenses a claim about an unidentified household or town.
+
+The route also requires animal care. A camel market or barn is a contemporary working setting, not a reenactment of ancient trade. Do not turn animals into scenery or make welfare claims without a source that examines the particular setting. [[animals-gods-and-nonhuman-agency]] is the right companion for the ancient animal categories, while [[deity-field-guide]] helps prevent a crocodile, falcon, or camel from becoming a generic symbol.
 
 ## Cairo, Giza, Saqqara, and Memphis
 
@@ -73,6 +88,8 @@ This is an interpretive guide, not a live logistics guide. Opening hours, ticket
 
 **Elephantine/Aswan:** Khnum, Satet, Anuket, cataract waters, and imagined Nile origin connect geography to creation. Philae's Isis cult shows late Egyptian religion extending into Roman centuries.
 
+J01's site sequence is best read with the corresponding pages rather than as one continuous ancient story. R070 and R071 document Esna's temple and modern revitalization; R072 covers El Kab; R073 and R081 support the Edfu project and restoration; R074 and R075 document Gebel el-Silsila; and R076 and R077 cover Kom Ombo and its crocodile museum. These institutional records help locate a stop and its current interpretation. They do not replace specialist historical argument or community-centered research.
+
 ## Abu Simbel and Nubia
 
 Read colossal kingship, solar alignment, border power, and divine identification together. Nubia was not merely foreign background: conquest, exchange, local gods, and later Nubian kingship reshaped Egypt itself.
@@ -87,6 +104,10 @@ Read colossal kingship, solar alignment, border power, and divine identification
 
 Avoid flash where prohibited and do not touch reliefs. A context photo is usually more useful than an isolated beautiful figure.
 
+## Supplemental research
+
+The R-series records listed below separate itinerary facts from public site records, conservation work, displacement history, and community context.
+
 ## Sources in this archive
 
-Primarily [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], maps and entries in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and the reading route in [[course-reading-guide]].
+Primarily [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], maps and entries in [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], and the reading route in [[course-reading-guide]]. J01 uses [[research-catalog#R069 — Dahabiya Sailing on the Nile - 5 Days - 4 Nights - Luxor to Aswan|R069]] only for itinerary facts, alongside [[research-catalog#R070 — The Temple of Esna|R070]], [[research-catalog#R071 — Revitalisation of Historic Esna|R071]], [[research-catalog#R072 — Elkab|R072]], [[research-catalog#R073 — Tell Edfu Project|R073]], [[research-catalog#R074 — Gebel al-Silsila|R074]], [[research-catalog#R075 — Gebel el-Silsila Archaeological Project|R075]], [[research-catalog#R076 — Kom Ombo Temple|R076]], [[research-catalog#R077 — Crocodile Museum|R077]], [[research-catalog#R078 — The Rescue of Nubian Monuments and Sites|R078]], [[research-catalog#R079 — Social Research Center Ethnographic Survey of Nubia Photograph Collection|R079]], [[research-catalog#R080 — Nubian Architectural and Environmental Features Before and After Displacement: The Model of the Village Tumas wa Afya|R080]], and [[research-catalog#R081 — The Edfu Temple restoration project reveals colored inscriptions on the roof of the temple|R081]].

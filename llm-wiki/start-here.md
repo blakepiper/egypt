@@ -3,6 +3,8 @@ type: overview
 tags: [overview, study-guide, ancient-egypt, religion]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Renewable continuity]
 entities: [renewable-continuity, maat, isfet, ka, ba, akh]
 relations:
@@ -19,6 +21,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Start here
@@ -27,7 +30,7 @@ Ancient Egyptian religion was not a single creed. It was a three-thousand-year s
 
 !media[nauny-judgment]
 
-For a guided reading route, use [[course-reading-guide]]. For close notes on the source material, use [[course-materials-deep-notes]].
+For a guided reading route, use [[course-reading-guide]]. For close notes on the source material, use [[course-materials-deep-notes]]. The expanded method begins with [[studying-religion-through-egypt]], and the river case study is the J01 route, “Sailing south: Esna to Aswan,” reached through [[egypt-trip-field-guide]].
 
 Five ideas make the archive cohere.
 
@@ -62,10 +65,24 @@ Creation, kingship, temple cult, magic, and afterlife all use the same grammar:
 
 Re crosses the Duat every night. Osiris is reconstituted but rules among the dead. Horus inherits kingship after conflict. The king presents maat to the gods. The deceased is reassembled and vindicated. This is a religion of renewable continuity.
 
+## Read the archive at two scales
+
+The C-series records preserve the course archive. The R-series adds current scholarship, primary-text editions, museum and heritage records, and carefully bounded contemporary evidence. They do different work. A source ID shows where a claim came from; it does not mean that every argument in a source has been accepted. [[studying-religion-through-egypt]] sets out the method, while [[contested-interpretations]] marks arguments that remain weak or disputed. R020 and R021 are useful reminders that “religion” is an analytical category, not a transparent label supplied by the evidence.
+
+The archive also moves between institutions and lived settings. [[households-work-and-unequal-access]] asks who could reach ritual resources, [[animals-gods-and-nonhuman-agency]] follows material and animal participants, and [[legacy-of-ancient-egypt]] tracks later uses of Egyptian forms. None of these perspectives replaces the temple or tomb. They keep those sources from standing in for everyone.
+
+## Keep the river in view
+
+The Nile is a religious image, a transport route, a working environment, and a changing physical system. [[nile-travel-dahabiyas-and-changing-river]] connects those scales. J01 then uses a planned contemporary route to read Esna, El Kab, Edfu, Gebel el-Silsila, Kom Ombo, and Aswan without turning modern community visits into evidence of unchanged antiquity. The related pages [[living-nile-communities-work-food-and-hospitality]] and [[nubia-kush-displacement-and-living-identity]] explain why privacy, consent, displacement, and self-representation belong in a travel guide.
+
 ## A caution learned from the archive
 
-The folder mixes ancient translations, mainstream scholarship, research notes, and highly speculative modern claims. They are not evidentially equal. Use [[contested-interpretations]] before treating the shamanic, entheogenic, or “nuclear physics” materials as historical conclusions.
+The folder mixes ancient translations, mainstream scholarship, research notes, and highly speculative modern claims. They are not evidentially equal. Use [[contested-interpretations]] before treating the shamanic, entheogenic, or “nuclear physics” materials as historical conclusions. The same caution applies to clinical language: modern studies in R024 through R027 do not license a diagnosis of ancient people or of Egyptian culture.
+
+## Supplemental research
+
+The R-series records listed below add method, comparison, and contemporary context to the course archive. They do not make the sources agree with one another.
 
 ## Sources in this archive
 
-[[source-catalog#C01 — REL 395 source record|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C04 — Assessment prompts and study notes|C04]].
+[[source-catalog#C01 — REL 395 source record|C01]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[research-catalog#R020 — How Religious Were the Ancient Egyptians?|R020]], and [[research-catalog#R021 — The Concept of Religion|R021]].

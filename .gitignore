@@ -12,3 +12,4 @@ playwright-report/
 *.tsbuildinfo
 # Generated at build time from llm-wiki/ and content/. A clean build recreates it.
 src/generated/
+public/generated/

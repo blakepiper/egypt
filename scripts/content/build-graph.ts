@@ -6,6 +6,7 @@
 import type {
   BlockNode, EdgeType, Entity, GraphData, GraphEdge, GraphNode, GraphSlice, Journey,
   PageSummary, Period, Place, RelatedPage,
+  SourceEntry,
 } from '../../src/types/content.js';
 import type { BuildProblem } from './build-content.js';
 import { route } from './lib/site.js';
@@ -14,6 +15,7 @@ export const EDGE_TYPES: EdgeType[] = [
   'links_to', 'draws_from', 'part_of', 'appears_in', 'associated_with', 'practiced_at',
   'changes_during', 'precedes', 'maintains', 'threatens', 'restores', 'contrasts_with',
   'contested_by', 'depicted_in',
+  'transmitted_through', 'adapted_by', 'reinterpreted_by', 'manifested_in', 'encountered_at',
 ];
 
 const EDGE_SET = new Set<string>(EDGE_TYPES);
@@ -32,6 +34,7 @@ interface BuildGraphInput {
   periods: Period[];
   places: Place[];
   journeys: Journey[];
+  sources?: SourceEntry[];
   problems: BuildProblem[];
 }
 
@@ -43,6 +46,9 @@ export interface GraphBuild {
 
 export function buildGraph(input: BuildGraphInput): GraphBuild {
   const { pages, parsed, entities, periods, places, journeys, problems } = input;
+  const sources = input.sources ?? [];
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
+  const sourceRoute = (id: string): string => `${route('archive', 'sources')}${sourceById.get(id)?.origin === 'supplemental' ? '?catalog=research' : ''}#${id.toLowerCase()}`;
   const nodes = new Map<string, GraphNode>();
   const edges: GraphEdge[] = [];
   const pageBySlug = new Map(pages.map((p) => [p.slug, p]));
@@ -63,6 +69,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       periods: page.periods,
       places: page.places,
       evidence: page.evidence,
+      origin: page.origin,
     });
   }
   for (const entity of entities) {
@@ -76,24 +83,25 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       periods: entity.periods ?? [],
       places: entity.places ?? [],
       evidence: entity.evidence ?? 'scholarship',
+      origin: entity.origin ?? 'course',
     });
   }
   for (const place of places) {
     addNode({
       id: `place:${place.id}`, kind: 'place', label: place.label, summary: place.summary,
-      route: `${route('atlas')}?place=${place.id}`, slug: place.slug, periods: [], places: [place.id], evidence: 'scholarship',
+      route: `${route('atlas')}?place=${place.id}`, slug: place.slug, periods: [], places: [place.id], evidence: 'scholarship', origin: place.origin ?? 'course',
     });
   }
   for (const period of periods) {
     addNode({
       id: `period:${period.id}`, kind: 'period', label: period.label, summary: period.summary,
-      route: `${route('chronology')}?period=${period.id}`, slug: period.slug, periods: [period.id], places: [], evidence: 'scholarship',
+      route: `${route('chronology')}?period=${period.id}`, slug: period.slug, periods: [period.id], places: [], evidence: 'scholarship', origin: 'supplemental',
     });
   }
   for (const journey of journeys) {
     addNode({
       id: `journey:${journey.id}`, kind: 'journey', label: journey.title, summary: journey.subtitle,
-      route: route('journeys', journey.id), periods: [], places: [], evidence: 'archive',
+      route: route('journeys', journey.id), periods: [], places: [], evidence: journey.origin === 'course' ? 'archive' : 'scholarship', origin: journey.origin,
     });
   }
 
@@ -128,7 +136,15 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
     // Citation layer: a page that cites a source draws from it.
     for (const id of p.sourceIds) {
       const nodeId = `source:${id}`;
-      addNode({ id: nodeId, kind: 'source', label: id, summary: `Source group ${id} in the archive catalog.`, route: `${route('archive', 'sources')}#${id.toLowerCase()}`, periods: [], places: [], evidence: 'archive' });
+      const source = sourceById.get(id);
+      addNode({
+        id: nodeId,
+        kind: 'source',
+        label: id,
+        summary: source?.title ?? `Source group ${id} in the archive catalog.`,
+        route: sourceRoute(id),
+        periods: [], places: [], evidence: 'archive', origin: source?.origin ?? 'course',
+      });
       addEdge(from, nodeId, 'draws_from', `llm-wiki/${p.page.slug}.md`);
     }
   }
@@ -171,7 +187,19 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   for (const journey of journeys) {
     for (const slug of journey.sourcePages) addCurated(`journey:${journey.id}`, slug, 'draws_from', `content/journeys/${journey.id}.json`, `${journey.title} is built from this article.`);
     for (const id of journey.sourceIds) {
-      if (nodes.has(`source:${id}`)) addEdge(`journey:${journey.id}`, `source:${id}`, 'draws_from', `content/journeys/${journey.id}.json`, undefined, 3);
+      const sourceNode = `source:${id}`;
+      const source = sourceById.get(id);
+      if (!nodes.has(sourceNode)) {
+        addNode({ id: sourceNode, kind: 'source', label: id, summary: source?.title ?? `Source group ${id} in the archive catalog.`, route: sourceRoute(id), periods: [], places: [], evidence: 'archive', origin: source?.origin ?? journey.origin });
+      }
+      addEdge(`journey:${journey.id}`, sourceNode, 'draws_from', `content/journeys/${journey.id}.json`, undefined, 3);
+    }
+    for (const scene of journey.scenes) {
+      for (const target of [...(scene.sourcePages ?? []), ...(scene.place ? [scene.place] : [])]) {
+        const placeId = places.find((place) => place.id === target || place.label.toLowerCase() === target.toLowerCase())?.id;
+        const targetId = nodeIdFor(placeId ?? target);
+        if (targetId) addEdge(`journey:${journey.id}`, targetId, 'encountered_at', `content/journeys/${journey.id}.json#${scene.id}`, `${scene.title} is a documented stage in this journey.`, 2);
+      }
     }
   }
 

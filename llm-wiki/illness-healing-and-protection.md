@@ -1,12 +1,12 @@
 ---
 type: topic
-tags: [healing, illness, bodies, medicine, heka, protection, disability, bioarchaeology]
+tags: [healing, illness, bodies, medicine, heka, protection, disability, bioarchaeology, childbirth]
 course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31
 summary: "Egyptian healing joined observation, remedies, speech, objects, household care, and divine power without a modern medicine-versus-magic split."
-aliases: [Medicine and magic, Egyptian healing, Health and protection]
+aliases: [Medicine and magic, Egyptian healing, Health and protection, Childbirth protection in ancient Egypt]
 periods: [old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
 places: [deir-el-medina, thebes, memphis, kom-ombo]
 entities: [heka, bes, taweret, sekhmet, isis, horus, sobek]

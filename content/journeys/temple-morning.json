@@ -10,7 +10,7 @@
   "evidenceBoundary": "The sequence below follows the daily ritual as reconstructed from temple scenes, ritual papyri, and Sauneron's account of priestly service. It does not put an ordinary visitor inside the sanctuary, because ordinary visitors did not go there. Individual temples varied, and no single document preserves one complete morning in one building.",
   "reconstruction": "Each step names the part of the ritual it draws on. Where the archive describes an action but not its exact wording, this walkthrough says what was done and not what was said.",
   "accessibleSummary": "A seven-step ordered list moving inward from the pylon to the sanctuary and back out, with the access limit stated at every step.",
-  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" },
   "scenes": [
     { "id": "pylon", "title": "The pylon", "kicker": "Threshold 1 — public", "evidence": "scholarship", "sourceIds": ["C03"],
       "body": "The gate is built like the horizon sign: two towers with the sun rising between them. Its outer face carries the king striking enemies. This is the most public surface of the building and the most political one.",

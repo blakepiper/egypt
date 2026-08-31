@@ -92,6 +92,7 @@ export function buildSearchIndex(inputs: SearchInput[]): SearchIndex {
       entities: input.meta.entities,
       tags: input.meta.tags,
       evidence: input.meta.evidence,
+      origin: input.meta.origin,
       headings: input.toc,
     })),
     postings,

@@ -3,6 +3,8 @@ type: deity
 tags: [sobek, crocodile, fayum, kom-ombo]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [Crocodile god]
 periods: [middle-kingdom, ptolemaic]
 places: [fayum, kom-ombo, elephantine]
@@ -15,6 +17,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Sobek
@@ -43,6 +46,18 @@ Its controlling purpose, however, is Latter-day Saint apologetics: it argues tha
 
 The Ptolemaic temple at Kom Ombo has paired cult axes for crocodile Sobek and falcon Haroeris (“Horus the Elder”), with associated divine families. Its symmetrical plan turns potentially opposed powers into a shared temple order. Crocodile mummies and images make Sobek's local presence vivid.
 
+## Crocodile forms are not one category
+
+A crocodile-headed figure, a living sacred crocodile, a crocodile mummy, and a species associated with water or royal force do not carry the same meaning. Their relationships to worshippers, priests, and institutions must be reconstructed from their setting. [[animals-gods-and-nonhuman-agency]], [[deity-field-guide]], and [[festivals-oracles-and-personal-piety]] provide the wider vocabulary. R050 is useful because it keeps animal cults plural, while R077 documents the modern museum setting for crocodile remains. Animal remains deserve careful interpretation too: they are not decorative proof of a single “animal religion.”
+
+## A southern route, not a timeless landscape
+
+Kom Ombo belongs to a Ptolemaic and later landscape that also includes modern conservation, visitor management, and changing river conditions. The temple record in R076 and the Edfu restoration work in R081 are current institutional sources for the sites, not substitutes for ancient evidence. Read the stop with [[nile-travel-dahabiyas-and-changing-river]], [[kom-ombo-sobek-harwer-and-crocodiles]], and [[egypt-trip-field-guide]] as a layered encounter.
+
+## Supplemental research
+
+The R-series records listed below add animal-cult, museum, conservation, and site context to the course material.
+
 ## Sources in this archive
 
-[[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C21 — Temple of Kom Ombo image|C21]].
+[[source-catalog#C20 — Barney, Sobek article|C20]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C21 — Temple of Kom Ombo image|C21]], [[research-catalog#R050 — Rituals Related to Animal Cults|R050]], [[research-catalog#R076 — Kom Ombo Temple|R076]], [[research-catalog#R077 — Crocodile Museum|R077]], and [[research-catalog#R081 — The Edfu Temple restoration project reveals colored inscriptions on the roof of the temple|R081]].

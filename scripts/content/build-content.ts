@@ -3,6 +3,7 @@
 // able to recreate all of it from the Markdown and the curated JSON.
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load as loadYaml } from 'js-yaml';
@@ -58,7 +59,7 @@ function readWikiFiles(): RawPage[] {
 
 function splitFrontmatter(source: string): { frontmatter: PageFrontmatter; body: string } {
   if (!source.startsWith('---\n')) {
-    return { frontmatter: { type: 'note', tags: [] }, body: source };
+    return { frontmatter: { type: 'note', tags: [], origin: 'course' }, body: source };
   }
   const end = source.indexOf('\n---', 4);
   const raw = source.slice(4, end);
@@ -68,6 +69,8 @@ function splitFrontmatter(source: string): { frontmatter: PageFrontmatter; body:
     frontmatter: {
       type: parsed.type ?? 'note',
       tags: parsed.tags ?? [],
+      origin: parsed.origin ?? (parsed.course ? 'course' : 'supplemental'),
+      evidence: parsed.evidence,
       course: parsed.course,
       updated: parsed.updated ? String(parsed.updated) : undefined,
       summary: parsed.summary,
@@ -109,6 +112,7 @@ function routeFor(slug: string): string {
 
 /** The strongest evidence label the page carries, used for badges and filters. */
 function evidenceFor(page: RawPage): EvidenceKind {
+  if (page.frontmatter.evidence) return page.frontmatter.evidence;
   const type = page.frontmatter.type;
   const tags = page.frontmatter.tags;
   if (type === 'object-study' || type === 'text-study') return 'primary';
@@ -132,15 +136,25 @@ function deriveSummary(blocks: BlockNode[]): string {
   return '';
 }
 
-/** Parse `## C07 — Blue water-lily research project` blocks out of the catalog. */
-function readSourceCatalog(page: RawPage): SourceEntry[] {
+/** Parse either source registry's `## C07 — ...` or `## R001 — ...` records. */
+function readSourceCatalog(page: RawPage, origin: 'course' | 'supplemental'): SourceEntry[] {
   const entries: SourceEntry[] = [];
   const lines = page.body.split('\n');
   let current: SourceEntry | null = null;
   for (const line of lines) {
-    const heading = line.match(/^##\s+(C\d{2})\s+—\s+(.+)$/);
+    const heading = line.match(/^##\s+((?:C\d{2})|(?:R\d{3,}))\s+—\s+(.+)$/);
     if (heading) {
-      current = { id: heading[1], title: heading[2].trim(), status: '', use: '', files: [], citedBy: [] };
+      current = {
+        id: heading[1],
+        origin,
+        title: heading[2].trim(),
+        sourceClass: origin === 'course' ? 'course archive' : 'scholarship',
+        status: '',
+        use: '',
+        files: [],
+        citedBy: [],
+        catalogSlug: origin === 'course' ? 'source-catalog' : 'research-catalog',
+      };
       entries.push(current);
       continue;
     }
@@ -149,10 +163,45 @@ function readSourceCatalog(page: RawPage): SourceEntry[] {
     if (status) { current.status = status[1].replace(/\s+$/, ''); continue; }
     const use = line.match(/^\*\*Use:\*\*\s*(.+)$/);
     if (use) { current.use = use[1]; continue; }
+    const sourceClass = line.match(/^\*\*Source class:\*\*\s*(.+)$/);
+    if (sourceClass) { current.sourceClass = sourceClass[1].trim(); continue; }
+    const accessed = line.match(/\bAccessed\s+(\d{4}-\d{2}-\d{2})\b/i);
+    if (accessed) current.accessDate = accessed[1];
+    const url = line.match(/^\*\*(?:URL|Access):\*\*\s*(?:\[[^\]]+\]\()?<?(https?:[^)>\s]+)>?\)?/i);
+    if (url) { current.url = url[1].replace(/[.,]$/, ''); continue; }
+    const accessDate = line.match(/^\*\*Access(?:ed| date):\*\*\s*(.+)$/i);
+    if (accessDate) { current.accessDate = accessDate[1].trim(); continue; }
+    const limitations = line.match(/^\*\*Limitations?:\*\*\s*(.+)$/i);
+    if (limitations) { current.limitations = limitations[1].trim(); continue; }
+    const reuse = line.match(/^\*\*Reuse:\*\*\s*(.+)$/i);
+    if (reuse) { current.reuse = reuse[1].trim(); continue; }
     const file = line.match(/^-\s*\[([^\]]+)\]\(<?([^)>]+)>?\)/);
     if (file) current.files.push({ label: file[1], path: file[2] });
   }
   return entries;
+}
+
+const PRIVATE_ITINERARY_SHA256 = '8dc4ebbe2a41c3ff78fd1986ffe0d2dcbd4677bb19e322432301b88513bbf9bd';
+
+/** Verify the private itinerary without ever putting its filesystem path in generated data. */
+function verifyPrivateItinerary(problems: BuildProblem[]): string | undefined {
+  const rawDir = join(ROOT, 'raw');
+  if (!existsSync(rawDir)) {
+    problems.push({ file: 'R069', message: 'private itinerary directory is missing', severity: 'error' });
+    return undefined;
+  }
+  const candidate = readdirSync(rawDir).find((file) => /Dahabiya.*Nile.*Sailing/i.test(file) && file.toLowerCase().endsWith('.pdf'));
+  if (!candidate) {
+    problems.push({ file: 'R069', message: 'private itinerary PDF is missing', severity: 'error' });
+    return undefined;
+  }
+  const path = join(rawDir, candidate);
+  const digest = createHash('sha256').update(readFileSync(path)).digest('hex');
+  if (digest !== PRIVATE_ITINERARY_SHA256) {
+    problems.push({ file: 'R069', message: `private itinerary checksum mismatch (${digest})`, severity: 'error' });
+    return undefined;
+  }
+  return path;
 }
 
 /** Turn the deity field guide's table into entity records. */
@@ -166,6 +215,7 @@ function readDeityTable(blocks: BlockNode[]): Entity[] {
       id,
       kind: 'deity' as const,
       label,
+      origin: 'course' as const,
       aliases: label.split('/').map((part) => part.trim()).filter(Boolean),
       summary: flatten(row[2]?.c ?? []).trim(),
       iconography: splitList(flatten(row[1]?.c ?? [])),
@@ -183,11 +233,11 @@ function splitList(value: string): string[] {
 
 /** The glossary table, used for inline definitions on first use. */
 function readGlossary(blocks: BlockNode[]): { term: string; definition: string }[] {
-  const table = blocks.find((block): block is Extract<BlockNode, { t: 'table' }> => block.t === 'table');
-  if (!table) return [];
-  return table.rows
+  return tablesIn(blocks)
+    .flatMap((table) => table.rows)
     .map((row) => ({ term: flatten(row[0]?.c ?? []).trim(), definition: flatten(row[1]?.c ?? []).trim() }))
-    .filter((entry) => entry.term && entry.definition);
+    .filter((entry) => entry.term && entry.definition)
+    .filter((entry, index, entries) => entries.findIndex((candidate) => candidate.term.toLowerCase() === entry.term.toLowerCase()) === index);
 }
 
 /** Sign and crown tables from the visual decoder, grouped by their heading. */
@@ -374,22 +424,51 @@ export function build(): BuildResult {
   const bySlug = new Map(raw.map((page) => [page.slug, page]));
 
   const periods = readJson<Period[]>(join(CONTENT, 'periods.json'));
-  const places = readJson<Place[]>(join(CONTENT, 'places.json'));
-  const entities = readJsonDir<Entity>(join(CONTENT, 'entities'));
-  const paths = readJsonDir<KnowledgePath>(join(CONTENT, 'paths'));
-  const journeys = readJsonDir<Journey>(join(CONTENT, 'journeys'));
-  const objects = readJsonDir<{ id: string; slug: string; sourceIds: string[] }>(join(CONTENT, 'objects'));
+  const places = readJson<Place[]>(join(CONTENT, 'places.json')).map((place) => ({
+    ...place,
+    origin: place.origin ?? 'course',
+  }));
+  const entities = readJsonDir<Entity>(join(CONTENT, 'entities')).map((entity) => ({
+    ...entity,
+    origin: entity.origin ?? 'course',
+  }));
+  const paths = readJsonDir<KnowledgePath>(join(CONTENT, 'paths')).map((path) => ({
+    ...path,
+    origin: path.origin ?? 'course',
+  }));
+  const journeys = readJsonDir<Journey>(join(CONTENT, 'journeys')).map((journey) => ({
+    ...journey,
+    origin: journey.origin ?? 'course',
+    scenes: journey.scenes.map((scene) => ({ ...scene, sourcePages: scene.sourcePages ?? [] })),
+  }));
+  const objects = readJsonDir<{ id: string; slug: string; sourceIds: string[]; origin?: 'course' | 'supplemental' | 'mixed' }>(join(CONTENT, 'objects')).map((object) => ({
+    ...object,
+    origin: object.origin ?? 'course' as const,
+  }));
   const media = readJson<MediaRecord[]>(join(CONTENT, 'media-manifest.json'));
 
   const catalogPage = bySlug.get('source-catalog');
-  const sources = catalogPage ? readSourceCatalog(catalogPage) : [];
+  const researchPage = bySlug.get('research-catalog');
+  const privateItineraryPath = verifyPrivateItinerary(problems);
+  const sources = [
+    ...(catalogPage ? readSourceCatalog(catalogPage, 'course') : []),
+    ...(researchPage ? readSourceCatalog(researchPage, 'supplemental') : []),
+  ];
+  const r069 = sources.find((source) => source.id === 'R069');
+  if (!r069) {
+    problems.push({ file: 'research-catalog.md', message: 'R069 is missing from the research registry', severity: 'error' });
+  } else if (privateItineraryPath) {
+    // This value is used only during this process. `withCitations` strips it
+    // before the generated public catalog is written.
+    r069.localLocator = privateItineraryPath;
+  }
   const sourceIds = new Set(sources.map((s) => s.id));
   const mediaById = new Map(media.map((m) => [m.id, m]));
 
   const resolver: LinkResolver = {
     route: (slug) => (bySlug.has(slug) ? routeFor(slug) : null),
     hasSource: (id) => sourceIds.has(id),
-    sourceRoute: (id) => `${routeFor('source-catalog')}#${id.toLowerCase()}`,
+    sourceRoute: (id) => `${route('archive', 'sources')}${sources.find((source) => source.id === id)?.origin === 'supplemental' ? '?catalog=research' : ''}#${id.toLowerCase()}`,
   };
 
   // --- Pass 1: parse every page -------------------------------------------
@@ -452,10 +531,11 @@ export function build(): BuildResult {
       entities: p.page.frontmatter.entities ?? [],
       updated: p.page.frontmatter.updated ?? null,
       course: p.page.frontmatter.course ?? null,
+      origin: p.page.frontmatter.origin,
       words: p.words,
       readingMinutes: Math.max(1, Math.round(p.words / 220)),
       headingCount: p.toc.length,
-      hasSources: p.toc.some((h) => h.text.toLowerCase().startsWith('sources in this archive')),
+      hasSources: p.sourceIds.length > 0,
       sourceIds: p.sourceIds,
       evidence: evidenceFor(p.page),
     };
@@ -490,7 +570,7 @@ export function build(): BuildResult {
   }
 
   // --- Pass 3b: graph ------------------------------------------------------
-  const graph = buildGraph({ pages, parsed, entities: allEntities, periods, places, journeys, problems });
+  const graph = buildGraph({ pages, parsed, entities: allEntities, periods, places, journeys, sources, problems });
 
   // Backlinks, grouped by the relationship that produced them.
   const backlinks = new Map<string, Backlink[]>();
@@ -566,11 +646,59 @@ export function build(): BuildResult {
   const navigation = buildNavigation(pages, pageBySlug, journeys, paths);
 
   // --- Pass 7: search ------------------------------------------------------
-  const searchIndex = buildSearchIndex(parsed.map((p) => ({
+  const searchInputs = parsed.map((p) => ({
     meta: pageBySlug.get(p.page.slug)!,
     toc: p.toc,
     text: p.text,
-  })));
+  }));
+  // Journeys are structured records rather than Markdown pages, but they are
+  // first-class reading destinations. Index the public route and stage text so
+  // a reader looking for the cruise can discover the complete journey from the
+  // same search box as an article.
+  for (const journey of journeys) {
+    const text = [
+      journey.title,
+      journey.question,
+      journey.includedScope ?? '',
+      journey.optionalExtensions ?? '',
+      journey.accessibleSummary,
+      ...journey.scenes.flatMap((scene) => [
+        scene.title,
+        scene.kicker,
+        scene.body,
+        ...(scene.detail ?? []),
+        scene.reflection ?? '',
+      ]),
+    ].join(' ');
+    const words = text.split(/\s+/).filter(Boolean).length;
+    searchInputs.push({
+      meta: {
+        slug: `journey-${journey.id}`,
+        title: journey.title,
+        route: route('journeys', journey.id),
+        type: 'journey',
+        section: 'journeys',
+        tags: ['journey', 'nile', 'dahabiya', 'cruise', 'stops'],
+        origin: journey.origin,
+        summary: journey.question,
+        aliases: [journey.title, 'Dahabiya Nile journey', 'Esna to Aswan cruise stops'],
+        periods: [journey.period],
+        places: journey.id === 'esna-to-aswan-dahabiya' ? ['esna', 'aswan'] : [],
+        entities: [],
+        updated: null,
+        course: null,
+        words,
+        readingMinutes: Math.max(1, Math.round(words / 220)),
+        headingCount: journey.scenes.length,
+        hasSources: journey.sourceIds.length > 0,
+        sourceIds: journey.sourceIds,
+        evidence: 'mixed',
+      },
+      toc: journey.scenes.map((scene) => ({ id: `stage-${scene.id}`, level: 2, text: scene.title })),
+      text,
+    });
+  }
+  const searchIndex = buildSearchIndex(searchInputs);
 
   const manifest: ContentManifest = {
     generated: new Date().toISOString(),
@@ -582,6 +710,8 @@ export function build(): BuildResult {
       pages: pages.length,
       words: pages.reduce((total, page) => total + page.words, 0),
       sources: sources.length,
+      courseSources: sources.filter((source) => source.origin === 'course').length,
+      researchSources: sources.filter((source) => source.origin === 'supplemental').length,
       entities: allEntities.length,
       places: places.length,
       periods: periods.length,
@@ -620,6 +750,7 @@ export function build(): BuildResult {
   write('content-manifest.json', manifest);
   write('navigation.json', navigation);
   write('search-index.json', searchIndex);
+  writePublicSearchIndex(searchIndex);
   write('graph.json', graph.data);
   write('entities.json', allEntities);
   write('periods.json', periods);
@@ -638,10 +769,15 @@ export function build(): BuildResult {
 }
 
 function withCitations(sources: SourceEntry[], pages: PageSummary[]): SourceEntry[] {
-  return sources.map((source) => ({
-    ...source,
-    citedBy: pages.filter((page) => page.sourceIds.includes(source.id)).map((page) => page.slug),
-  }));
+  return sources.map((source) => {
+    const { localLocator: _privateLocator, ...publicSource } = source;
+    return {
+      ...publicSource,
+      citedBy: pages
+        .filter((page) => !['source-catalog', 'research-catalog'].includes(page.slug) && page.sourceIds.includes(source.id))
+        .map((page) => page.slug),
+    };
+  });
 }
 
 function staticRoutes(journeys: Journey[]): string[] {
@@ -662,6 +798,9 @@ function staticRoutes(journeys: Journey[]): string[] {
     route('field-guide'),
     route('search'),
     route('browse'),
+    route('views', 'personhood'),
+    route('views', 'creation'),
+    route('views', 'funerary-corpora'),
     route('specimen'),
     route('about'),
   ];
@@ -716,6 +855,12 @@ function write(name: string, value: unknown): void {
   writeFileSync(join(OUT, name), JSON.stringify(value));
 }
 
+function writePublicSearchIndex(value: unknown): void {
+  const directory = join(ROOT, 'public/generated');
+  mkdirSync(directory, { recursive: true });
+  writeFileSync(join(directory, 'search-index.json'), JSON.stringify(value));
+}
+
 const GENERATED_INDEX = `// Generated by scripts/content/build-content.ts. Do not edit.
 import manifest from './content-manifest.json';
 import navigation from './navigation.json';
@@ -723,7 +868,6 @@ import entities from './entities.json';
 import periods from './periods.json';
 import places from './places.json';
 import media from './media.json';
-import sources from './sources.json';
 import journeys from './journeys.json';
 import paths from './paths.json';
 import decoder from './decoder.json';
@@ -731,7 +875,7 @@ import objects from './objects.json';
 import visualizations from './visualizations.json';
 import glossary from './glossary.json';
 import type {
-  ContentManifest, NavSection, Entity, Period, Place, MediaRecord, SourceEntry, Journey, KnowledgePath, ObjectStudy, VisualizationData,
+  ContentManifest, NavSection, Entity, Period, Place, MediaRecord, Journey, KnowledgePath, ObjectStudy, VisualizationData,
 } from '../types/content';
 
 export const contentManifest = manifest as unknown as ContentManifest;
@@ -740,7 +884,6 @@ export const allEntities = entities as unknown as Entity[];
 export const allPeriods = periods as unknown as Period[];
 export const allPlaces = places as unknown as Place[];
 export const allMedia = media as unknown as MediaRecord[];
-export const allSources = sources as unknown as SourceEntry[];
 export const allJourneys = journeys as unknown as Journey[];
 export const allPaths = paths as unknown as KnowledgePath[];
 export const decoderGroups = decoder as unknown as { group: string; rows: { term: string; meaning: string }[] }[];

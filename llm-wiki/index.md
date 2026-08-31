@@ -3,10 +3,13 @@ type: index
 tags: [index, ancient-egypt, religion]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Religion of Ancient Egypt
@@ -16,6 +19,7 @@ This archive brings together a sourced guide to ancient Egyptian religion. It dr
 ## Begin here
 
 - [[start-here]] — the recurring pattern in one sitting
+- [[studying-religion-through-egypt]] — how to move from evidence to interpretation
 - [[course-reconstruction]] — how the archive is built and how to read it
 - [[course-reading-guide]] — a subject-based route through the material
 - [[course-materials-deep-notes]] — close notes on the surviving source material
@@ -23,13 +27,22 @@ This archive brings together a sourced guide to ancient Egyptian religion. It dr
 - [[egypt-trip-field-guide]] — what to notice at sites and museums
 - [[visual-decoder]] — identify gods, ritual roles, crowns, gestures, and funerary scenes
 
+The new research layer is catalogued with 103 stable R-series records. R001 and R021 are useful starting points for chronology and method; [[research-catalog]] explains what each source can and cannot support. The original course archive remains 36 intellectual source groups covering 72 immutable files.
+
 ## Foundations
 
 - [[chronology]] — periods, political changes, and changes in religious evidence
 - [[sacred-geography]] — Black Land, Red Land, Nile, west, sky, Duat, and cult centers
 - [[how-egyptian-religion-works]] — plurality, local theology, images, names, myth, and ritual
+- [[predynastic-egypt-and-state-formation]] — regional societies, administration, and the making of an early state
+- [[egypt-and-mesopotamia-compared]] — a bounded comparison of state formation and religious institutions
+- [[writing-knowledge-and-administration]] — writing, expertise, and the work of institutions
 - [[maat-isfet-and-kingship]] — order, disorder, ethics, and royal responsibility
 - [[heka-and-operative-ritual]] — magic as a normal part of religion
+- [[ritual-uncertainty-and-continuity]] — ritual action, uncertainty, and the limits of restoration
+- [[permanence-renewal-and-impermanence]] — Egyptian renewal beside a careful Buddhist comparison
+- [[egypt-and-early-buddhism]] — anicca, dukkha, anatta, ritual, and historical difference
+- [[households-work-and-unequal-access]] — labor, household religion, status, and constrained access
 - [[personhood-and-the-afterlife]] — body, heart, name, shadow, ka, ba, and akh
 
 ## Myth and gods
@@ -60,12 +73,37 @@ This archive brings together a sourced guide to ancient Egyptian religion. It dr
 ## Historical transformation and focused research
 
 - [[amarna-and-late-transformations]] — Atenism and the Greco-Roman afterlife of Egyptian religion
+- [[legacy-of-ancient-egypt]] — reception, memory, and the afterlives of Egyptian religion
+- [[egyptian-religion-in-greek-and-roman-worlds]] — translation and reworking across the Mediterranean
+- [[egypt-after-the-pharaohs]] — Coptic, Islamic, colonial, and modern historical layers
+- [[egyptology-museums-and-colonialism]] — collections, excavation, and the politics of interpretation
+- [[egyptomania-and-popular-culture]] — modern images, appropriation, and popular afterlives
+- [[egypt-africa-and-modern-identity]] — African histories and modern religious identities
+- [[suffering-misfortune-and-divine-justice]] — theodicy, pain, and unresolved religious problems
+- [[illness-healing-and-protection]] — remedies, ritual, protection, and porous categories
+- [[animals-gods-and-nonhuman-agency]] — animal bodies, images, cults, and votive economies
+- [[monuments-labor-and-building-eternity]] — stone, work, administration, and monumentality
+- [[egypt-in-biblical-and-christian-memory]] — reception without treating biblical narrative as Egyptian evidence
 - [[blue-water-lily-research]] — symbolism, botany, pharmacology, and what the archive does and does not establish
 - [[contested-interpretations]] — shamanic, entheogenic, Mormon-apologetic, and “nuclear physics” readings
 
+## Nile route
+
+- [[nile-travel-dahabiyas-and-changing-river]] — river movement, boats, and changing environments
+- [[esna-khnum-temple-and-layered-town]] — Khnum, inscriptions, and a living town
+- [[el-kab-nekheb-city-and-provincial-memory]] — provincial memory and Nekhbet
+- [[edfu-temple-town-and-sacred-history]] — Horus, town, temple, and ritual history
+- [[gebel-el-silsila-quarrying-sacred-landscape]] — quarries, shrines, and material movement
+- [[kom-ombo-sobek-harwer-and-crocodiles]] — paired cults and crocodile remains
+- [[living-nile-communities-work-food-and-hospitality]] — contemporary livelihoods and mediated encounters
+- [[nubia-kush-displacement-and-living-identity]] — Nubia, displacement, and living identities
+
+The structured J01 route, “Sailing south: Esna to Aswan,” is reached through [[egypt-trip-field-guide]]. It keeps the included cruise and optional extensions distinct and uses the public place records only.
+
 ## Archive control
 
-- [[source-catalog]] — annotated inventory of all 72 substantive source files
+- [[source-catalog]] — annotated inventory of all 72 substantive course-archive files in 36 groups
+- [[research-catalog]] — 103 supplemental scholarship and institutional records, with the private itinerary boundary kept catalog-only
 - [[reading-audit]] — the honest file-by-file-group reading depth and incorporation standard
 - [[coverage-map]] — every raw file mapped to wiki pages
 - [[student-work-reconstruction]] — research notes with evidence limits kept visible

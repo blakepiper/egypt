@@ -3,6 +3,8 @@ type: text-study
 tags: [pyramid-texts, old-kingdom, kingship, naydler]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+origin: mixed
+evidence: scholarship
 aliases: [PT]
 periods: [old-kingdom, corpus-pyramid-texts]
 places: [memphis]
@@ -18,6 +20,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Pyramid Texts
@@ -41,6 +44,10 @@ The startling “Cannibal Hymn” imagines the king hunting and consuming gods t
 
 Naydler's selection closely reads the placement and direction of utterances in Unas's pyramid: offering texts in the sarcophagus chamber, protective snake spells, ascension sequences, antechamber transformations, and corridor texts facing outward. Spatial arrangement matters; the pyramid is not a neutral book container.
 
+## Stone, labor, and royal memory
+
+The texts cannot be separated from the pyramid complexes that held them. Quarrying, transport, measurement, masonry, provisioning, and administration made the carved surface possible. That infrastructure does not prove that every worker shared the king's funerary theology, but it does show that royal afterlife depended on organized labor and material supply. [[monuments-labor-and-building-eternity]], [[predynastic-egypt-and-state-formation]], and [[writing-knowledge-and-administration]] place the corpus inside state formation. R004, R005, R066, R067, and R068 support this material reading.
+
 ## Funerary interpretation
 
 The mainstream reading treats the inscriptions as mortuary ritual and postmortem transformation, while recognizing that many utterances originated in ritual performances and were spoken by priests or king. “You have not departed dead; you have departed alive” denies death's finality and activates renewed status.
@@ -53,6 +60,14 @@ The contrast between standard funerary interpretation and Naydler's literal-livi
 
 Best practice: keep two separate claims. The texts certainly came from and enabled ritual performance; it is not established that the king underwent Naydler's specific living death-and-rebirth ceremony inside the pyramid.
 
+## Later readers change the question
+
+The Pyramid Texts have been used in Egyptological, esoteric, popular-cultural, and apologetic arguments. A modern reading may notice a real feature, such as first-person speech, spatial arrangement, or a recurring image, and still draw a conclusion the evidence cannot carry. [[contested-interpretations]], [[egyptology-museums-and-colonialism]], and [[legacy-of-ancient-egypt]] distinguish observation, interpretation, and reception. R035, R043, and R055 support that history of reading.
+
+## Supplemental research
+
+The R-series records listed below add archaeological, labor, quarry, and reception context to the Pyramid Texts.
+
 ## Sources in this archive
 
-[[source-catalog#C23 — Pyramid Text selections|C23]], [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], and [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]].
+[[source-catalog#C23 — Pyramid Text selections|C23]], [[source-catalog#C24 — Naydler, Shamanic Wisdom selection|C24]], [[source-catalog#C04 — Assessment prompts and study notes|C04]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[research-catalog#R004 — Before the Pyramids: The Origins of Egyptian Civilization|R004]], [[research-catalog#R005 — Urban Life and Form in Ancient Egypt|R005]], [[research-catalog#R035 — Reception of Ancient Egypt|R035]], [[research-catalog#R043 — Decolonising ancient Egypt?|R043]], [[research-catalog#R055 — Profane Egyptologists: The Modern Revival of Ancient Egyptian Religion|R055]], [[research-catalog#R066 — Building Stones|R066]], [[research-catalog#R067 — Pyramid Age: Huni to Radjedef|R067]], and [[research-catalog#R068 — Quarrying and Mining (Stone)|R068]].

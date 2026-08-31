@@ -2,6 +2,8 @@
 type: text-study
 tags: [amduat, book-of-gates, duat, new-kingdom]
 course: REL 395, Spring 2017, Northern Arizona University
+origin: course
+evidence: primary
 updated: 2026-08-30
 aliases: [Underworld Books, The twelve hours]
 periods: [new-kingdom, corpus-underworld-books]
@@ -15,6 +17,7 @@ review:
   factual: reviewed
   humanizer: reviewed
   media_rights: reviewed
+  editorial: reviewed
 ---
 
 # Amduat and Book of Gates
