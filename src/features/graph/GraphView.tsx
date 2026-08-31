@@ -183,13 +183,6 @@ export function GraphView() {
     () => (focusId ? view.edges.filter((edge) => edge.from === focusId || edge.to === focusId) : []),
     [view.edges, focusId],
   );
-  const diagramEdges = useMemo(() => {
-    if (!focusId) return view.edges;
-    // Keep a focused diagram legible and cheap to update. The complete
-    // filtered relationship set remains available in the textual disclosure
-    // below, while the canvas emphasizes the selected node's direct links.
-    return focusedEdges;
-  }, [focusedEdges, focusId, view.edges]);
 
   const screenToViewBox = useCallback((clientX: number, clientY: number): Point => {
     const svg = svgRef.current;
@@ -412,7 +405,7 @@ export function GraphView() {
             onWheel={onWheel}
           >
             <g transform={`translate(${camera.x} ${camera.y}) scale(${camera.scale})`}>
-            {diagramEdges.map((edge, index) => {
+            {view.edges.map((edge, index) => {
               const from = byId.get(edge.from);
               const to = byId.get(edge.to);
               if (!from || !to) return null;

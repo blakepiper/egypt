@@ -185,6 +185,24 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(page).not.toHaveURL(/node=/);
   });
 
+  test('expanding to two hops leaves no node without a relationship', async ({ page }) => {
+    await page.goto('graph/?node=entity%3Amaat');
+    await page.getByRole('button', { name: 'Two hops' }).click();
+    const isolated = await page.evaluate(() => {
+      const ends = new Set<string>();
+      document.querySelectorAll('.graph-edge line').forEach((line) => {
+        ends.add(`${line.getAttribute('x1')},${line.getAttribute('y1')}`);
+        ends.add(`${line.getAttribute('x2')},${line.getAttribute('y2')}`);
+      });
+      let count = 0;
+      document.querySelectorAll('.graph-node__dot').forEach((dot) => {
+        if (!ends.has(`${dot.getAttribute('cx')},${dot.getAttribute('cy')}`)) count += 1;
+      });
+      return count;
+    });
+    expect(isolated).toBe(0);
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();
