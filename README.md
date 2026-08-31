@@ -102,4 +102,4 @@ The build fails on a broken wiki link, a duplicate heading ID, an unknown source
 
 ## What is deliberately not here
 
-No accounts, comments, CMS, chatbot, live external data, commercial map service, social feeds, autoplay, or VR. See `docs/APPLICATION_IMPLEMENTATION_PLAN.md` §16, and `docs/IMPLEMENTATION_STATUS.md` for what is finished and what is not.
+No accounts, comments, CMS, chatbot, live external data, commercial map service, social feeds, autoplay, or VR. See `docs/obe/APPLICATION_IMPLEMENTATION_PLAN.md` §16, and `docs/live/IMPLEMENTATION_STATUS.md` for what is finished and what is not.

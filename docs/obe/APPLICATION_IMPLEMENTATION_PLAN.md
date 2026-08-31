@@ -1,6 +1,6 @@
 # Application implementation plan
 
-Status: approved and in build. See `IMPLEMENTATION_STATUS.md` for what is finished, what is open, and where to pick the work up.
+Status: superseded by the expanded release record. See `../live/IMPLEMENTATION_STATUS.md` for what is finished, what is open, and where to pick the work up.
 
 This plan turns the current design-system specimen into a complete static application. The finished site will include the entire wiki, fast article navigation, search, a typed knowledge graph, maps, timelines, object viewers, and guided artistic experiences. It will deploy to GitHub Pages without a server or paid service.
 

@@ -1,7 +1,7 @@
 # Knowledge graph upgrade — implementation spec
 
-Status: ready to execute. **Phase 1.1 and Phase 6 are already done** (2026-08-31)
-and are marked DONE below. Start at Phase 1.2.
+Status: superseded. The specified phases were implemented on 2026-08-31;
+the completed release state is recorded in `../live/IMPLEMENTATION_STATUS.md`.
 Author: investigation session, 2026-08-31
 Target files: `src/features/graph/`, `scripts/content/build-graph.ts`, `src/types/content.ts`, `src/application.css`, `tests/`
 
