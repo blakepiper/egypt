@@ -641,6 +641,7 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-edge line { stroke: var(--archive-color-line-quiet); }
 .graph-edge.is-active line { stroke: var(--archive-color-primary); }
 .graph-edge text { font-size: 8px; fill: var(--archive-color-ink-muted); font-family: var(--archive-font-ui); }
+.graph-node, .graph-edge { transition: opacity var(--archive-duration-fast) linear; }
 .graph-node { cursor: grab; }
 .graph-node:active { cursor: grabbing; }
 .graph-node__hit { fill: transparent; stroke: none; }
@@ -664,6 +665,9 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-node--source .graph-node__dot { stroke-width: 2; stroke-dasharray: 1 2; }
 .graph-node--journey .graph-node__dot { stroke-width: 2.5; stroke-dasharray: 4 2; }
 .graph-node.is-focused .graph-node__dot { stroke-width: 3; stroke: var(--archive-color-primary); }
+.graph-canvas.has-hover .graph-node.is-dimmed { opacity: 0.22; }
+.graph-canvas.has-hover .graph-edge.is-dimmed { opacity: 0.12; }
+html[data-motion='reduce'] .graph-node, html[data-motion='reduce'] .graph-edge { transition: none; }
 
 .graph-detail { padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-raised); }
 .graph-detail h2 { margin: 0 0 var(--archive-space-2); font-family: var(--archive-font-display); }

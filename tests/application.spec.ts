@@ -249,6 +249,27 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(page.locator('section.graph-list')).toContainText('Around:');
   });
 
+  test('hovering a node dims distant context without changing the URL', async ({ page }) => {
+    await page.goto('graph/?node=entity%3Amaat');
+    await expect(page.locator('.graph-node').first()).toBeVisible();
+    const before = page.url();
+    await page.locator('.graph-node').first().hover();
+    await expect(page).toHaveURL(before);
+    await expect(page.locator('.graph-node.is-dimmed')).not.toHaveCount(0);
+    await expect(page.locator('.graph-edge.is-dimmed')).not.toHaveCount(0);
+  });
+
+  test('keyboard focus keeps the context treatment usable with reduced motion', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('graph/');
+    const node = page.locator('.graph-node').first();
+    await expect(node).toBeVisible();
+    await node.focus();
+    await expect(page.locator('.graph-canvas.has-hover')).toBeVisible();
+    await expect(page.locator('.graph-node.is-dimmed')).not.toHaveCount(0);
+    await expect(node).toHaveCSS('transition-property', 'none');
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();

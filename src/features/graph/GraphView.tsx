@@ -58,6 +58,8 @@ export function GraphView() {
   const [community, setCommunity] = useState<number | null>(communityParamId);
   const [hops, setHops] = useState<1 | 2>(1);
   const [pinned, setPinned] = useState<string[]>([]);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [keyboardFocusId, setKeyboardFocusId] = useState<string | null>(null);
   const [trail, setTrail] = useState<string[]>([]);
   const [camera, setCamera] = useState<Camera>(DEFAULT_CAMERA);
   const [nodePositions, setNodePositions] = useState<Record<string, Point>>({});
@@ -153,6 +155,17 @@ export function GraphView() {
     const visible = new Set(nodes.map((node) => node.id));
     return { nodes, edges: data.edges.filter((edge) => visible.has(edge.from) && visible.has(edge.to) && edgeAllowed(edge)) };
   }, [community, data, focusId, hops, kind, layer, relation, pinned, path, preferences.lowPerformance]);
+
+  const contextId = hoveredId ?? keyboardFocusId ?? focusId;
+  const contextNodeIds = useMemo(() => {
+    if (!contextId) return new Set<string>();
+    const ids = new Set<string>([contextId]);
+    for (const edge of view.edges) {
+      if (edge.from === contextId) ids.add(edge.to);
+      if (edge.to === contextId) ids.add(edge.from);
+    }
+    return ids;
+  }, [contextId, view.edges]);
 
   // A label the reader cannot see is a node they cannot learn anything from,
   // so the view always names what it can: everything when the slice is small,
@@ -476,7 +489,7 @@ export function GraphView() {
           <svg
             ref={svgRef}
             viewBox={`${bounds.minX} ${bounds.minY} ${bounds.width} ${bounds.height}`}
-            className={`graph-canvas ${prefersReducedMotion ? 'is-static' : ''}`}
+            className={`graph-canvas ${prefersReducedMotion ? 'is-static' : ''} ${contextId ? 'has-hover' : ''}`}
             preserveAspectRatio="xMidYMid meet"
             role="group"
             aria-labelledby="graph-canvas-summary"
@@ -496,11 +509,11 @@ export function GraphView() {
               if (!from || !to) return null;
               const fromPoint = positionFor(from);
               const toPoint = positionFor(to);
-              const active = focusId === edge.from || focusId === edge.to;
+              const active = contextId === edge.from || contextId === edge.to;
               return (
-                <g key={index} className={`graph-edge graph-edge--${edge.type} ${active ? 'is-active' : ''}`}>
+                <g key={index} className={`graph-edge graph-edge--${edge.type} ${active ? 'is-active' : ''} ${contextId && !active ? 'is-dimmed' : ''}`}>
                   <line x1={fromPoint.x} y1={fromPoint.y} x2={toPoint.x} y2={toPoint.y} strokeWidth={Math.min(3, 0.6 + edge.weight * 0.3)} />
-                  {active && edge.type !== 'links_to' && (
+                  {active && (
                     <text x={(fromPoint.x + toPoint.x) / 2} y={(fromPoint.y + toPoint.y) / 2 - 4} textAnchor="middle">{relationLabel(edge.type)}</text>
                   )}
                 </g>
@@ -509,12 +522,16 @@ export function GraphView() {
             {view.nodes.map((node) => (
               <g
                 key={node.id}
-                className={`graph-node graph-node--${node.kind} ${node.id === focusId ? 'is-focused' : ''} ${pinned.includes(node.id) ? 'is-pinned' : ''} ${labelled.has(node.id) ? 'is-labelled' : ''}`}
+                className={`graph-node graph-node--${node.kind} ${node.id === focusId ? 'is-focused' : ''} ${pinned.includes(node.id) ? 'is-pinned' : ''} ${labelled.has(node.id) ? 'is-labelled' : ''} ${contextId && !contextNodeIds.has(node.id) ? 'is-dimmed' : ''}`}
                 role="button"
                 tabIndex={0}
                 aria-label={`${node.label}, ${KIND_LABELS[node.kind]}, ${labelForCommunity(node)}, ${node.degree} connections, ${node.origin} origin, ${node.evidence} evidence`}
                 aria-pressed={node.id === focusId}
                 onPointerDown={(event) => beginNodeDrag(event, node.id)}
+                onMouseEnter={() => setHoveredId(node.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                onFocus={() => setKeyboardFocusId(node.id)}
+                onBlur={() => setKeyboardFocusId(null)}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setFocus(node.id); }
                 }}
