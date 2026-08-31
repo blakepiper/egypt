@@ -9,6 +9,9 @@ import type {
   SourceEntry,
 } from '../../src/types/content.js';
 import type { BuildProblem } from './build-content.js';
+import { UndirectedGraph } from 'graphology';
+import communitiesLouvain from 'graphology-communities-louvain';
+import betweennessCentrality from 'graphology-metrics/centrality/betweenness.js';
 import { route } from './lib/site.js';
 
 export const EDGE_TYPES: EdgeType[] = [
@@ -68,8 +71,8 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   const edges: GraphEdge[] = [];
   const pageBySlug = new Map(pages.map((p) => [p.slug, p]));
 
-  const addNode = (node: Omit<GraphNode, 'degree' | 'semanticDegree' | 'x' | 'y'>) => {
-    if (!nodes.has(node.id)) nodes.set(node.id, { ...node, degree: 0, semanticDegree: 0, x: 0, y: 0 });
+  const addNode = (node: Omit<GraphNode, 'degree' | 'semanticDegree' | 'community' | 'betweenness' | 'x' | 'y'>) => {
+    if (!nodes.has(node.id)) nodes.set(node.id, { ...node, degree: 0, semanticDegree: 0, community: -1, betweenness: 0, x: 0, y: 0 });
     return nodes.get(node.id)!;
   };
 
@@ -267,13 +270,15 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
 
   reportGaps(nodes, edges, problems);
 
+  const communities = addGraphAnalytics(nodes, edges);
   layout([...nodes.values()], edges);
 
   const data: GraphData = {
-    generated: new Date().toISOString(),
+    generated: 'deterministic',
     nodes: [...nodes.values()],
     edges,
     edgeTypes: EDGE_TYPES,
+    communities,
   };
 
   const adjacency = new Map<string, GraphEdge[]>();
@@ -299,6 +304,56 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       };
     },
   };
+}
+
+function seededRng(seed = 0x6d2b79f5): () => number {
+  let state = seed >>> 0;
+  return () => {
+    state = Math.imul(state ^ (state >>> 15), 1 | state);
+    state ^= state + Math.imul(state ^ (state >>> 7), 61 | state);
+    return ((state ^ (state >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Adds build-time analytics for the reviewed semantic graph. */
+function addGraphAnalytics(nodes: Map<string, GraphNode>, edges: GraphEdge[]): GraphData['communities'] {
+  const curatedEdges = edges
+    .filter((edge) => !DERIVED_TYPES.has(edge.type))
+    .sort((a, b) => a.from.localeCompare(b.from) || a.to.localeCompare(b.to) || a.type.localeCompare(b.type));
+  const graph = new UndirectedGraph();
+  const curatedIds = new Set<string>();
+  for (const edge of curatedEdges) {
+    curatedIds.add(edge.from);
+    curatedIds.add(edge.to);
+  }
+  for (const id of [...curatedIds].sort()) graph.addNode(id);
+  for (const edge of curatedEdges) graph.mergeUndirectedEdge(edge.from, edge.to, { weight: edge.weight });
+
+  communitiesLouvain.assign(graph, { rng: seededRng() });
+  const centrality = betweennessCentrality(graph);
+  const members = new Map<number, GraphNode[]>();
+
+  for (const node of nodes.values()) {
+    if (!graph.hasNode(node.id)) {
+      node.community = -1;
+      node.betweenness = 0;
+      continue;
+    }
+    node.community = graph.getNodeAttribute(node.id, 'community') as number;
+    node.betweenness = Math.max(0, Math.min(1, centrality[node.id] ?? 0));
+    const community = members.get(node.community) ?? [];
+    community.push(node);
+    members.set(node.community, community);
+  }
+
+  return [...members.entries()]
+    .sort(([a], [b]) => a - b)
+    .map(([id, community]) => {
+      const representative = [...community].sort((a, b) =>
+        b.betweenness - a.betweenness || a.label.localeCompare(b.label) || a.id.localeCompare(b.id),
+      )[0];
+      return { id, label: `Around: ${representative.label}`, size: community.length };
+    });
 }
 
 /**

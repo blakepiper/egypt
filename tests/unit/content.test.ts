@@ -316,12 +316,27 @@ describe('expanded registries', () => {
 
 describe('the knowledge graph', () => {
   it('produces a deterministic layout', () => {
-    const again = build();
     const first = result.manifest.counts;
+    const graphPath = join(ROOT, 'src/generated/graph.json');
+    const before = readFileSync(graphPath, 'utf8');
+    const again = build();
+    const after = readFileSync(graphPath, 'utf8');
     expect(again.manifest.counts.nodes).toBe(first.nodes);
-    const a = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8'));
-    const rebuilt = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8'));
-    expect(rebuilt.nodes.map((node: { x: number }) => node.x)).toEqual(a.nodes.map((node: { x: number }) => node.x));
+    expect(after).toBe(before);
+    const graph = JSON.parse(after) as { nodes: { x: number }[] };
+    expect(graph.nodes.map((node) => node.x)).toEqual(JSON.parse(before).nodes.map((node: { x: number }) => node.x));
+  });
+
+  it('publishes curated communities and bridge scores', () => {
+    const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8')) as {
+      communities?: { id: number; label: string; size: number }[];
+      nodes: { community?: number; betweenness?: number }[];
+    };
+    expect(graph.communities?.length).toBeGreaterThanOrEqual(4);
+    expect(graph.communities?.length).toBeLessThanOrEqual(12);
+    expect(graph.communities?.every((community) => community.label.startsWith('Around: ') && community.size > 0)).toBe(true);
+    expect(graph.nodes.every((node) => typeof node.community === 'number' && typeof node.betweenness === 'number')).toBe(true);
+    expect(graph.nodes.every((node) => (node.betweenness ?? -1) >= 0 && (node.betweenness ?? 2) <= 1)).toBe(true);
   });
 
   it('records curated degree and archive control pages', () => {

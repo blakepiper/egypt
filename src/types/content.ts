@@ -191,6 +191,10 @@ export interface GraphNode {
   control?: boolean;
   /** Incident edges that were written by hand rather than derived from links. */
   semanticDegree: number;
+  /** Louvain community over the curated layer. Nodes outside that layer get -1. */
+  community: number;
+  /** Normalised betweenness over the curated layer, 0–1. Bridges score high. */
+  betweenness: number;
   x: number;
   y: number;
 }
@@ -212,6 +216,7 @@ export interface GraphSlice {
 export interface GraphData extends GraphSlice {
   generated: string;
   edgeTypes: EdgeType[];
+  communities: { id: number; label: string; size: number }[];
 }
 
 export interface Entity {

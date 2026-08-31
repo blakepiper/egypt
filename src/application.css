@@ -606,6 +606,14 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-results button { border: var(--archive-border); border-radius: 999px; background: var(--archive-color-surface); padding: var(--archive-space-1) var(--archive-space-3); font: inherit; font-size: var(--archive-text-sm); cursor: pointer; color: inherit; }
 .graph-results span { color: var(--archive-color-ink-muted); }
 
+.graph-legend { display: grid; gap: var(--archive-space-3); padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface); }
+.graph-legend h2 { margin: var(--archive-space-1) 0 0; font-family: var(--archive-font-display); font-size: var(--archive-text-lg); }
+.graph-legend__entries { display: flex; flex-wrap: wrap; gap: var(--archive-space-2); }
+.graph-legend__entry { display: inline-flex; align-items: center; gap: var(--archive-space-2); min-width: 12rem; padding: var(--archive-space-2); border: 1px solid var(--archive-color-line-quiet); border-radius: var(--archive-radius-sm); background: var(--archive-color-surface-raised); color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.graph-legend__entry:hover, .graph-legend__entry.is-selected { border-color: var(--archive-color-primary); box-shadow: var(--archive-shadow-sm); }
+.graph-legend__entry small { margin-left: auto; color: var(--archive-color-ink-muted); font-size: var(--archive-text-xs); white-space: nowrap; }
+.graph-legend__swatch { width: 0.75rem; height: 0.75rem; flex: none; border: 1px solid var(--archive-color-line); border-radius: 50%; }
+
 @media (max-width: 700px) {
   .graph-controls { padding: var(--archive-space-3); }
   .graph-controls__find { flex-basis: 100%; max-width: none; }
@@ -645,6 +653,16 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .graph-node--period .graph-node__dot { fill: var(--archive-color-gold); }
 .graph-node--source .graph-node__dot { fill: var(--archive-color-surface-sunken); }
 .graph-node--journey .graph-node__dot { fill: var(--archive-color-sacred); }
+.graph-node--concept .graph-node__dot { stroke-dasharray: 1 3; }
+.graph-node--deity .graph-node__dot { stroke-dasharray: 3 2; }
+.graph-node--place .graph-node__dot { stroke-width: 2.5; }
+.graph-node--period .graph-node__dot { stroke-dasharray: 1 2; }
+.graph-node--practice .graph-node__dot { stroke-linecap: round; }
+.graph-node--text .graph-node__dot { stroke-dasharray: 4 1; }
+.graph-node--object .graph-node__dot { stroke-width: 2.5; stroke-dasharray: 1 1; }
+.graph-node--role .graph-node__dot { stroke-dasharray: 2 3; }
+.graph-node--source .graph-node__dot { stroke-width: 2; stroke-dasharray: 1 2; }
+.graph-node--journey .graph-node__dot { stroke-width: 2.5; stroke-dasharray: 4 2; }
 .graph-node.is-focused .graph-node__dot { stroke-width: 3; stroke: var(--archive-color-primary); }
 
 .graph-detail { padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-raised); }

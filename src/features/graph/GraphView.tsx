@@ -19,6 +19,10 @@ const KIND_LABELS: Record<NodeKind, string> = {
 // relation was written by hand. The filter groups them the same way the lead
 // paragraph describes them, so the two layers stay one idea across the page.
 const DOCUMENT_RELATIONS = new Set<EdgeType>(['links_to', 'draws_from']);
+const COMMUNITY_COLORS = [
+  '--archive-color-primary-soft', '--archive-color-secondary-soft', '--archive-color-success',
+  '--archive-color-gold', '--archive-color-sacred', '--archive-color-warning', '--archive-color-selection',
+];
 
 type Point = { x: number; y: number };
 type Camera = Point & { scale: number };
@@ -49,6 +53,9 @@ export function GraphView() {
   const [relation, setRelation] = useState<EdgeType | null>(null);
   const layerParam = search.get('layer') === 'all' ? 'all' : 'curated';
   const [layer, setLayer] = useState<'curated' | 'all'>(layerParam);
+  const communityParam = search.get('community');
+  const communityParamId = communityParam !== null && /^\d+$/.test(communityParam) ? Number(communityParam) : null;
+  const [community, setCommunity] = useState<number | null>(communityParamId);
   const [hops, setHops] = useState<1 | 2>(1);
   const [pinned, setPinned] = useState<string[]>([]);
   const [trail, setTrail] = useState<string[]>([]);
@@ -61,6 +68,7 @@ export function GraphView() {
   const pathId = search.get('path');
 
   useEffect(() => { setLayer(layerParam); }, [layerParam]);
+  useEffect(() => { setCommunity(communityParamId); }, [communityParamId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -87,6 +95,13 @@ export function GraphView() {
     navigate(`/graph/${params.toString() ? `?${params}` : ''}`);
   }, [navigate, search]);
 
+  const setCommunityFromControl = useCallback((id: number | null) => {
+    const params = new URLSearchParams(search);
+    if (id === null) params.delete('community'); else params.set('community', String(id));
+    setCommunity(id);
+    navigate(`/graph/${params.toString() ? `?${params}` : ''}`);
+  }, [navigate, search]);
+
   const path = pathId ? allPaths.find((entry) => entry.id === pathId) ?? null : null;
 
   // The visible slice: the focused node plus one or two hops, filtered.
@@ -96,7 +111,8 @@ export function GraphView() {
     const edgeAllowed = (edge: GraphEdge) => (layer === 'all' || !DOCUMENT_RELATIONS.has(edge.type)) && (!relation || edge.type === relation);
     const nodeAllowed = (node: GraphNode) => matchesFilters(node)
       && (layer === 'all' || node.semanticDegree > 0 || node.id === focusId)
-      && (!node.control || node.id === focusId);
+      && (!node.control || node.id === focusId)
+      && (community === null || node.community === community || node.id === focusId);
 
     if (path) {
       const ids = new Set(path.steps.map((step) => `page:${step.slug}`));
@@ -136,7 +152,7 @@ export function GraphView() {
     const nodes = data.nodes.filter((node) => ids.has(node.id) && nodeAllowed(node));
     const visible = new Set(nodes.map((node) => node.id));
     return { nodes, edges: data.edges.filter((edge) => visible.has(edge.from) && visible.has(edge.to) && edgeAllowed(edge)) };
-  }, [data, focusId, hops, kind, layer, relation, pinned, path, preferences.lowPerformance]);
+  }, [community, data, focusId, hops, kind, layer, relation, pinned, path, preferences.lowPerformance]);
 
   // A label the reader cannot see is a node they cannot learn anything from,
   // so the view always names what it can: everything when the slice is small,
@@ -207,8 +223,14 @@ export function GraphView() {
     return { minX, minY, width: Math.max(200, Math.max(...xs) - minX + 80), height: Math.max(200, Math.max(...ys) - minY + 80) };
   }, [view.nodes]);
 
-  const filtersActive = kind !== null || relation !== null || hops !== 1;
+  const filtersActive = community !== null || kind !== null || relation !== null || hops !== 1;
   const focused = focusId ? byId.get(focusId) ?? null : null;
+  const communityLabels = useMemo(
+    () => new Map((data?.communities ?? []).map((entry) => [entry.id, entry.label])),
+    [data],
+  );
+  const labelForCommunity = (node: GraphNode): string =>
+    node.community >= 0 ? (communityLabels.get(node.community) ?? 'Curated community') : 'No curated community';
   const focusedEdges = useMemo(
     () => (focusId ? view.edges.filter((edge) => edge.from === focusId || edge.to === focusId) : []),
     [view.edges, focusId],
@@ -328,7 +350,7 @@ export function GraphView() {
         lead={path ? path.blurb : `${data.nodes.length} nodes and ${data.edges.length} relationships. Wiki links form the document layer; reviewed entities and curated relations form the semantic layer. Curated edges explain themselves.`}
         actions={
           <>
-            <Button onClick={() => { setFocus(null); setPinned([]); setTrail([]); setKind(null); setRelation(null); setLayer('curated'); navigate('/graph/'); }}>Reset</Button>
+            <Button onClick={() => { setFocus(null); setPinned([]); setTrail([]); setKind(null); setRelation(null); setCommunity(null); setLayer('curated'); navigate('/graph/'); }}>Reset</Button>
             {focused && <Button onClick={() => setPinned((current) => current.includes(focused.id) ? current.filter((id) => id !== focused.id) : [...current, focused.id])}>
               {pinned.includes(focused.id) ? 'Unpin' : 'Pin'} {focused.label}
             </Button>}
@@ -399,9 +421,35 @@ export function GraphView() {
             {!focusId && !path && !filtersActive && layer === 'curated' && ' These are the reviewed relations; choose one to follow its neighbourhood.'}
             {!focusId && !path && !filtersActive && layer === 'all' && ' These are the most connected nodes; choose one to follow its neighbourhood.'}
           </p>
-          {filtersActive && <Button variant="quiet" onClick={() => { setKind(null); setRelation(null); setHops(1); }}>Clear filters</Button>}
+          {filtersActive && <Button variant="quiet" onClick={() => { setKind(null); setRelation(null); setHops(1); setCommunityFromControl(null); }}>Clear filters</Button>}
         </div>
       </div>
+
+      <section className="graph-legend" aria-labelledby="graph-legend-title">
+        <div>
+          <span className="kicker">Curated layer</span>
+          <h2 id="graph-legend-title">Communities</h2>
+        </div>
+        <div className="graph-legend__entries">
+          {data.communities.map((entry) => {
+            const color = COMMUNITY_COLORS[entry.id % COMMUNITY_COLORS.length];
+            const selected = community === entry.id;
+            return (
+              <button
+                key={entry.id}
+                type="button"
+                className={`graph-legend__entry ${selected ? 'is-selected' : ''}`}
+                aria-pressed={selected}
+                onClick={() => setCommunityFromControl(selected ? null : entry.id)}
+              >
+                <span className="graph-legend__swatch" style={{ backgroundColor: `var(${color})` }} aria-hidden="true" />
+                <span>{entry.label}</span>
+                <small>{entry.size} nodes</small>
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
       {trail.length > 1 && (
         <nav className="graph-trail" aria-label="Path you followed">
@@ -464,7 +512,7 @@ export function GraphView() {
                 className={`graph-node graph-node--${node.kind} ${node.id === focusId ? 'is-focused' : ''} ${pinned.includes(node.id) ? 'is-pinned' : ''} ${labelled.has(node.id) ? 'is-labelled' : ''}`}
                 role="button"
                 tabIndex={0}
-                aria-label={`${node.label}, ${KIND_LABELS[node.kind]}, ${node.degree} connections, ${node.origin} origin, ${node.evidence} evidence`}
+                aria-label={`${node.label}, ${KIND_LABELS[node.kind]}, ${labelForCommunity(node)}, ${node.degree} connections, ${node.origin} origin, ${node.evidence} evidence`}
                 aria-pressed={node.id === focusId}
                 onPointerDown={(event) => beginNodeDrag(event, node.id)}
                 onKeyDown={(event) => {
@@ -478,7 +526,13 @@ export function GraphView() {
                   return (
                     <>
                       <circle className="graph-node__hit" cx={point.x} cy={point.y} r={Math.max(10, radius + 4)} />
-                      <circle className="graph-node__dot" cx={point.x} cy={point.y} r={radius} />
+                      <circle
+                        className="graph-node__dot"
+                        cx={point.x}
+                        cy={point.y}
+                        r={radius}
+                        style={layer === 'curated' && node.community >= 0 ? { fill: `var(${COMMUNITY_COLORS[node.community % COMMUNITY_COLORS.length]})` } : undefined}
+                      />
                       <text x={point.x} y={point.y - 12} textAnchor="middle">{node.label}</text>
                     </>
                   );
@@ -538,6 +592,7 @@ export function GraphView() {
             <li key={node.id}>
               <button type="button" onClick={() => setFocus(node.id)}>{node.label}</button>
               <span>{KIND_LABELS[node.kind]}</span>
+              <span>{labelForCommunity(node)}</span>
               <OriginBadge origin={node.origin} />
               <span>{node.degree} connection{node.degree === 1 ? '' : 's'}</span>
               {node.route && <Link to={node.route}>Open</Link>}

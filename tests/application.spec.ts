@@ -235,6 +235,20 @@ test.describe('graph, atlas, and chronology', () => {
     expect(allEdges).toBeGreaterThan(curatedEdges);
   });
 
+  test('communities are named and filterable beyond their colours', async ({ page }) => {
+    await page.goto('graph/');
+    const legend = page.locator('.graph-legend');
+    await expect(legend).toBeVisible();
+    const entries = legend.getByRole('button');
+    const count = await entries.count();
+    expect(count).toBeGreaterThanOrEqual(4);
+    expect(count).toBeLessThanOrEqual(12);
+    await entries.first().click();
+    await expect(page).toHaveURL(/community=\d+/);
+    await expect(entries.first()).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('section.graph-list')).toContainText('Around:');
+  });
+
   test('the graph canvas supports zooming, panning, and node dragging', async ({ page }) => {
     await page.goto('graph/');
     await expect(page.locator('.graph-node').first()).toBeVisible();
