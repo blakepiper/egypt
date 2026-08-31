@@ -6,14 +6,19 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { GraphData, GraphEdge, GraphNode, EdgeType, NodeKind } from '../../types/content';
 import { Link, useApp } from '../../app/state';
-import { Button, OriginBadge } from '../../design-system';
-import { EmptyState, FilterBar, PageHeader, relationLabel } from '../../design-system/components';
+import { Button, Icon, OriginBadge } from '../../design-system';
+import { EmptyState, FilterSelect, PageHeader, Segmented, relationLabel } from '../../design-system/components';
 import { allPages, allPaths } from '../../generated';
 
 const KIND_LABELS: Record<NodeKind, string> = {
   article: 'Article', concept: 'Concept', deity: 'Deity', place: 'Place', period: 'Period',
   practice: 'Practice', text: 'Text', object: 'Object', role: 'Role', source: 'Source group', journey: 'Journey',
 };
+
+// links_to and draws_from are derived from the pages themselves; every other
+// relation was written by hand. The filter groups them the same way the lead
+// paragraph describes them, so the two layers stay one idea across the page.
+const DOCUMENT_RELATIONS = new Set<EdgeType>(['links_to', 'draws_from']);
 
 type Point = { x: number; y: number };
 type Camera = Point & { scale: number };
@@ -130,6 +135,37 @@ export function GraphView() {
     return data.nodes.filter((node) => node.label.toLowerCase().includes(needle)).slice(0, 12);
   }, [data, query]);
 
+  // Counts come from the whole graph, not the visible slice, so an option can
+  // promise what it will show before it is chosen. Empty options are dropped,
+  // because an entity kind with nothing in it filters the graph down to nothing.
+  const totals = useMemo(() => {
+    const kinds = new Map<NodeKind, number>();
+    const relations = new Map<EdgeType, number>();
+    for (const node of data?.nodes ?? []) kinds.set(node.kind, (kinds.get(node.kind) ?? 0) + 1);
+    for (const edge of data?.edges ?? []) relations.set(edge.type, (relations.get(edge.type) ?? 0) + 1);
+    return { kinds, relations };
+  }, [data]);
+
+  const kindOptions = useMemo(
+    () => (Object.keys(KIND_LABELS) as NodeKind[])
+      .map((id) => ({ id, label: KIND_LABELS[id], count: totals.kinds.get(id) ?? 0 }))
+      .filter((option) => option.count > 0)
+      .sort((a, b) => b.count - a.count),
+    [totals],
+  );
+
+  const relationGroups = useMemo(() => {
+    const build = (types: EdgeType[]) => types
+      .map((id) => ({ id, label: relationLabel(id), count: totals.relations.get(id) ?? 0 }))
+      .filter((option) => option.count > 0)
+      .sort((a, b) => b.count - a.count);
+    const types = data?.edgeTypes ?? [];
+    return [
+      { label: 'Document layer', options: build(types.filter((type) => DOCUMENT_RELATIONS.has(type))) },
+      { label: 'Curated semantic layer', options: build(types.filter((type) => !DOCUMENT_RELATIONS.has(type))) },
+    ].filter((group) => group.options.length > 0);
+  }, [data, totals]);
+
   const bounds = useMemo(() => {
     if (!view.nodes.length) return { minX: -400, minY: -400, width: 800, height: 800 };
     // Keep the camera coordinate system stable while a node is being dragged.
@@ -142,6 +178,7 @@ export function GraphView() {
     return { minX, minY, width: Math.max(200, Math.max(...xs) - minX + 80), height: Math.max(200, Math.max(...ys) - minY + 80) };
   }, [view.nodes]);
 
+  const filtersActive = kind !== null || relation !== null || hops !== 1;
   const focused = focusId ? byId.get(focusId) ?? null : null;
   const focusedEdges = useMemo(
     () => (focusId ? view.edges.filter((edge) => edge.from === focusId || edge.to === focusId) : []),
@@ -288,22 +325,51 @@ export function GraphView() {
       )}
 
       <div className="graph-controls">
-        <label className="search-field search-field--compact">
-          <span className="sr-only">Find a node</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find a node…" type="search" />
-        </label>
-        {results.length > 0 && (
-          <ul className="graph-results">
-            {results.map((node) => (
-              <li key={node.id}>
-                <button type="button" onClick={() => { setFocus(node.id); setQuery(''); }}>{node.label} <span>{KIND_LABELS[node.kind]}</span></button>
-              </li>
-            ))}
-          </ul>
-        )}
-        <FilterBar label="Node type" options={Object.entries(KIND_LABELS).map(([id, label]) => ({ id, label }))} value={kind} onChange={(value) => setKind(value as NodeKind | null)} />
-        <FilterBar label="Relation" options={data.edgeTypes.map((type) => ({ id: type, label: relationLabel(type) }))} value={relation} onChange={(value) => setRelation(value as EdgeType | null)} />
-        <FilterBar label="Expansion" options={[{ id: '1', label: 'One hop' }, { id: '2', label: 'Two hops' }]} value={String(hops)} onChange={(value) => setHops(value === '2' ? 2 : 1)} allLabel="One hop" />
+        <div className="graph-controls__row">
+          <div className="graph-controls__find">
+            <label className="search-field search-field--compact">
+              <Icon name="search" />
+              <span className="sr-only">Find a node</span>
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find a node…" type="search" />
+            </label>
+            {results.length > 0 && (
+              <ul className="graph-results">
+                {results.map((node) => (
+                  <li key={node.id}>
+                    <button type="button" onClick={() => { setFocus(node.id); setQuery(''); }}>{node.label} <span>{KIND_LABELS[node.kind]}</span></button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <FilterSelect
+            label="Node type"
+            allLabel={`Every type (${data.nodes.length})`}
+            options={kindOptions}
+            value={kind}
+            onChange={(value) => setKind(value as NodeKind | null)}
+          />
+          <FilterSelect
+            label="Relation"
+            allLabel={`Every relation (${data.edges.length})`}
+            groups={relationGroups}
+            value={relation}
+            onChange={(value) => setRelation(value as EdgeType | null)}
+          />
+          <Segmented
+            label="Expansion"
+            options={[{ id: '1', label: 'One hop' }, { id: '2', label: 'Two hops' }]}
+            value={String(hops)}
+            onChange={(value) => setHops(value === '2' ? 2 : 1)}
+          />
+        </div>
+        <div className="graph-controls__status">
+          <p role="status" aria-live="polite">
+            Showing <strong>{view.nodes.length}</strong> of {data.nodes.length} nodes and <strong>{view.edges.length}</strong> of {data.edges.length} relationships.
+            {!focusId && !path && !filtersActive && ' These are the most connected nodes; choose one to follow its neighbourhood.'}
+          </p>
+          {filtersActive && <Button variant="quiet" onClick={() => { setKind(null); setRelation(null); setHops(1); }}>Clear filters</Button>}
+        </div>
       </div>
 
       {trail.length > 1 && (

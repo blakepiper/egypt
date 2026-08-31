@@ -492,6 +492,81 @@ export function FilterBar({
   );
 }
 
+export type FilterOption = { id: string; label: string; count?: number };
+
+// A single choice drawn from a long list. Chips read well at three or four
+// options; past that the row turns into a wall the reader has to scan end to
+// end. One control keeps the same choice compact, and the counts say which
+// options are worth picking before they are picked.
+export function FilterSelect({
+  label, value, onChange, allLabel = 'All', options = [], groups, hint,
+}: {
+  label: string;
+  value: string | null;
+  onChange: (value: string | null) => void;
+  allLabel?: string;
+  options?: FilterOption[];
+  groups?: { label: string; options: FilterOption[] }[];
+  hint?: string;
+}) {
+  const id = useId();
+  const hintId = `${id}-hint`;
+  const renderOption = (option: FilterOption) => (
+    <option key={option.id} value={option.id}>
+      {option.count == null ? option.label : `${option.label} (${option.count})`}
+    </option>
+  );
+  return (
+    <div className="filter-select">
+      <label className="filter-select__label" htmlFor={id}>{label}</label>
+      <div className="filter-select__control">
+        <select
+          id={id}
+          value={value ?? ''}
+          data-active={value !== null}
+          aria-describedby={hint ? hintId : undefined}
+          onChange={(event) => onChange(event.target.value || null)}
+        >
+          <option value="">{allLabel}</option>
+          {groups
+            ? groups.map((group) => <optgroup key={group.label} label={group.label}>{group.options.map(renderOption)}</optgroup>)
+            : options.map(renderOption)}
+        </select>
+        <svg className="filter-select__chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true">
+          <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      </div>
+      {hint && <span className="filter-select__hint" id={hintId}>{hint}</span>}
+    </div>
+  );
+}
+
+// Two or three states that are worth seeing at once. A menu hides the
+// alternative behind a click; a segmented control keeps the whole choice open.
+export function Segmented({
+  label, options, value, onChange,
+}: { label: string; options: FilterOption[]; value: string; onChange: (value: string) => void }) {
+  const id = useId();
+  return (
+    <div className="segmented" role="group" aria-labelledby={id}>
+      <span className="segmented__label" id={id}>{label}</span>
+      <div className="segmented__track">
+        {options.map((option) => (
+          <button
+            key={option.id}
+            type="button"
+            className={`segmented__option ${value === option.id ? 'is-active' : ''}`}
+            aria-pressed={value === option.id}
+            onClick={() => onChange(option.id)}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Toggle({ label, checked, onChange, description }: { label: string; checked: boolean; onChange: (value: boolean) => void; description?: string }) {
   const id = useId();
   return (
