@@ -1,3 +1,14 @@
+---
+type: log
+tags: [maintenance, provenance]
+course: REL 395, Spring 2017, Northern Arizona University
+updated: 2026-08-30
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
+---
+
 # Wiki log
 
 ## [2026-08-30] ingest | Spring 2017 REL 395 archive

@@ -3,6 +3,21 @@ type: text-study
 tags: [pyramid-texts, old-kingdom, kingship, naydler]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [PT]
+periods: [old-kingdom, corpus-pyramid-texts]
+places: [memphis]
+entities: [pyramid-texts-corpus, king]
+relations:
+  - target: coffin-texts
+    type: precedes
+    note: "Earlier in surviving evidence, and not replaced by it."
+  - target: contested-interpretations
+    type: contested_by
+    note: "Naydler reads the spells as records of living initiatory experience."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Pyramid Texts

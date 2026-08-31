@@ -3,11 +3,27 @@ type: topic
 tags: [temples, priests, offerings, ritual, economy]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Temple cult, Priesthood]
+places: [thebes, memphis, edfu]
+entities: [daily-temple-service, purity, hem-netjer, wab, lector-priest, temple-singer, king, maat]
+relations:
+  - target: festivals-oracles-and-personal-piety
+    type: contrasts_with
+    note: "Restricted daily service against the festival days when access opened."
+  - target: heka-and-operative-ritual
+    type: draws_from
+    note: "Ritual efficacy depends on the power described there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Temples, priests, and offerings
 
 An Egyptian temple was a divine household, a model of the created cosmos, a royal institution, and a major economic organization. It was not primarily a congregational building. Access narrowed as space became darker, higher, and more restricted toward the sanctuary.
+
+!media[temple-dendur]
 
 ## Reading the building
 

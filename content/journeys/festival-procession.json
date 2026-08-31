@@ -1,0 +1,31 @@
+{
+  "id": "festival-procession",
+  "title": "Festival procession",
+  "subtitle": "The day the god came out of the building",
+  "question": "If the sanctuary was closed, when and how did most people meet a god?",
+  "sourcePages": ["festivals-oracles-and-personal-piety", "sacred-geography", "temples-priests-and-offerings"],
+  "sourceIds": ["C03", "C02"],
+  "period": "New Kingdom, principally Dynasty 18 to 20",
+  "place": "Thebes: Karnak, Luxor, and the west bank",
+  "evidenceBoundary": "Reliefs show musicians, soldiers, boats, offerings, and crowds. They do not show the rites performed inside the shrine, and those remain difficult to reconstruct. Festivals varied by place and period; this route is Theban and should not be generalised to all of Egypt.",
+  "reconstruction": "The two festivals below are named in the archive with their routes and functions. Crowd experience is described from what the reliefs depict and what the wiki states about access, not from imagination.",
+  "accessibleSummary": "A route list with five stops from Karnak to Luxor and across to the west bank, each naming who could be present and what they could see.",
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "scenes": [
+    { "id": "departure", "title": "Leaving the sanctuary", "kicker": "Karnak", "evidence": "scholarship", "place": "thebes", "sourceIds": ["C03"],
+      "body": "The portable bark carrying the shrine is lifted onto priests' shoulders. The image stays veiled. What the public sees is a covered shrine in motion, which is enough: presence has left the restricted space and entered shared space.",
+      "detail": ["Bark shrines and way stations along the route are built for exactly this."] },
+    { "id": "opet", "title": "Opet", "kicker": "Karnak to Luxor", "evidence": "scholarship", "place": "thebes", "sourceIds": ["C03", "C02"],
+      "body": "Amun, Mut, and Khonsu travel between Karnak and Luxor by processional bark. The rites renew the king's divine potency and the land's fertility. Crowds line the route with music, feasting, and petition.",
+      "detail": ["Reliefs preserve the musicians, soldiers, boats, and offerings.", "The deepest rites at Luxor are not recoverable from these scenes."] },
+    { "id": "petition", "title": "Petition and oracle", "kicker": "Along the route", "evidence": "scholarship", "place": "deir-el-medina", "sourceIds": ["C03"],
+      "body": "A question could be put to the god as the bark passed, and the answer read from its movement. The surviving questions are ordinary: a disputed tomb, a stolen tool, whether a person was responsible. At Deir el-Medina the record is detailed enough to follow individual cases.",
+      "detail": ["This is a legal procedure as much as a devotional one.", "It puts divine decision inside village disputes, not above them."] },
+    { "id": "valley", "title": "The Beautiful Festival of the Valley", "kicker": "Karnak to the west bank", "evidence": "scholarship", "place": "thebes", "sourceIds": ["C03"],
+      "body": "Amun crosses the river to visit royal mortuary temples on the west bank. Families feast at tomb chapels, so the necropolis becomes a place of reunion for one day rather than only of separation.",
+      "detail": ["Divine, royal, and family dead are linked by a single route.", "This is one of the clearest cases of state festival and household practice in the same event."] },
+    { "id": "return", "title": "Return", "kicker": "Back inside", "evidence": "scholarship", "place": "thebes", "sourceIds": ["C03"],
+      "body": "The bark returns and the shrine is closed again. Access narrows back to normal. The festival did not make the sanctuary public; it moved a controlled presence outward for a fixed time and then withdrew it.",
+      "detail": ["The calendar of festivals is therefore also a calendar of access."] }
+  ]
+}

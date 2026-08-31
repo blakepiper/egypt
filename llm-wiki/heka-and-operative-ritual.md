@@ -3,6 +3,22 @@ type: concept
 tags: [heka, magic, ritual, medicine, names]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Magic, Operative ritual]
+entities: [heka, ren, lector-priest]
+relations:
+  - target: temples-priests-and-offerings
+    type: practiced_at
+    note: "Temple ritual is where operative power is used institutionally."
+  - target: festivals-oracles-and-personal-piety
+    type: practiced_at
+    note: "Household and healing practice uses the same power."
+  - target: contested-interpretations
+    type: contested_by
+    note: "Modern readings that separate magic from religion are argued with there."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Heka and operative ritual

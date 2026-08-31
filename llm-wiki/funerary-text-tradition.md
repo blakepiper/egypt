@@ -3,11 +3,28 @@ type: topic
 tags: [funerary-texts, pyramid-texts, coffin-texts, book-of-the-dead]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Overlapping corpora, The shingles model]
+periods: [corpus-pyramid-texts, corpus-coffin-texts, corpus-underworld-books, corpus-book-of-the-dead]
+relations:
+  - target: pyramid-texts
+    type: part_of
+  - target: coffin-texts
+    type: part_of
+  - target: book-of-the-dead
+    type: part_of
+  - target: amduat-and-book-of-gates
+    type: part_of
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Funerary text tradition
 
 The course's best metaphor is a roof of overlapping shingles. Pyramid Texts, Coffin Texts, Underworld Books, and Books of the Dead inherit, reposition, and innovate; one does not simply replace the last.
+
+!media[sethnakht-funerary-papyrus]
 
 | Corpus | Main period of early prominence | Typical medium/location | Principal user | Recurring emphases |
 |---|---|---|---|---|

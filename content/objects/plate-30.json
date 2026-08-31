@@ -1,0 +1,49 @@
+{
+  "id": "plate-30",
+  "title": "Book of the Dead, Plate 30",
+  "subtitle": "The opening of Chapter 125 and the threshold of the Hall of the Two Truths",
+  "slug": "book-of-the-dead-plate-30",
+  "period": "New Kingdom, Dynasty 19",
+  "sourceIds": ["C06", "C17", "C04"],
+  "mediaId": "ani-plate-30",
+  "imageStatus": "This viewer uses the British Museum's current record for frame EA10470,30 under its CC BY-NC-SA 4.0 license. The credit and source record stay with the image.",
+  "evidenceNote": "The scene description, the sequence of the text, and the gate names all come from the student's 2017 report and its source packet. Translation and segmentation vary by edition, so the names below are one edition's reading, not a fixed text.",
+  "regions": [
+    { "id": "osiris", "x": 69, "y": 24, "w": 14, "h": 54, "label": "Osiris under the canopy",
+      "visible": "A mummiform figure beneath a canopy at the right, holding crook and flail.",
+      "reading": "Osiris presides over the hall. Ani will be identified with him — the title 'the Osiris, scribe Ani' does exactly that work.",
+      "confidence": "Clear from the image itself." },
+    { "id": "isis", "x": 84, "y": 25, "w": 13, "h": 53, "label": "Isis behind him",
+      "visible": "A standing goddess behind the canopy.",
+      "reading": "Protective presence. The mourning and protecting role from the Osiris cycle carries into the judgment setting.",
+      "confidence": "Clear from the image itself." },
+    { "id": "sons", "x": 61, "y": 38, "w": 9, "h": 28, "label": "Four Sons of Horus",
+      "visible": "Four small figures on a lotus before the canopy.",
+      "reading": "They connect the hall to the preserved organs of the body. Judgment is not only moral: bodily integrity is part of what is at stake.",
+      "confidence": "Clear from the image itself." },
+    { "id": "gate", "x": 59, "y": 16, "w": 39, "h": 66, "label": "The gate", "imageRegion": false,
+      "visible": "No gate appears in frame 30. The vignette shows a canopy around Osiris; the gate belongs to the accompanying textual sequence.",
+      "reading": "The gate and its upper and lower portions demand their names. Correct naming produces passage. The report gives the gate name 'You Dispel Light', with upper and lower names 'Lord of Truth, Master of His Two Legs' and 'Lord of Strength, the One Who Commands the Cattle'.",
+      "confidence": "The gate names follow one edition; segmentation varies. The gate is textual here, not a feature identified in the image." },
+    { "id": "ani", "x": 6, "y": 24, "w": 18, "h": 56, "label": "Ani approaching", "imageRegion": false,
+      "visible": "In the full report's comparison plates, Ani and Tutu approach and make offerings.",
+      "reading": "The approach is a speech act as much as a movement. Ani praises Osiris, claims primordial knowledge, and is testified for by Anubis.",
+      "confidence": "Drawn from adjacent plates in the student's composite, not from the cropped standalone image." }
+  ],
+  "sequence": [
+    "Ani is titled “the Osiris, scribe Ani,” receiving the status of the transfigured dead.",
+    "He praises Osiris and claims primordial and secret knowledge.",
+    "Anubis testifies that Ani knows roads and towns and is acceptable to the gods.",
+    "Ani invokes a dense ritual geography: Mendes and Banebdjedet, Satis's house, the Neshmet bark, Athribis, Busiris, Anubis's embalming domain, Rosetau, and Naref.",
+    "The gate and its upper and lower portions demand their names.",
+    "Correct naming produces passage and the status “vindicated, possessor of reverence.”"
+  ],
+  "lessons": [
+    { "title": "Knowledge is identity", "body": "Ani is not solving a riddle. By knowing divine topography and names he demonstrates that he belongs inside the ordered otherworld." },
+    { "title": "Architecture is animate", "body": "Gate, doorposts, guardians, and regions have names. A threshold is a being in a relationship, not inert scenery." },
+    { "title": "Vindication is sponsored", "body": "Anubis's testimony, Ani's speech, Osirian identification, offerings, image, and secret names all cooperate. No single element does the work." },
+    { "title": "Corpora overlap", "body": "Osirian identification recalls the Pyramid and Coffin Texts; gate passwords recall the Book of Gates; judgment develops across Chapter 125. The shingles model appears in one plate." }
+  ],
+  "correction": "The 2017 report calls the illustration a “short mythological retelling.” In standard usage a vignette is the illustration attached to a spell, while a short empowering myth is a historiola. The course exam blurs the two terms in one answer. This archive keeps them distinct.",
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" }
+}

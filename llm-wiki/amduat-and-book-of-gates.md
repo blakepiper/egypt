@@ -3,6 +3,18 @@ type: text-study
 tags: [amduat, book-of-gates, duat, new-kingdom]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Underworld Books, The twelve hours]
+periods: [new-kingdom, corpus-underworld-books]
+places: [thebes]
+entities: [amduat-corpus, book-of-gates-corpus, duat]
+relations:
+  - target: solar-cycle
+    type: depicted_in
+    note: "These compositions map the night crossing."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Amduat and Book of Gates

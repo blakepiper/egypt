@@ -3,9 +3,28 @@ type: concept
 tags: [geography, nile, duat, cult-centers]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Kemet and Deshret, Black Land and Red Land]
+places: [delta, heliopolis, memphis, thebes, abydos, edfu, kom-ombo, elephantine, deshret, west]
+entities: [nun, duat, kemet-deshret]
+relations:
+  - target: sobek
+    type: associated_with
+    note: "Sobek's range follows the water this page maps."
+  - target: death-funeral-and-the-dead
+    type: associated_with
+    note: "The west bank orientation set out here is where funerary practice happens."
+  - target: egypt-trip-field-guide
+    type: part_of
+    note: "The field guide takes this geography to standing sites."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Sacred geography
+
+!media[temple-dendur]
 
 ## Orient yourself first
 
@@ -54,4 +73,3 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 ## Sources in this archive
 
 [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C08 — Pinch chapter 1 instructor notes|C08]], and the maps in C02/C03.
-

@@ -3,6 +3,20 @@ type: topic
 tags: [creation, cosmogony, gods, myth]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Cosmogonies, Creation accounts]
+places: [heliopolis, memphis, hermopolis, esna, elephantine]
+entities: [nun, ennead, ogdoad, memphite-theology]
+relations:
+  - target: how-egyptian-religion-works
+    type: part_of
+    note: "Several accounts standing at once is the method that page describes."
+  - target: temples-priests-and-offerings
+    type: maintains
+    note: "Temple ritual repeats creation rather than commemorating it."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Creation traditions
@@ -33,7 +47,7 @@ This tradition is a concentrated statement of the same logic behind [[heka-and-o
 
 The Hermopolitan **Ogdoad** are four male-female pairs expressing precreation conditions such as water, darkness, limitlessness, and hiddenness. Traditions differ over whether they generate an egg, a lotus, or conditions from which the sun appears.
 
-The course's **Khonsu Cosmogony** is a deliberately synthetic Ptolemaic temple composition. It makes Thebes prior while incorporating Hermopolitan, Memphite, and Heliopolitan ideas. Amun-Re, Ptah, the Ogdoad, Hathor, Khonsu, Thoth, and Osiris are coordinated through place, genealogy, wordplay, and identification. It is valuable precisely because it shows late temple theologians building a local totality from inherited systems.
+The course's **Khonsu Cosmogony** is a deliberately synthetic Ptolemaic temple composition. It makes Thebes prior while incorporating Hermopolitan, Memphite, and Heliopolitan ideas. Amun-Re, Ptah, the Ogdoad, Hathor, Khonsu, Thoth, and Osiris are coordinated through place, genealogy, wordplay, and identification. The composition shows late temple theologians building a local totality from inherited systems.
 
 ## Elephantine/Esna — Khnum the fashioner
 
@@ -58,4 +72,3 @@ Temple sanctuaries evoke the first mound: an elevated, dark, restricted place fr
 ## Sources in this archive
 
 [[source-catalog#C12 — Cosmogony primary-source packet|C12]], [[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C04 — Course exams and study prompts|C04]], and [[source-catalog#C07 — Blue water-lily research project|C07]].
-

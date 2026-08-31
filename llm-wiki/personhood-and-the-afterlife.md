@@ -3,6 +3,19 @@ type: concept
 tags: [personhood, soul, afterlife, body, heart]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Body, name, ka, ba, and akh, The parts of a person]
+entities: [khat, ib, ren, shut, ka, ba, akh]
+relations:
+  - target: death-funeral-and-the-dead
+    type: restores
+    note: "Funerary ritual addresses each aspect named here."
+  - target: coffin-texts
+    type: appears_in
+    note: "Coffin Text spells name integrity, mobility, and provisioning directly."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Personhood and the afterlife

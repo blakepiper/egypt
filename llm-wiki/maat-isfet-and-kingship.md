@@ -3,6 +3,22 @@ type: concept
 tags: [maat, isfet, kingship, ethics, social-order]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Order and disorder, Maat and isfet]
+entities: [maat, isfet, king, judgment]
+relations:
+  - target: ptahhotep-and-ethical-life
+    type: appears_in
+    note: "Ptahhotep turns maat into everyday conduct."
+  - target: temples-priests-and-offerings
+    type: maintains
+    note: "Presenting maat is a literal offering in temple ritual."
+  - target: book-of-the-dead-plate-30
+    type: depicted_in
+    note: "The heart is weighed against maat at the threshold."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Maat, isfet, and kingship
@@ -16,6 +32,8 @@ This is not a simple moral dualism between two equally ultimate powers. Maat is 
 Hornung's assigned chapter supplies an essential correction to the idea that maat is passive conformity. Maat is described as the foundation of ordered existence and as nourishment or air for gods and humans, yet it does not maintain itself. People must **do maat** and **speak maat**. Its proper shape is measure: uncontrolled excess, even in the name of zeal, can become destructive. Temple offering, fair judgment, accurate speech, art, social care, and the repair of the injured Eye of Horus are different scales of the same active work.
 
 Presenting the small figure of Maat to a god is therefore not merely saying “the king obeys.” It gives the deity the order the deity first made possible, completing a reciprocal circuit.
+
+!media[nectanebo-offers-to-osiris]
 
 ## The king's job
 

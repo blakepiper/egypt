@@ -1,0 +1,728 @@
+{
+  "start-here": {
+    "aliases": [
+      "The course argument"
+    ],
+    "entities": [
+      "renewable-continuity",
+      "maat",
+      "isfet",
+      "ka",
+      "ba",
+      "akh"
+    ],
+    "relations": [
+      {
+        "target": "creation-traditions",
+        "type": "part_of",
+        "note": "Creation is the first instance of the pattern this page describes."
+      },
+      {
+        "target": "solar-cycle",
+        "type": "part_of",
+        "note": "The solar circuit repeats the same restoration every night."
+      },
+      {
+        "target": "contested-interpretations",
+        "type": "contested_by",
+        "note": "The archive mixes evidence of very different weight; this page sends the reader there before conclusions are drawn."
+      }
+    ]
+  },
+  "chronology": {
+    "aliases": [
+      "Periods",
+      "Dynasties"
+    ],
+    "periods": [
+      "old-kingdom",
+      "middle-kingdom",
+      "new-kingdom",
+      "late-period",
+      "ptolemaic",
+      "roman"
+    ],
+    "relations": [
+      {
+        "target": "funerary-text-tradition",
+        "type": "precedes",
+        "note": "The simplified funerary sequence given here is developed in full on that page."
+      },
+      {
+        "target": "amarna-and-late-transformations",
+        "type": "changes_during",
+        "note": "The Amarna episode and the Greco-Roman afterlife are the sharpest changes in this table."
+      }
+    ]
+  },
+  "sacred-geography": {
+    "aliases": [
+      "Kemet and Deshret",
+      "Black Land and Red Land"
+    ],
+    "places": [
+      "delta",
+      "heliopolis",
+      "memphis",
+      "thebes",
+      "abydos",
+      "edfu",
+      "kom-ombo",
+      "elephantine",
+      "deshret",
+      "west"
+    ],
+    "entities": [
+      "nun",
+      "duat",
+      "kemet-deshret"
+    ],
+    "relations": [
+      {
+        "target": "sobek",
+        "type": "associated_with",
+        "note": "Sobek's range follows the water this page maps."
+      },
+      {
+        "target": "death-funeral-and-the-dead",
+        "type": "associated_with",
+        "note": "The west bank orientation set out here is where funerary practice happens."
+      },
+      {
+        "target": "egypt-trip-field-guide",
+        "type": "part_of",
+        "note": "The field guide takes this geography to standing sites."
+      }
+    ]
+  },
+  "how-egyptian-religion-works": {
+    "aliases": [
+      "Plurality and local theology"
+    ],
+    "entities": [
+      "syncretism",
+      "heka"
+    ],
+    "relations": [
+      {
+        "target": "creation-traditions",
+        "type": "maintains",
+        "note": "Several creation accounts standing at once is the clearest case of the plurality described here."
+      },
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "appears_in",
+        "note": "Images, names, and ritual presence are worked out in temple practice."
+      }
+    ]
+  },
+  "maat-isfet-and-kingship": {
+    "aliases": [
+      "Order and disorder",
+      "Maat and isfet"
+    ],
+    "entities": [
+      "maat",
+      "isfet",
+      "king",
+      "judgment"
+    ],
+    "relations": [
+      {
+        "target": "ptahhotep-and-ethical-life",
+        "type": "appears_in",
+        "note": "Ptahhotep turns maat into everyday conduct."
+      },
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "maintains",
+        "note": "Presenting maat is a literal offering in temple ritual."
+      },
+      {
+        "target": "book-of-the-dead-plate-30",
+        "type": "depicted_in",
+        "note": "The heart is weighed against maat at the threshold."
+      }
+    ]
+  },
+  "heka-and-operative-ritual": {
+    "aliases": [
+      "Magic",
+      "Operative ritual"
+    ],
+    "entities": [
+      "heka",
+      "ren",
+      "lector-priest"
+    ],
+    "relations": [
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "practiced_at",
+        "note": "Temple ritual is where operative power is used institutionally."
+      },
+      {
+        "target": "festivals-oracles-and-personal-piety",
+        "type": "practiced_at",
+        "note": "Household and healing practice uses the same power."
+      },
+      {
+        "target": "contested-interpretations",
+        "type": "contested_by",
+        "note": "Modern readings that separate magic from religion are argued with there."
+      }
+    ]
+  },
+  "personhood-and-the-afterlife": {
+    "aliases": [
+      "Body, name, ka, ba, and akh",
+      "The parts of a person"
+    ],
+    "entities": [
+      "khat",
+      "ib",
+      "ren",
+      "shut",
+      "ka",
+      "ba",
+      "akh"
+    ],
+    "relations": [
+      {
+        "target": "death-funeral-and-the-dead",
+        "type": "restores",
+        "note": "Funerary ritual addresses each aspect named here."
+      },
+      {
+        "target": "coffin-texts",
+        "type": "appears_in",
+        "note": "Coffin Text spells name integrity, mobility, and provisioning directly."
+      }
+    ]
+  },
+  "creation-traditions": {
+    "aliases": [
+      "Cosmogonies",
+      "Creation accounts"
+    ],
+    "places": [
+      "heliopolis",
+      "memphis",
+      "hermopolis",
+      "esna",
+      "elephantine"
+    ],
+    "entities": [
+      "nun",
+      "ennead",
+      "ogdoad",
+      "memphite-theology"
+    ],
+    "relations": [
+      {
+        "target": "how-egyptian-religion-works",
+        "type": "part_of",
+        "note": "Several accounts standing at once is the method that page describes."
+      },
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "maintains",
+        "note": "Temple ritual repeats creation rather than commemorating it."
+      }
+    ]
+  },
+  "solar-cycle": {
+    "aliases": [
+      "Re's daily circuit"
+    ],
+    "entities": [
+      "duat",
+      "isfet",
+      "ba"
+    ],
+    "relations": [
+      {
+        "target": "amduat-and-book-of-gates",
+        "type": "depicted_in",
+        "note": "The Underworld Books map the night this page summarises."
+      },
+      {
+        "target": "osiris-isis-horus-and-set",
+        "type": "associated_with",
+        "note": "Re and Osiris meet at the deepest hour of the night."
+      }
+    ]
+  },
+  "osiris-isis-horus-and-set": {
+    "aliases": [
+      "The Osiris myth",
+      "Osirian family"
+    ],
+    "places": [
+      "abydos",
+      "busiris",
+      "edfu"
+    ],
+    "entities": [
+      "osiris",
+      "isis",
+      "horus",
+      "set",
+      "plutarch-isis-osiris",
+      "king"
+    ],
+    "relations": [
+      {
+        "target": "set",
+        "type": "part_of",
+        "note": "Set is one party in the conflict described here."
+      },
+      {
+        "target": "death-funeral-and-the-dead",
+        "type": "precedes",
+        "note": "The Osirian pattern is applied to ordinary dead in funerary practice."
+      },
+      {
+        "target": "contested-interpretations",
+        "type": "contested_by",
+        "note": "Plutarch's continuous narrative is often read back into much earlier material."
+      }
+    ]
+  },
+  "deity-field-guide": {
+    "aliases": [
+      "Gods and goddesses",
+      "Deity guide"
+    ],
+    "relations": [
+      {
+        "target": "visual-decoder",
+        "type": "part_of",
+        "note": "Iconography listed here is decoded sign by sign there."
+      }
+    ]
+  },
+  "set": {
+    "aliases": [
+      "Seth",
+      "God of confusion"
+    ],
+    "places": [
+      "deshret",
+      "edfu"
+    ],
+    "periods": [
+      "second-intermediate",
+      "late-period"
+    ],
+    "entities": [
+      "set",
+      "kemet-deshret"
+    ],
+    "relations": [
+      {
+        "target": "osiris-isis-horus-and-set",
+        "type": "part_of",
+        "note": "Set's role in the succession conflict."
+      },
+      {
+        "target": "sacred-geography",
+        "type": "associated_with",
+        "note": "His domain is the desert margin: a position in the order rather than simple evil."
+      }
+    ]
+  },
+  "sobek": {
+    "aliases": [
+      "Crocodile god"
+    ],
+    "places": [
+      "fayum",
+      "kom-ombo",
+      "elephantine"
+    ],
+    "periods": [
+      "middle-kingdom",
+      "ptolemaic"
+    ],
+    "entities": [
+      "sobek"
+    ],
+    "relations": [
+      {
+        "target": "sacred-geography",
+        "type": "practiced_at",
+        "note": "His cult concentrates where the water spreads out."
+      }
+    ]
+  },
+  "temples-priests-and-offerings": {
+    "aliases": [
+      "Temple cult",
+      "Priesthood"
+    ],
+    "places": [
+      "thebes",
+      "memphis",
+      "edfu"
+    ],
+    "entities": [
+      "daily-temple-service",
+      "purity",
+      "hem-netjer",
+      "wab",
+      "lector-priest",
+      "temple-singer",
+      "king",
+      "maat"
+    ],
+    "relations": [
+      {
+        "target": "festivals-oracles-and-personal-piety",
+        "type": "contrasts_with",
+        "note": "Restricted daily service against the festival days when access opened."
+      },
+      {
+        "target": "heka-and-operative-ritual",
+        "type": "draws_from",
+        "note": "Ritual efficacy depends on the power described there."
+      }
+    ]
+  },
+  "festivals-oracles-and-personal-piety": {
+    "aliases": [
+      "Personal piety",
+      "Processions and oracles"
+    ],
+    "places": [
+      "thebes",
+      "deir-el-medina"
+    ],
+    "periods": [
+      "new-kingdom",
+      "evidence-personal-piety"
+    ],
+    "entities": [
+      "opet-festival",
+      "oracle-consultation",
+      "votive-dedication",
+      "dream-incubation",
+      "artisan"
+    ],
+    "relations": [
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "contrasts_with",
+        "note": "Where the sanctuary closed, the procession opened."
+      },
+      {
+        "target": "death-funeral-and-the-dead",
+        "type": "associated_with",
+        "note": "Relationships with the dead run through the same household practice."
+      }
+    ]
+  },
+  "death-funeral-and-the-dead": {
+    "aliases": [
+      "Funerary practice",
+      "Mummification and burial"
+    ],
+    "places": [
+      "west",
+      "thebes"
+    ],
+    "entities": [
+      "mummification",
+      "opening-of-the-mouth",
+      "letters-to-the-dead",
+      "embalmer",
+      "ka",
+      "akh"
+    ],
+    "relations": [
+      {
+        "target": "personhood-and-the-afterlife",
+        "type": "restores",
+        "note": "Ritual works on the aspects of a person set out there."
+      },
+      {
+        "target": "funerary-text-tradition",
+        "type": "draws_from",
+        "note": "The texts placed with the dead are surveyed there."
+      }
+    ]
+  },
+  "funerary-text-tradition": {
+    "aliases": [
+      "Overlapping corpora",
+      "The shingles model"
+    ],
+    "periods": [
+      "corpus-pyramid-texts",
+      "corpus-coffin-texts",
+      "corpus-underworld-books",
+      "corpus-book-of-the-dead"
+    ],
+    "relations": [
+      {
+        "target": "pyramid-texts",
+        "type": "part_of"
+      },
+      {
+        "target": "coffin-texts",
+        "type": "part_of"
+      },
+      {
+        "target": "book-of-the-dead",
+        "type": "part_of"
+      },
+      {
+        "target": "amduat-and-book-of-gates",
+        "type": "part_of"
+      }
+    ]
+  },
+  "pyramid-texts": {
+    "aliases": [
+      "PT"
+    ],
+    "periods": [
+      "old-kingdom",
+      "corpus-pyramid-texts"
+    ],
+    "places": [
+      "memphis"
+    ],
+    "entities": [
+      "pyramid-texts-corpus",
+      "king"
+    ],
+    "relations": [
+      {
+        "target": "coffin-texts",
+        "type": "precedes",
+        "note": "Earlier in surviving evidence, and not replaced by it."
+      },
+      {
+        "target": "contested-interpretations",
+        "type": "contested_by",
+        "note": "Naydler reads the spells as records of living initiatory experience."
+      }
+    ]
+  },
+  "coffin-texts": {
+    "aliases": [
+      "CT"
+    ],
+    "periods": [
+      "middle-kingdom",
+      "corpus-coffin-texts"
+    ],
+    "entities": [
+      "coffin-texts-corpus",
+      "ka",
+      "ba"
+    ],
+    "relations": [
+      {
+        "target": "book-of-the-dead",
+        "type": "precedes",
+        "note": "Material continues into the later corpus rather than stopping."
+      }
+    ]
+  },
+  "amduat-and-book-of-gates": {
+    "aliases": [
+      "Underworld Books",
+      "The twelve hours"
+    ],
+    "periods": [
+      "new-kingdom",
+      "corpus-underworld-books"
+    ],
+    "places": [
+      "thebes"
+    ],
+    "entities": [
+      "amduat-corpus",
+      "book-of-gates-corpus",
+      "duat"
+    ],
+    "relations": [
+      {
+        "target": "solar-cycle",
+        "type": "depicted_in",
+        "note": "These compositions map the night crossing."
+      }
+    ]
+  },
+  "book-of-the-dead": {
+    "aliases": [
+      "Book of Going Forth by Day",
+      "BD"
+    ],
+    "periods": [
+      "new-kingdom",
+      "corpus-book-of-the-dead"
+    ],
+    "entities": [
+      "book-of-the-dead-corpus",
+      "judgment",
+      "ib"
+    ],
+    "relations": [
+      {
+        "target": "book-of-the-dead-plate-30",
+        "type": "part_of",
+        "note": "Plate 30 opens Chapter 125 within this corpus."
+      }
+    ]
+  },
+  "book-of-the-dead-plate-30": {
+    "aliases": [
+      "Chapter 125",
+      "Hall of the Two Truths"
+    ],
+    "periods": [
+      "new-kingdom"
+    ],
+    "places": [
+      "mendes",
+      "busiris"
+    ],
+    "entities": [
+      "judgment",
+      "ib",
+      "osiris",
+      "isis",
+      "anubis"
+    ],
+    "relations": [
+      {
+        "target": "visual-decoder",
+        "type": "draws_from",
+        "note": "The scene is read with the same identification method."
+      }
+    ]
+  },
+  "ptahhotep-and-ethical-life": {
+    "aliases": [
+      "The Teaching of Ptahhotep",
+      "Maxims"
+    ],
+    "entities": [
+      "ptahhotep-text",
+      "maat"
+    ],
+    "relations": [
+      {
+        "target": "maat-isfet-and-kingship",
+        "type": "maintains",
+        "note": "Practical conduct as the human share of maat."
+      }
+    ]
+  },
+  "amarna-and-late-transformations": {
+    "aliases": [
+      "Atenism",
+      "Akhenaten"
+    ],
+    "periods": [
+      "amarna",
+      "ptolemaic",
+      "roman"
+    ],
+    "places": [
+      "amarna"
+    ],
+    "entities": [
+      "aten",
+      "ren",
+      "pgm-pdm"
+    ],
+    "relations": [
+      {
+        "target": "chronology",
+        "type": "changes_during",
+        "note": "The sharpest institutional break in the period table."
+      },
+      {
+        "target": "temples-priests-and-offerings",
+        "type": "threatens",
+        "note": "Closing Amun's institutions redirected the economy of cult."
+      }
+    ]
+  },
+  "blue-water-lily-research": {
+    "aliases": [
+      "Nymphaea",
+      "Lotus"
+    ],
+    "relations": [
+      {
+        "target": "contested-interpretations",
+        "type": "contested_by",
+        "note": "Pharmacological claims are weighed against the evidence there."
+      }
+    ]
+  },
+  "contested-interpretations": {
+    "aliases": [
+      "Fringe readings",
+      "Disputed claims"
+    ],
+    "relations": [
+      {
+        "target": "pyramid-texts",
+        "type": "contested_by",
+        "note": "Naydler's shamanic reading of the corpus."
+      },
+      {
+        "target": "blue-water-lily-research",
+        "type": "contested_by",
+        "note": "Entheogenic readings of the water lily."
+      }
+    ]
+  },
+  "visual-decoder": {
+    "aliases": [
+      "Iconography key",
+      "How to read a scene"
+    ],
+    "relations": [
+      {
+        "target": "deity-field-guide",
+        "type": "draws_from",
+        "note": "The deity table supplies most of the identifications."
+      }
+    ]
+  },
+  "glossary": {
+    "aliases": [
+      "Definitions",
+      "Terms"
+    ]
+  },
+  "egypt-trip-field-guide": {
+    "aliases": [
+      "Site guide",
+      "Museum guide"
+    ],
+    "places": [
+      "thebes",
+      "abydos",
+      "edfu",
+      "kom-ombo",
+      "elephantine",
+      "memphis",
+      "dendera"
+    ],
+    "relations": [
+      {
+        "target": "visual-decoder",
+        "type": "draws_from",
+        "note": "What to look at, and how to read it."
+      }
+    ]
+  }
+}

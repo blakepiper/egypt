@@ -3,6 +3,16 @@ type: text-study
 tags: [ptahhotep, wisdom, ethics, maat]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [The Teaching of Ptahhotep, Maxims]
+entities: [ptahhotep-text, maat]
+relations:
+  - target: maat-isfet-and-kingship
+    type: maintains
+    note: "Practical conduct as the human share of maat."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Ptahhotep and ethical life

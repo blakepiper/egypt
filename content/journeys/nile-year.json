@@ -1,0 +1,31 @@
+{
+  "id": "nile-year",
+  "title": "The Nile year",
+  "subtitle": "Three seasons as a working lens, not a calendar you could set a watch by",
+  "question": "How did the river's year organise labour, institutions, and religious attention?",
+  "sourcePages": ["sacred-geography", "sobek", "chronology"],
+  "sourceIds": ["C02", "C03"],
+  "period": "Pharaonic Egypt broadly; the pattern is a long-term structure rather than a dated event",
+  "place": "The Nile valley and Delta",
+  "evidenceBoundary": "Akhet, Peret, and Shemu are an Egyptian administrative and agricultural scheme. Flood height and timing varied year to year, a bad flood meant famine, and the civil calendar drifted against the actual river. Modern dams have ended the annual inundation entirely, so no living observation can stand in for it.",
+  "reconstruction": "Season names and their agricultural content come from the archive's geography and chronology material. Labour details are the general pattern described there, not a record of any one village's year.",
+  "accessibleSummary": "Three seasons in order, each with its approximate months, river state, agricultural work, and religious associations, given as text.",
+  "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "pending-human" },
+  "scenes": [
+    { "id": "akhet", "title": "Akhet — inundation", "kicker": "Roughly July to October", "evidence": "scholarship", "sourceIds": ["C02", "C03"],
+      "body": "Floodwater covered the fields and left silt behind. Fields could not be worked, so labour moved to repair, transport, construction, and institutional service. Hapi, the personified inundation, is shown heavy-bodied with aquatic plants, binding the Two Lands together.",
+      "detail": ["A high flood destroyed; a low flood starved. Neither was rare.", "Egyptians associated the water's origin with caverns near the First Cataract."] },
+    { "id": "peret", "title": "Peret — emergence", "kicker": "Roughly November to February", "evidence": "scholarship", "sourceIds": ["C02", "C03"],
+      "body": "As the water fell, land came back out and was sown. Boundaries had to be re-established, canals maintained, and assessments made. Emergence is also the vocabulary of creation: land appearing out of water is the founding image of the whole system.",
+      "detail": ["The same word family describes the primeval mound rising from Nun.", "Osiris festivals in this part of the year tie germination to regeneration."] },
+    { "id": "shemu", "title": "Shemu — harvest and low water", "kicker": "Roughly March to June", "evidence": "scholarship", "sourceIds": ["C02", "C03"],
+      "body": "Grain was reaped, threshed, measured, and stored. Measurement is a religious act here as much as an economic one: assessment, taxation, and temple provisioning all run through it. Then the river dropped to its lowest and the year waited.",
+      "detail": ["Temple estates were provisioned from this cycle.", "The waiting is the point: the flood's return was needed, not guaranteed."] },
+    { "id": "sobek", "title": "The river's own inhabitants", "kicker": "Sobek and the water", "evidence": "scholarship", "sourceIds": ["C20", "C02"],
+      "body": "Sobek is a crocodile in a river that had crocodiles in it. He carries water, fertility, aggression, and royal power at once, and his cult concentrates where the water spreads out — the Fayum marshes and, later, Kom Ombo.",
+      "detail": ["The Fayum's Middle Kingdom royal patronage is the clearest case of ecology and politics arriving together."] },
+    { "id": "modern", "title": "What ended", "kicker": "A modern note", "evidence": "scholarship", "sourceIds": ["C02"],
+      "body": "The annual inundation no longer happens. Dam construction in the twentieth century replaced it with managed release. Anything you can watch on the river today is a modern hydrological system, and this journey is a reconstruction of a vanished one.",
+      "detail": ["This is stated here so that no image or footage in the archive is mistaken for the ancient cycle."] }
+  ]
+}

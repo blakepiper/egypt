@@ -3,11 +3,23 @@ type: research-method
 tags: [source-criticism, contested, pseudoscience, interpretation]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Fringe readings, Disputed claims]
+relations:
+  - target: pyramid-texts
+    type: contested_by
+    note: "Naydler's shamanic reading of the corpus."
+  - target: blue-water-lily-research
+    type: contested_by
+    note: "Entheogenic readings of the water lily."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Contested interpretations
 
-The archive preserves minority, speculative, apologetic, and pseudoscientific readings alongside mainstream scholarship. Keeping them is valuable: they show how Egyptian religion attracts modern meaning-making. Keeping them clearly labeled is essential.
+The archive preserves minority, speculative, apologetic, and pseudoscientific readings alongside mainstream scholarship. They show how Egyptian religion attracts modern meaning-making, but they must remain clearly labeled.
 
 ## Evidence ladder
 

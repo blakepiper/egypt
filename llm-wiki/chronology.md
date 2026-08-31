@@ -3,6 +3,19 @@ type: concept
 tags: [chronology, history, continuity-change]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Periods, Dynasties]
+periods: [old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
+relations:
+  - target: funerary-text-tradition
+    type: precedes
+    note: "The simplified funerary sequence given here is developed in full on that page."
+  - target: amarna-and-late-transformations
+    type: changes_during
+    note: "The Amarna episode and the Greco-Roman afterlife are the sharpest changes in this table."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Chronology

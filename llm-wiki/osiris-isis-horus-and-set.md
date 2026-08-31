@@ -3,11 +3,30 @@ type: topic
 tags: [osiris, isis, horus, set, myth, kingship]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [The Osiris myth, Osirian family]
+places: [abydos, busiris, edfu]
+entities: [osiris, isis, horus, set, plutarch-isis-osiris, king]
+relations:
+  - target: set
+    type: part_of
+    note: "Set is one party in the conflict described here."
+  - target: death-funeral-and-the-dead
+    type: precedes
+    note: "The Osirian pattern is applied to ordinary dead in funerary practice."
+  - target: contested-interpretations
+    type: contested_by
+    note: "Plutarch's continuous narrative is often read back into much earlier material."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Osiris, Isis, Horus, and Set
 
 There is no single canonical Egyptian “Osiris myth.” The familiar continuous plot is a modern synthesis of ritual allusions, hymns, literary episodes, temple traditions, and Plutarch's much later Greek narrative.
+
+!media[isis-osiris-horus-triad]
 
 ## The durable pattern
 

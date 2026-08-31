@@ -1,0 +1,48 @@
+[
+  { "id": "renewable-continuity", "title": "Renewable continuity", "blurb": "The course's central argument, followed through the five places it does most of its work.",
+    "steps": [
+      { "slug": "start-here", "why": "States the pattern: order emerges, a threat fractures it, right action restores it, and the work repeats." },
+      { "slug": "creation-traditions", "why": "Creation is the first instance of the pattern and never a finished event." },
+      { "slug": "solar-cycle", "why": "The sun performs the same restoration every night." },
+      { "slug": "maat-isfet-and-kingship", "why": "Kingship and ethics are the human share of the same maintenance." },
+      { "slug": "personhood-and-the-afterlife", "why": "Death poses the pattern at the scale of a single person." } ] },
+  { "id": "creation-to-temple", "title": "From creation to daily temple service", "blurb": "How a cosmogony becomes a repeated morning routine performed by named officials.",
+    "steps": [
+      { "slug": "creation-traditions", "why": "Local traditions describe how differentiated life began." },
+      { "slug": "how-egyptian-religion-works", "why": "Explains why several accounts could stand at once without a winner." },
+      { "slug": "temples-priests-and-offerings", "why": "The temple models the created world and re-enacts its maintenance daily." },
+      { "slug": "heka-and-operative-ritual", "why": "Names the effective power the rite depends on." } ] },
+  { "id": "re-through-night", "title": "Re through night and day", "blurb": "The solar circuit from sunset to sunrise, and the compositions that map it.",
+    "steps": [
+      { "slug": "solar-cycle", "why": "The cycle in outline, with its forms of the sun." },
+      { "slug": "amduat-and-book-of-gates", "why": "The royal Underworld Books divide the night into hours and gates." },
+      { "slug": "sacred-geography", "why": "Locates the Duat among sky, west, water, and tomb without flattening them into one map." } ] },
+  { "id": "osiris-succession", "title": "Osiris, succession, death, and regeneration", "blurb": "A family conflict that carries kingship, mourning, and the afterlife.",
+    "steps": [
+      { "slug": "osiris-isis-horus-and-set", "why": "The core relationships and the conflict that drives them." },
+      { "slug": "set", "why": "Set is not a constant villain; his reputation changes across periods." },
+      { "slug": "death-funeral-and-the-dead", "why": "Funeral ritual applies the Osirian pattern to ordinary dead." },
+      { "slug": "book-of-the-dead", "why": "Judgment and vindication complete the sequence for an individual." } ] },
+  { "id": "maat-across", "title": "Maat across ethics, kingship, and ritual", "blurb": "One word doing work in three registers.",
+    "steps": [
+      { "slug": "maat-isfet-and-kingship", "why": "Defines the pair and the royal responsibility." },
+      { "slug": "ptahhotep-and-ethical-life", "why": "Turns maat into advice about listening, restraint, and speech." },
+      { "slug": "temples-priests-and-offerings", "why": "Presenting maat is a physical offering in temple ritual." },
+      { "slug": "book-of-the-dead-plate-30", "why": "The heart is weighed against maat at the threshold." } ] },
+  { "id": "personhood-parts", "title": "Body, name, ka, ba, and akh", "blurb": "Why 'soul' is the wrong translation, and what each aspect needed.",
+    "steps": [
+      { "slug": "personhood-and-the-afterlife", "why": "The whole set and the problems each aspect solves." },
+      { "slug": "death-funeral-and-the-dead", "why": "Ritual addresses each aspect in a specific way." },
+      { "slug": "coffin-texts", "why": "Spells for integrity, mobility, and provisioning name these needs directly." } ] },
+  { "id": "nile-geography", "title": "Nile, sacred geography, Sobek, and Hapi", "blurb": "Religion read from the shape of the land and the behaviour of the river.",
+    "steps": [
+      { "slug": "sacred-geography", "why": "Orientation first: upstream is south, and the west belongs to the dead." },
+      { "slug": "sobek", "why": "A deity whose range follows water, marsh, and royal patronage." },
+      { "slug": "egypt-trip-field-guide", "why": "Takes the same geography to specific standing sites." } ] },
+  { "id": "funerary-corpora", "title": "Pyramid Texts to Coffin Texts to Book of the Dead", "blurb": "Overlapping corpora, kept overlapping. The ladder model is the thing to unlearn.",
+    "steps": [
+      { "slug": "funerary-text-tradition", "why": "States why replacement is the wrong model." },
+      { "slug": "pyramid-texts", "why": "The earliest surviving corpus, and the debate about what it was for." },
+      { "slug": "coffin-texts", "why": "Wider access, new media, continuing material." },
+      { "slug": "book-of-the-dead", "why": "Individual commissions that still reuse much older spells." } ] }
+]

@@ -3,11 +3,25 @@ type: deity
 tags: [sobek, crocodile, fayum, kom-ombo]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Crocodile god]
+periods: [middle-kingdom, ptolemaic]
+places: [fayum, kom-ombo, elephantine]
+entities: [sobek]
+relations:
+  - target: sacred-geography
+    type: practiced_at
+    note: "His cult concentrates where the water spreads out."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Sobek
 
 Sobek concentrates the ambivalence of the Nile crocodile: dangerous predator, master of water, sexual and vegetative potency, royal force, and protective god.
+
+!media[falcon-headed-crocodile]
 
 ## Identity and iconography
 

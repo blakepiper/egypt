@@ -1,3 +1,14 @@
 raw/
 llm-wiki.md
+# Third-party reference images with unverified rights. The repository is public,
+# so committing them would redistribute them. See docs/REFERENCE_ASSETS.md.
+design-inspiration/
 .DS_Store
+node_modules/
+.cache/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+# Generated at build time from llm-wiki/ and content/. A clean build recreates it.
+src/generated/

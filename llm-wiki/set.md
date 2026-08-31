@@ -3,6 +3,21 @@ type: deity
 tags: [set, deity, desert, kingship, conflict]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Seth, God of confusion]
+periods: [second-intermediate, late-period]
+places: [deshret, edfu]
+entities: [set, kemet-deshret]
+relations:
+  - target: osiris-isis-horus-and-set
+    type: part_of
+    note: "Set's role in the succession conflict."
+  - target: sacred-geography
+    type: associated_with
+    note: "His domain is the desert margin: a position in the order rather than simple evil."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Set

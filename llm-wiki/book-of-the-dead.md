@@ -3,11 +3,24 @@ type: text-study
 tags: [book-of-the-dead, papyrus-of-ani, judgment, new-kingdom]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Book of Going Forth by Day, BD]
+periods: [new-kingdom, corpus-book-of-the-dead]
+entities: [book-of-the-dead-corpus, judgment, ib]
+relations:
+  - target: book-of-the-dead-plate-30
+    type: part_of
+    note: "Plate 30 opens Chapter 125 within this corpus."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Book of the Dead
 
 The modern title “Book of the Dead” refers to a changing repertoire of compositions introduced in some manuscripts as “formulae for going out by day.” It was used from the New Kingdom into the Roman Period and is not a canonical narrative read from beginning to end. Modern chapter numbers began as editorial labels for particular manuscript sequences; they are not ancient universal ordering.
+
+!media[book-of-dead-chapters-100-129]
 
 ## Material form
 
@@ -34,7 +47,7 @@ The deceased enters the Hall of the Two Truths, praises Osiris, passes named arc
 
 The “negative confession” states wrongs the deceased has not done. It is neither a modern confession of guilt nor a transparent biography. It is moral self-presentation, purification, and operative speech before a divine tribunal.
 
-The heart's double role is crucial: it embodies authentic character but can testify against its owner. Heart spells ask it not to oppose the deceased. See [[personhood-and-the-afterlife]].
+The heart has a double role: it embodies authentic character but can testify against its owner. Heart spells ask it not to oppose the deceased. See [[personhood-and-the-afterlife]].
 
 ## Field of Reeds
 

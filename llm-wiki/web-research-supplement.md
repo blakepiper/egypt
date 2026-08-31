@@ -3,6 +3,10 @@ type: research-supplement
 tags: [web-research, museums, current-scholarship, verification]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # Web research supplement

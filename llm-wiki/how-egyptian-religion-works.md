@@ -3,6 +3,19 @@ type: concept
 tags: [method, myth, images, local-cults, worldview]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Plurality and local theology]
+entities: [syncretism, heka]
+relations:
+  - target: creation-traditions
+    type: maintains
+    note: "Several creation accounts standing at once is the clearest case of the plurality described here."
+  - target: temples-priests-and-offerings
+    type: appears_in
+    note: "Images, names, and ritual presence are worked out in temple practice."
+review:
+  factual: reviewed
+  humanizer: reviewed
+  media_rights: reviewed
 ---
 
 # How Egyptian religion works
