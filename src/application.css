@@ -251,6 +251,7 @@ a { color: inherit; }
 .entity-list__button { border: none; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; text-decoration: underline; }
 
 .path-list { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--archive-space-3); }
+.path-list__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--archive-space-2); }
 .path-list p { margin: var(--archive-space-1) 0 0; color: var(--archive-color-ink-muted); }
 
 .hub-columns { display: grid; gap: var(--archive-space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
@@ -528,7 +529,17 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .timeline__axis span { position: absolute; transform: translateX(-50%); font-size: var(--archive-text-xs); color: var(--archive-color-ink-muted); }
 .timeline__lane h2 { margin: 0; font-family: var(--archive-font-display); font-size: var(--archive-text-lg); }
 .timeline__lane-description { margin: var(--archive-space-1) 0 var(--archive-space-2); max-width: 70ch; color: var(--archive-color-ink-muted); font-size: var(--archive-text-sm); }
-.timeline__track { position: relative; min-width: 40rem; min-height: 7rem; border: var(--archive-border); border-radius: var(--archive-radius-sm); background-image: var(--archive-register-lines); background-size: 100% 1.75rem; }
+/* One quiet rule per band row. The register texture is a 4px pattern, which
+   fills a track this size with hard lines and swamps the bands. */
+.timeline__track {
+  position: relative; min-width: 40rem; min-height: 7.5rem;
+  border: var(--archive-border); border-radius: var(--archive-radius-sm);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 calc(1.75rem - 1px),
+    var(--archive-color-line-quiet) calc(1.75rem - 1px) 1.75rem
+  );
+}
 .timeline__band {
   position: absolute;
   min-height: 1.5rem;
@@ -676,6 +687,9 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .journey__frame > * { min-width: 0; }
 @media (min-width: 900px) { .journey__frame { grid-template-columns: 16rem minmax(0, 1fr); align-items: start; } }
 
+/* The frame is a two-column grid, so the status line and the scene it
+   describes share one column rather than splitting across both. */
+.journey__panel { display: grid; gap: var(--archive-space-2); min-width: 0; }
 .journey__steps ol { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--archive-space-1); }
 .journey__steps button {
   display: flex; align-items: center; gap: var(--archive-space-2); width: 100%;
@@ -703,10 +717,10 @@ html[data-motion='reduce'] .deep-zoom__canvas { transition: none; }
 .journey-route { display: grid; gap: var(--archive-space-4); }
 @media (min-width: 760px) { .journey-route { grid-template-columns: minmax(20rem, 1fr) minmax(16rem, 0.65fr); align-items: start; } }
 .journey-route__map { width: 100%; max-height: 34rem; border: var(--archive-border-strong); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-sunken); }
-.journey-route__river { fill: none; stroke: var(--atlas-water-bottom); stroke-width: 1.3; opacity: 0.45; }
-.journey-route__line { fill: none; stroke: var(--archive-color-primary); stroke-width: 0.8; stroke-dasharray: 2 1; }
-.journey-route__stop circle { fill: var(--archive-color-secondary); stroke: var(--archive-color-ink); stroke-width: 0.35; }
-.journey-route__stop text { fill: var(--archive-color-ink); font-family: var(--archive-font-ui); font-size: 2px; font-weight: 700; }
+.journey-route__river { fill: none; stroke: var(--atlas-water-bottom); opacity: 0.45; }
+.journey-route__line { fill: none; stroke: var(--archive-color-primary); }
+.journey-route__stop circle { fill: var(--archive-color-secondary); stroke: var(--archive-color-ink); }
+.journey-route__stop text { fill: var(--archive-color-ink); font-family: var(--archive-font-ui); font-weight: 700; paint-order: stroke; stroke: var(--archive-color-surface-sunken); stroke-width: 0.6px; }
 .journey-route__list { margin: 0; padding-left: 1.3em; display: grid; gap: var(--archive-space-2); }
 .journey-route__list li { padding-left: var(--archive-space-1); }
 .journey-route__list span { display: block; margin-top: 0.2rem; color: var(--archive-color-ink-muted); font-size: var(--archive-text-sm); }

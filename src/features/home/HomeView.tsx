@@ -65,8 +65,10 @@ export function HomeView() {
         <ul className="path-list">
           {allPaths.map((path) => (
             <li key={path.id}>
-              <Link to={`/graph/?path=${path.id}`}><strong>{path.title}</strong></Link>
-              <OriginBadge origin={path.origin} />
+              <span className="path-list__head">
+                <Link to={`/graph/?path=${path.id}`}><strong>{path.title}</strong></Link>
+                <OriginBadge origin={path.origin} />
+              </span>
               <p>{path.blurb}</p>
             </li>
           ))}

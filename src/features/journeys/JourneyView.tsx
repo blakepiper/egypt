@@ -121,6 +121,7 @@ export function JourneyView({ id }: { id: string }) {
           </ol>
         </nav>
 
+        <div className="journey__panel">
         <div className="journey__status" role="status" aria-live="polite">Stage {step + 1} of {journey.scenes.length}: {scene.title}. Day {scene.day ?? step + 1}; {scene.stopType?.replace(/-/g, ' ') ?? 'journey stop'}{scene.place ? `; ${scene.place}` : ''}. {scene.sourcePages?.length ?? 0} linked reading {scene.sourcePages?.length === 1 ? 'page' : 'pages'}.</div>
         <div className={`journey__scene ${prefersReducedMotion ? 'is-static' : ''}`} key={scene.id} id="journey-panel" role="tabpanel" aria-labelledby={`journey-tab-${scene.id}`} tabIndex={-1}>
           <span className="kicker">{scene.kicker}</span>
@@ -148,6 +149,7 @@ export function JourneyView({ id }: { id: string }) {
             <span>{step + 1} of {journey.scenes.length}</span>
             <Button variant="primary" onClick={() => setStep((current) => Math.min(journey.scenes.length - 1, current + 1))} disabled={step === journey.scenes.length - 1}>Next</Button>
           </div>
+        </div>
         </div>
       </div>
 
@@ -190,6 +192,40 @@ export function JourneyView({ id }: { id: string }) {
   );
 }
 
+// One journey covers a fraction of the country, so the sketch is cropped to its
+// own stops rather than drawn on a full-Egypt frame where they collapse into a
+// corner. Marker, label, and stroke sizes are derived from the crop, because a
+// fixed user-unit size renders differently once the frame changes scale.
+function routeFrame(places: { x: number; y: number }[]) {
+  const xs = places.map((place) => place.x);
+  const ys = places.map((place) => place.y);
+  const pad = 8;
+  let minX = Math.min(...xs) - pad;
+  let maxX = Math.max(...xs) + pad;
+  let minY = Math.min(...ys) - pad;
+  let maxY = Math.max(...ys) + pad;
+  // Hold the frame near the shape of the column it renders in. A north-south
+  // route would otherwise letterbox inside a wide box, and the spare width is
+  // what the side labels need anyway.
+  const ratio = 1.4;
+  const width = maxX - minX;
+  const height = maxY - minY;
+  if (width / height < ratio) {
+    const grow = (height * ratio - width) / 2;
+    minX -= grow; maxX += grow;
+  } else {
+    const grow = (width / ratio - height) / 2;
+    minY -= grow; maxY += grow;
+  }
+  const unit = Math.max(maxX - minX, maxY - minY);
+  return {
+    viewBox: `${minX} ${minY} ${maxX - minX} ${maxY - minY}`,
+    unit,
+    marker: unit * 0.018,
+    label: unit * 0.028,
+  };
+}
+
 /** A public-location route sketch. Unnamed or private scenes intentionally do not become markers. */
 function JourneyRouteMap({ journey }: { journey: (typeof allJourneys)[number] }) {
   const stops = journey.scenes.map((scene, index) => {
@@ -199,20 +235,33 @@ function JourneyRouteMap({ journey }: { journey: (typeof allJourneys)[number] })
   }).filter(Boolean) as { scene: (typeof journey.scenes)[number]; place: (typeof allPlaces)[number]; index: number }[];
   if (stops.length < 2) return null;
   const points = stops.map(({ place }) => `${place.x},${place.y}`).join(' ');
+  const frame = routeFrame(stops.map(({ place }) => place));
   return (
     <Section title="Public route sketch" description="The line follows the ordered public locations recorded for this journey. Scenes without a verified public place remain in the transcript and are not pinned.">
       <div className="journey-route">
-        <svg className="journey-route__map" viewBox="0 0 100 104" role="img" aria-labelledby="journey-route-title journey-route-description">
+        <svg className="journey-route__map" viewBox={frame.viewBox} role="img" aria-labelledby="journey-route-title journey-route-description">
           <title id="journey-route-title">Public locations along {journey.title}</title>
           <desc id="journey-route-description">A southbound schematic route through {stops.map(({ place }) => place.label).join(', ')}.</desc>
-          <path className="journey-route__river" d="M50 2 C 46 24, 54 40, 48 56 C 44 70, 54 82, 50 100" />
-          <polyline className="journey-route__line" points={points} />
-          {stops.map(({ scene, place, index }) => (
-            <g key={`${scene.id}-${place.id}`} className="journey-route__stop">
-              <circle cx={place.x} cy={place.y} r="2" />
-              <text x={place.x + (place.x < 50 ? 3 : -3)} y={place.y - 2} textAnchor={place.x < 50 ? 'start' : 'end'}>{index + 1}. {place.label}</text>
-            </g>
-          ))}
+          <path className="journey-route__river" d="M50 2 C 46 24, 54 40, 48 56 C 44 70, 54 82, 50 100" style={{ strokeWidth: frame.unit * 0.013 }} />
+          <polyline className="journey-route__line" points={points} style={{ strokeWidth: frame.unit * 0.008, strokeDasharray: `${frame.unit * 0.02} ${frame.unit * 0.01}` }} />
+          {stops.map(({ scene, place, index }) => {
+            // Labels alternate sides so consecutive stops on a nearly straight
+            // north-south line do not print on top of one another.
+            const toLeft = index % 2 === 1;
+            return (
+              <g key={`${scene.id}-${place.id}`} className="journey-route__stop">
+                <circle cx={place.x} cy={place.y} r={frame.marker} style={{ strokeWidth: frame.unit * 0.0035 }} />
+                <text
+                  x={place.x + (toLeft ? -frame.marker * 1.7 : frame.marker * 1.7)}
+                  y={place.y + frame.label * 0.35}
+                  textAnchor={toLeft ? 'end' : 'start'}
+                  style={{ fontSize: frame.label }}
+                >
+                  {index + 1}. {place.label}
+                </text>
+              </g>
+            );
+          })}
         </svg>
         <ol className="journey-route__list">
           {stops.map(({ scene, place, index }) => <li key={`${scene.id}-${place.id}`}><strong>Stage {index + 1}: {place.label}</strong><span>{scene.title}</span></li>)}
