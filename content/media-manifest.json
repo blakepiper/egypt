@@ -1,0 +1,23 @@
+[
+  {
+    "id": "stela-app-icon",
+    "kind": "image",
+    "file": "stela-app-icon.png",
+    "source": "Generated for this project",
+    "creator": "Project-generated pixel artwork",
+    "institution": null,
+    "objectId": null,
+    "license": "Project-owned, generated artwork",
+    "attribution": "The Living Archive",
+    "dateAccessed": "2026-08-30",
+    "period": [],
+    "place": [],
+    "caption": "A pixel-art stela used as the application identity mark.",
+    "alt": "A small pixel drawing of a rounded stela with three registers of marks.",
+    "transcript": null,
+    "status": "research-only",
+    "width": 512,
+    "height": 512,
+    "note": "Provisional. Its underlying reference and derivative-use status are unreviewed, so it is excluded from content routes and is used only as the browser icon. See docs/REFERENCE_ASSETS.md."
+  }
+]

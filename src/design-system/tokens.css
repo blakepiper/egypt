@@ -1,0 +1,134 @@
+/*
+ * The Living Archive design tokens
+ * Consume semantic --archive-color-* roles in components, not raw pigments.
+ */
+:root {
+  color-scheme: light;
+
+  /* Mineral and landscape palette */
+  --archive-pigment-carbon: #15282b;
+  --archive-pigment-papyrus: #f3e8cf;
+  --archive-pigment-limestone: #fff8e9;
+  --archive-pigment-sand: #d7bd89;
+  --archive-pigment-ochre: #b85f38;
+  --archive-pigment-madder: #8f3528;
+  --archive-pigment-faience: #65b9ac;
+  --archive-pigment-nile: #276f7a;
+  --archive-pigment-egyptian-blue: #1f4d74;
+  --archive-pigment-gold: #c8952e;
+  --archive-pigment-reed: #60734b;
+  --archive-pigment-duat: #101d2b;
+
+  /* Semantic roles */
+  --archive-color-ink: var(--archive-pigment-carbon);
+  --archive-color-ink-muted: #465355;
+  --archive-color-line: var(--archive-pigment-carbon);
+  --archive-color-line-quiet: #9c947f;
+  --archive-color-ground: #c1a874;
+  --archive-color-surface: var(--archive-pigment-papyrus);
+  --archive-color-surface-raised: var(--archive-pigment-limestone);
+  --archive-color-surface-sunken: #ddd0b5;
+  --archive-color-primary: var(--archive-pigment-nile);
+  --archive-color-primary-soft: #acd2cb;
+  --archive-color-secondary: var(--archive-pigment-ochre);
+  --archive-color-secondary-soft: #e8b898;
+  --archive-color-sacred: var(--archive-pigment-egyptian-blue);
+  --archive-color-gold: var(--archive-pigment-gold);
+  --archive-color-success: #356b51;
+  --archive-color-warning: #7e5010;
+  --archive-color-danger: var(--archive-pigment-madder);
+  --archive-color-focus: #114f71;
+  --archive-color-overlay: rgb(16 29 43 / 72%);
+  --archive-color-selection: #9dd4cc;
+
+  /* Type: platform fonts keep the static site dependency-free. */
+  --archive-font-display: Iowan Old Style, Palatino Linotype, Book Antiqua, Palatino, Georgia, serif;
+  --archive-font-reading: Charter, Bitstream Charter, Sitka Text, Cambria, Georgia, serif;
+  --archive-font-ui: Geneva, Verdana, system-ui, sans-serif;
+  --archive-font-data: Monaco, SFMono-Regular, Consolas, Liberation Mono, monospace;
+
+  --archive-text-xs: 0.6875rem;
+  --archive-text-sm: 0.75rem;
+  --archive-text-md: 0.875rem;
+  --archive-text-reading: 1.0625rem;
+  --archive-text-lg: 1.25rem;
+  --archive-text-xl: clamp(1.5rem, 3vw, 2rem);
+  --archive-text-2xl: clamp(2.25rem, 7vw, 5.25rem);
+  --archive-leading-tight: 1.05;
+  --archive-leading-ui: 1.35;
+  --archive-leading-reading: 1.72;
+  --archive-tracking-caps: 0.11em;
+
+  /* 4px spatial rhythm */
+  --archive-space-1: 0.25rem;
+  --archive-space-2: 0.5rem;
+  --archive-space-3: 0.75rem;
+  --archive-space-4: 1rem;
+  --archive-space-5: 1.5rem;
+  --archive-space-6: 2rem;
+  --archive-space-7: 3rem;
+  --archive-space-8: 4rem;
+
+  --archive-border: 1px solid var(--archive-color-line);
+  --archive-border-strong: 2px solid var(--archive-color-line);
+  --archive-radius-sm: 2px;
+  --archive-radius-md: 5px;
+  --archive-radius-arch: 999px 999px 4px 4px;
+  --archive-shadow-sm: 2px 2px 0 var(--archive-color-line);
+  --archive-shadow-md: 4px 4px 0 var(--archive-color-line);
+  --archive-shadow-lg: 7px 7px 0 var(--archive-color-line);
+
+  --archive-duration-fast: 100ms;
+  --archive-duration-flow: 700ms;
+  --archive-duration-unfold: 520ms;
+  --archive-duration-procession: 460ms;
+  --archive-duration-reveal: 380ms;
+  --archive-duration-cycle: 18s;
+  --archive-ease-mechanical: steps(4, end);
+  --archive-ease-flow: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --archive-dither: repeating-conic-gradient(var(--archive-color-line) 0 25%, transparent 0 50%);
+  --archive-dither-size: 3px 3px;
+  --archive-register-lines: repeating-linear-gradient(
+    to bottom,
+    var(--archive-color-line) 0 1px,
+    transparent 1px 4px
+  );
+  --archive-container: 92rem;
+  --archive-reading-width: 68ch;
+  --archive-control-height: 2.25rem;
+  --archive-z-sticky: 1000;
+  --archive-z-dialog: 2000;
+}
+
+:root[data-theme='duat'] {
+  color-scheme: dark;
+  --archive-color-ink: #f5e7c6;
+  --archive-color-ink-muted: #b8b59f;
+  --archive-color-line: #e8d6ad;
+  --archive-color-line-quiet: #665f53;
+  --archive-color-ground: #07141d;
+  --archive-color-surface: #11242c;
+  --archive-color-surface-raised: #19313a;
+  --archive-color-surface-sunken: #091920;
+  --archive-color-primary: #72c4bd;
+  --archive-color-primary-soft: #285852;
+  --archive-color-secondary: #e28a59;
+  --archive-color-secondary-soft: #643d2c;
+  --archive-color-sacred: #84add4;
+  --archive-color-gold: #e4b756;
+  --archive-color-success: #77bc91;
+  --archive-color-warning: #edc06a;
+  --archive-color-danger: #f09280;
+  --archive-color-focus: #86d9d2;
+  --archive-color-overlay: rgb(2 8 13 / 82%);
+  --archive-color-selection: #285852;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --archive-duration-fast: 0ms;
+    --archive-duration-flow: 0ms;
+    --archive-duration-cycle: 0ms;
+  }
+}

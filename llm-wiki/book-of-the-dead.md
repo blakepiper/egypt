@@ -3,6 +3,13 @@ type: text-study
 tags: [book-of-the-dead, papyrus-of-ani, judgment, new-kingdom]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Book of Going Forth by Day, BD]
+periods: [new-kingdom, corpus-book-of-the-dead]
+entities: [book-of-the-dead-corpus, judgment, ib]
+relations:
+  - target: book-of-the-dead-plate-30
+    type: part_of
+    note: "Plate 30 opens Chapter 125 within this corpus."
 ---
 
 # Book of the Dead

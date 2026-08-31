@@ -3,6 +3,16 @@ type: topic
 tags: [death, funeral, mummification, tombs, ancestors]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Funerary practice, Mummification and burial]
+places: [west, thebes]
+entities: [mummification, opening-of-the-mouth, letters-to-the-dead, embalmer, ka, akh]
+relations:
+  - target: personhood-and-the-afterlife
+    type: restores
+    note: "Ritual works on the aspects of a person set out there."
+  - target: funerary-text-tradition
+    type: draws_from
+    note: "The texts placed with the dead are surveyed there."
 ---
 
 # Death, funeral, and the dead

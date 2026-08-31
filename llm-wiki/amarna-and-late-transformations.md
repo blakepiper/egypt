@@ -3,6 +3,17 @@ type: topic
 tags: [amarna, aten, greco-roman, change]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Atenism, Akhenaten]
+periods: [amarna, ptolemaic, roman]
+places: [amarna]
+entities: [aten, ren, pgm-pdm]
+relations:
+  - target: chronology
+    type: changes_during
+    note: "The sharpest institutional break in the period table."
+  - target: temples-priests-and-offerings
+    type: threatens
+    note: "Closing Amun's institutions redirected the economy of cult."
 ---
 
 # Amarna and late transformations

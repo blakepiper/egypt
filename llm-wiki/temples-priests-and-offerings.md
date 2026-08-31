@@ -3,6 +3,16 @@ type: topic
 tags: [temples, priests, offerings, ritual, economy]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Temple cult, Priesthood]
+places: [thebes, memphis, edfu]
+entities: [daily-temple-service, purity, hem-netjer, wab, lector-priest, temple-singer, king, maat]
+relations:
+  - target: festivals-oracles-and-personal-piety
+    type: contrasts_with
+    note: "Restricted daily service against the festival days when access opened."
+  - target: heka-and-operative-ritual
+    type: draws_from
+    note: "Ritual efficacy depends on the power described there."
 ---
 
 # Temples, priests, and offerings

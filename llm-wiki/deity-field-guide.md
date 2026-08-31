@@ -3,6 +3,11 @@ type: reference
 tags: [gods, iconography, travel, exam-review]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Gods and goddesses, Deity guide]
+relations:
+  - target: visual-decoder
+    type: part_of
+    note: "Iconography listed here is decoded sign by sign there."
 ---
 
 # Deity field guide

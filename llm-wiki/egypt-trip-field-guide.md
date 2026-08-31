@@ -3,6 +3,12 @@ type: travel-guide
 tags: [travel, sites, museums, field-guide]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Site guide, Museum guide]
+places: [thebes, abydos, edfu, kom-ombo, elephantine, memphis, dendera]
+relations:
+  - target: visual-decoder
+    type: draws_from
+    note: "What to look at, and how to read it."
 ---
 
 # Egypt trip field guide

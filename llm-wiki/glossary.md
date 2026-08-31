@@ -3,6 +3,7 @@ type: reference
 tags: [glossary, vocabulary, exam-review]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Definitions, Terms]
 ---
 
 # Glossary

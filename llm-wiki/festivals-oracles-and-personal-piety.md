@@ -3,6 +3,17 @@ type: topic
 tags: [festivals, oracles, personal-piety, dreams, votives]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Personal piety, Processions and oracles]
+periods: [new-kingdom, evidence-personal-piety]
+places: [thebes, deir-el-medina]
+entities: [opet-festival, oracle-consultation, votive-dedication, dream-incubation, artisan]
+relations:
+  - target: temples-priests-and-offerings
+    type: contrasts_with
+    note: "Where the sanctuary closed, the procession opened."
+  - target: death-funeral-and-the-dead
+    type: associated_with
+    note: "Relationships with the dead run through the same household practice."
 ---
 
 # Festivals, oracles, and personal piety

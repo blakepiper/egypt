@@ -1,0 +1,10 @@
+[
+  { "id": "satet", "kind": "deity", "label": "Satet", "aliases": ["Satet", "Satis"],
+    "summary": "A goddess of the First Cataract region, named in the archive as part of the Elephantine triad with Khnum and Anuket.",
+    "evidence": "scholarship", "slug": "deity-field-guide", "sourceIds": ["C02"],
+    "relations": [ { "target": "elephantine", "type": "practiced_at" }, { "target": "khnum", "type": "associated_with", "note": "Elephantine triad: Khnum, Satet, and Anuket." } ] },
+  { "id": "anuket", "kind": "deity", "label": "Anuket", "aliases": ["Anuket", "Anukis"],
+    "summary": "The third member of the Elephantine triad, associated with the cataract waters at the imagined source of the inundation.",
+    "evidence": "scholarship", "slug": "deity-field-guide", "sourceIds": ["C02"],
+    "relations": [ { "target": "elephantine", "type": "practiced_at" }, { "target": "khnum", "type": "associated_with", "note": "Elephantine triad: Khnum, Satet, and Anuket." } ] }
+]

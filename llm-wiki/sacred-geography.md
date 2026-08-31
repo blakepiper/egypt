@@ -3,6 +3,19 @@ type: concept
 tags: [geography, nile, duat, cult-centers]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Kemet and Deshret, Black Land and Red Land]
+places: [delta, heliopolis, memphis, thebes, abydos, edfu, kom-ombo, elephantine, deshret, west]
+entities: [nun, duat, kemet-deshret]
+relations:
+  - target: sobek
+    type: associated_with
+    note: "Sobek's range follows the water this page maps."
+  - target: death-funeral-and-the-dead
+    type: associated_with
+    note: "The west bank orientation set out here is where funerary practice happens."
+  - target: egypt-trip-field-guide
+    type: part_of
+    note: "The field guide takes this geography to standing sites."
 ---
 
 # Sacred geography

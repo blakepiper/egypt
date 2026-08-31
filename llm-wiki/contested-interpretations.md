@@ -3,6 +3,14 @@ type: research-method
 tags: [source-criticism, contested, pseudoscience, interpretation]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Fringe readings, Disputed claims]
+relations:
+  - target: pyramid-texts
+    type: contested_by
+    note: "Naydler's shamanic reading of the corpus."
+  - target: blue-water-lily-research
+    type: contested_by
+    note: "Entheogenic readings of the water lily."
 ---
 
 # Contested interpretations

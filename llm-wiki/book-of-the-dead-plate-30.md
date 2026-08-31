@@ -3,6 +3,14 @@ type: object-study
 tags: [book-of-the-dead, plate-30, chapter-125, papyrus-of-ani]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Chapter 125, Hall of the Two Truths]
+periods: [new-kingdom]
+places: [mendes, busiris]
+entities: [judgment, ib, osiris, isis, anubis]
+relations:
+  - target: visual-decoder
+    type: draws_from
+    note: "The scene is read with the same identification method."
 ---
 
 # Book of the Dead Plate 30

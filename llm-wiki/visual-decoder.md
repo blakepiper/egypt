@@ -3,6 +3,11 @@ type: reference
 tags: [iconography, museums, travel, art]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Iconography key, How to read a scene]
+relations:
+  - target: deity-field-guide
+    type: draws_from
+    note: "The deity table supplies most of the identifications."
 ---
 
 # Visual decoder

@@ -1,0 +1,418 @@
+[
+  {
+    "id": "mediterranean",
+    "label": "Mediterranean coast",
+    "aliases": [
+      "Great Green"
+    ],
+    "x": 50,
+    "y": 3,
+    "region": "delta",
+    "bank": "none",
+    "summary": "The northern edge of the Delta. North is downstream in Egyptian orientation, which reverses the modern habit of reading a map with north at the top.",
+    "deities": [],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "delta",
+    "label": "The Delta",
+    "aliases": [
+      "Lower Egypt",
+      "Ta-mehu"
+    ],
+    "x": 50,
+    "y": 9,
+    "region": "delta",
+    "bank": "both",
+    "summary": "Lower Egypt: the fan of branches north of Memphis. Lower Egypt is downstream and therefore north, which is why its crown is the Red Crown of the north.",
+    "deities": [
+      "wadjet"
+    ],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "mendes",
+    "label": "Mendes",
+    "aliases": [
+      "Djedet"
+    ],
+    "x": 57,
+    "y": 8,
+    "region": "delta",
+    "bank": "east",
+    "summary": "Cult center of Banebdjedet, a ram deity referenced in the student's reading of Book of the Dead Plate 30.",
+    "deities": [
+      "banebdjedet"
+    ],
+    "slug": "book-of-the-dead-plate-30",
+    "sourceIds": [
+      "C17",
+      "C06"
+    ]
+  },
+  {
+    "id": "busiris",
+    "label": "Busiris",
+    "aliases": [
+      "Djedu"
+    ],
+    "x": 51,
+    "y": 10,
+    "region": "delta",
+    "bank": "both",
+    "summary": "A Delta cult center of Osiris, paired in the tradition with Abydos in the south.",
+    "deities": [
+      "osiris"
+    ],
+    "slug": "osiris-isis-horus-and-set",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "heliopolis",
+    "label": "Heliopolis",
+    "aliases": [
+      "Iunu",
+      "On"
+    ],
+    "x": 53,
+    "y": 15,
+    "region": "lower",
+    "bank": "east",
+    "summary": "Home of Atum and Re, the Ennead, and the primeval mound. The Heliopolitan account begins creation from a self-generating creator on the first land to rise from Nun.",
+    "deities": [
+      "atum",
+      "re",
+      "shu",
+      "tefnut"
+    ],
+    "slug": "creation-traditions",
+    "sourceIds": [
+      "C02",
+      "C12"
+    ]
+  },
+  {
+    "id": "memphis",
+    "label": "Memphis and Saqqara",
+    "aliases": [
+      "Inbu-hedj",
+      "Mennefer"
+    ],
+    "x": 47,
+    "y": 19,
+    "region": "lower",
+    "bank": "west",
+    "summary": "Ptah's city and the necropolis at Saqqara. The Memphite Theology has Ptah create through heart and tongue; Sokar and the region of Rosetau belong to the same landscape.",
+    "deities": [
+      "ptah",
+      "sokar"
+    ],
+    "slug": "creation-traditions",
+    "sourceIds": [
+      "C02",
+      "C12"
+    ]
+  },
+  {
+    "id": "fayum",
+    "label": "Fayum",
+    "aliases": [
+      "Crocodilopolis",
+      "Shedet",
+      "Hawara"
+    ],
+    "x": 37,
+    "y": 25,
+    "region": "fayum",
+    "bank": "west",
+    "summary": "A lake basin west of the valley, the heartland of Sobek's cult and of Middle Kingdom royal patronage under Amenemhat III.",
+    "deities": [
+      "sobek"
+    ],
+    "slug": "sobek",
+    "sourceIds": [
+      "C20",
+      "C02"
+    ]
+  },
+  {
+    "id": "hermopolis",
+    "label": "Hermopolis",
+    "aliases": [
+      "Khemenu",
+      "Hermopolis Magna"
+    ],
+    "x": 49,
+    "y": 38,
+    "region": "middle",
+    "bank": "west",
+    "summary": "Associated with the Ogdoad, eight paired deities who describe the conditions before creation, and with Thoth.",
+    "deities": [
+      "thoth"
+    ],
+    "slug": "creation-traditions",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "amarna",
+    "label": "Amarna",
+    "aliases": [
+      "Akhetaten",
+      "Tell el-Amarna"
+    ],
+    "x": 53,
+    "y": 35,
+    "region": "middle",
+    "bank": "east",
+    "summary": "Akhenaten's new capital, founded on virgin ground and abandoned soon after his reign. Access to the Aten ran through the royal family.",
+    "deities": [
+      "aten"
+    ],
+    "slug": "amarna-and-late-transformations",
+    "sourceIds": [
+      "C03"
+    ]
+  },
+  {
+    "id": "abydos",
+    "label": "Abydos",
+    "aliases": [
+      "Abdju"
+    ],
+    "x": 46,
+    "y": 52,
+    "region": "upper",
+    "bank": "west",
+    "summary": "The great Osiris pilgrimage site, tied to royal memory and to festivals that staged the god's death, mourning, and vindication.",
+    "deities": [
+      "osiris"
+    ],
+    "slug": "osiris-isis-horus-and-set",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "dendera",
+    "label": "Dendera",
+    "aliases": [
+      "Iunet"
+    ],
+    "x": 45,
+    "y": 58,
+    "region": "upper",
+    "bank": "west",
+    "summary": "Hathor's temple, with later Osiris chapels on the roof and a well-preserved Greco-Roman building program.",
+    "deities": [
+      "hathor"
+    ],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "thebes",
+    "label": "Thebes",
+    "aliases": [
+      "Waset",
+      "Karnak",
+      "Luxor",
+      "Valley of the Kings"
+    ],
+    "x": 52,
+    "y": 63,
+    "region": "upper",
+    "bank": "both",
+    "summary": "Amun, Mut, and Khonsu on the east bank; royal tombs and mortuary temples on the west. The Opet festival carried the divine images between Karnak and Luxor.",
+    "deities": [
+      "amun",
+      "mut",
+      "khonsu"
+    ],
+    "slug": "festivals-oracles-and-personal-piety",
+    "sourceIds": [
+      "C02",
+      "C03",
+      "C22"
+    ]
+  },
+  {
+    "id": "deir-el-medina",
+    "label": "Deir el-Medina",
+    "aliases": [
+      "Set Maat"
+    ],
+    "x": 46,
+    "y": 64,
+    "region": "upper",
+    "bank": "west",
+    "summary": "The village of the artisans who cut the royal tombs. Its letters, votive stelae, and oracle questions make household and personal religion unusually visible.",
+    "deities": [],
+    "slug": "festivals-oracles-and-personal-piety",
+    "sourceIds": [
+      "C03"
+    ]
+  },
+  {
+    "id": "esna",
+    "label": "Esna",
+    "aliases": [
+      "Iunyt",
+      "Latopolis"
+    ],
+    "x": 48,
+    "y": 68,
+    "region": "upper",
+    "bank": "west",
+    "summary": "Khnum's late temple, with learned cosmogony and the Neith and Cow-Mother material used in the course packet.",
+    "deities": [
+      "khnum",
+      "neith"
+    ],
+    "slug": "creation-traditions",
+    "sourceIds": [
+      "C12"
+    ]
+  },
+  {
+    "id": "edfu",
+    "label": "Edfu",
+    "aliases": [
+      "Behdet"
+    ],
+    "x": 47,
+    "y": 73,
+    "region": "upper",
+    "bank": "west",
+    "summary": "Horus's temple, whose ritual program stages the defeat of Sethian enemies. One of the best preserved temples in Egypt.",
+    "deities": [
+      "horus",
+      "set"
+    ],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "kom-ombo",
+    "label": "Kom Ombo",
+    "aliases": [
+      "Nubt"
+    ],
+    "x": 53,
+    "y": 79,
+    "region": "upper",
+    "bank": "east",
+    "summary": "A double temple with paired axes for Sobek and Haroeris, built mainly in the Ptolemaic period.",
+    "deities": [
+      "sobek",
+      "horus"
+    ],
+    "slug": "sobek",
+    "sourceIds": [
+      "C20",
+      "C21"
+    ]
+  },
+  {
+    "id": "elephantine",
+    "label": "Elephantine and the First Cataract",
+    "aliases": [
+      "Abu",
+      "Aswan",
+      "Philae"
+    ],
+    "x": 49,
+    "y": 86,
+    "region": "upper",
+    "bank": "both",
+    "summary": "Khnum, Satet, and Anuket guarded the cataract. Egyptians imagined the inundation issuing from caverns in this region.",
+    "deities": [
+      "khnum",
+      "satet",
+      "anuket",
+      "hapi"
+    ],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "nubia",
+    "label": "Nubia",
+    "aliases": [
+      "Kush",
+      "Ta-Seti"
+    ],
+    "x": 50,
+    "y": 95,
+    "region": "nubia",
+    "bank": "both",
+    "summary": "Upstream and south. Nubian rulers governed Egypt in Dynasty 25 and supported Egyptian temple traditions.",
+    "deities": [
+      "amun"
+    ],
+    "slug": "chronology",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "deshret",
+    "label": "The Red Land",
+    "aliases": [
+      "Deshret",
+      "desert"
+    ],
+    "x": 20,
+    "y": 50,
+    "region": "desert",
+    "bank": "none",
+    "summary": "The desert beyond the cultivated floodplain: quarries, routes, danger, and the domain associated with Set. It is not simply evil ground; it is where the ordered world thins out.",
+    "deities": [
+      "set"
+    ],
+    "slug": "sacred-geography",
+    "sourceIds": [
+      "C05",
+      "C19"
+    ]
+  },
+  {
+    "id": "west",
+    "label": "The West",
+    "aliases": [
+      "Imentet",
+      "the western horizon"
+    ],
+    "x": 18,
+    "y": 66,
+    "region": "desert",
+    "bank": "west",
+    "summary": "Where the sun sets and where the dead go. Cemeteries cluster on the west bank, and 'westerner' becomes a term for the dead.",
+    "deities": [
+      "hathor",
+      "osiris"
+    ],
+    "slug": "death-funeral-and-the-dead",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  }
+]

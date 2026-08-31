@@ -3,6 +3,15 @@ type: topic
 tags: [re, solar, duat, renewal, apep]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Re's daily circuit]
+entities: [duat, isfet, ba]
+relations:
+  - target: amduat-and-book-of-gates
+    type: depicted_in
+    note: "The Underworld Books map the night this page summarises."
+  - target: osiris-isis-horus-and-set
+    type: associated_with
+    note: "Re and Osiris meet at the deepest hour of the night."
 ---
 
 # Solar cycle

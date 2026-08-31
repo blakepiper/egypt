@@ -3,6 +3,13 @@ type: text-study
 tags: [coffin-texts, middle-kingdom, afterlife]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [CT]
+periods: [middle-kingdom, corpus-coffin-texts]
+entities: [coffin-texts-corpus, ka, ba]
+relations:
+  - target: book-of-the-dead
+    type: precedes
+    note: "Material continues into the later corpus rather than stopping."
 ---
 
 # Coffin Texts

@@ -3,6 +3,14 @@ type: deity
 tags: [sobek, crocodile, fayum, kom-ombo]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Crocodile god]
+periods: [middle-kingdom, ptolemaic]
+places: [fayum, kom-ombo, elephantine]
+entities: [sobek]
+relations:
+  - target: sacred-geography
+    type: practiced_at
+    note: "His cult concentrates where the water spreads out."
 ---
 
 # Sobek

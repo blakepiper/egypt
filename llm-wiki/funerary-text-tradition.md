@@ -3,6 +3,17 @@ type: topic
 tags: [funerary-texts, pyramid-texts, coffin-texts, book-of-the-dead]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Overlapping corpora, The shingles model]
+periods: [corpus-pyramid-texts, corpus-coffin-texts, corpus-underworld-books, corpus-book-of-the-dead]
+relations:
+  - target: pyramid-texts
+    type: part_of
+  - target: coffin-texts
+    type: part_of
+  - target: book-of-the-dead
+    type: part_of
+  - target: amduat-and-book-of-gates
+    type: part_of
 ---
 
 # Funerary text tradition

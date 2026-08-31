@@ -3,6 +3,18 @@ type: overview
 tags: [overview, study-guide, ancient-egypt, religion]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [The course argument]
+entities: [renewable-continuity, maat, isfet, ka, ba, akh]
+relations:
+  - target: creation-traditions
+    type: part_of
+    note: "Creation is the first instance of the pattern this page describes."
+  - target: solar-cycle
+    type: part_of
+    note: "The solar circuit repeats the same restoration every night."
+  - target: contested-interpretations
+    type: contested_by
+    note: "The archive mixes evidence of very different weight; this page sends the reader there before conclusions are drawn."
 ---
 
 # Start here

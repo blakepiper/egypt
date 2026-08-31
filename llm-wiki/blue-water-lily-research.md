@@ -3,6 +3,11 @@ type: research-synthesis
 tags: [nymphaea-caerulea, water-lily, botany, psychoactive, contested]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Nymphaea, Lotus]
+relations:
+  - target: contested-interpretations
+    type: contested_by
+    note: "Pharmacological claims are weighed against the evidence there."
 ---
 
 # Blue water-lily research

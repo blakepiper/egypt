@@ -3,6 +3,16 @@ type: topic
 tags: [creation, cosmogony, gods, myth]
 course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
+aliases: [Cosmogonies, Creation accounts]
+places: [heliopolis, memphis, hermopolis, esna, elephantine]
+entities: [nun, ennead, ogdoad, memphite-theology]
+relations:
+  - target: how-egyptian-religion-works
+    type: part_of
+    note: "Several accounts standing at once is the method that page describes."
+  - target: temples-priests-and-offerings
+    type: maintains
+    note: "Temple ritual repeats creation rather than commemorating it."
 ---
 
 # Creation traditions

@@ -1,0 +1,260 @@
+[
+  {
+    "id": "predynastic",
+    "label": "Predynastic and Protodynastic",
+    "start": -5500,
+    "end": -3100,
+    "approximate": true,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Regional iconographies and cults develop while Upper and Lower Egypt move toward a unified state.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "early-dynastic",
+    "label": "Early Dynastic, Dynasties 1–2",
+    "start": -3100,
+    "end": -2686,
+    "approximate": true,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Kingship and state cult consolidate; early monumental and mortuary patterns take shape.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "old-kingdom",
+    "label": "Old Kingdom, Dynasties 3–6/8",
+    "start": -2686,
+    "end": -2181,
+    "approximate": true,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Pyramid building and solar kingship. The earliest surviving Pyramid Texts appear in late Dynasty 5, initially for kings.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "first-intermediate",
+    "label": "First Intermediate Period",
+    "start": -2181,
+    "end": -2055,
+    "approximate": true,
+    "kind": "intermediate",
+    "slug": "chronology",
+    "summary": "Political fragmentation and stronger local power centers; older royal mortuary resources spread and change.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "middle-kingdom",
+    "label": "Middle Kingdom, Dynasties 11–13/14",
+    "start": -2055,
+    "end": -1650,
+    "approximate": true,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Reunification, the rise of Amun at Thebes, Coffin Texts on nonroyal coffins, and major Sobek patronage in the Fayum.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "second-intermediate",
+    "label": "Second Intermediate Period",
+    "start": -1650,
+    "end": -1550,
+    "approximate": true,
+    "kind": "intermediate",
+    "slug": "chronology",
+    "summary": "Hyksos rule in parts of Lower Egypt. Later memory connects foreignness and Set in complicated ways.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "new-kingdom",
+    "label": "New Kingdom, Dynasties 18–20",
+    "start": -1550,
+    "end": -1069,
+    "approximate": true,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Imperial wealth, huge Theban temples, royal tombs in the Valley of the Kings, the Underworld Books, the Book of the Dead, and dense documentation of personal piety.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "amarna",
+    "label": "Amarna episode",
+    "start": -1353,
+    "end": -1330,
+    "approximate": true,
+    "kind": "era",
+    "slug": "amarna-and-late-transformations",
+    "summary": "Akhenaten elevates the Aten, attacks Amun's name, relocates the court, and centralizes divine access through the royal family.",
+    "sourceIds": [
+      "C03"
+    ]
+  },
+  {
+    "id": "third-intermediate",
+    "label": "Third Intermediate Period, Dynasties 21–25",
+    "start": -1069,
+    "end": -664,
+    "approximate": true,
+    "kind": "intermediate",
+    "slug": "chronology",
+    "summary": "Political decentralization, elaborate coffins and mummification, animal cults, and shifting foreign and Nubian rule.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "late-period",
+    "label": "Saite and Late Period, Dynasties 26–31",
+    "start": -664,
+    "end": -332,
+    "approximate": false,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Archaism and renaissance. Native and Persian rule alternate, some traditions intensify, and Set is increasingly vilified in many contexts.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "ptolemaic",
+    "label": "Ptolemaic Period",
+    "start": -332,
+    "end": -30,
+    "approximate": false,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Greek-speaking rulers support Egyptian temples. The surviving temple programs at Edfu, Dendera, Kom Ombo, Esna, and Philae formulate learned local theologies.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "roman",
+    "label": "Roman Period",
+    "start": -30,
+    "end": 395,
+    "approximate": false,
+    "kind": "period",
+    "slug": "chronology",
+    "summary": "Temple traditions and Demotic and Greek magical practice continue while Egyptian deities circulate across the Mediterranean. Older institutions eventually contract.",
+    "sourceIds": [
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "id": "corpus-pyramid-texts",
+    "label": "Pyramid Texts",
+    "start": -2350,
+    "end": -1650,
+    "approximate": true,
+    "kind": "corpus",
+    "slug": "pyramid-texts",
+    "summary": "Carved first in late Dynasty 5 royal pyramids, later used by queens and, in altered form, by others. The corpus never fully disappears.",
+    "sourceIds": [
+      "C23",
+      "C02"
+    ]
+  },
+  {
+    "id": "corpus-coffin-texts",
+    "label": "Coffin Texts",
+    "start": -2100,
+    "end": -1550,
+    "approximate": true,
+    "kind": "corpus",
+    "slug": "coffin-texts",
+    "summary": "Written on nonroyal coffins mainly in the First Intermediate Period and Middle Kingdom, overlapping with older and later material.",
+    "sourceIds": [
+      "C13",
+      "C02"
+    ]
+  },
+  {
+    "id": "corpus-underworld-books",
+    "label": "Underworld Books",
+    "start": -1500,
+    "end": -1069,
+    "approximate": true,
+    "kind": "corpus",
+    "slug": "amduat-and-book-of-gates",
+    "summary": "The Amduat, Book of Gates, and related compositions map the night hours in New Kingdom royal tombs.",
+    "sourceIds": [
+      "C14",
+      "C15"
+    ]
+  },
+  {
+    "id": "corpus-book-of-the-dead",
+    "label": "Book of the Dead",
+    "start": -1550,
+    "end": -30,
+    "approximate": true,
+    "kind": "corpus",
+    "slug": "book-of-the-dead",
+    "summary": "Individualized spell collections on papyrus and other media, used from the New Kingdom into the Greco-Roman period.",
+    "sourceIds": [
+      "C17",
+      "C02"
+    ]
+  },
+  {
+    "id": "institution-state-temple",
+    "label": "State temple institutions",
+    "start": -2686,
+    "end": 395,
+    "approximate": true,
+    "kind": "institution",
+    "slug": "temples-priests-and-offerings",
+    "summary": "Royal and delegated temple service maintaining cult images, offerings, and the created order.",
+    "sourceIds": [
+      "C22",
+      "C03"
+    ]
+  },
+  {
+    "id": "evidence-royal-mortuary",
+    "label": "Royal mortuary evidence",
+    "start": -2686,
+    "end": -1069,
+    "approximate": true,
+    "kind": "evidence",
+    "slug": "funerary-text-tradition",
+    "summary": "Pyramids, royal tombs, and their inscribed programs dominate the surviving record for long stretches.",
+    "sourceIds": [
+      "C02"
+    ]
+  },
+  {
+    "id": "evidence-personal-piety",
+    "label": "Personal-piety evidence",
+    "start": -1550,
+    "end": -664,
+    "approximate": true,
+    "kind": "evidence",
+    "slug": "festivals-oracles-and-personal-piety",
+    "summary": "Votives, stelae, letters, oracle questions, and settlement material make household and individual practice unusually visible, above all at Deir el-Medina.",
+    "sourceIds": [
+      "C03"
+    ]
+  }
+]
