@@ -3,7 +3,7 @@ type: topic
 tags: [neighbors, nubia, levant, libya, mobility, exchange, warfare, war, empire, smiting, enemies, borders]
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 summary: "Egypt was connected to Nubia, the Levant, Libya, the Mediterranean, the Red Sea, and the wider ancient Near East through exchange, movement, conflict, and changing border practices."
 aliases: [Egypt in the ancient world, Neighboring worlds, Egyptian war, empire, and smiting]
 periods: [predynastic, early-dynastic, old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
@@ -104,7 +104,7 @@ There is no single neighboring voice waiting outside the Egyptian archive. Archa
 
 A careful history can still move beyond Egyptian self-description. It can ask whether a royal claim matches a settlement record, whether a foreign object appears in a domestic context, whether a region develops its own political institutions, or whether the same community is classified differently over time. It can place Egyptian conquest beside Nubian kingship, Levantine movement, Libyan mobility, and the lives of people who crossed categories without leaving a named biography.
 
-Egypt was connected to its neighbors because people made those connections. Some were voluntary, some unequal, and some forced. The evidence is strongest when it keeps the route, period, actor, and source type visible. It is weakest when one label becomes a timeless people, one image becomes an eyewitness report, or one resemblance becomes proof of transmission. [[egypt-and-its-neighbors]] belongs in the same reading route as [[writing-knowledge-and-administration]], [[legacy-of-ancient-egypt]], and [[egyptian-religion-in-greek-and-roman-worlds]], where movement changes institutions, images, and later memory.
+Egypt was connected to its neighbors because people made those connections. Some were voluntary, some unequal, and some forced. The evidence is strongest when it keeps the route, period, actor, and source type visible. It is weakest when one label becomes a timeless people, one image becomes an eyewitness report, or one resemblance becomes proof of transmission. [[egypt-and-its-neighbors]] belongs in the same reading route as [[naqada-hierakonpolis-and-early-centers]], [[desert-routes-rock-art-and-early-mobility]], [[writing-knowledge-and-administration]], [[from-canaan-to-phoenician-greek-and-latin]], [[legacy-of-ancient-egypt]], and [[egyptian-religion-in-greek-and-roman-worlds]], where movement changes institutions, images, and later memory. The Elephantine documents and Qur'anic and Islamic histories add communities and traditions that cannot be reduced to a generic “neighbor.”
 
 ## Terms to keep in view
 

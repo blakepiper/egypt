@@ -2,7 +2,7 @@
 type: text-study
 tags: [ptahhotep, wisdom, ethics, maat]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [The Teaching of Ptahhotep, Maxims]
@@ -69,6 +69,8 @@ The text's concerns—heart, truth, reputation, memory, speech, children, and a 
 The text connects good conduct with social and divine order, but it does not turn success into a guarantee or suffering into proof of personal failure. Egyptian reflections on theodicy and pain preserve the harder question of what happens when a person acts well and still suffers. [[suffering-misfortune-and-divine-justice]], [[personhood-and-the-afterlife]], and [[death-funeral-and-the-dead]] keep that tension beside the maxims. R046, R047, and R058 support a reading that leaves the problem open.
 
 Ptahhotep is also not a universal key to “Egyptian ethics.” [[studying-religion-through-egypt]] and [[egypt-and-mesopotamia-compared]] model a narrower use: identify the speaker, date, audience, and institutional purpose before comparing moral language across societies.
+
+The comparison with later wisdom literature belongs in [[egyptian-wisdom-and-biblical-literature]]. Ptahhotep establishes an Egyptian wisdom genre and a historically located elite voice; it does not, by itself, establish that Proverbs or another biblical text borrowed from it. The Amenemope case is stronger only because its wording, sequence, and possible route converge more closely.
 
 ## Supplemental research
 

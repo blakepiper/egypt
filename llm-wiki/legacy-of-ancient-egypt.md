@@ -3,7 +3,7 @@ type: hub
 tags: [reception, legacy, transmission, adaptation, museums, identity, popular-culture]
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 summary: "Ancient Egypt has been carried, translated, excavated, reinvented, sold, and claimed in many settings. A reception history asks how each connection was made and what changed along the way."
 aliases: [Afterlives of ancient Egypt, Egyptian reception history, Legacy of Egypt, Egypt's influence on Western culture]
 periods: [ptolemaic, roman]
@@ -28,7 +28,7 @@ review:
 
 Ancient Egypt did not leave one legacy that moved intact into the modern world. Objects traveled. Gods were translated. Buildings were reused. Texts were copied, lost, deciphered, or read through new philosophies. Museums classified fragments, artists took up images, communities made claims about identity, and commercial culture turned signs into a style. These are different histories.
 
-This page is a map for that cluster. [[egyptian-religion-in-greek-and-roman-worlds]] follows ancient Mediterranean transformations. [[egypt-after-the-pharaohs]] follows Coptic, Islamic, and Egyptian engagements after the pharaonic period. [[egyptology-museums-and-colonialism]] asks how collecting and colonial power shaped the archive. [[egyptomania-and-popular-culture]] traces modern design, entertainment, tourism, and commerce. [[egypt-africa-and-modern-identity]] examines African, diasporic, Egyptian, and Kemetic identity work. [[egypt-in-biblical-and-christian-memory]] follows biblical, Jewish, and Christian memory.
+This page is a map for that cluster. [[egyptian-religion-in-greek-and-roman-worlds]] follows ancient Mediterranean transformations. [[egypt-after-the-pharaohs]] follows Coptic, Islamic, and Egyptian engagements after the pharaonic period. [[egyptology-museums-and-colonialism]] asks how collecting and colonial power shaped the archive. [[egyptomania-and-popular-culture]] traces modern design, entertainment, tourism, and commerce. [[egypt-africa-and-modern-identity]] examines African, diasporic, Egyptian, and Kemetic identity work. [[egypt-in-biblical-and-christian-memory]] follows biblical, Jewish, and Christian memory, while [[egyptian-wisdom-and-biblical-literature]], [[elephantine-judaeans-and-egyptian-religious-life]], [[egypt-in-quranic-and-islamic-tradition]], and [[judgment-the-weighed-heart-and-later-afterlives]] separate influence, documentary community life, Islamic tradition, and comparison from reception alone.
 
 > [!uncertainty] A legacy is a relationship, not a possession
 > A later image that resembles an Egyptian one may result from direct transmission, selective adaptation, rediscovery, reinvention, commodity culture, or counter-memory. Resemblance alone cannot establish a line of descent. The period, route, intermediary, language, audience, and change in use all matter. R035 supplies a reception framework for keeping those questions separate.
@@ -102,7 +102,7 @@ Egyptian Revival, Art Deco, mummy fiction, tourism, games, and branding often us
 
 ### Ancient Egypt in Jewish and Christian memory
 
-Biblical Egypt has several literary and historical roles, including refuge, abundance, bondage, wisdom, danger, and later Christian memory. These roles are receptions of Egypt in texts and communities. They are not direct evidence for what ancient Egyptian institutions believed. R051, R052, and R053 support a layered account that includes Jewish life and Coptic history. [[egypt-in-biblical-and-christian-memory]] keeps literary memory separate from historical reconstruction.
+Biblical Egypt has several literary and historical roles, including refuge, abundance, bondage, wisdom, danger, and later Christian memory. These roles are receptions of Egypt in texts and communities. They are not direct evidence for what ancient Egyptian institutions believed. R051, R052, and R053 support a layered account that includes Jewish life and Coptic history. [[egypt-in-biblical-and-christian-memory]] keeps literary memory separate from historical reconstruction, while [[egyptian-wisdom-and-biblical-literature]] asks when comparison becomes documented influence.
 
 ### Egypt in African and diasporic thought
 

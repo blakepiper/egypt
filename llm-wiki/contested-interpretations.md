@@ -2,7 +2,7 @@
 type: research-method
 tags: [source-criticism, contested, pseudoscience, interpretation]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Fringe readings, Disputed claims]
@@ -55,6 +55,14 @@ Biblical narratives about Egypt are important for reception, identity, and later
 ## Similarity is not transmission
 
 Egypt, Mesopotamia, and early Buddhism can be compared when the question and evidence are specified. A shared image, social problem, or ritual form does not establish contact or borrowing. [[egypt-and-mesopotamia-compared]], [[egypt-and-early-buddhism]], and [[permanence-renewal-and-impermanence]] model comparison without turning resemblance into a genealogy. R007, R008, R021, R028, R029, R030, R031, R032, R033, R034, and R065 provide distinct source types for that work.
+
+## The alphabet-origin claim
+
+“Egypt gave the world the alphabet” compresses a real contact hypothesis into a settled origin story. Egyptian writing had uniliteral signs, and Egyptian mining and road contexts make contact with West Semitic writers plausible. But the Proto-Sinaitic and Wadi el-Hol corpus is small, damaged, and contested; its dates, readings, writers, and direction of influence remain inferred. [[uniliteral-signs-and-egyptian-phonetic-writing]], [[proto-sinaitic-and-the-alphabetic-breakthrough]], and [[from-canaan-to-phoenician-greek-and-latin]] keep the narrow claim, the proposed mechanism, and the later branches separate. R115–R118 record the disagreement rather than authorizing one final answer.
+
+## Amenemope and parallelomania
+
+The comparison between the Instruction of Amenemope and Proverbs 22:17–24:22 is stronger than a generic parallel because it combines a plausible route, close verbal correspondence, and a shared sequence, while still leaving the “thirty sayings” crux and direction of dependence debated. The Great Hymn to the Aten and Psalm 104, Egyptian love poetry and the Song of Songs, and Ptahhotep and wisdom literature generally have weaker evidence for transmission. [[egyptian-wisdom-and-biblical-literature]] ranks those cases. **Parallelomania** is the error of upgrading isolated similarities to borrowing when date, intermediary, and patterned correspondence are missing.
 
 ## Sobek and the Book of Abraham
 

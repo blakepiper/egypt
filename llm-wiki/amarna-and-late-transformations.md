@@ -2,7 +2,7 @@
 type: topic
 tags: [amarna, aten, greco-roman, change]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Atenism, Akhenaten]
@@ -70,6 +70,8 @@ The PDM/PGM packet demonstrates practical hybridity: recipes use Seth/Typhon, Is
 Biblical stories about Egypt belong to biblical and later interpretive traditions. They are important evidence for reception, identity, and memory, but they are not independent Egyptian historical records. No evidence presented here establishes that Moses was Akhenaten, and the Moses-Akhenaten comparison should remain a modern hypothesis rather than a historical conclusion. [[egypt-in-biblical-and-christian-memory]], [[legacy-of-ancient-egypt]], and [[contested-interpretations]] explain the boundary. R051, R052, and R053 are the relevant reception studies.
 
 The same separation applies to contemporary Kemetic religions. Modern practitioners may draw on ancient texts, reconstructed ritual, online communities, and modern identity work. They should be studied as contemporary religious formations, not described as either uninterrupted survival or mere invention. [[egypt-africa-and-modern-identity]] and [[egypt-after-the-pharaohs]] keep the present in view. R054 and R055 support that distinction.
+
+For the comparison between Egyptian postmortem judgment and later moral-accounting traditions, continue to [[judgment-the-weighed-heart-and-later-afterlives]]. It treats resemblance, possible contact, and independent development as separate hypotheses and does not use the Amarna period to create an unbroken bridge into later religions.
 
 ## Supplemental research
 
