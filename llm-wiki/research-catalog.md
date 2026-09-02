@@ -1471,3 +1471,437 @@ All records except R069 retain the public institutional, publisher, repository, 
 **Access:** [Religion and Ritual in Ancient Egypt contents](https://www.cambridge.org/core/books/abs/religion-and-ritual-in-ancient-egypt/contents/3176DE778F1C3C36751755CF48B75B3E). Accessed 2026-08-31.
 
 **Reuse:** Cite the book and relevant chapter for substantive claims. Follow Cambridge access and copyright terms.
+
+## R104 — Hierakonpolis Locality 6 elite cemetery
+
+**Status:** Hierakonpolis Online project record for the HK6 elite cemetery.
+
+**Source class:** Excavation-project and archaeological interpretation record.
+
+**Use:** The cemetery's elite tombs, above-ground funerary architecture, animal burials, and the distinction between a regional center and a fully documented state institution.
+
+**Limitations:** This is a project synthesis with interpretation still being refined as excavation and study continue. A cemetery is a selected mortuary context, not a complete settlement or social census.
+
+**Access:** [HK6 elite cemetery](https://www.hierakonpolis-online.org/index.php/explore-the-predynastic-cemeteries/hk6-elite-cemetery). Accessed 2026-09-02.
+
+**Reuse:** Cite the Hierakonpolis Online project and keep its ongoing interpretations separate from direct excavation reports. Do not reuse project images without checking its permissions.
+
+## R105 — Hierakonpolis Locality 29A ceremonial center
+
+**Status:** Hierakonpolis Online project record for the HK29A ceremonial complex.
+
+**Source class:** Excavation-project and archaeological interpretation record.
+
+**Use:** The ceremonial structure, associated fauna and plant remains, changing reconstructions, and the question of how a built center relates to working communities and regional authority.
+
+**Limitations:** The project notes that reconstruction and the relationship between HK29A and HK29B remain under study. The complex cannot by itself identify a state, a temple in the later institutional sense, or the identity of all users.
+
+**Access:** [HK29A ceremonial center](https://www.hierakonpolis-online.org/index.php/explore-the-predynastic-settlement/hk29-the-ceremonial-center). Accessed 2026-09-02.
+
+**Reuse:** Cite the project record and its cited excavation publications. Check the project before reproducing plans, photographs, or reconstructions.
+
+## R106 — Abydos Archaeology Research
+
+**Status:** Abydos Archaeology Research project overview.
+
+**Source class:** Excavation-project and institutional archaeological synthesis.
+
+**Use:** North Abydos, the first kings, royal funerary enclosures, the early cemetery, settlement and brewery evidence, and the project's distinction between royal monuments and wider archaeological contexts.
+
+**Limitations:** This is an institutional overview rather than a complete excavation publication. Project summaries select evidence for public orientation and do not resolve every chronological or interpretive debate.
+
+**Access:** [Abydos Archaeology Research](https://abydos.org/about). Accessed 2026-09-02.
+
+**Reuse:** Cite the project and the underlying excavation publications for detailed claims. Check the project's terms before reusing photographs or excavation graphics.
+
+## R107 — Theban Desert Road Survey, Volume 1
+
+**Status:** Institute for the Study of Ancient Cultures publication record for the Theban Desert Road Survey.
+
+**Source class:** Institutional archaeological survey publication record.
+
+**Use:** The Gebel Tjauti tableau, the road between the Nile and the Western Desert, Wadi el-Hol and the Farshut Road, rock inscriptions, and the relationship between expeditions, routes, and early political display.
+
+**Limitations:** The accessible page is a publication record and description, not the complete volume. Interpretive claims should be checked against the volume's photographs, facsimiles, translations, and archaeological argument.
+
+**Access:** [Theban Desert Road Survey, Volume 1](https://isac.uchicago.edu/research/publications/oip/theban-desert-road-survey-egyptian-western-desert-volume-1). Accessed 2026-09-02.
+
+**Reuse:** Cite the volume and relevant page or plate. Follow ISAC and University of Chicago terms for reproducing maps, photographs, facsimiles, and translations.
+
+## R108 — Theban Desert Road Survey, OIP 119 PDF
+
+**Status:** Official Institute for the Study of Ancient Cultures volume PDF.
+
+**Source class:** Institutional archaeological survey publication.
+
+**Use:** Orientation to the full survey behind the road, rock-art, and Wadi el-Hol discussions.
+
+**Limitations:** The official PDF URL was reached, but the approximately 25 MB file exceeded the available fetch limit in this environment. This record is therefore an access pointer and bibliographic lead, not a substitute for reading the full volume or quoting it.
+
+**Access:** [OIP 119, Theban Desert Road Survey](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/OIP119.pdf). Accessed 2026-09-02.
+
+**Reuse:** Use R107 for claims supported by the accessible publication record unless the full volume is independently checked. Follow ISAC terms before downloading or reproducing the PDF.
+
+## R109 — The origins and early development of writing in Egypt
+
+**Status:** Oxford Research Encyclopedia chapter landing page by Ludwig D. Morenz.
+
+**Source class:** Scholarly handbook chapter record.
+
+**Use:** Tomb U-j, early labels, the dating problem, and the distinction between early phonographic signs and the later fully attested writing system.
+
+**Limitations:** Only the chapter landing page and abstract-level material were accessible here; the full chapter was not. Use it for orientation and pair it with object records and accessible scholarship before relying on a fine-grained reading.
+
+**Access:** [The origins and early development of writing in Egypt](https://academic.oup.com/edited-volume/43506/chapter/364131674). Accessed 2026-09-02.
+
+**Reuse:** Cite the chapter and consult its full publication for detailed arguments, transliterations, and images.
+
+## R110 — British Museum cast of the Narmer Palette
+
+**Status:** British Museum collection record for plaster cast EA35714, after the Narmer Palette.
+
+**Source class:** Museum collection record and object orientation.
+
+**Use:** The palette's designed registers, royal imagery, material history, and the need to distinguish an object making a claim from a literal battle report.
+
+**Limitations:** The collection record was not fully retrievable in this environment; the accessible search record concerns a plaster cast rather than the original palette. It should not be used as a substitute for the original object's catalogue and publication history.
+
+**Access:** [Narmer Palette cast, EA35714](https://www.britishmuseum.org/collection/object/Y_EA35714). Accessed 2026-09-02.
+
+**Reuse:** Cite the object number and do not reuse an image from this record without checking item-level rights. The cast is not evidence that the original object is freely reusable.
+
+## R111 — The Scorpion mace-head
+
+**Status:** Liam McNamara, “The Scorpion mace-head,” *Nekhen News* 32, pp. 24–26, Ashmolean publication record.
+
+**Source class:** Museum publication record and object study.
+
+**Use:** The Scorpion mace-head, its royal imagery, and the interpretive limits of reading a ceremonial object as a straightforward campaign narrative.
+
+**Limitations:** The accessible Ashmolean page supplies the publication and object-in-focus record but not the complete article text. Detailed iconographic claims require the published article or object record.
+
+**Access:** [The Scorpion mace-head](https://www.ashmolean.org/publication/1207720/manual). Accessed 2026-09-02.
+
+**Reuse:** Cite McNamara and *Nekhen News*. Check the Ashmolean's permissions before reproducing object photography or publication pages.
+
+## R112 — Palermo Stone, Museo Archeologico Regionale Antonino Salinas
+
+**Status:** Museo Salinas institutional record for the Palermo Stone.
+
+**Source class:** Museum collection record.
+
+**Use:** The stone's fragmentary form, black diorite, multiple surviving pieces, and the later historical construction represented by annalistic king lists.
+
+**Limitations:** The accessible record is in Italian and gives concise collection information rather than a complete philological edition. The stone is a later historical record, not an eyewitness archive of the Predynastic period.
+
+**Access:** [Palermo Stone](https://www2.regione.sicilia.it/bbccaa/salinas/pagine/col_palermo.htm). Accessed 2026-09-02.
+
+**Reuse:** Cite the Museo Salinas record and consult an edition for translations. Check museum permissions before reusing any object image.
+
+## R113 — Turin King List, Museo Egizio
+
+**Status:** Museo Egizio institutional record for Papyrus Turin Cat. 1874.
+
+**Source class:** Museum papyrus collection record.
+
+**Use:** The hieratic king list's fragmentary condition, mythological and historical sections, recto-verso administrative context, and restoration history.
+
+**Limitations:** The web record is a collection history and content overview, not a complete edition or translation. The list is a Ramesside-era construction of the past and cannot be treated as a contemporary archive of every earlier reign.
+
+**Access:** [History and content of the Turin King List](https://collezionepapiri.museoegizio.it/en-GB/section/Papyrus-Collection/History-and-content/History-and-content/). Accessed 2026-09-02.
+
+**Reuse:** Cite Museo Egizio and the papyrus number. Check the museum's object and image permissions before reuse.
+
+## R114 — Hieroglyphic writing during the fourth millennium BCE
+
+**Status:** Jochem Kahl, repository record for “Hieroglyphic Writing During the Fourth Millennium BCE,” 2004.
+
+**Source class:** Scholarly repository record and article PDF.
+
+**Use:** The emergence of Egyptian hieroglyphic writing in the fourth millennium BCE and the relationship between signs, labels, and early administration.
+
+**Limitations:** The Heidelberg repository PDF was indexed and its record was opened, but the full file was blocked by the environment's access control. This record is orientation-only until the article is read directly.
+
+**Access:** [Hieroglyphic Writing During the Fourth Millennium BCE](https://archiv.ub.uni-heidelberg.de/propylaeumdok/2634/1/Kahl_Hieroglyphic_Writing_during_the_Fourth_Millenium_BC_2004.pdf). Accessed 2026-09-02.
+
+**Reuse:** Cite Kahl's publication rather than the search index. Check repository and publisher terms before downloading or reproducing the PDF.
+
+## R115 — Alphabet origins: from Kipling to Sinai
+
+**Status:** Metropolitan Museum of Art, “Alphabet Origins: From Kipling to Sinai,” 2014 exhibition essay.
+
+**Source class:** Museum interpretive essay.
+
+**Use:** Serabit el-Khadim, Egyptian sign forms, acrophony, the bʿlt reading associated with Gardiner, Wadi el-Hol, and the proposed movement toward Phoenician, Greek, Etruscan, and Roman alphabets.
+
+**Limitations:** The essay is a concise museum interpretation rather than a complete scholarly consensus statement. Its useful examples do not settle the corpus's dating, language, or every proposed sign reading.
+
+**Access:** [Alphabet Origins: From Kipling to Sinai](https://www.metmuseum.org/exhibitions/listings/2014/assyria-to-iberia/blog/posts/alphabet). Accessed 2026-09-02.
+
+**Reuse:** Cite the Metropolitan Museum as an interpretive source and pair its claims with R116–R118. Check the museum's text and image permissions.
+
+## R116 — New discoveries at Serabit el-Khadim
+
+**Status:** Israel Beit-Arieh, “New Discoveries at Serabit el-Khadim,” *Journal of Near Eastern Studies* 41, 1982, abstract record.
+
+**Source class:** Scholarly journal abstract and archaeological report record.
+
+**Use:** The Serabit excavations and the dating problem for the early alphabetic inscriptions.
+
+**Limitations:** Only the abstract/landing page was accessible and the bibliographic record is not a substitute for the full excavation report. The author metadata should be checked against the journal PDF before formal citation.
+
+**Access:** [New Discoveries at Serabit el-Khadim](https://www.journals.uchicago.edu/doi/abs/10.2307/3209843). Accessed 2026-09-02.
+
+**Reuse:** Use as a dated scholarly lead, not as a complete account of the inscriptions. Check JSTOR and University of Chicago terms before reuse.
+
+## R117 — Bebi in Sinai: the Western Desert connection?
+
+**Status:** Pierre Tallet and Damien Laisney, “Bebi in Sinai: The Western Desert Connection?,” *NeHeT* 8, pp. 3–12.
+
+**Source class:** Open scholarly article and inscription study.
+
+**Use:** The small corpus of Proto-Sinaitic inscriptions, the proposed relationship between Sinai and the Western Desert, and competing Middle Kingdom, Hyksos, and New Kingdom dates.
+
+**Limitations:** The article advances a specific interpretation and presents a debate rather than a final consensus. The corpus is small, damaged, and difficult to date; its readings and historical setting remain contested.
+
+**Access:** [Bebi in Sinai: the Western Desert connection?](https://www.nehet.fr/images/NEHET%208-01-TALLET-LAISNEY-p.3-12.pdf). Accessed 2026-09-02.
+
+**Reuse:** Cite the article and its epigraphic references. Follow *NeHeT* terms for reproducing inscriptions, photographs, and plates.
+
+## R118 — Understanding relations between scripts II: early alphabets
+
+**Status:** Philip J. Boyes and Jennifer M. Steele, eds., *Understanding Relations Between Scripts II: Early Alphabets*, open-access CREWS volume.
+
+**Source class:** Open scholarly edited volume.
+
+**Use:** Early alphabetic writing, Ugaritic as a cuneiform alphabet, script relationships, and the methodological problem of identifying ancestry among small corpora.
+
+**Limitations:** This record covers an edited volume whose individual chapters make different arguments. Open access to the volume does not turn every chapter's hypothesis into consensus.
+
+**Access:** [Understanding Relations Between Scripts II: Early Alphabets](https://www.jstor.org/content/oa_book_edited/j.ctv2mm1xnh). Accessed 2026-09-02.
+
+**Reuse:** Cite the relevant chapter and author. The volume is open access, but follow its license and individual image credits.
+
+## R119 — Aramaic and Hebrew alphabetic scripts
+
+**Status:** ORACC Nimrud educational reference page.
+
+**Source class:** Scholarly digital reference and epigraphic orientation.
+
+**Use:** Phoenician-derived Aramaic and Hebrew alphabetic traditions and the distinction between related scripts and languages.
+
+**Limitations:** The accessible record is a concise digital reference page rather than a full palaeographic history. Use it for orientation and consult inscriptions and specialist histories for dates and branching.
+
+**Access:** [Aramaic and Hebrew](https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/aramaichebrew/index.html). Accessed 2026-09-02.
+
+**Reuse:** Cite ORACC and the underlying inscription or publication where possible. Check ORACC terms before reproducing transliterations or images.
+
+## R120 — Greek writing and the adoption of vowels
+
+**Status:** University College London Digital Egypt educational reference page.
+
+**Source class:** University educational reference.
+
+**Use:** The early Greek alphabet's relationship to Phoenician forms and the importance of explicit vowel notation in Greek writing.
+
+**Limitations:** This short page is an educational orientation resource, not a complete history of Greek epigraphy or regional variation. It does not settle the date or mechanism of every Greek adoption.
+
+**Access:** [Writing in Egypt: Greek](https://www.ucl.ac.uk/museums-static/digitalegypt/writing/greek.html). Accessed 2026-09-02.
+
+**Reuse:** Cite UCL and consult specialist epigraphic scholarship for detailed letter histories. Follow UCL copyright terms.
+
+## R121 — The Ahiram inscriptions and archaic Phoenician
+
+**Status:** René Dussaud, “Les inscriptions d'Ahiram,” *Syria* 5, 1924, Persée record.
+
+**Source class:** Scholarly epigraphic article record.
+
+**Use:** The Ahiram sarcophagus, its tomb inscriptions, and the role of Phoenician evidence in histories of alphabetic diffusion.
+
+**Limitations:** This is an early twentieth-century study. It is valuable for the publication history and object but should be supplemented with current palaeography and archaeological dating.
+
+**Access:** [Les inscriptions d'Ahiram](https://www.persee.fr/doc/syria_0039-7946_1924_num_5_2_3038). Accessed 2026-09-02.
+
+**Reuse:** Cite the article and object context. Follow Persée and rights-holder terms for scans and plates.
+
+## R122 — The development of Arabic scripts
+
+**Status:** Harvard Museum of the Ancient Near East publication record for M. Gruendler, *The Development of the Arabic Scripts: From the Nabatean Era to the First Islamic Century*.
+
+**Source class:** Museum publication record and scholarly palaeographic orientation.
+
+**Use:** The Nabataean-to-Arabic relationship and the place of Arabic script in the wider family of alphabetic descendants.
+
+**Limitations:** The accessible page is a publication record and synopsis, not the complete book. Script descent is a historical process with regional forms, not a single unchanged chain.
+
+**Access:** [The development of Arabic scripts](https://hmane.harvard.edu/publications/development-arabic-scriptsfrom-nabatean-era-first-islamic-century). Accessed 2026-09-02.
+
+**Reuse:** Cite Gruendler and the Harvard publication record. Check Harvard permissions before reusing images or tables.
+
+## R123 — Instruction of Amenemope, British Museum papyrus EA10474.5
+
+**Status:** British Museum collection record for a papyrus witness to the Instruction of Amenemope.
+
+**Source class:** Museum papyrus collection record.
+
+**Use:** A material witness to the Instruction of Amenemope, its hieratic medium, provenance context, and the difference between a surviving manuscript and the date of a composition.
+
+**Limitations:** The collection page was not fully retrievable in this environment; the accessible record is object metadata rather than a complete edition or translation. The papyrus's date and the composition's date must not be treated as identical without philological argument.
+
+**Access:** [Papyrus EA10474.5, Instruction of Amenemope](https://www.britishmuseum.org/collection/object/Y_EA10474-5). Accessed 2026-09-02.
+
+**Reuse:** Cite the object number and an edition for quotations. Check British Museum object and image rights before reuse.
+
+## R124 — The Teaching of Amenemope and Proverbs 22:17–24:22
+
+**Status:** Brill journal article record, “The Teaching of Amenemope and Proverbs XXII 17–XXIV 22: Further Reflections on a Long-Standing Problem.”
+
+**Source class:** Scholarly journal article record.
+
+**Use:** The influence debate, verbal parallels, the “thirty sayings” crux, and arguments for and against a relationship between Amenemope and Proverbs.
+
+**Limitations:** The full PDF was not accessible here; the indexed abstract and record support orientation only. The dating, direction, and degree of dependence remain scholarly questions.
+
+**Access:** [The Teaching of Amenemope and Proverbs XXII 17–XXIV 22](https://brill.com/view/journals/vt/51/4/article-p431_1.pdf). Accessed 2026-09-02.
+
+**Reuse:** Cite the article's author and publication details after checking the full record. Follow Brill terms for the PDF and quotations.
+
+## R125 — Social contexts in Proverbs 22:17–31:31
+
+**Status:** Cambridge Core chapter record in *The Book of Proverbs in Social and Theological Context*.
+
+**Source class:** Scholarly handbook chapter abstract and publisher record.
+
+**Use:** Competing interpretations of Proverbs 22:17–24:22, the Amenemope parallels, sequence and reordering, and the debate over thirty sayings and dependence.
+
+**Limitations:** The chapter is paywalled beyond its accessible abstract/record. The abstract identifies a debate; it is not a complete argument or a license to quote the chapter.
+
+**Access:** [Social context(s) in Proverbs 22:17–31:31](https://www.cambridge.org/core/books/abs/book-of-proverbs-in-social-and-theological-context/social-contexts-in-proverbs-22173131/2252D8D658419FB8D65429F8C619A03B). Accessed 2026-09-02.
+
+**Reuse:** Cite the chapter and consult the full text for exact sequence and verbal comparisons. Follow Cambridge terms.
+
+## R126 — The Great Aten Hymn and Psalm 104
+
+**Status:** J. A. Buys, “The Great Aten Hymn and Psalm 104,” University of Pretoria repository record.
+
+**Source class:** Scholarly repository article and comparative study.
+
+**Use:** Similarities and differences between the hymn and Psalm 104, and the absence of a scholarly consensus that the Psalm directly derives from the hymn.
+
+**Limitations:** The repository landing page and abstract were accessible; the comparison should not be expanded into a transmission claim without reading the full article and checking chronology and intermediaries.
+
+**Access:** [The Great Aten Hymn and Psalm 104](https://repository.up.ac.za/handle/2263/75275). Accessed 2026-09-02.
+
+**Reuse:** Cite the repository version and its author. Follow University of Pretoria terms for the PDF and any reproduced text.
+
+## R127 — Elephantine papyrus concerning the temple of YHW
+
+**Status:** Staatliche Museen zu Berlin Elephantine project object record, object 100282.
+
+**Source class:** Institutional papyrus collection record and translation orientation.
+
+**Use:** The YHW temple, the 410 BCE destruction, the letter to Persian authorities, Khnum priestly opposition, offerings, and correspondence involving Jerusalem and Samaria.
+
+**Limitations:** The record presents one papyrus and an institutional translation/context. It cannot by itself reconstruct all of Elephantine's religious life or settle every question about divine names and communal practice.
+
+**Access:** [Elephantine papyrus concerning the YHW temple](https://elephantine.smb.museum/objects/object.php?o=100282). Accessed 2026-09-02.
+
+**Reuse:** Cite the object number and collection. Check Staatliche Museen permissions before reusing photographs or translations.
+
+## R128 — Elephantine Passover letter
+
+**Status:** University of Michigan Image Database record for an Elephantine papyrus.
+
+**Source class:** Institutional papyrus image and catalogue record.
+
+**Use:** The garrison community, YHWH/Yahu, Hananiah's Passover letter, the Persian administrative setting, and the material form of a double-sided papyrus.
+
+**Limitations:** The image database record is an object and image orientation, not a complete history of the community or its legal archive. Translation and dating should be checked against a papyrological edition.
+
+**Access:** [Elephantine Passover papyrus](https://image-database.nes.lsa.umich.edu/items/show/118). Accessed 2026-09-02.
+
+**Reuse:** Cite the database record and follow the University of Michigan image and reproduction terms.
+
+## R129 — Anat-Yahu and the Jews at Elephantine
+
+**Status:** Scholarly repository article record on Anat-Yahu and the Elephantine community.
+
+**Source class:** Scholarly article PDF and religious-history study.
+
+**Use:** Divine names alongside YHW, the relationship with Khnum's priests, and the problem of describing Elephantine as either fully separate from or fully absorbed into Egyptian religious life.
+
+**Limitations:** The PDF was indexed but could not be fully retrieved in this environment. Use the record as orientation until the complete argument and citations are checked.
+
+**Access:** [Anat-Yahu and the Jews at Elephantine](https://repository.up.ac.za/bitstreams/26296db6-4aa0-49af-8caa-1a59252efef3/download). Accessed 2026-09-02.
+
+**Reuse:** Cite the article after checking its author and title page. Follow repository and publisher terms before quoting or reproducing the PDF.
+
+## R130 — The Qur'an: Yusuf and Taha
+
+**Status:** Qur'an.com digital text pages for Surah 12, Yusuf, and Surah 20, Taha.
+
+**Source class:** Primary religious text in a digital edition.
+
+**Use:** Qur'anic accounts of Yusuf, Musa, and Firʿawn, including differences from Genesis and Exodus and the absence of a named Potiphar in the Yusuf narrative.
+
+**Limitations:** Qur'an.com is a digital presentation and translation interface, not a critical Arabic edition. Translation choices matter; cite the surah and verses and do not treat later tafsir as the Qur'anic text itself.
+
+**Access:** [Surah Yusuf](https://quran.com/12) and [Surah Taha](https://quran.com/20). Accessed 2026-09-02.
+
+**Reuse:** Cite surah and verse numbers and identify the translation used. Follow the site's terms for translated text.
+
+## R131 — Medieval Arabic reception of Egyptian hieroglyphs
+
+**Status:** Okasha El Daly, *Egyptology: The Missing Millennium*, eScholarship record and dissertation/book orientation.
+
+**Source class:** Scholarly repository record on medieval Arabic antiquarianism.
+
+**Use:** Medieval Arabic interest in ancient Egyptian scripts, Ibn Wahshiyya, antiquarian pride, and the distinction between reception history and successful decipherment.
+
+**Limitations:** Only the repository landing record was accessible here. It supports the existence and importance of the research topic, not every claim about Ibn Wahshiyya's readings or their accuracy.
+
+**Access:** [Medieval Arabic reception of Egyptian hieroglyphs](https://escholarship.org/uc/item/9j83j7mv). Accessed 2026-09-02.
+
+**Reuse:** Cite El Daly's full publication for substantive claims. Follow eScholarship and publisher terms before reusing the dissertation or book text.
+
+## R132 — Ibn Wahshiyya, Ancient alphabets
+
+**Status:** Wellcome Collection record for Hammer's 1806 edition of Ibn Wahshiyya's *Ancient alphabets*.
+
+**Source class:** Digitised antiquarian publication and library collection record.
+
+**Use:** The modern reception and circulation of an Arabic work attributed to Ibn Wahshiyya, including its date, language, and digitised material form.
+
+**Limitations:** A nineteenth-century edition and its attribution do not prove that Ibn Wahshiyya deciphered hieroglyphs. This is evidence for reception and publication history, not a successful ancient-script translation.
+
+**Access:** [Ancient alphabets](https://wellcomecollection.org/works/dfb7gwch). Accessed 2026-09-02.
+
+**Reuse:** The Wellcome record marks the digitised item Public Domain Mark, but check page-level metadata and attribution requirements before reuse.
+
+## R133 — The judgment in the Egyptian Book of the Dead
+
+**Status:** Oxford Handbook of Egyptology chapter abstract, “The Judgment.”
+
+**Source class:** Scholarly handbook chapter abstract.
+
+**Use:** Posthumous judgment, the weighing of the heart, and the textual and pictorial evidence for Chapter 125.
+
+**Limitations:** Only the abstract/landing record was accessible. It is insufficient for detailed comparison with later Jewish, Christian, or Islamic judgment traditions and supplies no proof of transmission.
+
+**Access:** [The judgment](https://academic.oup.com/edited-volume/46575/chapter-abstract/408946357). Accessed 2026-09-02.
+
+**Reuse:** Cite the chapter and consult the full text for exact spell and manuscript references. Follow Oxford Academic terms.
+
+## R134 — Sources for early Islamic Egypt
+
+**Status:** Maged Mikhail, “Orientation to Sources and Study of Early Islamic Egypt (641–868 CE),” *History Compass* 8, 2010, Wiley record.
+
+**Source class:** Scholarly journal abstract and source survey.
+
+**Use:** Coptic, Melkite, Arabic, papyrological, and institutional evidence for early Islamic Egypt, and the need to narrate Coptic-Muslim history as shared and changing rather than as a simple succession.
+
+**Limitations:** The accessible Wiley page provides an abstract and bibliography rather than the complete article. It is a map of source problems, not a substitute for community-level histories.
+
+**Access:** [Sources for early Islamic Egypt](https://compass.onlinelibrary.wiley.com/doi/10.1111/j.1478-0542.2010.00704.x). Accessed 2026-09-02.
+
+**Reuse:** Cite Mikhail and consult the article for the full bibliography. Follow Wiley terms for the article and any quotations.
