@@ -78,10 +78,10 @@ This distinction protects against a common reversal. If later political integrat
 
 | Archaeological context | It can show | It cannot show by itself |
 |---|---|---|
-| Settlement | Occupation, rebuilding, foodways, spatial organization, and some forms of work | A complete population, a single political identity, or every social relationship | 
-| Cemetery | Selection, burial investment, ranking, mortuary practice, and changing treatment of bodies | A full class map, the lived biography of each person, or the beliefs of everyone alive | 
-| Workshop or production area | Materials, tools, processes, labor organization, and craft specialization | The whole institution that sponsored it, the identity of every worker, or the terms of exchange | 
-| Ceremonial structure | Organized gathering, special investment, repeated activity, and public display | A later temple institution, one fixed ritual meaning, or a complete state bureaucracy | 
+| Settlement | Occupation, rebuilding, foodways, spatial organization, and some forms of work | A complete population, a single political identity, or every social relationship |
+| Cemetery | Selection, burial investment, ranking, mortuary practice, and changing treatment of bodies | A full class map, the lived biography of each person, or the beliefs of everyone alive |
+| Workshop or production area | Materials, tools, processes, labor organization, and craft specialization | The whole institution that sponsored it, the identity of every worker, or the terms of exchange |
+| Ceremonial structure | Organized gathering, special investment, repeated activity, and public display | A later temple institution, one fixed ritual meaning, or a complete state bureaucracy |
 
 ## From sites to arguments
 
