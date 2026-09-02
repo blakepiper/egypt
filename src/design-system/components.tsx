@@ -586,15 +586,28 @@ export function Dialog({
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const restoreTo = useRef<HTMLElement | null>(null);
+  // Callers pass an inline `onClose`, so it is a new function on every render.
+  // The trap below must set up once per opening: re-running it would restore
+  // focus and then re-focus the first control, stealing the caret out of any
+  // field the reader is typing in.
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
+
+  // The element to restore has to be read while opening, before any child
+  // effect moves focus into the dialog.
+  const wasOpen = useRef(false);
+  if (open && !wasOpen.current) restoreTo.current = document.activeElement as HTMLElement | null;
+  wasOpen.current = open;
 
   useEffect(() => {
     if (!open) return;
-    restoreTo.current = document.activeElement as HTMLElement | null;
     const node = ref.current;
     const focusable = () => Array.from(node?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])') ?? []);
-    focusable()[0]?.focus();
+    // A child may have claimed focus already — the search panel focuses its
+    // field — so only take it when nothing inside the dialog holds it.
+    if (!node?.contains(document.activeElement)) focusable()[0]?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') { event.preventDefault(); onClose(); return; }
+      if (event.key === 'Escape') { event.preventDefault(); closeRef.current(); return; }
       if (event.key !== 'Tab') return;
       const items = focusable();
       if (!items.length) return;
@@ -610,7 +623,7 @@ export function Dialog({
       document.body.classList.remove('is-dialog-open');
       restoreTo.current?.focus();
     };
-  }, [open, onClose]);
+  }, [open]);
 
   if (!open) return null;
   return (

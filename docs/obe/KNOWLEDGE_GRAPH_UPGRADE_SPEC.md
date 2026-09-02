@@ -1,9 +1,14 @@
-# Knowledge graph upgrade — implementation spec
+# Knowledge graph upgrade — implementation spec (archived)
 
-Status: superseded. The specified phases were implemented on 2026-08-31;
-the completed release state is recorded in `../live/IMPLEMENTATION_STATUS.md`.
+Status: archived and superseded. The specified phases were implemented on
+2026-08-31; the completed release state is recorded in
+[IMPLEMENTATION_STATUS.md](../live/IMPLEMENTATION_STATUS.md).
 Author: investigation session, 2026-08-31
 Target files: `src/features/graph/`, `scripts/content/build-graph.ts`, `src/types/content.ts`, `src/application.css`, `tests/`
+
+This document preserves the investigation, measurements, and phase criteria
+that led to the shipped graph. The unchecked checklist is historical reference
+and is not a current task list.
 
 ---
 

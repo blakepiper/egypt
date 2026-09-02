@@ -52,6 +52,12 @@ describe.runIf(built)('bundle budgets', () => {
     expect(readdirSync(ASSETS).some((file) => file.startsWith('graph-'))).toBe(true);
   });
 
+  it('keeps the full-text search index below 500 KB gzip', () => {
+    const searchIndex = join(ROOT, 'public/generated/search-index.json');
+    expect(existsSync(searchIndex)).toBe(true);
+    expect(gzipBytes(searchIndex)).toBeLessThan(500 * 1024);
+  });
+
   it('ships no media file above 250 KB', () => {
     const media = join(ROOT, 'public/media');
     if (!existsSync(media)) return;

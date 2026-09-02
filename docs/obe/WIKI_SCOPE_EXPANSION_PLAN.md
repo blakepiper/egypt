@@ -1,12 +1,19 @@
-# Wiki scope expansion plan
+# Wiki scope expansion plan (archived)
 
-Status: implementation plan only
+Status: completed and archived. The expanded release is recorded in [IMPLEMENTATION_STATUS.md](../live/IMPLEMENTATION_STATUS.md).
 
 Prepared: 2026-08-30
+
+Archived: 2026-08-31
 
 Target implementer: Luna Max, working directly on `main`
 
 Repository: `/Users/blake/egypt`
+
+This document preserves the editorial audit, research ledger, and acceptance
+criteria used to build the expanded wiki. The baseline and unchecked checklist
+below describe the pre-release state; they are historical reference rather than
+an active work queue.
 
 ## 1. Executive summary
 

@@ -1,5 +1,9 @@
 # The Living Archive — design system
 
+Status: current design reference
+
+Updated: 2026-08-31
+
 ## Purpose
 
 The system supports two experiences without splitting into two brands:
@@ -102,22 +106,23 @@ Implemented primitives:
 - `Window`: article, atlas, media, tool, and journey container with title and provenance/status region. Managed windows support pointer dragging, minimizing, maximizing, closing, focus-layer promotion, double-click title-bar maximize, and a static mobile layout.
 - `Button`: default, primary, quiet, and icon-only actions with mechanical press state.
 - `Icon`: small original geometric SVG set; icons communicate actions, never transliterate Egyptian symbols.
-- `EvidenceBadge`: four persistent evidence states.
+- `EvidenceBadge`: five persistent evidence states.
+- `OriginBadge`, `FilterSelect`, and `Segmented`: provenance labels and compact state controls shared by browse, search, and graph views.
 - `Callout`: interpretive limits, cautions, and necessary context.
+- `Dialog`: modal focus management, Escape dismissal, backdrop dismissal, and focus restoration.
 
-Demonstrated compositions:
+Current compositions:
 
-- searchable concept atlas;
-- concept detail with an archive trail;
-- guided threshold sequence;
-- interactive Nile-season lens;
-- evidence key;
-- palette, typography, badges, and control specimen.
+- encyclopedia articles with source trails, backlinks, related reading, and stable heading links;
+- searchable archive with query-scoped filters, provenance badges, and keyboard result navigation;
+- atlas, layered chronology, typed knowledge graph, object studies, and guided journeys;
+- accessible visualizations paired with lists, tables, transcripts, or descriptions;
+- the original palette, typography, badges, controls, and motion specimen at `/specimen/`.
 
-Next application components should follow the same model:
+Application patterns follow the same model:
 
 - **Article shell:** breadcrumb, title, period/place, evidence summary, reading body, footnotes, sources, related concepts.
-- **Search:** title and full-text matching with filters for period, place, deity, practice, corpus, and evidence status.
+- **Search:** title and full-text matching with filters for section, type, origin, evidence, period, place, and tag.
 - **Timeline:** overlapping bands rather than a single progress arrow; dates before 664 BCE visibly marked approximate where applicable.
 - **Map:** Nile-oriented by default, explicit Upper/south and Lower/north labels, accessible place list equivalent.
 - **Concept graph:** keyboard-reachable nodes, textual relationship list, focus isolation, and a no-motion layout.
@@ -153,27 +158,24 @@ Procession may be expressed as discrete movement from threshold to threshold. Ex
 - Target WCAG 2.2 AA contrast. `npm run check:contrast` verifies the core token pairs in both themes.
 - Every action is keyboard reachable and has a visible focus indicator.
 - Color never carries evidence or selection state alone.
-- The concept web has explicit button nodes; the future graph must also expose a textual relationship list.
+- The concept web and knowledge graph have explicit keyboard-reachable nodes and textual relationship lists.
 - The desktop rail becomes a bottom navigation below 760px. Context panels stack after primary content.
 - Body copy does not shrink on mobile. Wide data should scroll within its own framed region.
 - Decorative motion is removed under reduced motion. Meaningful state changes remain available as text.
-- The search dialog receives initial focus and closes with Escape. A production dialog should add a complete focus trap or use the native `dialog` element.
+- Search and other dialogs receive initial focus, trap Tab navigation, close with Escape, and restore focus to the trigger.
 
 ## Static architecture and wiki integration
 
-The specimen ships as Vite-generated static HTML, CSS, and JavaScript with relative asset paths. It requires no runtime server.
+The application ships as Vite-generated static HTML, CSS, and JavaScript with relative asset paths. It requires no runtime server. The build emits one real HTML entry point per route for GitHub Pages direct reloads; the original single-document specimen remains available at `/specimen/` for comparison.
 
-For the full wiki:
+The content pipeline:
 
-1. Read `llm-wiki/index.md` at build time.
+1. Read the 70 publishable Markdown pages in `llm-wiki/` at build time.
 2. Parse YAML frontmatter and Obsidian links into typed generated JSON.
-3. Build one searchable document per Markdown page; preserve source IDs and source-status metadata.
-4. Convert internal links to stable static routes or hashes.
-5. Emit a compact search index and lazy-load article payloads.
-6. Keep `llm-wiki/` authoritative; generated files are disposable build artifacts.
-7. Copy only rights-cleared media into the deployed assets directory with a machine-readable rights record.
-
-The current single-document specimen avoids route fallback problems on GitHub Pages. If path routes are later introduced, pre-render each route or provide an intentional Pages fallback.
+3. Build one searchable document per page plus the seven structured journeys; preserve source IDs and source-status metadata.
+4. Convert internal links to stable static routes or hashes and emit lazy article payloads.
+5. Keep `llm-wiki/` authoritative; generated files are disposable build artifacts.
+6. Copy only rights-cleared media into the deployed assets directory with a machine-readable rights record.
 
 ## Extending the system
 
@@ -194,11 +196,11 @@ The specimen's primitives (`src/design-system/index.tsx`: `Window`, `Button`, `I
 | `PageHeader`, `Breadcrumbs`, `Section`, `Card`, `CardGrid` | Page furniture. Every hub route is built from these. |
 | `TableOfContents` | Collapsible, marks the current section with `aria-current`, and never moves the article. |
 | `Backlinks`, `RelatedPages` | Grouped by relationship type. Related pages show the curated note, not a similarity score. |
-| `SourceList`, `Citation` | Stable C IDs that link both ways between a page and the catalog. |
+| `SourceList`, `Citation` | Stable C and R IDs that link both ways between a page and the appropriate catalog. |
 | `EvidenceCallout`, `ReconstructionBoundary` | Evidence and limits appear in the same viewport as the claim. |
 | `TermDefinition` | First-use glossary definition. The definition is in the DOM and reachable by keyboard whether or not it is expanded. |
 | `MediaFigure`, `VideoPlayer`, `Transcript`, `RightsCredit` | Media is addressed by manifest ID. An uncleared or unknown ID renders a visible placeholder, so a rights gap shows in the page rather than in the console. Video is click-to-load with visible controls and no autoplay. |
-| `FilterBar`, `Toggle`, `Dialog`, `EmptyState` | `Dialog` traps focus, closes on Escape, and restores focus to the trigger. |
+| `FilterBar`, `FilterSelect`, `Toggle`, `Dialog`, `EmptyState` | `Dialog` traps focus, closes on Escape, and restores focus to the trigger. |
 | `NeighborhoodGraph`, `GraphViewport` (in features) | Every diagram is paired with a list carrying the same relationships. |
 
 ### Rules that the tests enforce
