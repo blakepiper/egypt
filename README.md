@@ -4,9 +4,11 @@
   <img src="public/media/archive-app-icon.png" alt="The Living Archive logo" width="128" />
 </p>
 
-A static application for learning about ancient Egyptian religion and its afterlives. It publishes 70 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, eight learning paths, seven guided journeys, object studies, and accessible visualizations.
+A static application for learning about ancient Egyptian religion and its afterlives. It publishes 81 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, 18 learning paths, seven guided journeys, object studies, and accessible visualizations.
 
 Everything is compiled at build time. There is no server, database, account, paid API, remote font, analytics, or tracker. Reader preferences stay in `localStorage`.
+
+Project documentation is indexed in [`docs/README.md`](docs/README.md). Current references live in `docs/live/`; completed plans and superseded specifications live in `docs/obe/`.
 
 ## Run it
 
@@ -39,7 +41,7 @@ The build emits one real HTML entry point per route, so a direct reload works on
 BASE_PATH=/your-repository/ REPOSITORY_URL=https://github.com/you/your-repository npm run build
 ```
 
-`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. Build and publish `dist/` manually when deploying. The build also emits 97 static route entry points, a `404.html`, and `.nojekyll`.
+`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. Build and publish `dist/` manually when deploying. The build also emits 109 static route entry points, a `404.html`, and `.nojekyll`.
 
 ## Structure
 
@@ -69,12 +71,15 @@ src/
 tests/
   unit/                       content pipeline, search, graph, budgets
   *.spec.ts                   browser, accessibility, and deployment tests
-docs/                         plan, design system, status, and rights records
+docs/                         current references and archived plans/specifications
+  README.md                   documentation index
+  live/                       current design, release status, and rights guidance
+  obe/                        archived implementation plans and specifications
 ```
 
 ## How content becomes an application
 
-`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/`. The current build contains 139 source records: 36 course groups covering 72 immutable raw files and 103 supplemental research records. The private R069 itinerary is catalogued without a public URL or filesystem locator.
+`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/` plus the public lazy search index at `public/generated/search-index.json`. The current build contains 170 source records: 36 course groups covering 72 immutable raw files and 134 supplemental research records. The private R069 itinerary is catalogued without a public URL or filesystem locator.
 
 | File | What it holds |
 | --- | --- |
@@ -83,9 +88,9 @@ docs/                         plan, design system, status, and rights records
 | `search-index.json` | a compact inverted index, loaded only when search opens |
 | `graph.json` | nodes, typed edges, and deterministic layout coordinates |
 | `entities.json`, `periods.json`, `places.json`, `sources.json` | the registries behind the atlas, chronology, graph, and catalog |
-| `visualizations.json`, `decoder.json`, `glossary.json` | interactive views derived from the wiki's own tables |
+| `visualizations.json`, `decoder.json`, `alphabet.json`, `glossary.json` | interactive views derived from the wiki's own tables |
 
-Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, the four-week plan checklist, the concept checks, and the glossary. A view therefore cannot drift away from the article behind it.
+Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the alphabet lineage, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, the four-week plan checklist, the concept checks, and the glossary. A view therefore cannot drift away from the article behind it.
 
 The build fails on a broken wiki link, a duplicate heading ID, an unknown source ID, an unknown media ID, raw HTML, an unknown callout or relation type, an orphan page, a route collision, an invalid review state, or a private-source/private-place leak. It also validates J01's twelve-stage transcript and the no-JavaScript route artifacts.
 
@@ -102,4 +107,4 @@ The build fails on a broken wiki link, a duplicate heading ID, an unknown source
 
 ## What is deliberately not here
 
-No accounts, comments, CMS, chatbot, live external data, commercial map service, social feeds, autoplay, or VR. See `docs/obe/APPLICATION_IMPLEMENTATION_PLAN.md` §16, and `docs/live/IMPLEMENTATION_STATUS.md` for what is finished and what is not.
+No accounts, comments, CMS, chatbot, live external data, commercial map service, social feeds, autoplay, or VR. See [`docs/live/IMPLEMENTATION_STATUS.md`](docs/live/IMPLEMENTATION_STATUS.md) for the current release record and [`docs/obe/APPLICATION_IMPLEMENTATION_PLAN.md`](docs/obe/APPLICATION_IMPLEMENTATION_PLAN.md) §16 for the original exclusions.

@@ -2,7 +2,7 @@
 type: reference
 tags: [glossary, vocabulary, reference]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Definitions, Terms]
@@ -83,6 +83,31 @@ review:
 | **transmission** | Evidence that a text, practice, image, or concept moved through a demonstrable chain of contact; resemblance alone is not transmission. [[contested-interpretations]] |
 | **votive mummy** | A deliberately prepared animal body offered in a particular religious economy; it is not identical to a living cult animal or a deity's image. [[animals-gods-and-nonhuman-agency]] |
 | **theodicy** | An attempt to explain divine power or justice in relation to suffering, misfortune, and disorder. [[suffering-misfortune-and-divine-justice]] |
+
+## Writing, transmission, and layered memory
+
+| Term | Concise definition |
+|---|---|
+| **uniliteral** | An Egyptian sign conventionally used for one consonant; it belongs to a mixed writing system, not an exclusive alphabet. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **biliteral** | An Egyptian sign conventionally representing two consonants. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **triliteral** | An Egyptian sign conventionally representing three consonants. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **determinative** | A sign that clarifies a word's semantic category without normally adding its consonants. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **rebus principle** | Using a sign for the sound or consonants of the word it pictures rather than only for its object. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **acrophony** | Using a pictured sign for the first consonant of the word for that object in the writer's language. [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| **Proto-Sinaitic** | A modern label for a small and contested early alphabetic corpus associated especially with Sinai and Egyptian-contact contexts. [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| **consonantary** | A writing system whose normal signs represent consonants without routinely marking vowels. [[from-canaan-to-phoenician-greek-and-latin]] |
+| **abjad** | A modern linguistic term for a consonant-focused alphabetic writing system; it should not erase the historical differences among Phoenician, Aramaic, Hebrew, and Arabic scripts. [[from-canaan-to-phoenician-greek-and-latin]] |
+| **alphabet** | A writing system organized around signs for individual sound units; “Egyptian alphabet” is defensible only in the narrow uniliteral sense. [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| **Ugaritic cuneiform** | A Late Bronze Age alphabetic cuneiform tradition that is a separate branch from the linear Phoenician consonantary. [[from-canaan-to-phoenician-greek-and-latin]] |
+| **serekh** | A framed early royal name used in Egyptian display; its distribution is not automatically a map of administration. [[narmer-and-the-making-of-unification]] |
+| **Dynasty 0** | A modern label for late Predynastic and Protodynastic rulers, not an ancient dynasty named in a surviving contemporary list. [[narmer-and-the-making-of-unification]] |
+| **retainer sacrifice** | A debated interpretation of subsidiary burials near early royal tombs; the burial pattern and the proposed killing mechanism must remain separate. [[abydos-umm-el-qaab-and-the-first-writing]] |
+| **garrison community** | A community connected to a military settlement or institution, without reducing all residents to soldiers or one uniform identity. [[elephantine-judaeans-and-egyptian-religious-life]] |
+| **YHW / Yahu** | Forms of the divine name appearing in the Aramaic Elephantine documents. [[elephantine-judaeans-and-egyptian-religious-life]] |
+| **parallelomania** | Treating isolated similarities as proof of borrowing without a dated route, intermediary, and patterned correspondence. [[contested-interpretations]] |
+| **literary influence** | A proposed relationship among texts that requires chronology, contact, correspondence, and a plausible mechanism rather than a shared topic alone. [[egyptian-wisdom-and-biblical-literature]] |
+| **thirty sayings crux** | The debated relationship between a phrase in Proverbs 22:20 and the division of Amenemope into thirty sayings or chapters. [[egyptian-wisdom-and-biblical-literature]] |
+| **moral accounting** | A broad comparative term for traditions that connect conduct, judgment, consequence, memory, or postmortem status; it does not prove a common origin. [[judgment-the-weighed-heart-and-later-afterlives]] |
 
 ## Expanded working vocabulary
 

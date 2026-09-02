@@ -16,7 +16,7 @@ review:
 
 Every substantive raw file is listed in [[source-catalog]]. This map records where each source group materially affects the wiki.
 
-The expanded release contains 70 publishable pages, including the 28 N01–N28 articles, and 139 source records: 36 course groups plus 103 supplemental research records. The course groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately and keeps R069 private.
+The expanded release contains 81 publishable pages, including the 28 N01–N28 articles, and 170 source records: 36 course groups plus 134 supplemental research records. The course groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately and keeps R069 private.
 
 | Group | Main wiki integration |
 |---|---|
@@ -56,6 +56,44 @@ The expanded release contains 70 publishable pages, including the 28 N01–N28 a
 | C34 nuclear-physics paper | [[contested-interpretations]] |
 | C35 water-lily images | [[blue-water-lily-research]] |
 | C36 report guide | [[course-reconstruction]], [[source-catalog#C05 — Set research project]] |
+
+## New cluster coverage
+
+Every new R-series record has a destination below. The destination is the page where its substantive contribution is used; the catalog remains the place for access, limitations, and reuse conditions.
+
+| Record | Main wiki destination |
+|---|---|
+| R104 Hierakonpolis HK6 elite cemetery | [[naqada-hierakonpolis-and-early-centers]] |
+| R105 Hierakonpolis HK29A ceremonial center | [[naqada-hierakonpolis-and-early-centers]] |
+| R106 Abydos Archaeology Research | [[naqada-hierakonpolis-and-early-centers]], [[abydos-umm-el-qaab-and-the-first-writing]], [[narmer-and-the-making-of-unification]] |
+| R107 Theban Desert Road Survey | [[desert-routes-rock-art-and-early-mobility]], [[narmer-and-the-making-of-unification]], [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| R108 OIP 119 survey PDF | [[desert-routes-rock-art-and-early-mobility]], [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| R109 Origins and early development of Egyptian writing | [[abydos-umm-el-qaab-and-the-first-writing]], [[uniliteral-signs-and-egyptian-phonetic-writing]], [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| R110 Narmer Palette cast record | [[abydos-umm-el-qaab-and-the-first-writing]], [[narmer-and-the-making-of-unification]] |
+| R111 Scorpion mace-head | [[narmer-and-the-making-of-unification]] |
+| R112 Palermo Stone | [[narmer-and-the-making-of-unification]] |
+| R113 Turin King List | [[abydos-umm-el-qaab-and-the-first-writing]], [[narmer-and-the-making-of-unification]] |
+| R114 Kahl on fourth-millennium writing | [[abydos-umm-el-qaab-and-the-first-writing]], [[uniliteral-signs-and-egyptian-phonetic-writing]] |
+| R115 Alphabet origins: Kipling to Sinai | [[uniliteral-signs-and-egyptian-phonetic-writing]], [[proto-sinaitic-and-the-alphabetic-breakthrough]], [[from-canaan-to-phoenician-greek-and-latin]] |
+| R116 New discoveries at Serabit el-Khadim | [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| R117 Bebi in Sinai | [[desert-routes-rock-art-and-early-mobility]], [[proto-sinaitic-and-the-alphabetic-breakthrough]] |
+| R118 Early alphabets | [[proto-sinaitic-and-the-alphabetic-breakthrough]], [[from-canaan-to-phoenician-greek-and-latin]] |
+| R119 Aramaic and Hebrew scripts | [[from-canaan-to-phoenician-greek-and-latin]] |
+| R120 Greek writing | [[from-canaan-to-phoenician-greek-and-latin]] |
+| R121 Ahiram inscriptions | [[from-canaan-to-phoenician-greek-and-latin]] |
+| R122 Development of Arabic scripts | [[from-canaan-to-phoenician-greek-and-latin]], [[egypt-in-quranic-and-islamic-tradition]] |
+| R123 Instruction of Amenemope papyrus | [[egyptian-wisdom-and-biblical-literature]] |
+| R124 Amenemope and Proverbs | [[egyptian-wisdom-and-biblical-literature]], [[judgment-the-weighed-heart-and-later-afterlives]] |
+| R125 Proverbs social contexts | [[egyptian-wisdom-and-biblical-literature]], [[judgment-the-weighed-heart-and-later-afterlives]] |
+| R126 Aten Hymn and Psalm 104 | [[egyptian-wisdom-and-biblical-literature]] |
+| R127 Elephantine YHW papyrus | [[elephantine-judaeans-and-egyptian-religious-life]] |
+| R128 Elephantine Passover letter | [[elephantine-judaeans-and-egyptian-religious-life]] |
+| R129 Anat-Yahu and the Jews at Elephantine | [[elephantine-judaeans-and-egyptian-religious-life]] |
+| R130 Qur'an, Yusuf and Taha | [[egypt-in-quranic-and-islamic-tradition]], [[judgment-the-weighed-heart-and-later-afterlives]] |
+| R131 Medieval Arabic reception of hieroglyphs | [[egypt-in-quranic-and-islamic-tradition]] |
+| R132 Ibn Wahshiyya, Ancient alphabets | [[egypt-in-quranic-and-islamic-tradition]] |
+| R133 The judgment in the Book of the Dead | [[judgment-the-weighed-heart-and-later-afterlives]] |
+| R134 Sources for early Islamic Egypt | [[egypt-in-quranic-and-islamic-tradition]] |
 
 ## Expansion coverage
 
