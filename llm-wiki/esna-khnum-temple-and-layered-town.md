@@ -3,7 +3,7 @@ type: place-study
 tags: [esna, khnum, temples, graeco-roman-egypt, conservation, urban-history, living-heritage]
 origin: supplemental
 evidence: mixed
-updated: 2026-08-31
+updated: 2026-09-02
 aliases: [Esna, Iunyt, Latopolis, Temple of Khnum]
 periods: [ptolemaic, roman, islamic]
 places: [esna, nile, upper-egypt]
@@ -32,7 +32,7 @@ review:
 
 Esna is easy to reduce to one doorway. The surviving pronaos of the Temple of Khnum is a remarkable room, but it is only one layer of a town that has carried different names, institutions, trades, and religious buildings across many centuries. A useful visit therefore moves in two directions at once: inward, toward the late temple's inscriptions and ritual architecture; and outward, toward the streets, markets, workshops, and conservation decisions that give the monument its present setting.
 
-The route in J01 begins at Esna rather than at Luxor. The private itinerary record, R069, is used here only for that planned embarkation and route order. It does not prove that an ancient practice survived in the modern town, and it does not authorize claims about residents. For the historical temple, start with the evidence assembled in the [Temple of Esna project](https://uni-tuebingen.de/en/faculties/faculty-of-humanities/departments/ancient-studies-and-art-history/institute-for-ancient-near-eastern-studies/research/egyptology/research-projects/the-temple-of-esna/) (R070). For the town's current heritage work, use the project account for [Revitalisation of Historic Esna](https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/revitalisation-of-historic-esna) (R071). They answer different questions.
+The route in J01 begins at Esna rather than at Luxor. The published itinerary record, R069, is used here only for that planned embarkation and route order. It does not prove that an ancient practice survived in the modern town, and it does not authorize claims about residents. For the historical temple, start with the evidence assembled in the [Temple of Esna project](https://uni-tuebingen.de/en/faculties/faculty-of-humanities/departments/ancient-studies-and-art-history/institute-for-ancient-near-eastern-studies/research/egyptology/research-projects/the-temple-of-esna/) (R070). For the town's current heritage work, use the project account for [Revitalisation of Historic Esna](https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/revitalisation-of-historic-esna) (R071). They answer different questions.
 
 > [!evidence] Several dates, several kinds of evidence
 > The standing hall and its decoration belong mainly to the Ptolemaic and Roman periods. The cult of Khnum and the town's earlier history are much older questions, but the surviving building cannot be treated as a complete record of them. R070 is a current research and conservation overview, while the Esna material in [[source-catalog#C12 — Cosmogony primary-source packet|C12]] preserves translated primary-source material. Neither source turns a late inscription into a transparent description of all earlier Egyptian religion.

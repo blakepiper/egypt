@@ -90,7 +90,7 @@ Egyptian sources often describe southern regions through the interests of the Eg
 
 ## A travel route is not an ancient map
 
-J01 connects public archaeological places with a contemporary itinerary. Its route order comes from the private itinerary record, while historical interpretation comes from the research catalog and the site pages. The map should show only verified public places. Household visits, farm encounters, and an unnamed community remain textual subjects with privacy protections, not pins or proof of an unchanged culture. Read [[egypt-trip-field-guide]] with [[living-nile-communities-work-food-and-hospitality]], [[esna-khnum-temple-and-layered-town]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]].
+J01 connects public archaeological places with a contemporary itinerary. Its route order comes from the published itinerary record, while historical interpretation comes from the research catalog and the site pages. The map should show only verified public places. Household visits, farm encounters, and an unnamed community remain textual subjects with privacy protections, not pins or proof of an unchanged culture. Read [[egypt-trip-field-guide]] with [[living-nile-communities-work-food-and-hospitality]], [[esna-khnum-temple-and-layered-town]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], and [[kom-ombo-sobek-harwer-and-crocodiles]].
 
 ## Supplemental research
 

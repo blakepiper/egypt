@@ -48,6 +48,8 @@ BASE_PATH=/your-repository/ REPOSITORY_URL=https://github.com/you/your-repositor
 ```text
 llm-wiki/                     source of truth for all written content
 raw/                          immutable source files; never published
+public/                       static files shipped with the application
+  sources/                    public source documents
 content/                      reviewed data that is not prose
   entities/                   concepts, personhood, practices, texts, roles, deities
   journeys/                   guided experience scripts
@@ -79,7 +81,7 @@ docs/                         current references and archived plans/specificatio
 
 ## How content becomes an application
 
-`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/` plus the public lazy search index at `public/generated/search-index.json`. The current build contains 170 source records: 36 course groups covering 72 immutable raw files and 134 supplemental research records. The private R069 itinerary is catalogued without a public URL or filesystem locator.
+`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/` plus the public lazy search index at `public/generated/search-index.json`. The current build contains 170 source records: 36 course groups covering 72 immutable raw files and 134 supplemental research records. The published R069 itinerary is stored in `public/sources/`, linked from its catalog record, and checksum-verified during each content build.
 
 | File | What it holds |
 | --- | --- |

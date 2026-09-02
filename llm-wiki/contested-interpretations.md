@@ -99,7 +99,7 @@ Copyright review and dignity review are different tasks. Human remains require r
 
 ## Supplemental research
 
-The R-series records listed below document the modern comparisons, reception histories, ethical guidance, and private-itinerary boundary discussed here.
+The R-series records listed below document the modern comparisons, reception histories, ethical guidance, and itinerary-specific boundary discussed here.
 
 ## Sources in this archive
 

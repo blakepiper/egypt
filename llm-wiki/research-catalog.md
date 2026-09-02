@@ -4,7 +4,7 @@ tags: [sources, provenance, research, supplemental]
 course: supplemental
 origin: supplemental
 evidence: archive
-updated: 2026-08-31
+updated: 2026-09-02
 review:
   factual: reviewed
   humanizer: reviewed
@@ -14,9 +14,9 @@ review:
 
 # Supplemental research catalog
 
-These records extend the original course archive with supplemental research. The ledger was assembled and checked on 2026-08-31. Each entry states what the source can support and where its limits begin. A catalog record does not replace reading the source itself.
+These records extend the original course archive with supplemental research. The ledger was assembled and checked on 2026-09-02. Each entry states what the source can support and where its limits begin. A catalog record does not replace reading the source itself.
 
-All records except R069 retain the public institutional, publisher, repository, collection, or index URL recorded in the ledger. R017 links to a public repository landing page rather than a stable article item, as its limitations note. R069 is catalog-only because it is a private itinerary.
+All records retain a public institutional, publisher, repository, collection, or index URL recorded in the ledger. R017 links to a public repository landing page rather than a stable article item, as its limitations note. R069 links to the published itinerary file in this repository.
 
 ### Egypt, state formation, society, and knowledge
 
@@ -982,17 +982,17 @@ All records except R069 retain the public institutional, publisher, repository, 
 
 ## R069 — Dahabiya Sailing on the Nile - 5 Days - 4 Nights - Luxor to Aswan
 
-**Status:** Private contemporary itinerary, 12 pages, planned for 11–15 January 2027. SHA-256: 8dc4ebbe2a41c3ff78fd1986ffe0d2dcbd4677bb19e322432301b88513bbf9bd.
+**Status:** Public contemporary itinerary, 12 pages, planned for 11–15 January 2027. SHA-256: 8dc4ebbe2a41c3ff78fd1986ffe0d2dcbd4677bb19e322432301b88513bbf9bd.
 
-**Source class:** Contemporary itinerary and private primary source.
+**Source class:** Contemporary itinerary and primary source.
 
 **Use:** The exact sequence, included transport and activities, optional-tour boundary, and traveler-facing questions for J01.
 
-**Limitations:** This promotional source is private and subject to change. It cannot support historical, archaeological, safety, authenticity, or community-wide claims.
+**Limitations:** This promotional source is subject to change. It cannot support historical, archaeological, safety, authenticity, or community-wide claims.
 
-**Access:** 2026-08-30. Private itinerary supplied by the project owner; not publicly downloadable.
+**Access:** [Itinerary PDF](https://github.com/blakepiper/egypt/blob/main/public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf). Accessed 2026-09-02.
 
-**Reuse:** Use only for the planned route and promised activities. Do not publish its file identity, location, contents beyond the permitted itinerary facts, or any private resident details.
+**Reuse:** Use for the planned route and promised activities. Do not treat it as evidence for ancient history, archaeology, safety, authenticity, or community-wide claims.
 
 ## R070 — The Temple of Esna
 

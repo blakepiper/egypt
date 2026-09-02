@@ -117,7 +117,7 @@ The structured J01 route, “Sailing south: Esna to Aswan,” is reached through
 ## Archive control
 
 - [[source-catalog]] — annotated inventory of all 72 substantive course-archive files in 36 groups
-- [[research-catalog]] — 134 supplemental scholarship and institutional records, with the private itinerary boundary kept catalog-only
+- [[research-catalog]] — 134 supplemental scholarship and institutional records, including the published itinerary record
 - [[reading-audit]] — the honest file-by-file-group reading depth and incorporation standard
 - [[coverage-map]] — every raw file mapped to wiki pages
 - [[student-work-reconstruction]] — research notes with evidence limits kept visible

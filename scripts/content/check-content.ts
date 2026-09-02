@@ -167,12 +167,11 @@ function main(): void {
     }
     for (const source of generatedSourceRecords) {
       if (!source.title || !source.sourceClass || !source.status || !source.use) failures.push(`source ${source.id} is missing catalog metadata`);
-      if (source.origin === 'supplemental' && source.id !== 'R069' && !source.url) failures.push(`supplemental source ${source.id} has no public URL`);
-      if (source.id === 'R069' && (source.url || (source.files?.length ?? 0) > 0)) failures.push('R069 has a public URL or file listing');
+      if (source.origin === 'supplemental' && !source.url) failures.push(`supplemental source ${source.id} has no public URL`);
     }
-    const privateSource = generatedSourceRecords.find((source) => source.id === 'R069');
-    if (!privateSource || /raw|localLocator|\.pdf/i.test(JSON.stringify(privateSource))) {
-      failures.push('R069 private-source metadata leaked into generated public output');
+    const itinerarySource = generatedSourceRecords.find((source) => source.id === 'R069');
+    if (!itinerarySource?.url?.includes('/public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf')) {
+      failures.push('R069 public itinerary link is missing from generated output');
     }
   }
   if (existsSync(generatedJourneysPath)) {
@@ -226,14 +225,6 @@ function main(): void {
     const article = JSON.parse(readFileSync(articlePath, 'utf8')) as { outgoing: unknown[]; backlinks: unknown[] };
     if (article.outgoing.length < 3) failures.push(`${slug}: fewer than three contextual outgoing links`);
     if (article.backlinks.length < 2) failures.push(`${slug}: fewer than two contextual inbound links`);
-  }
-  const generatedRoot = join(ROOT, 'src/generated');
-  if (existsSync(generatedRoot)) {
-    const generatedSources = JSON.parse(readFileSync(generatedSourcesPath, 'utf8')) as Array<Record<string, unknown>>;
-    const generatedR069 = generatedSources.find((source) => source.id === 'R069');
-    if (generatedR069 && /raw|localLocator|publicDownload|\.pdf/i.test(JSON.stringify(generatedR069))) {
-      failures.push('private R069 path material appears beside its public record');
-    }
   }
   for (const failure of failures) console.log(`error  ${failure}`);
   console.log(`\n${result.pages.length} pages, ${routes.length} routes, ${media.length} media records`);

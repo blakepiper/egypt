@@ -3,7 +3,7 @@ type: regional-study
 tags: [nubia, kush, kerma, napata, dynasty-25, displacement, high-dam, nubian-languages, living-heritage, tourism]
 origin: supplemental
 evidence: mixed
-updated: 2026-08-31
+updated: 2026-09-02
 aliases: [Nubia and Kush, Nubian history, Nubian displacement, Living Nubian identity]
 periods: [predynastic, middle-kingdom, new-kingdom, late-period, roman, christian-nubia, islamic]
 places: [nubia, kush, kerma, napata, aswan, kom-ombo, lake-nasser]
@@ -144,7 +144,7 @@ At the start, define the region without turning it into one culture. Then follow
 
 Next, place the dams in the middle of the story rather than at its footnote. The lower dam, repeated heightening, High Dam, Lake Nasser, resettlement, monument rescue, and later tourism changed the conditions under which Nubian heritage is seen. Finally, listen for modern voices and make room for disagreement. Music, literature, language work, architecture, photography, and community research do not merely illustrate an ancient past. They are part of contemporary Nubian history.
 
-This approach removes the brochure's unsupported claim that a visited place is “one of the oldest” and replaces it with a more exact question: what place, whose history, which period, and who has the authority to describe it? The answer will differ for Kerma, Napata, a Christian cathedral, a resettlement village, an Aswan market, and an unnamed stop on a private itinerary.
+This approach removes the brochure's unsupported claim that a visited place is “one of the oldest” and replaces it with a more exact question: what place, whose history, which period, and who has the authority to describe it? The answer will differ for Kerma, Napata, a Christian cathedral, a resettlement village, an Aswan market, and an unnamed stop on a published itinerary.
 
 ## Terms for the visit
 

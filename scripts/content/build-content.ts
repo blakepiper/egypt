@@ -181,27 +181,19 @@ function readSourceCatalog(page: RawPage, origin: 'course' | 'supplemental'): So
   return entries;
 }
 
-const PRIVATE_ITINERARY_SHA256 = '8dc4ebbe2a41c3ff78fd1986ffe0d2dcbd4677bb19e322432301b88513bbf9bd';
+const PUBLIC_ITINERARY_PATH = join(ROOT, 'public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf');
+const ITINERARY_SHA256 = '8dc4ebbe2a41c3ff78fd1986ffe0d2dcbd4677bb19e322432301b88513bbf9bd';
 
-/** Verify the private itinerary without ever putting its filesystem path in generated data. */
-function verifyPrivateItinerary(problems: BuildProblem[]): string | undefined {
-  const rawDir = join(ROOT, 'raw');
-  if (!existsSync(rawDir)) {
-    problems.push({ file: 'R069', message: 'private itinerary directory is missing', severity: 'error' });
-    return undefined;
+/** Verify the published itinerary so a changed source cannot silently alter the route. */
+function verifyItinerary(problems: BuildProblem[]): void {
+  if (!existsSync(PUBLIC_ITINERARY_PATH)) {
+    problems.push({ file: 'R069', message: 'public itinerary PDF is missing', severity: 'error' });
+    return;
   }
-  const candidate = readdirSync(rawDir).find((file) => /Dahabiya.*Nile.*Sailing/i.test(file) && file.toLowerCase().endsWith('.pdf'));
-  if (!candidate) {
-    problems.push({ file: 'R069', message: 'private itinerary PDF is missing', severity: 'error' });
-    return undefined;
+  const digest = createHash('sha256').update(readFileSync(PUBLIC_ITINERARY_PATH)).digest('hex');
+  if (digest !== ITINERARY_SHA256) {
+    problems.push({ file: 'R069', message: `public itinerary checksum mismatch (${digest})`, severity: 'error' });
   }
-  const path = join(rawDir, candidate);
-  const digest = createHash('sha256').update(readFileSync(path)).digest('hex');
-  if (digest !== PRIVATE_ITINERARY_SHA256) {
-    problems.push({ file: 'R069', message: `private itinerary checksum mismatch (${digest})`, severity: 'error' });
-    return undefined;
-  }
-  return path;
 }
 
 /** Turn the deity field guide's table into entity records. */
@@ -467,7 +459,7 @@ export function build(): BuildResult {
 
   const catalogPage = bySlug.get('source-catalog');
   const researchPage = bySlug.get('research-catalog');
-  const privateItineraryPath = verifyPrivateItinerary(problems);
+  verifyItinerary(problems);
   const sources = [
     ...(catalogPage ? readSourceCatalog(catalogPage, 'course') : []),
     ...(researchPage ? readSourceCatalog(researchPage, 'supplemental') : []),
@@ -475,10 +467,6 @@ export function build(): BuildResult {
   const r069 = sources.find((source) => source.id === 'R069');
   if (!r069) {
     problems.push({ file: 'research-catalog.md', message: 'R069 is missing from the research registry', severity: 'error' });
-  } else if (privateItineraryPath) {
-    // This value is used only during this process. `withCitations` strips it
-    // before the generated public catalog is written.
-    r069.localLocator = privateItineraryPath;
   }
   const sourceIds = new Set(sources.map((s) => s.id));
   const mediaById = new Map(media.map((m) => [m.id, m]));

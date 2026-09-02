@@ -27,8 +27,8 @@ This directory is an LLM-maintained, Obsidian-compatible wiki reconstructed from
 
 - `source-catalog.md` assigns stable group IDs (`C01`, `C02`, etc.) to intellectual works and records every physical file.
 - Cite an archive source as `[[source-catalog#C01 — REL 395 syllabus|C01]]`.
-- `research-catalog.md` assigns stable supplemental IDs (`R001`, `R002`, etc.) to opened public research sources and clearly bounded private project records.
-- Cite supplemental research as `[[research-catalog#R001 — ...|R001]]`. Never expose a private local locator or create a public download link for R069, the supplied itinerary record.
+- `research-catalog.md` assigns stable supplemental IDs (`R001`, `R002`, etc.) to opened public research sources and clearly bounded project records.
+- Cite supplemental research as `[[research-catalog#R001 — ...|R001]]`. Public project records such as R069 may link to their published files. Never expose a private local locator for a source that remains private.
 - When a PDF page is useful, include the PDF page number if it was recoverable. Many course PDFs are scans, so note when pagination or OCR is uncertain.
 - Multiple revisions or formats of one assignment belong to one catalog group; preserve every physical path in that group.
 

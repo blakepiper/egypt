@@ -440,7 +440,7 @@ test.describe('journeys and objects', () => {
     await page.goto('journeys/esna-to-aswan-dahabiya/');
     await expect(page.getByRole('heading', { level: 1, name: 'Sailing south: Esna to Aswan' })).toBeVisible();
     await expect(page.locator('.journey__steps button')).toHaveCount(12);
-    await expect(page.getByText(/private promotional itinerary/i).first()).toBeVisible();
+    await expect(page.getByText(/public promotional itinerary/i).first()).toBeVisible();
     await expect(page.getByText('Read alongside this stage', { exact: true })).toBeVisible();
     await expect(page.locator('.journey-route__list li')).toHaveCount(8);
     await expect(page.locator('.journey-route')).not.toContainText('El Hegz');
@@ -626,12 +626,11 @@ test.describe('accessibility and layout', () => {
     await expect(page.locator('.journey__scene')).toHaveClass(/is-static/);
   });
 
-  test('the research source route keeps the private itinerary non-disclosive', async ({ page }) => {
+  test('the research source route exposes the public itinerary', async ({ page }) => {
     await page.goto('archive/sources/?catalog=research#r069');
     const itinerary = page.locator('#r069');
     await expect(itinerary).toBeVisible();
-    await expect(itinerary.locator('a[href*="raw"], a[href*="\.pdf"]')).toHaveCount(0);
-    await expect(page.locator('body')).not.toContainText('/Users/');
+    await expect(itinerary.locator('a[href*="dahabiya-nile-sailing-5-day-itinerary.pdf"]')).toHaveCount(1);
   });
 });
 

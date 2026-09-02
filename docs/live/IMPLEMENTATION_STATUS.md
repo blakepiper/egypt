@@ -60,7 +60,7 @@ The existing entry pages were revised to connect chronology, state formation, ri
 
 ## Provenance and safeguards
 
-Page, journey, path, entity, place, object, source, search, and graph records carry typed origin metadata independently of evidentiary strength. Course material remains distinguishable from supplemental research. Source routes expose purpose, access, limitations, and reuse conditions; R069 is catalog-only, with its recorded SHA-256 verified and no public URL, filesystem locator, or download link.
+Page, journey, path, entity, place, object, source, search, and graph records carry typed origin metadata independently of evidentiary strength. Course material remains distinguishable from supplemental research. Source routes expose purpose, access, limitations, and reuse conditions; R069 is published in `public/sources/`, with its recorded SHA-256 verified and its repository link shown in the catalog.
 
 The content checker rejects broken links, unknown source and media IDs, invalid review states, orphan pages, route collisions, private-source leaks, private or unverified place pins, incomplete J01 stages, and missing article link requirements. The editorial review includes the humanizer pass, factual comparison, uncertainty language, historical-period qualifications, clinical safeguards, community-consent boundaries, and separate human-remains dignity review.
 

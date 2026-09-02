@@ -49,3 +49,7 @@ Opened and catalogued the new archaeological, epigraphic, museum, papyrus, Qur'a
 ## [2026-09-02] release | Three new content clusters
 
 Released 81 reviewed pages, 170 source records, 109 static route artifacts, 18 learning paths, 28 public places, 203 glossary terms, 408 graph nodes, 2,761 typed graph edges, 88 searchable destinations, and 10 cleared media records. The release includes the generated alphabet view and the bounded search-index excerpts; `npm run check` and the visual baseline suite passed. No raw source or CI workflow changed, and R069 remains catalog-only.
+
+## [2026-09-02] publish | Public itinerary
+
+Published the R069 itinerary at `public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf`. Updated the source catalog, journey boundary, compiler, and release checks so a clean clone no longer needs the ignored `raw/` directory for this source. The checksum remains enforced.

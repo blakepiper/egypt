@@ -2,7 +2,7 @@
 type: research-supplement
 tags: [web-research, museums, current-scholarship, verification]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 review:
@@ -86,7 +86,7 @@ Institutional collection records are strongest for the specific object they docu
 
 ## Supplemental research
 
-The expanded ledger separates the current checks by purpose. R020 through R023 support the method of reading religion, ritual, and material practice. R035 through R045 document reception, museum collections, colonial acquisition, and modern Egyptian or Sudanese holdings. R046 through R050 support the pages on suffering, healing, domestic practice, and animal cults. R051 through R057 cover biblical and Christian memory, modern revival, and the care of human remains. R097 through R103 record the current funerary, museum, and residue checks. The public route records are R070 through R096, while R069 remains a private itinerary record used only for the ordered journey facts.
+The expanded ledger separates the current checks by purpose. R020 through R023 support the method of reading religion, ritual, and material practice. R035 through R045 document reception, museum collections, colonial acquisition, and modern Egyptian or Sudanese holdings. R046 through R050 support the pages on suffering, healing, domestic practice, and animal cults. R051 through R057 cover biblical and Christian memory, modern revival, and the care of human remains. R097 through R103 record the current funerary, museum, and residue checks. The public route records are R069 through R096, with R069 providing the published itinerary used for the ordered journey facts.
 
 Use these records with [[egyptology-museums-and-colonialism]], [[legacy-of-ancient-egypt]], [[illness-healing-and-protection]], [[animals-gods-and-nonhuman-agency]], [[egypt-in-biblical-and-christian-memory]], [[death-funeral-and-the-dead]], and [[egypt-trip-field-guide]]. The research catalog records access, purpose, limitations, and reuse conditions for every R-series source. It does not turn an institutional visitor page into a substitute for specialist scholarship or community consent.
 

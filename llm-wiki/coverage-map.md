@@ -2,7 +2,7 @@
 type: audit
 tags: [coverage, sources, maintenance]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 review:
@@ -16,7 +16,7 @@ review:
 
 Every substantive raw file is listed in [[source-catalog]]. This map records where each source group materially affects the wiki.
 
-The expanded release contains 81 publishable pages, including the 28 N01–N28 articles, and 170 source records: 36 course groups plus 134 supplemental research records. The course groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately and keeps R069 private.
+The expanded release contains 81 publishable pages, including the 28 N01–N28 articles, and 170 source records: 36 course groups plus 134 supplemental research records. The course groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately, including the published R069 itinerary.
 
 | Group | Main wiki integration |
 |---|---|
@@ -101,7 +101,7 @@ The new pages are arranged as connected clusters rather than a second isolated i
 
 The historical and reception cluster is [[legacy-of-ancient-egypt]], [[egyptian-religion-in-greek-and-roman-worlds]], [[egypt-after-the-pharaohs]], [[egyptology-museums-and-colonialism]], [[egyptomania-and-popular-culture]], and [[egypt-africa-and-modern-identity]]. Their research trail runs through R035 through R045, R051 through R055, and R063. The body, suffering, healing, and nonhuman cluster is [[suffering-misfortune-and-divine-justice]], [[illness-healing-and-protection]], [[animals-gods-and-nonhuman-agency]], and [[monuments-labor-and-building-eternity]], using R014, R023, R046 through R050, R056, R057, R058, R060, R061, R062, R066, and R068.
 
-The route cluster is [[nile-travel-dahabiyas-and-changing-river]], [[esna-khnum-temple-and-layered-town]], [[el-kab-nekheb-city-and-provincial-memory]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], [[kom-ombo-sobek-harwer-and-crocodiles]], [[living-nile-communities-work-food-and-hospitality]], and [[nubia-kush-displacement-and-living-identity]]. The public site records are R070 through R081. R069 remains a private itinerary source for J01's ordered travel facts only. Community pages must not turn the itinerary into testimony, a place pin, or evidence of an unchanged culture. R078, R079, and R080 support the displacement and community history boundary.
+The route cluster is [[nile-travel-dahabiyas-and-changing-river]], [[esna-khnum-temple-and-layered-town]], [[el-kab-nekheb-city-and-provincial-memory]], [[edfu-temple-town-and-sacred-history]], [[gebel-el-silsila-quarrying-sacred-landscape]], [[kom-ombo-sobek-harwer-and-crocodiles]], [[living-nile-communities-work-food-and-hospitality]], and [[nubia-kush-displacement-and-living-identity]]. The public site records are R070 through R081, and R069 is the published itinerary source for J01's ordered travel facts. Community pages must not turn the itinerary into testimony, a place pin, or evidence of an unchanged culture. R078, R079, and R080 support the displacement and community history boundary.
 
 The structured J01 route, “Sailing south: Esna to Aswan,” is linked from [[egypt-trip-field-guide]]. Each stage should point to its relevant article and public source, while the complete transcript remains the canonical text alternative. [[research-catalog]] is the discovery route for source purpose, access, limitations, and reuse conditions.
 
@@ -116,4 +116,4 @@ The structured J01 route, “Sailing south: Esna to Aswan,” is linked from [[e
 
 ## Maintenance test
 
-A future lint pass should compare all raw paths with Markdown links in [[source-catalog]], verify that every C and R record has at least one destination in this table, and confirm that the private R069 record never emits a filesystem path or download link. It should also check that all N-pages have contextual inbound and outbound links, that J01 has twelve ordered stages, and that the only mapped route places are public and verified.
+A future lint pass should compare all raw paths with Markdown links in [[source-catalog]], verify that every C and R record has at least one destination in this table, and confirm that private local paths never enter generated output. It should also check that all N-pages have contextual inbound and outbound links, that J01 has twelve ordered stages, and that the only mapped route places are public and verified.

@@ -307,8 +307,7 @@ describe('expanded registries', () => {
     const r069 = sources.find((source) => source.id === 'R069');
     expect(r069).toBeDefined();
     expect(r069).not.toHaveProperty('localLocator');
-    expect(JSON.stringify(r069)).not.toMatch(/raw|\.pdf/i);
-    expect(r069).not.toHaveProperty('url');
+    expect(r069).toHaveProperty('url', expect.stringContaining('/public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf'));
   });
 
   it('publishes all ten supplemental learning paths with reflections', () => {

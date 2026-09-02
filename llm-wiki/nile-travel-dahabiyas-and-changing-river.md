@@ -4,7 +4,7 @@ tags: [nile, travel, dahabiya, river, barrage, lock, dams, tourism, colonialism]
 course: Supplemental research
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 summary: "Nile travel joins ancient river transport, nineteenth-century tourism, modern locks and dams, and a present river that cannot be treated as timeless."
 aliases: [Nile travel, Dahabiya and the Nile, A changing Nile]
 periods: [old-kingdom, middle-kingdom, new-kingdom, late-period, ptolemaic, roman]
@@ -16,7 +16,7 @@ relations:
     note: "The river is both a religious geography and a managed material system."
   - target: egypt-trip-field-guide
     type: part_of
-    note: "The field guide carries this river history into site observation and the private journey product."
+    note: "The field guide carries this river history into site observation and the planned journey product."
   - target: living-nile-communities-work-food-and-hospitality
     type: encountered_at
     note: "Travel encounters present livelihoods and mediation, not unchanged antiquity."
@@ -31,7 +31,7 @@ review:
 
 The Nile is a corridor, not a backdrop. It carries water, sediment, boats, fish, people, crops, stone, stories, and state projects. A traveler who watches the banks from a boat sees one moment in a river system shaped by ancient cultivation, modern barrages, locks, dams, irrigation, tourism, and local work. The view can connect past and present, but it cannot make the present river a preserved fragment of antiquity.
 
-This page prepares the reader for a contemporary sailing product without reproducing its private itinerary. The private planning record is cited as R069 only for the distinction between the included sailing experience and optional extensions. It is not evidence for ancient history, archaeology, cultural authenticity, safety, community-wide claims, or the identity of any resident [[research-catalog#R069|R069]]. The public route and scene pages should supply the historical and ethical context.
+This page prepares the reader for a contemporary sailing product without treating its promotional copy as history. The published itinerary is cited as R069 for the distinction between the included sailing experience and optional extensions. It is not evidence for ancient history, archaeology, cultural authenticity, safety, community-wide claims, or the identity of any resident [[research-catalog#R069|R069]]. The public route and scene pages should supply the historical and ethical context.
 
 > [!evidence] A river seen through several archives
 > Ancient images and texts describe boats, water, inundation, travel, and divine movement. Nineteenth-century travel books describe a different Nile through foreign visitors, guides, crew, markets, and monuments. Engineering records describe barrages, locks, dams, releases, and sediment. A modern visitor's deck view adds another layer. These sources do not merge into one continuous eyewitness account.
@@ -93,7 +93,7 @@ Esna makes the modern river's infrastructure visible. A Qena environmental profi
 
 A **barrage** holds or releases water through gates and changes the level available to canals and users. A **lock** allows vessels to pass between levels. These structures alter the experience of a river journey. Waiting, entering a chamber, changing elevation, and continuing downstream are part of a managed system. The lock is not a natural cataract, and a delay at a barrage is not evidence that the ancient river operated in the same way.
 
-Esna's infrastructure also has a social geography. It supports irrigation, crossings, electricity, maintenance, and navigation. The river is used by residents, farmers, workers, vessels, and institutions whose priorities may not be the same as a visitor's schedule. Current engineering projects and operating conditions can change. This page gives historical context, not mutable travel advice; the product's dated route information belongs in its private planning record and should not be generalized.
+Esna's infrastructure also has a social geography. It supports irrigation, crossings, electricity, maintenance, and navigation. The river is used by residents, farmers, workers, vessels, and institutions whose priorities may not be the same as a visitor's schedule. Current engineering projects and operating conditions can change. This page gives historical context, not mutable travel advice; the product's dated route information belongs in its published itinerary record and should not be generalized.
 
 The old barrage remains part of the landscape even when a newer structure handles the main regulation. A visitor may see layers of infrastructure, but seeing them does not reveal every decision, disruption, or benefit associated with their construction. Use the public engineering record for dates and functions, and use local scholarship and community testimony for social consequences.
 
@@ -115,7 +115,7 @@ The ancient and modern meanings of towing should also be separated. A historical
 
 Weather and water levels can affect plans, but this page does not offer safety advice or promise a particular departure. The journey interface should distinguish fixed interpretive content from changeable operational information. Its transcript must remain readable if a route changes, and a map should show only verified public places rather than private households or unidentified communities.
 
-The private itinerary record supplies a product boundary, not a historical narrative. The public article can say that the app separates included sailing from optional extensions and that the journey begins with a defined embarkation context. It should not reproduce the private document, its dates, its full order, its promised language, or details about residents. Readers who need current arrangements should consult the appropriate private or traveler-facing channel outside this article.
+The published itinerary record supplies a product boundary, not a historical narrative. The public article can say that the app separates included sailing from optional extensions and that the journey begins with a defined embarkation context. It should not treat the itinerary's operational details as evidence for ancient history or residents. Readers who need current arrangements should consult the itinerary and current traveler-facing information.
 
 ## How to observe without claiming timeless continuity
 
