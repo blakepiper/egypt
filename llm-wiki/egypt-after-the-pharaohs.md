@@ -3,7 +3,7 @@ type: topic
 tags: [late-antiquity, coptic, christian-egypt, islamic-egypt, arabic-reception, reuse]
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 summary: "Egyptian engagement with ancient places continued through late antique Christianity, Coptic language, monastic communities, Arabic scholarship, Islamic-era memory, modern Egyptian institutions, and new forms of reuse."
 aliases: [Egypt after Rome, Coptic and Islamic Egypt, Later Egypt]
 periods: [roman]
@@ -44,7 +44,7 @@ Christian Egypt was internally varied. Alexandria, villages in the Nile Valley, 
 
 **Coptic** is the written form of the Egyptian language that uses an alphabet based mainly on Greek, with additional signs for sounds not represented by Greek. Its appearance connects Christian Egypt to older Egyptian linguistic history without making Coptic a preserved form of pharaonic religion. A language can continue while genres, institutions, religious commitments, and audiences change.
 
-Coptic texts include biblical translations, liturgy, sermons, theological writing, monastic sayings, letters, documentary records, and other forms of communication. They make Christian thought and organization visible in Egyptian settings. They also show that Egyptian Christians were more than objects of Western study. They wrote, interpreted, worshipped, argued, taught, and maintained institutions of their own. R052's account of Coptic and Western encounters is useful when read against that imbalance.
+Coptic texts include biblical translations, liturgy, sermons, theological writing, monastic sayings, letters, documentary records, and other forms of communication. They make Christian thought and organization visible in Egyptian settings. They also show that Egyptian Christians were more than objects of Western study. They wrote, interpreted, worshipped, argued, taught, and maintained institutions of their own. R052's account of Coptic and Western encounters is useful when read against that imbalance. The later script history belongs beside [[from-canaan-to-phoenician-greek-and-latin]], which follows Greek, Aramaic, and Arabic branches without treating Coptic as a direct survival of hieroglyphic practice.
 
 The relationship between Coptic and ancient Egyptian writing also resists a simple decline narrative. Hieroglyphic and Demotic traditions had long depended on training and institutions. Coptic introduced a different script and a new Christian textual world, but older language history did not vanish from the people who used it. Conversely, a Coptic text cannot be read as a direct window into the beliefs of an Old Kingdom priest or a Ptolemaic temple. Period, genre, and community remain necessary qualifiers.
 
@@ -109,7 +109,7 @@ Several more precise descriptions are available:
 
 These terms allow a later Egyptian, Coptic, Arabic, European, African, or Kemetic relationship to be historically specific. [[legacy-of-ancient-egypt]] provides the full reception map. [[egyptian-religion-in-greek-and-roman-worlds]] follows an earlier period in which local temple traditions and Greek and Roman settings interacted. [[egypt-in-biblical-and-christian-memory]] separates biblical and Christian memory from evidence for Egyptian history.
 
-Later Egypt is not a footnote to pharaonic Egypt. It is the history of what communities did with places, languages, ruins, and inherited names after political and religious worlds changed. The record is strongest when it gives Coptic writers, Arabic authors, Egyptian institutions, local communities, and later interpreters their own historical settings rather than forcing them into one line of survival.
+Later Egypt is not a footnote to pharaonic Egypt. It is the history of what communities did with places, languages, ruins, and inherited names after political and religious worlds changed. The record is strongest when it gives Coptic writers, Arabic authors, Egyptian institutions, local communities, and later interpreters their own historical settings rather than forcing them into one line of survival. [[egypt-in-quranic-and-islamic-tradition]] gives Islamic Egypt its own center of gravity, including Qur'anic literature, Muslim scholarship, medieval antiquarianism, and Coptic–Muslim co-presence.
 
 ## Terms to keep in view
 

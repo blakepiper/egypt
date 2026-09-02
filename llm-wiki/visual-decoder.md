@@ -2,7 +2,7 @@
 type: reference
 tags: [iconography, museums, travel, art]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Iconography key, How to read a scene]
@@ -32,6 +32,8 @@ review:
 7. **Context:** temple wall, tomb, coffin, household object, papyrus, amulet.
 
 ## High-frequency signs
+
+For the one-consonant phonetic repertoire inside the hieroglyphic system, read [[uniliteral-signs-and-egyptian-phonetic-writing]]. Uniliterals are a narrow phonetic category, not proof that Egyptian writing was an exclusive alphabet; the visual and determinative functions in this decoder are part of why the mixed system endured.
 
 | Sign/object | Meaning in context |
 |---|---|
