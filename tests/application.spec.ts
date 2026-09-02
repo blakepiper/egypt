@@ -104,7 +104,7 @@ test.describe('search', () => {
     await expect(dialog).toBeVisible();
     const input = dialog.getByRole('searchbox');
     await input.fill('sobek');
-    const first = dialog.getByRole('option').first();
+    const first = dialog.locator('a.search-result').first();
     await expect(first).toContainText('Sobek');
     await input.press('Enter');
     await expect(page).toHaveURL(/\/wiki\/sobek\/$/);
@@ -112,29 +112,108 @@ test.describe('search', () => {
 
   test('closes on Escape and restores focus', async ({ page }) => {
     await page.goto('./');
-    await page.keyboard.press('Control+k');
+    await page.getByRole('button', { name: /Search/ }).click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: /Search/ })).toBeFocused();
+  });
+
+  // A typed query must not move the caret. `fill()` would not catch a trap that
+  // re-focuses the dialog after the first character, so this types key by key.
+  test('keeps the caret in the field while a query is typed', async ({ page }) => {
+    await page.goto('./');
+    await page.keyboard.press('Control+k');
+    const input = page.getByRole('dialog').getByRole('searchbox');
+    await expect(input).toBeFocused();
+    await page.keyboard.type('osiris');
+    await expect(input).toHaveValue('osiris');
+    await expect(input).toBeFocused();
+
+    await page.goto('search/');
+    const routeInput = page.getByRole('searchbox');
+    await routeInput.click();
+    await page.keyboard.type('osiris');
+    await expect(routeInput).toHaveValue('osiris');
+    await expect(routeInput).toBeFocused();
   });
 
   test('the full search route finds a source ID and filters by section', async ({ page }) => {
     await page.goto('search/');
     await page.getByRole('searchbox').first().fill('C22');
-    await expect(page.getByRole('option').first()).toContainText(/temple|priest/i);
-    await page.getByRole('group', { name: 'Evidence' }).getByRole('button', { name: 'Scholarship' }).click();
-    await expect(page.getByRole('option').first()).toBeVisible();
+    await expect(page.locator('a.search-result').first()).toContainText(/temple|priest/i);
+    await page.getByRole('button', { name: /^Filters/ }).click();
+    await page.getByRole('combobox', { name: 'Evidence' }).selectOption('scholarship');
+    await expect(page.locator('a.search-result').first()).toBeVisible();
   });
 
   test('research provenance is searchable and can be filtered by origin', async ({ page }) => {
     await page.goto('search/');
     const input = page.getByRole('searchbox').first();
     await input.fill('R082');
-    await expect(page.getByRole('option').first()).toContainText(/Living Nile|camel|community/i);
-    await page.getByRole('group', { name: 'Origin' }).getByRole('button', { name: 'Supplemental research' }).click();
-    await expect(page.getByRole('option').first()).toBeVisible();
-    await page.getByRole('group', { name: 'Origin' }).getByRole('button', { name: 'Course archive' }).click();
-    await expect(page.getByRole('option')).toHaveCount(0);
+    await expect(page.locator('a.search-result').first()).toContainText(/Living Nile|camel|community/i);
+    await page.getByRole('button', { name: /^Filters/ }).click();
+    await page.getByRole('combobox', { name: 'Origin' }).selectOption('supplemental');
+    await expect(page.locator('a.search-result').first()).toBeVisible();
+    await page.goto('search/?q=R082&origin=course');
+    await expect(page.locator('a.search-result')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Remove Origin filter' })).toBeVisible();
+  });
+
+  test('keeps the empty page compact and reveals seven select filters on demand', async ({ page }) => {
+    await page.goto('search/');
+    await expect(page.getByRole('button', { name: /^Filters/ })).toHaveCount(0);
+    await expect(page.locator('.search-results')).toHaveCount(0);
+    await expect(page.locator('select')).toHaveCount(0);
+
+    await page.getByRole('searchbox').fill('maat');
+    const filters = page.getByRole('button', { name: /^Filters/ });
+    await expect(filters).toHaveAttribute('aria-expanded', 'false');
+    await filters.click();
+    await expect(page.locator('.search-filter-panel select')).toHaveCount(7);
+    await expect(page.locator('.search-filter-panel button')).toHaveCount(0);
+  });
+
+  test('puts the first query result in view without opening filters', async ({ page }) => {
+    await page.goto('search/?q=maat');
+    await expect(page.locator('a.search-result').first()).toBeInViewport();
+  });
+
+  test('shares query and filters through the URL and reloads them', async ({ page }) => {
+    await page.goto('search/');
+    await page.getByRole('searchbox').fill('maat');
+    await page.getByRole('button', { name: /^Filters/ }).click();
+    await page.getByRole('combobox', { name: 'Tag' }).selectOption('maat');
+    await expect(page).toHaveURL(/\/search\/\?q=maat&tag=maat/);
+    await page.reload();
+    await expect(page.getByRole('searchbox')).toHaveValue('maat');
+    await expect(page.getByRole('button', { name: 'Remove Tag filter' })).toBeVisible();
+    await expect(page.locator('a.search-result').first()).toBeVisible();
+  });
+
+  test('hands the dialog query to full search and supports result focus movement', async ({ page }) => {
+    await page.goto('./');
+    await page.keyboard.press('Control+k');
+    const dialog = page.getByRole('dialog', { name: 'Search the archive' });
+    await dialog.getByRole('searchbox').fill('maat');
+    await dialog.getByRole('link', { name: 'Open full search with filters' }).click();
+    await expect(page).toHaveURL(/\/search\/\?q=maat/);
+    await expect(page.getByRole('searchbox')).toHaveValue('maat');
+
+    const input = page.getByRole('searchbox');
+    const first = page.locator('a.search-result').first();
+    await input.press('ArrowDown');
+    await expect(first).toBeFocused();
+    await first.press('ArrowUp');
+    await expect(input).toBeFocused();
+  });
+
+  test('links direct heading matches to their preserved article fragments', async ({ page }) => {
+    await page.goto('search/?q=cult%20centers');
+    await expect(page.getByRole('link', { name: 'Cult centers to remember', exact: true })).toHaveAttribute(
+      'href',
+      /\/wiki\/sacred-geography\/#cult-centers-to-remember$/,
+    );
   });
 });
 
@@ -221,7 +300,7 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(page.getByRole('button', { name: 'Coverage map', exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Source catalog', exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Supplemental research catalog', exact: true })).toHaveCount(0);
-    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 170 of 346 nodes and 360 of 2295 relationships');
+    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 224 of 408 nodes and 527 of 2761 relationships');
   });
 
   test('the document layer is optional and shareable', async ({ page }) => {
@@ -230,7 +309,7 @@ test.describe('graph, atlas, and chronology', () => {
     const curatedEdges = await page.locator('.graph-edge').count();
     await page.getByRole('group', { name: 'Layer' }).getByRole('button', { name: 'Everything, including wiki links' }).click();
     await expect(page).toHaveURL(/layer=all/);
-    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 90 of 346 nodes and');
+    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 90 of 408 nodes and');
     const allEdges = await page.locator('.graph-edge').count();
     expect(allEdges).toBeGreaterThan(curatedEdges);
   });
@@ -283,9 +362,9 @@ test.describe('graph, atlas, and chronology', () => {
   });
 
   test('the graph explains why an unreachable pair has no path', async ({ page }) => {
-    await page.goto('graph/?from=entity%3Asobek&to=entity%3Aakh');
+    await page.goto('graph/?from=source%3AR106&to=entity%3Amaat');
     await expect(page.locator('.graph-path li')).toHaveCount(0);
-    await expect(page.locator('.graph-path-status')).toContainText('Sobek has no curated relations yet');
+    await expect(page.locator('.graph-path-status')).toContainText('R106 has no curated relations yet');
   });
 
   test('the two node pickers create a shareable path', async ({ page }) => {
@@ -417,6 +496,13 @@ test.describe('journeys and objects', () => {
     await page.getByPlaceholder('Filter signs and cues…').fill('djed');
     await expect(page.getByRole('definition').first()).toContainText(/stability/i);
   });
+
+  test('the alphabet view is generated from the sign-lineage table', async ({ page }) => {
+    await page.goto('objects/alphabet/');
+    await expect(page.getByRole('heading', { level: 1, name: 'Alphabet lineage' })).toBeVisible();
+    await expect(page.getByRole('row')).toHaveCount(23);
+    await expect(page.getByRole('cell', { name: 'ʾaleph' })).toBeVisible();
+  });
 });
 
 test.describe('interactive views', () => {
@@ -469,6 +555,7 @@ test.describe('learn', () => {
       'What religion does', 'How an early state formed', 'Ritual, continuity, and uncertainty',
       'Permanence, suffering, and impermanence', 'The afterlives of Egypt', 'Vulnerable bodies and practical care',
       'Material and more-than-human religion', 'Prepare for the Esna-to-Aswan journey',
+      'From first labels to the Latin alphabet', 'Egypt and the Abrahamic traditions',
     ]) await expect(page.getByRole('heading', { level: 3, name: title })).toBeVisible();
   });
 });
@@ -493,7 +580,7 @@ test.describe('preferences', () => {
 });
 
 test.describe('accessibility and layout', () => {
-  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'learn/', 'archive/sources/', 'archive/sources/?catalog=research', 'about/'];
+  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'objects/alphabet/', 'learn/', 'archive/sources/', 'archive/sources/?catalog=research', 'about/'];
 
   for (const route of routes) {
     test(`${route} has no automated accessibility violations`, async ({ page }) => {
@@ -550,7 +637,7 @@ test.describe('accessibility and layout', () => {
 
 test.describe('deployment', () => {
   test('every generated route reloads directly', async ({ page }) => {
-    for (const route of ['wiki/set/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'objects/plate-30/', 'archive/sources/', 'browse/', 'specimen/']) {
+    for (const route of ['wiki/set/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'objects/plate-30/', 'objects/alphabet/', 'archive/sources/', 'browse/', 'specimen/']) {
       const response = await page.goto(route);
       expect(response?.status(), route).toBe(200);
       await expect(page.locator('#main-content')).not.toBeEmpty();
@@ -566,7 +653,7 @@ test.describe('deployment', () => {
     // Opening search pulls the index in on demand.
     await page.keyboard.press('Control+k');
     await page.getByRole('dialog').getByRole('searchbox').fill('maat');
-    await expect(page.getByRole('option').first()).toBeVisible();
+    await expect(page.getByRole('dialog').locator('a.search-result').first()).toBeVisible();
     expect(requested.some((url) => url.includes('search-index'))).toBe(true);
   });
 

@@ -46,7 +46,7 @@ for (const [slug, fields] of Object.entries(spec)) {
   }
   if (fields.review) {
     lines.push('review:');
-    for (const key of ['factual', 'humanizer', 'media_rights']) {
+    for (const key of ['factual', 'humanizer', 'media_rights', 'editorial']) {
       if (fields.review[key]) lines.push(`  ${key}: ${fields.review[key]}`);
     }
   }

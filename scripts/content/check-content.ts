@@ -12,13 +12,18 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const WIKI = join(ROOT, 'llm-wiki');
 
 const REQUIRED_ARTICLES = [
-  'studying-religion-through-egypt', 'predynastic-egypt-and-state-formation', 'egypt-and-mesopotamia-compared',
+  'studying-religion-through-egypt', 'predynastic-egypt-and-state-formation', 'naqada-hierakonpolis-and-early-centers',
+  'abydos-umm-el-qaab-and-the-first-writing', 'narmer-and-the-making-of-unification', 'desert-routes-rock-art-and-early-mobility',
+  'egypt-and-mesopotamia-compared',
   'ritual-uncertainty-and-continuity', 'permanence-renewal-and-impermanence', 'egypt-and-early-buddhism',
-  'households-work-and-unequal-access', 'writing-knowledge-and-administration', 'egypt-and-its-neighbors',
+  'households-work-and-unequal-access', 'writing-knowledge-and-administration', 'uniliteral-signs-and-egyptian-phonetic-writing',
+  'proto-sinaitic-and-the-alphabetic-breakthrough', 'from-canaan-to-phoenician-greek-and-latin', 'egypt-and-its-neighbors',
   'legacy-of-ancient-egypt', 'egyptian-religion-in-greek-and-roman-worlds', 'egypt-after-the-pharaohs',
   'egyptology-museums-and-colonialism', 'egyptomania-and-popular-culture', 'egypt-africa-and-modern-identity',
   'suffering-misfortune-and-divine-justice', 'illness-healing-and-protection', 'animals-gods-and-nonhuman-agency',
-  'monuments-labor-and-building-eternity', 'egypt-in-biblical-and-christian-memory', 'nile-travel-dahabiyas-and-changing-river',
+  'monuments-labor-and-building-eternity', 'egypt-in-biblical-and-christian-memory', 'egyptian-wisdom-and-biblical-literature',
+  'elephantine-judaeans-and-egyptian-religious-life', 'egypt-in-quranic-and-islamic-tradition', 'judgment-the-weighed-heart-and-later-afterlives',
+  'nile-travel-dahabiyas-and-changing-river',
   'esna-khnum-temple-and-layered-town', 'el-kab-nekheb-city-and-provincial-memory', 'edfu-temple-town-and-sacred-history',
   'gebel-el-silsila-quarrying-sacred-landscape', 'kom-ombo-sobek-harwer-and-crocodiles',
   'living-nile-communities-work-food-and-hospitality', 'nubia-kush-displacement-and-living-identity',
@@ -26,7 +31,7 @@ const REQUIRED_ARTICLES = [
 
 const REQUIRED_PATHS = [
   'what-religion-does', 'early-state-formation', 'ritual-continuity', 'permanence-and-impermanence',
-  'afterlives-of-egypt', 'vulnerable-bodies', 'material-more-than-human', 'prepare-esna-to-aswan',
+  'afterlives-of-egypt', 'vulnerable-bodies', 'material-more-than-human', 'prepare-esna-to-aswan', 'writing-to-latin', 'egypt-and-abrahamic-traditions',
 ];
 
 /** BCE/CE formatting must stay consistent across the wiki. */

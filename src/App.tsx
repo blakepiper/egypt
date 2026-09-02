@@ -20,6 +20,7 @@ const JourneyView = lazy(() => import('./features/journeys/JourneyView').then((m
 const ObjectsView = lazy(() => import('./features/objects/ObjectsView').then((m) => ({ default: m.ObjectsView })));
 const ObjectStudyView = lazy(() => import('./features/objects/ObjectsView').then((m) => ({ default: m.ObjectStudyView })));
 const DecoderView = lazy(() => import('./features/objects/ObjectsView').then((m) => ({ default: m.DecoderView })));
+const AlphabetView = lazy(() => import('./features/objects/AlphabetView').then((m) => ({ default: m.AlphabetView })));
 const PersonhoodView = lazy(() => import('./features/visualizations/Visualizations').then((m) => ({ default: m.PersonhoodView })));
 const CreationView = lazy(() => import('./features/visualizations/Visualizations').then((m) => ({ default: m.CreationView })));
 const CorpusRiverView = lazy(() => import('./features/visualizations/Visualizations').then((m) => ({ default: m.CorpusRiverView })));
@@ -76,7 +77,10 @@ function Routes() {
         if (route.id === 'funerary-corpora') return <CorpusRiverView />;
         return <NotFoundView path={`/views/${route.id}/`} />;
       case 'objects': return <ObjectsView />;
-      case 'object': return route.id === 'decoder' ? <DecoderView /> : <ObjectStudyView id={route.id} />;
+      case 'object':
+        if (route.id === 'decoder') return <DecoderView />;
+        if (route.id === 'alphabet') return <AlphabetView />;
+        return <ObjectStudyView id={route.id} />;
       case 'learn': return <LearnView />;
       case 'archive': return <ArchiveView />;
       case 'sources': return <SourcesView />;

@@ -49,4 +49,21 @@
     "evidence": "primary", "slug": "amarna-and-late-transformations", "sourceIds": ["C11"],
     "relations": [ { "target": "heka", "type": "part_of" },
       { "target": "amarna-and-late-transformations", "type": "appears_in" } ] }
+  ,{ "id": "instruction-of-amenemope", "kind": "text", "label": "Instruction of Amenemope", "aliases": ["Amenemope", "Teaching of Amenemope"],
+    "summary": "An Egyptian wisdom composition preserved in hieratic witnesses and compared with Proverbs 22:17–24:22. The strongest transmission case in this cluster still requires careful dating and intermediary arguments.",
+    "evidence": "primary", "slug": "egyptian-wisdom-and-biblical-literature", "sourceIds": ["R123", "R124", "R125"],
+    "relations": [ { "target": "egyptian-wisdom-and-biblical-literature", "type": "part_of" },
+      { "target": "ptahhotep-text", "type": "contrasts_with" },
+      { "target": "proverbs", "type": "associated_with" } ] },
+  { "id": "proverbs", "kind": "text", "label": "Book of Proverbs", "aliases": ["Proverbs", "Proverbs 22:17–24:22"],
+    "summary": "A biblical wisdom book whose collection and sequence are later than the Egyptian Instruction of Amenemope; selected verses are compared with Amenemope in a documented influence debate.",
+    "evidence": "primary", "slug": "egyptian-wisdom-and-biblical-literature", "sourceIds": ["R124", "R125"],
+    "relations": [ { "target": "egyptian-wisdom-and-biblical-literature", "type": "part_of" },
+      { "target": "instruction-of-amenemope", "type": "associated_with" } ] },
+  { "id": "elephantine-papyri", "kind": "text", "label": "Elephantine papyri", "aliases": ["Elephantine documents", "YHW papyri", "Passover letter"],
+    "summary": "Aramaic documentary and religious papyri from the Jewish garrison community at Elephantine, including evidence for a YHW temple, legal correspondence, and life alongside Egyptian cult institutions.",
+    "evidence": "primary", "slug": "elephantine-judaeans-and-egyptian-religious-life", "sourceIds": ["R127", "R128", "R129"],
+    "relations": [ { "target": "elephantine-judaeans-and-egyptian-religious-life", "type": "part_of" },
+      { "target": "elephantine", "type": "appears_in" },
+      { "target": "egypt-in-biblical-and-christian-memory", "type": "draws_from" } ] }
 ]

@@ -7,7 +7,7 @@ import { allObjects, allPages, decoderGroups } from '../../generated';
 import { Card, CardGrid, DeepZoomViewer, EmptyState, FilterBar, PageHeader, Section, SourceList } from '../../design-system/components';
 import { OriginBadge } from '../../design-system';
 
-const OBJECT_SLUGS = ['book-of-the-dead-plate-30', 'pyramid-texts', 'coffin-texts', 'book-of-the-dead', 'ptahhotep-and-ethical-life', 'visual-decoder'];
+const OBJECT_SLUGS = ['book-of-the-dead-plate-30', 'pyramid-texts', 'coffin-texts', 'book-of-the-dead', 'ptahhotep-and-ethical-life', 'visual-decoder', 'from-canaan-to-phoenician-greek-and-latin'];
 
 export function ObjectsView() {
   return (
@@ -24,6 +24,9 @@ export function ObjectsView() {
           ))}
           <Card to="/objects/decoder/" eyebrow="Tool" title="Visual decoder">
             Signs, crowns, priestly cues, and funerary scene cues, with identification confidence kept visible.
+          </Card>
+          <Card to="/objects/alphabet/" eyebrow="Tool" title="Alphabet lineage">
+            A table-derived comparison of Egyptian source signs and the later Phoenician, Greek, and Latin branches.
           </Card>
         </CardGrid>
       </Section>

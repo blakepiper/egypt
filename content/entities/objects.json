@@ -1,0 +1,13 @@
+[
+  { "id": "narmer-palette", "kind": "object", "label": "Narmer Palette", "aliases": ["Narmer's Palette", "palette of Narmer"],
+    "summary": "A decorated ceremonial palette whose registers, king, enemies, animals, and signs make a claim about royal order. It is a designed object, not a stenographic battle report.",
+    "evidence": "primary", "slug": "narmer-and-the-making-of-unification", "sourceIds": ["R106", "R110"],
+    "relations": [ { "target": "narmer-and-the-making-of-unification", "type": "part_of" },
+      { "target": "serekh", "type": "associated_with" },
+      { "target": "predynastic-egypt-and-state-formation", "type": "appears_in" } ] },
+  { "id": "scorpion-macehead", "kind": "object", "label": "Scorpion mace-head", "aliases": ["Scorpion macehead", "Scorpion mace head"],
+    "summary": "A royal mace-head with early political imagery, useful beside the Narmer Palette but not a literal transcript of one campaign or a complete account of state formation.",
+    "evidence": "primary", "slug": "narmer-and-the-making-of-unification", "sourceIds": ["R106", "R111"],
+    "relations": [ { "target": "narmer-and-the-making-of-unification", "type": "part_of" },
+      { "target": "narmer-palette", "type": "contrasts_with" } ] }
+]

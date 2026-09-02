@@ -1,6 +1,7 @@
 // Builds a compact inverted index. It ships as one lazily loaded JSON file, so
 // the shape favours small size: postings are arrays of numbers rather than
-// objects, and the body text is kept only as a short excerpt per page.
+// objects, while a bounded body excerpt is kept once per page for relevant
+// snippets. The limit keeps the index comfortably below its deployment budget.
 
 import type { HeadingRef, PageSummary, SearchIndex } from '../../src/types/content.js';
 
@@ -21,6 +22,9 @@ const STOPWORDS = new Set([
   'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'to', 'was', 'were',
   'which', 'who', 'with', 'you', 'your', 'so', 'if', 'than', 'when', 'what', 'how', 'why',
 ]);
+
+const EXCERPT_LIMIT = 2400;
+const CATALOG_EXCERPT_LIMIT = 120000;
 
 export function tokenize(text: string): string[] {
   return text
@@ -74,7 +78,11 @@ export function buildSearchIndex(inputs: SearchInput[]): SearchIndex {
     }
     for (const id of meta.sourceIds) add(docId, id.toLowerCase(), FIELD.source);
     for (const token of tokenize(text)) add(docId, token, FIELD.body);
-    excerpts[meta.slug] = text.slice(0, 700);
+    // Catalog pages are long by design; source-ID searches need to reach a
+    // matching record deep in them. Their cap is still finite, while ordinary
+    // article excerpts stay small enough to protect the index budget.
+    const limit = meta.type === 'source-catalog' ? CATALOG_EXCERPT_LIMIT : EXCERPT_LIMIT;
+    excerpts[meta.slug] = text.slice(0, limit);
   });
 
   return {
@@ -83,6 +91,7 @@ export function buildSearchIndex(inputs: SearchInput[]): SearchIndex {
       id,
       slug: input.meta.slug,
       title: input.meta.title,
+      aliases: input.meta.aliases,
       route: input.meta.route,
       type: input.meta.type,
       section: input.meta.section,

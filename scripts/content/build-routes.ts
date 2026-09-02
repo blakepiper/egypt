@@ -65,6 +65,7 @@ export function collectRoutes(): RouteEntry[] {
     { path: '/journeys/', title: 'Journeys', description: 'Guided sequences that state their period, place, evidence, and limits.' },
     { path: '/objects/', title: 'Objects and texts', description: 'Close reading of images and manuscripts, and the visual decoder.' },
     { path: '/objects/decoder/', title: 'Visual decoder', description: 'Signs, crowns, priestly cues, and funerary scene cues, with identification confidence visible.' },
+    { path: '/objects/alphabet/', title: 'Alphabet lineage', description: 'A table-derived comparison of Egyptian source signs, early alphabetic forms, Phoenician, Greek, and Latin.' },
     { path: '/learn/', title: 'Learn', description: 'Reading routes, concept checks, and a four-week plan for ancient Egyptian religion.' },
     { path: '/archive/', title: 'Archive', description: 'Sources, audits, research notes, and the maintenance record.' },
     { path: '/archive/sources/', title: 'Source catalog', description: `${manifest.counts.sources} intellectual-source groups with stable C and R IDs, access notes, and limitations.` },

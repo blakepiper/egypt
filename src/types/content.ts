@@ -213,6 +213,18 @@ export interface GraphSlice {
   edges: GraphEdge[];
 }
 
+export type AlphabetConfidence = 'secure' | 'probable' | 'contested';
+
+export interface AlphabetRow {
+  egyptianSourceSign: string;
+  protoSinaiticForm: string;
+  semiticWordAndMeaning: string;
+  phoenicianLetter: string;
+  greekLetter: string;
+  latinLetter: string;
+  confidence: AlphabetConfidence;
+}
+
 export interface GraphData extends GraphSlice {
   generated: string;
   edgeTypes: EdgeType[];
@@ -349,6 +361,7 @@ export interface SearchDoc {
   id: number;
   slug: string;
   title: string;
+  aliases: string[];
   route: string;
   type: string;
   section: SectionId;
@@ -369,6 +382,7 @@ export interface SearchIndex {
   docs: SearchDoc[];
   /** term -> packed postings: [docId, fieldBitmask, termFrequency, headingIndex] */
   postings: Record<string, number[][]>;
+  /** Full public plain text by document slug, used to build relevant excerpts. */
   excerpts: Record<string, string>;
   terms: number;
 }

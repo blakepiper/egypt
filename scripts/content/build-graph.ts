@@ -205,6 +205,12 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   }
   for (const journey of journeys) {
     for (const slug of journey.sourcePages) addCurated(`journey:${journey.id}`, slug, 'draws_from', `content/journeys/${journey.id}.json`, `${journey.title} is built from this article.`);
+    // Legacy journeys predate scene-level semantic relations. Keep one
+    // editorial anchor so their otherwise valid source-page links are visible
+    // in the curated graph as well as the document layer.
+    if (journey.sourcePages[0]) {
+      addCurated(`journey:${journey.id}`, journey.sourcePages[0], 'associated_with', `content/journeys/${journey.id}.json`, `${journey.title} is anchored by its first reading page.`);
+    }
     for (const id of journey.sourceIds) {
       const sourceNode = `source:${id}`;
       const source = sourceById.get(id);

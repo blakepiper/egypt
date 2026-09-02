@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from '../../scripts/content/build-content';
 import { parseMarkdown, slugifyHeading, parseWikiTarget, annotateGlossary } from '../../scripts/content/lib/markdown';
 import { buildSearchIndex } from '../../scripts/content/build-search';
-import { search } from '../../src/features/search/searchClient';
+import { filterHits, rank, search } from '../../src/features/search/searchClient';
 import { collectRoutes } from '../../scripts/content/build-routes';
 import type { BuildResult } from '../../scripts/content/build-content';
 import type { SearchIndex } from '../../src/types/content';
@@ -155,6 +155,12 @@ describe('search ranking', () => {
     expect(hits.map((hit) => hit.doc.slug)).toContain('set');
   });
 
+  it('boosts exact aliases and corrects bounded prose typos', () => {
+    expect(search(index, 'Egypt or Sumer', {}, 1)[0]?.doc.slug).toBe('egypt-and-mesopotamia-compared');
+    expect(search(index, 'osriis', {}, 1)[0]?.doc.slug).toBe('osiris-isis-horus-and-set');
+    expect(search(index, 'C999', {}, 10)).toEqual([]);
+  });
+
   it('finds supplemental pages by a research source and keeps origin filters strict', () => {
     const hits = search(index, 'R082', {}, 20);
     expect(hits.map((hit) => hit.doc.slug)).toContain('living-nile-communities-work-food-and-hospitality');
@@ -173,6 +179,16 @@ describe('search ranking', () => {
     expect(archived.length).toBeGreaterThan(0);
     expect(archived.length).toBeLessThan(all.length);
     expect(archived.every((hit) => hit.doc.section === 'archive')).toBe(true);
+  });
+
+  it('filters an existing ranking without reordering it and preserves heading IDs', () => {
+    const ranked = rank(index, 'cult centers');
+    const filtered = filterHits(ranked, { section: 'encyclopedia' });
+    expect(filtered.map((hit) => hit.doc.slug)).toEqual(search(index, 'cult centers', { section: 'encyclopedia' }, 100).map((hit) => hit.doc.slug));
+    const sacredGeography = ranked.find((hit) => hit.doc.slug === 'sacred-geography');
+    expect(sacredGeography?.matchedHeadings).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: 'cult-centers-to-remember', text: 'Cult centers to remember' }),
+    ]));
   });
 
   it('returns nothing for an empty query', () => {
@@ -258,6 +274,24 @@ describe('search index construction', () => {
     expect(index.postings.maat[0][1] & 1).toBe(1);
     expect(index.postings.judgment[0][1] & 4).toBe(4);
     expect(index.postings.c02[0][1] & 64).toBe(64);
+    expect(index.docs[0].aliases).toEqual(['right order']);
+  });
+
+  it('keeps enough text for a relevant body excerpt', () => {
+    const index = buildSearchIndex([{
+      meta: {
+        slug: 'long', title: 'Long page', route: '/wiki/long/', type: 'topic', section: 'encyclopedia',
+        tags: [], summary: 'A long page.', aliases: [], periods: [], places: [], entities: [],
+        updated: null, course: null, words: 500, readingMinutes: 3, headingCount: 0, hasSources: false,
+        sourceIds: [], evidence: 'scholarship', origin: 'course',
+      },
+      toc: [],
+      text: `${'filler '.repeat(150)}Rare lantern passage appears well after the index prefix.`,
+    }]);
+    const hit = search(index, 'rare lantern', {}, 1)[0];
+    expect(index.excerpts.long.length).toBeGreaterThan(700);
+    expect(index.excerpts.long.length).toBeLessThanOrEqual(2400);
+    expect(hit?.excerpt).toMatch(/Rare lantern passage/);
   });
 });
 
@@ -267,7 +301,7 @@ describe('expanded registries', () => {
     expect(sources.filter((source) => String(source.id).startsWith('C'))).toHaveLength(36);
     const researchSources = sources.filter((source) => String(source.id).startsWith('R'));
     expect(researchSources.length).toBeGreaterThanOrEqual(81);
-    expect(researchSources.map((source) => source.id)).toEqual(expect.arrayContaining(['R085', 'R086', 'R090', 'R096', 'R101', 'R103']));
+    expect(researchSources.map((source) => source.id)).toEqual(expect.arrayContaining(['R085', 'R086', 'R090', 'R096', 'R101', 'R103', 'R104', 'R130', 'R134']));
     expect(researchSources.map((source) => Number(String(source.id).slice(1))).sort((a, b) => a - b))
       .toEqual(Array.from({ length: researchSources.length }, (_, index) => index + 1));
     const r069 = sources.find((source) => source.id === 'R069');
@@ -277,13 +311,13 @@ describe('expanded registries', () => {
     expect(r069).not.toHaveProperty('url');
   });
 
-  it('publishes all eight supplemental learning paths with reflections', () => {
+  it('publishes all ten supplemental learning paths with reflections', () => {
     const paths = JSON.parse(readFileSync(join(ROOT, 'src/generated/paths.json'), 'utf8')) as Array<{
       id: string; origin: string; steps: { reflection?: string }[]; purpose?: string; orderReason?: string; leavesOut?: string;
       review?: { factual?: string; humanizer?: string; editorial?: string };
     }>;
-    const required = ['what-religion-does', 'early-state-formation', 'ritual-continuity', 'permanence-and-impermanence', 'afterlives-of-egypt', 'vulnerable-bodies', 'material-more-than-human', 'prepare-esna-to-aswan'];
-    expect(paths.filter((path) => required.includes(path.id))).toHaveLength(8);
+    const required = ['what-religion-does', 'early-state-formation', 'ritual-continuity', 'permanence-and-impermanence', 'afterlives-of-egypt', 'vulnerable-bodies', 'material-more-than-human', 'prepare-esna-to-aswan', 'writing-to-latin', 'egypt-and-abrahamic-traditions'];
+    expect(paths.filter((path) => required.includes(path.id))).toHaveLength(10);
     for (const id of required) {
       const path = paths.find((entry) => entry.id === id)!;
       expect(path.origin).toBe('supplemental');
@@ -356,13 +390,11 @@ describe('the knowledge graph', () => {
     expect(graph.nodes.find((node) => node.id === 'page:source-catalog')?.control).toBe(true);
   });
 
-  it('reports entities no relation reaches, without failing the build', () => {
+  it('joins every graph entity and journey without warnings', () => {
     const gaps = result.problems.filter((problem) => problem.message.includes('has no curated relation'));
-    expect(gaps.length).toBeGreaterThan(0);
-    for (const gap of gaps) expect(gap.severity).toBe('warning');
-    // Sobek is the case that prompted the check: an entity and an article of
-    // the same name that the graph keeps as two unconnected nodes.
-    expect(result.problems.some((problem) => problem.message.includes('duplicates an article of the same name'))).toBe(true);
+    expect(gaps).toHaveLength(0);
+    expect(result.problems.filter((problem) => problem.severity === 'warning')).toHaveLength(0);
+    expect(result.problems.some((problem) => problem.message.includes('duplicates an article of the same name'))).toBe(false);
     expect(result.problems.filter((problem) => problem.severity === 'error')).toHaveLength(0);
   });
 

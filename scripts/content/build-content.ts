@@ -14,7 +14,7 @@ import { buildSearchIndex } from './build-search.js';
 import type {
   ArticlePayload, Backlink, ContentManifest, EvidenceKind, HeadingRef, MediaRecord,
   PageFrontmatter, PageSummary, Period, Place, Entity, SectionId, SourceEntry,
-  Journey, KnowledgePath, NavSection, BlockNode, InlineNode,
+  Journey, KnowledgePath, NavSection, BlockNode, InlineNode, AlphabetRow,
 } from '../../src/types/content.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -223,6 +223,10 @@ function readDeityTable(blocks: BlockNode[]): Entity[] {
       slug: 'deity-field-guide',
       evidence: 'scholarship' as const,
       sourceIds: ['C02', 'C03', 'C04'],
+      relations: [
+        { target: 'deity-field-guide', type: 'part_of' as const },
+        ...(id === 'sobek' ? [{ target: 'sobek', type: 'associated_with' as const }] : []),
+      ],
     };
   });
 }
@@ -264,6 +268,20 @@ function readDecoder(blocks: BlockNode[]): { group: string; rows: { term: string
     }
   }
   return groups;
+}
+
+/** The alphabet view is a direct projection of the sign-lineage table in its article. */
+function readAlphabet(blocks: BlockNode[]): AlphabetRow[] {
+  const table = tablesIn(sectionBlocks(blocks, /sign-lineage table/i))[0];
+  return (table?.rows ?? []).map((row) => ({
+    egyptianSourceSign: flatten(row[0]?.c ?? []).trim(),
+    protoSinaiticForm: flatten(row[1]?.c ?? []).trim(),
+    semiticWordAndMeaning: flatten(row[2]?.c ?? []).trim(),
+    phoenicianLetter: flatten(row[3]?.c ?? []).trim(),
+    greekLetter: flatten(row[4]?.c ?? []).trim(),
+    latinLetter: flatten(row[5]?.c ?? []).trim(),
+    confidence: flatten(row[6]?.c ?? []).trim() as AlphabetRow['confidence'],
+  })).filter((row) => row.egyptianSourceSign && row.protoSinaiticForm && row.semiticWordAndMeaning && row.phoenicianLetter);
 }
 
 
@@ -549,6 +567,8 @@ export function build(): BuildResult {
   const glossary = glossaryPage ? readGlossary(glossaryPage.blocks) : [];
   const decoderPage = parsedBySlug.get('visual-decoder');
   const decoder = decoderPage ? readDecoder(decoderPage.blocks) : [];
+  const alphabetPage = parsedBySlug.get('from-canaan-to-phoenician-greek-and-latin');
+  const alphabet = alphabetPage ? readAlphabet(alphabetPage.blocks) : [];
   const visualizations = buildVisualizations(parsedBySlug);
 
   // Some ideas are both a concept and a deity — Maat, Heka, and Nun above all.
@@ -760,6 +780,7 @@ export function build(): BuildResult {
   write('journeys.json', journeys);
   write('paths.json', paths);
   write('decoder.json', decoder);
+  write('alphabet.json', alphabet);
   write('objects.json', objects);
   write('visualizations.json', visualizations);
   write('glossary.json', glossary);
@@ -792,6 +813,7 @@ function staticRoutes(journeys: Journey[]): string[] {
     route('objects'),
     route('objects', 'plate-30'),
     route('objects', 'decoder'),
+    route('objects', 'alphabet'),
     route('learn'),
     route('archive'),
     route('archive', 'sources'),
@@ -871,11 +893,12 @@ import media from './media.json';
 import journeys from './journeys.json';
 import paths from './paths.json';
 import decoder from './decoder.json';
+import alphabet from './alphabet.json';
 import objects from './objects.json';
 import visualizations from './visualizations.json';
 import glossary from './glossary.json';
 import type {
-  ContentManifest, NavSection, Entity, Period, Place, MediaRecord, Journey, KnowledgePath, ObjectStudy, VisualizationData,
+  ContentManifest, NavSection, Entity, Period, Place, MediaRecord, Journey, KnowledgePath, ObjectStudy, VisualizationData, AlphabetRow,
 } from '../types/content';
 
 export const contentManifest = manifest as unknown as ContentManifest;
@@ -887,6 +910,7 @@ export const allMedia = media as unknown as MediaRecord[];
 export const allJourneys = journeys as unknown as Journey[];
 export const allPaths = paths as unknown as KnowledgePath[];
 export const decoderGroups = decoder as unknown as { group: string; rows: { term: string; meaning: string }[] }[];
+export const alphabetRows = alphabet as unknown as AlphabetRow[];
 export const allObjects = objects as unknown as ObjectStudy[];
 export const visualizationData = visualizations as unknown as VisualizationData;
 export const glossaryTerms = glossary as unknown as { term: string; definition: string }[];

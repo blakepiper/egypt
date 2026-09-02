@@ -725,4 +725,169 @@
       }
     ]
   }
+  ,"naqada-hierakonpolis-and-early-centers": {
+    "aliases": ["Naqada, Hierakonpolis, and early centers", "Predynastic centers", "Nekhen and Naqada"],
+    "periods": ["predynastic", "early-dynastic"],
+    "places": ["hierakonpolis", "naqada", "abydos", "maadi", "buto"],
+    "entities": ["serekh", "dynasty-zero"],
+    "relations": [
+      { "target": "predynastic-egypt-and-state-formation", "type": "part_of", "note": "Develops the overview's archaeological argument through named centers and evidence classes." },
+      { "target": "chronology", "type": "changes_during", "note": "Locates the centers within the approximate Predynastic and Early Dynastic sequence." },
+      { "target": "sacred-geography", "type": "associated_with", "note": "Connects settlement and cemetery evidence to Nile, desert, and regional geography." },
+      { "target": "egypt-and-mesopotamia-compared", "type": "contrasts_with", "note": "Supplies a specific Egyptian early-center case for comparison rather than a civilization label." },
+      { "target": "abydos-umm-el-qaab-and-the-first-writing", "type": "precedes", "note": "The center comparison leads into Abydos's royal cemetery and earliest writing evidence." },
+      { "target": "desert-routes-rock-art-and-early-mobility", "type": "associated_with", "note": "Regional centers depended on relationships between the river and desert routes." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "abydos-umm-el-qaab-and-the-first-writing": {
+    "aliases": ["Umm el-Qaab", "Tomb U-j", "Abydos royal cemetery"],
+    "periods": ["predynastic", "early-dynastic", "evidence-royal-mortuary"],
+    "places": ["abydos"],
+    "entities": ["dynasty-zero", "uniliteral-signs", "narmer-palette"],
+    "relations": [
+      { "target": "predynastic-egypt-and-state-formation", "type": "part_of", "note": "Deepens the overview through Abydos's mortuary and early administrative evidence." },
+      { "target": "naqada-hierakonpolis-and-early-centers", "type": "associated_with", "note": "Moves from a comparison of centers to the royal cemetery at Abydos." },
+      { "target": "narmer-and-the-making-of-unification", "type": "precedes", "note": "The cemetery and early labels provide context for later royal claims associated with Narmer." },
+      { "target": "writing-knowledge-and-administration", "type": "precedes", "note": "Hands the earliest writing evidence to the wider history of Egyptian writing practices." },
+      { "target": "uniliteral-signs-and-egyptian-phonetic-writing", "type": "precedes", "note": "The labels are the entry point for the later discussion of phonetic sign values." },
+      { "target": "death-funeral-and-the-dead", "type": "associated_with", "note": "Keeps royal mortuary architecture and burial practice in the same evidence frame." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "narmer-and-the-making-of-unification": {
+    "aliases": ["Narmer", "Narmer Palette", "Dynasty 0 and unification"],
+    "periods": ["predynastic", "early-dynastic", "evidence-royal-mortuary"],
+    "places": ["abydos", "hierakonpolis", "naqada"],
+    "entities": ["narmer-palette", "scorpion-macehead", "serekh", "dynasty-zero"],
+    "relations": [
+      { "target": "predynastic-egypt-and-state-formation", "type": "part_of", "note": "Tests the overview's distinction between political claim and complete conquest narrative." },
+      { "target": "naqada-hierakonpolis-and-early-centers", "type": "associated_with", "note": "Places Narmer's objects in the regional centers that preceded and supported royal claims." },
+      { "target": "abydos-umm-el-qaab-and-the-first-writing", "type": "associated_with", "note": "Connects royal imagery to the cemetery and labels at Abydos." },
+      { "target": "chronology", "type": "changes_during", "note": "Clarifies Dynasty 0 and Early Dynastic labels in the broader chronology." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Keeps the Palette from becoming an unexamined literal battle report." },
+      { "target": "egypt-and-mesopotamia-compared", "type": "contrasts_with", "note": "Provides a concrete royal-object case for comparison with other early political forms." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "desert-routes-rock-art-and-early-mobility": {
+    "aliases": ["Western Desert roads", "Wadi el-Hol", "Nile–desert mobility"],
+    "periods": ["predynastic", "early-dynastic", "new-kingdom"],
+    "places": ["deshret", "west", "thebes", "hierakonpolis"],
+    "entities": ["wadi-el-hol", "proto-sinaitic-script", "serabit-el-khadim"],
+    "relations": [
+      { "target": "predynastic-egypt-and-state-formation", "type": "part_of", "note": "Adds mobility, routes, and desert evidence to the state-formation overview." },
+      { "target": "sacred-geography", "type": "associated_with", "note": "Expands the Red Land and Nile relationship beyond a symbolic opposition." },
+      { "target": "naqada-hierakonpolis-and-early-centers", "type": "associated_with", "note": "Connects centers to the routes through which people, animals, goods, and information moved." },
+      { "target": "proto-sinaitic-and-the-alphabetic-breakthrough", "type": "precedes", "note": "Provides the road context needed before discussing Wadi el-Hol inscriptions." },
+      { "target": "uniliteral-signs-and-egyptian-phonetic-writing", "type": "associated_with", "note": "Bridges Egyptian sign practice and the contested early alphabetic corpus." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Adds routes and neighboring regions to the archive's contact framework." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "uniliteral-signs-and-egyptian-phonetic-writing": {
+    "aliases": ["Egyptian uniliterals", "One-consonant signs", "Egyptian phonetic writing"],
+    "periods": ["predynastic", "early-dynastic", "old-kingdom"],
+    "places": ["abydos", "memphis"],
+    "entities": ["uniliteral-signs", "acrophony"],
+    "relations": [
+      { "target": "abydos-umm-el-qaab-and-the-first-writing", "type": "associated_with", "note": "Takes the sign-system question forward from the earliest labels at Abydos." },
+      { "target": "writing-knowledge-and-administration", "type": "part_of", "note": "Supplies the phonetic detail for the archive's wider writing and administration page." },
+      { "target": "proto-sinaitic-and-the-alphabetic-breakthrough", "type": "precedes", "note": "Defines Egyptian one-consonant signs before the proposed alphabetic adaptation." },
+      { "target": "from-canaan-to-phoenician-greek-and-latin", "type": "precedes", "note": "Provides the Egyptian phonetic background for the later transmission history." },
+      { "target": "visual-decoder", "type": "associated_with", "note": "Links phonetic value to the visual reading practice of the decoder." },
+      { "target": "desert-routes-rock-art-and-early-mobility", "type": "associated_with", "note": "Keeps the later alphabetic discussion connected to routes and mobility." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "proto-sinaitic-and-the-alphabetic-breakthrough": {
+    "aliases": ["Proto-Sinaitic", "Serabit el-Khadim inscriptions", "Early alphabetic breakthrough"],
+    "periods": ["middle-kingdom", "second-intermediate", "new-kingdom"],
+    "places": ["deshret", "west", "thebes"],
+    "entities": ["proto-sinaitic-script", "acrophony", "serabit-el-khadim", "wadi-el-hol", "uniliteral-signs"],
+    "relations": [
+      { "target": "desert-routes-rock-art-and-early-mobility", "type": "draws_from", "note": "Uses the road and expedition context rather than treating the inscriptions as isolated marks." },
+      { "target": "uniliteral-signs-and-egyptian-phonetic-writing", "type": "draws_from", "note": "Explains the Egyptian sign repertoire that may have supplied visual models." },
+      { "target": "from-canaan-to-phoenician-greek-and-latin", "type": "precedes", "note": "Introduces the debated corpus before the better-attested later branches." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Makes small-corpus, circular-decipherment, and dating uncertainty explicit." },
+      { "target": "writing-knowledge-and-administration", "type": "associated_with", "note": "Keeps alphabetic change tied to users, labor, and institutional writing practices." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Places the inferred Semitic context inside a wider contact history." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "from-canaan-to-phoenician-greek-and-latin": {
+    "aliases": ["Alphabet transmission", "Phoenician, Greek, and Latin", "From Canaan to Latin"],
+    "periods": ["new-kingdom", "late-period", "ptolemaic", "roman"],
+    "places": ["delta"],
+    "entities": ["phoenician-alphabet", "proto-sinaitic-script", "byblos", "ugarit", "acrophony"],
+    "relations": [
+      { "target": "proto-sinaitic-and-the-alphabetic-breakthrough", "type": "associated_with", "note": "Receives the debated early alphabetic corpus as a hypothesis, not a settled direct chain." },
+      { "target": "uniliteral-signs-and-egyptian-phonetic-writing", "type": "associated_with", "note": "Keeps the Egyptian one-consonant repertoire distinct from later consonantaries." },
+      { "target": "writing-knowledge-and-administration", "type": "associated_with", "note": "Returns transmission to script users and changing writing functions." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Treats Canaanite, Levantine, and Mediterranean routes as historical settings." },
+      { "target": "egypt-after-the-pharaohs", "type": "associated_with", "note": "Connects later script descendants to Coptic and post-pharaonic Egyptian writing histories." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Makes the modern origin story answerable to evidence and uncertainty." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "egyptian-wisdom-and-biblical-literature": {
+    "aliases": ["Amenemope and Proverbs", "Egyptian wisdom and the Bible", "Wisdom transmission"],
+    "periods": ["new-kingdom", "third-intermediate", "late-period"],
+    "places": ["thebes", "memphis"],
+    "entities": ["instruction-of-amenemope", "proverbs", "ptahhotep-text", "parallelomania"],
+    "relations": [
+      { "target": "egypt-in-biblical-and-christian-memory", "type": "part_of", "note": "Adds documented influence to the memory hub's four-layer method." },
+      { "target": "ptahhotep-and-ethical-life", "type": "precedes", "note": "Places Amenemope beside an earlier Egyptian wisdom genre without treating genres as proof of borrowing." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Distinguishes the Amenemope case from parallelomania and weak thematic resemblance." },
+      { "target": "elephantine-judaeans-and-egyptian-religious-life", "type": "associated_with", "note": "Moves from literary transmission to documented Judaean life in Egypt." },
+      { "target": "judgment-the-weighed-heart-and-later-afterlives", "type": "contrasts_with", "note": "Separates a strong literary comparison from broader moral-accounting parallels." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Keeps intermediary routes and Levantine settings visible." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "elephantine-judaeans-and-egyptian-religious-life": {
+    "aliases": ["Elephantine Judaeans", "YHW temple at Elephantine", "Elephantine papyri"],
+    "periods": ["late-period"],
+    "places": ["elephantine"],
+    "entities": ["elephantine-papyri"],
+    "relations": [
+      { "target": "egypt-in-biblical-and-christian-memory", "type": "part_of", "note": "Supplies documented Jewish life in Egypt where the hub otherwise treats memory and reception." },
+      { "target": "egyptian-wisdom-and-biblical-literature", "type": "associated_with", "note": "Contrasts documentary community evidence with literary influence evidence." },
+      { "target": "egypt-in-quranic-and-islamic-tradition", "type": "precedes", "note": "Provides a late-period Egyptian community before the page's later Islamic histories." },
+      { "target": "egypt-after-the-pharaohs", "type": "associated_with", "note": "Adds a community archive to the long history of non-pharaonic Egypt." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Shows mobility, law, and religious entanglement at a Nile frontier." },
+      { "target": "sacred-geography", "type": "associated_with", "note": "Locates the papyri in the religious and political landscape of the First Cataract." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "egypt-in-quranic-and-islamic-tradition": {
+    "aliases": ["Qur'anic Egypt", "Yusuf, Musa, and Firʿawn", "Islamic traditions of Egypt"],
+    "periods": ["late-period", "roman"],
+    "places": ["memphis", "thebes", "elephantine"],
+    "entities": ["elephantine-papyri", "phoenician-alphabet"],
+    "relations": [
+      { "target": "egypt-in-biblical-and-christian-memory", "type": "part_of", "note": "Extends the hub's layered method with a distinct Islamic and Qur'anic history." },
+      { "target": "elephantine-judaeans-and-egyptian-religious-life", "type": "associated_with", "note": "Moves from a documented Judaean community to later Qur'anic and Islamic engagements." },
+      { "target": "egypt-after-the-pharaohs", "type": "associated_with", "note": "Connects Muslim scholarship, Coptic history, and Arabic encounters with ancient places." },
+      { "target": "legacy-of-ancient-egypt", "type": "part_of", "note": "Adds Islamic reception to the archive's broader legacy map." },
+      { "target": "egypt-and-its-neighbors", "type": "associated_with", "note": "Keeps Egypt's Arabic and eastern Mediterranean relationships in view." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Separates primary Qur'anic text, later tafsir, antiquarian reception, and modern claims." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  },
+  "judgment-the-weighed-heart-and-later-afterlives": {
+    "aliases": ["The weighed heart", "Egyptian judgment", "Moral accounting afterlives"],
+    "periods": ["new-kingdom", "third-intermediate", "late-period", "ptolemaic", "roman"],
+    "places": ["thebes", "memphis"],
+    "entities": ["judgment", "maat", "parallelomania"],
+    "relations": [
+      { "target": "egypt-in-biblical-and-christian-memory", "type": "part_of", "note": "Reuses and extends the hub's four-question test for influence claims." },
+      { "target": "book-of-the-dead-plate-30", "type": "part_of", "note": "Builds from the archive's close reading of the heart-weighing scene." },
+      { "target": "amarna-and-late-transformations", "type": "associated_with", "note": "Keeps late Egyptian and later reception layers distinct." },
+      { "target": "egyptian-wisdom-and-biblical-literature", "type": "contrasts_with", "note": "Contrasts broad moral resemblance with the stronger Amenemope transmission case." },
+      { "target": "egypt-in-quranic-and-islamic-tradition", "type": "associated_with", "note": "Includes Islamic moral-accounting comparisons without assuming direct borrowing." },
+      { "target": "contested-interpretations", "type": "contested_by", "note": "Presents independent development as a live hypothesis rather than a conclusion." }
+    ],
+    "review": { "factual": "reviewed", "humanizer": "reviewed", "media_rights": "reviewed", "editorial": "reviewed" }
+  }
 }

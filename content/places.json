@@ -553,4 +553,56 @@
       "C03"
     ]
   }
+  ,{
+    "id": "hierakonpolis",
+    "label": "Hierakonpolis",
+    "aliases": ["Nekhen", "Hieraconpolis"],
+    "x": 46,
+    "y": 69,
+    "region": "upper",
+    "bank": "west",
+    "summary": "A major Upper Egyptian Predynastic and Early Dynastic center with settlement, elite cemetery, ceremonial, and craft evidence. The site shows accumulated regional power, not a complete capital in the later bureaucratic sense.",
+    "deities": ["horus"],
+    "slug": "naqada-hierakonpolis-and-early-centers",
+    "sourceIds": ["R104", "R105"]
+  },
+  {
+    "id": "naqada",
+    "label": "Naqada",
+    "aliases": ["Naqadah", "Naqada culture"],
+    "x": 46,
+    "y": 59,
+    "region": "upper",
+    "bank": "west",
+    "summary": "The place name behind a broad ceramic and archaeological sequence. Naqada is a useful culture label, not the name of a single ancient nation or centralized state.",
+    "deities": [],
+    "slug": "naqada-hierakonpolis-and-early-centers",
+    "sourceIds": ["R002", "R004"]
+  },
+  {
+    "id": "buto",
+    "label": "Buto",
+    "aliases": ["Tell el-Fara'in", "Pe and Dep"],
+    "x": 44,
+    "y": 8,
+    "region": "delta",
+    "bank": "west",
+    "summary": "A northern Delta center used here to keep Lower Egyptian settlement and regional traditions visible beside Upper Egyptian sites.",
+    "deities": ["wadjet"],
+    "slug": "naqada-hierakonpolis-and-early-centers",
+    "sourceIds": ["R002", "R004"]
+  },
+  {
+    "id": "maadi",
+    "label": "Maadi",
+    "aliases": ["Maadi-Buto", "Maadi culture"],
+    "x": 49,
+    "y": 21,
+    "region": "lower",
+    "bank": "east",
+    "summary": "A Lower Egyptian settlement and archaeological tradition whose material and exchange history complicates a story in which the Delta merely receives a southern culture.",
+    "deities": [],
+    "slug": "naqada-hierakonpolis-and-early-centers",
+    "sourceIds": ["R002", "R004"]
+  }
 ]
