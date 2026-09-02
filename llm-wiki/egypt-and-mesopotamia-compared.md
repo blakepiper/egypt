@@ -3,7 +3,7 @@ type: comparison
 tags: [comparison, civilization, urbanism, state-formation, writing, mesopotamia]
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 aliases: [Egypt and Mesopotamia compared, Egypt or Sumer]
 summary: "A conditional comparison of Uruk urbanism, Egyptian territorial monarchy, writing, administration, labor, exchange, and the evidence behind the label first civilization."
 periods: [predynastic, early-dynastic]
@@ -123,6 +123,8 @@ Under three different criteria, the answer changes.
 - **Interregional connection:** neither region was isolated. Evidence for exchange is stronger than evidence for a single common source of civilization.
 
 "First civilization" is therefore a poor final answer. It treats a bundle of processes as one race and hides the criteria that produced the ranking. The better conclusion is conditional, dated, and explicit about evidence. [[chronology]] supplies the Egyptian sequence. [[maat-isfet-and-kingship]] shows how kingship turned political claims into moral and cosmic language. [[contested-interpretations]] is the place to test claims that turn resemblance into transmission or civilization into a contest with one uncomplicated winner.
+
+For the Egyptian side of the early-centers comparison, use [[naqada-hierakonpolis-and-early-centers]]. It distinguishes settlement, cemetery, workshop, and ceremonial evidence before asking what “center” or “state” can mean. [[narmer-and-the-making-of-unification]] then supplies a royal-object case, while [[writing-knowledge-and-administration]] and [[from-canaan-to-phoenician-greek-and-latin]] keep writing's institutional and transmission histories from becoming a civilization scorecard.
 
 The comparative sources also need to remain visible as sources, rather than dissolving into an anonymous scholarly consensus. Bruce Trigger's broader comparative study supplies categories for thinking about early civilizations, but its older synthesis should be treated as an argument with a history, not as a neutral scale [R006](https://www.cambridge.org/core/books/understanding-early-civilizations/4E22C3F88D6A41563441A9422767ADA7). Christopher Woods's edited volume places the earliest writing in relation to visible signs, media, and social use, which is why this page treats scripts as practices rather than as a civilization meter [R011](https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp32.pdf). The available record for Houston's *The First Writing* is front matter only, so it provides bibliographic orientation toward chapter-level work, not evidence for a detailed date or causal claim [R012](https://assets.cambridge.org/052183/8614/frontmatter/0521838614_frontmatter.htm). Imhausen's record for *Calculation* is likewise a repository landing page. It signals the importance of professional numeracy, but it is not used here to assign a specific mathematical development [R017](https://escholarship.org/uc/nelc_uee). These limits make the comparison more, rather than less, accountable.
 

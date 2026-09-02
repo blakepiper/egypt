@@ -3,7 +3,7 @@ type: history
 tags: [predynastic, state-formation, early-egypt, regional-cultures, archaeology]
 origin: supplemental
 evidence: scholarship
-updated: 2026-08-31
+updated: 2026-09-02
 aliases: [Predynastic Egypt and state formation, Formation of the Egyptian state]
 summary: "How regional communities, exchange, inequality, ritual display, and territorial claims contributed to Egyptian state formation without an inevitable march toward monarchy."
 periods: [predynastic, early-dynastic]
@@ -19,6 +19,18 @@ relations:
   - target: sacred-geography
     type: associated_with
     note: "Connects regional formation to the Nile floodplain, desert routes, and changing settlement geography."
+  - target: naqada-hierakonpolis-and-early-centers
+    type: part_of
+    note: "The site-based archaeology beneath this overview: settlements, cemeteries, workshops, and regional labels."
+  - target: abydos-umm-el-qaab-and-the-first-writing
+    type: part_of
+    note: "The Abydos mortuary and early-label evidence beneath the state-formation argument."
+  - target: narmer-and-the-making-of-unification
+    type: part_of
+    note: "The royal objects and later king lists that make unification visible and contestable."
+  - target: desert-routes-rock-art-and-early-mobility
+    type: part_of
+    note: "The desert roads and mobile worlds that connect centers to resources and neighboring regions."
 review:
   factual: reviewed
   humanizer: reviewed
@@ -125,6 +137,10 @@ The word unification can explain why later Egyptian kingship used a shared terri
 State formation was therefore a process of making relationships durable. Food production and the Nile mattered. So did cemeteries, specialist work, exchange, ritual time, violence, imagery, and the ability to mobilize people and materials. No single factor explains the result, and no factor should be turned into destiny.
 
 The next comparison is [[egypt-and-mesopotamia-compared]]. It asks what "civilization" means when southern Mesopotamian urbanism and Egyptian territorial monarchy are placed beside one another. [[creation-traditions]] and [[how-egyptian-religion-works]] then show how regional political forms and local theologies could coexist without a single Egyptian doctrine. For the wider geography of movement, warfare, and contact, continue to [[sacred-geography]] and [[egypt-and-its-neighbors]].
+
+## Where to go deeper
+
+For the named archaeological centers, read [[naqada-hierakonpolis-and-early-centers]]. For the royal cemetery and earliest surviving Egyptian writing, continue to [[abydos-umm-el-qaab-and-the-first-writing]]. For the Palette, Scorpion mace-head, serekhs, and later king lists, use [[narmer-and-the-making-of-unification]]. For the routes, rock art, expeditions, and Wadi el-Hol context, use [[desert-routes-rock-art-and-early-mobility]]. These pages narrow the evidence rather than repeating the overview's argument.
 
 ## Sources in this archive
 

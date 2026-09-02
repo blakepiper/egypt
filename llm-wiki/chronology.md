@@ -2,7 +2,7 @@
 type: concept
 tags: [chronology, history, continuity-change]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Periods, Dynasties]
@@ -27,8 +27,8 @@ Dates before 664 BCE are approximate. Dynasties are a later organizing scheme, t
 
 | Period | Approximate dates | Religious importance |
 |---|---:|---|
-| Predynastic / Protodynastic | c. 5500–3100 BCE | Regional iconographies and cults develop; Upper and Lower Egypt move toward a unified state. |
-| Early Dynastic, Dynasties 1–2 | c. 3100–2686 BCE | Kingship and state cult consolidate; early monumental and mortuary patterns take shape. |
+| Predynastic / Protodynastic | c. 5500–3100 BCE | Regional iconographies, settlements, cemeteries, workshops, and routes develop; [[naqada-hierakonpolis-and-early-centers]] keeps Naqada as a sequence label rather than a nation. |
+| Early Dynastic, Dynasties 1–2 | c. 3100–2686 BCE | Royal cemeteries, funerary enclosures, labels, serekhs, and state claims become more visible; [[abydos-umm-el-qaab-and-the-first-writing]] and [[narmer-and-the-making-of-unification]] separate those evidence types. |
 | Old Kingdom, Dynasties 3–6/8 | c. 2686–2181/2125 BCE | Pyramid building; solar kingship; earliest surviving [[pyramid-texts]] in late Dynasty 5, initially for kings. |
 | First Intermediate Period | c. 2181–2055 BCE | Political fragmentation and stronger local power centers; older royal mortuary resources spread and change. |
 | Middle Kingdom, Dynasties 11–13/14 | c. 2055–1650 BCE | Reunification; rise of Amun at Thebes; [[coffin-texts]] on nonroyal coffins; major Sobek patronage in the Fayum. |
@@ -47,6 +47,8 @@ Egyptian religious change was additive and recursive. Old language and imagery c
 ## State formation is a process, not a single date
 
 The Predynastic record contains regional communities, changing settlement patterns, craft production, mortuary display, and signs of growing coordination. These developments do not point to one uncomplicated “birth of civilization.” Studies of early Egypt place political integration alongside negotiation, extraction, violence, ritual time, and local difference. [[predynastic-egypt-and-state-formation]] develops that argument, while [[egypt-and-mesopotamia-compared]] compares specific criteria rather than declaring one society the winner. R001, R002, R004, R005, R006, R007, R008, and R009 support this process-based view.
+
+The deeper sequence is distributed across four pages: [[naqada-hierakonpolis-and-early-centers]] compares sites and evidence types; [[abydos-umm-el-qaab-and-the-first-writing]] places Tomb U-j and the early labels in context; [[narmer-and-the-making-of-unification]] reads royal objects and later lists as claims; and [[desert-routes-rock-art-and-early-mobility]] follows the routes that linked river and desert. Dates remain approximate, especially where the evidence is a short inscription or a later historical construction.
 
 ## Several clocks run at once
 

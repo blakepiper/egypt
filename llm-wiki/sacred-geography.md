@@ -2,7 +2,7 @@
 type: concept
 tags: [geography, nile, duat, cult-centers]
 course: REL 395, Spring 2017, Northern Arizona University
-updated: 2026-08-30
+updated: 2026-09-02
 origin: mixed
 evidence: scholarship
 aliases: [Kemet and Deshret, Black Land and Red Land]
@@ -72,10 +72,17 @@ These are ritual orientations, not an exact afterlife map. Tombs cluster west of
 | Mendes | Banebdjedet, a ram deity referenced in Plate 30 |
 | Busiris | Osiris cult center |
 | Deir el-Medina | artisans, personal piety, household religion, letters and oracles |
+| Hierakonpolis / Nekhen | Predynastic and Early Dynastic settlement, elite cemetery, ceremonial structure, and regional power; see [[naqada-hierakonpolis-and-early-centers]] |
+| Naqada | A place and ceramic-sequence label for changing Predynastic material, not a single ancient nation |
+| Maadi and Buto | Lower Egyptian settlement and Delta traditions that keep northern histories visible beside Upper Egyptian centers |
 
 ## The river is a route and a changing system
 
 The Nile is both a religious image and a material environment. Boats, fields, canals, cataracts, quarries, markets, and temple estates depended on water and labor. A modern view from the deck can make the river seem continuous, but channels, shorelines, settlements, dams, and access have changed. The quarry studies in R066 and R068, the Esna records in R070 and R071, and the Nubian rescue history in R078 all warn against treating the present river as a transparent window onto antiquity. [[nile-travel-dahabiyas-and-changing-river]] follows that distinction.
+
+## Desert routes belong to the geography
+
+The Red Land was not only a symbolic opposite to Kemet. Western and Eastern Desert roads carried herders, expeditions, stone, minerals, animals, inscriptions, and information between the river and places beyond it. [[desert-routes-rock-art-and-early-mobility]] follows the Theban desert road, rock art, and Wadi el-Hol without turning a route into a passenger list. Its Sinai and Western Desert connection is the bridge to [[proto-sinaitic-and-the-alphabetic-breakthrough]].
 
 ## Nubia is not an Egyptian margin
 
