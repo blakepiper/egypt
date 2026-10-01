@@ -96,7 +96,7 @@ The Egyptian background is [[uniliteral-signs-and-egyptian-phonetic-writing]]. T
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C11 — PDM and PGM magical texts|C11]] provide the course's comparative framework for signs, language, and changing writing contexts.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C11 — PDM and PGM magical texts|C11]] provide the archive's comparative framework for signs, language, and changing writing contexts.
 
 ## Supplemental research
 

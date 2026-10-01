@@ -32,7 +32,7 @@ function relativeUrl(fromPath: string, targetPath: string): string {
 
 function journeyFallback(journey: Journey, manifest: ContentManifest): string {
   const pageBySlug = new Map(manifest.pages.map((page) => [page.slug, page]));
-  const sourceLinks = (ids: string[]) => ids.map((id) => `<a href="${relativeUrl(`/journeys/${journey.id}/`, `/archive/sources/?catalog=${id.startsWith('R') ? 'research' : 'course'}#${id.toLowerCase()}`)}">${escapeHtml(id)}</a>`).join(', ');
+  const sourceLinks = (ids: string[]) => ids.map((id) => `<a href="${relativeUrl(`/journeys/${journey.id}/`, `/archive/sources/?catalog=${id.startsWith('R') ? 'research' : 'archive'}#${id.toLowerCase()}`)}">${escapeHtml(id)}</a>`).join(', ');
   const pageLinks = (slugs: string[]) => slugs.map((slug) => {
     const page = pageBySlug.get(slug);
     return page ? `<li><a href="${relativeUrl(`/journeys/${journey.id}/`, page.route)}">${escapeHtml(page.title)}</a></li>` : '';
@@ -66,7 +66,7 @@ export function collectRoutes(): RouteEntry[] {
     { path: '/objects/', title: 'Objects and texts', description: 'Close reading of images and manuscripts, and the visual decoder.' },
     { path: '/objects/decoder/', title: 'Visual decoder', description: 'Signs, crowns, priestly cues, and funerary scene cues, with identification confidence visible.' },
     { path: '/objects/alphabet/', title: 'Alphabet lineage', description: 'A table-derived comparison of Egyptian source signs, early alphabetic forms, Phoenician, Greek, and Latin.' },
-    { path: '/learn/', title: 'Learn', description: 'Reading routes, concept checks, and a four-week plan for ancient Egyptian religion.' },
+    { path: '/explore/', title: 'Explore', description: 'Browse ancient Egyptian religion by subject and source.' },
     { path: '/archive/', title: 'Archive', description: 'Sources, audits, research notes, and the maintenance record.' },
     { path: '/archive/sources/', title: 'Source catalog', description: `${manifest.counts.sources} intellectual-source groups with stable C and R IDs, access notes, and limitations.` },
     { path: '/field-guide/', title: 'Field guide', description: 'What to notice at sites and museums.' },

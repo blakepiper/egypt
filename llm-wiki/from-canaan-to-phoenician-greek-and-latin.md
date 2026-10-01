@@ -121,7 +121,7 @@ The evidence does not support the broad claim that Egyptians invented an exclusi
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C11 — PDM and PGM magical texts|C11]] provide the course framework for signs, language, and transmission.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], and [[source-catalog#C11 — PDM and PGM magical texts|C11]] provide the archive framework for signs, language, and transmission.
 
 ## Supplemental research
 

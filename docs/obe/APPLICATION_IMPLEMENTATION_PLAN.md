@@ -71,7 +71,7 @@ The first public release is complete when it meets all of these conditions:
 | Knowledge graph | Full relationship explorer | `/graph/` |
 | Journeys | Guided artistic and educational experiences | `/journeys/` and `/journeys/<slug>/` |
 | Objects and texts | Visual and manuscript exploration | `/objects/` and `/objects/<slug>/` |
-| Learn | Subject routes, learning plan, concept checks | `/learn/` |
+| Explore | Subject collections and reference pages | `/explore/` |
 | Archive | Sources, audits, research notes, maintenance history | `/archive/` |
 | Field guide | Site and museum preparation | `/field-guide/` |
 
@@ -101,7 +101,7 @@ Keep the existing fields and add optional structured fields as pages are reviewe
 ```yaml
 type: concept
 tags: [geography, nile]
-course: REL 395, Spring 2017, Northern Arizona University
+archive: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 summary: One or two factual sentences for search and previews.
 aliases: [Black Land and Red Land]
@@ -192,7 +192,7 @@ Every content document gets a route. The "Application treatment" column records 
 
 | Source file | Public destination | Application treatment |
 | --- | --- | --- |
-| `index.md` | Home | Main orientation, featured concepts, paths into Learn and Archive |
+| `index.md` | Home | Main orientation, featured concepts, paths into Explore and Archive |
 | `start-here.md` | Encyclopedia and Home | Core synthesis, concept-web entry, short guided introduction |
 | `chronology.md` | Encyclopedia and Chronology | Layered timeline with approximate-date treatment |
 | `sacred-geography.md` | Encyclopedia and Atlas | Nile-oriented map, Kemet/Deshret, east/west, cult-center links |
@@ -222,12 +222,12 @@ Every content document gets a route. The "Application treatment" column records 
 | `visual-decoder.md` | Encyclopedia, Objects, and Field guide | Interactive visual identification tool |
 | `glossary.md` | Encyclopedia | Searchable definitions and automatic first-use term links |
 | `egypt-trip-field-guide.md` | Field guide | Site cards, offline-friendly checklist, linked visual decoder |
-| `course-reconstruction.md` | Learn | Archive structure and surviving-material map |
-| `course-reading-guide.md` | Learn | Subject route with completion stored locally |
-| `course-materials-deep-notes.md` | Learn and Archive | Dense source-note view, packet filters, source links |
-| `four-week-relearning-plan.md` | Learn | Four-week checklist with local progress and reset |
-| `exam-recovery-guide.md` | Learn | Concept checks, revealable notes, linked ideas |
-| `student-work-reconstruction.md` | Archive | Research notes with corrections and evidence limits visible |
+| `archive-overview.md` | Explore | Archive structure and surviving-material map |
+| `subject-reference.md` | Explore | Subject reference |
+| `source-notes.md` | Explore and Archive | Dense source-note view, packet filters, source links |
+| `topic-reference.md` | Explore | Topics grouped for reference |
+| `key-questions.md` | Explore | Questions, evidence, and linked ideas |
+| `research-notes.md` | Archive | Research notes with corrections and evidence limits visible |
 | `web-research-supplement.md` | Archive | Modern checks separated from the source record |
 | `source-catalog.md` | Archive | Filterable source catalog, stable C IDs, file and page relationships |
 | `reading-audit.md` | Archive | Reading-depth and incorporation status table |
@@ -351,7 +351,7 @@ The graph should use SVG for the reviewed core graph. Large source or entity lay
 
 On reduced motion, nodes move directly to deterministic positions. On low-performance devices, the graph starts in a static clustered layout.
 
-### Knowledge paths
+### Topic collections
 
 Curated paths use the same graph data but present a clear sequence. Initial paths:
 
@@ -534,7 +534,7 @@ src/
     chronology/
     journeys/
     objects/
-    learn/
+    explore/
     archive/
   generated/
   workers/
@@ -559,7 +559,7 @@ Persist only:
 - low-performance mode
 - bookmarks
 - recently viewed pages
-- learning-plan and journey progress
+- journey progress
 - desktop window layout on wide screens
 
 Version stored data so a future release can migrate or discard incompatible fields safely.
@@ -632,7 +632,7 @@ Targets for the common article route:
 - lead image at or below 250 KB at the displayed breakpoint
 - no video downloaded before the reader activates it
 - no full graph or map bundle on an ordinary article load
-- no long task over 200 ms in the normal reading path on a midrange mobile profile
+- no long task over 200 ms in the normal topic collection on a midrange mobile profile
 
 Measure route load, interaction latency, layout shift, memory use, and graph responsiveness in automated browser tests. Treat budgets as build failures once baselines are stable.
 
@@ -708,7 +708,7 @@ Exit gate:
 Work:
 
 - build article layout, table of contents, section links, sources, backlinks, related pages, and print styles
-- add Home, Encyclopedia index, Learn, Archive, and Field guide hubs
+- add Home, Encyclopedia index, Explore, Archive, and Field guide hubs
 - render every Markdown construct in the wiki
 - add 404 and route recovery
 - implement desktop tab behavior and reset action
@@ -799,11 +799,11 @@ Exit gate:
 
 - all six journeys are source-labeled, complete when muted, and usable without animation
 
-### Phase 8: finish Learn, Archive, and field use
+### Phase 8: finish Explore, Archive, and field use
 
 Work:
 
-- add local progress to the reading route, learning plan, and concept checks
+- add subject references and topic collections
 - finish source-catalog filters and coverage views
 - create field-guide checklists and print layouts
 - connect objects, sites, deities, and visual-decoder entries
@@ -811,7 +811,7 @@ Work:
 
 Exit gate:
 
-- learning, archive, and field-guide workflows are complete
+- reference, archive, and field-guide workflows are complete
 - progress data can be reset and does not leave the browser
 
 ### Phase 9: harden and release

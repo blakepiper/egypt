@@ -1,7 +1,6 @@
 ---
 type: source-catalog
 tags: [sources, provenance, research, supplemental]
-course: supplemental
 origin: supplemental
 evidence: archive
 updated: 2026-09-02
@@ -14,7 +13,7 @@ review:
 
 # Supplemental research catalog
 
-These records extend the original course archive with supplemental research. The ledger was assembled and checked on 2026-09-02. Each entry states what the source can support and where its limits begin. A catalog record does not replace reading the source itself.
+These records extend the original source archive with supplemental research. The ledger was assembled and checked on 2026-09-02. Each entry states what the source can support and where its limits begin. A catalog record does not replace reading the source itself.
 
 All records retain a public institutional, publisher, repository, collection, or index URL recorded in the ledger. R017 links to a public repository landing page rather than a stable article item, as its limitations note. R069 links to the published itinerary file in this repository.
 
@@ -1450,7 +1449,7 @@ All records retain a public institutional, publisher, repository, collection, or
 
 **Source class:** Scholarly comparative pharmacology and cultural-history article.
 
-**Use:** A hypothesis about water-lily chemistry and ritual comparison, retained as a lead for the course research rather than as residue evidence.
+**Use:** A hypothesis about water-lily chemistry and ritual comparison, retained as a lead for the archive research rather than as residue evidence.
 
 **Limitations:** The article reasons from pharmacology, iconography, and cross-cultural comparison. It does not demonstrate a particular Egyptian preparation, dose, or ritual context.
 

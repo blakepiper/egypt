@@ -98,7 +98,7 @@ The result is a hierarchy rather than a verdict. Amenemope and Proverbs are a se
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C10 — Teaching of Ptahhotep|C10]] provide the course context for Egyptian texts, wisdom, ritual language, and ethical life.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C10 — Teaching of Ptahhotep|C10]] provide the archive context for Egyptian texts, wisdom, ritual language, and ethical life.
 
 ## Supplemental research
 

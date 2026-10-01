@@ -9,9 +9,9 @@ This is the current release record for The Living Archive. Prose lives in `llm-w
 ## Delivered inventory
 
 - 81 reviewed publishable pages, including all 28 distinct N01–N28 articles and eleven supplemental pages in three new content clusters.
-- 170 source records: 36 course groups covering 72 immutable `raw/` files, plus 134 opened supplemental research records (R001–R134).
+- 170 source records: 36 archive groups covering 72 immutable `raw/` files, plus 134 opened supplemental research records (R001–R134).
 - 109 static route entry points, with direct reload support, `404.html`, `.nojekyll`, and a no-JavaScript transcript fallback for J01.
-- 18 learning paths: the original eight course paths and ten expanded paths, including writing transmission and Egypt in Abrahamic traditions.
+- 18 topic collections: the original eight archive paths and ten expanded paths, including writing transmission and Egypt in Abrahamic traditions.
 - Seven journeys, including J01, “Sailing south: Esna to Aswan,” with 12 ordered stages, scene reading, reflections, sources, article links, and a complete transcript.
 - 28 public place records; J01's route sketch displays only its eight verified public stops. Private households and the unidentified Nubian community are not records or pins.
 - 203 glossary terms, 408 graph nodes, 2,761 typed graph edges, and 10 cleared media records.
@@ -56,11 +56,11 @@ The planned articles are separate pages with normative slugs and contextual link
 - Writing transmission: `uniliteral-signs-and-egyptian-phonetic-writing`, `proto-sinaitic-and-the-alphabetic-breakthrough`, and `from-canaan-to-phoenician-greek-and-latin`, including the generated alphabet table view.
 - Abrahamic traditions: `egyptian-wisdom-and-biblical-literature`, `elephantine-judaeans-and-egyptian-religious-life`, `egypt-in-quranic-and-islamic-tradition`, and `judgment-the-weighed-heart-and-later-afterlives`.
 
-The existing entry pages were revised to connect chronology, state formation, ritual and uncertainty, suffering and healing, material and nonhuman agency, reception, colonial collecting, and the Esna–Aswan reading route. The new pages add early centers and state formation, the phonetic-to-alphabetic transmission problem, and documented and remembered relationships between Egypt and Abrahamic traditions. The index, browse hubs, glossary, source ledgers, graph, search ranking, and route navigation were expanded with them.
+The existing entry pages were revised to connect chronology, state formation, ritual and uncertainty, suffering and healing, material and nonhuman agency, reception, colonial collecting, and the Esna–Aswan subject reference. The new pages add early centers and state formation, the phonetic-to-alphabetic transmission problem, and documented and remembered relationships between Egypt and Abrahamic traditions. The index, browse hubs, glossary, source ledgers, graph, search ranking, and route navigation were expanded with them.
 
 ## Provenance and safeguards
 
-Page, journey, path, entity, place, object, source, search, and graph records carry typed origin metadata independently of evidentiary strength. Course material remains distinguishable from supplemental research. Source routes expose purpose, access, limitations, and reuse conditions; R069 is published in `public/sources/`, with its recorded SHA-256 verified and its repository link shown in the catalog.
+Page, journey, path, entity, place, object, source, search, and graph records carry typed origin metadata independently of evidentiary strength. Archive material remains distinguishable from supplemental research. Source routes expose purpose, access, limitations, and reuse conditions; R069 is published in `public/sources/`, with its recorded SHA-256 verified and its repository link shown in the catalog.
 
 The content checker rejects broken links, unknown source and media IDs, invalid review states, orphan pages, route collisions, private-source leaks, private or unverified place pins, incomplete J01 stages, and missing article link requirements. The editorial review includes the humanizer pass, factual comparison, uncertainty language, historical-period qualifications, clinical safeguards, community-consent boundaries, and separate human-remains dignity review.
 

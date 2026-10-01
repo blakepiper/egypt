@@ -1,7 +1,6 @@
 ---
 type: concept
 tags: [method, myth, images, local-cults, worldview]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship
@@ -85,7 +84,7 @@ When you meet a scene or text, ask:
 
 ## Supplemental research
 
-The R-series records listed below add method, ritual, material, and domestic context to the course archive. They do not replace the limits of the surviving evidence.
+The R-series records listed below add method, ritual, material, and domestic context to the source archive. They do not replace the limits of the surviving evidence.
 
 ## Sources in this archive
 

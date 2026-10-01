@@ -146,7 +146,7 @@ Egyptology can recover ancient voices while still carrying modern histories of p
 
 ## Sources in this archive
 
-C02, C03, C04, C09, C16, and C18 provide the archive's methods for reading images, texts, temples, bodies, ritual, Osiris, and later interpretations. The original course source catalog remains available through [[source-catalog]].
+C02, C03, C04, C09, C16, and C18 provide the archive's methods for reading images, texts, temples, bodies, ritual, Osiris, and later interpretations. The original archive source catalog remains available through [[source-catalog]].
 
 ## Supplemental research
 

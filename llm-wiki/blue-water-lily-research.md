@@ -1,8 +1,7 @@
 ---
 type: research-synthesis
 tags: [nymphaea-caerulea, water-lily, botany, psychoactive, contested]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: speculative
 updated: 2026-08-30
 aliases: [Nymphaea, Lotus]
@@ -81,7 +80,7 @@ The evidence does not establish: that it was regularly ingested across Egyptian 
 
 ## The complete argument
 
-The evidence chain considers apomorphine, Homer's Lotus-Eaters, Nefertem, Pyramid Text Utterance 249, Book of the Dead Chapter 81, a Theban tomb scene identified as TT181, and possible smelling or steeping routes. It finds no direct Egyptian preparation or ingestion instruction and points toward vessel and mummy chemistry as the next test. [[student-work-reconstruction#Blue water lily and the evidence ladder]] preserves the chain without endorsing each inference.
+The evidence chain considers apomorphine, Homer's Lotus-Eaters, Nefertem, Pyramid Text Utterance 249, Book of the Dead Chapter 81, a Theban tomb scene identified as TT181, and possible smelling or steeping routes. It finds no direct Egyptian preparation or ingestion instruction and points toward vessel and mummy chemistry as the next test. [[research-notes#Blue water lily and the evidence ladder]] preserves the chain without endorsing each inference.
 
 ## Sources in this archive
 

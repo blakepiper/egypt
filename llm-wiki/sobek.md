@@ -1,7 +1,6 @@
 ---
 type: deity
 tags: [sobek, crocodile, fayum, kom-ombo]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship
@@ -56,7 +55,7 @@ Kom Ombo belongs to a Ptolemaic and later landscape that also includes modern co
 
 ## Supplemental research
 
-The R-series records listed below add animal-cult, museum, conservation, and site context to the course material.
+The R-series records listed below add animal-cult, museum, conservation, and site context to the archive material.
 
 ## Sources in this archive
 

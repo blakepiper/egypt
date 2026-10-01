@@ -4,9 +4,9 @@
 export type EvidenceKind = 'primary' | 'archive' | 'scholarship' | 'mixed' | 'speculative';
 
 /** Where a published item came from, kept separate from the strength of its evidence. */
-export type ContentOrigin = 'course' | 'supplemental' | 'mixed';
+export type ContentOrigin = 'archive' | 'supplemental' | 'mixed';
 
-export type SourceOrigin = 'course' | 'supplemental';
+export type SourceOrigin = 'archive' | 'supplemental';
 
 export type InlineNode =
   | { t: 'text'; v: string }
@@ -55,7 +55,7 @@ export interface PageFrontmatter {
   tags: string[];
   origin: ContentOrigin;
   evidence?: EvidenceKind;
-  course?: string;
+  archive?: string;
   updated?: string;
   summary?: string;
   aliases?: string[];
@@ -88,7 +88,7 @@ export interface PageSummary {
   places: string[];
   entities: string[];
   updated: string | null;
-  course: string | null;
+  archive: string | null;
   words: number;
   readingMinutes: number;
   headingCount: number;
@@ -104,7 +104,7 @@ export type SectionId =
   | 'chronology'
   | 'journeys'
   | 'objects'
-  | 'learn'
+  | 'explore'
   | 'archive'
   | 'field-guide';
 
@@ -477,6 +477,4 @@ export interface VisualizationData {
   corpora: { label: string; slug?: string; prominence: string; medium: string; user: string; emphases: string }[];
   creation: { id: string; place: string; creator: string; body: string[] }[];
   grammar: string[];
-  weeks: { id: string; title: string; steps: { id: string; text: string; slugs: string[] }[]; checkpoint: string }[];
-  checks: { id: string; title: string; lead: string; prompts: string[]; caution: string }[];
 }

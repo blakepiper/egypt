@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [healing, illness, bodies, medicine, heka, protection, disability, bioarchaeology, childbirth]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31

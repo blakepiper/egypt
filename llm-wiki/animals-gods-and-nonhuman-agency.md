@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [animals, nonhuman-agency, iconography, cult-animals, votive-mummies, zooarchaeology, material-religion]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31

@@ -6,7 +6,7 @@ import { Suspense, lazy, useEffect } from 'react';
 import { AppProvider, useApp } from './app/state';
 import { Shell } from './app/Shell';
 import { ArticleView } from './features/articles/ArticleView';
-import { AboutView, ArchiveView, FieldGuideView, LearnView, WikiIndexView } from './features/articles/IndexViews';
+import { AboutView, ArchiveView, FieldGuideView, ExploreView, WikiIndexView } from './features/articles/IndexViews';
 import { NotFoundView } from './features/articles/NotFoundView';
 import { HomeView } from './features/home/HomeView';
 import { SearchDialog, SearchView } from './features/search/SearchDialog';
@@ -36,7 +36,7 @@ const TITLES: Record<string, string> = {
   journeys: 'Journeys',
   view: 'Interactive view',
   objects: 'Objects and texts',
-  learn: 'Learn',
+  explore: 'Explore',
   archive: 'Archive',
   sources: 'Source catalog',
   'field-guide': 'Field guide',
@@ -81,7 +81,7 @@ function Routes() {
         if (route.id === 'decoder') return <DecoderView />;
         if (route.id === 'alphabet') return <AlphabetView />;
         return <ObjectStudyView id={route.id} />;
-      case 'learn': return <LearnView />;
+      case 'explore': return <ExploreView />;
       case 'archive': return <ArchiveView />;
       case 'sources': return <SourcesView />;
       case 'field-guide': return <FieldGuideView />;

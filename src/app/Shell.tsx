@@ -16,7 +16,7 @@ const NAV = [
   { to: '/graph/', label: 'Graph', icon: 'network' as const },
   { to: '/journeys/', label: 'Journeys', icon: 'water' as const },
   { to: '/objects/', label: 'Objects', icon: 'temple' as const },
-  { to: '/learn/', label: 'Learn', icon: 'book' as const },
+  { to: '/explore/', label: 'Explore', icon: 'book' as const },
   { to: '/archive/', label: 'Archive', icon: 'archive' as const },
 ];
 
@@ -27,7 +27,7 @@ function navIsCurrent(to: string, route: Route): boolean {
   if (to === '/graph/') return route.name === 'graph';
   if (to === '/journeys/') return route.name === 'journeys' || route.name === 'journey';
   if (to === '/objects/') return route.name === 'objects' || route.name === 'object';
-  if (to === '/learn/') return route.name === 'learn';
+  if (to === '/explore/') return route.name === 'explore';
   if (to === '/archive/') return route.name === 'archive' || route.name === 'sources';
   return false;
 }

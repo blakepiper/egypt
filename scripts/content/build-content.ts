@@ -59,7 +59,7 @@ function readWikiFiles(): RawPage[] {
 
 function splitFrontmatter(source: string): { frontmatter: PageFrontmatter; body: string } {
   if (!source.startsWith('---\n')) {
-    return { frontmatter: { type: 'note', tags: [], origin: 'course' }, body: source };
+    return { frontmatter: { type: 'note', tags: [], origin: 'archive' }, body: source };
   }
   const end = source.indexOf('\n---', 4);
   const raw = source.slice(4, end);
@@ -69,9 +69,9 @@ function splitFrontmatter(source: string): { frontmatter: PageFrontmatter; body:
     frontmatter: {
       type: parsed.type ?? 'note',
       tags: parsed.tags ?? [],
-      origin: parsed.origin ?? (parsed.course ? 'course' : 'supplemental'),
+      origin: parsed.origin ?? (parsed.archive ? 'archive' : 'supplemental'),
       evidence: parsed.evidence,
-      course: parsed.course,
+      archive: parsed.archive,
       updated: parsed.updated ? String(parsed.updated) : undefined,
       summary: parsed.summary,
       aliases: parsed.aliases ?? [],
@@ -117,8 +117,8 @@ function evidenceFor(page: RawPage): EvidenceKind {
   const tags = page.frontmatter.tags;
   if (type === 'object-study' || type === 'text-study') return 'primary';
   if (tags.includes('contested') || tags.includes('speculative') || page.slug === 'contested-interpretations') return 'speculative';
-  if (['audit', 'source-catalog', 'course-map', 'course-guide', 'archive-guide', 'reading-guide', 'reading-notes', 'study-guide', 'study-plan', 'archive-synthesis'].includes(type)) return 'archive';
-  if (page.frontmatter.course && ['index', 'overview'].includes(type)) return 'archive';
+  if (['audit', 'source-catalog', 'archive-map', 'archive-guide', 'reading-guide', 'reading-notes', 'archive-synthesis'].includes(type)) return 'archive';
+  if (page.frontmatter.archive && ['index', 'overview'].includes(type)) return 'archive';
   return 'scholarship';
 }
 
@@ -137,7 +137,7 @@ function deriveSummary(blocks: BlockNode[]): string {
 }
 
 /** Parse either source registry's `## C07 — ...` or `## R001 — ...` records. */
-function readSourceCatalog(page: RawPage, origin: 'course' | 'supplemental'): SourceEntry[] {
+function readSourceCatalog(page: RawPage, origin: 'archive' | 'supplemental'): SourceEntry[] {
   const entries: SourceEntry[] = [];
   const lines = page.body.split('\n');
   let current: SourceEntry | null = null;
@@ -148,12 +148,12 @@ function readSourceCatalog(page: RawPage, origin: 'course' | 'supplemental'): So
         id: heading[1],
         origin,
         title: heading[2].trim(),
-        sourceClass: origin === 'course' ? 'course archive' : 'scholarship',
+        sourceClass: origin === 'archive' ? 'source archive' : 'scholarship',
         status: '',
         use: '',
         files: [],
         citedBy: [],
-        catalogSlug: origin === 'course' ? 'source-catalog' : 'research-catalog',
+        catalogSlug: origin === 'archive' ? 'source-catalog' : 'research-catalog',
       };
       entries.push(current);
       continue;
@@ -207,7 +207,7 @@ function readDeityTable(blocks: BlockNode[]): Entity[] {
       id,
       kind: 'deity' as const,
       label,
-      origin: 'course' as const,
+      origin: 'archive' as const,
       aliases: label.split('/').map((part) => part.trim()).filter(Boolean),
       summary: flatten(row[2]?.c ?? []).trim(),
       iconography: splitList(flatten(row[1]?.c ?? [])),
@@ -276,16 +276,6 @@ function readAlphabet(blocks: BlockNode[]): AlphabetRow[] {
   })).filter((row) => row.egyptianSourceSign && row.protoSinaiticForm && row.semiticWordAndMeaning && row.phoenicianLetter);
 }
 
-
-/** Every internal wiki slug referenced in a run of inline nodes. */
-function allSlugs(nodes: InlineNode[]): string[] {
-  const out: string[] = [];
-  for (const node of nodes) {
-    if (node.t === 'link' && node.kind === 'internal' && node.slug) out.push(node.slug);
-    if ('c' in node) out.push(...allSlugs(node.c));
-  }
-  return [...new Set(out)];
-}
 
 /** First internal wiki link inside a run of inline nodes, if there is one. */
 function firstSlug(nodes: InlineNode[]): string | undefined {
@@ -377,55 +367,7 @@ function buildVisualizations(parsedBySlug: Map<string, { blocks: BlockNode[] }>)
     .find((block): block is Extract<BlockNode, { t: 'list' }> => block.t === 'list')?.items
     .map((item) => item.map((block) => (block.t === 'paragraph' ? flatten(block.c) : '')).join(' ').trim()) ?? [];
 
-  // The four-week plan and concept checks are turned into interactive study tools
-  // can tick off locally. The text is the wiki's; only the structure is added.
-  const planPage = parsedBySlug.get('four-week-relearning-plan');
-  const weeks: { id: string; title: string; steps: { id: string; text: string; slugs: string[] }[]; checkpoint: string }[] = [];
-  if (planPage) {
-    let current: (typeof weeks)[number] | null = null;
-    for (const block of planPage.blocks) {
-      if (block.t === 'heading' && block.level === 2) {
-        current = /^week\s/i.test(block.text) ? { id: block.id, title: block.text, steps: [], checkpoint: '' } : null;
-        if (current) weeks.push(current);
-        continue;
-      }
-      if (!current) continue;
-      if (block.t === 'list' && block.ordered) {
-        current.steps = block.items.map((item, index) => {
-          const inline = item.flatMap((entry) => (entry.t === 'paragraph' ? entry.c : []));
-          return { id: `${current!.id}-${index + 1}`, text: flatten(inline).trim(), slugs: allSlugs(inline) };
-        });
-      }
-      if (block.t === 'paragraph') {
-        const text = flatten(block.c).trim();
-        if (/^checkpoint:/i.test(text)) current.checkpoint = text.replace(/^checkpoint:\s*/i, '');
-      }
-    }
-  }
-
-  const checkPage = parsedBySlug.get('exam-recovery-guide');
-  const checks: { id: string; title: string; lead: string; prompts: string[]; caution: string }[] = [];
-  if (checkPage) {
-    let current: (typeof checks)[number] | null = null;
-    for (const block of checkPage.blocks) {
-      if (block.t === 'heading' && block.level === 2) {
-        current = block.text === 'Sources in this archive' ? null : { id: block.id, title: block.text, lead: '', prompts: [], caution: '' };
-        if (current) checks.push(current);
-        continue;
-      }
-      if (!current) continue;
-      if (block.t === 'list' && !block.ordered) {
-        current.prompts = block.items.map((item) => item.map((entry) => (entry.t === 'paragraph' ? flatten(entry.c) : '')).join(' ').trim().replace(/;$/, ''));
-      }
-      if (block.t === 'paragraph') {
-        const text = flatten(block.c).trim();
-        if (/^interpretive caution:/i.test(text)) current.caution = text.replace(/^interpretive caution:\s*/i, '');
-        else if (!current.lead) current.lead = text;
-      }
-    }
-  }
-
-  return { personhood, corpora, creation, grammar, weeks, checks };
+  return { personhood, corpora, creation, grammar };
 }
 
 export function build(): BuildResult {
@@ -436,24 +378,24 @@ export function build(): BuildResult {
   const periods = readJson<Period[]>(join(CONTENT, 'periods.json'));
   const places = readJson<Place[]>(join(CONTENT, 'places.json')).map((place) => ({
     ...place,
-    origin: place.origin ?? 'course',
+    origin: place.origin ?? 'archive',
   }));
   const entities = readJsonDir<Entity>(join(CONTENT, 'entities')).map((entity) => ({
     ...entity,
-    origin: entity.origin ?? 'course',
+    origin: entity.origin ?? 'archive',
   }));
   const paths = readJsonDir<KnowledgePath>(join(CONTENT, 'paths')).map((path) => ({
     ...path,
-    origin: path.origin ?? 'course',
+    origin: path.origin ?? 'archive',
   }));
   const journeys = readJsonDir<Journey>(join(CONTENT, 'journeys')).map((journey) => ({
     ...journey,
-    origin: journey.origin ?? 'course',
+    origin: journey.origin ?? 'archive',
     scenes: journey.scenes.map((scene) => ({ ...scene, sourcePages: scene.sourcePages ?? [] })),
   }));
-  const objects = readJsonDir<{ id: string; slug: string; sourceIds: string[]; origin?: 'course' | 'supplemental' | 'mixed' }>(join(CONTENT, 'objects')).map((object) => ({
+  const objects = readJsonDir<{ id: string; slug: string; sourceIds: string[]; origin?: 'archive' | 'supplemental' | 'mixed' }>(join(CONTENT, 'objects')).map((object) => ({
     ...object,
-    origin: object.origin ?? 'course' as const,
+    origin: object.origin ?? 'archive' as const,
   }));
   const media = readJson<MediaRecord[]>(join(CONTENT, 'media-manifest.json'));
 
@@ -461,7 +403,7 @@ export function build(): BuildResult {
   const researchPage = bySlug.get('research-catalog');
   verifyItinerary(problems);
   const sources = [
-    ...(catalogPage ? readSourceCatalog(catalogPage, 'course') : []),
+    ...(catalogPage ? readSourceCatalog(catalogPage, 'archive') : []),
     ...(researchPage ? readSourceCatalog(researchPage, 'supplemental') : []),
   ];
   const r069 = sources.find((source) => source.id === 'R069');
@@ -536,7 +478,7 @@ export function build(): BuildResult {
       places: p.page.frontmatter.places ?? [],
       entities: p.page.frontmatter.entities ?? [],
       updated: p.page.frontmatter.updated ?? null,
-      course: p.page.frontmatter.course ?? null,
+      archive: p.page.frontmatter.archive ?? null,
       origin: p.page.frontmatter.origin,
       words: p.words,
       readingMinutes: Math.max(1, Math.round(p.words / 220)),
@@ -694,7 +636,7 @@ export function build(): BuildResult {
         places: journey.id === 'esna-to-aswan-dahabiya' ? ['esna', 'aswan'] : [],
         entities: [],
         updated: null,
-        course: null,
+        archive: null,
         words,
         readingMinutes: Math.max(1, Math.round(words / 220)),
         headingCount: journey.scenes.length,
@@ -718,7 +660,7 @@ export function build(): BuildResult {
       pages: pages.length,
       words: pages.reduce((total, page) => total + page.words, 0),
       sources: sources.length,
-      courseSources: sources.filter((source) => source.origin === 'course').length,
+      archiveSources: sources.filter((source) => source.origin === 'archive').length,
       researchSources: sources.filter((source) => source.origin === 'supplemental').length,
       entities: allEntities.length,
       places: places.length,
@@ -802,7 +744,7 @@ function staticRoutes(journeys: Journey[]): string[] {
     route('objects', 'plate-30'),
     route('objects', 'decoder'),
     route('objects', 'alphabet'),
-    route('learn'),
+    route('explore'),
     route('archive'),
     route('archive', 'sources'),
     route('field-guide'),
@@ -843,14 +785,14 @@ function buildNavigation(
       blurb: 'Guided sequences with their evidence and limits stated in the same view.',
       groups: [
         { label: 'Guided experiences', pages: journeys.map((j) => ({ slug: j.id, title: j.title, route: route('journeys', j.id), summary: j.subtitle })) },
-        { label: 'Knowledge paths', pages: paths.map((p) => ({ slug: p.id, title: p.title, route: `${route('graph')}?path=${p.id}`, summary: p.blurb })) },
+        { label: 'Topic collections', pages: paths.map((p) => ({ slug: p.id, title: p.title, route: `${route('graph')}?path=${p.id}`, summary: p.blurb })) },
       ] },
     { id: 'objects', label: SECTION_LABELS.objects, route: route('objects'),
       blurb: 'Close reading of texts and images.',
       groups: [{ label: 'Studies', pages: Object.keys(FEATURE_PAGES).filter((slug) => FEATURE_PAGES[slug] === 'objects').flatMap(entry) }] },
-    { id: 'learn', label: SECTION_LABELS.learn, route: route('learn'),
-      blurb: 'Reading routes, concept checks, and a four-week plan for building context.',
-      groups: [{ label: 'Learning tools', pages: bySection('learn') }] },
+    { id: 'explore', label: SECTION_LABELS.explore, route: route('explore'),
+      blurb: 'Related articles and reference pages grouped by subject.',
+      groups: [{ label: 'Reference pages', pages: bySection('explore') }] },
     { id: 'archive', label: SECTION_LABELS.archive, route: route('archive'),
       blurb: 'Sources, audits, research notes, and the maintenance record.',
       groups: [{ label: 'Provenance and control', pages: bySection('archive') }] },

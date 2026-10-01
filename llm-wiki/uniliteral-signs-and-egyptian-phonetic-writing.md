@@ -89,7 +89,7 @@ The later branches in [[from-canaan-to-phoenician-greek-and-latin]] are better d
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Conceptions of God|C09]], and [[source-catalog#C17 — Plate 30 source packet|C17]] provide course context for writing, image, category, and religious display.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]], [[source-catalog#C09 — Hornung, Conceptions of God|C09]], and [[source-catalog#C17 — Plate 30 source packet|C17]] provide archive context for writing, image, category, and religious display.
 
 ## Supplemental research
 

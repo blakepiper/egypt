@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [death, funeral, mummification, tombs, ancestors]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship

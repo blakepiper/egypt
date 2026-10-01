@@ -33,9 +33,9 @@ const DERIVED_TYPES = new Set<EdgeType>(['links_to', 'draws_from']);
 
 /** Archive index and catalogue pages that link to everything without carrying an argument. */
 export const CONTROL_SLUGS = new Set([
-  'index', 'log', 'coverage-map', 'reading-audit', 'source-catalog', 'course-reading-guide',
-  'course-materials-deep-notes', 'four-week-relearning-plan', 'exam-recovery-guide',
-  'student-work-reconstruction', 'web-research-supplement', 'course-reconstruction',
+  'index', 'log', 'coverage-map', 'reading-audit', 'source-catalog', 'subject-reference',
+  'source-notes', 'topic-reference', 'key-questions',
+  'research-notes', 'web-research-supplement', 'archive-overview',
 ]);
 
 interface ParsedLike {
@@ -102,13 +102,13 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
       periods: entity.periods ?? [],
       places: entity.places ?? [],
       evidence: entity.evidence ?? 'scholarship',
-      origin: entity.origin ?? 'course',
+      origin: entity.origin ?? 'archive',
     });
   }
   for (const place of places) {
     addNode({
       id: `place:${place.id}`, kind: 'place', label: place.label, summary: place.summary,
-      route: `${route('atlas')}?place=${place.id}`, slug: place.slug, periods: [], places: [place.id], evidence: 'scholarship', origin: place.origin ?? 'course',
+      route: `${route('atlas')}?place=${place.id}`, slug: place.slug, periods: [], places: [place.id], evidence: 'scholarship', origin: place.origin ?? 'archive',
     });
   }
   for (const period of periods) {
@@ -120,7 +120,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
   for (const journey of journeys) {
     addNode({
       id: `journey:${journey.id}`, kind: 'journey', label: journey.title, summary: journey.subtitle,
-      route: route('journeys', journey.id), periods: [], places: [], evidence: journey.origin === 'course' ? 'archive' : 'scholarship', origin: journey.origin,
+      route: route('journeys', journey.id), periods: [], places: [], evidence: journey.origin === 'archive' ? 'archive' : 'scholarship', origin: journey.origin,
     });
   }
 
@@ -162,7 +162,7 @@ export function buildGraph(input: BuildGraphInput): GraphBuild {
         label: id,
         summary: source?.title ?? `Source group ${id} in the archive catalog.`,
         route: sourceRoute(id),
-        periods: [], places: [], evidence: 'archive', origin: source?.origin ?? 'course',
+        periods: [], places: [], evidence: 'archive', origin: source?.origin ?? 'archive',
       });
       addEdge(from, nodeId, 'draws_from', `llm-wiki/${p.page.slug}.md`);
     }

@@ -172,11 +172,11 @@ export function EvidenceBadge({ kind }: { kind: EvidenceKind }) {
   return <span className={`evidence-badge evidence-badge--${kind}`}>{labels[kind]}</span>;
 }
 
-export function OriginBadge({ origin }: { origin: 'course' | 'supplemental' | 'mixed' }) {
+export function OriginBadge({ origin }: { origin: 'archive' | 'supplemental' | 'mixed' }) {
   const labels = {
-    course: 'Course archive',
+    archive: 'Source archive',
     supplemental: 'Supplemental research',
-    mixed: 'Course + research',
+    mixed: 'Archive + research',
   } as const;
   return <span className={`origin-badge origin-badge--${origin}`}>{labels[origin]}</span>;
 }

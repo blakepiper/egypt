@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [monuments, pyramids, temples, labor, engineering, quarrying, state-formation, pseudohistory]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31

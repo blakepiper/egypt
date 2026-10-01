@@ -167,10 +167,10 @@ export function rank(index: SearchIndex, query: string): SearchHit[] {
   const idf = documentFrequencies(index);
   const explicitlySeekingCatalog = tokens.some((token) => (
     /^[cr]\d+$/i.test(token)
-    || ['source', 'sources', 'catalog', 'course', 'supplemental', 'research'].includes(token)
+    || ['source', 'sources', 'catalog', 'archive', 'supplemental', 'research'].includes(token)
   ));
   const catalogIntent = tokens.includes('source') || tokens.includes('sources') || tokens.includes('catalog');
-  const wantsCourseCatalog = catalogIntent && tokens.includes('course');
+  const wantsArchiveCatalog = catalogIntent && tokens.includes('archive');
   const wantsResearchCatalog = catalogIntent && (tokens.includes('research') || tokens.includes('supplemental'));
   const scores = new Map<number, RankedEntry>();
 
@@ -217,7 +217,7 @@ export function rank(index: SearchIndex, query: string): SearchHit[] {
     const coverage = entry.matchedTokens.size / tokens.length;
     if (coverage < 1 && tokens.length > 1) entry.score *= coverage * 0.6;
     let catalogAdjustment = !explicitlySeekingCatalog && doc.type === 'source-catalog' ? 0.28 : 1;
-    if (wantsCourseCatalog && doc.slug === 'source-catalog') catalogAdjustment = 6;
+    if (wantsArchiveCatalog && doc.slug === 'source-catalog') catalogAdjustment = 6;
     if (wantsResearchCatalog && doc.slug === 'research-catalog') catalogAdjustment = 6;
 
     hits.push({

@@ -885,25 +885,6 @@ html[data-motion='reduce'] .graph-node, html[data-motion='reduce'] .graph-edge {
 .river__lane:nth-child(5) .river__stream { background: var(--archive-color-primary-soft); }
 .river__stream.is-selected { background: var(--archive-color-primary); color: var(--archive-color-surface-raised); }
 
-/* --------------------------------------------------------------- study plan */
-
-.progress-line { margin: 0; display: flex; align-items: center; gap: var(--archive-space-3); }
-.plan-weeks { display: grid; gap: var(--archive-space-4); }
-@media (min-width: 900px) { .plan-weeks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.plan-week { padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-raised); }
-.plan-week header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--archive-space-3); }
-.plan-week h3 { margin: 0 0 var(--archive-space-2); font-family: var(--archive-font-display); font-size: 1.05rem; }
-.plan-week__steps { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--archive-space-2); }
-.plan-week__steps label { display: flex; gap: var(--archive-space-2); align-items: flex-start; cursor: pointer; }
-.plan-week__steps input { margin-top: 0.25em; }
-.plan-week__links { display: flex; flex-wrap: wrap; gap: var(--archive-space-2); margin-left: 1.6em; font-size: var(--archive-text-sm); }
-.plan-week__checkpoint { margin: var(--archive-space-3) 0 0; padding-top: var(--archive-space-2); border-top: 1px solid var(--archive-color-line-quiet); color: var(--archive-color-ink-muted); }
-
-.check-list { display: grid; gap: var(--archive-space-4); }
-.check-block { padding: var(--archive-space-4); border: var(--archive-border); border-radius: var(--archive-radius-md); background: var(--archive-color-surface-raised); }
-.check-block h3 { margin: 0 0 var(--archive-space-2); font-family: var(--archive-font-display); font-size: 1.05rem; }
-.check-block__prompts { margin: var(--archive-space-3) 0 0; padding-left: 1.3em; display: grid; gap: var(--archive-space-1); max-width: 70ch; }
-
 .term-definition { position: relative; display: inline-block; z-index: 0; }
 .term-definition.is-open { z-index: 20; }
 .term-definition__trigger {

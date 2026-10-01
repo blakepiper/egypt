@@ -87,7 +87,7 @@ The archive can therefore say three things at once: the weighed heart is a power
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C06 — Book of the Dead Plate 30 research|C06]], [[source-catalog#C17 — Plate 30 source packet|C17]], and [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]] provide the course context for funerary texts, judgment, and later interpretation.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C06 — Book of the Dead Plate 30 research|C06]], [[source-catalog#C17 — Plate 30 source packet|C17]], and [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]] provide the archive context for funerary texts, judgment, and later interpretation.
 
 ## Supplemental research
 

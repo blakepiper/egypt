@@ -1,4 +1,4 @@
-// Hub routes that list pages: the encyclopedia index, Learn, Archive, and the
+// Hub routes that list pages: the encyclopedia index, Explore, Archive, and the
 // field guide. They share one layout so the archive reads consistently.
 
 import { Link } from '../../app/state';
@@ -7,7 +7,6 @@ import { OriginBadge } from '../../design-system';
 import { Card, CardGrid, EmptyState, PageHeader, Section } from '../../design-system/components';
 import type { SectionId } from '../../types/content';
 import { PreferencesPanel } from '../settings/Preferences';
-import { ConceptChecks, RelearningPlan } from '../learn/StudyPlan';
 
 function SectionHub({ id, eyebrow, lead }: { id: SectionId; eyebrow: string; lead: string }) {
   const section = navigationSections.find((entry) => entry.id === id);
@@ -65,21 +64,19 @@ export function WikiIndexView() {
   );
 }
 
-export function LearnView() {
-  const section = navigationSections.find((entry) => entry.id === 'learn');
+export function ExploreView() {
+  const section = navigationSections.find((entry) => entry.id === 'explore');
   return (
     <div className="page">
       <PageHeader
-        eyebrow="Learn"
-        title="Learn"
-        lead="Short reading routes, a four-week plan, and concept checks for building a connected understanding of ancient Egyptian religion. Progress is stored in this browser only."
+        eyebrow="Explore"
+        title="Explore"
+        lead="Browse ancient Egyptian religion by subject, with related articles and their sources."
       />
-      <RelearningPlan />
-      <ConceptChecks />
-      <Section title="Learning paths" description="Choose a question and follow a deliberate sequence. The graph view keeps every step available as a text route.">
+      <Section title="Topic collections" description="Related articles grouped by subject. Open a collection to see its connections in the graph.">
         <CardGrid>
           {allPaths.map((path) => (
-            <Card key={path.id} to={`/graph/?path=${path.id}`} eyebrow={<OriginBadge origin={path.origin} />} title={path.title} footer={`${path.steps.length} steps`}>
+            <Card key={path.id} to={`/graph/?path=${path.id}`} eyebrow={<OriginBadge origin={path.origin} />} title={path.title} footer={`${path.steps.length} articles`}>
               {path.blurb}
             </Card>
           ))}
@@ -107,7 +104,7 @@ export function ArchiveView() {
       <Section title="Start with the catalog">
         <CardGrid>
           <Card to="/archive/sources/" eyebrow="Reference" title="Source catalog">
-            {contentManifest.counts.courseSources} course-source groups with stable C IDs, alongside the supplemental research registry.
+            {contentManifest.counts.archiveSources} source groups with stable C IDs, alongside the supplemental research registry.
           </Card>
           <Card to="/archive/sources/?catalog=research" eyebrow="Research registry" title="Supplemental research">
             {contentManifest.counts.researchSources} opened research records with stable R IDs, access notes, limitations, and reuse conditions. <OriginBadge origin="supplemental" />

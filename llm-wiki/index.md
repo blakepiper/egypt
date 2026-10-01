@@ -1,7 +1,6 @@
 ---
 type: index
 tags: [index, ancient-egypt, religion]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-09-02
 origin: mixed
 evidence: scholarship
@@ -20,14 +19,14 @@ This archive brings together a sourced guide to ancient Egyptian religion. It dr
 
 - [[start-here]] — the recurring pattern in one sitting
 - [[studying-religion-through-egypt]] — how to move from evidence to interpretation
-- [[course-reconstruction]] — how the archive is built and how to read it
-- [[course-reading-guide]] — a subject-based route through the material
-- [[course-materials-deep-notes]] — close notes on the surviving source material
-- [[four-week-relearning-plan]] — a practical four-week learning plan
+- [[archive-overview]] — how the archive is built and how to read it
+- [[subject-reference]] — a subject reference
+- [[source-notes]] — close notes on the surviving source material
+- [[topic-reference]] — articles grouped by subject
 - [[egypt-trip-field-guide]] — what to notice at sites and museums
 - [[visual-decoder]] — identify gods, ritual roles, crowns, gestures, and funerary scenes
 
-The new research layer is catalogued with 134 stable R-series records. R001 and R021 are useful starting points for chronology and method; [[research-catalog]] explains what each source can and cannot support. The original course archive remains 36 intellectual source groups covering 72 immutable files.
+The new research layer is catalogued with 134 stable R-series records. R001 and R021 are useful starting points for chronology and method; [[research-catalog]] explains what each source can and cannot support. The original source archive remains 36 intellectual source groups covering 72 immutable files.
 
 ## Foundations
 
@@ -116,12 +115,12 @@ The structured J01 route, “Sailing south: Esna to Aswan,” is reached through
 
 ## Archive control
 
-- [[source-catalog]] — annotated inventory of all 72 substantive course-archive files in 36 groups
+- [[source-catalog]] — annotated inventory of all 72 substantive archive-archive files in 36 groups
 - [[research-catalog]] — 134 supplemental scholarship and institutional records, including the published itinerary record
 - [[reading-audit]] — the honest file-by-file-group reading depth and incorporation standard
 - [[coverage-map]] — every raw file mapped to wiki pages
-- [[student-work-reconstruction]] — research notes with evidence limits kept visible
+- [[research-notes]] — research notes with evidence limits kept visible
 - [[web-research-supplement]] — current museum and peer-reviewed checks, including the 2024 Bes-vase study
 - [[glossary]] — core vocabulary and Egyptian terms
-- [[exam-recovery-guide]] — concept checks for the major themes
+- [[key-questions]] — questions and evidence for the major themes
 - [[log]] — append-only maintenance record

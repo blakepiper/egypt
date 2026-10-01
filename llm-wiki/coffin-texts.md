@@ -1,8 +1,7 @@
 ---
 type: text-study
 tags: [coffin-texts, middle-kingdom, afterlife]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: primary
 updated: 2026-08-30
 aliases: [CT]

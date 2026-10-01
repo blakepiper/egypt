@@ -84,7 +84,7 @@ export function JourneyView({ id }: { id: string }) {
         meta={<><span>{journey.place}</span><span>{journey.period}</span><span>{journey.scenes.length} steps</span><span>{completed} seen</span></>}
       />
 
-      <div className="journey__provenance"><OriginBadge origin={journey.origin} /><span>{journey.origin === 'supplemental' ? 'A contemporary, research-led route with itinerary boundaries.' : 'A course-derived historical sequence.'}</span></div>
+      <div className="journey__provenance"><OriginBadge origin={journey.origin} /><span>{journey.origin === 'supplemental' ? 'A contemporary, research-led route with itinerary boundaries.' : 'A historical sequence drawn from the source archive.'}</span></div>
       {journey.includedScope && <p className="journey__scope"><strong>Included route:</strong> {journey.includedScope}</p>}
       {journey.optionalExtensions && <aside className="archive-callout archive-callout--uncertainty"><span className="archive-callout__label">Separate optional extensions</span><p>{journey.optionalExtensions}</p></aside>}
 

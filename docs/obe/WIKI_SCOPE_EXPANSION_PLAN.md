@@ -24,7 +24,7 @@ The application is technically complete and internally coherent, but its editori
 3. Explore what ritual, continuity, death, and uncertainty can tell us about human behavior while keeping modern clinical categories, especially OCD, out of ancient diagnosis.
 4. Trace Egypt's later reception through Greek, Roman, Coptic, Islamic, European, African diasporic, museum, design, occult, and popular-cultural settings.
 
-The expansion should add twenty-eight substantial articles, revise the core articles that readers already enter through, and make provenance visible throughout the interface. Eight of those articles support a new place-based journey following the supplied January 2027 dahabiya itinerary from Esna to Aswan. The added scope must cover not only order and continuity, but also suffering, illness, ritual failure, nonhuman agency, monument building, biblical memory, human-remains ethics, living religious reconstruction, river travel, provincial towns, quarry landscapes, and modern Nubian and Nile-valley communities. Course-derived material and new research must remain distinguishable. Provenance is not the same as evidentiary strength, so the implementation must keep those two dimensions separate.
+The expansion should add twenty-eight substantial articles, revise the core articles that readers already enter through, and make provenance visible throughout the interface. Eight of those articles support a new place-based journey following the supplied January 2027 dahabiya itinerary from Esna to Aswan. The added scope must cover not only order and continuity, but also suffering, illness, ritual failure, nonhuman agency, monument building, biblical memory, human-remains ethics, living religious reconstruction, river travel, provincial towns, quarry landscapes, and modern Nubian and Nile-valley communities. Archive-derived material and new research must remain distinguishable. Provenance is not the same as evidentiary strength, so the implementation must keep those two dimensions separate.
 
 The recommended release sequence is:
 
@@ -33,10 +33,10 @@ The recommended release sequence is:
 3. Write the religion, ritual, suffering, healing, nonhuman-agency, and Buddhist comparison cluster.
 4. Write the monuments, biblical-memory, reception, and legacy cluster.
 5. Write the Esna-to-Aswan route articles and build the cruise journey from the verified itinerary sequence.
-6. Strengthen definitions, contextual links, graph relations, search, hubs, journeys, and learning paths.
+6. Strengthen definitions, contextual links, graph relations, search, hubs, journeys, and topic collections.
 7. Complete factual, humanizer, accessibility, dignity, rights, and regression review.
 
-No content in `raw/` should be changed. Existing course source IDs `C01` through `C36` remain stable. New scholarship should receive stable `R001`-style IDs in a separate public research catalog.
+No content in `raw/` should be changed. Existing archive source IDs `C01` through `C36` remain stable. New scholarship should receive stable `R001`-style IDs in a separate public research catalog.
 
 ## 2. Current-state audit
 
@@ -52,8 +52,8 @@ The following baseline was produced from the repository, not from an older statu
 | Graph nodes | 208 | The graph already has enough structure to absorb a new cluster. |
 | Graph edges | 654 | Relationship vocabulary needs a small reception-oriented extension. |
 | Explicit article-to-article `links_to` edges | 266 | Link volume is uneven; several important pages have only one or two contextual outgoing links. |
-| Course source groups | 36 | Preserve `C01` through `C36` and keep them visibly separate from new research. |
-| Files in `raw/` | 72 | Treat as immutable course/archive evidence. |
+| Archive source groups | 36 | Preserve `C01` through `C36` and keep them visibly separate from new research. |
+| Files in `raw/` | 72 | Treat as immutable archive/archive evidence. |
 | Media records | 10 | New media is optional and must pass the existing rights gate. |
 | Glossary entries | about 45 | Add historical, comparative, methodological, and reception terms. |
 
@@ -63,10 +63,10 @@ The following baseline was produced from the repository, not from an older statu
 
 - It has a clear content source of truth in `llm-wiki/`, with generated manifests, search data, graph data, routes, and article payloads.
 - Core Egyptian religious concepts are present: maat and isfet, heka, personhood, creation, the solar cycle, gods, temples, festivals, death, funerary texts, Amarna, personal piety, and contested claims.
-- It supports wiki links, backlinks, related pages, graph neighborhoods, glossary annotations, media records, journeys, an atlas, chronology, object studies, and reading paths.
+- It supports wiki links, backlinks, related pages, graph neighborhoods, glossary annotations, media records, journeys, an atlas, chronology, object studies, and topic collections.
 - It distinguishes broad evidence categories in the UI and has explicit uncertainty and contested-claim callouts.
 - Content and media review fields already exist in frontmatter.
-- The course archive is auditable through `source-catalog.md` and stable `C` identifiers.
+- The source archive is auditable through `source-catalog.md` and stable `C` identifiers.
 
 These strengths should be extended rather than replaced.
 
@@ -76,11 +76,11 @@ These strengths should be extended rather than replaced.
 |---|---|---|
 | Page count is fixed at 41. | `scripts/content/check-content.ts`; `tests/unit/content.test.ts` | Compare the generated manifest with publishable files on disk. Do not encode a new magic number. |
 | Section and hub membership are manual slug lists. | `scripts/content/lib/site.ts` | Add the new slugs deliberately in the first release. Consider frontmatter-driven hubs only after parity tests. |
-| Source parsing recognizes the course catalog and `C` IDs only. | `scripts/content/build-content.ts`; `scripts/content/lib/markdown.ts` | Support both course and research catalogs, map every ID to its own catalog route, and test `C19` plus `R001`. |
+| Source parsing recognizes the archive catalog and `C` IDs only. | `scripts/content/build-content.ts`; `scripts/content/lib/markdown.ts` | Support both archive and research catalogs, map every ID to its own catalog route, and test `C19` plus `R001`. |
 | Every source link currently resolves to `source-catalog`. | `scripts/content/build-content.ts` | Resolve source routes by ID prefix or a source registry, not a fixed route. |
 | `hasSources` looks for a heading beginning "Sources in this archive." | `scripts/content/build-content.ts` | Derive it from parsed source IDs so supplemental headings work too. |
 | Evidence is inferred from page type and tags. | `evidenceFor()` in `scripts/content/build-content.ts` | Add an optional explicit evidence field with the current behavior as backward-compatible fallback. Do not use origin to infer evidence. |
-| There is no provenance field. | `PageFrontmatter` and `PageSummary` in `src/types/content.ts` | Add `origin: course | supplemental | mixed` and propagate it through build, search, UI, and tests. |
+| There is no provenance field. | `PageFrontmatter` and `PageSummary` in `src/types/content.ts` | Add `origin: archive | supplemental | mixed` and propagate it through build, search, UI, and tests. |
 | Callouts do not mark supplemental additions. | `CalloutKind` and Markdown parser | Add a narrowly named `research` callout for mixed pages. Do not label whole supplemental pages paragraph by paragraph. |
 | Place regions are Egypt-specific. | `Place.region` in `src/types/content.ts` | Do not force Mesopotamia, Sri Lanka, or Europe into the sacred atlas. Keep comparative geography separate until a general region model exists. |
 | Review lint expects every page to be marked reviewed. | `scripts/content/check-content.ts` | Allow work-in-progress checks to report pending review clearly, then require reviewed status at the release gate. |
@@ -212,7 +212,7 @@ Missing or too thin:
 - Modern Kemetic religions as living, internally varied reconstructions rather than either unbroken survivals or popular-culture curiosities.
 - Human remains as deceased people whose display raises questions of dignity and consultation beyond copyright and ownership.
 
-### 3.10 Place-based learning along the Nile
+### 3.10 Places along the Nile
 
 Missing or too thin:
 
@@ -415,27 +415,27 @@ The UI and data model should keep these separate:
 
 | Question | Field | Values |
 |---|---|---|
-| Where did this page originate? | `origin` | `course`, `supplemental`, `mixed` |
+| Where did this page originate? | `origin` | `archive`, `supplemental`, `mixed` |
 | What kind of evidence dominates this page? | `evidence` | current evidence vocabulary |
 | Has review occurred? | `review` | factual, humanizer, media rights, editorial statuses |
 
-A course-derived page can contain scholarship. A supplemental page can study a primary text. A mixed page can still have a page-wide scholarship badge. None of these combinations is contradictory.
+A archive-derived page can contain scholarship. A supplemental page can study a primary text. A mixed page can still have a page-wide scholarship badge. None of these combinations is contradictory.
 
 ### 6.2 Frontmatter contract
 
 Add a required field to every publishable Markdown page:
 
 ```yaml
-origin: course
+origin: archive
 ```
 
 Allowed values and user-facing labels:
 
 | Value | Badge text | Meaning |
 |---|---|---|
-| `course` | Course archive | Substantive content was derived from the original course files and their cataloged sources. |
-| `supplemental` | Supplemental research | The article was created for this expanded wiki from sources outside the original course archive. |
-| `mixed` | Course + research | The article retains course-derived material and has substantial externally researched additions. |
+| `archive` | Source archive | Substantive content was derived from the original archive files and their cataloged sources. |
+| `supplemental` | Supplemental research | The article was created for this expanded wiki from sources outside the original source archive. |
+| `mixed` | Archive + research | The article retains archive-derived material and has substantial externally researched additions. |
 
 Add optional explicit evidence frontmatter:
 
@@ -445,7 +445,7 @@ evidence: scholarship
 
 Keep `evidenceFor()` as a compatibility fallback until all 41 current pages have been reviewed and assigned explicit values. Log a build warning when fallback inference is used after migration phase 1.
 
-Apply the same provenance distinction to user-facing structured content. J01 and the new cruise-preparation path must have `origin: supplemental`; existing journeys and paths must be audited as `course` or `mixed`. Newly added place records should retain supplemental provenance in generated metadata even when the atlas does not display a badge. This prevents a supplemental journey from looking as if it came from the original course merely because it is JSON rather than Markdown.
+Apply the same provenance distinction to user-facing structured content. J01 and the new cruise-preparation path must have `origin: supplemental`; existing journeys and paths must be audited as `archive` or `mixed`. Newly added place records should retain supplemental provenance in generated metadata even when the atlas does not display a badge. This prevents a supplemental journey from looking as if it came from the original archive merely because it is JSON rather than Markdown.
 
 ### 6.3 Mixed-page section markers
 
@@ -453,7 +453,7 @@ Add one callout type:
 
 ```markdown
 > [!research] Supplemental research
-> This section extends the course archive with later scholarship cataloged as R004, R008, and R014.
+> This section extends the source archive with later scholarship cataloged as R004, R008, and R014.
 ```
 
 Use it once at the start of a substantial supplemental section in a mixed page. Do not wrap every paragraph. A fully supplemental page needs only its page badge and normal citations.
@@ -473,13 +473,13 @@ Each record must include:
 - quotation or reuse note;
 - pages that cite it, generated by the build where possible.
 
-Keep the course catalog as `source-catalog.md`. The article source panel may present one combined list, but each item must be labeled "Course archive" or "Supplemental research" and link to the correct catalog.
+Keep the archive catalog as `source-catalog.md`. The article source panel may present one combined list, but each item must be labeled "Source archive" or "Supplemental research" and link to the correct catalog.
 
 ### 6.5 Migration rules
 
-1. Add `origin: course` to current pages that are genuinely course-derived.
+1. Add `origin: archive` to current pages that are genuinely archive-derived.
 2. Audit `web-research-supplement.md`, `contested-interpretations.md`, and any article already incorporating external web research. Mark them `mixed` or `supplemental` according to actual content, not filename.
-3. Do not infer origin from the presence of a `course` field.
+3. Do not infer origin from the presence of a `archive` field.
 4. Do not renumber any `C` ID.
 5. Extend the source-token parser from `C\d{2}` to the accepted source registry. Test false positives, lowercase text, unknown IDs, and source IDs next to punctuation.
 6. Make origin searchable and filterable in Browse. Show the badge on article headers, search results, and source/catalog pages. Add it to graph node metadata, but do not make it a new graph node.
@@ -489,7 +489,7 @@ Keep the course catalog as `source-catalog.md`. The article source panel may pre
 - Every publishable Markdown page has one valid `origin` value.
 - Every `R` reference resolves to `research-catalog.md`; every `C` reference still resolves to `source-catalog.md`.
 - Unknown IDs fail the content build.
-- Search can filter `course`, `supplemental`, and `mixed`.
+- Search can filter `archive`, `supplemental`, and `mixed`.
 - A mixed page shows one page badge and any authored `research` callouts.
 - Screen readers receive the full badge label, not a color-only distinction.
 - Origin colors meet contrast requirements and remain distinguishable without color.
@@ -978,7 +978,7 @@ The inventory is ordered by dependency. Slugs are normative unless an existing p
 
 ## 8. Existing article expansion inventory
 
-These revisions should preserve the useful course-derived core. Mark the page `mixed` only when substantial new research has actually been integrated.
+These revisions should preserve the useful archive-derived core. Mark the page `mixed` only when substantial new research has actually been integrated.
 
 | Existing page | Required change | New links | Likely origin after revision |
 |---|---|---|---|
@@ -1005,10 +1005,10 @@ These revisions should preserve the useful course-derived core. Mark the page `m
 | `index.md` | Add all new pages, comparison terms, legacy terms, and aliases. | All new pages | `mixed` |
 | `web-research-supplement.md` | Audit what has already been imported, assign `R` sources where possible, and turn the page into a dated research-change log or retire it with redirects if it duplicates the new catalog. | `research-catalog` | Audit required |
 | `coverage-map.md` | Replace the old gap list with a generated or dated status table for this expansion. | New cluster hubs | `mixed` |
-| `course-reading-guide.md` | Preserve the course path and label it explicitly as course-derived. Add a separate route to expanded learning paths rather than blending assignments with new material. | New paths | `course` |
-| `source-catalog.md` | Add an explanation that `C` sources belong to the original archive and link to the research catalog. Do not rewrite records for stylistic consistency. | `research-catalog` | `course` |
+| `subject-reference.md` | Preserve the archive path and label it explicitly as archive-derived. Add a separate route to expanded topic collections rather than blending assignments with new material. | New paths | `archive` |
+| `source-catalog.md` | Add an explanation that `C` sources belong to the original archive and link to the research catalog. Do not rewrite records for stylistic consistency. | `research-catalog` | `archive` |
 
-## 9. Links, definitions, graph, and learning paths
+## 9. Links, definitions, graph, and topic collections
 
 ### 9.1 Contextual-link policy
 
@@ -1079,7 +1079,7 @@ Every new article needs:
 - source IDs that generate `draws_from` edges;
 - a graph-neighborhood review for duplicated or misleading relations.
 
-### 9.4 New learning paths
+### 9.4 New topic collections
 
 Create eight paths in `content/paths/` after their required articles exist:
 
@@ -1109,7 +1109,7 @@ Extend the encyclopedia hubs with these groups:
 - Places along the Nile
 - Living Nile and Nubian communities
 
-Keep the original course and archive hubs intact. The start page should offer both a course-derived route and an expanded thematic route.
+Keep the original archive and archive hubs intact. The start page should offer both a archive-derived route and an expanded thematic route.
 
 ### 9.6 New itinerary journey
 
@@ -1159,17 +1159,17 @@ If a route map is added, derive its ordered points from verified `Place` records
 | Content types | `src/types/content.ts` | Add `ContentOrigin`; add frontmatter, summary, search, and graph metadata; optionally accept explicit `evidence`. |
 | Frontmatter parsing | `scripts/content/build-content.ts` | Parse and validate origin; preserve fallback behavior during migration. |
 | Research sources | `scripts/content/build-content.ts`; `scripts/content/lib/markdown.ts` | Read two catalogs, generalize source IDs, map IDs to routes, generate citations. |
-| Source types | `src/types/content.ts` | Add source origin, URL or private local locator, source class, accessed date, limitations, and reuse note while keeping local course files optional. Never expose private raw locators as public links. |
+| Source types | `src/types/content.ts` | Add source origin, URL or private local locator, source class, accessed date, limitations, and reuse note while keeping local archive files optional. Never expose private raw locators as public links. |
 | Search | `scripts/content/build-search.ts`; search client and views | Index origin, new tags, aliases, glossary terms, and both source prefixes. Add an Origin filter. |
 | Article header | `src/features/articles/ArticleView.tsx`; design system | Render the origin badge and explain it with accessible text or help copy. |
-| Source list | article/source components | Group or label course and research sources and support external source records safely. |
+| Source list | article/source components | Group or label archive and research sources and support external source records safely. |
 | Browse and index | browse components and generated nav | Expose the expanded hub groups and origin filter. |
 | Graph | `scripts/content/build-graph.ts`; graph components | Carry origin metadata and add only approved reception relations. |
 | Markdown callouts | parser, block types, design-system callout | Add `research` callout with accessible default label. |
 | Static navigation | `scripts/content/lib/site.ts` | Add new slugs to sections and hubs. Do not leave new pages discoverable only through search. |
 | Content checks | `scripts/content/check-content.ts` | Remove magic count; validate origin, source registries, links, definitions, and review fields. |
 | Unit tests | `tests/unit/content.test.ts` and relevant suites | Make page ingestion data-driven; add source, origin, callout, glossary, search, and graph cases. |
-| App tests | `tests/application.spec.ts` | Test origin display/filtering, research source navigation, one new learning path, and new hub discovery. |
+| App tests | `tests/application.spec.ts` | Test origin display/filtering, research source navigation, one new topic collection, and new hub discovery. |
 | Cruise journey | `src/types/content.ts`; `content/journeys/`; `src/features/journeys/JourneyView.tsx`; build and graph scripts | Add J01 with supplemental provenance, scene-level day/type/article links, private-source handling, transcript parity, and optional ordered route mapping. Audit origin for the six existing journeys. |
 | Places | `content/places.json`; atlas and place checks | Add or revise only publicly identifiable route stops; validate north-to-south order and do not expose private household or unnamed-community locations. |
 | Human-remains media | `src/types/content.ts`; `content/media-manifest.json`; media rendering and checks | Add explicit human-remains metadata, dignity-review status, optional content warning, and tests that prevent unreviewed publication. |
@@ -1179,7 +1179,7 @@ If a route map is added, derive its ordered points from verified `Place` records
 ### 10.2 Recommended data contracts
 
 ```ts
-export type ContentOrigin = 'course' | 'supplemental' | 'mixed';
+export type ContentOrigin = 'archive' | 'supplemental' | 'mixed';
 
 export interface PageFrontmatter {
   origin: ContentOrigin;
@@ -1189,7 +1189,7 @@ export interface PageFrontmatter {
 
 export interface SourceEntry {
   id: string;
-  origin: 'course' | 'supplemental';
+  origin: 'archive' | 'supplemental';
   title: string;
   sourceClass: string;
   status: string;
@@ -1249,7 +1249,7 @@ educationalRationale?: string;
 
 A cleared license must not imply a completed dignity review. `media:check` should fail publication when `containsHumanRemains` is true and dignity review, rationale, or the required warning is missing.
 
-Do not make every new field mandatory for old `C` records in the first migration. Normalize missing values in the parser, then improve the course catalog separately if useful.
+Do not make every new field mandatory for old `C` records in the first migration. Normalize missing values in the parser, then improve the archive catalog separately if useful.
 
 Use this frontmatter shape for a new supplemental article:
 
@@ -1273,11 +1273,11 @@ review:
 ---
 ```
 
-Update `llm-wiki/AGENTS.md` so `course` is required for course-derived and mixed pages but omitted from wholly supplemental pages. Keep `## Sources in this archive` for course citations. Use `## Supplemental research` for `R` citations. A mixed page may have both headings. The build should derive source presence from parsed IDs rather than either heading's wording.
+Update `llm-wiki/AGENTS.md` so `archive` is required for archive-derived and mixed pages but omitted from wholly supplemental pages. Keep `## Sources in this archive` for archive citations. Use `## Supplemental research` for `R` citations. A mixed page may have both headings. The build should derive source presence from parsed IDs rather than either heading's wording.
 
 ### 10.3 Research catalog parser
 
-The parser should accept current course headings and new research headings without making punctuation part of the identifier. Prefer a registry built from parsed records over a broad regex. Required cases:
+The parser should accept current archive headings and new research headings without making punctuation part of the identifier. Prefer a registry built from parsed records over a broad regex. Required cases:
 
 - `C01` through `C36` continue to work.
 - `R001` and future `R1000` work without another schema change.
@@ -1328,7 +1328,7 @@ Exit gate: the implementer can distinguish baseline failures from expansion fail
 ### Phase 1. Provenance and source infrastructure
 
 1. Add `ContentOrigin` and propagate it through generated content.
-2. Add origin to all current Markdown pages, journeys, and learning paths after an actual provenance audit.
+2. Add origin to all current Markdown pages, journeys, and topic collections after an actual provenance audit.
 3. Add optional explicit evidence frontmatter and fallback warnings.
 4. Create `research-catalog.md` and seed it with the approved sources from section 14, including R069 as a non-public local record.
 5. Generalize source parsing and routing.
@@ -1396,13 +1396,13 @@ Exit gate: J01 follows the PDF's verified sequence, every historical claim uses 
 
 1. Add the glossary terms from section 9.2.
 2. Add all new aliases and index entries.
-3. Create the eight learning paths.
+3. Create the eight topic collections.
 4. Add hub groups and intentional previous/next order.
 5. Run the link-health report and repair low-link pages.
 6. Add curated reception and `encountered_at` relations and inspect graph neighborhoods, including J01.
 7. Check search queries listed in section 12.4.
 
-Exit gate: no new page is orphaned, every new page has its required links and relations, J01 is discoverable from Home or the trip guide and Journeys, and readers can enter each cluster from Home, Browse, Search, a learning path, and at least one existing article.
+Exit gate: no new page is orphaned, every new page has its required links and relations, J01 is discoverable from Home or the trip guide and Journeys, and readers can enter each cluster from Home, Browse, Search, a topic collection, and at least one existing article.
 
 ### Phase 7. Review and release
 
@@ -1445,14 +1445,14 @@ Run `npm run media:build` only when adding cleared assets. Run visual tests when
 | Every publishable Markdown file is ingested. | Manifest length equals discovered publishable files; no fixed total. |
 | Every page has valid origin. | Missing or unknown value fails. |
 | Evidence fallback during migration. | Builds with a warning; final migrated corpus has no fallback warnings. |
-| `C19` link | Resolves to course catalog anchor. |
+| `C19` link | Resolves to archive catalog anchor. |
 | `R001` link | Resolves to research catalog anchor. |
 | `R069` private record | Resolves to catalog metadata without emitting a raw-file link or filesystem path in public output. |
 | Unknown source | Fails with page and ID. |
 | Research callout | Parses, renders, and has a useful accessible label. |
 | New relation types | Serialize, filter, and render with readable labels. |
 | Catalog citation counts | `citedBy` includes all pages using each source. |
-| Source links | External links use safe attributes; local course files still work. |
+| Source links | External links use safe attributes; local archive files still work. |
 | Human-remains media | Publication fails unless dignity review, educational rationale, and any required content warning are complete. |
 | Existing journeys | All six current journey files parse and render unchanged after the optional scene fields are added. |
 | Structured provenance | Existing journeys and paths show audited origin; J01 and the cruise-preparation path show `supplemental`. |
@@ -1530,7 +1530,7 @@ Test these exact user intents, not only title matches:
 - "Egypt Africa Afrocentrism"
 - "modern Kemetic religion"
 - "should museums display mummies"
-- "course sources only"
+- "archive sources only"
 - "supplemental research only"
 - "dahabiya Nile journey"
 - "Esna Khnum temple and market"
@@ -1751,7 +1751,7 @@ For each subject, include at least one source by a specialist working in or from
 
 | Decision | Reason |
 |---|---|
-| Keep course and supplemental sources in separate catalogs. | Readers can audit origin without losing a unified source panel. |
+| Keep archive and supplemental sources in separate catalogs. | Readers can audit origin without losing a unified source panel. |
 | Use `origin`, not a generic tag alone. | A typed field can drive badges, filters, checks, search, and future migrations reliably. |
 | Keep origin separate from evidence. | Source history and evidentiary strength answer different questions. |
 | Use a mixed-page research callout sparingly. | It marks substantive additions without making the article unreadable. |
@@ -1770,7 +1770,7 @@ For each subject, include at least one source by a specialist working in or from
 | Keep comparative geography out of the sacred atlas initially. | The existing place model is Egypt-specific and should not be stretched misleadingly. |
 | Make images optional. | Scholarly scope and navigation matter more than adding weakly licensed decoration. |
 | Treat R069 as a private itinerary source. | The document establishes this planned sequence but is neither public scholarship nor authority for the history of its stops. |
-| Make the cruise route J01, not a faux ancient reconstruction. | The existing Journey component can organize a modern place-based learning sequence while retaining explicit evidence limits. |
+| Make the cruise route J01, not a faux ancient reconstruction. | The existing Journey component can organize a modern itinerary while retaining explicit evidence limits. |
 | Keep optional Luxor and Aswan tours outside J01. | The supplied document explicitly excludes them from the five-day sailing package. |
 | Create eight route articles rather than one oversized travel guide. | Readers need durable site and community context, while the journey should remain a navigational layer that links those articles in order. |
 | Leave private and unidentified community stops off the atlas. | A travel itinerary does not authorize precise publication of household or community locations. |
@@ -1821,10 +1821,10 @@ If Luna Max reaches one of these choices during implementation, it should take t
 ### Provenance and sources
 
 - [ ] Every publishable page has valid origin metadata.
-- [ ] Every journey and learning path has valid origin metadata; J01 and its preparation path are `supplemental`.
-- [ ] Course source IDs `C01` through `C36` are unchanged.
+- [ ] Every journey and topic collection has valid origin metadata; J01 and its preparation path are `supplemental`.
+- [ ] Archive source IDs `C01` through `C36` are unchanged.
 - [ ] New research uses stable `R` IDs and appears in `research-catalog.md`.
-- [ ] Course and supplemental source links route to the correct catalog.
+- [ ] Archive and supplemental source links route to the correct catalog.
 - [ ] Origin and evidence appear as separate accessible labels.
 - [ ] Every substantial external factual claim has a source that was opened and checked.
 - [ ] No search-result snippet or AI output is treated as a source.
@@ -1844,8 +1844,8 @@ If Luna Max reaches one of these choices during implementation, it should take t
 
 - [ ] Every substantive new page has at least three contextual outgoing and two contextual inbound links; planned articles normally exceed four each.
 - [ ] There are no orphan pages, unresolved links, or broken anchors.
-- [ ] New pages appear in hubs, Browse, Search, static routes, index, and at least one learning path.
-- [ ] The eight new learning paths are complete.
+- [ ] New pages appear in hubs, Browse, Search, static routes, index, and at least one topic collection.
+- [ ] The eight new topic collections are complete.
 - [ ] Glossary additions in section 9.2 exist and first-use annotation works.
 - [ ] New graph relations have readable labels and do not create misleading influence claims.
 - [ ] Exact search scenarios in section 12.4 return useful results.
@@ -1879,11 +1879,11 @@ Use this as the compact handoff after reading the full plan:
 6. Write phase 3 articles, including N16 through N18, apply the clinical, medical, animal, suffering, and Buddhist safeguards, and revise the religion core.
 7. Write the reception hub, N20 on biblical memory, and the remaining phase 4 articles using the transmission taxonomy; treat Kemeticism as living religion and human remains through dignity review.
 8. Register and checksum R069 without exposing it publicly; research and write N21 through N28, then build J01 from the exact included itinerary sequence and living-community safeguards.
-9. Add glossary terms, contextual links, graph relations, hubs, aliases, index entries, and eight learning paths.
+9. Add glossary terms, contextual links, graph relations, hubs, aliases, index entries, and eight topic collections.
 10. Run `/humanizer` on every user-facing addition or substantial rewrite, then audit the diff for factual drift.
 11. Run the full testing and review matrix, resolve every error, and inspect visual changes manually.
 12. Append concise phase records to `llm-wiki/log.md` for the material additions and lint pass.
 13. Update generated counts only at the end.
 14. Inspect status and diff, stage only this work, and leave `raw/` plus unrelated user edits untouched.
 
-The implementation is complete only when section 16 passes. A large article count by itself is not completion; the material must be sourced, qualified, linked, findable, accessible, and visibly distinguished from the original course archive.
+The implementation is complete only when section 16 passes. A large article count by itself is not completion; the material must be sourced, qualified, linked, findable, accessible, and visibly distinguished from the original source archive.

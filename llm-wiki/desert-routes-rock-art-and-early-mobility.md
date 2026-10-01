@@ -83,7 +83,7 @@ The route page belongs beside [[naqada-hierakonpolis-and-early-centers]] because
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]] provide the course framework for geography, deserts, routes, and state formation.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]] provide the archive framework for geography, deserts, routes, and state formation.
 
 ## Supplemental research
 

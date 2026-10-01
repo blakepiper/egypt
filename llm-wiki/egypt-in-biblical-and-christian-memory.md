@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [biblical-memory, jewish-history, christianity, coptic, exodus, alexandria, reception, monotheism]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-09-02

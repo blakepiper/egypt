@@ -119,7 +119,7 @@ export function AtlasView() {
         <div className="atlas__panel">
           {selected ? (
             <aside className="detail-panel" aria-live="polite">
-              <h2>{selected.label} <OriginBadge origin={selected.origin ?? 'course'} /></h2>
+              <h2>{selected.label} <OriginBadge origin={selected.origin ?? 'archive'} /></h2>
               {selected.aliases.length > 0 && <p className="muted">Also {selected.aliases.join(', ')}</p>}
               <p>{selected.summary}</p>
               <dl className="detail-panel__facts">
@@ -150,7 +150,7 @@ export function AtlasView() {
           {places.map((place) => (
             <li key={place.id} id={place.id}>
               <button type="button" className="entity-list__button" onClick={() => navigate(`/atlas/?place=${place.id}`)}>
-                <strong>{place.label}</strong> <OriginBadge origin={place.origin ?? 'course'} />
+                <strong>{place.label}</strong> <OriginBadge origin={place.origin ?? 'archive'} />
               </button>
               {place.aliases.length > 0 && <span className="muted"> — also {place.aliases.join(', ')}</span>}
               <p>{place.summary}</p>

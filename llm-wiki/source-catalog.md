@@ -1,9 +1,8 @@
 ---
 type: source-catalog
 tags: [sources, provenance, archive, bibliography]
-origin: course
+origin: archive
 evidence: archive
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 review:
   factual: reviewed
@@ -16,7 +15,7 @@ review:
 
 This catalog groups 72 physical files into 36 intellectual-source groups. Archival notes are separated from independent authority. “Primary translation” means a modern translation of an ancient source. Scanned files were OCRed for analysis; OCR text is not part of the permanent wiki and should be checked against page images before quoting. [[reading-audit]] states exactly which groups were read in full, compared version by version, or sampled by contents and relevant sections.
 
-Independent and current research used to expand the archive is catalogued separately in [[research-catalog]]. Course records and supplemental research are linked by stable IDs but are not interchangeable kinds of evidence.
+Independent and current research used to expand the archive is catalogued separately in [[research-catalog]]. Archive records and supplemental research are linked by stable IDs but are not interchangeable kinds of evidence.
 
 ## C01 — REL 395 source record
 
@@ -77,7 +76,7 @@ Independent and current research used to expand the archive is catalogued separa
 ## C07 — Blue water-lily research
 
 **Status:** research process.
-**Use:** proposal, bibliography, outline, multiple drafts, and final paper arguing for psychoactive sacramental use of Nymphaea caerulea. All versions were compared for unique content. The collection includes an incomplete ODT and two final DOCX exports of different length. The most complete version explicitly ends with evidentiary uncertainty and future tests. Claims are evaluated in [[blue-water-lily-research]] and preserved in [[student-work-reconstruction]].
+**Use:** proposal, bibliography, outline, multiple drafts, and final paper arguing for psychoactive sacramental use of Nymphaea caerulea. All versions were compared for unique content. The collection includes an incomplete ODT and two final DOCX exports of different length. The most complete version explicitly ends with evidentiary uncertainty and future tests. Claims are evaluated in [[blue-water-lily-research]] and preserved in [[research-notes]].
 
 - [April 26 REL395-TrashFinal.odt](<../raw/Research Paper/April 26 REL395-TrashFinal.odt>)
 - [REL395-TrashFinal 604am 41217.docx](<../raw/Research Paper/REL395-TrashFinal 604am 41217.docx>)

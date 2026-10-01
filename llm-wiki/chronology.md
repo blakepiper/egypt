@@ -1,7 +1,6 @@
 ---
 type: concept
 tags: [chronology, history, continuity-change]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-09-02
 origin: mixed
 evidence: scholarship
@@ -74,7 +73,7 @@ This is a shift of emphasis, not three mutually exclusive doctrines. Solar, stel
 
 ## Supplemental research
 
-The R-series records listed below add chronological, archaeological, comparative, and reception research to the course archive. Early dates remain approximate where the catalog says so.
+The R-series records listed below add chronological, archaeological, comparative, and reception research to the source archive. Early dates remain approximate where the catalog says so.
 
 ## Sources in this archive
 

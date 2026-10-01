@@ -1,8 +1,7 @@
 ---
 type: topic
 tags: [re, solar, duat, renewal, apep]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: scholarship
 updated: 2026-08-30
 aliases: [Re's daily circuit]

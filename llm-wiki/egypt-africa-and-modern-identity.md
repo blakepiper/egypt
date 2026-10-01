@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [africa, identity, race, pan-africanism, afrocentrism, kemeticism, diaspora, reception]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31

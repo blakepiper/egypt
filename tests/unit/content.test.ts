@@ -164,7 +164,7 @@ describe('search ranking', () => {
   it('finds supplemental pages by a research source and keeps origin filters strict', () => {
     const hits = search(index, 'R082', {}, 20);
     expect(hits.map((hit) => hit.doc.slug)).toContain('living-nile-communities-work-food-and-hospitality');
-    expect(search(index, 'R082', { origin: 'course' }, 20)).toEqual([]);
+    expect(search(index, 'R082', { origin: 'archive' }, 20)).toEqual([]);
     expect(search(index, 'R082', { origin: 'supplemental' }, 20).every((hit) => hit.doc.origin === 'supplemental')).toBe(true);
   });
 
@@ -239,7 +239,7 @@ describe('search ranking', () => {
       ['Egypt Africa Afrocentrism', ['egypt-africa-and-modern-identity']],
       ['modern Kemetic religion', ['egypt-africa-and-modern-identity']],
       ['should museums display mummies', ['egyptology-museums-and-colonialism']],
-      ['course sources only', ['source-catalog']],
+      ['archive sources only', ['source-catalog']],
       ['supplemental research only', ['research-catalog']],
       ['dahabiya Nile journey', ['nile-travel-dahabiyas-and-changing-river', 'journey-esna-to-aswan-dahabiya']],
       ['Esna Khnum temple and market', ['esna-khnum-temple-and-layered-town']],
@@ -265,8 +265,8 @@ describe('search index construction', () => {
       meta: {
         slug: 'x', title: 'Maat', route: '/wiki/x/', type: 'concept', section: 'encyclopedia',
         tags: ['order'], summary: 'Right order.', aliases: ['right order'], periods: [], places: [], entities: [],
-        updated: null, course: null, words: 3, readingMinutes: 1, headingCount: 1, hasSources: false,
-        sourceIds: ['C02'], evidence: 'scholarship', origin: 'course',
+        updated: null, archive: null, words: 3, readingMinutes: 1, headingCount: 1, hasSources: false,
+        sourceIds: ['C02'], evidence: 'scholarship', origin: 'archive',
       },
       toc: [{ id: 'h', level: 2, text: 'Judgment' }],
       text: 'The heart is weighed.',
@@ -282,8 +282,8 @@ describe('search index construction', () => {
       meta: {
         slug: 'long', title: 'Long page', route: '/wiki/long/', type: 'topic', section: 'encyclopedia',
         tags: [], summary: 'A long page.', aliases: [], periods: [], places: [], entities: [],
-        updated: null, course: null, words: 500, readingMinutes: 3, headingCount: 0, hasSources: false,
-        sourceIds: [], evidence: 'scholarship', origin: 'course',
+        updated: null, archive: null, words: 500, readingMinutes: 3, headingCount: 0, hasSources: false,
+        sourceIds: [], evidence: 'scholarship', origin: 'archive',
       },
       toc: [],
       text: `${'filler '.repeat(150)}Rare lantern passage appears well after the index prefix.`,
@@ -296,7 +296,7 @@ describe('search index construction', () => {
 });
 
 describe('expanded registries', () => {
-  it('keeps the course and research catalogs complete and distinct', () => {
+  it('keeps the archive and research catalogs complete and distinct', () => {
     const sources = JSON.parse(readFileSync(join(ROOT, 'src/generated/sources.json'), 'utf8')) as Array<Record<string, unknown>>;
     expect(sources.filter((source) => String(source.id).startsWith('C'))).toHaveLength(36);
     const researchSources = sources.filter((source) => String(source.id).startsWith('R'));
@@ -310,7 +310,7 @@ describe('expanded registries', () => {
     expect(r069).toHaveProperty('url', expect.stringContaining('/public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf'));
   });
 
-  it('publishes all ten supplemental learning paths with reflections', () => {
+  it('publishes all ten supplemental topic collections with scope notes', () => {
     const paths = JSON.parse(readFileSync(join(ROOT, 'src/generated/paths.json'), 'utf8')) as Array<{
       id: string; origin: string; steps: { reflection?: string }[]; purpose?: string; orderReason?: string; leavesOut?: string;
       review?: { factual?: string; humanizer?: string; editorial?: string };
@@ -321,10 +321,8 @@ describe('expanded registries', () => {
       const path = paths.find((entry) => entry.id === id)!;
       expect(path.origin).toBe('supplemental');
       expect(path.purpose).toBeTruthy();
-      expect(path.orderReason).toBeTruthy();
       expect(path.leavesOut).toBeTruthy();
       expect(path.steps.length).toBeGreaterThan(4);
-      expect(path.steps.every((step) => step.reflection)).toBe(true);
     }
     expect(paths.every((path) => path.review?.factual === 'reviewed' && path.review?.humanizer === 'reviewed' && path.review?.editorial === 'reviewed')).toBe(true);
   });

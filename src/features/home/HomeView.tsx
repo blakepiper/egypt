@@ -61,7 +61,7 @@ export function HomeView() {
         </CardGrid>
       </Section>
 
-      <Section title="Knowledge paths" description="Short reading routes through the graph.">
+      <Section title="Topic collections" description="Related articles grouped by subject.">
         <ul className="path-list">
           {allPaths.map((path) => (
             <li key={path.id}>

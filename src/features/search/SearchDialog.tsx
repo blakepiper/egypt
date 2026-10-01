@@ -23,9 +23,9 @@ const FILTER_ORDER = [
 type SearchFilterKey = (typeof FILTER_ORDER)[number]['key'];
 
 const ORIGIN_LABELS: Record<ContentOrigin, string> = {
-  course: 'Course archive',
+  archive: 'Source archive',
   supplemental: 'Supplemental research',
-  mixed: 'Course + research',
+  mixed: 'Archive + research',
 };
 
 const EVIDENCE_LABELS: Record<string, string> = {

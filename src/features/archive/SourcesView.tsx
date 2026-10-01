@@ -28,7 +28,7 @@ const STATUS_FILTERS = [
 ];
 
 const ORIGIN_FILTERS = [
-  { id: 'course', label: 'Course archive' },
+  { id: 'archive', label: 'Source archive' },
   { id: 'supplemental', label: 'Supplemental research' },
 ];
 
@@ -62,7 +62,7 @@ export function SourcesView() {
       <PageHeader
        eyebrow="Archive"
        title="Source catalog"
-        lead={allSources ? `${allSources.length} intellectual-source groups behind the archive. Course records and supplemental research are kept distinct, with access, limits, and reuse notes beside each record.` : 'Loading the source catalog…'}
+        lead={allSources ? `${allSources.length} intellectual-source groups behind the archive. Archive records and supplemental research are kept distinct, with access, limits, and reuse notes beside each record.` : 'Loading the source catalog…'}
       />
       <label className="search-field search-field--compact">
         <span className="sr-only">Filter sources</span>

@@ -70,9 +70,9 @@ export function BrowseView() {
       <FilterBar
         label="Origin"
         options={[
-          { id: 'course', label: 'Course archive' },
+          { id: 'archive', label: 'Source archive' },
           { id: 'supplemental', label: 'Supplemental research' },
-          { id: 'mixed', label: 'Course + research' },
+          { id: 'mixed', label: 'Archive + research' },
         ]}
         value={originFilter}
         onChange={(value) => setOriginFilter(value as ContentOrigin | null)}
@@ -134,7 +134,7 @@ export function BrowseView() {
 
       {mode === 'origin' && (
         <Section title="By origin" description="Origin describes how an item entered the archive. Evidence strength is shown separately on each page.">
-          {(['course', 'supplemental', 'mixed'] as ContentOrigin[]).map((origin) => {
+          {(['archive', 'supplemental', 'mixed'] as ContentOrigin[]).map((origin) => {
             const group = allPages.filter((page) => page.origin === origin);
             return (
               <div key={origin} className="index-block">

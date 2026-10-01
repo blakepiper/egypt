@@ -82,7 +82,7 @@ The same evidence discipline applies here as elsewhere. A Qur'anic narrative is 
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], and [[research-catalog#R041 — Reception of Pharaonic Egypt in Islamic Egypt|R041]] provide the course and existing reception framework for Egypt, later texts, and Islamic-era memory.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]], and [[research-catalog#R041 — Reception of Pharaonic Egypt in Islamic Egypt|R041]] provide the archive and existing reception framework for Egypt, later texts, and Islamic-era memory.
 
 ## Supplemental research
 

@@ -1,7 +1,6 @@
 ---
 type: concept
 tags: [maat, isfet, kingship, ethics, social-order]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship
@@ -79,7 +78,7 @@ Maat offers a language for repair, but the sources do not promise that every los
 
 ## Supplemental research
 
-The R-series records listed below add research on state formation, economy, violence, pain, and social difference to the course synthesis.
+The R-series records listed below add research on state formation, economy, violence, pain, and social difference to the archive synthesis.
 
 ## Sources in this archive
 

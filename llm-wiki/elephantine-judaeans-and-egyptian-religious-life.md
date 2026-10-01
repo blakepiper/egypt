@@ -82,7 +82,7 @@ The four-layer method remains useful. Egyptian evidence includes Khnum's temple 
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]] provide the course background for Egyptian divine institutions, ritual, and later literary reception.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C18 — Plutarch, Isis and Osiris|C18]] provide the archive background for Egyptian divine institutions, ritual, and later literary reception.
 
 ## Supplemental research
 

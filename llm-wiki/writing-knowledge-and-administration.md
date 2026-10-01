@@ -30,7 +30,7 @@ review:
 Writing in ancient Egypt was not one invention followed by a single march toward literacy. It was a set of scripts, media, professions, and uses that changed across places and periods. A label on a container, an account in a storehouse, a medical recipe, a royal inscription, and a spell on a coffin all use writing, but they do different work. The surviving record is also uneven. Durable stone and formal documents are easier to study than speech, temporary notes, or knowledge passed through practice.
 
 > [!evidence] Period and evidence limit
-> The earliest Egyptian writing belongs to the late fourth millennium BCE, in the period usually called Naqada III and the beginning of the Early Dynastic period. Exact sequences remain debated, and the first surviving signs do not tell us when language, counting, or memory began. Later evidence for scribal schooling, medicine, and Demotic reading cannot be projected backward onto the first signs. R011 is the principal source for the early writing discussion. R012 and R017 are used as comparative and bibliographic orientation because the cataloged access for them is limited. R013 and R015, together with the archive's primary and course materials, support the later sections.
+> The earliest Egyptian writing belongs to the late fourth millennium BCE, in the period usually called Naqada III and the beginning of the Early Dynastic period. Exact sequences remain debated, and the first surviving signs do not tell us when language, counting, or memory began. Later evidence for scribal schooling, medicine, and Demotic reading cannot be projected backward onto the first signs. R011 is the principal source for the early writing discussion. R012 and R017 are used as comparative and bibliographic orientation because the cataloged access for them is limited. R013 and R015, together with the archive's primary and archive materials, support the later sections.
 
 ## Earliest evidence and dating caution
 
@@ -126,7 +126,7 @@ Writing made knowledge portable and durable, but it also made knowledge selectiv
 
 ## Sources in this archive
 
-C03, C10, C11, C13, C14, and C16 are the course syntheses and primary-text packets used for temple practice, scribal ethics, ritual texts, funerary writing, and multilingual magical material.
+C03, C10, C11, C13, C14, and C16 are the archive syntheses and primary-text packets used for temple practice, scribal ethics, ritual texts, funerary writing, and multilingual magical material.
 
 ## Supplemental research
 

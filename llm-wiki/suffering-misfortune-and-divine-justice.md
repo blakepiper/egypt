@@ -1,7 +1,6 @@
 ---
 type: topic
 tags: [suffering, pain, theodicy, maat, divine-justice, lament, personal-piety, buddhism]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-08-31

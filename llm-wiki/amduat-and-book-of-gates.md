@@ -1,8 +1,7 @@
 ---
 type: text-study
 tags: [amduat, book-of-gates, duat, new-kingdom]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: primary
 updated: 2026-08-30
 aliases: [Underworld Books, The twelve hours]

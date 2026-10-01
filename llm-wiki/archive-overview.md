@@ -1,8 +1,7 @@
 ---
 type: archive-guide
 tags: [archive, method, evidence, ancient-egypt]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: archive
 updated: 2026-08-30
 review:
@@ -20,7 +19,7 @@ The Living Archive is a guide to ancient Egyptian religion assembled from ancien
 
 Ancient Egyptian religion changes across three thousand years, but several questions recur. How do gods and humans maintain life and order? How do images, names, speech, and offerings act in the world? How do temples, households, kingship, and tombs connect? What changes when a practice moves into a new place, medium, or period?
 
-The reading routes begin with these questions and then follow them through creation traditions, local theology, kingship, ritual practice, personhood, funerary literature, and later transformations. Start with [[start-here]], then choose a route from [[course-reading-guide]] or the [[four-week-relearning-plan]].
+Related subjects are indexed in [[subject-reference]] and [[topic-reference]].
 
 ## What the sources can support
 

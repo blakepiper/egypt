@@ -2,7 +2,7 @@
 type: log
 tags: [maintenance, provenance]
 course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: archive
 updated: 2026-09-02
 review:
@@ -28,7 +28,7 @@ Moved the contents of the original source folder and Drive export into a single 
 
 ## [2026-08-30] ingest | Full mandatory-material second pass
 
-Reviewed the source record, annotated prompt sets, research reports and drafts, surviving packets, and visual plates in full or by complete version comparison. Read the complete contents and selected sections of Pinch and Teeter; sampled the other long reference books by contents and relevant chapters. Added [[reading-audit]], [[course-reading-guide]], [[course-materials-deep-notes]], and [[student-work-reconstruction]]; expanded the core topic pages with previously omitted distinctions and explicit corrections.
+Reviewed the source record, annotated prompt sets, research reports and drafts, surviving packets, and visual plates in full or by complete version comparison. Read the complete contents and selected sections of Pinch and Teeter; sampled the other long reference books by contents and relevant chapters. Added [[reading-audit]], [[subject-reference|course-reading-guide]], [[source-notes|course-materials-deep-notes]], and [[research-notes|student-work-reconstruction]]; expanded the core topic pages with previously omitted distinctions and explicit corrections.
 
 ## [2026-08-30] ingest | Current-source verification
 
@@ -53,3 +53,8 @@ Released 81 reviewed pages, 170 source records, 109 static route artifacts, 18 l
 ## [2026-09-02] publish | Public itinerary
 
 Published the R069 itinerary at `public/sources/dahabiya-nile-sailing-5-day-itinerary.pdf`. Updated the source catalog, journey boundary, compiler, and release checks so a clean clone no longer needs the ignored `raw/` directory for this source. The checksum remains enforced.
+
+
+## 2026-09-30 — Reference framing
+
+Removed the scheduled study plan and concept-check interface. Replaced educational framing with subject references and topic collections, renamed affected pages and the Explore route, and retained source filenames for traceable provenance.

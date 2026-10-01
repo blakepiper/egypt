@@ -1,7 +1,6 @@
 ---
 type: travel-guide
 tags: [nile, travel, dahabiya, river, barrage, lock, dams, tourism, colonialism]
-course: Supplemental research
 origin: supplemental
 evidence: scholarship
 updated: 2026-09-02

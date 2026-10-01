@@ -1,8 +1,7 @@
 ---
 type: audit
 tags: [reading-audit, provenance, methodology, completeness]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: archive
 updated: 2026-08-30
 review:
@@ -28,16 +27,16 @@ This page records what was actually read for the rebuilt wiki. It exists because
 
 | Sources | Reading performed | Material incorporated |
 |---|---|---|
-| C01 source record | Entire document | Source identity, objectives, books, and the structure of the material in [[course-reconstruction]] and [[course-reading-guide]] |
-| C04 assessment prompts | Blank and completed prompt sets; distinct versions compared | Prompts, responses, gaps, contradictions, and corrections in [[exam-recovery-guide]] and [[student-work-reconstruction]] |
-| C05 Set research | Full final, handout, drafts, PDF, and presentation text; version differences checked | Argument development, iconography, cult geography, Horus–Set relationship, Apep defense, late demonization, speculative *coniunctio* claim, and unfinished fields in [[set]] and [[student-work-reconstruction]] |
+| C01 source record | Entire document | Source identity, objectives, books, and the structure of the material in [[archive-overview]] and [[subject-reference]] |
+| C04 assessment prompts | Blank and completed prompt sets; distinct versions compared | Prompts, responses, gaps, contradictions, and corrections in [[key-questions]] and [[research-notes]] |
+| C05 Set research | Full final, handout, drafts, PDF, and presentation text; version differences checked | Argument development, iconography, cult geography, Horus–Set relationship, Apep defense, late demonization, speculative *coniunctio* claim, and unfinished fields in [[set]] and [[research-notes]] |
 | C06 Plate 30 research | Entire report and every slide | Ani's approach to the Hall of Two Truths, Anubis's speech, named threshold knowledge, Osirian identification, and the source-based synthesis in [[book-of-the-dead-plate-30]] |
-| C07 water-lily research | Entire longest paper, bibliography, and outline; versions compared for unique content | Research question, thesis, evidence chain, source judgments, species problem, Homer comparison, iconographic claims, pharmacology, proposed delivery routes, and the final admission of missing direct evidence in [[blue-water-lily-research]] and [[student-work-reconstruction]] |
+| C07 water-lily research | Entire longest paper, bibliography, and outline; versions compared for unique content | Research question, thesis, evidence chain, source judgments, species problem, Homer comparison, iconographic claims, pharmacology, proposed delivery routes, and the final admission of missing direct evidence in [[blue-water-lily-research]] and [[research-notes]] |
 | C08 Pinch contextual notes | Entire handout | Myth types, local plurality, geography, maat/isfet, operative images, periodization, and the simplified change in afterlife geography |
 | C09 Hornung selection | Entire selection | Maat as active maintenance and the differentiated body/ka/ba/akh/name/shadow model |
 | C10 Ptahhotep | Entire selection and notes | All major clusters of maxims, including listening, dispute, office, generosity, greed, family, women, transmission, and the text's hierarchical limits |
 | C11 PDM/PGM packet | Entire packet, with every Set/Typhon/Isis/Osiris passage separately located | Late ritual recipes, material operations, voces magicae, attraction/separation/compulsion, and Seth/Typhon's transformed late profile |
-| C12 four cosmogony packets | All four packets in full | Every creation sequence and the packets' scholarly cautions in [[creation-traditions]] and [[course-materials-deep-notes]] |
+| C12 four cosmogony packets | All four packets in full | Every creation sequence and the packets' scholarly cautions in [[creation-traditions]] and [[source-notes]] |
 | C13 Coffin Texts | Entire selection | Body preservation, head and heart, food/excrement, mobility, Khepri, shabtis, divine limbs, and reuse of earlier texts |
 | C14 Amduat and Book of Gates | Every one of the 24 pages visually inspected; all extractable prose read | Twelve-hour architecture, registers, barks, gates, serpents, Apep, Osiris, populations of the Duat, punishment, and dawn |
 | C16 three Osirian readings | All three in full | Their materially different genres, plots, omissions, ritual settings, and conceptions of succession |
@@ -83,7 +82,7 @@ The research-paper PDFs were reviewed according to what they could actually esta
 - The Plate 30 and presentation files were checked as visual documents, not judged only by text extraction.
 - The prompt files contain overlapping versions. Their differences were checked so that corrections and gaps could be separated from repeated material.
 - The Plate 30 ODT is contaminated after its main text by an early water-lily draft. The wiki records that as file history and routes the prose to the correct research page.
-- The water-lily research files overlap but are not identical. The longest version is the interpretive base, while distinct evidence and uncertainty are preserved in [[student-work-reconstruction]].
+- The water-lily research files overlap but are not identical. The longest version is the interpretive base, while distinct evidence and uncertainty are preserved in [[research-notes]].
 - The Set research files preserve genuine argument development and unresolved claims rather than collapsing everything into a single summary.
 
 ## What “incorporated” means

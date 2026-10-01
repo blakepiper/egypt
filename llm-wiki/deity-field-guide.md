@@ -1,7 +1,6 @@
 ---
 type: reference
 tags: [gods, iconography, travel, visual-reference]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship

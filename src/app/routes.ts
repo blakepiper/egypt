@@ -17,7 +17,7 @@ export type Route =
   | { name: 'view'; id: string }
   | { name: 'objects' }
   | { name: 'object'; id: string }
-  | { name: 'learn' }
+  | { name: 'explore' }
   | { name: 'archive' }
   | { name: 'sources' }
   | { name: 'field-guide' }
@@ -63,7 +63,7 @@ export function parseRoute(pathname: string): Route {
     case 'journeys': return second ? { name: 'journey', id: second } : { name: 'journeys' };
     case 'views': return second ? { name: 'view', id: second } : { name: 'journeys' };
     case 'objects': return second ? { name: 'object', id: second } : { name: 'objects' };
-    case 'learn': return { name: 'learn' };
+    case 'explore': return { name: 'explore' };
     case 'archive': return second === 'sources' ? { name: 'sources' } : { name: 'archive' };
     case 'field-guide': return { name: 'field-guide' };
     case 'search': return { name: 'search' };

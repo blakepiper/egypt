@@ -90,7 +90,7 @@ function main(): void {
     for (const field of ['factual', 'humanizer', 'media_rights']) {
       if (!new RegExp(`^  ${field}: reviewed$`, 'm').test(source)) failures.push(`${file}: review.${field} is not recorded`);
     }
-    if (!/^origin:\s*(course|supplemental|mixed)\s*$/m.test(source)) failures.push(`${file}: origin is not recorded`);
+    if (!/^origin:\s*(archive|supplemental|mixed)\s*$/m.test(source)) failures.push(`${file}: origin is not recorded`);
     if (!/^evidence:\s*(primary|archive|scholarship|mixed|speculative)\s*$/m.test(source)) failures.push(`${file}: explicit evidence is not recorded`);
     if (!/^  editorial:\s*reviewed\s*$/m.test(source)) failures.push(`${file}: review.editorial is not complete`);
   }
@@ -154,7 +154,7 @@ function main(): void {
     for (const [id, count] of sourceIdCounts) if (count > 1) failures.push(`duplicate source ID ${id}`);
     for (let number = 1; number <= 36; number += 1) {
       const id = `C${String(number).padStart(2, '0')}`;
-      if (!generatedSourceIds.has(id)) failures.push(`course source ${id} is missing`);
+      if (!generatedSourceIds.has(id)) failures.push(`archive source ${id} is missing`);
     }
     const researchNumbers = generatedSourceRecords
       .filter((source) => source.id.startsWith('R'))
@@ -212,10 +212,9 @@ function main(): void {
     const paths = JSON.parse(readFileSync(generatedPathsPath, 'utf8')) as KnowledgePath[];
     for (const id of REQUIRED_PATHS) {
       const path = paths.find((entry) => entry.id === id);
-      if (!path) { failures.push(`required learning path is missing: ${id}`); continue; }
-      if (path.origin !== 'supplemental') failures.push(`learning path ${id} must be supplemental`);
-      if (!path.purpose || !path.orderReason || !path.leavesOut) failures.push(`learning path ${id} is missing purpose, order rationale, or leaves-out note`);
-      if (path.steps.some((step) => !step.reflection)) failures.push(`learning path ${id} has a step without a reflection prompt`);
+      if (!path) { failures.push(`required topic collection is missing: ${id}`); continue; }
+      if (path.origin !== 'supplemental') failures.push(`topic collection ${id} must be supplemental`);
+      if (!path.purpose || !path.leavesOut) failures.push(`topic collection ${id} is missing purpose or scope note`);
     }
   }
   const generatedArticles = join(ROOT, 'src/generated/articles');

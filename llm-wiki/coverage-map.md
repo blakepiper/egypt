@@ -1,7 +1,6 @@
 ---
 type: audit
 tags: [coverage, sources, maintenance]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-09-02
 origin: mixed
 evidence: scholarship
@@ -16,34 +15,34 @@ review:
 
 Every substantive raw file is listed in [[source-catalog]]. This map records where each source group materially affects the wiki.
 
-The expanded release contains 81 publishable pages, including the 28 N01–N28 articles, and 170 source records: 36 course groups plus 134 supplemental research records. The course groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately, including the published R069 itinerary.
+The expanded release contains 81 publishable pages, including the 28 N01–N28 articles, and 170 source records: 36 archive groups plus 134 supplemental research records. The archive groups account for 72 immutable files in `raw/`; the R-series ledger records public research separately, including the published R069 itinerary.
 
 | Group | Main wiki integration |
 |---|---|
-| C01 source record | [[course-reconstruction]], [[course-reading-guide]], [[four-week-relearning-plan]], [[index]] |
+| C01 source record | [[archive-overview]], [[subject-reference]], [[topic-reference]], [[index]] |
 | C02 Pinch | [[chronology]], [[sacred-geography]], [[how-egyptian-religion-works]], [[creation-traditions]], [[deity-field-guide]], [[funerary-text-tradition]] |
 | C03 Teeter | [[temples-priests-and-offerings]], [[festivals-oracles-and-personal-piety]], [[death-funeral-and-the-dead]], [[heka-and-operative-ritual]], [[amarna-and-late-transformations]], [[egypt-trip-field-guide]] |
-| C04 assessment prompts | [[exam-recovery-guide]], [[student-work-reconstruction]], [[glossary]], all major synthesis pages |
-| C05 Set research | [[set]], [[student-work-reconstruction]], [[osiris-isis-horus-and-set]], [[maat-isfet-and-kingship]] |
-| C06 Plate 30 research | [[book-of-the-dead-plate-30]], [[student-work-reconstruction]], [[book-of-the-dead]] |
-| C07 water-lily research | [[blue-water-lily-research]], [[student-work-reconstruction]], [[contested-interpretations]] |
-| C08 Pinch contextual notes | [[course-materials-deep-notes]], [[how-egyptian-religion-works]], [[chronology]], [[maat-isfet-and-kingship]] |
-| C09 Hornung | [[course-materials-deep-notes]], [[personhood-and-the-afterlife]], [[visual-decoder]] |
-| C10 Ptahhotep | [[course-materials-deep-notes]], [[ptahhotep-and-ethical-life]], [[maat-isfet-and-kingship]] |
-| C11 PDM/PGM | [[course-materials-deep-notes]], [[heka-and-operative-ritual]], [[amarna-and-late-transformations]], [[set]] |
-| C12 cosmogony packet | [[course-materials-deep-notes]], [[creation-traditions]] |
-| C13 Coffin Texts | [[course-materials-deep-notes]], [[coffin-texts]], [[personhood-and-the-afterlife]] |
-| C14 Underworld Book selections | [[course-materials-deep-notes]], [[amduat-and-book-of-gates]], [[solar-cycle]] |
+| C04 assessment prompts | [[key-questions]], [[research-notes]], [[glossary]], all major synthesis pages |
+| C05 Set research | [[set]], [[research-notes]], [[osiris-isis-horus-and-set]], [[maat-isfet-and-kingship]] |
+| C06 Plate 30 research | [[book-of-the-dead-plate-30]], [[research-notes]], [[book-of-the-dead]] |
+| C07 water-lily research | [[blue-water-lily-research]], [[research-notes]], [[contested-interpretations]] |
+| C08 Pinch contextual notes | [[source-notes]], [[how-egyptian-religion-works]], [[chronology]], [[maat-isfet-and-kingship]] |
+| C09 Hornung | [[source-notes]], [[personhood-and-the-afterlife]], [[visual-decoder]] |
+| C10 Ptahhotep | [[source-notes]], [[ptahhotep-and-ethical-life]], [[maat-isfet-and-kingship]] |
+| C11 PDM/PGM | [[source-notes]], [[heka-and-operative-ritual]], [[amarna-and-late-transformations]], [[set]] |
+| C12 cosmogony packet | [[source-notes]], [[creation-traditions]] |
+| C13 Coffin Texts | [[source-notes]], [[coffin-texts]], [[personhood-and-the-afterlife]] |
+| C14 Underworld Book selections | [[source-notes]], [[amduat-and-book-of-gates]], [[solar-cycle]] |
 | C15 Budge Underworld Books | [[amduat-and-book-of-gates]], [[set]], [[contested-interpretations]] |
-| C16 Osirian primary texts | [[course-materials-deep-notes]], [[osiris-isis-horus-and-set]], [[set]] |
+| C16 Osirian primary texts | [[source-notes]], [[osiris-isis-horus-and-set]], [[set]] |
 | C17 Plate 30 source packet | [[book-of-the-dead-plate-30]], [[visual-decoder]] |
-| C18 Plutarch | [[course-materials-deep-notes]], [[osiris-isis-horus-and-set]], [[amarna-and-late-transformations]] |
+| C18 Plutarch | [[source-notes]], [[osiris-isis-horus-and-set]], [[amarna-and-late-transformations]] |
 | C19 Te Velde | [[set]], [[contested-interpretations]] |
 | C20 Sobek article | [[sobek]], [[contested-interpretations]] |
 | C21 Kom Ombo photo | [[sobek]], [[egypt-trip-field-guide]] |
 | C22 Sauneron | [[temples-priests-and-offerings]], [[festivals-oracles-and-personal-piety]] |
-| C23 Pyramid Texts | [[course-materials-deep-notes]], [[pyramid-texts]], [[funerary-text-tradition]] |
-| C24 Naydler | [[course-materials-deep-notes]], [[pyramid-texts]], [[contested-interpretations]] |
+| C23 Pyramid Texts | [[source-notes]], [[pyramid-texts]], [[funerary-text-tradition]] |
+| C24 Naydler | [[source-notes]], [[pyramid-texts]], [[contested-interpretations]] |
 | C25 early water-lily motif | [[blue-water-lily-research]] |
 | C26 water-lily visual survey | [[blue-water-lily-research]] |
 | C27 Nymphaea pharmacology | [[blue-water-lily-research]], [[contested-interpretations]] |
@@ -55,7 +54,7 @@ The expanded release contains 81 publishable pages, including the 28 N01–N28 a
 | C33 plant symbolism | [[blue-water-lily-research]] |
 | C34 nuclear-physics paper | [[contested-interpretations]] |
 | C35 water-lily images | [[blue-water-lily-research]] |
-| C36 report guide | [[course-reconstruction]], [[source-catalog#C05 — Set research project]] |
+| C36 report guide | [[archive-overview]], [[source-catalog#C05 — Set research project]] |
 
 ## New cluster coverage
 

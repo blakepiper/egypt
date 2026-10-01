@@ -4,7 +4,7 @@
   <img src="public/media/archive-app-icon.png" alt="The Living Archive logo" width="128" />
 </p>
 
-A static application for learning about ancient Egyptian religion and its afterlives. It publishes 81 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, 18 learning paths, seven guided journeys, object studies, and accessible visualizations.
+A static application about ancient Egyptian religion and its afterlives. It publishes 81 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, 18 topic collections, seven guided journeys, object studies, and accessible visualizations.
 
 Everything is compiled at build time. There is no server, database, account, paid API, remote font, analytics, or tracker. Reader preferences stay in `localStorage`.
 
@@ -54,7 +54,7 @@ content/                      reviewed data that is not prose
   entities/                   concepts, personhood, practices, texts, roles, deities
   journeys/                   guided experience scripts
   objects/                    object-study annotations
-  paths/                      knowledge paths through the graph
+  paths/                      topic collections through the graph
   periods.json, places.json   chronology and atlas registries
   media-manifest.json         every asset, with its rights status
   frontmatter-review.json     reviewed structured fields applied to wiki pages
@@ -81,7 +81,7 @@ docs/                         current references and archived plans/specificatio
 
 ## How content becomes an application
 
-`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/` plus the public lazy search index at `public/generated/search-index.json`. The current build contains 170 source records: 36 course groups covering 72 immutable raw files and 134 supplemental research records. The published R069 itinerary is stored in `public/sources/`, linked from its catalog record, and checksum-verified during each content build.
+`scripts/content/build-content.ts` reads the Markdown once and emits `src/generated/` plus the public lazy search index at `public/generated/search-index.json`. The current build contains 170 source records: 36 archive groups covering 72 immutable raw files and 134 supplemental research records. The published R069 itinerary is stored in `public/sources/`, linked from its catalog record, and checksum-verified during each content build.
 
 | File | What it holds |
 | --- | --- |
@@ -92,7 +92,7 @@ docs/                         current references and archived plans/specificatio
 | `entities.json`, `periods.json`, `places.json`, `sources.json` | the registries behind the atlas, chronology, graph, and catalog |
 | `visualizations.json`, `decoder.json`, `alphabet.json`, `glossary.json` | interactive views derived from the wiki's own tables |
 
-Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the alphabet lineage, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, the four-week plan checklist, the concept checks, and the glossary. A view therefore cannot drift away from the article behind it.
+Several features are generated from tables inside the wiki rather than authored twice: the deity registry, the visual decoder, the alphabet lineage, the personhood constellation, the funerary corpus comparison, the creation-tradition comparison, and the glossary. A view therefore cannot drift away from the article behind it.
 
 The build fails on a broken wiki link, a duplicate heading ID, an unknown source ID, an unknown media ID, raw HTML, an unknown callout or relation type, an orphan page, a route collision, an invalid review state, or a private-source/private-place leak. It also validates J01's twelve-stage transcript and the no-JavaScript route artifacts.
 
@@ -104,7 +104,7 @@ The build fails on a broken wiki link, a duplicate heading ID, an unknown source
 - Media is addressed by manifest ID. Only `cleared` records enter a production build; anything else renders a visible placeholder rather than a broken image.
 - Cleared raster masters are cached outside version control. `npm run media:build` recreates the committed AVIF, WebP, JPEG, placeholder, and deep-zoom derivatives from their institutional source URLs.
 - User-facing source changes invalidate `content/copy-review.json`; run the factual comparison and humanizer review again before updating its hash.
-- `research-catalog.md` is the public route for supplemental sources. Course records remain in `source-catalog.md`; the two ledgers keep provenance and access boundaries visible.
+- `research-catalog.md` is the public route for supplemental sources. Archive records remain in `source-catalog.md`; the two ledgers keep provenance and access boundaries visible.
 - `journeys/esna-to-aswan-dahabiya.json` is a modern, itinerary-bounded reading journey. Its transcript is complete without JavaScript, while only verified public places appear on its route sketch. Private households and the unnamed Nubian community are intentionally not pinned or identified.
 
 ## What is deliberately not here

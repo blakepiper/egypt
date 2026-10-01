@@ -73,7 +73,7 @@ The connection to [[narmer-and-the-making-of-unification]] is also deliberate. E
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C23 — Pyramid Texts|C23]] provide the course context for early mortuary institutions, writing, and the later funerary corpus.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C23 — Pyramid Texts|C23]] provide the archive context for early mortuary institutions, writing, and the later funerary corpus.
 
 ## Supplemental research
 

@@ -458,15 +458,14 @@ export function GraphView() {
       />
 
       {readingPath && !pathSelection && (
-        <ol className="graph-path">
+        <ul className="graph-path">
           {readingPath.steps.map((step) => (
             <li key={step.slug}>
               <Link to={`/wiki/${step.slug}/`}><strong>{allPages.find((page) => page.slug === step.slug)?.title ?? step.slug.replace(/-/g, ' ')}</strong></Link>
               <p>{step.why}</p>
-              {step.reflection && <p className="muted"><strong>Reflect:</strong> {step.reflection}</p>}
             </li>
           ))}
-        </ol>
+        </ul>
       )}
 
       {pathSelection && (
@@ -719,8 +718,8 @@ export function GraphView() {
           ) : (
             <>
               <h2>Nothing is selected</h2>
-              <p>Search for a node, choose one in the diagram, or open a knowledge path. Everything visible in the diagram is also listed here once a node is selected.</p>
-              <h3>Knowledge paths</h3>
+              <p>Search for a node, choose one in the diagram, or open a topic collection. Everything visible in the diagram is also listed here once a node is selected.</p>
+              <h3>Topic collections</h3>
               <ul className="graph-relations">
                 {allPaths.map((entry) => (
                   <li key={entry.id}>

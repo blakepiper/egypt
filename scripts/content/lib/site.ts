@@ -23,12 +23,12 @@ export function route(...segments: string[]): string {
 /** Pages that are not encyclopedia articles live under their own hub. */
 export const SECTION_BY_SLUG: Record<string, SectionId> = {
   'egypt-trip-field-guide': 'field-guide',
-  'course-reconstruction': 'learn',
-  'course-reading-guide': 'learn',
-  'course-materials-deep-notes': 'learn',
-  'four-week-relearning-plan': 'learn',
-  'exam-recovery-guide': 'learn',
-  'student-work-reconstruction': 'archive',
+  'archive-overview': 'explore',
+  'subject-reference': 'explore',
+  'source-notes': 'explore',
+  'topic-reference': 'explore',
+  'key-questions': 'explore',
+  'research-notes': 'archive',
   'web-research-supplement': 'archive',
   'source-catalog': 'archive',
   'research-catalog': 'archive',
@@ -56,7 +56,7 @@ export const SECTION_LABELS: Record<SectionId, string> = {
   chronology: 'Chronology',
   journeys: 'Journeys',
   objects: 'Objects and texts',
-  learn: 'Learn',
+  explore: 'Explore',
   archive: 'Archive',
   'field-guide': 'Field guide',
 };

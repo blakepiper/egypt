@@ -1,8 +1,7 @@
 ---
 type: object-study
 tags: [book-of-the-dead, plate-30, chapter-125, papyrus-of-ani]
-course: REL 395, Spring 2017, Northern Arizona University
-origin: course
+origin: archive
 evidence: primary
 updated: 2026-08-30
 aliases: [Chapter 125, Hall of the Two Truths]

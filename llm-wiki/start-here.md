@@ -1,7 +1,6 @@
 ---
 type: overview
 tags: [overview, study-guide, ancient-egypt, religion]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-08-30
 origin: mixed
 evidence: scholarship
@@ -30,7 +29,7 @@ Ancient Egyptian religion was not a single creed. It was a three-thousand-year s
 
 !media[nauny-judgment]
 
-For a guided reading route, use [[course-reading-guide]]. For close notes on the source material, use [[course-materials-deep-notes]]. The expanded method begins with [[studying-religion-through-egypt]], and the river case study is the J01 route, “Sailing south: Esna to Aswan,” reached through [[egypt-trip-field-guide]].
+For a subject reference, use [[subject-reference]]. For close notes on the source material, use [[source-notes]]. The expanded method begins with [[studying-religion-through-egypt]], and the river case study is the J01 route, “Sailing south: Esna to Aswan,” reached through [[egypt-trip-field-guide]].
 
 Five ideas make the archive cohere.
 
@@ -67,7 +66,7 @@ Re crosses the Duat every night. Osiris is reconstituted but rules among the dea
 
 ## Read the archive at two scales
 
-The C-series records preserve the course archive. The R-series adds current scholarship, primary-text editions, museum and heritage records, and carefully bounded contemporary evidence. They do different work. A source ID shows where a claim came from; it does not mean that every argument in a source has been accepted. [[studying-religion-through-egypt]] sets out the method, while [[contested-interpretations]] marks arguments that remain weak or disputed. R020 and R021 are useful reminders that “religion” is an analytical category, not a transparent label supplied by the evidence.
+The C-series records preserve the source archive. The R-series adds current scholarship, primary-text editions, museum and heritage records, and carefully bounded contemporary evidence. They do different work. A source ID shows where a claim came from; it does not mean that every argument in a source has been accepted. [[studying-religion-through-egypt]] sets out the method, while [[contested-interpretations]] marks arguments that remain weak or disputed. R020 and R021 are useful reminders that “religion” is an analytical category, not a transparent label supplied by the evidence.
 
 The archive also moves between institutions and lived settings. [[households-work-and-unequal-access]] asks who could reach ritual resources, [[animals-gods-and-nonhuman-agency]] follows material and animal participants, and [[legacy-of-ancient-egypt]] tracks later uses of Egyptian forms. None of these perspectives replaces the temple or tomb. They keep those sources from standing in for everyone.
 
@@ -81,7 +80,7 @@ The folder mixes ancient translations, mainstream scholarship, research notes, a
 
 ## Supplemental research
 
-The R-series records listed below add method, comparison, and contemporary context to the course archive. They do not make the sources agree with one another.
+The R-series records listed below add method, comparison, and contemporary context to the source archive. They do not make the sources agree with one another.
 
 ## Sources in this archive
 

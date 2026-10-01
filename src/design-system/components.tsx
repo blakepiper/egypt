@@ -196,7 +196,7 @@ export function SourceList({ ids, idPrefix }: { ids: string[]; idPrefix?: string
   );
 }
 
-function sourceHref(origin: 'course' | 'supplemental', id: string): string {
+function sourceHref(origin: 'archive' | 'supplemental', id: string): string {
   return `/archive/sources/${origin === 'supplemental' ? '?catalog=research' : ''}#${id.toLowerCase()}`;
 }
 

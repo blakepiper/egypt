@@ -1,7 +1,6 @@
 ---
 type: concept
 tags: [geography, nile, duat, cult-centers]
-course: REL 395, Spring 2017, Northern Arizona University
 updated: 2026-09-02
 origin: mixed
 evidence: scholarship

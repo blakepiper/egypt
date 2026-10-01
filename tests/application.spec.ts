@@ -155,7 +155,7 @@ test.describe('search', () => {
     await page.getByRole('button', { name: /^Filters/ }).click();
     await page.getByRole('combobox', { name: 'Origin' }).selectOption('supplemental');
     await expect(page.locator('a.search-result').first()).toBeVisible();
-    await page.goto('search/?q=R082&origin=course');
+    await page.goto('search/?q=R082&origin=archive');
     await expect(page.locator('a.search-result')).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Remove Origin filter' })).toBeVisible();
   });
@@ -530,27 +530,9 @@ test.describe('interactive views', () => {
   });
 });
 
-test.describe('learn', () => {
-  test('the four-week plan keeps progress and can reset it', async ({ page }) => {
-    await page.goto('learn/');
-    await expect(page.getByRole('heading', { level: 2, name: 'Four-week learning plan' })).toBeVisible();
-    await page.getByRole('checkbox').first().check();
-    await expect(page.getByRole('status').first()).toContainText('1 of 28');
-    await page.reload();
-    await expect(page.getByRole('status').first()).toContainText('1 of 28');
-    await page.getByRole('button', { name: 'Reset progress' }).click();
-    await expect(page.getByRole('status').first()).toContainText('0 of 28');
-  });
-
-  test('concept prompts stay hidden until they are revealed', async ({ page }) => {
-    await page.goto('learn/');
-    await expect(page.getByText(/Interpretive caution/)).toHaveCount(0);
-    await page.getByRole('button', { name: /Reveal \d+ prompts/ }).first().click();
-    await expect(page.getByText(/Interpretive caution/).first()).toBeVisible();
-  });
-
-  test('the expanded learning paths are discoverable with their deliberate sequence', async ({ page }) => {
-    await page.goto('learn/');
+test.describe('explore', () => {
+  test('the expanded topic collections are discoverable by subject', async ({ page }) => {
+    await page.goto('explore/');
     for (const title of [
       'What religion does', 'How an early state formed', 'Ritual, continuity, and uncertainty',
       'Permanence, suffering, and impermanence', 'The afterlives of Egypt', 'Vulnerable bodies and practical care',
@@ -580,7 +562,7 @@ test.describe('preferences', () => {
 });
 
 test.describe('accessibility and layout', () => {
-  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'objects/alphabet/', 'learn/', 'archive/sources/', 'archive/sources/?catalog=research', 'about/'];
+  const routes = ['./', 'wiki/', 'wiki/sacred-geography/', 'atlas/', 'chronology/', 'journeys/nile-year/', 'journeys/esna-to-aswan-dahabiya/', 'views/personhood/', 'views/creation/', 'views/funerary-corpora/', 'objects/plate-30/', 'objects/decoder/', 'objects/alphabet/', 'explore/', 'archive/sources/', 'archive/sources/?catalog=research', 'about/'];
 
   for (const route of routes) {
     test(`${route} has no automated accessibility violations`, async ({ page }) => {

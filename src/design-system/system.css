@@ -208,7 +208,7 @@ a:hover { text-decoration-thickness: 2px; }
   text-transform: uppercase;
 }
 .origin-badge::before { content: '□'; }
-.origin-badge--course::before { content: 'C'; }
+.origin-badge--archive::before { content: 'C'; }
 .origin-badge--supplemental::before { content: 'R'; }
 .origin-badge--mixed::before { content: 'C+R'; }
 

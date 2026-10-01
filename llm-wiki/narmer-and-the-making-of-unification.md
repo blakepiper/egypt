@@ -85,7 +85,7 @@ The evidence is strongest when the Palette, mace-head, serekhs, labels, cemeteri
 
 ## Sources in this archive
 
-[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]] provide the course context for kingship, political representation, and chronology.
+[[source-catalog#C02 — Pinch, Handbook of Egyptian Mythology|C02]], [[source-catalog#C03 — Teeter, Religion and Ritual in Ancient Egypt|C03]], and [[source-catalog#C08 — Pinch chapter 1 contextual notes|C08]] provide the archive context for kingship, political representation, and chronology.
 
 ## Supplemental research
 

@@ -10,7 +10,7 @@ export const SECTION_LABELS: Record<SectionId, string> = {
   chronology: 'Chronology',
   journeys: 'Journeys',
   objects: 'Objects and texts',
-  learn: 'Learn',
+  explore: 'Explore',
   archive: 'Archive',
   'field-guide': 'Field guide',
 };

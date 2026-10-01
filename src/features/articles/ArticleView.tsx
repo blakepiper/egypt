@@ -1,4 +1,4 @@
-// The encyclopedia reading route. Article payloads are split per page and loaded
+// The encyclopedia subject reference. Article payloads are split per page and loaded
 // on demand, so an ordinary article route never downloads the search index, the
 // full graph, or another page's body.
 
