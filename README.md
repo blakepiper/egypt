@@ -12,8 +12,30 @@ Project documentation is indexed in [`docs/README.md`](docs/README.md). Current 
 
 ## Run it
 
+With [Nix](https://nixos.org/download/) installed, run:
+
 ```sh
-npm install
+./egypt
+```
+
+The launcher automatically enters the pinned Nix development shell, installs the
+locked npm dependencies on first run, builds generated content, and starts Vite.
+Nix supplies Node.js, npm, curl, and Chromium with its runtime libraries for the
+browser tests. The first run needs network access; later runs reuse the Nix and
+npm caches. Dependencies refresh when either npm manifest or the Node toolchain
+changes. Supported systems are Linux (x86_64/aarch64) and Apple Silicon macOS.
+
+```sh
+./egypt --host 0.0.0.0   # pass options to Vite
+./egypt build           # run any package.json script inside the shell
+./egypt check           # run all checks, including browser tests
+./egypt shell           # interactive shell with dependencies ready
+```
+
+Alternatively, with Node.js 24 and npm installed:
+
+```sh
+npm ci
 npm run dev          # builds generated content, then starts Vite
 ```
 

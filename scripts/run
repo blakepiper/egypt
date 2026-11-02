@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+cd -- "$project_dir"
+
+if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+  cat <<'HELP'
+Usage: ./egypt [npm-script] [arguments...]
+
+No arguments starts the development server.
+  ./egypt --host 0.0.0.0    Forward options to the development server
+  ./egypt build             Build the static site
+  ./egypt check             Run all checks (including browser tests)
+  ./egypt test:unit          Run unit tests
+  ./egypt shell              Open the Nix development shell
+HELP
+  exit 0
+fi
+
+# Include Node's store path so a toolchain change also refreshes native modules.
+dependency_key="$(node --input-type=module -e '
+  import { createHash } from "node:crypto";
+  import { readFileSync } from "node:fs";
+  const hash = createHash("sha256");
+  for (const path of ["package.json", "package-lock.json"]) hash.update(readFileSync(path));
+  hash.update(process.execPath);
+  hash.update(process.version);
+  console.log(hash.digest("hex"));
+')"
+stamp="node_modules/.egypt-dependencies"
+if [[ ! -f "$stamp" || "$(cat "$stamp")" != "$dependency_key" || ! -x node_modules/.bin/vite ]]; then
+  npm ci --no-audit --no-fund
+  printf '%s\n' "$dependency_key" > "$stamp"
+fi
+
+if [[ "${1:-}" == "shell" ]]; then
+  shift
+  exec bash --norc -i "$@"
+fi
+
+script=dev
+if [[ $# -gt 0 && "$1" != -* ]]; then
+  script="$1"
+  shift
+fi
+exec npm run "$script" -- "$@"
