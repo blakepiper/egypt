@@ -62,7 +62,7 @@ export function PreferencesPanel() {
         )}
       </Section>
 
-      <Section title="Stored data" description="Theme, motion, sound, low-performance mode, bookmarks, recent pages, open tabs, and journey progress.">
+      <Section title="Stored data" description="Theme, motion, sound, low-performance mode, bookmarks, recent pages, and journey progress.">
         <Button onClick={reset}>Clear everything stored in this browser</Button>
       </Section>
     </>

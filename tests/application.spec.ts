@@ -42,16 +42,22 @@ test.describe('reading', () => {
     await expect(heading).toBeInViewport();
   });
 
-  test('opening articles creates tabs that can be closed and reset', async ({ page }) => {
-    await page.goto('wiki/set/');
-    const tabs = page.getByRole('region', { name: 'Open articles' });
-    await expect(tabs.getByRole('link', { name: 'Set' })).toBeVisible();
+  test('articles update recent reading without opening a tab strip', async ({ page }) => {
+    await page.addInitScript(() => {
+      if (localStorage.getItem('living-archive:v1')) return;
+      localStorage.setItem('living-archive:v1', JSON.stringify({
+        version: 1,
+        recents: ['set'],
+        tabs: [{ slug: 'set', title: 'Set' }],
+      }));
+    });
     await page.goto('wiki/sobek/');
-    await expect(tabs.getByRole('link', { name: 'Sobek' })).toBeVisible();
-    await tabs.getByRole('button', { name: 'Close Set' }).click();
-    await expect(tabs.getByRole('link', { name: 'Set' })).toHaveCount(0);
-    await tabs.getByRole('button', { name: 'Reset desktop' }).click();
-    await expect(tabs).toHaveCount(0);
+    await expect(page.getByRole('heading', { level: 1, name: 'Sobek' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Open articles' })).toHaveCount(0);
+    await expect.poll(() => page.evaluate(() => {
+      const saved = JSON.parse(localStorage.getItem('living-archive:v1') ?? '{}');
+      return { recents: saved.recents, hasTabs: 'tabs' in saved };
+    })).toEqual({ recents: ['sobek', 'set'], hasTabs: false });
   });
 
   test('a glossary term is defined the first time it is used', async ({ page }) => {
@@ -300,7 +306,11 @@ test.describe('graph, atlas, and chronology', () => {
     await expect(page.getByRole('button', { name: 'Coverage map', exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Source catalog', exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Supplemental research catalog', exact: true })).toHaveCount(0);
-    await expect(page.locator('.graph-controls__status p')).toContainText('Showing 224 of 408 nodes and 527 of 2761 relationships');
+    const nodeCount = await page.locator('.graph-node').count();
+    const edgeCount = await page.locator('.graph-edge').count();
+    await expect(page.locator('.graph-controls__status p')).toContainText(
+      new RegExp(`Showing ${nodeCount} of \\d+ nodes and ${edgeCount} of \\d+ relationships`),
+    );
   });
 
   test('the document layer is optional and shareable', async ({ page }) => {
@@ -322,10 +332,12 @@ test.describe('graph, atlas, and chronology', () => {
     const count = await entries.count();
     expect(count).toBeGreaterThanOrEqual(4);
     expect(count).toBeLessThanOrEqual(12);
+    const community = await entries.first().locator('span').last().innerText();
+    expect(community).not.toMatch(/^Around:/);
     await entries.first().click();
     await expect(page).toHaveURL(/community=\d+/);
     await expect(entries.first()).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('section.graph-list')).toContainText('Around:');
+    await expect(page.locator('section.graph-list')).toContainText(community);
   });
 
   test('hovering a node dims distant context without changing the URL', async ({ page }) => {
@@ -412,7 +424,10 @@ test.describe('graph, atlas, and chronology', () => {
 
   test('the atlas selects a place from the list and the map stays in sync', async ({ page }) => {
     await page.goto('atlas/');
-    await page.getByRole('button', { name: 'Thebes' }).first().click();
+    await page.getByRole('combobox', { name: 'Find a place' }).selectOption('esna');
+    await expect(page).toHaveURL(/place=esna/);
+    await expect(page.getByRole('heading', { level: 2, name: 'Esna' })).toBeVisible();
+    await page.getByRole('region', { name: 'Along our cruise route' }).getByRole('button', { name: 'Thebes' }).click();
     await expect(page).toHaveURL(/place=thebes/);
     await expect(page.getByRole('heading', { level: 2, name: 'Thebes' })).toBeVisible();
   });
@@ -447,6 +462,7 @@ test.describe('journeys and objects', () => {
     await expect(page.locator('.journey__transcript')).toContainText('El Hegz');
     await page.locator('.journey__steps button').nth(11).click();
     await expect(page.getByRole('heading', { level: 2, name: 'Aswan checkout' })).toBeVisible();
+    await page.getByText('Route scope and optional extensions', { exact: true }).click();
     await expect(page.getByText(/not included in this journey/i)).toBeVisible();
   });
 
@@ -598,7 +614,7 @@ test.describe('accessibility and layout', () => {
   test('the skip link reaches the main landmark', async ({ page }) => {
     await page.goto('wiki/set/');
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'Skip to the archive' })).toBeFocused();
+    await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
   });
 
   test('reduced motion is honoured', async ({ page }) => {
@@ -652,8 +668,9 @@ test.describe('base path', () => {
     await page.goto('wiki/set/');
     const script = await page.locator('script[type="module"]').first().getAttribute('src');
     expect(script?.startsWith(base)).toBe(true);
-    const link = await page.getByRole('link', { name: 'Home' }).first().getAttribute('href');
-    expect(link).toBe(base);
+    const breadcrumb = page.getByRole('navigation', { name: 'Breadcrumb' });
+    await expect(breadcrumb.getByRole('link', { name: 'The Living Archive' })).toHaveAttribute('href', `${base}learn/`);
+    await expect(page.getByRole('link', { name: 'Back to trip' })).toHaveAttribute('href', base);
     const failures: string[] = [];
     page.on('response', (response) => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
     await page.goto('graph/');

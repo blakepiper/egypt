@@ -139,7 +139,7 @@ export function AboutView() {
         <h2>Privacy</h2>
         <p>
           There is no analytics, no advertising, no tracker, no account, and no remote font. The site is static files on
-          GitHub Pages. Your theme, motion and sound preferences, bookmarks, recent pages, open tabs, and reading
+          GitHub Pages. Your theme, motion and sound preferences, bookmarks, recent pages, and reading
           progress are stored in this browser's local storage and never leave it. Clearing site data removes all of it.
         </p>
         <h2>How to read the evidence labels</h2>

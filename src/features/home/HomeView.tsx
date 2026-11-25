@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
+import { href } from '../../app/routes';
 import { Link, useApp } from '../../app/state';
-import { allJourneys, allPages, allPaths, contentManifest } from '../../generated';
+import { allJourneys, allPages, allPaths } from '../../generated';
 import { Card, CardGrid, Section } from '../../design-system/components';
-import { OriginBadge } from '../../design-system';
+import { Icon, OriginBadge } from '../../design-system';
+import { sailingCompanion } from '../trip/itinerary';
 import { HUB_GROUPS } from '../../app/sections';
 
 export function HomeView() {
@@ -14,21 +16,28 @@ export function HomeView() {
 
   return (
     <div className="page home">
-      <section className="home__hero">
-        <span className="kicker">Religion of Ancient Egypt · A sourced guide</span>
-        <h1>A three-thousand-year argument about keeping the world alive</h1>
-        <p>
-          Egyptian religion was not one creed held still for thirty centuries. It was a working system for maintaining
-          order, presence, and continuity against collapse — and it kept changing. This archive holds{' '}
-          {contentManifest.counts.pages} pages, {contentManifest.counts.sources} source groups, and{' '}
-          {contentManifest.counts.edges} traced relationships, with the evidence for each claim kept in view.
-        </p>
-        <div className="home__hero-actions">
-          <Link className="archive-button archive-button--primary" to="/wiki/start-here/">Start here</Link>
-          <Link className="archive-button" to="/wiki/">Browse the encyclopedia</Link>
-          <Link className="archive-button archive-button--quiet" to="/graph/">Open the graph</Link>
+      <section className="archive-landing" aria-labelledby="archive-title">
+        <div className="archive-landing__intro">
+          <span className="kicker">Ancient Egypt</span>
+          <h1 id="archive-title">The Living Archive</h1>
+          <p>Explore the places, beliefs, and objects that shaped life along the Nile. Start with the places we’ll visit or follow a question into the collection.</p>
+          <div className="home__hero-actions">
+            <Link className="archive-button archive-button--primary" to="/wiki/">Browse the encyclopedia</Link>
+            <Link className="archive-button" to="/wiki/start-here/">Start here</Link>
+          </div>
         </div>
+        <Link className="archive-landing__feature" to={sailingCompanion}>
+          <img src={href('/trip/silsila.webp')} alt="" width="768" height="512" />
+          <div><span className="kicker">Illustrated journey</span><h2>Sailing south from Esna to Aswan</h2><p>Follow the places on our cruise.</p></div>
+        </Link>
       </section>
+
+      <nav className="archive-launchers" aria-label="Explore The Living Archive">
+        <Link to="/atlas/"><Icon name="compass" /><strong>Atlas</strong><span>Find places along the Nile</span></Link>
+        <Link to="/graph/"><Icon name="network" /><strong>Knowledge graph</strong><span>Trace a connection</span></Link>
+        <Link to="/journeys/"><Icon name="water" /><strong>Journeys</strong><span>Explore a story step by step</span></Link>
+        <Link to="/field-guide/"><Icon name="book" /><strong>Egypt field guide</strong><span>Know what to look for on site</span></Link>
+      </nav>
 
       {recents.length > 0 && (
         <Section title="Where you left off">

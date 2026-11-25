@@ -36,6 +36,7 @@ type GraphGesture = {
   moved: boolean;
 };
 
+const DEFAULT_NODE_POSITIONS: Record<string, Point> = {};
 const DEFAULT_CAMERA: Camera = { x: 0, y: 0, scale: 1 };
 const MIN_ZOOM = 0.55;
 const MAX_ZOOM = 3.5;
@@ -99,7 +100,7 @@ export function GraphView() {
   const [keyboardFocusId, setKeyboardFocusId] = useState<string | null>(null);
   const [trail, setTrail] = useState<string[]>([]);
   const [camera, setCamera] = useState<Camera>(DEFAULT_CAMERA);
-  const [nodePositions, setNodePositions] = useState<Record<string, Point>>({});
+  const [nodePositions, setNodePositions] = useState(DEFAULT_NODE_POSITIONS);
   const svgRef = useRef<SVGSVGElement>(null);
   const gestureRef = useRef<GraphGesture | null>(null);
 
@@ -263,7 +264,7 @@ export function GraphView() {
   // A new filtered slice gets a clean camera and deterministic starting points;
   // dragging only updates nodePositions, so it never snaps back mid-gesture.
   useEffect(() => {
-    setNodePositions(Object.fromEntries(view.nodes.map((node) => [node.id, { x: node.x, y: node.y }])));
+    setNodePositions(DEFAULT_NODE_POSITIONS);
     setCamera(DEFAULT_CAMERA);
   }, [viewKey]);
 
@@ -446,7 +447,7 @@ export function GraphView() {
       <PageHeader
         eyebrow="Knowledge graph"
         title={pathSelection ? 'How are these two connected?' : readingPath ? readingPath.title : 'Follow the relationships'}
-        lead={pathSelection && fromNode && toNode ? `${fromNode.label} and ${toNode.label} across the reviewed layer.` : readingPath ? readingPath.blurb : `${data.nodes.length} nodes and ${data.edges.length} relationships. Wiki links form the document layer; reviewed entities and curated relations form the semantic layer. Curated edges explain themselves.`}
+        lead={pathSelection && fromNode && toNode ? `${fromNode.label} and ${toNode.label} across the reviewed layer.` : readingPath ? readingPath.blurb : `Select a node to explore its connections, or pick two to see the reviewed path between them.`}
         actions={
           <>
             <Button onClick={() => { setFocus(null); setPinned([]); setTrail([]); setKind(null); setRelation(null); setCommunity(null); setLayer('curated'); navigate('/graph/'); }}>Reset</Button>
@@ -495,7 +496,7 @@ export function GraphView() {
         )
       )}
 
-      <div className="graph-controls">
+      <section className="graph-controls" aria-label="Find and filter graph nodes">
         <div className="graph-controls__row">
           <div className="graph-controls__find">
             <label className="search-field search-field--compact">
@@ -516,8 +517,8 @@ export function GraphView() {
           <div className="graph-controls__find graph-controls__find--target">
             <label className="search-field search-field--compact">
               <Icon name="network" />
-              <span className="sr-only">…and</span>
-              <input value={toQuery} onChange={(event) => setToQuery(event.target.value)} placeholder={toNode ? `…and ${toNode.label}` : '…and'} type="search" />
+              <span className="sr-only">Compare with a second node</span>
+              <input value={toQuery} onChange={(event) => setToQuery(event.target.value)} placeholder={toNode?.label ?? 'Compare with a second node…'} type="search" />
             </label>
             {targetResults.length > 0 && (
               <ul className="graph-results">
@@ -563,32 +564,6 @@ export function GraphView() {
             {!focusId && !readingPath && !pathSelection && !filtersActive && layer === 'all' && ' These are the most connected nodes; choose one to follow its neighbourhood.'}
           </p>
           {filtersActive && <Button variant="quiet" onClick={() => { setKind(null); setRelation(null); setHops(1); setCommunityFromControl(null); }}>Clear filters</Button>}
-        </div>
-      </div>
-
-      <section className="graph-legend" aria-labelledby="graph-legend-title">
-        <div>
-          <span className="kicker">Curated layer</span>
-          <h2 id="graph-legend-title">Communities</h2>
-        </div>
-        <div className="graph-legend__entries">
-          {data.communities.map((entry) => {
-            const color = COMMUNITY_COLORS[entry.id % COMMUNITY_COLORS.length];
-            const selected = community === entry.id;
-            return (
-              <button
-                key={entry.id}
-                type="button"
-                className={`graph-legend__entry ${selected ? 'is-selected' : ''}`}
-                aria-pressed={selected}
-                onClick={() => setCommunityFromControl(selected ? null : entry.id)}
-              >
-                <span className="graph-legend__swatch" style={{ backgroundColor: `var(${color})` }} aria-hidden="true" />
-                <span>{entry.label}</span>
-                <small>{entry.size} nodes</small>
-              </button>
-            );
-          })}
         </div>
       </section>
 
@@ -681,7 +656,9 @@ export function GraphView() {
                         r={radius}
                         style={layer === 'curated' && node.community >= 0 ? { fill: `var(${COMMUNITY_COLORS[node.community % COMMUNITY_COLORS.length]})` } : undefined}
                       />
-                      <text x={point.x} y={point.y - 12} textAnchor="middle">{node.label}</text>
+                      {(labelled.has(node.id) || node.id === focusId || node.id === hoveredId || node.id === keyboardFocusId || pinned.includes(node.id)) && (
+                        <text x={point.x} y={point.y - 12} textAnchor="middle">{node.label}</text>
+                      )}
                     </>
                   );
                 })()}
@@ -717,21 +694,49 @@ export function GraphView() {
             </>
           ) : (
             <>
-              <h2>Nothing is selected</h2>
-              <p>Search for a node, choose one in the diagram, or open a topic collection. Everything visible in the diagram is also listed here once a node is selected.</p>
-              <h3>Topic collections</h3>
-              <ul className="graph-relations">
-                {allPaths.map((entry) => (
-                  <li key={entry.id}>
-                    <Link to={`/graph/?path=${entry.id}`}>{entry.title}</Link>
-                    <p>{entry.blurb}</p>
-                  </li>
-                ))}
-              </ul>
+              <h2>Explore a connection</h2>
+              <p>Pick a node to see its related people, places, and ideas here.</p>
+              <details className="graph-detail__topics">
+                <summary>Browse topic collections</summary>
+                <ul className="graph-relations">
+                  {allPaths.map((entry) => (
+                    <li key={entry.id}>
+                      <Link to={`/graph/?path=${entry.id}`}>{entry.title}</Link>
+                      <p>{entry.blurb}</p>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </>
           )}
         </aside>
       </div>
+
+      <section className="graph-legend" aria-labelledby="graph-legend-title">
+        <div>
+          <span className="kicker">Curated layer</span>
+          <h2 id="graph-legend-title">Communities</h2>
+        </div>
+        <div className="graph-legend__entries">
+          {data.communities.map((entry) => {
+            const color = COMMUNITY_COLORS[entry.id % COMMUNITY_COLORS.length];
+            const selected = community === entry.id;
+            return (
+              <button
+                key={entry.id}
+                type="button"
+                className={`graph-legend__entry ${selected ? 'is-selected' : ''}`}
+                aria-pressed={selected}
+                onClick={() => setCommunityFromControl(selected ? null : entry.id)}
+              >
+                <span className="graph-legend__swatch" style={{ backgroundColor: `var(${color})` }} aria-hidden="true" />
+                <span>{entry.label}</span>
+                <small>{entry.size} nodes</small>
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="graph-list" aria-labelledby="graph-list-title">
         <h2 id="graph-list-title">Every visible node as a list</h2>

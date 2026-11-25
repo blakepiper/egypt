@@ -7,6 +7,9 @@ export const BASE: string = import.meta.env.BASE_URL || '/';
 
 export type Route =
   | { name: 'home' }
+  | { name: 'learn' }
+  | { name: 'itinerary' }
+  | { name: 'trip-details' }
   | { name: 'wiki-index' }
   | { name: 'article'; slug: string }
   | { name: 'atlas' }
@@ -55,6 +58,9 @@ export function parseRoute(pathname: string): Route {
   if (segments.length === 0) return { name: 'home' };
   const [first, second] = segments;
   switch (first) {
+    case 'learn':
+    case 'itinerary':
+    case 'trip-details': return second ? { name: 'not-found', path } : { name: first };
     case 'wiki':
       return second ? { name: 'article', slug: second } : { name: 'wiki-index' };
     case 'atlas': return { name: 'atlas' };
@@ -86,4 +92,8 @@ export function routePath(route: Route): string {
     case 'not-found': return route.path;
     default: return `/${route.name}/`;
   }
+}
+
+export function isTripRoute(route: Route): boolean {
+  return route.name === 'home' || route.name === 'itinerary' || route.name === 'trip-details';
 }

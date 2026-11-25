@@ -3,8 +3,10 @@
 // evidence boundary in the same view as the narration.
 
 import { useEffect, useMemo, useState } from 'react';
+import { href } from '../../app/routes';
 import { Link, useApp } from '../../app/state';
 import { allJourneys, allPages, allPlaces } from '../../generated';
+import { sailingCompanion } from '../trip/itinerary';
 import { INTERACTIVE_VIEWS } from '../../app/views';
 import { Button, OriginBadge } from '../../design-system';
 import {
@@ -16,11 +18,15 @@ export function JourneysView() {
     <div className="page">
       <PageHeader
         eyebrow="Journeys"
-        title="Guided sequences with their limits attached"
-        lead="Each journey names its period, its place, the evidence it rests on, and the point where the sources stop. None of them animates anything essential: the stepper and the text carry the whole argument."
+        title="Explore the journeys"
+        lead="Follow a route along the Nile, a day in a temple, or the sun’s passage through the underworld. Read each journey stage by stage or as a full transcript."
       />
+      <Link className="archive-landing__feature journey-feature" to={sailingCompanion}>
+        <img src={href('/trip/silsila.webp')} alt="" width="768" height="512" />
+        <div><span className="kicker">Illustrated journey</span><h2>Sailing south from Esna to Aswan</h2><p>Read about the archaeological sites and living communities on our cruise route.</p></div>
+      </Link>
       <CardGrid>
-        {allJourneys.map((journey) => (
+        {allJourneys.filter((journey) => `/journeys/${journey.id}/` !== sailingCompanion).map((journey) => (
           <Card key={journey.id} to={`/journeys/${journey.id}/`} eyebrow={journey.period} title={journey.title} footer={<><OriginBadge origin={journey.origin} /> <span>{journey.scenes.length} steps</span></>}>
             {journey.question}
           </Card>
@@ -81,12 +87,9 @@ export function JourneyView({ id }: { id: string }) {
         eyebrow="Journey"
         title={journey.title}
         lead={journey.question}
-        meta={<><span>{journey.place}</span><span>{journey.period}</span><span>{journey.scenes.length} steps</span><span>{completed} seen</span></>}
+        actions={<Link className="archive-button" to="/journeys/">All journeys</Link>}
+        meta={<><OriginBadge origin={journey.origin} /><span>{journey.place}</span><span>{journey.period}</span><span>{journey.scenes.length} steps</span><span>{completed} seen</span></>}
       />
-
-      <div className="journey__provenance"><OriginBadge origin={journey.origin} /><span>{journey.origin === 'supplemental' ? 'A contemporary, research-led route with itinerary boundaries.' : 'A historical sequence drawn from the source archive.'}</span></div>
-      {journey.includedScope && <p className="journey__scope"><strong>Included route:</strong> {journey.includedScope}</p>}
-      {journey.optionalExtensions && <aside className="archive-callout archive-callout--uncertainty"><span className="archive-callout__label">Separate optional extensions</span><p>{journey.optionalExtensions}</p></aside>}
 
       <div className="journey__frame">
         <nav className="journey__steps" aria-label="Journey steps">
@@ -114,7 +117,7 @@ export function JourneyView({ id }: { id: string }) {
                   }}
                 >
                   <span className="journey__step-number">{index + 1}</span>
-                  <span>{entry.title}</span>
+                  <span className="journey__step-title">{entry.title}</span>
                 </button>
               </li>
             ))}
@@ -122,7 +125,11 @@ export function JourneyView({ id }: { id: string }) {
         </nav>
 
         <div className="journey__panel">
-        <div className="journey__status" role="status" aria-live="polite">Stage {step + 1} of {journey.scenes.length}: {scene.title}. Day {scene.day ?? step + 1}; {scene.stopType?.replace(/-/g, ' ') ?? 'journey stop'}{scene.place ? `; ${scene.place}` : ''}. {scene.sourcePages?.length ?? 0} linked reading {scene.sourcePages?.length === 1 ? 'page' : 'pages'}.</div>
+        <div className="journey__status" role="status" aria-live="polite">
+          <span>Stage {step + 1} of {journey.scenes.length}</span>
+          <span className="sr-only">: {scene.title}. Day {scene.day ?? step + 1}; {scene.stopType?.replace(/-/g, ' ') ?? 'journey stop'}{scene.place ? `; ${scene.place}` : ''}. {scene.sourcePages?.length ?? 0} linked reading {scene.sourcePages?.length === 1 ? 'page' : 'pages'}.</span>
+          <progress aria-label="Journey position" value={step + 1} max={journey.scenes.length} />
+        </div>
         <div className={`journey__scene ${prefersReducedMotion ? 'is-static' : ''}`} key={scene.id} id="journey-panel" role="tabpanel" aria-labelledby={`journey-tab-${scene.id}`} tabIndex={-1}>
           <span className="kicker">{scene.kicker}</span>
           <h2>{scene.title}</h2>
@@ -152,6 +159,14 @@ export function JourneyView({ id }: { id: string }) {
         </div>
         </div>
       </div>
+
+      {(journey.includedScope || journey.optionalExtensions) && (
+        <details className="journey__scope">
+          <summary>Route scope and optional extensions</summary>
+          {journey.includedScope && <p>{journey.includedScope}</p>}
+          {journey.optionalExtensions && <p>{journey.optionalExtensions}</p>}
+        </details>
+      )}
 
       <ReconstructionBoundary
         period={journey.period}

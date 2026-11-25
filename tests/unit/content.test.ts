@@ -361,11 +361,11 @@ describe('the knowledge graph', () => {
   it('publishes curated communities and bridge scores', () => {
     const graph = JSON.parse(readFileSync(join(ROOT, 'src/generated/graph.json'), 'utf8')) as {
       communities?: { id: number; label: string; size: number }[];
-      nodes: { community?: number; betweenness?: number }[];
+      nodes: { label: string; community?: number; betweenness?: number }[];
     };
     expect(graph.communities?.length).toBeGreaterThanOrEqual(4);
     expect(graph.communities?.length).toBeLessThanOrEqual(12);
-    expect(graph.communities?.every((community) => community.label.startsWith('Around: ') && community.size > 0)).toBe(true);
+    expect(graph.communities?.every((community) => community.size > 0 && graph.nodes.some((node) => node.community === community.id && node.label === community.label))).toBe(true);
     expect(graph.nodes.every((node) => typeof node.community === 'number' && typeof node.betweenness === 'number')).toBe(true);
     expect(graph.nodes.every((node) => (node.betweenness ?? -1) >= 0 && (node.betweenness ?? 2) <= 1)).toBe(true);
   });

@@ -6,13 +6,14 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { tripDates, tripDays, tripDescription, tripDetails, tripTitle } from '../../src/features/trip/itinerary.js';
 import type { ContentManifest, Journey, ObjectStudy } from '../../src/types/content.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const DIST = join(ROOT, 'dist');
 const GENERATED = join(ROOT, 'src/generated');
 
-interface RouteEntry { path: string; title: string; description: string; fallback?: string }
+interface RouteEntry { path: string; title: string; description: string; documentTitle?: string; fallback?: string; redirect?: string }
 
 function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -51,13 +52,25 @@ function journeyFallback(journey: Journey, manifest: ContentManifest): string {
   return `<article class="no-script-fallback" aria-labelledby="no-script-journey-title"><p class="kicker">Text-only route</p><h1 id="no-script-journey-title">${escapeHtml(journey.title)}</h1><p>${escapeHtml(journey.question)}</p><p class="muted">${escapeHtml(journey.place)} · ${escapeHtml(journey.period)}</p>${journey.includedScope ? `<h2>Included route</h2><p>${escapeHtml(journey.includedScope)}</p>` : ''}${journey.optionalExtensions ? `<h2>Separate optional extensions</h2><p>${escapeHtml(journey.optionalExtensions)}</p>` : ''}<h2>The whole journey as text</h2><p>${escapeHtml(journey.accessibleSummary)}</p><ol>${stages}</ol><p><a href="${relativeUrl(`/journeys/${journey.id}/`, '/journeys/')}">See all journeys</a></p></article>`;
 }
 
+function itineraryFallback(): string {
+  const days = tripDays.map((day) => {
+    const stops = day.stops.map((stop) => `<li>${escapeHtml(stop)}</li>`).join('');
+    return `<section id="day-${day.date}" class="trip-day"><h2><time datetime="${day.date}">${escapeHtml(day.label)}</time> · ${escapeHtml(day.title)}</h2>${day.birthday ? '<p><strong>Sydney’s 30th birthday</strong></p>' : ''}<ul>${stops}</ul>${day.note ? `<p>${escapeHtml(day.note)}</p>` : ''}</section>`;
+  }).join('');
+  const details = tripDetails.map((group) => `<h3>${escapeHtml(group.title)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`).join('');
+  return `<main id="main-content" class="page trip"><h1>Itinerary</h1><p>${escapeHtml(tripTitle)} · ${escapeHtml(tripDates)}</p><p>${escapeHtml(tripDescription)}</p>${days}<section id="trip-details"><h2>Trip details</h2>${details}</section></main>`;
+}
+
 export function collectRoutes(): RouteEntry[] {
   const manifest = readJson<ContentManifest>('content-manifest.json');
   const journeys = readJson<Journey[]>('journeys.json');
   const objects = readJson<ObjectStudy[]>('objects.json');
 
   const routes: RouteEntry[] = [
-    { path: '/', title: 'The Living Archive', description: 'A sourced guide to ancient Egyptian religion, with evidence and uncertainty kept visible.' },
+    { path: '/', title: tripTitle, documentTitle: tripTitle, description: `Group trip · ${tripDates}. ${tripDescription}` },
+    { path: '/itinerary/', title: 'Itinerary', documentTitle: `Itinerary — ${tripTitle}`, description: `The day-by-day plan for ${tripDates}.`, fallback: itineraryFallback() },
+    { path: '/trip-details/', title: 'Trip details', documentTitle: `Trip details — ${tripTitle}`, description: 'Transfers, cruise inclusions, and what to know before boarding.', redirect: '/itinerary/#trip-details' },
+    { path: '/learn/', title: 'The Living Archive', documentTitle: 'The Living Archive', description: 'A sourced guide to ancient Egyptian religion, with evidence and uncertainty kept visible.' },
     { path: '/wiki/', title: 'Encyclopedia', description: `All ${manifest.counts.pages} articles in the archive, grouped by hub.` },
     { path: '/atlas/', title: 'Atlas', description: 'Sacred geography along the Nile: cult centres, the Red Land, and the west.' },
     { path: '/chronology/', title: 'Chronology', description: 'Periods, overlapping funerary corpora, institutions, and what survives from each stretch of time.' },
@@ -100,7 +113,11 @@ export function collectRoutes(): RouteEntry[] {
 }
 
 function render(shell: string, entry: RouteEntry): string {
-  const title = entry.path === '/' ? 'The Living Archive' : `${entry.title} — The Living Archive`;
+  const title = entry.documentTitle ?? `${entry.title} — The Living Archive`;
+  if (entry.redirect) {
+    const target = escapeHtml(relativeUrl(entry.path, entry.redirect));
+    return `<!doctype html><html lang="en"><meta charset="utf-8"><title>${escapeHtml(title)}</title><meta http-equiv="refresh" content="0; url=${target}"><p><a href="${target}">Open the itinerary’s trip details</a></p></html>`;
+  }
   const withFallback = entry.fallback
     ? shell.replace('<div id="root"></div>', `<div id="root"><noscript>${entry.fallback}</noscript></div>`)
     : shell;

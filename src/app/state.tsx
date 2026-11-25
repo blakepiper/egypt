@@ -1,4 +1,4 @@
-// Application state: the current route, the open article tabs, and the reader's
+// Application state: the current route and the reader's
 // stored preferences. Everything persisted here stays in this browser. Nothing
 // is sent anywhere, and the version field lets a later release discard data it
 // no longer understands.
@@ -11,8 +11,6 @@ import { BASE, href, parseRoute, toAppPath, type Route } from './routes';
 
 const STORE_KEY = 'living-archive:v1';
 
-export interface OpenTab { slug: string; title: string }
-
 export interface Preferences {
   version: 1;
   theme: 'daylight' | 'duat' | 'system';
@@ -22,7 +20,6 @@ export interface Preferences {
   bookmarks: string[];
   recents: string[];
   progress: Record<string, string[]>;
-  tabs: OpenTab[];
 }
 
 const DEFAULTS: Preferences = {
@@ -34,7 +31,6 @@ const DEFAULTS: Preferences = {
   bookmarks: [],
   recents: [],
   progress: {},
-  tabs: [],
 };
 
 function load(): Preferences {
@@ -42,8 +38,9 @@ function load(): Preferences {
   try {
     const raw = localStorage.getItem(STORE_KEY);
     if (!raw) return DEFAULTS;
-    const parsed = JSON.parse(raw) as Partial<Preferences>;
+    const parsed = JSON.parse(raw) as Partial<Preferences> & { tabs?: unknown };
     if (parsed.version !== 1) return DEFAULTS;
+    delete parsed.tabs;
     return { ...DEFAULTS, ...parsed };
   } catch {
     return DEFAULTS;
@@ -59,9 +56,7 @@ interface AppState {
   update: (patch: Partial<Preferences>) => void;
   reset: () => void;
   toggleBookmark: (slug: string) => void;
-  openTab: (tab: OpenTab) => void;
-  closeTab: (slug: string) => void;
-  resetTabs: () => void;
+  recordRecent: (slug: string) => void;
   setProgress: (key: string, items: string[]) => void;
   prefersReducedMotion: boolean;
   searchOpen: boolean;
@@ -144,9 +139,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setPreferences((current) => ({ ...current, ...patch }));
   }, []);
 
-  // These are stable across renders on purpose. An effect that opens a tab must
-  // not re-run every time any other preference changes, or "Reset desktop" would
-  // immediately re-add the article the reader is looking at.
   const reset = useCallback(() => setPreferences({ ...DEFAULTS }), []);
 
   const toggleBookmark = useCallback((slug: string) => setPreferences((current) => ({
@@ -156,20 +148,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       : [...current.bookmarks, slug],
   })), []);
 
-  const openTab = useCallback((tab: OpenTab) => setPreferences((current) => {
-    const without = current.tabs.filter((item) => item.slug !== tab.slug);
-    return {
-      ...current,
-      tabs: [...without, tab].slice(-8),
-      recents: [tab.slug, ...current.recents.filter((item) => item !== tab.slug)].slice(0, 12),
-    };
+  const recordRecent = useCallback((slug: string) => setPreferences((current) => {
+    if (current.recents[0] === slug) return current;
+    return { ...current, recents: [slug, ...current.recents.filter((item) => item !== slug)].slice(0, 12) };
   }), []);
-
-  const closeTab = useCallback((slug: string) => setPreferences((current) => ({
-    ...current, tabs: current.tabs.filter((tab) => tab.slug !== slug),
-  })), []);
-
-  const resetTabs = useCallback(() => setPreferences((current) => ({ ...current, tabs: [] })), []);
 
   const setProgress = useCallback((key: string, items: string[]) => setPreferences((current) => ({
     ...current, progress: { ...current.progress, [key]: items },
@@ -184,14 +166,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
     update,
     reset,
     toggleBookmark,
-    openTab,
-    closeTab,
-    resetTabs,
+    recordRecent,
     setProgress,
     prefersReducedMotion,
     searchOpen,
     setSearchOpen,
-  }), [route, search, location.hash, navigate, preferences, update, reset, toggleBookmark, openTab, closeTab, resetTabs, setProgress, prefersReducedMotion, searchOpen]);
+  }), [route, search, location.hash, navigate, preferences, update, reset, toggleBookmark, recordRecent, setProgress, prefersReducedMotion, searchOpen]);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }

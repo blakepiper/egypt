@@ -1,10 +1,12 @@
-# The Living Archive
+# Sydney’s 30th Birthday on the Nile
 
 <p align="center">
   <img src="public/media/archive-app-icon.png" alt="The Living Archive logo" width="128" />
 </p>
 
-A static application about ancient Egyptian religion and its afterlives. It publishes 81 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, 18 topic collections, seven guided journeys, object studies, and accessible visualizations.
+The group trip website for January 11–15, 2027. The homepage links to the illustrated day-by-day itinerary and The Living Archive. Trip logistics are part of the itinerary.
+
+The Living Archive lives at `/learn/` and publishes 81 reviewed Markdown pages in `llm-wiki/` as a linked encyclopedia with provenance-aware search, a typed knowledge graph, a sacred atlas, a layered chronology, 18 topic collections, seven guided journeys, object studies, and accessible visualizations.
 
 Everything is compiled at build time. There is no server, database, account, paid API, remote font, analytics, or tracker. Reader preferences stay in `localStorage`.
 
@@ -63,7 +65,7 @@ The build emits one real HTML entry point per route, so a direct reload works on
 BASE_PATH=/your-repository/ REPOSITORY_URL=https://github.com/you/your-repository npm run build
 ```
 
-`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. Build and publish `dist/` manually when deploying. The build also emits 109 static route entry points, a `404.html`, and `.nojekyll`.
+`BASE_PATH` sets Vite's base, and every asset URL, internal link, and generated entry point follows it. `REPOSITORY_URL` is optional; when set, each article shows a link to its Markdown source. Build and publish `dist/` manually when deploying.
 
 ## Structure
 
@@ -72,6 +74,7 @@ llm-wiki/                     source of truth for all written content
 raw/                          immutable source files; never published
 public/                       static files shipped with the application
   sources/                    public source documents
+  trip/                       hero photograph from the operator’s cruise quote and generated itinerary illustrations
 content/                      reviewed data that is not prose
   entities/                   concepts, personhood, practices, texts, roles, deities
   journeys/                   guided experience scripts
@@ -91,6 +94,7 @@ src/
   app/                        routing, state, shell, section labels
   design-system/              tokens, primitives, and shared components
   features/                   one directory per screen area
+    trip/                     guest-facing itinerary data and trip pages
   generated/                  build output; git-ignored and disposable
 tests/
   unit/                       content pipeline, search, graph, budgets

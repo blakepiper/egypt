@@ -209,4 +209,4 @@ The specimen's primitives (`src/design-system/index.tsx`: `Window`, `Button`, `I
 - An SVG that contains focusable elements uses `role="group"`, not `role="img"`, and the interactive element is the shape itself rather than a wrapping `<g>` — otherwise its hit area includes the label and a click can miss.
 - Entrance animations move things; they do not fade text in. A fading element is briefly below contrast, and an accessibility scan will catch it.
 - `data-motion="reduce"` on the root element disables animation globally. Components that animate also accept the reduced state directly, so nothing depends on the cascade alone.
-- Print removes the shell, tabs, table of contents, controls, and diagrams, and expands link URLs after each link.
+- Print removes the shell, table of contents, controls, and diagrams, and expands link URLs after each link.

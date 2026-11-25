@@ -358,7 +358,7 @@ function addGraphAnalytics(nodes: Map<string, GraphNode>, edges: GraphEdge[]): G
       const representative = [...community].sort((a, b) =>
         b.betweenness - a.betweenness || a.label.localeCompare(b.label) || a.id.localeCompare(b.id),
       )[0];
-      return { id, label: `Around: ${representative.label}`, size: community.length };
+      return { id, label: representative.label, size: community.length };
     });
 }
 

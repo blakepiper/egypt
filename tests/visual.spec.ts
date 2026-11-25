@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const routes = [
   { id: 'article', path: 'wiki/start-here/', ready: 'Start here' },
-  { id: 'atlas', path: 'atlas/', ready: 'Upstream is south' },
+  { id: 'atlas', path: 'atlas/', ready: 'Nile Valley Atlas' },
   { id: 'graph', path: 'graph/', ready: 'Follow the relationships' },
   { id: 'journey', path: 'journeys/solar-cycle/', ready: 'Solar cycle' },
   { id: 'j01', path: 'journeys/esna-to-aswan-dahabiya/', ready: 'Sailing south: Esna to Aswan' },

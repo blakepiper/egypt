@@ -23,7 +23,7 @@ export function loadArticle(slug: string): Promise<ArticlePayload> | null {
 }
 
 export function ArticleView({ slug }: { slug: string }) {
-  const { openTab, preferences, toggleBookmark } = useApp();
+  const { recordRecent, preferences, toggleBookmark } = useApp();
   const [article, setArticle] = useState<ArticlePayload | null>(null);
   const [error, setError] = useState(false);
   const [activeHeading, setActiveHeading] = useState<string | null>(null);
@@ -42,8 +42,8 @@ export function ArticleView({ slug }: { slug: string }) {
   useLayoutEffect(() => {
     if (!article) return;
     document.title = `${article.title} — The Living Archive`;
-    openTab({ slug: article.slug, title: article.title });
-  }, [article, openTab]);
+    recordRecent(article.slug);
+  }, [article, recordRecent]);
 
   // Reading position indicator, driven by which heading is currently on screen.
   useEffect(() => {
@@ -96,7 +96,7 @@ export function ArticleView({ slug }: { slug: string }) {
     <article className="article" aria-labelledby="article-title">
       <Breadcrumbs
         trail={[
-          { label: 'Home', to: '/' },
+          { label: 'The Living Archive', to: '/learn/' },
           { label: sectionLabel(article.meta.section), to: article.meta.section === 'encyclopedia' ? '/wiki/' : `/${article.meta.section}/` },
           { label: article.title },
         ]}

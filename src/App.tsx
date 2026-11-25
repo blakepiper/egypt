@@ -8,6 +8,9 @@ import { Shell } from './app/Shell';
 import { ArticleView } from './features/articles/ArticleView';
 import { AboutView, ArchiveView, FieldGuideView, ExploreView, WikiIndexView } from './features/articles/IndexViews';
 import { NotFoundView } from './features/articles/NotFoundView';
+import { tripTitle } from './features/trip/itinerary';
+import { TripHome, TripItinerary } from './features/trip/TripViews';
+import { isTripRoute } from './app/routes';
 import { HomeView } from './features/home/HomeView';
 import { SearchDialog, SearchView } from './features/search/SearchDialog';
 
@@ -28,7 +31,10 @@ const SourcesView = lazy(() => import('./features/archive/SourcesView').then((m)
 const Specimen = lazy(() => import('./features/specimen/Specimen').then((m) => ({ default: m.Specimen })));
 
 const TITLES: Record<string, string> = {
-  home: 'The Living Archive',
+  home: tripTitle,
+  learn: 'The Living Archive',
+  itinerary: 'Itinerary',
+  'trip-details': 'Trip details',
   'wiki-index': 'Encyclopedia',
   atlas: 'Atlas',
   chronology: 'Chronology',
@@ -48,12 +54,20 @@ const TITLES: Record<string, string> = {
 };
 
 function Routes() {
-  const { route } = useApp();
+  const { route, navigate } = useApp();
+
+  useEffect(() => {
+    if (route.name === 'trip-details') navigate('/itinerary/#trip-details', { replace: true });
+  }, [route, navigate]);
 
   useEffect(() => {
     if (route.name === 'article' || route.name === 'journey') return;
     const title = TITLES[route.name];
-    document.title = route.name === 'home' ? 'The Living Archive' : `${title} — The Living Archive`;
+    if (route.name === 'home' || route.name === 'learn') {
+      document.title = title;
+    } else {
+      document.title = `${title} — ${isTripRoute(route) ? tripTitle : 'The Living Archive'}`;
+    }
   }, [route]);
 
   // A route change should start the reader at the top of the new document.
@@ -63,7 +77,10 @@ function Routes() {
 
   const view = (() => {
     switch (route.name) {
-      case 'home': return <HomeView />;
+      case 'home': return <TripHome />;
+      case 'itinerary': return <TripItinerary />;
+      case 'trip-details': return null;
+      case 'learn': return <HomeView />;
       case 'wiki-index': return <WikiIndexView />;
       case 'article': return <ArticleView slug={route.slug} />;
       case 'atlas': return <AtlasView />;

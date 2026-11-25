@@ -1,15 +1,18 @@
-// The application shell: global navigation, the article tab strip, preference
-// controls, and the print-safe document wrapper. The desktop metaphor stays,
-// but reading is never blocked by it — on narrow screens and in print the
-// window chrome collapses to ordinary document flow.
+// Global navigation, preferences, and the print-safe document wrapper.
 
 import { useEffect, type ReactNode } from 'react';
 import { Button, Icon } from '../design-system';
 import { Link, useApp } from './state';
-import type { Route } from './routes';
+import { isTripRoute, type Route } from './routes';
+import { tripTitle } from '../features/trip/itinerary';
 import { contentManifest } from '../generated';
 
-const NAV = [
+const TRIP_NAV = [
+  { to: '/itinerary/', label: 'Itinerary', icon: 'water' as const },
+  { to: '/learn/', label: 'Learn About Ancient Egypt', icon: 'book' as const },
+];
+
+const ARCHIVE_NAV = [
   { to: '/wiki/', label: 'Encyclopedia', icon: 'book' as const },
   { to: '/atlas/', label: 'Atlas', icon: 'compass' as const },
   { to: '/chronology/', label: 'Chronology', icon: 'sun' as const },
@@ -21,6 +24,7 @@ const NAV = [
 ];
 
 function navIsCurrent(to: string, route: Route): boolean {
+  if (to === '/itinerary/') return route.name === 'itinerary';
   if (to === '/wiki/') return route.name === 'wiki-index' || route.name === 'article';
   if (to === '/atlas/') return route.name === 'atlas';
   if (to === '/chronology/') return route.name === 'chronology';
@@ -33,7 +37,7 @@ function navIsCurrent(to: string, route: Route): boolean {
 }
 
 export function Shell({ children }: { children: ReactNode }) {
-  const { route, preferences, update, setSearchOpen, prefersReducedMotion, navigate, closeTab, resetTabs } = useApp();
+  const { route, preferences, update, setSearchOpen, prefersReducedMotion } = useApp();
 
   const theme = preferences.theme;
   useEffect(() => {
@@ -57,19 +61,26 @@ export function Shell({ children }: { children: ReactNode }) {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [setSearchOpen]);
 
-  const activeSlug = route.name === 'article' ? route.slug : null;
+  const trip = isTripRoute(route);
 
   return (
     <div className="shell">
-      <header className="shell__bar">
-        <Link className="shell__mark" to="/">
-          <img className="shell__mark-glyph" src={`${import.meta.env.BASE_URL}media/archive-app-icon.png`} alt="" aria-hidden="true" />
-          <span>The Living Archive</span>
-        </Link>
+      <header className={trip ? 'shell__bar shell__bar--trip' : 'shell__bar'}>
+        <div className="shell__identity">
+          {!trip && (
+            <Link className="archive-button archive-button--primary shell__trip-link" to="/">
+              <span aria-hidden="true">←</span> Back to trip
+            </Link>
+          )}
+          <Link className={trip ? 'shell__mark shell__mark--trip' : 'shell__mark'} to={trip ? '/' : '/learn/'}>
+            <img className="shell__mark-glyph" src={`${import.meta.env.BASE_URL}media/archive-app-icon.png`} alt="" aria-hidden="true" />
+            <span>{trip ? tripTitle : 'The Living Archive'}</span>
+          </Link>
+        </div>
 
         <nav className="shell__nav" aria-label="Main">
           <ul>
-            {NAV.map((item) => (
+            {(trip ? TRIP_NAV : ARCHIVE_NAV).map((item) => (
               <li key={item.to}>
                 <Link to={item.to} className={navIsCurrent(item.to, route) ? 'is-current' : ''} aria-current={navIsCurrent(item.to, route) ? 'page' : undefined}>
                   <Icon name={item.icon} size={15} />
@@ -96,43 +107,33 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      {preferences.tabs.length > 0 && (
-        <div className="shell__tabs" role="region" aria-label="Open articles">
-          <ul>
-            {preferences.tabs.map((tab) => (
-              <li key={tab.slug} className={tab.slug === activeSlug ? 'is-active' : ''}>
-                <Link to={`/wiki/${tab.slug}/`}>{tab.title}</Link>
-                <button type="button" aria-label={`Close ${tab.title}`} onClick={() => {
-                  closeTab(tab.slug);
-                  if (tab.slug === activeSlug) navigate('/wiki/');
-                }}>×</button>
-              </li>
-            ))}
-          </ul>
-          <Button variant="quiet" onClick={() => { resetTabs(); }}>Reset desktop</Button>
-        </div>
+      <main id="main-content" className={trip ? 'shell__main' : 'shell__main shell__main--archive'} tabIndex={-1}>{children}</main>
+
+      {trip ? (
+        <footer className="shell__footer">
+          <strong>{tripTitle}</strong>
+          <Link to="/learn/">The Living Archive</Link>
+        </footer>
+      ) : (
+        <footer className="shell__footer">
+          <div>
+            <strong>The Living Archive</strong>
+            <p>
+              {contentManifest.counts.pages} pages, {contentManifest.counts.sources} source groups,{' '}
+              {contentManifest.counts.edges} graph relationships. Built from ancient texts, modern scholarship, and a
+              reviewed source collection.
+            </p>
+          </div>
+          <nav aria-label="Footer">
+            <ul>
+              <li><Link to="/about/">About and privacy</Link></li>
+              <li><Link to="/archive/sources/">Source catalog</Link></li>
+              <li><Link to="/browse/">Browse everything</Link></li>
+              <li><Link to="/specimen/">Design system specimen</Link></li>
+            </ul>
+          </nav>
+        </footer>
       )}
-
-      <main id="main-content" className="shell__main" tabIndex={-1}>{children}</main>
-
-      <footer className="shell__footer">
-        <div>
-          <strong>The Living Archive</strong>
-          <p>
-            {contentManifest.counts.pages} pages, {contentManifest.counts.sources} source groups,{' '}
-            {contentManifest.counts.edges} graph relationships. Built from ancient texts, modern scholarship, and a
-            reviewed source collection.
-          </p>
-        </div>
-        <nav aria-label="Footer">
-          <ul>
-            <li><Link to="/about/">About and privacy</Link></li>
-            <li><Link to="/archive/sources/">Source catalog</Link></li>
-            <li><Link to="/browse/">Browse everything</Link></li>
-            <li><Link to="/specimen/">Design system specimen</Link></li>
-          </ul>
-        </nav>
-      </footer>
     </div>
   );
 }
