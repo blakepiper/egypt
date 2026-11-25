@@ -25,8 +25,8 @@ export const tripDays: TripDay[] = [
     imageCaption: 'Karnak’s Hypostyle Hall',
     highlight: 'Karnak & boarding day',
     stops: [
-      'Visit Karnak Temple with the group in the morning.',
-      'Get picked up in Luxor for the roughly one-hour drive to Esna.',
+      'Meet at Iberotel Luxor for pickup with luggage, then visit Karnak Temple with the group.',
+      'Drive about an hour from Luxor to Esna.',
       'Visit the Temple of Esna, the Wekalet Al-Geddawi caravanserai, and Al-Qissariya market.',
       'Board the dahabiya for lunch and sailing. Dinner aboard.',
     ],
@@ -86,7 +86,7 @@ export const tripDays: TripDay[] = [
     highlight: 'Breakfast aboard & the Cairo flight',
     stops: [
       'Have breakfast aboard and check out in Aswan.',
-      'The group plans to take the noon flight to Cairo.',
+      'The group plans to take the 12:05 p.m. flight to Cairo.',
     ],
     note: 'Checkout time and airport transfer arrangements are to be confirmed.',
   },
@@ -96,8 +96,8 @@ export const tripDetails = [
   {
     title: 'Transfers',
     items: [
-      'Monday: Karnak in the morning, then pickup in Luxor for the drive to Esna. Pickup time and meeting point are to be confirmed.',
-      'Friday: Breakfast and checkout in Aswan before the group’s planned noon flight to Cairo. The airport transfer is to be confirmed.',
+      'Monday: The group plans to be picked up with luggage at Iberotel Luxor, visit Karnak, then drive to Esna. The pickup time is to be confirmed.',
+      'Friday: Breakfast and checkout in Aswan before the group’s planned 12:05 p.m. flight to Cairo. The airport transfer is to be confirmed.',
     ],
   },
   {

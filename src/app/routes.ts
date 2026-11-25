@@ -9,6 +9,7 @@ export type Route =
   | { name: 'home' }
   | { name: 'learn' }
   | { name: 'itinerary' }
+  | { name: 'faq' }
   | { name: 'trip-details' }
   | { name: 'wiki-index' }
   | { name: 'article'; slug: string }
@@ -60,6 +61,7 @@ export function parseRoute(pathname: string): Route {
   switch (first) {
     case 'learn':
     case 'itinerary':
+    case 'faq':
     case 'trip-details': return second ? { name: 'not-found', path } : { name: first };
     case 'wiki':
       return second ? { name: 'article', slug: second } : { name: 'wiki-index' };
@@ -95,5 +97,5 @@ export function routePath(route: Route): string {
 }
 
 export function isTripRoute(route: Route): boolean {
-  return route.name === 'home' || route.name === 'itinerary' || route.name === 'trip-details';
+  return route.name === 'home' || route.name === 'itinerary' || route.name === 'faq' || route.name === 'trip-details';
 }

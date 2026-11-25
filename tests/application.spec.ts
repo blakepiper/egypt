@@ -104,7 +104,7 @@ test.describe('reading', () => {
 
 test.describe('search', () => {
   test('opens with a keyboard shortcut, ranks titles first, and navigates', async ({ page }) => {
-    await page.goto('./');
+    await page.goto('learn/');
     await page.keyboard.press('Control+k');
     const dialog = page.getByRole('dialog', { name: 'Search the archive' });
     await expect(dialog).toBeVisible();
@@ -117,7 +117,7 @@ test.describe('search', () => {
   });
 
   test('closes on Escape and restores focus', async ({ page }) => {
-    await page.goto('./');
+    await page.goto('learn/');
     await page.getByRole('button', { name: /Search/ }).click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
@@ -128,7 +128,7 @@ test.describe('search', () => {
   // A typed query must not move the caret. `fill()` would not catch a trap that
   // re-focuses the dialog after the first character, so this types key by key.
   test('keeps the caret in the field while a query is typed', async ({ page }) => {
-    await page.goto('./');
+    await page.goto('learn/');
     await page.keyboard.press('Control+k');
     const input = page.getByRole('dialog').getByRole('searchbox');
     await expect(input).toBeFocused();
@@ -198,7 +198,7 @@ test.describe('search', () => {
   });
 
   test('hands the dialog query to full search and supports result focus movement', async ({ page }) => {
-    await page.goto('./');
+    await page.goto('learn/');
     await page.keyboard.press('Control+k');
     const dialog = page.getByRole('dialog', { name: 'Search the archive' });
     await dialog.getByRole('searchbox').fill('maat');

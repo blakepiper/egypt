@@ -7,6 +7,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tripDates, tripDays, tripDescription, tripDetails, tripTitle } from '../../src/features/trip/itinerary.js';
+import { faqIntro, faqTopics } from '../../src/features/trip/faq.js';
 import type { ContentManifest, Journey, ObjectStudy } from '../../src/types/content.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -61,6 +62,21 @@ function itineraryFallback(): string {
   return `<main id="main-content" class="page trip"><h1>Itinerary</h1><p>${escapeHtml(tripTitle)} · ${escapeHtml(tripDates)}</p><p>${escapeHtml(tripDescription)}</p>${days}<section id="trip-details"><h2>Trip details</h2>${details}</section></main>`;
 }
 
+function faqFallback(): string {
+  const topics = faqTopics.map((topic) => {
+    const answers = topic.answers.map((answer) => {
+      const paragraphs = answer.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('');
+      const links = answer.links?.map((link) => {
+        const url = link.path.startsWith('/') ? relativeUrl('/faq/', link.path) : link.path;
+        return `<li><a href="${escapeHtml(url)}">${escapeHtml(link.label)}</a></li>`;
+      }).join('');
+      return `<h3>${escapeHtml(answer.question)}</h3>${paragraphs}${links ? `<ul>${links}</ul>` : ''}`;
+    }).join('');
+    return `<section id="${escapeHtml(topic.id)}"><h2>${escapeHtml(topic.title)}</h2>${answers}</section>`;
+  }).join('');
+  return `<main id="main-content" class="page trip"><h1>Travel FAQ</h1><p>${escapeHtml(faqIntro)}</p>${topics}</main>`;
+}
+
 export function collectRoutes(): RouteEntry[] {
   const manifest = readJson<ContentManifest>('content-manifest.json');
   const journeys = readJson<Journey[]>('journeys.json');
@@ -69,6 +85,7 @@ export function collectRoutes(): RouteEntry[] {
   const routes: RouteEntry[] = [
     { path: '/', title: tripTitle, documentTitle: tripTitle, description: `Group trip · ${tripDates}. ${tripDescription}` },
     { path: '/itinerary/', title: 'Itinerary', documentTitle: `Itinerary — ${tripTitle}`, description: `The day-by-day plan for ${tripDates}.`, fallback: itineraryFallback() },
+    { path: '/faq/', title: 'Travel FAQ', documentTitle: `Travel FAQ — ${tripTitle}`, description: faqIntro, fallback: faqFallback() },
     { path: '/trip-details/', title: 'Trip details', documentTitle: `Trip details — ${tripTitle}`, description: 'Transfers, cruise inclusions, and what to know before boarding.', redirect: '/itinerary/#trip-details' },
     { path: '/learn/', title: 'The Living Archive', documentTitle: 'The Living Archive', description: 'A sourced guide to ancient Egyptian religion, with evidence and uncertainty kept visible.' },
     { path: '/wiki/', title: 'Encyclopedia', description: `All ${manifest.counts.pages} articles in the archive, grouped by hub.` },

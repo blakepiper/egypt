@@ -10,6 +10,7 @@ import { AboutView, ArchiveView, FieldGuideView, ExploreView, WikiIndexView } fr
 import { NotFoundView } from './features/articles/NotFoundView';
 import { tripTitle } from './features/trip/itinerary';
 import { TripHome, TripItinerary } from './features/trip/TripViews';
+import { TripFaq } from './features/trip/TripFaq';
 import { isTripRoute } from './app/routes';
 import { HomeView } from './features/home/HomeView';
 import { SearchDialog, SearchView } from './features/search/SearchDialog';
@@ -34,6 +35,7 @@ const TITLES: Record<string, string> = {
   home: tripTitle,
   learn: 'The Living Archive',
   itinerary: 'Itinerary',
+  faq: 'Travel FAQ',
   'trip-details': 'Trip details',
   'wiki-index': 'Encyclopedia',
   atlas: 'Atlas',
@@ -79,6 +81,7 @@ function Routes() {
     switch (route.name) {
       case 'home': return <TripHome />;
       case 'itinerary': return <TripItinerary />;
+      case 'faq': return <TripFaq />;
       case 'trip-details': return null;
       case 'learn': return <HomeView />;
       case 'wiki-index': return <WikiIndexView />;
@@ -130,7 +133,7 @@ function Frame() {
       <Shell>
         <Routes />
       </Shell>
-      <SearchDialog />
+      {!isTripRoute(route) && <SearchDialog />}
     </>
   );
 }

@@ -28,7 +28,7 @@ export function TripHome() {
             <p className="trip-hero__intro">Five days on the Nile with Sydney’s friends, from the temples of Luxor to the banks of Aswan.</p>
             <div className="trip-actions">
               <Link className="archive-button archive-button--primary" to={itineraryPath}>Explore the itinerary <span aria-hidden="true">↗</span></Link>
-              <Link className="trip-textlink" to={detailsPath}>Trip details</Link>
+              <Link className="trip-textlink" to="/faq/">Travel FAQ</Link>
             </div>
           </div>
           <figure className="trip-hero__image">

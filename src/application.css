@@ -1373,3 +1373,51 @@ html[data-motion='reduce'] .graph-node, html[data-motion='reduce'] .graph-edge {
   .graph-controls__row > .segmented { flex: 1 1 auto; min-width: 0; max-width: 100%; }
   .graph-controls .segmented__option { white-space: normal; line-height: 1.25; padding-inline: 0.55rem; }
 }
+
+/* Trip navigation and travel FAQ */
+.shell__nav--trip ul { gap: 0.45rem; }
+.shell__nav--trip a {
+  min-height: 2.5rem;
+  justify-content: center;
+  padding: 0.38rem 0.8rem;
+  border: var(--archive-border-strong);
+  border-radius: 0;
+  background: var(--archive-color-surface);
+  box-shadow: var(--archive-shadow-sm);
+  font-weight: 700;
+  text-align: center;
+}
+.shell__nav--trip a:hover,
+.shell__nav--trip a.is-current { background: var(--archive-color-primary-soft); border: var(--archive-border-strong); }
+.shell__nav--trip a.is-current { box-shadow: inset 0 -3px 0 var(--archive-color-primary); }
+.shell__nav--trip svg { flex: none; }
+
+.trip-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2.1vw, 1.6rem);
+  align-items: start;
+}
+.trip-faq__topic { scroll-margin-top: 6rem; }
+.trip-faq__topic .trip-titlebar h2 { font: inherit; font-size: 0.9rem; }
+.trip-faq__topic details + details { border-top: var(--archive-border); }
+.trip-faq__topic summary {
+  padding: 0.9rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.trip-faq__topic details[open] summary { background: var(--archive-color-surface); }
+.trip-faq__topic details p { margin: 0.8rem 0.9rem; max-width: 66ch; }
+.trip-faq__topic details ul { margin: 0.8rem 0.9rem; padding-inline-start: 1.15rem; }
+.trip-faq__topic details li + li { margin-top: 0.35rem; }
+
+@media (max-width: 640px) {
+  .shell__bar--trip { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+  .shell__nav--trip { grid-column: 1 / -1; grid-row: 2; }
+  .shell__bar--trip .shell__tools { grid-column: 2; grid-row: 1; }
+  .shell__nav--trip ul { display: grid; grid-template-columns: 0.9fr 1fr 1.45fr; }
+  .shell__nav--trip a { height: 100%; width: 100%; padding-inline: 0.35rem; }
+  .shell__nav--trip svg { display: none; }
+  .trip-faq__grid { grid-template-columns: minmax(0, 1fr); }
+  .trip-faq__topic { scroll-margin-top: 1rem; }
+}

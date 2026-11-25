@@ -9,6 +9,7 @@ import { contentManifest } from '../generated';
 
 const TRIP_NAV = [
   { to: '/itinerary/', label: 'Itinerary', icon: 'water' as const },
+  { to: '/faq/', label: 'Travel FAQ', icon: 'compass' as const },
   { to: '/learn/', label: 'Learn About Ancient Egypt', icon: 'book' as const },
 ];
 
@@ -25,6 +26,7 @@ const ARCHIVE_NAV = [
 
 function navIsCurrent(to: string, route: Route): boolean {
   if (to === '/itinerary/') return route.name === 'itinerary';
+  if (to === '/faq/') return route.name === 'faq';
   if (to === '/wiki/') return route.name === 'wiki-index' || route.name === 'article';
   if (to === '/atlas/') return route.name === 'atlas';
   if (to === '/chronology/') return route.name === 'chronology';
@@ -39,6 +41,7 @@ function navIsCurrent(to: string, route: Route): boolean {
 export function Shell({ children }: { children: ReactNode }) {
   const { route, preferences, update, setSearchOpen, prefersReducedMotion } = useApp();
 
+  const trip = isTripRoute(route);
   const theme = preferences.theme;
   useEffect(() => {
     const root = document.documentElement;
@@ -47,8 +50,12 @@ export function Shell({ children }: { children: ReactNode }) {
     root.dataset.performance = preferences.lowPerformance ? 'low' : 'normal';
   }, [theme, prefersReducedMotion, preferences.lowPerformance]);
 
-  // Command-K and slash open search from anywhere that is not a text field.
+  // Command-K and slash open archive search.
   useEffect(() => {
+    if (trip) {
+      setSearchOpen(false);
+      return;
+    }
     const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       const typing = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
@@ -59,9 +66,7 @@ export function Shell({ children }: { children: ReactNode }) {
     };
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [setSearchOpen]);
-
-  const trip = isTripRoute(route);
+  }, [setSearchOpen, trip]);
 
   return (
     <div className="shell">
@@ -78,7 +83,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </Link>
         </div>
 
-        <nav className="shell__nav" aria-label="Main">
+        <nav className={trip ? 'shell__nav shell__nav--trip' : 'shell__nav'} aria-label="Main">
           <ul>
             {(trip ? TRIP_NAV : ARCHIVE_NAV).map((item) => (
               <li key={item.to}>
@@ -92,9 +97,11 @@ export function Shell({ children }: { children: ReactNode }) {
         </nav>
 
         <div className="shell__tools">
-          <Button variant="quiet" onClick={() => setSearchOpen(true)} aria-keyshortcuts="Control+K">
-            <Icon name="search" size={15} /><span className="shell__tools-label">Search</span><kbd>⌘K</kbd>
-          </Button>
+          {!trip && (
+            <Button variant="quiet" onClick={() => setSearchOpen(true)} aria-keyshortcuts="Control+K">
+              <Icon name="search" size={15} /><span className="shell__tools-label">Search</span><kbd>⌘K</kbd>
+            </Button>
+          )}
           <Button
             variant="quiet"
             iconOnly
