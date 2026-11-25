@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">The Living Archive</title>
+  <rect width="64" height="64" rx="12" fill="#132d33"/>
+  <path d="M15 16h34v38H15z" fill="#f4eddf" stroke="#d7a84e" stroke-width="3"/>
+  <path d="M21 23h22M21 43h22M21 49h15" stroke="#132d33" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="33" r="6" fill="#c85b3c"/>
+  <path d="M32 21v5m-12 7h5m14 0h5m-20.5-8.5 3.5 3.5m13.5-3.5-3.5 3.5" stroke="#d7a84e" stroke-width="2" stroke-linecap="round"/>
+</svg>
